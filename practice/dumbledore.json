@@ -1,0 +1,5636 @@
+{
+ "dumbledore-1-001": {
+  "blank": "I should have known",
+  "options": [
+   "I figured",
+   "I must have known",
+   "I would have known"
+  ],
+  "why": "'should have known'은 뒤늦은 깨달음을 나타내는 관용 구문이다."
+ },
+ "dumbledore-1-003": {
+  "blank": "I'm afraid so",
+  "options": [
+   "I'm afraid yes",
+   "I'm scared so",
+   "I'm fearing so"
+  ],
+  "why": "'I'm afraid'는 유감스러운 답을 부드럽게 전하는 완곡 표현이다."
+ },
+ "dumbledore-1-005": {
+  "blank": "bringing",
+  "options": [
+   "taking",
+   "sending",
+   "leaving"
+  ],
+  "why": "이쪽으로 데려오는 것이므로 'bring'을 쓴다."
+ },
+ "dumbledore-1-007": {
+  "blank": "with my life",
+  "options": [
+   "on my life",
+   "for my life",
+   "by my life"
+  ],
+  "why": "'trust A with B'는 B를 믿고 맡긴다는 관용구다."
+ },
+ "dumbledore-1-008": {
+  "blank": "I trust",
+  "options": [
+   "I guess",
+   "I bet",
+   "I trusted"
+  ],
+  "why": "삽입구 'I trust'는 기대를 담은 정중한 확인 어투다."
+ },
+ "dumbledore-1-010": {
+  "blank": "he has",
+  "options": [
+   "he gets",
+   "he owns",
+   "he holds"
+  ],
+  "why": "가족이 '있다'는 관계는 동사 have로 나타낸다."
+ },
+ "dumbledore-1-012": {
+  "blank": "far better off",
+  "options": [
+   "way better off",
+   "far more well off",
+   "far better of"
+  ],
+  "why": "'far'는 비교급을 점잖게 강조하며 'way'는 비격식이다."
+ },
+ "dumbledore-1-013": {
+  "blank": "after all",
+  "options": [
+   "at last",
+   "above all",
+   "after it"
+  ],
+  "why": "'after all'은 안심시키는 근거를 덧붙이는 표현이다."
+ },
+ "dumbledore-1-018.1": {
+  "blank": "start-of-term",
+  "options": [
+   "start-of-semester",
+   "start-of-period",
+   "first-of-term"
+  ],
+  "why": "영국 학교는 학기를 'term'이라 부른다."
+ },
+ "dumbledore-1-018.2": {
+  "blank": "strictly forbidden",
+  "options": [
+   "totally forbidden",
+   "severely forbidden",
+   "strictly forbidding"
+  ],
+  "why": "규칙상 금지는 'strictly forbidden'이 정해진 짝이다."
+ },
+ "dumbledore-1-018.3": {
+  "blank": "caretaker",
+  "options": [
+   "janitor",
+   "custodian",
+   "caregiver"
+  ],
+  "why": "영국에서 건물 관리인은 'caretaker'라 부른다."
+ },
+ "dumbledore-1-018.4": {
+  "blank": "out of bounds",
+  "options": [
+   "out of limits",
+   "off the bounds",
+   "out of borders"
+  ],
+  "why": "영국 학교 안내에서 출입 금지는 'out of bounds'라 한다."
+ },
+ "dumbledore-1-018.5": {
+  "blank": "a most painful death",
+  "options": [
+   "a really painful death",
+   "a mostly painful death",
+   "a much painful death"
+  ],
+  "why": "'a most + 형용사'는 'very'를 뜻하는 격식 강조다."
+ },
+ "dumbledore-1-025": {
+  "blank": "Let the feast",
+  "options": [
+   "Make the feast",
+   "Have the feast",
+   "See the feast"
+  ],
+  "why": "'Let ~ begin'은 개회를 알리는 장중한 선언 어투다."
+ },
+ "dumbledore-1-033.1": {
+  "blank": "will please not panic",
+  "options": [
+   "please don't panic",
+   "will not please panic",
+   "shall please not panic"
+  ],
+  "why": "'will'로 서술해 지시하는 권위적 격식 어투다."
+ },
+ "dumbledore-1-033.2": {
+  "blank": "prefects",
+  "options": [
+   "hall monitors",
+   "class presidents",
+   "head students"
+  ],
+  "why": "하급생을 지도하는 영국 학교 선임 학생은 'prefect'다."
+ },
+ "dumbledore-1-040.1": {
+  "blank": "the delights of",
+  "options": [
+   "the fun of",
+   "the delightings of",
+   "the joys in"
+  ],
+  "why": "'the delights of'는 매력을 점잖게 이르는 격식 어구다."
+ },
+ "dumbledore-1-040.2": {
+  "blank": "I trust",
+  "options": [
+   "I'm guessing",
+   "I trusted",
+   "I rely"
+  ],
+  "why": "'I trust'는 'I assume'보다 정중한 격식 표현이다."
+ },
+ "dumbledore-1-040.3": {
+  "blank": "exactly as he is",
+  "options": [
+   "exactly as it is",
+   "exactly like he is",
+   "exactly as he does"
+  ],
+  "why": "'as he is'는 '있는 그대로'를 뜻하는 격식 표현이다."
+ },
+ "dumbledore-1-041.1": {
+  "blank": "nothing more or less than",
+  "options": [
+   "nothing more or less as",
+   "nothing more and less than",
+   "nothing more or lesser than"
+  ],
+  "why": "'nothing more or less than'은 '바로 그것'을 강조한다."
+ },
+ "dumbledore-1-041.2": {
+  "blank": "who have never known",
+  "options": [
+   "who has never known",
+   "whom have never known",
+   "who never have known"
+  ],
+  "why": "'you'를 받는 관계절은 'who have'로 써야 맞다."
+ },
+ "dumbledore-1-041.3": {
+  "blank": "remember this",
+  "options": [
+   "recall this",
+   "memorise this",
+   "remind this"
+  ],
+  "why": "'remember this'는 중요한 말 앞에서 주의를 환기한다."
+ },
+ "dumbledore-1-041.4": {
+  "blank": "wasted away",
+  "options": [
+   "wasted out",
+   "wasted off",
+   "worn away"
+  ],
+  "why": "'waste away'는 점점 쇠약해진다는 뜻의 구동사다."
+ },
+ "dumbledore-1-041.5": {
+  "blank": "I must ask you",
+  "options": [
+   "I gotta ask you",
+   "I must demand you",
+   "I need asking you"
+  ],
+  "why": "'I must ask you not to'는 불가피함을 담은 격식 요청이다."
+ },
+ "dumbledore-1-041.6": {
+  "blank": "It does not do",
+  "options": [
+   "It does not work",
+   "It does not make",
+   "It does not go"
+  ],
+  "why": "'It does not do to'는 '~하면 안 되는 법'의 격식 표현이다."
+ },
+ "dumbledore-1-050": {
+  "blank": "Tokens",
+  "options": [
+   "Tickets",
+   "Signals",
+   "Badges"
+  ],
+  "why": "'token'은 마음을 담은 작은 선물을 뜻하는 격식 어휘다."
+ },
+ "dumbledore-1-051.1": {
+  "blank": "naturally",
+  "options": [
+   "normally",
+   "usually",
+   "commonly"
+  ],
+  "why": "'naturally'를 태연히 써서 뜻을 비트는 영국식 반어다."
+ },
+ "dumbledore-1-051.2": {
+  "blank": "saved you the trouble",
+  "options": [
+   "saved you the problem",
+   "kept you the trouble",
+   "rescued you the trouble"
+  ],
+  "why": "'save A the trouble'은 수고를 덜어 준다는 관용구다."
+ },
+ "dumbledore-1-052": {
+  "blank": "just fine",
+  "options": [
+   "totally fine",
+   "just finely",
+   "only fine"
+  ],
+  "why": "'just fine'은 '아주 괜찮다'며 안심시키는 표현이다."
+ },
+ "dumbledore-1-053.1": {
+  "blank": "dear boy",
+  "options": [
+   "kid",
+   "dear guy",
+   "dear dude"
+  ],
+  "why": "'dear boy'는 연장자가 젊은 남성을 부르는 영국식 호칭이다."
+ },
+ "dumbledore-1-053.2": {
+  "blank": "all round",
+  "options": [
+   "all around",
+   "all over",
+   "all about"
+  ],
+  "why": "'all round'는 '모두에게'를 뜻하며 미국은 'all around'다."
+ },
+ "dumbledore-1-054": {
+  "blank": "set his affairs in order",
+  "options": [
+   "wrap his affairs up",
+   "set his affairs in line",
+   "put his affairs on order"
+  ],
+  "why": "'set one's affairs in order'는 신변 정리의 격식 관용구다."
+ },
+ "dumbledore-1-055.1": {
+  "blank": "would be able to",
+  "options": [
+   "could be able to",
+   "would be capable to",
+   "will able to"
+  ],
+  "why": "가정의 결과는 'would be able to'로 격식 있게 나타낸다."
+ },
+ "dumbledore-1-055.2": {
+  "blank": "between you and me",
+  "options": [
+   "between you and I",
+   "among you and me",
+   "between you with me"
+  ],
+  "why": "'between you and me'는 '우리끼리 얘기지만'의 관용구다."
+ },
+ "dumbledore-1-056.1": {
+  "blank": "I'm afraid",
+  "options": [
+   "I'm scared",
+   "I'm frightened",
+   "I'm afraid of"
+  ],
+  "why": "'I'm afraid'는 나쁜 소식을 부드럽게 전하는 완곡 표현이다."
+ },
+ "dumbledore-1-056.2": {
+  "blank": "couldn't bear",
+  "options": [
+   "couldn't bare",
+   "couldn't carry",
+   "couldn't hold"
+  ],
+  "why": "'can't bear to'는 차마 견디지 못함을 뜻한다."
+ },
+ "dumbledore-1-056.3": {
+  "blank": "leaves a mark",
+  "options": [
+   "makes a mark",
+   "puts a mark",
+   "leaves a sign"
+  ],
+  "why": "'leave a mark'는 흔적을 남긴다는 정해진 결합이다."
+ },
+ "dumbledore-1-056.4": {
+  "blank": "very",
+  "options": [
+   "actual",
+   "true",
+   "much"
+  ],
+  "why": "명사 앞 'very'는 '바로 그'를 뜻하는 격식 강조다."
+ },
+ "dumbledore-1-057.1": {
+  "blank": "Flavour",
+  "options": [
+   "Flavor",
+   "Flavoured",
+   "Flavours"
+  ],
+  "why": "영국 철자는 'flavour'처럼 -our로 쓴다."
+ },
+ "dumbledore-1-057.2": {
+  "blank": "most unfortunate",
+  "options": [
+   "really unlucky",
+   "mostly unfortunate",
+   "most unfortunately"
+  ],
+  "why": "형용사 앞 'most'는 'very'에 해당하는 격식 강조어다."
+ },
+ "dumbledore-1-057.3": {
+  "blank": "Alas",
+  "options": [
+   "Dang",
+   "Hooray",
+   "Alright"
+  ],
+  "why": "'Alas'는 작은 불운에 과장되게 붙인 옛스러운 감탄사다."
+ },
+ "dumbledore-1-058.1": {
+  "blank": "needs awarding",
+  "options": [
+   "needs to award",
+   "needs awarded",
+   "needs award"
+  ],
+  "why": "'need + -ing'로 수동의 뜻을 나타내는 영국 선호 구문이다."
+ },
+ "dumbledore-1-058.2": {
+  "blank": "In fourth place",
+  "options": [
+   "At fourth place",
+   "On fourth place",
+   "In the fourth place"
+  ],
+  "why": "순위는 'in ~ place'로 말하는 것이 정해진 결합이다."
+ },
+ "dumbledore-1-058.3": {
+  "blank": "In second place",
+  "options": [
+   "At second place",
+   "On second place",
+   "In the second place"
+  ],
+  "why": "순위 발표에는 'in second place'처럼 in을 쓴다."
+ },
+ "dumbledore-1-058.4": {
+  "blank": "well done",
+  "options": [
+   "good job",
+   "well made",
+   "good done"
+  ],
+  "why": "'Well done'은 영국에서 칭찬·축하의 기본 표현이다."
+ },
+ "dumbledore-1-058.5": {
+  "blank": "taken into account",
+  "options": [
+   "taken in account",
+   "taken into count",
+   "taken onto account"
+  ],
+  "why": "'take ~ into account'는 '고려하다'의 정해진 결합이다."
+ },
+ "dumbledore-1-058.6": {
+  "blank": "Miss",
+  "options": [
+   "Ms.",
+   "Missus",
+   "Mistress"
+  ],
+  "why": "교사가 여학생을 격식 있게 부를 때 'Miss+성'을 쓴다."
+ },
+ "dumbledore-1-058.7": {
+  "blank": "these many years",
+  "options": [
+   "this many years",
+   "these much years",
+   "those many years"
+  ],
+  "why": "'these many years'는 '여러 해'를 뜻하는 예스러운 격식 표현이다."
+ },
+ "dumbledore-1-058.8": {
+  "blank": "pure nerve",
+  "options": [
+   "pure guts",
+   "pure nerves",
+   "clean nerve"
+  ],
+  "why": "단수 'nerve'는 '배짱'이고 'nerves'는 긴장을 뜻한다."
+ },
+ "dumbledore-1-059.1": {
+  "blank": "a great deal of",
+  "options": [
+   "a big deal of",
+   "a great many of",
+   "a large deal of"
+  ],
+  "why": "'a great deal of'는 불가산명사 앞의 격식 수량 표현이다."
+ },
+ "dumbledore-1-059.2": {
+  "blank": "I award",
+  "options": [
+   "I'm giving",
+   "I reward",
+   "I prize"
+  ],
+  "why": "공식 시상에서는 'award'가 격식에 맞는 동사다."
+ },
+ "dumbledore-1-059.3": {
+  "blank": "is in order",
+  "options": [
+   "is in line",
+   "is on order",
+   "is in ordering"
+  ],
+  "why": "'be in order'는 '~할 때가 되었다'는 격식 관용구다."
+ },
+ "dumbledore-2-004": {
+  "blank": "are not",
+  "options": [
+   "aren't",
+   "be not",
+   "are none"
+  ],
+  "why": "축약 없이 are not을 풀어 써 단호함과 무게를 싣는다."
+ },
+ "dumbledore-2-006.1": {
+  "blank": "I am well aware of",
+  "options": [
+   "I totally know",
+   "I am well aware about",
+   "I am good aware of"
+  ],
+  "why": "'I know'의 격식형으로 반박 뉘앙스를 담은 표현이다."
+ },
+ "dumbledore-2-006.2": {
+  "blank": "it is for",
+  "options": [
+   "it is to",
+   "it is by",
+   "it is with"
+  ],
+  "why": "'~가 정할 일이다'를 나타내는 격식 구문이다."
+ },
+ "dumbledore-2-009": {
+  "blank": "will proceed to",
+  "options": [
+   "will advance to",
+   "will proceed into",
+   "will precede to"
+  ],
+  "why": "will 지시문과 proceed to로 공식 지시를 내린다."
+ },
+ "dumbledore-2-010": {
+  "blank": "She is not",
+  "options": [
+   "She's not",
+   "She ain't",
+   "She be not"
+  ],
+  "why": "축약 없이 is not을 써서 침착하고 단호하게 부정한다."
+ },
+ "dumbledore-2-011": {
+  "blank": "I cannot say",
+  "options": [
+   "I dunno",
+   "I cannot talk",
+   "I cannot speak"
+  ],
+  "why": "목적절을 앞세우고 I cannot say로 맺는 격식 구조다."
+ },
+ "dumbledore-2-014": {
+  "blank": "until proven guilty",
+  "options": [
+   "till shown guilty",
+   "until proving guilty",
+   "until proven wrong"
+  ],
+  "why": "무죄 추정 원칙을 담은 영미 공통 법률 관용구다."
+ },
+ "dumbledore-2-015.1": {
+  "blank": "cure",
+  "options": [
+   "fix",
+   "repair",
+   "remedy"
+  ],
+  "why": "생명체를 낫게 할 때는 fix가 아닌 cure를 쓴다."
+ },
+ "dumbledore-2-015.2": {
+  "blank": "As I understand it",
+  "options": [
+   "Like I understand it",
+   "As I take it",
+   "As I understand of it"
+  ],
+  "why": "단정을 피하는 영미 공통 격식 완충 표현이다."
+ },
+ "dumbledore-2-015.3": {
+  "blank": "When matured",
+  "options": [
+   "When maturing",
+   "When maturated",
+   "While matured"
+  ],
+  "why": "주어·동사를 생략한 축약절로 공문 문체를 만든다."
+ },
+ "dumbledore-2-015.4": {
+  "blank": "I strongly recommend caution",
+  "options": [
+   "please be careful",
+   "I strongly advise carefulness",
+   "I hardly recommend caution"
+  ],
+  "why": "be careful 대신 명사 caution으로 격식 있게 권고한다."
+ },
+ "dumbledore-2-022": {
+  "blank": "There's been",
+  "options": [
+   "It's been",
+   "There's had",
+   "There's got"
+  ],
+  "why": "새 사건 보고에는 현재완료 존재문 There's been을 쓴다."
+ },
+ "dumbledore-2-024": {
+  "blank": "in great danger",
+  "options": [
+   "in big danger",
+   "in large danger",
+   "at great danger"
+  ],
+  "why": "추상명사 앞 강조어 great로 만든 영미 공통 연어다."
+ },
+ "dumbledore-2-026.1": {
+  "blank": "no longer",
+  "options": [
+   "not anymore",
+   "no more",
+   "not longer"
+  ],
+  "why": "'더 이상 ~아니다'의 격식형은 no longer다."
+ },
+ "dumbledore-2-026.2": {
+  "blank": "It is as we feared",
+  "options": [
+   "It's like we feared",
+   "It is as we scared",
+   "It is so we feared"
+  ],
+  "why": "as절로 우려가 현실이 됐음을 무게 있게 전한다."
+ },
+ "dumbledore-2-034.1": {
+  "blank": "about time, too",
+  "options": [
+   "about time, also",
+   "about time, as well",
+   "finally, too"
+  ],
+  "why": "about time에 too를 붙이는 것은 영국식 말버릇이다."
+ },
+ "dumbledore-2-034.2": {
+  "blank": "Pity",
+  "options": [
+   "Too bad",
+   "Pitiful",
+   "Sorrow"
+  ],
+  "why": "It's a pity의 축약 Pity는 영국식 아쉬움 표현이다."
+ },
+ "dumbledore-2-034.3": {
+  "blank": "burst into flame",
+  "options": [
+   "catch on flame",
+   "burst in flame",
+   "break into flame"
+  ],
+  "why": "'갑자기 불길에 휩싸이다'는 burst into flame이다."
+ },
+ "dumbledore-2-034.4": {
+  "blank": "immensely",
+  "options": [
+   "super",
+   "vastly",
+   "largely"
+  ],
+  "why": "really 대신 격식 강조 부사 immensely를 쓴다."
+ },
+ "dumbledore-2-036": {
+  "blank": "I do not believe that",
+  "options": [
+   "I don't reckon that",
+   "I am not believing that",
+   "I do not hope that"
+  ],
+  "why": "think 대신 believe, do not으로 권위를 싣는다."
+ },
+ "dumbledore-2-038.1": {
+  "blank": "I do not think",
+  "options": [
+   "I don't reckon",
+   "I do not guess",
+   "I am not thinking"
+  ],
+  "why": "축약 없이 do not think로 차분하고 단호하게 말한다."
+ },
+ "dumbledore-2-038.2": {
+  "blank": "I must ask you",
+  "options": [
+   "I gotta ask you",
+   "I must ask to you",
+   "I need asking you"
+  ],
+  "why": "민감한 질문 앞에 must로 예의를 갖추는 표현이다."
+ },
+ "dumbledore-2-039": {
+  "blank": "Off you go",
+  "options": [
+   "You can go",
+   "Off go you",
+   "Out you leave"
+  ],
+  "why": "아이를 보낼 때 쓰는 도치형 영국식 관용구다."
+ },
+ "dumbledore-2-041": {
+  "blank": "It is not wise",
+  "options": [
+   "It's not smart",
+   "It is not wisely",
+   "It is no wise"
+  ],
+  "why": "금지 대신 판단문으로 돌려 경고하는 완곡 표현이다."
+ },
+ "dumbledore-2-042": {
+  "blank": "I am afraid",
+  "options": [
+   "Unfortunately yeah",
+   "I am scared",
+   "I am fearful"
+  ],
+  "why": "나쁜 소식 앞에 붙이는 영미 공통 완충 표현이다."
+ },
+ "dumbledore-2-043": {
+  "blank": "may have no choice",
+  "options": [
+   "may have no chance",
+   "may have not choice",
+   "may get no pick"
+  ],
+  "why": "may로 단정을 피해 충격을 줄이는 영미 공통 어법이다."
+ },
+ "dumbledore-2-044": {
+  "blank": "wish to",
+  "options": [
+   "wanna",
+   "desire to",
+   "hope to"
+  ],
+  "why": "want to보다 한 단계 격식 있는 영미 공통 표현이다."
+ },
+ "dumbledore-2-045": {
+  "blank": "Very well, then",
+  "options": [
+   "Okay, then",
+   "Very fine, then",
+   "Well very, then"
+  ],
+  "why": "상대 말을 담담히 수용하며 대화를 맺는 격식 응답이다."
+ },
+ "dumbledore-2-051": {
+  "blank": "I wonder, could we",
+  "options": [
+   "Mind if we",
+   "I wonder, should we",
+   "I wonder, do we"
+  ],
+  "why": "I wonder를 앞세워 요청을 부드럽게 하는 완곡 어법이다."
+ },
+ "dumbledore-2-052": {
+  "blank": "I want it understood",
+  "options": [
+   "Just so you know",
+   "I want it understanding",
+   "I want it to understand"
+  ],
+  "why": "입장을 분명히 못 박는 격식 표현이다."
+ },
+ "dumbledore-2-053.1": {
+  "blank": "desire my removal",
+  "options": [
+   "want me out",
+   "desire my removing",
+   "wish my removing"
+  ],
+  "why": "격식 동사 desire와 명사화로 감정 없는 공식 어조를 만든다."
+ },
+ "dumbledore-2-053.2": {
+  "blank": "you will find that",
+  "options": [
+   "you'll see that",
+   "you will discover to",
+   "you will search that"
+  ],
+  "why": "축약 없는 you will find로 조용히 단언한다."
+ },
+ "dumbledore-2-058": {
+  "blank": "realise, of course",
+  "options": [
+   "notice, of course",
+   "get, of course",
+   "realise, for sure"
+  ],
+  "why": "of course를 끼워 넣어 잘못을 점잖게 꼬집는 반어다."
+ },
+ "dumbledore-2-059": {
+  "blank": "sufficient evidence",
+  "options": [
+   "plenty evidence",
+   "sufficing evidence",
+   "sufficient evidences"
+  ],
+  "why": "enough의 격식형으로 법률·행정 문맥에 쓰는 영미 공통 어휘다."
+ },
+ "dumbledore-2-060": {
+  "blank": "it is only fitting",
+  "options": [
+   "it makes total sense",
+   "it is only fitted",
+   "it is just suiting"
+  ],
+  "why": "'~하는 것이 마땅하다'는 뜻의 격식 관용구다."
+ },
+ "dumbledore-2-061.1": {
+  "blank": "if you would have",
+  "options": [
+   "if you would get",
+   "if you would make",
+   "if you would let"
+  ],
+  "why": "'if you would ~'는 지시를 부탁처럼 바꾸는 영미 공통 격식 어법이다"
+ },
+ "dumbledore-2-061.2": {
+  "blank": "I believe",
+  "options": [
+   "I reckon",
+   "I guess",
+   "I'm thinking"
+  ],
+  "why": "'I believe'는 단정 대신 의견처럼 말하는 격식 완곡어법이다"
+ },
+ "dumbledore-2-061.3": {
+  "blank": "I want to thank you",
+  "options": [
+   "I wanna thank you",
+   "I want to thank to you",
+   "I want thanking you"
+  ],
+  "why": "구어 축약 없이 'I want to thank you'로 감사를 정중히 전한다"
+ },
+ "dumbledore-2-061.4": {
+  "blank": "Nothing but that",
+  "options": [
+   "Anything but that",
+   "Nothing more than that",
+   "Nothing other that"
+  ],
+  "why": "'Nothing but'은 only를 부정어로 바꿔 강조하는 문어적 표현이다"
+ },
+ "dumbledore-2-061.5": {
+  "blank": "I sense that",
+  "options": [
+   "I get the feeling",
+   "I'm sensing like",
+   "I sense about"
+  ],
+  "why": "'I sense that'은 상대의 고민을 조심스레 짚는 격식 표현이다"
+ },
+ "dumbledore-2-062.1": {
+  "blank": "I see",
+  "options": [
+   "I get it",
+   "Gotcha",
+   "I'm seeing"
+  ],
+  "why": "'I see'는 상대의 말을 차분히 받아들이는 정중한 맞장구다"
+ },
+ "dumbledore-2-062.2": {
+  "blank": "If I am not mistaken",
+  "options": [
+   "If I'm right",
+   "If I am not wrong",
+   "If I don't mistake"
+  ],
+  "why": "축약 없는 'If I am not mistaken'이 확신을 겸손히 감싼다"
+ },
+ "dumbledore-2-063": {
+  "blank": "Not intentionally",
+  "options": [
+   "Not meaning to",
+   "Not intendedly",
+   "Not on intention"
+  ],
+  "why": "'Not intentionally'는 의도를 격식 있게 부정하는 간결한 표현이다"
+ },
+ "dumbledore-2-064.1": {
+  "blank": "possess",
+  "options": [
+   "have got",
+   "own",
+   "hold"
+  ],
+  "why": "'possess'는 자질을 말할 때 have보다 격식 있는 동사다"
+ },
+ "dumbledore-2-064.2": {
+  "blank": "if I may say so",
+  "options": [
+   "if I can say it so",
+   "if I may tell so",
+   "if I may speak so"
+  ],
+  "why": "'if I may say so'는 직언 전 양해를 구하는 영미 공통 격식구다"
+ },
+ "dumbledore-2-064.3": {
+  "blank": "Why, then, did",
+  "options": [
+   "So why did",
+   "Why, so, did",
+   "Then why, did"
+  ],
+  "why": "'Why, then,'은 논리적 결론으로 이끄는 영미 공통 문어 표현이다"
+ },
+ "dumbledore-2-065.1": {
+  "blank": "Which makes you",
+  "options": [
+   "Who makes you",
+   "Which make you",
+   "What makes you"
+  ],
+  "why": "앞 문장 전체를 관계사 'Which'로 받아 결론을 잇는다"
+ },
+ "dumbledore-2-065.2": {
+  "blank": "It is not",
+  "options": [
+   "It's not",
+   "It does not",
+   "This is not"
+  ],
+  "why": "축약 없는 'It is ~ that' 분열문이 격언의 무게를 더한다"
+ },
+ "dumbledore-2-065.3": {
+  "blank": "I suggest you look",
+  "options": [
+   "I suggest you to look",
+   "I advise you look",
+   "I propose you to look"
+  ],
+  "why": "'I suggest you ~'는 명령을 권고로 감싸는 격식 어법이다"
+ },
+ "dumbledore-2-066": {
+  "blank": "It would take",
+  "options": [
+   "It would need",
+   "It would make",
+   "It would cost"
+  ],
+  "why": "'It would take a X to'는 X만이 할 수 있음을 돌려 말한다"
+ },
+ "dumbledore-2-067": {
+  "blank": "saw fit to",
+  "options": [
+   "saw fit for",
+   "looked fit to",
+   "saw fitting to"
+  ],
+  "why": "'see fit to'는 '적절하다고 판단하다'라는 영미 공통 격식구다"
+ },
+ "dumbledore-2-068": {
+  "blank": "under the impression",
+  "options": [
+   "in the impression",
+   "under the impressions",
+   "with the impression"
+  ],
+  "why": "'under the impression'은 사실과 다를 수 있는 믿음을 뜻한다"
+ },
+ "dumbledore-2-069": {
+  "blank": "Beg your",
+  "options": [
+   "Ask your",
+   "Beg for your",
+   "Pray your"
+  ],
+  "why": "'(I) beg your pardon?'은 무례에 점잖게 반격하는 격식 표현이다"
+ },
+ "dumbledore-2-071": {
+  "blank": "by means of",
+  "options": [
+   "by the means of",
+   "by mean of",
+   "with means of"
+  ],
+  "why": "'by means of'는 using보다 격식 있는 '~을 이용해'다"
+ },
+ "dumbledore-2-072.1": {
+  "blank": "our young Mr Potter",
+  "options": [
+   "young Harry here",
+   "our little Mr Potter",
+   "our young Mister Harry"
+  ],
+  "why": "'our young Mr + 성'은 애정 어린 옛 학교풍 격식 호칭이다"
+ },
+ "dumbledore-2-072.2": {
+  "blank": "One hopes that",
+  "options": [
+   "Let's hope that",
+   "One wishes that",
+   "One is hoping that"
+  ],
+  "why": "비인칭 'One hopes'로 경고를 일반적 바람처럼 포장한다"
+ },
+ "dumbledore-2-072.3": {
+  "blank": "the one responsible",
+  "options": [
+   "the responsible one",
+   "the guy behind it",
+   "the one responsibly"
+  ],
+  "why": "'the one responsible'은 책임자를 격식 있게 가리키는 표현이다"
+ },
+ "dumbledore-2-074.1": {
+  "blank": "a round of applause",
+  "options": [
+   "a round of clapping",
+   "a round of applauses",
+   "a turn of applause"
+  ],
+  "why": "'a round of applause'는 사회자가 쓰는 영미 공통 표준 어구다"
+ },
+ "dumbledore-2-074.2": {
+  "blank": "administered",
+  "options": [
+   "handed",
+   "administrated",
+   "ministered"
+  ],
+  "why": "약을 '투여하다'는 격식·의료 어휘 administer가 표준이다"
+ },
+ "dumbledore-2-074.3": {
+  "blank": "in light of recent events",
+  "options": [
+   "in light from recent events",
+   "on light of recent events",
+   "given everything that's happened"
+  ],
+  "why": "'in light of'는 결정의 배경을 점잖게 밝히는 격식 어구다"
+ },
+ "dumbledore-3-001.1": {
+  "blank": "another year at",
+  "options": [
+   "another year in",
+   "another year on",
+   "one other year at"
+  ],
+  "why": "학교에서 보내는 한 해는 'a year at + 학교'로 말한다"
+ },
+ "dumbledore-3-001.2": {
+  "blank": "befuddled",
+  "options": [
+   "bewitched",
+   "befuddling",
+   "muddled up"
+  ],
+  "why": "'befuddled'는 배불러 멍해진 상태를 익살스레 말하는 단어다"
+ },
+ "dumbledore-3-001.3": {
+  "blank": "somewhat treacherous",
+  "options": [
+   "kind of dangerous",
+   "something treacherous",
+   "somehow treacherous"
+  ],
+  "why": "'somewhat'으로 위험을 낮춰 말하는 절제된 표현이다"
+ },
+ "dumbledore-3-002.1": {
+  "blank": "kindly consented to",
+  "options": [
+   "kindly consented for",
+   "nicely consented to",
+   "kindly consented with"
+  ],
+  "why": "'kindly consent to'는 수락을 공손히 높이는 격식 표현이다"
+ },
+ "dumbledore-3-002.2": {
+  "blank": "Good luck to you",
+  "options": [
+   "Good luck for you",
+   "Good luck with you",
+   "Best luck to you"
+  ],
+  "why": "상대에게 행운을 빌 때는 'Good luck to you'로 to를 쓴다"
+ },
+ "dumbledore-3-003.1": {
+  "blank": "some of you may know",
+  "options": [
+   "some of you can know",
+   "some of you may knows",
+   "some from you may know"
+  ],
+  "why": "'As some of you may know'는 공지를 여는 격식 정형구다"
+ },
+ "dumbledore-3-003.2": {
+  "blank": "spend more time with",
+  "options": [
+   "spend more time to",
+   "pass more time with",
+   "spend more times with"
+  ],
+  "why": "사임 상투구 'spend more time with'를 비튼 영국식 농담이다"
+ },
+ "dumbledore-3-003.3": {
+  "blank": "none other than",
+  "options": [
+   "no other than",
+   "none other as",
+   "nobody other than"
+  ],
+  "why": "'none other than'은 놀라움을 주며 인물을 소개하는 표현이다"
+ },
+ "dumbledore-3-004": {
+  "blank": "on a more disquieting note",
+  "options": [
+   "in a more disquieting note",
+   "on a more disquieting tone",
+   "on a more disquieted note"
+  ],
+  "why": "'on a ~ note'는 화제의 분위기를 바꿀 때 쓰는 표현이다"
+ },
+ "dumbledore-3-005.1": {
+  "blank": "stationed at",
+  "options": [
+   "stationed in",
+   "parked at",
+   "stationed on"
+  ],
+  "why": "경비 인력을 '배치하다'는 격식 동사 station을 쓴다"
+ },
+ "dumbledore-3-005.2": {
+  "blank": "on occasion",
+  "options": [
+   "in occasion",
+   "at occasion",
+   "by occasion"
+  ],
+  "why": "'on occasion'은 sometimes의 격식 부사구다"
+ },
+ "dumbledore-3-005.3": {
+  "blank": "Under no circumstances are you",
+  "options": [
+   "Under no circumstances you are",
+   "Under no circumstance you're",
+   "Under any circumstances are you"
+  ],
+  "why": "부정 부사구가 문두에 오면 조동사가 주어 앞으로 도치된다"
+ },
+ "dumbledore-3-005.4": {
+  "blank": "in the nature of",
+  "options": [
+   "in the natures of",
+   "on the nature of",
+   "in nature of"
+  ],
+  "why": "'in the nature of X to'는 본성을 말하는 격식 구문이다"
+ },
+ "dumbledore-3-006": {
+  "blank": "Mr Filch",
+  "options": [
+   "Mr. Filch",
+   "Sir Filch",
+   "Mister Filch"
+  ],
+  "why": "영국 표기는 마침표 없는 'Mr'이며 성과 함께 부른다"
+ },
+ "dumbledore-3-007": {
+  "blank": "Dear lady",
+  "options": [
+   "Dear ma'am",
+   "Lady dear",
+   "Dear woman"
+  ],
+  "why": "'Dear lady'는 여성을 정중하고 다정하게 부르는 고풍 호칭이다"
+ },
+ "dumbledore-3-008": {
+  "blank": "Secure the castle",
+  "options": [
+   "Ensure the castle",
+   "Safe the castle",
+   "Secure up the castle"
+  ],
+  "why": "'secure'는 장소를 봉쇄·확보하라는 격식 지시 동사다"
+ },
+ "dumbledore-3-009": {
+  "blank": "linger",
+  "options": [
+   "stay over",
+   "loiter about",
+   "malinger"
+  ],
+  "why": "'linger'는 stick around보다 글말에 가까운 영미 공통 어휘다"
+ },
+ "dumbledore-3-010": {
+  "blank": "I do not believe",
+  "options": [
+   "I am not believing",
+   "I don't reckon",
+   "I'm not thinking"
+  ],
+  "why": "주절 believe를 do not으로 부정해 단호하고 격식 있게 반박한다."
+ },
+ "dumbledore-3-011.1": {
+  "blank": "quite confident",
+  "options": [
+   "pretty confident",
+   "quite confidential",
+   "fairly confidently"
+  ],
+  "why": "quite confident는 확신을 단정 대신 절제해 전하는 말이다."
+ },
+ "dumbledore-3-011.2": {
+  "blank": "more than willing to",
+  "options": [
+   "totally fine to",
+   "more than wanting to",
+   "over willing to"
+  ],
+  "why": "more than willing to는 '얼마든지 기꺼이'라는 격식 관용구다."
+ },
+ "dumbledore-3-011.3": {
+  "blank": "For now",
+  "options": [
+   "Until now",
+   "By now",
+   "At now"
+  ],
+  "why": "for now는 '지금으로서는'이라는 뜻의 자연스러운 표현이다."
+ },
+ "dumbledore-3-012": {
+  "blank": "endure",
+  "options": [
+   "put up with",
+   "hold up",
+   "bear out"
+  ],
+  "why": "endure는 put up with보다 격식 있는 '견디다'다."
+ },
+ "dumbledore-3-015.1": {
+  "blank": "I'm sorry to say",
+  "options": [
+   "I'm sorry saying",
+   "I'm sad to tell",
+   "I regret saying"
+  ],
+  "why": "I'm sorry to say는 나쁜 소식 앞의 정중한 완충 표현이다."
+ },
+ "dumbledore-3-015.2": {
+  "blank": "however honest and true",
+  "options": [
+   "no matter honest and true",
+   "whatever honest and true",
+   "however honestly and truly"
+  ],
+  "why": "however+형용사 삽입구는 '아무리 ~해도'라는 문어적 양보다."
+ },
+ "dumbledore-3-016.1": {
+  "blank": "If ever one was to",
+  "options": [
+   "If ever one had to",
+   "If one ever is to",
+   "If ever one will"
+  ],
+  "why": "총칭 one과 If ever는 격식 있는 강조 가정 표현이다."
+ },
+ "dumbledore-3-016.2": {
+  "blank": "precisely",
+  "options": [
+   "accurately",
+   "punctually",
+   "preciously"
+  ],
+  "why": "precisely는 exactly보다 격식 있는 '바로, 정확히'다."
+ },
+ "dumbledore-3-017.1": {
+  "blank": "thing, time",
+  "options": [
+   "thing about time",
+   "thing, the time",
+   "thing is time"
+  ],
+  "why": "평가를 먼저 말하고 주제를 끝에 붙이는 영국 구어 어순이다."
+ },
+ "dumbledore-3-017.2": {
+  "blank": "topmost",
+  "options": [
+   "toppest",
+   "most top",
+   "highmost"
+  ],
+  "why": "topmost는 '맨 꼭대기의'라는 뜻의 올바른 형용사다."
+ },
+ "dumbledore-3-017.3": {
+  "blank": "must not be seen",
+  "options": [
+   "don't have to be seen",
+   "must not get seen",
+   "need not be seen"
+  ],
+  "why": "must not은 '절대 ~해서는 안 된다'는 강한 금지다."
+ },
+ "dumbledore-3-017.4": {
+  "blank": "do well to",
+  "options": [
+   "do good to",
+   "make well to",
+   "do well in"
+  ],
+  "why": "would do well to는 '~하는 편이 좋다'는 격식 조언이다."
+ },
+ "dumbledore-3-017.5": {
+  "blank": "ghastly",
+  "options": [
+   "aghast",
+   "ghostly",
+   "gaudy"
+  ],
+  "why": "ghastly는 awful에 해당하는 영국식 '끔찍한'이다."
+ },
+ "dumbledore-3-017.6": {
+  "blank": "should do it",
+  "options": [
+   "should make it",
+   "should do so",
+   "should go it"
+  ],
+  "why": "should do it은 '그거면 충분하다'는 관용 표현이다."
+ },
+ "dumbledore-3-017.7": {
+  "blank": "may be spared",
+  "options": [
+   "may be spared from",
+   "may be sparing",
+   "might get spared"
+  ],
+  "why": "be spared는 '목숨을 건지다'라는 격식 수동 표현이다."
+ },
+ "dumbledore-3-018": {
+  "blank": "when in doubt",
+  "options": [
+   "when in doubts",
+   "while doubting",
+   "when on doubt"
+  ],
+  "why": "when in doubt는 주어와 be동사를 생략한 조언 관용구다."
+ },
+ "dumbledore-3-019": {
+  "blank": "I believe I must",
+  "options": [
+   "I guess I gotta",
+   "I believe I'm needing to",
+   "I believe I'd must"
+  ],
+  "why": "I believe I must는 의무를 정중히 밝히며 끼어드는 말이다."
+ },
+ "dumbledore-3-020": {
+  "blank": "Headmaster",
+  "options": [
+   "Principal",
+   "Head Principal",
+   "Masterhead"
+  ],
+  "why": "Headmaster는 미국 principal에 해당하는 영국식 교장이다."
+ },
+ "dumbledore-3-021": {
+  "blank": "extraordinary",
+  "options": [
+   "weird",
+   "freaky",
+   "ordinary"
+  ],
+  "why": "How+격식 형용사 감탄은 놀람을 점잖게 표현한다."
+ },
+ "dumbledore-3-022.1": {
+  "blank": "isn't suggesting",
+  "options": [
+   "isn't proposing",
+   "isn't recommending",
+   "isn't advising"
+  ],
+  "why": "suggest는 '넌지시 말하다'의 뜻으로 정중한 반박에 쓴다."
+ },
+ "dumbledore-3-022.2": {
+  "blank": "all along",
+  "options": [
+   "all the way",
+   "all over",
+   "along all"
+  ],
+  "why": "all along은 '처음부터 내내'라는 뜻의 관용 표현이다."
+ },
+ "dumbledore-3-023.1": {
+  "blank": "if you must",
+  "options": [
+   "if you really wanna",
+   "if you must to",
+   "if you should"
+  ],
+  "why": "if you must는 못마땅함을 담은 점잖은 허락이다."
+ },
+ "dumbledore-3-023.2": {
+  "blank": "I wouldn't say no to",
+  "options": [
+   "I wouldn't say yes to",
+   "I'd not refuse for",
+   "I could really use"
+  ],
+  "why": "I wouldn't say no to는 원함을 돌려 말하는 영국식 절제다."
+ },
+ "dumbledore-3-023.3": {
+  "blank": "will no longer be required",
+  "options": [
+   "won't be needed anymore",
+   "will no more be required",
+   "will not longer be required"
+  ],
+  "why": "수동 완곡 표현으로 계약 종료를 점잖게 통보한다."
+ },
+ "dumbledore-3-024": {
+  "blank": "I always find",
+  "options": [
+   "I always discover",
+   "I always found out",
+   "I always see"
+  ],
+  "why": "find+목적어+to be로 경험인 듯 점잖게 조언한다."
+ },
+ "dumbledore-3-026": {
+  "blank": "Did",
+  "options": [
+   "Does",
+   "Doing",
+   "Made"
+  ],
+  "why": "상대 말의 동사를 받아 되묻는 생략 의문이다."
+ },
+ "dumbledore-4-001.1": {
+  "blank": "sorted",
+  "options": [
+   "sort",
+   "sorting",
+   "assorted"
+  ],
+  "why": "sorted는 '정리·해결이 끝난'을 뜻하는 영국 구어다."
+ },
+ "dumbledore-4-001.2": {
+  "blank": "as well",
+  "options": [
+   "as good",
+   "as also",
+   "also as"
+  ],
+  "why": "not only A but B as well은 연설에 맞는 격식 구문이다."
+ },
+ "dumbledore-4-001.3": {
+  "blank": "has been chosen",
+  "options": [
+   "got picked",
+   "has been choosing",
+   "has chosen"
+  ],
+  "why": "현재완료 수동 has been chosen이 공식 발표에 어울린다."
+ },
+ "dumbledore-4-002.1": {
+  "blank": "chosen to host",
+  "options": [
+   "picked to host",
+   "chosen for host",
+   "chosen hosting"
+  ],
+  "why": "be chosen to host는 '개최지로 선정되다'의 격식 표현이다."
+ },
+ "dumbledore-4-002.2": {
+  "blank": "brings together",
+  "options": [
+   "brings along",
+   "gets together",
+   "puts together"
+  ],
+  "why": "bring together는 '한데 모으다'라는 정확한 구동사다."
+ },
+ "dumbledore-4-002.3": {
+  "blank": "is selected",
+  "options": [
+   "gets picked",
+   "is selecting",
+   "is collected"
+  ],
+  "why": "is selected는 공식 선발을 나타내는 격식 수동태다."
+ },
+ "dumbledore-4-002.4": {
+  "blank": "you stand alone",
+  "options": [
+   "you stand apart",
+   "you stand lonely",
+   "you stand solo"
+  ],
+  "why": "stand alone은 '홀로 맞서다'라는 격식 있는 표현이다."
+ },
+ "dumbledore-4-002.5": {
+  "blank": "not for the faint-hearted",
+  "options": [
+   "not for the faint of hearts",
+   "not for the weak-hearted",
+   "not for the faint-headed"
+  ],
+  "why": "the faint-hearted는 '겁 많은 사람'을 뜻하는 영국식 관용구다."
+ },
+ "dumbledore-4-002.6": {
+  "blank": "headmistress",
+  "options": [
+   "principal",
+   "headmaster",
+   "dean"
+  ],
+  "why": "headmistress는 미국 principal에 해당하는 영국식 여교장이다."
+ },
+ "dumbledore-4-003": {
+  "blank": "high master",
+  "options": [
+   "principal",
+   "top master",
+   "great master"
+  ],
+  "why": "high master는 영국 일부 명문 사립학교의 교장 직함이다."
+ },
+ "dumbledore-4-005": {
+  "blank": "Not to worry",
+  "options": [
+   "No worries",
+   "Not for worry",
+   "Nothing to worry"
+  ],
+  "why": "Not to worry는 '걱정 마세요'라는 영국식 굳은 표현이다."
+ },
+ "dumbledore-4-006.1": {
+  "blank": "Your attention, please",
+  "options": [
+   "Your listening, please",
+   "Your notice, please",
+   "Your ears, please"
+  ],
+  "why": "명사구만으로 주의를 모으는 격식 공지 표현이다"
+ },
+ "dumbledore-4-006.2": {
+  "blank": "awaits",
+  "options": [
+   "waits",
+   "expects",
+   "awaits for"
+  ],
+  "why": "await는 운명이 주어일 때 쓰는 wait for의 격식체다"
+ },
+ "dumbledore-4-006.3": {
+  "blank": "survive",
+  "options": [
+   "outlive",
+   "get over",
+   "come over"
+  ],
+  "why": "survive는 위험한 시련을 '견뎌 내다'라는 뜻이다"
+ },
+ "dumbledore-4-007.1": {
+  "blank": "seen fit to",
+  "options": [
+   "seen good to",
+   "seen right to",
+   "seen fitting to"
+  ],
+  "why": "see fit to는 권한 있는 쪽의 결정을 전하는 격식 표현이다"
+ },
+ "dumbledore-4-007.2": {
+  "blank": "Mr Bartemius Crouch",
+  "options": [
+   "Mr. Bartemius Crouch",
+   "Sir Bartemius Crouch",
+   "Master Bartemius Crouch"
+  ],
+  "why": "영국식은 Mr 뒤에 마침표를 찍지 않는다"
+ },
+ "dumbledore-4-008": {
+  "blank": "My dear old friend",
+  "options": [
+   "My dear old buddy",
+   "My precious old friend",
+   "My dear aged friend"
+  ],
+  "why": "my dear ~는 영국 노년층이 친근함을 담아 쓰는 호칭이다"
+ },
+ "dumbledore-4-010.1": {
+  "blank": "need only write",
+  "options": [
+   "need only writing",
+   "need just write",
+   "only needs write"
+  ],
+  "why": "need only + 동사원형은 '~하기만 하면 된다'는 격식 구문이다"
+ },
+ "dumbledore-4-010.2": {
+  "blank": "before this hour",
+  "options": [
+   "ahead this hour",
+   "before this o'clock",
+   "prior this hour"
+  ],
+  "why": "this hour는 '지금 이 시각'을 가리키는 격식 표현이다"
+ },
+ "dumbledore-4-010.3": {
+  "blank": "Do not do so",
+  "options": [
+   "Don't do it",
+   "Do not do such",
+   "Do not make so"
+  ],
+  "why": "Do not과 do so로 경고에 격식과 무게를 싣는다"
+ },
+ "dumbledore-4-010.4": {
+  "blank": "As from",
+  "options": [
+   "Starting from",
+   "As since",
+   "From as"
+  ],
+  "why": "as from은 시작 시점을 알리는 영국식 격식 표현이다"
+ },
+ "dumbledore-4-011": {
+  "blank": "the champion selection",
+  "options": [
+   "the champion picking",
+   "the champion choosing",
+   "the champions pick"
+  ],
+  "why": "selection은 공식 '선발'을 뜻하는 격식 명사다"
+ },
+ "dumbledore-4-015.1": {
+  "blank": "go down in history",
+  "options": [
+   "go down to history",
+   "go into history",
+   "come down in history"
+  ],
+  "why": "go down in history는 '역사에 길이 남다'라는 관용구다"
+ },
+ "dumbledore-4-015.2": {
+  "blank": "hoist",
+  "options": [
+   "heave",
+   "hike",
+   "haul"
+  ],
+  "why": "hoist는 우승컵을 장중하게 높이 드는 동작이다"
+ },
+ "dumbledore-4-018": {
+  "blank": "put your name in",
+  "options": [
+   "place your name at",
+   "put your name on",
+   "write your name in"
+  ],
+  "why": "put one's name in은 '지원서를 넣다'라는 뜻이다"
+ },
+ "dumbledore-4-019": {
+  "blank": "the older students",
+  "options": [
+   "the older kids",
+   "the elder students",
+   "the aged students"
+  ],
+  "why": "students가 kids보다 교사다운 중립적 어휘다"
+ },
+ "dumbledore-4-020": {
+  "blank": "absolutely",
+  "options": [
+   "totally",
+   "utterly",
+   "wholly"
+  ],
+  "why": "absolutely sure는 확신을 재확인하는 자연스러운 연어다"
+ },
+ "dumbledore-4-021": {
+  "blank": "I leave this to you",
+  "options": [
+   "I leave this for you",
+   "I let this to you",
+   "I drop this to you"
+  ],
+  "why": "I leave this to you는 그 자리에서 공식 위임하는 말이다"
+ },
+ "dumbledore-4-022": {
+  "blank": "What do you suggest",
+  "options": [
+   "What are you suggesting",
+   "What do you hint",
+   "What do you offer"
+  ],
+  "why": "What do you suggest?는 상대의 방안을 정중히 묻는다"
+ },
+ "dumbledore-4-023": {
+  "blank": "clear",
+  "options": [
+   "clean",
+   "bright",
+   "lucid"
+  ],
+  "why": "규정이 분명하다고 할 때는 clear를 쓴다"
+ },
+ "dumbledore-4-024": {
+  "blank": "will you",
+  "options": [
+   "do you",
+   "shall you",
+   "are you"
+  ],
+  "why": "명령문 뒤 will you?로 지시를 부탁처럼 누그러뜨린다"
+ },
+ "dumbledore-4-025": {
+  "blank": "what lies ahead",
+  "options": [
+   "what lays ahead",
+   "what lies forward",
+   "what sits ahead"
+  ],
+  "why": "what lies ahead는 '앞으로 닥칠 일'의 문어적 표현이다"
+ },
+ "dumbledore-4-026.1": {
+  "blank": "Gather round",
+  "options": [
+   "Gather about",
+   "Collect round",
+   "Gather over"
+  ],
+  "why": "영국영어는 around 대신 round를 즐겨 쓴다"
+ },
+ "dumbledore-4-026.2": {
+  "blank": "at last",
+  "options": [
+   "at the latest",
+   "at least",
+   "lastly"
+  ],
+  "why": "at last는 기다림 끝에 '마침내'를 뜻한다"
+ },
+ "dumbledore-4-026.3": {
+  "blank": "fully appreciate",
+  "options": [
+   "fully appraise",
+   "fully value",
+   "really get"
+  ],
+  "why": "appreciate는 진가를 '온전히 이해하다'라는 뜻이다"
+ },
+ "dumbledore-4-027": {
+  "blank": "Miss Granger",
+  "options": [
+   "Hermione",
+   "Mrs Granger",
+   "Madam Granger"
+  ],
+  "why": "Miss + 성은 학생을 엄하게 부르는 전통 호칭이다"
+ },
+ "dumbledore-4-029": {
+  "blank": "Very well",
+  "options": [
+   "Very fine",
+   "Too well",
+   "So well"
+  ],
+  "why": "Very well은 논의를 마무리하는 격식 수락 표현이다"
+ },
+ "dumbledore-4-030.1": {
+  "blank": "proceed to",
+  "options": [
+   "proceed on",
+   "precede to",
+   "proceed for"
+  ],
+  "why": "proceed to는 다음 단계로 나아간다는 격식 표현이다"
+ },
+ "dumbledore-4-030.2": {
+  "blank": "fourth and final",
+  "options": [
+   "fourth and finale",
+   "fourth and ending",
+   "fourth and closing"
+  ],
+  "why": "fourth and final은 마지막 순서를 알리는 고정 표현이다"
+ },
+ "dumbledore-4-031.1": {
+  "blank": "of sorts",
+  "options": [
+   "of kinds",
+   "of types",
+   "of sort"
+  ],
+  "why": "of sorts는 '일종의'라며 한 발 물러서는 표현이다"
+ },
+ "dumbledore-4-031.2": {
+  "blank": "now lie",
+  "options": [
+   "now lay",
+   "now laid",
+   "now lies"
+  ],
+  "why": "lie는 사물이 '놓여 있다'는 문어적 동사다"
+ },
+ "dumbledore-4-031.3": {
+  "blank": "need only find",
+  "options": [
+   "needs only find",
+   "need only finding",
+   "need just finds"
+  ],
+  "why": "need only + 동사원형은 3인칭에도 -s 없이 쓴다"
+ },
+ "dumbledore-4-031.4": {
+  "blank": "one hour only",
+  "options": [
+   "one hour just",
+   "one hour merely",
+   "one hour solely"
+  ],
+  "why": "X, and X only로 시간 제한을 못 박아 강조한다"
+ },
+ "dumbledore-4-031.5": {
+  "blank": "on their own",
+  "options": [
+   "by their own",
+   "of their own",
+   "in their own"
+  ],
+  "why": "on one's own은 '혼자 힘으로'라는 관용구다"
+ },
+ "dumbledore-4-032": {
+  "blank": "You may begin",
+  "options": [
+   "You might begin",
+   "You would begin",
+   "You do begin"
+  ],
+  "why": "허가의 may는 공식 진행에서 쓰는 격식 표현이다"
+ },
+ "dumbledore-4-033": {
+  "blank": "take no further part",
+  "options": [
+   "take no farther part",
+   "make no further part",
+   "take no further role"
+  ],
+  "why": "take no further part in은 공식 발표의 정형구다"
+ },
+ "dumbledore-4-035": {
+  "blank": "I want",
+  "options": [
+   "I'm wanting",
+   "I would want",
+   "I wish"
+  ],
+  "why": "I want ~ over here now는 권위 있는 짧은 지시다"
+ },
+ "dumbledore-4-036": {
+  "blank": "Mr Diggory",
+  "options": [
+   "Mr. Diggory",
+   "Master Diggory",
+   "Sir Diggory"
+  ],
+  "why": "영국식 호칭은 Mr 뒤에 마침표를 찍지 않는다"
+ },
+ "dumbledore-4-037.1": {
+  "blank": "innate command",
+  "options": [
+   "innate commandment",
+   "inborn order",
+   "natural commanding"
+  ],
+  "why": "command of는 기술을 '자유자재로 다룸'을 뜻한다"
+ },
+ "dumbledore-4-037.2": {
+  "blank": "seeing as",
+  "options": [
+   "seen as",
+   "seeing like",
+   "looking as"
+  ],
+  "why": "seeing as는 '~이니까'를 뜻하는 영국 구어 표현이다"
+ },
+ "dumbledore-4-037.3": {
+  "blank": "had it not been for",
+  "options": [
+   "had it not being for",
+   "had it been not for",
+   "were it not been for"
+  ],
+  "why": "had it not been for는 if를 생략한 격식 도치 구문이다"
+ },
+ "dumbledore-4-037.4": {
+  "blank": "moral fibre",
+  "options": [
+   "moral fiber",
+   "moral fabric",
+   "moral thread"
+  ],
+  "why": "fibre는 영국식 철자이고 moral fibre는 '강단'이다"
+ },
+ "dumbledore-4-038": {
+  "blank": "must take action",
+  "options": [
+   "must make action",
+   "must do action",
+   "gotta take action"
+  ],
+  "why": "take action은 do something의 격식 표현이다"
+ },
+ "dumbledore-4-039": {
+  "blank": "for once",
+  "options": [
+   "for one time",
+   "at once",
+   "for a once"
+  ],
+  "why": "for once는 '이번만이라도'라는 관용구다"
+ },
+ "dumbledore-4-040": {
+  "blank": "what is right",
+  "options": [
+   "what is correct",
+   "what is righteous",
+   "the right"
+  ],
+  "why": "what is right로 격언 같은 무게를 싣는다"
+ },
+ "dumbledore-4-041.1": {
+  "blank": "not necessary",
+  "options": [
+   "not needful",
+   "not requisite",
+   "no necessary"
+  ],
+  "why": "not necessary는 정중히 사양하는 짧은 말이다"
+ },
+ "dumbledore-4-041.2": {
+  "blank": "after you",
+  "options": [
+   "before you",
+   "follow you",
+   "behind you"
+  ],
+  "why": "after you는 상대를 먼저 가게 하는 정중한 표현이다"
+ },
+ "dumbledore-4-041.3": {
+  "blank": "do feel free",
+  "options": [
+   "do feel freely",
+   "do be free",
+   "go feel free"
+  ],
+  "why": "do + 명령문은 권유를 정중하고 따뜻하게 만든다"
+ },
+ "dumbledore-4-042.1": {
+  "blank": "given evidence",
+  "options": [
+   "made evidence",
+   "given evidences",
+   "told evidence"
+  ],
+  "why": "영국에서는 증언하다를 give evidence라고 한다"
+ },
+ "dumbledore-4-042.2": {
+  "blank": "turned spy",
+  "options": [
+   "turned into spy",
+   "turned to spy",
+   "became spy"
+  ],
+  "why": "turn + 무관사 명사로 '~로 전향하다'를 나타낸다"
+ },
+ "dumbledore-4-042.3": {
+  "blank": "no more",
+  "options": [
+   "no less",
+   "not more",
+   "no longer"
+  ],
+  "why": "no more A than B는 단호한 부정을 나타내는 비교 구문이다"
+ },
+ "dumbledore-4-043.1": {
+  "blank": "exercise caution",
+  "options": [
+   "exert caution",
+   "do caution",
+   "perform caution"
+  ],
+  "why": "exercise caution은 be careful의 격식 표현이다"
+ },
+ "dumbledore-4-043.2": {
+  "blank": "a wee bit",
+  "options": [
+   "a wee lot",
+   "a small bit",
+   "a tiny wee"
+  ],
+  "why": "a wee bit은 a little의 정감 있는 영국식 표현이다"
+ },
+ "dumbledore-4-043.3": {
+  "blank": "once more",
+  "options": [
+   "one more time",
+   "once again more",
+   "more once"
+  ],
+  "why": "once more는 again을 대신하는 격식 표현이다"
+ },
+ "dumbledore-4-043.4": {
+  "blank": "overlooked",
+  "options": [
+   "looked over",
+   "overseen",
+   "passed by"
+  ],
+  "why": "overlook은 '못 보고 지나치다'라는 격식 동사다"
+ },
+ "dumbledore-4-043.5": {
+  "blank": "maddening",
+  "options": [
+   "maddened",
+   "madding",
+   "maddish"
+  ],
+  "why": "maddening은 '속 터지게 하는'이라는 영미 공통 형용사다"
+ },
+ "dumbledore-4-044.1": {
+  "blank": "was sent to",
+  "options": [
+   "got sent to",
+   "was sent at",
+   "was sent into"
+  ],
+  "why": "격식체에서는 get 수동태 대신 be 수동태를 쓴다"
+ },
+ "dumbledore-4-044.2": {
+  "blank": "overwhelming",
+  "options": [
+   "too much",
+   "overwhelmed",
+   "overflowing"
+  ],
+  "why": "evidence는 overwhelming과 짝지어 '압도적'이라 한다"
+ },
+ "dumbledore-4-045": {
+  "blank": "Have there been",
+  "options": [
+   "Did you have",
+   "Had there been",
+   "Were there"
+  ],
+  "why": "지금까지의 경험은 영국영어에서 현재완료로 묻는다"
+ },
+ "dumbledore-4-046": {
+  "blank": "linger over",
+  "options": [
+   "hang around",
+   "stay over",
+   "linger at"
+  ],
+  "why": "linger over는 '~을 오래 붙들다'라는 문어적 표현이다"
+ },
+ "dumbledore-4-047": {
+  "blank": "Cast",
+  "options": [
+   "Put",
+   "Lay",
+   "Hurl"
+  ],
+  "why": "cast away는 throw away의 문어적 표현이다"
+ },
+ "dumbledore-4-048.1": {
+  "blank": "deep within",
+  "options": [
+   "way inside",
+   "deep among",
+   "deeply within"
+  ],
+  "why": "deep within은 deep inside의 격식 문어 표현이다"
+ },
+ "dumbledore-4-048.2": {
+  "blank": "its exact position",
+  "options": [
+   "exactly where it's at",
+   "its exact posture",
+   "its exact positioning"
+  ],
+  "why": "exactly where it is를 명사구로 바꾼 격식 표현이다"
+ },
+ "dumbledore-4-049": {
+  "blank": "Mr Potter",
+  "options": [
+   "Mr. Potter",
+   "Master Potter",
+   "Sir Potter"
+  ],
+  "why": "공식 호명에는 Mr+성을 쓰고 영국식은 마침표가 없다"
+ },
+ "dumbledore-4-050.1": {
+  "blank": "will be the winner",
+  "options": [
+   "is gonna win",
+   "will be the winning",
+   "shall be winning"
+  ],
+  "why": "will be the winner는 공식 발표에 맞는 서술이다"
+ },
+ "dumbledore-4-050.2": {
+  "blank": "instructed the staff",
+  "options": [
+   "told the teachers",
+   "instructed to the staff",
+   "instructed at the staff"
+  ],
+  "why": "instruct+목적어+to는 지시를 내리는 격식 표현이다"
+ },
+ "dumbledore-4-050.3": {
+  "blank": "should a contestant wish",
+  "options": [
+   "should a contestant wishes",
+   "would a contestant wish",
+   "does a contestant wish"
+  ],
+  "why": "should 도치는 if 조건절의 격식 표현이다"
+ },
+ "dumbledore-4-051.1": {
+  "blank": "creatures of the deep",
+  "options": [
+   "creatures of deep",
+   "creatures of the deepness",
+   "creatures from the depth"
+  ],
+  "why": "the deep은 '심해'를 뜻하는 문어적 명사 용법이다"
+ },
+ "dumbledore-4-051.2": {
+  "blank": "You see",
+  "options": [
+   "You saw",
+   "You look",
+   "You watch"
+  ],
+  "why": "You see는 설명을 꺼낼 때 영국 화자가 즐겨 쓴다"
+ },
+ "dumbledore-4-051.3": {
+  "blank": "be very wary",
+  "options": [
+   "be real careful",
+   "be very weary",
+   "be very beware"
+  ],
+  "why": "wary는 위험을 의심하며 경계한다는 격식 어휘다"
+ },
+ "dumbledore-4-052": {
+  "blank": "On the count of",
+  "options": [
+   "On the counting of",
+   "In the count of",
+   "By the count of"
+  ],
+  "why": "on the count of three는 신호를 세는 정해진 표현이다"
+ },
+ "dumbledore-4-054": {
+  "blank": "Tell me",
+  "options": [
+   "Explain me",
+   "Say me",
+   "Speak me"
+  ],
+  "why": "tell은 간접목적어를 바로 받지만 say·explain은 못 한다"
+ },
+ "dumbledore-4-055": {
+  "blank": "It's all right, Harry",
+  "options": [
+   "It's all good, Harry",
+   "It's all fine, Harry",
+   "It's all well, Harry"
+  ],
+  "why": "It's all right은 달랠 때 쓰는 영미 공통 표현이다"
+ },
+ "dumbledore-4-057": {
+  "blank": "Do you know",
+  "options": [
+   "You know",
+   "Know you",
+   "Are you knowing"
+  ],
+  "why": "격식 의문문에서는 조동사 do를 생략하지 않는다"
+ },
+ "dumbledore-4-058": {
+  "blank": "Are you Alastor Moody",
+  "options": [
+   "You're Alastor Moody",
+   "Be you Alastor Moody",
+   "Are you being Alastor Moody"
+  ],
+  "why": "신원을 따질 때는 Are you ~?로 정면으로 묻는다"
+ },
+ "dumbledore-4-059": {
+  "blank": "this room? Is he",
+  "options": [
+   "this room? Is it",
+   "this room? Was he",
+   "this room? He is"
+  ],
+  "why": "같은 질문을 그대로 반복해 다그치며 강조한다"
+ },
+ "dumbledore-4-060": {
+  "blank": "get away from",
+  "options": [
+   "get out from",
+   "get off from",
+   "go away of"
+  ],
+  "why": "get away from은 위험에서 떨어지라는 다급한 명령이다"
+ },
+ "dumbledore-4-061": {
+  "blank": "all right",
+  "options": [
+   "okay",
+   "all fine",
+   "all well"
+  ],
+  "why": "Are you all right?은 영국에서 가장 흔한 안부 질문이다"
+ },
+ "dumbledore-4-062": {
+  "blank": "your store",
+  "options": [
+   "your supply closet",
+   "your shop",
+   "your storing"
+  ],
+  "why": "영국영어에서 store는 비축품·저장고를 뜻한다"
+ },
+ "dumbledore-4-063": {
+  "blank": "in a minute",
+  "options": [
+   "in a sec",
+   "at a minute",
+   "by a minute"
+  ],
+  "why": "in a minute는 '곧, 금방'이라는 표준 표현이다"
+ },
+ "dumbledore-4-065": {
+  "blank": "Your arm",
+  "options": [
+   "Show your arm",
+   "Arm of you",
+   "The arm of yours"
+  ],
+  "why": "명사구만으로 짧게 요구하는 절제된 명령이다"
+ },
+ "dumbledore-4-066": {
+  "blank": "they'll find",
+  "options": [
+   "they'll be finding",
+   "they'll find out of",
+   "they're finding"
+  ],
+  "why": "I think they'll find는 사실을 점잖게 짚는 영국식 표현이다"
+ },
+ "dumbledore-4-067": {
+  "blank": "had much time for",
+  "options": [
+   "had much time with",
+   "had many time for",
+   "spent much time on"
+  ],
+  "why": "have no time for는 '~을 좋게 보지 않는다'는 관용구다"
+ },
+ "dumbledore-4-068.1": {
+  "blank": "acknowledge",
+  "options": [
+   "admit to",
+   "own up to",
+   "confess"
+  ],
+  "why": "acknowledge는 공식적으로 인정하고 기린다는 격식 동사다"
+ },
+ "dumbledore-4-068.2": {
+  "blank": "infinitely fair-minded",
+  "options": [
+   "super fair",
+   "endlessly fair-thinking",
+   "infinitely fair-headed"
+  ],
+  "why": "fair-minded는 '공정한 성품'을 뜻하는 격식 형용사다"
+ },
+ "dumbledore-4-068.3": {
+  "blank": "have the right to",
+  "options": [
+   "have the right of",
+   "have the rights for",
+   "own the right to"
+  ],
+  "why": "have the right to know는 '알 권리가 있다'는 정해진 표현이다"
+ },
+ "dumbledore-4-068.4": {
+  "blank": "was murdered by",
+  "options": [
+   "got murdered by",
+   "was murdered from",
+   "was murdering by"
+  ],
+  "why": "공식 연설에서는 be 수동태로 사실을 단호히 밝힌다"
+ },
+ "dumbledore-4-068.5": {
+  "blank": "does not wish me",
+  "options": [
+   "doesn't want me",
+   "does not wish for me",
+   "does not hope me"
+  ],
+  "why": "wish+목적어+to는 공식 발표의 격식 구문이다"
+ },
+ "dumbledore-4-068.6": {
+  "blank": "not to do so",
+  "options": [
+   "not to doing so",
+   "not do so",
+   "not to do it so"
+  ],
+  "why": "not to do so로 앞의 행동을 받는 문어체 구문이다"
+ },
+ "dumbledore-4-068.7": {
+  "blank": "feel at",
+  "options": [
+   "feel to",
+   "feel in",
+   "feel with"
+  ],
+  "why": "feel pain at ~은 '~에 아픔을 느끼다'라는 연어다"
+ },
+ "dumbledore-4-068.8": {
+  "blank": "speak in different tongues",
+  "options": [
+   "speak different lingos",
+   "speak in different tongs",
+   "talk in different mouths"
+  ],
+  "why": "tongue은 language의 문어로 연설에 장중함을 더한다"
+ },
+ "dumbledore-4-068.9": {
+  "blank": "In light of",
+  "options": [
+   "Because of all",
+   "In view to",
+   "On light of"
+  ],
+  "why": "in light of는 '~을 고려하면'이라는 격식 표현이다"
+ },
+ "dumbledore-4-068.10": {
+  "blank": "in vain",
+  "options": [
+   "by vain",
+   "on vain",
+   "in vanity"
+  ],
+  "why": "die in vain은 '헛되이 죽다'라는 정해진 연어다"
+ },
+ "dumbledore-4-068.11": {
+  "blank": "right to the very end",
+  "options": [
+   "right to the very ends",
+   "right to the very ending",
+   "right until the very finish"
+  ],
+  "why": "right to the very end는 '끝까지'를 강조하는 표현이다"
+ },
+ "dumbledore-4-069.1": {
+  "blank": "in my fourth year",
+  "options": [
+   "in fourth grade",
+   "in my fourth class",
+   "on my fourth year"
+  ],
+  "why": "영국은 학년을 '서수+year'로 말한다"
+ },
+ "dumbledore-4-069.2": {
+  "blank": "put you in",
+  "options": [
+   "put you at",
+   "set you in",
+   "put you onto"
+  ],
+  "why": "put someone in danger는 '위험에 빠뜨리다'라는 연어다"
+ },
+ "dumbledore-4-070": {
+  "blank": "didn't you",
+  "options": [
+   "right",
+   "did you",
+   "isn't it"
+  ],
+  "why": "긍정 과거문 뒤의 부가의문문은 didn't you가 된다"
+ },
+ "dumbledore-4-071.1": {
+  "blank": "I trust",
+  "options": [
+   "I bet",
+   "I believe in",
+   "I rely"
+  ],
+  "why": "I trust는 당연히 그러리라 믿는다는 격식 표현이다"
+ },
+ "dumbledore-4-071.2": {
+  "blank": "lie ahead",
+  "options": [
+   "lie in front",
+   "lay ahead",
+   "lie forward"
+  ],
+  "why": "lie ahead는 앞으로 닥칠 일을 말하는 문어적 표현이다"
+ },
+ "dumbledore-4-071.3": {
+  "blank": "we must all",
+  "options": [
+   "we all gotta",
+   "we must each all",
+   "we have all to"
+  ],
+  "why": "must는 격식 있는 의무를 나타내고 all은 조동사 뒤에 둔다"
+ },
+ "dumbledore-4-071.4": {
+  "blank": "You're not alone",
+  "options": [
+   "You aren't lonely",
+   "You're not lone",
+   "You're no alone"
+  ],
+  "why": "not alone은 '혼자가 아니다'이고 lonely는 감정이다"
+ },
+ "dumbledore-5-001": {
+  "blank": "Defence",
+  "options": [
+   "Defense",
+   "Defensive",
+   "Defending"
+  ],
+  "why": "영국식 철자는 Defence, 미국식은 Defense다"
+ },
+ "dumbledore-5-002": {
+  "blank": "fortunate mistake",
+  "options": [
+   "lucky screw-up",
+   "fortunate mistaking",
+   "fortunate mistakenness"
+  ],
+  "why": "fortunate mistake는 격식 어휘로 꾸민 반어 표현이다"
+ },
+ "dumbledore-5-003": {
+  "blank": "in question",
+  "options": [
+   "in questioning",
+   "under question",
+   "at question"
+  ],
+  "why": "in question은 '문제의, 해당'이라는 격식 표현이다"
+ },
+ "dumbledore-5-004.1": {
+  "blank": "I do believe",
+  "options": [
+   "I'm pretty sure",
+   "I do believing",
+   "I am believe"
+  ],
+  "why": "I do believe는 확신을 점잖게 강조하는 표현이다"
+ },
+ "dumbledore-5-004.2": {
+  "blank": "present witnesses",
+  "options": [
+   "show witnesses",
+   "give witnesses",
+   "present witnessing"
+  ],
+  "why": "법정에서 증인을 내세우는 것은 present witnesses다"
+ },
+ "dumbledore-5-004.3": {
+  "blank": "that particular bit",
+  "options": [
+   "that particular bite",
+   "that peculiar bit",
+   "that particular bits"
+  ],
+  "why": "bit은 영국 구어에서 '대목, 부분'을 뜻한다"
+ },
+ "dumbledore-5-005.1": {
+  "blank": "taking their orders from",
+  "options": [
+   "taking their orders of",
+   "taking their orders by",
+   "getting their orders off"
+  ],
+  "why": "take orders from은 '~의 명령을 받다'라는 연어다"
+ },
+ "dumbledore-5-005.2": {
+  "blank": "my views on this",
+  "options": [
+   "what I think on this",
+   "my viewpoints of this",
+   "my sights on this"
+  ],
+  "why": "my views on은 '~에 대한 입장'을 뜻하는 격식 명사구다"
+ },
+ "dumbledore-5-006.1": {
+  "blank": "follow logically",
+  "options": [
+   "go logically",
+   "come logically",
+   "result logically"
+  ],
+  "why": "it follows that은 결론이 따라온다는 격식 논증 표현이다"
+ },
+ "dumbledore-5-006.2": {
+  "blank": "make a full inquiry",
+  "options": [
+   "look into it",
+   "do a full inquiry",
+   "make a whole inquiry"
+  ],
+  "why": "full inquiry는 영국 관공서의 격식 어구로 반어를 살린다."
+ },
+ "dumbledore-5-007.1": {
+  "blank": "On the contrary",
+  "options": [
+   "Actually the opposite",
+   "In the contrary",
+   "On the opposite"
+  ],
+  "why": "On the contrary는 상대 말을 격식 있게 뒤집는 표현이다."
+ },
+ "dumbledore-5-007.2": {
+  "blank": "perfectly allowable",
+  "options": [
+   "totally fine",
+   "wholly permissive",
+   "neatly allowable"
+  ],
+  "why": "perfectly는 형용사를 점잖게 강조하는 영미 공통 부사다."
+ },
+ "dumbledore-5-007.3": {
+  "blank": "all in agreement",
+  "options": [
+   "all agreeing",
+   "all in agreeing",
+   "all at agreement"
+  ],
+  "why": "be in agreement는 agree보다 격식 있는 회의체 표현이다."
+ },
+ "dumbledore-5-008": {
+  "blank": "You have heard it",
+  "options": [
+   "You've heard it",
+   "You got told it",
+   "You have caught it"
+  ],
+  "why": "축약 없는 You have가 단호하고 격식 있는 어조를 만든다."
+ },
+ "dumbledore-5-010.1": {
+  "blank": "I beg",
+  "options": [
+   "I want",
+   "I plead",
+   "I grab"
+  ],
+  "why": "beg는 격식체에서 공손한 요청의 틀로 굳은 동사다."
+ },
+ "dumbledore-5-010.2": {
+  "blank": "the good Mr Filch",
+  "options": [
+   "the nice Mr Filch",
+   "the kindly Mr Filch",
+   "the fine Mr Filch"
+  ],
+  "why": "the good+호칭은 애정 섞인 반어 경칭으로 영미 공통이다."
+ },
+ "dumbledore-5-010.3": {
+  "blank": "humour experts",
+  "options": [
+   "humor experts",
+   "humorous experts",
+   "humours experts"
+  ],
+  "why": "영국 철자는 -our를 쓰므로 humour가 맞다."
+ },
+ "dumbledore-5-011": {
+  "blank": "an extensive list",
+  "options": [
+   "a big list",
+   "a wide list",
+   "an expansive list"
+  ],
+  "why": "extensive는 long 대신 쓰는 공지문의 격식 형용사다."
+ },
+ "dumbledore-5-012.1": {
+  "blank": "two staffing changes",
+  "options": [
+   "two staffs changes",
+   "two staff changings",
+   "two staffing swaps"
+  ],
+  "why": "staffing changes는 인사 변동을 알리는 격식 공지 어휘다."
+ },
+ "dumbledore-5-012.2": {
+  "blank": "extended leave",
+  "options": [
+   "a long vacation",
+   "extended leaving",
+   "lengthened leave"
+  ],
+  "why": "extended leave는 사정을 숨기고 장기 휴직을 점잖게 알린다."
+ },
+ "dumbledore-5-013": {
+  "blank": "kindly agreed",
+  "options": [
+   "nicely agreed",
+   "kindly accepted",
+   "sweetly agreed"
+  ],
+  "why": "kindly agreed는 새 인물 소개 때의 관습적 예의 표현이다."
+ },
+ "dumbledore-5-015": {
+  "blank": "do for you",
+  "options": [
+   "make for you",
+   "do to you",
+   "do with you"
+  ],
+  "why": "What can I do for you?는 방문객을 맞는 공손한 정형 표현이다."
+ },
+ "dumbledore-5-016": {
+  "blank": "How were you positioned",
+  "options": [
+   "How were you located",
+   "How were you placing",
+   "How were you positioning"
+  ],
+  "why": "be positioned는 사실을 분석적으로 확인하는 격식 표현이다."
+ },
+ "dumbledore-5-017": {
+  "blank": "seriously injured",
+  "options": [
+   "hurt bad",
+   "heavily injured",
+   "seriously damaged"
+  ],
+  "why": "seriously injured는 hurt보다 격식 있는 표준 어휘다."
+ },
+ "dumbledore-5-018": {
+  "blank": "were listening",
+  "options": [
+   "were hearing",
+   "did listen",
+   "have listened"
+  ],
+  "why": "평서문 어순에 올림조만 얹어 빠르게 확인하는 구어다."
+ },
+ "dumbledore-5-019": {
+  "blank": "Raise the alarm",
+  "options": [
+   "Go sound the alarm",
+   "Lift the alarm",
+   "Make the alarm"
+  ],
+  "why": "raise the alarm은 급히 위험을 알리는 영국 관용구다."
+ },
+ "dumbledore-5-020": {
+  "blank": "headmasters and mistresses",
+  "options": [
+   "principals and headwomen",
+   "head-men and head-women",
+   "headmasters and misses"
+  ],
+  "why": "headmaster/headmistress는 영국 학교의 교장 호칭이다."
+ },
+ "dumbledore-5-021": {
+  "blank": "we will need",
+  "options": [
+   "we're gonna need",
+   "we are needing",
+   "we will want for"
+  ],
+  "why": "축약 없는 we will이 간접 지시에 무게를 싣는다."
+ },
+ "dumbledore-5-022": {
+  "blank": "in essence",
+  "options": [
+   "basically",
+   "in essential",
+   "at essence"
+  ],
+  "why": "in essence는 basically보다 무게 있는 격식 부사구다."
+ },
+ "dumbledore-5-023": {
+  "blank": "What news",
+  "options": [
+   "What's new",
+   "Which news",
+   "How news"
+  ],
+  "why": "What news?는 동사를 생략한 고풍스러운 격식 질문이다."
+ },
+ "dumbledore-5-024": {
+  "blank": "awoken",
+  "options": [
+   "awaked",
+   "woke",
+   "awaken"
+  ],
+  "why": "awoken은 woken보다 문어적이고 격식 있는 과거분사다."
+ },
+ "dumbledore-5-026.1": {
+  "blank": "I need you to",
+  "options": [
+   "I want that you",
+   "I need that you",
+   "I'm needing you to"
+  ],
+  "why": "I need you to는 거절 여지 없는 분명한 지시 표현이다."
+ },
+ "dumbledore-5-026.2": {
+  "blank": "coming to stay",
+  "options": [
+   "coming to crash",
+   "coming for staying",
+   "coming to remain"
+  ],
+  "why": "come to stay는 머물러 간다는 뜻을 차분히 전한다."
+ },
+ "dumbledore-5-028.1": {
+  "blank": "in the course of",
+  "options": [
+   "on the course of",
+   "in the way of",
+   "at the course of"
+  ],
+  "why": "in the course of는 during의 격식 표현이다."
+ },
+ "dumbledore-5-028.2": {
+  "blank": "only moments ago",
+  "options": [
+   "just a sec ago",
+   "only moments since",
+   "only instants ago"
+  ],
+  "why": "only moments ago는 아주 방금임을 차분히 강조한다."
+ },
+ "dumbledore-5-029": {
+  "blank": "merely",
+  "options": [
+   "kinda",
+   "barely",
+   "hardly"
+  ],
+  "why": "merely는 just보다 격식 있게 '그저'를 뜻한다."
+ },
+ "dumbledore-5-030": {
+  "blank": "head her off",
+  "options": [
+   "head her out",
+   "stall her out",
+   "cut her up"
+  ],
+  "why": "head off는 상대를 먼저 가로막아 돌려보내는 구동사다."
+ },
+ "dumbledore-5-031": {
+  "blank": "going by",
+  "options": [
+   "going on",
+   "going with",
+   "going in"
+  ],
+  "why": "by+무관사 명사로 이동 수단을 밝히는 영미 공통형이다."
+ },
+ "dumbledore-5-032": {
+  "blank": "will not be leaving",
+  "options": [
+   "ain't leaving",
+   "will not to leave",
+   "is not leaving off"
+  ],
+  "why": "축약 없는 미래진행형으로 결정을 단호히 선언한다."
+ },
+ "dumbledore-5-033": {
+  "blank": "do have",
+  "options": [
+   "are having",
+   "did have",
+   "do got"
+  ],
+  "why": "양보의 do로 일단 인정한 뒤 However로 반전한다."
+ },
+ "dumbledore-5-034": {
+  "blank": "remain",
+  "options": [
+   "stick around",
+   "persist",
+   "linger on"
+  ],
+  "why": "remain은 stay의 격식형으로 공식 결정에 어울린다"
+ },
+ "dumbledore-5-035": {
+  "blank": "Happily",
+  "options": [
+   "Merrily",
+   "Gladly",
+   "Cheerfully"
+  ],
+  "why": "문장 앞 Happily는 '다행히도'라는 격식 문장부사다"
+ },
+ "dumbledore-5-036": {
+  "blank": "appoint",
+  "options": [
+   "hire on",
+   "pick out",
+   "elect"
+  ],
+  "why": "appoint는 공식 직위에 임명한다는 격식 어휘다"
+ },
+ "dumbledore-5-038": {
+  "blank": "kindly do not",
+  "options": [
+   "just don't",
+   "nicely do not",
+   "gently do not"
+  ],
+  "why": "명령문 앞 kindly는 차갑고 단호한 격식 경고다"
+ },
+ "dumbledore-5-039": {
+  "blank": "I'm not sure",
+  "options": [
+   "No way",
+   "I'm not knowing",
+   "I'm not surely"
+  ],
+  "why": "I'm not sure로 반박을 낮춰 말하는 완곡어법이다"
+ },
+ "dumbledore-5-040": {
+  "blank": "In point of fact",
+  "options": [
+   "In point of truth",
+   "On point of fact",
+   "As a point of fact"
+  ],
+  "why": "in point of fact는 사실을 바로잡는 격식 관용구다"
+ },
+ "dumbledore-5-041": {
+  "blank": "I wonder if",
+  "options": [
+   "I wonder that",
+   "I marvel if",
+   "I query if"
+  ],
+  "why": "I wonder if로 추궁을 혼잣말처럼 완곡하게 묻는다"
+ },
+ "dumbledore-5-042": {
+  "blank": "under the impression",
+  "options": [
+   "in the impression",
+   "on the impression",
+   "under the idea"
+  ],
+  "why": "be under the impression은 '~로 알고 있었다'는 관용구다"
+ },
+ "dumbledore-5-043": {
+  "blank": "Would that be correct",
+  "options": [
+   "Will that be correct",
+   "Would that be corrected",
+   "Am I right or what"
+  ],
+  "why": "would로 압박을 덜어 주는 격식 확인 질문이다"
+ },
+ "dumbledore-5-044": {
+  "blank": "I cannot have you",
+  "options": [
+   "I cannot keep you",
+   "I cannot take you",
+   "I cannot hold you"
+  ],
+  "why": "I cannot have you -ing는 권위 있게 금지하는 표현이다"
+ },
+ "dumbledore-5-045": {
+  "blank": "Minister",
+  "options": [
+   "Mr Minister",
+   "Sir Minister",
+   "Ministry"
+  ],
+  "why": "영국은 장관을 직함 Minister만으로 부르는 것이 공식이다"
+ },
+ "dumbledore-5-046": {
+  "blank": "Quite correct",
+  "options": [
+   "Pretty correct",
+   "Fairly correct",
+   "Quite corrected"
+  ],
+  "why": "Quite correct는 '전적으로 맞다'는 격식 맞장구다"
+ },
+ "dumbledore-5-049": {
+  "blank": "hit",
+  "options": [
+   "beat",
+   "knock",
+   "touch"
+  ],
+  "why": "hit a snag는 '걸림돌에 부딪히다'라는 관용구다"
+ },
+ "dumbledore-5-050": {
+  "blank": "labouring under the delusion",
+  "options": [
+   "labouring below the delusion",
+   "labouring in the delusion",
+   "working under the delusion"
+  ],
+  "why": "labour under the delusion은 착각을 비꼬는 격식 관용구다"
+ },
+ "dumbledore-5-051": {
+  "blank": "no intention of",
+  "options": [
+   "no intention on",
+   "no purpose of",
+   "no wish of"
+  ],
+  "why": "have no intention of -ing는 단호한 격식 거절 표현이다"
+ },
+ "dumbledore-5-052": {
+  "blank": "Don't be silly",
+  "options": [
+   "Don't be dumb",
+   "Don't do silly",
+   "Don't make silly"
+  ],
+  "why": "Don't be silly는 부드럽게 타이르는 관용구다"
+ },
+ "dumbledore-5-053.1": {
+  "blank": "rather well",
+  "options": [
+   "pretty good",
+   "rather good",
+   "plenty well"
+  ],
+  "why": "rather well은 칭찬을 절제해 말하는 영국식 표현이다"
+ },
+ "dumbledore-5-053.2": {
+  "blank": "I shall have to",
+  "options": [
+   "I'm gonna have to",
+   "I am having to",
+   "I will have got to"
+  ],
+  "why": "shall have to는 불가피함을 정중히 밝히는 영국식 격식이다"
+ },
+ "dumbledore-5-054": {
+  "blank": "all right",
+  "options": [
+   "all good",
+   "all fine",
+   "all correct"
+  ],
+  "why": "Are you all right?는 영국에서 가장 흔한 안부 확인이다"
+ },
+ "dumbledore-5-055": {
+  "blank": "regret removing",
+  "options": [
+   "regret to remove",
+   "regret for removing",
+   "be sorry removing"
+  ],
+  "why": "regret 뒤 동명사는 이미 한 일을 후회한다는 뜻이다"
+ },
+ "dumbledore-5-056": {
+  "blank": "Do everything",
+  "options": [
+   "Make everything",
+   "Do all things",
+   "Perform everything"
+  ],
+  "why": "Do everything ~ tells you는 지시를 빠짐없이 따르라는 말이다"
+ },
+ "dumbledore-5-057": {
+  "blank": "in time",
+  "options": [
+   "on time",
+   "at time",
+   "by time"
+  ],
+  "why": "in time은 '때가 되면, 언젠가는'이라는 뜻이다"
+ },
+ "dumbledore-5-058": {
+  "blank": "must not",
+  "options": [
+   "need not",
+   "may not",
+   "will not"
+  ],
+  "why": "must not은 '그래서는 안 된다'는 격식 금지 표현이다"
+ },
+ "dumbledore-5-059": {
+  "blank": "should not have come",
+  "options": [
+   "shouldn't have shown up",
+   "must not have come",
+   "should not come"
+  ],
+  "why": "비축약형 should not have로 과거 잘못을 단호히 지적한다"
+ },
+ "dumbledore-5-060": {
+  "blank": "destroy a man",
+  "options": [
+   "take a guy down",
+   "destroy a guy",
+   "break down a man"
+  ],
+  "why": "a man으로 사람 일반을 가리키는 문어적 표현이다"
+ },
+ "dumbledore-5-061": {
+  "blank": "quite wrong",
+  "options": [
+   "totally wrong",
+   "pretty wrong",
+   "fairly wrong"
+  ],
+  "why": "정도 없는 형용사 앞 quite는 '완전히'라는 영국식 강조다"
+ },
+ "dumbledore-5-062": {
+  "blank": "Stay where you are",
+  "options": [
+   "Stay where you were",
+   "Stay where you're",
+   "Keep where you are"
+  ],
+  "why": "Stay where you are는 그 자리에 있으라는 관용 명령이다"
+ },
+ "dumbledore-5-064": {
+  "blank": "all right",
+  "options": [
+   "all well",
+   "quite right",
+   "all fine"
+  ],
+  "why": "Are you all right?는 다친 데 없는지 묻는 안부다"
+ },
+ "dumbledore-5-065": {
+  "blank": "will proceed to",
+  "options": [
+   "will proceed at",
+   "will precede to",
+   "will process to"
+  ],
+  "why": "조건절 will과 proceed to로 정중한 안내를 나타낸다"
+ },
+ "dumbledore-5-066": {
+  "blank": "in the flesh",
+  "options": [
+   "in the body",
+   "on the flesh",
+   "in the skin"
+  ],
+  "why": "in the flesh는 '실물로 직접'이라는 관용구다"
+ },
+ "dumbledore-5-067": {
+  "blank": "perfectly willing",
+  "options": [
+   "totally fine",
+   "perfectly wanting",
+   "completely willingly"
+  ],
+  "why": "perfectly는 공손하면서도 단호한 영국식 강조어다"
+ },
+ "dumbledore-5-068": {
+  "blank": "Just as soon as",
+  "options": [
+   "Just as long as",
+   "Just as fast as",
+   "Just so soon as"
+  ],
+  "why": "just as soon as는 '그 일만 끝나면 바로'를 강조한다"
+ },
+ "dumbledore-5-069.1": {
+  "blank": "order the removal of",
+  "options": [
+   "kick out",
+   "order the removing of",
+   "order the deletion of"
+  ],
+  "why": "명사화 removal로 공문서식 명령 어조를 만든다"
+ },
+ "dumbledore-5-069.2": {
+  "blank": "having had",
+  "options": [
+   "having been",
+   "having got",
+   "being had"
+  ],
+  "why": "완료 분사구문 having had로 이유를 격식 있게 압축한다"
+ },
+ "dumbledore-5-069.3": {
+  "blank": "call off",
+  "options": [
+   "call out",
+   "call away",
+   "cancel off"
+  ],
+  "why": "call off는 수색·행사를 중단하는 영미 공통 구동사다"
+ },
+ "dumbledore-5-070": {
+  "blank": "seen to",
+  "options": [
+   "taken care for",
+   "seen after",
+   "looked to"
+  ],
+  "why": "see to는 '~를 돌보다, 처리하다'라는 구동사다"
+ },
+ "dumbledore-5-072": {
+  "blank": "has begun",
+  "options": [
+   "has began",
+   "has started off",
+   "got started"
+  ],
+  "why": "현재완료 has begun을 축약 없이 써 선언에 무게를 싣는다"
+ },
+ "dumbledore-5-074": {
+  "blank": "Please sit",
+  "options": [
+   "Please seat",
+   "Please take sit",
+   "Please be sat"
+  ],
+  "why": "짧은 Please sit은 권위 있게 자리를 권하는 명령이다"
+ },
+ "dumbledore-5-075": {
+  "blank": "I understand how",
+  "options": [
+   "I get how",
+   "I understand of how",
+   "I comprehend how"
+  ],
+  "why": "understand가 get보다 정중하고 격식 있는 공감 표현이다"
+ },
+ "dumbledore-5-076.1": {
+  "blank": "You forget that",
+  "options": [
+   "You forget it",
+   "You forget about",
+   "You disremember that"
+  ],
+  "why": "단순현재 You forget that으로 착각을 차분히 짚는다"
+ },
+ "dumbledore-5-076.2": {
+  "blank": "capable of feelings",
+  "options": [
+   "capable with feelings",
+   "capable for feelings",
+   "able of feelings"
+  ],
+  "why": "capable은 전치사 of와 짝을 이룬다"
+ },
+ "dumbledore-5-077": {
+  "blank": "There is no shame in",
+  "options": [
+   "There is no shame on",
+   "There is no shame of",
+   "There is no shame at"
+  ],
+  "why": "There is no shame in -ing는 위로할 때 쓰는 관용구다"
+ },
+ "dumbledore-5-078": {
+  "blank": "can't I know",
+  "options": [
+   "don't I get",
+   "can't I be knowing",
+   "won't I know"
+  ],
+  "why": "상대의 말을 그대로 되받아 차분히 묻는 의문문이다"
+ },
+ "dumbledore-5-079": {
+  "blank": "part of being human",
+  "options": [
+   "part of human being",
+   "part of being humans",
+   "part to being human"
+  ],
+  "why": "being human은 '인간이라는 것'을 뜻하는 관용 표현이다"
+ },
+ "dumbledore-5-080": {
+  "blank": "You do care",
+  "options": [
+   "You did care",
+   "You do caring",
+   "You are caring"
+  ],
+  "why": "강조의 do로 상대의 부정을 단호히 반박한다"
+ },
+ "dumbledore-5-082.1": {
+  "blank": "I daresay",
+  "options": [
+   "I'm pretty sure",
+   "I dare to say",
+   "I dared say"
+  ],
+  "why": "I daresay는 확신을 점잖게 전하는 영국식 표현이다"
+ },
+ "dumbledore-5-082.2": {
+  "blank": "actually do attack",
+  "options": [
+   "actually does attack",
+   "actually do attacking",
+   "actually did attack"
+  ],
+  "why": "조건절의 강조 do로 '정말로 ~한다면'을 나타낸다"
+ },
+ "dumbledore-5-083.1": {
+  "blank": "It is my fault",
+  "options": [
+   "It's my bad",
+   "It is my blame",
+   "It is my failure"
+  ],
+  "why": "축약 없는 It is로 책임 고백에 무게를 싣는다"
+ },
+ "dumbledore-5-083.2": {
+  "blank": "kept things from",
+  "options": [
+   "hidden stuff from",
+   "kept things off",
+   "kept things to"
+  ],
+  "why": "keep things from은 '~에게 숨기다'라는 관용구다"
+ },
+ "dumbledore-5-083.3": {
+  "blank": "put off telling",
+  "options": [
+   "put off to tell",
+   "put away telling",
+   "postponed to tell"
+  ],
+  "why": "put off -ing는 '~하기를 미루다'라는 구동사다"
+ },
+ "dumbledore-5-084.1": {
+  "blank": "Had I told you",
+  "options": [
+   "If I told you",
+   "Did I tell you",
+   "Have I told you"
+  ],
+  "why": "if를 생략한 도치 가정법으로 격식 있게 말한다"
+ },
+ "dumbledore-5-084.2": {
+  "blank": "would never have",
+  "options": [
+   "would never be",
+   "would never had",
+   "will never have"
+  ],
+  "why": "과거 사실 반대 가정은 would have p.p.로 쓴다"
+ },
+ "dumbledore-5-084.3": {
+  "blank": "lies with me",
+  "options": [
+   "is on me",
+   "lies on me",
+   "lays with me"
+  ],
+  "why": "lie with는 책임 소재를 밝히는 격식 표현이다"
+ },
+ "dumbledore-5-085": {
+  "blank": "owe you",
+  "options": [
+   "give you",
+   "owe to you",
+   "owe for you"
+  ],
+  "why": "owe you an explanation은 해명을 여는 정중한 서두다"
+ },
+ "dumbledore-5-086.1": {
+  "blank": "begins with",
+  "options": [
+   "begins from",
+   "begins at",
+   "starts off at"
+  ],
+  "why": "begin with로 이야기의 출발점을 격식 있게 제시한다"
+ },
+ "dumbledore-5-086.2": {
+  "blank": "goes both ways",
+  "options": [
+   "goes two ways",
+   "goes both sides",
+   "runs both way"
+  ],
+  "why": "goes both ways는 '양방향으로 작용한다'는 관용구다"
+ },
+ "dumbledore-5-086.3": {
+  "blank": "grew worried",
+  "options": [
+   "got worried",
+   "grew worrying",
+   "became worrying"
+  ],
+  "why": "grow + 형용사는 서서히 변하는 과정을 담는 문어체다"
+ },
+ "dumbledore-5-087": {
+  "blank": "Haven't you wondered",
+  "options": [
+   "Didn't you wonder",
+   "Haven't you wonder",
+   "Hadn't you wondered"
+  ],
+  "why": "지속 기간 for months에 맞춘 현재완료 부정 의문이다"
+ },
+ "dumbledore-5-088.1": {
+  "blank": "teacher and student",
+  "options": [
+   "the teacher and the student",
+   "teacher to student",
+   "teacher with student"
+  ],
+  "why": "무관사 대구로 특정인이 아닌 관계 유형을 가리킨다"
+ },
+ "dumbledore-5-088.2": {
+  "blank": "spy on",
+  "options": [
+   "spy at",
+   "spy over",
+   "spy in"
+  ],
+  "why": "spy on은 '~를 염탐하다'라는 고정 전치사 결합이다"
+ },
+ "dumbledore-5-088.3": {
+  "blank": "aim in possessing",
+  "options": [
+   "goal for possessing",
+   "aim at possessing",
+   "aim to possessing"
+  ],
+  "why": "aim in -ing로 목적을 명사화한 격식 구문이다"
+ },
+ "dumbledore-5-089.1": {
+  "blank": "attempting to manipulate",
+  "options": [
+   "trying to mess with",
+   "attempting at manipulating",
+   "trying for manipulating"
+  ],
+  "why": "'attempt to'는 'try to'보다 격식 있는 동사다."
+ },
+ "dumbledore-5-089.2": {
+  "blank": "had you study",
+  "options": [
+   "let you study",
+   "got you study",
+   "had you to study"
+  ],
+  "why": "권한자가 조치했음을 나타내는 사역 have 구문이다."
+ },
+ "dumbledore-5-090.1": {
+  "blank": "towards",
+  "options": [
+   "toward",
+   "at",
+   "upon"
+  ],
+  "why": "영국 영어는 's'가 붙은 towards를 선호한다."
+ },
+ "dumbledore-5-090.2": {
+  "blank": "too deep to be healed",
+  "options": [
+   "so deep to be healed",
+   "too deep to get healed",
+   "very deep to be healed"
+  ],
+  "why": "'too ~ to be p.p.'는 격언풍의 격식 구조다."
+ },
+ "dumbledore-5-091.1": {
+  "blank": "with my life",
+  "options": [
+   "for my life",
+   "on my life",
+   "by my life"
+  ],
+  "why": "'trust A with B'는 B를 A에게 맡긴다는 뜻이다."
+ },
+ "dumbledore-5-091.2": {
+  "blank": "recovered from",
+  "options": [
+   "gotten over",
+   "recovered of",
+   "healed from"
+  ],
+  "why": "'recover from'은 감정에도 쓰는 격식 동사다."
+ },
+ "dumbledore-5-092.1": {
+  "blank": "run too deep",
+  "options": [
+   "run too deeply",
+   "sit too deep",
+   "move too deep"
+  ],
+  "why": "'run deep'은 감정이 뿌리 깊다는 관용구다."
+ },
+ "dumbledore-5-092.2": {
+  "blank": "at school",
+  "options": [
+   "in school",
+   "on school",
+   "by school"
+  ],
+  "why": "학창 시절을 영국 영어는 'at school'로 말한다."
+ },
+ "dumbledore-5-093": {
+  "blank": "lessons",
+  "options": [
+   "classes",
+   "courses",
+   "lectures"
+  ],
+  "why": "영국에서 개별 수업 시간은 'lesson'이라 부른다."
+ },
+ "dumbledore-5-094.1": {
+  "blank": "since he returned",
+  "options": [
+   "since he has returned",
+   "ever since he's back",
+   "from when he returned"
+  ],
+  "why": "since 절에는 과거 시점을 가리키는 과거형을 쓴다"
+ },
+ "dumbledore-5-094.2": {
+  "blank": "in the form of",
+  "options": [
+   "in the way of",
+   "on the form of",
+   "by the form of"
+  ],
+  "why": "'in the form of'는 '~의 형태로'라는 격식 표현이다."
+ },
+ "dumbledore-5-094.3": {
+  "blank": "had little difficulty in",
+  "options": [
+   "had little difficulty for",
+   "had small difficulty in",
+   "had few difficulty in"
+  ],
+  "why": "'little difficulty in -ing'는 절제된 격식 표현이다."
+ },
+ "dumbledore-5-095": {
+  "blank": "Kreacher lied",
+  "options": [
+   "Kreacher lay",
+   "Kreacher laid",
+   "Kreacher has lain"
+  ],
+  "why": "'거짓말하다' lie의 과거형은 lied다."
+ },
+ "dumbledore-5-096": {
+  "blank": "for some months now",
+  "options": [
+   "since some months now",
+   "for some months since",
+   "for any months now"
+  ],
+  "why": "'for some+기간+now'는 꽤 긴 지속을 격식 있게 말한다."
+ },
+ "dumbledore-5-097.1": {
+  "blank": "It appears that",
+  "options": [
+   "It looks like that",
+   "It seems like that",
+   "It appears as"
+  ],
+  "why": "'It appears that'은 판단을 한발 물려 전하는 격식 서두다."
+ },
+ "dumbledore-5-097.2": {
+  "blank": "questioned",
+  "options": [
+   "asked after",
+   "inquired",
+   "requested"
+  ],
+  "why": "question은 타동사로 '심문하다, 캐묻다'라는 뜻이다"
+ },
+ "dumbledore-5-097.3": {
+  "blank": "neglected to mention",
+  "options": [
+   "failed mentioning",
+   "neglected of mentioning",
+   "neglected about mentioning"
+  ],
+  "why": "'neglect to'는 누락을 점잖게 짚는 격식 표현이다."
+ },
+ "dumbledore-5-097.4": {
+  "blank": "move heaven and earth",
+  "options": [
+   "move sky and earth",
+   "move heaven and hell",
+   "shift heaven and earth"
+  ],
+  "why": "'move heaven and earth'는 무엇이든 다 한다는 관용구다."
+ },
+ "dumbledore-5-097.5": {
+  "blank": "would force you there",
+  "options": [
+   "would force you at there",
+   "would force you to there",
+   "would push you to there"
+  ],
+  "why": "'force you there'는 그곳에 가게 만든다는 간결한 격식 표현이다."
+ },
+ "dumbledore-5-098": {
+  "blank": "Apparently",
+  "options": [
+   "Turns out",
+   "Apparent",
+   "Appearingly"
+  ],
+  "why": "'Apparently'는 전해 들은 정보임을 나타낸다."
+ },
+ "dumbledore-5-099": {
+  "blank": "tending to",
+  "options": [
+   "tending for",
+   "caring of",
+   "minding to"
+  ],
+  "why": "'tend to + 명사'는 '돌보다'라는 격식 동사다."
+ },
+ "dumbledore-5-100": {
+  "blank": "quite right",
+  "options": [
+   "totally right",
+   "pretty right",
+   "fairly right"
+  ],
+  "why": "단정 형용사 앞 quite는 '전적으로'라는 뜻이다."
+ },
+ "dumbledore-5-101": {
+  "blank": "a reminder to Sirius of",
+  "options": [
+   "a reminding to Sirius of",
+   "a reminder at Sirius of",
+   "a remembrance to Sirius of"
+  ],
+  "why": "'a reminder to A of B'는 remind를 명사화한 격식체다."
+ },
+ "dumbledore-5-102": {
+  "blank": "save his life",
+  "options": [
+   "rescue his life",
+   "save his living",
+   "spare his life"
+  ],
+  "why": "'save someone's life'는 목숨을 지킨다는 정형 표현이다."
+ },
+ "dumbledore-5-103.1": {
+  "blank": "should have",
+  "options": [
+   "should of",
+   "should had",
+   "should have had"
+  ],
+  "why": "조동사 뒤 반복되는 동사를 생략한 'should have'다."
+ },
+ "dumbledore-5-103.2": {
+  "blank": "No doubt",
+  "options": [
+   "No doubts",
+   "Not a doubt",
+   "With no doubt"
+  ],
+  "why": "문두 'No doubt'는 상대 생각을 짐작하는 격식 표현이다."
+ },
+ "dumbledore-5-103.3": {
+  "blank": "for your protection",
+  "options": [
+   "for protecting you",
+   "to your protection",
+   "for your protecting"
+  ],
+  "why": "명사 protection을 쓴 격식 명사화 표현이다."
+ },
+ "dumbledore-5-103.4": {
+  "blank": "than anyone realised",
+  "options": [
+   "than anyone realized",
+   "than anyone knew of",
+   "than anybody realizing"
+  ],
+  "why": "영국식 철자는 -ise를 쓴 'realised'다."
+ },
+ "dumbledore-5-104.1": {
+  "blank": "played to his weakness",
+  "options": [
+   "played at his weakness",
+   "played with his weakness",
+   "played for his weakness"
+  ],
+  "why": "'play to'는 상대 약점을 겨냥해 움직인다는 뜻이다."
+ },
+ "dumbledore-5-104.2": {
+  "blank": "magic which",
+  "options": [
+   "magic who",
+   "magic what",
+   "magic whom"
+  ],
+  "why": "영국 격식 문어체는 제한적 관계절에도 which를 쓴다."
+ },
+ "dumbledore-5-105.1": {
+  "blank": "your mother",
+  "options": [
+   "your mom",
+   "your mommy",
+   "your mama"
+  ],
+  "why": "격식 있는 화자는 'mother'라고 부른다."
+ },
+ "dumbledore-5-105.2": {
+  "blank": "however",
+  "options": [
+   "but",
+   "anyhow",
+   "however much"
+  ],
+  "why": "문중에 끼운 however는 격식체의 역접 방식이다."
+ },
+ "dumbledore-5-106.1": {
+  "blank": "Perhaps not",
+  "options": [
+   "Perhaps no",
+   "Maybe no",
+   "Perhaps don't"
+  ],
+  "why": "'Perhaps not'은 신중하게 한발 물러서는 응답이다."
+ },
+ "dumbledore-5-106.2": {
+  "blank": "you are protected",
+  "options": [
+   "you are protective",
+   "you are protecting",
+   "you get protect"
+  ],
+  "why": "축약 없는 수동태로 보호받는 상태를 격식 있게 말한다."
+ },
+ "dumbledore-5-107.1": {
+  "blank": "now we come to",
+  "options": [
+   "now we reach to",
+   "now we come at",
+   "now we arrive to"
+  ],
+  "why": "'now we come to'는 본론으로 넘어가는 격식 담화 표지다."
+ },
+ "dumbledore-5-107.2": {
+  "blank": "atop",
+  "options": [
+   "on top",
+   "atop of",
+   "upon top"
+  ],
+  "why": "'atop'은 문어적인 전치사로 수사적 무게를 준다."
+ },
+ "dumbledore-5-108": {
+  "blank": "fresh from",
+  "options": [
+   "fresh out",
+   "fresh off of",
+   "freshly from"
+  ],
+  "why": "'fresh from'은 막 ~을 겪고 온 상태를 말한다."
+ },
+ "dumbledore-5-109": {
+  "blank": "Do you remember",
+  "options": [
+   "Did you remember",
+   "Do you remind",
+   "Are you remembering"
+  ],
+  "why": "지금도 기억하는지 묻는 현재형 Do you remember다"
+ },
+ "dumbledore-5-110.1": {
+  "blank": "such burdens",
+  "options": [
+   "that kind of stuff",
+   "so burdens",
+   "such a burdens"
+  ],
+  "why": "'such + 복수명사'로 '그런 짐'을 격식 있게 가리킨다."
+ },
+ "dumbledore-5-110.2": {
+  "blank": "The same went for",
+  "options": [
+   "Same with",
+   "The same went to",
+   "The same was for"
+  ],
+  "why": "'the same goes for'는 '~도 마찬가지'라는 관용구다."
+ },
+ "dumbledore-5-110.3": {
+  "blank": "the flaw in",
+  "options": [
+   "the flaw of",
+   "the flaw at",
+   "the flaw on"
+  ],
+  "why": "flaw는 전치사 in과 함께 '~의 허점'을 뜻한다"
+ },
+ "dumbledore-5-111.1": {
+  "blank": "cared about",
+  "options": [
+   "cared of",
+   "cared on",
+   "fussed of"
+  ],
+  "why": "care about는 '아끼다·마음 쓰다'의 기본 결합이다."
+ },
+ "dumbledore-5-111.2": {
+  "blank": "concerned with",
+  "options": [
+   "concerned of",
+   "concerned on",
+   "worried with"
+  ],
+  "why": "be concerned with는 '~에 마음을 쓰다'의 격식 결합이다."
+ },
+ "dumbledore-5-111.3": {
+  "blank": "us fools who love",
+  "options": [
+   "we fools who love",
+   "us fools in love",
+   "us fools of love"
+  ],
+  "why": "us fools처럼 대명사에 명사를 붙인 문학적 동격이다."
+ },
+ "dumbledore-5-111.4": {
+  "blank": "could not bear to",
+  "options": [
+   "could not stand to",
+   "could not bear for",
+   "could not carry to"
+  ],
+  "why": "cannot bear to는 '차마 ~하지 못하다'의 격식 표현이다."
+ },
+ "dumbledore-5-111.5": {
+  "blank": "pass through greater trials",
+  "options": [
+   "go through bigger stuff",
+   "pass across greater trials",
+   "pass by greater trials"
+  ],
+  "why": "trial은 '시련'이며 pass through trials는 문어적이다."
+ },
+ "dumbledore-5-111.6": {
+  "blank": "could not bear to",
+  "options": [
+   "could not stand to",
+   "could not endure for",
+   "could not suffer to"
+  ],
+  "why": "could not bear to로 '차마 ~할 수 없었다'를 격식 있게 말한다."
+ },
+ "dumbledore-5-112": {
+  "blank": "I must",
+  "options": [
+   "I must to",
+   "I've got",
+   "I gotta"
+  ],
+  "why": "동사를 생략한 I must.는 결연한 내적 의무를 나타낸다."
+ },
+ "dumbledore-5-113.1": {
+  "blank": "just before your birth",
+  "options": [
+   "just before you born",
+   "just ahead of your birth",
+   "shortly prior your birth"
+  ],
+  "why": "just before your birth는 명사구로 압축한 격식 표현이다."
+ },
+ "dumbledore-5-113.2": {
+  "blank": "fulfilling the terms",
+  "options": [
+   "making the terms",
+   "filling the terms",
+   "fulfilling the clauses"
+  ],
+  "why": "fulfil the terms는 '조건을 이행하다'의 격식 결합이다."
+ },
+ "dumbledore-5-113.3": {
+  "blank": "the entire",
+  "options": [
+   "the all",
+   "the whole of",
+   "the total"
+  ],
+  "why": "entire는 whole보다 격식 있는 '전체의'라는 뜻이다."
+ },
+ "dumbledore-5-113.4": {
+  "blank": "so desperately seeking",
+  "options": [
+   "so badly looking for",
+   "so desperately seeking for",
+   "so desperate seeking"
+  ],
+  "why": "seek는 look for보다 격식 있는 영미 공통의 동사다."
+ },
+ "dumbledore-5-114": {
+  "blank": "An excellent question",
+  "options": [
+   "A excellent question",
+   "Awesome question",
+   "An excellent asking"
+  ],
+  "why": "An excellent question은 교사다운 정중한 격식 응답이다."
+ },
+ "dumbledore-5-115": {
+  "blank": "preserved",
+  "options": [
+   "reserved",
+   "saved",
+   "conserved"
+  ],
+  "why": "preserve는 기록을 온전히 보존한다는 격식 동사다."
+ },
+ "dumbledore-5-116": {
+  "blank": "to parents who",
+  "options": [
+   "from parents who",
+   "by parents who",
+   "with parents who"
+  ],
+  "why": "be born to + 부모는 '~의 자식으로 태어나다'라는 격식 구문이다."
+ },
+ "dumbledore-5-117": {
+  "blank": "whom",
+  "options": [
+   "whose",
+   "what",
+   "which"
+  ],
+  "why": "boys를 받는 목적격 관계대명사로 격식체 whom을 쓴다."
+ },
+ "dumbledore-5-118.1": {
+  "blank": "qualification",
+  "options": [
+   "qualifying",
+   "quality",
+   "qualifier"
+  ],
+  "why": "qualification은 여기서 '단서·조건'을 뜻하는 격식어다."
+ },
+ "dumbledore-5-118.2": {
+  "blank": "did so",
+  "options": [
+   "made so",
+   "did such",
+   "did thus"
+  ],
+  "why": "did so는 앞 동사구를 받는 격식 대용 표현이다."
+ },
+ "dumbledore-5-118.3": {
+  "blank": "I'm afraid",
+  "options": [
+   "I'm scared",
+   "I'm frightened",
+   "I'm nervous"
+  ],
+  "why": "I'm afraid는 나쁜 소식 앞에 붙이는 영국식 완곡어다."
+ },
+ "dumbledore-5-119.1": {
+  "blank": "believed to be",
+  "options": [
+   "believed being",
+   "believed as",
+   "thought being"
+  ],
+  "why": "believe + 목적어 + to be는 that절 대신 쓰는 격식 구문이다."
+ },
+ "dumbledore-5-119.2": {
+  "blank": "saw some of himself",
+  "options": [
+   "saw some himself",
+   "saw some from himself",
+   "watched some of himself"
+  ],
+  "why": "see some of oneself in은 '~에게서 자기 모습을 보다'이다."
+ },
+ "dumbledore-5-119.3": {
+  "blank": "instead",
+  "options": [
+   "alternatively",
+   "in place",
+   "rather"
+  ],
+  "why": "instead는 의도와 반대된 결과를 이끄는 '오히려'다."
+ },
+ "dumbledore-5-120.1": {
+  "blank": "an informant",
+  "options": [
+   "a snitch",
+   "an informator",
+   "an informing"
+  ],
+  "why": "informant는 spy보다 격식 있고 중립적인 '정보원'이다."
+ },
+ "dumbledore-5-120.2": {
+  "blank": "he was discovered",
+  "options": [
+   "he was discovering",
+   "he was uncovered",
+   "he got discovered"
+  ],
+  "why": "수동태 was discovered로 '발각되었다'를 나타낸다"
+ },
+ "dumbledore-5-120.3": {
+  "blank": "act immediately",
+  "options": [
+   "act immediate",
+   "act quick",
+   "do immediately"
+  ],
+  "why": "동사 act를 꾸미므로 부사 immediately를 쓴다"
+ },
+ "dumbledore-5-120.4": {
+  "blank": "All he knew was that",
+  "options": [
+   "All what he knew was that",
+   "All he knew was like",
+   "Everything he knew was that"
+  ],
+  "why": "All ... was that은 범위를 한정해 강조하는 격식 구문이다."
+ },
+ "dumbledore-5-121.1": {
+  "blank": "which is kept",
+  "options": [
+   "what is kept",
+   "where is kept",
+   "who is kept"
+  ],
+  "why": "사물을 받는 제한적 관계절 which는 영국영어에서 자연스럽다."
+ },
+ "dumbledore-5-121.2": {
+  "blank": "and yet",
+  "options": [
+   "and but",
+   "and though",
+   "or yet"
+  ],
+  "why": "and yet은 상반된 두 성질을 문어적으로 잇는다."
+ },
+ "dumbledore-5-121.3": {
+  "blank": "of which Voldemort has none",
+  "options": [
+   "in which Voldemort has none",
+   "of what Voldemort has none",
+   "of which Voldemort has no"
+  ],
+  "why": "of which로 전치사를 앞세운 격식 관계절이다."
+ },
+ "dumbledore-5-122.1": {
+  "blank": "drove you to",
+  "options": [
+   "made you to",
+   "drove you for",
+   "pushed you for"
+  ],
+  "why": "drive A to do는 '~하도록 몰아가다'라는 결합이다."
+ },
+ "dumbledore-5-122.2": {
+  "blank": "cannot bear to",
+  "options": [
+   "cannot stand at",
+   "cannot carry to",
+   "cannot bear for"
+  ],
+  "why": "cannot bear to는 '도저히 ~하지 못하다'라는 뜻이다"
+ },
+ "dumbledore-5-122.3": {
+  "blank": "and not your head",
+  "options": [
+   "and not your brain",
+   "but not your head",
+   "or not your head"
+  ],
+  "why": "head와 heart를 맞세운 'X and not Y' 분열문 대조다."
+ },
+ "dumbledore-5-123.1": {
+  "blank": "addressed",
+  "options": [
+   "addressed to",
+   "attended",
+   "undertaken"
+  ],
+  "why": "address는 문제를 '다루다'라는 영미 공통 격식 동사다."
+ },
+ "dumbledore-5-123.2": {
+  "blank": "It states",
+  "options": [
+   "It is stating",
+   "It tells",
+   "It speaks"
+  ],
+  "why": "state는 문서가 '명시하다'라는 says의 격식형이다."
+ },
+ "dumbledore-5-124": {
+  "blank": "place on you",
+  "options": [
+   "place to you",
+   "lay to you",
+   "place at you"
+  ],
+  "why": "place a burden on은 put보다 격식 있는 '짐을 지우다'다."
+ },
+ "dumbledore-6-001.1": {
+  "blank": "I once knew",
+  "options": [
+   "I once known",
+   "I was once knowing",
+   "I have once known"
+  ],
+  "why": "I once knew는 옛 일화를 꺼내는 이야기체 서두다."
+ },
+ "dumbledore-6-001.2": {
+  "blank": "reckless",
+  "options": [
+   "risky",
+   "rashful",
+   "daredevil"
+  ],
+  "why": "reckless는 사람이 '무모한'이고 risky는 일에 쓴다."
+ },
+ "dumbledore-6-002.1": {
+  "blank": "Rather unpleasant",
+  "options": [
+   "Pretty gross",
+   "Kinda nasty",
+   "Real unpleasant"
+  ],
+  "why": "rather는 '꽤'를 절제해 말하는 영국식 강조어다."
+ },
+ "dumbledore-6-002.2": {
+  "blank": "do say so myself",
+  "options": [
+   "do say it myself",
+   "say so to myself",
+   "do talk so myself"
+  ],
+  "why": "if I do say so myself는 자화자찬을 누그러뜨리는 관용구다."
+ },
+ "dumbledore-6-002.3": {
+  "blank": "Do as I say",
+  "options": [
+   "Do like I say",
+   "Do how I say",
+   "Do so I say"
+  ],
+  "why": "Do as I say는 like 대신 as를 쓴 정석 명령문이다."
+ },
+ "dumbledore-6-003": {
+  "blank": "Indeed",
+  "options": [
+   "Yep",
+   "Surely",
+   "Truly"
+  ],
+  "why": "Indeed는 상대 말을 점잖게 확인하는 격식 응답이다."
+ },
+ "dumbledore-6-004.1": {
+  "blank": "charming",
+  "options": [
+   "cute",
+   "charmful",
+   "charmed"
+  ],
+  "why": "charming은 cute보다 격식 있게 장소를 칭찬하는 말이다."
+ },
+ "dumbledore-6-004.2": {
+  "blank": "I assume",
+  "options": [
+   "I assumed",
+   "I assure",
+   "I'm assured"
+  ],
+  "why": "I assume는 '짐작건대'를 차분하게 말하는 표현이다."
+ },
+ "dumbledore-6-005": {
+  "blank": "Wand out",
+  "options": [
+   "Wand up",
+   "Get wand",
+   "Wand off"
+  ],
+  "why": "명사+out으로 '꺼내라'를 줄인 간결한 명령이다."
+ },
+ "dumbledore-6-008": {
+  "blank": "I must say",
+  "options": [
+   "I gotta say",
+   "I need say",
+   "I must tell"
+  ],
+  "why": "I must say는 평가 앞에 붙이는 점잖은 영국식 서두다."
+ },
+ "dumbledore-6-010.1": {
+  "blank": "colleague of mine",
+  "options": [
+   "co-worker of mine",
+   "colleague of me",
+   "colleague of my"
+  ],
+  "why": "colleague는 co-worker보다 격식 있는 '동료'다."
+ },
+ "dumbledore-6-010.2": {
+  "blank": "you know who this is",
+  "options": [
+   "you know who's this",
+   "you know who is this",
+   "you know this is who"
+  ],
+  "why": "간접의문문이라 who this is의 평서 어순을 쓴다."
+ },
+ "dumbledore-6-010.3": {
+  "blank": "there's some thought",
+  "options": [
+   "there's a thought",
+   "there's some thoughts",
+   "there's some think"
+  ],
+  "why": "there's some thought는 소문을 거리 두고 전하는 절제 화법이다."
+ },
+ "dumbledore-6-011": {
+  "blank": "were you",
+  "options": [
+   "weren't you",
+   "did you",
+   "are you"
+  ],
+  "why": "부정문 뒤 긍정 꼬리 were you로 은근히 떠보는 말투다."
+ },
+ "dumbledore-6-012": {
+  "blank": "into their own hands",
+  "options": [
+   "in their own hands",
+   "onto their own hands",
+   "into their hands only"
+  ],
+  "why": "take matters into one's own hands는 '직접 나서다'다."
+ },
+ "dumbledore-6-013": {
+  "blank": "don't you",
+  "options": [
+   "isn't it",
+   "do you",
+   "won't you"
+  ],
+  "why": "I think 뒤 꼬리 don't you로 상대의 동의를 끌어낸다."
+ },
+ "dumbledore-6-014": {
+  "blank": "the loo",
+  "options": [
+   "the restroom",
+   "the john",
+   "the washroom"
+  ],
+  "why": "loo는 화장실을 가리키는 친근한 영국 일상어다."
+ },
+ "dumbledore-6-015": {
+  "blank": "I do love",
+  "options": [
+   "I'm really into",
+   "I am loving",
+   "I did love"
+  ],
+  "why": "강조의 do로 좋아하는 마음을 점잖게 힘주어 말한다."
+ },
+ "dumbledore-6-016.1": {
+  "blank": "Regrettable",
+  "options": [
+   "Too bad",
+   "Regretful",
+   "Regretted"
+  ],
+  "why": "Regrettable은 아쉬움을 건조하게 말하는 절제된 격식어다."
+ },
+ "dumbledore-6-016.2": {
+  "blank": "had you consented",
+  "options": [
+   "if you consented",
+   "you had consented",
+   "would you consent"
+  ],
+  "why": "if를 생략하고 had를 앞세운 격식 가정법 도치다."
+ },
+ "dumbledore-6-016.3": {
+  "blank": "one of a kind",
+  "options": [
+   "one of the kind",
+   "one in a kind",
+   "a kind of one"
+  ],
+  "why": "one of a kind는 '둘도 없는 존재'라는 관용구다."
+ },
+ "dumbledore-6-017": {
+  "blank": "Indeed",
+  "options": [
+   "Sure",
+   "Surely",
+   "Totally"
+  ],
+  "why": "Indeed+주어+동사로 격식 있게 강한 맞장구를 친다."
+ },
+ "dumbledore-6-018.1": {
+  "blank": "values",
+  "options": [
+   "is valuing",
+   "valuates",
+   "treasures up"
+  ],
+  "why": "value는 '귀하게 여기다'라는 격식 있는 동사다."
+ },
+ "dumbledore-6-018.2": {
+  "blank": "crowning jewel",
+  "options": [
+   "crowned jewel",
+   "crowning gem",
+   "big prize"
+  ],
+  "why": "crowning jewel은 '가장 값진 보물'이라는 비유다."
+ },
+ "dumbledore-6-018.3": {
+  "blank": "he return",
+  "options": [
+   "he returned",
+   "he to return",
+   "he returning"
+  ],
+  "why": "crucial 뒤 that절에 동사원형을 쓰는 격식 가정법이다."
+ },
+ "dumbledore-6-019": {
+  "blank": "I fear",
+  "options": [
+   "I'm scared",
+   "I'm fearing",
+   "I frighten"
+  ],
+  "why": "I fear는 아쉬운 말을 꺼내는 격식 있는 완곡 표현이다."
+ },
+ "dumbledore-6-020": {
+  "blank": "You'll not be going",
+  "options": [
+   "You'll not to go",
+   "You'll not have gone",
+   "You'll be not going"
+  ],
+  "why": "You'll not be -ing는 정해진 일을 단호히 통보한다."
+ },
+ "dumbledore-6-021": {
+  "blank": "Both are",
+  "options": [
+   "Both is",
+   "The both are",
+   "Each are"
+  ],
+  "why": "Both를 대명사 주어로 써서 간결하고 격식 있게 말한다."
+ },
+ "dumbledore-6-022.1": {
+  "blank": "very best of evenings",
+  "options": [
+   "very good of evenings",
+   "very best for evenings",
+   "very best of evening"
+  ],
+  "why": "the very best of+복수명사는 연설용 축원 인사다."
+ },
+ "dumbledore-6-022.2": {
+  "blank": "please join me in welcoming",
+  "options": [
+   "let's give a big welcome to",
+   "please join me to welcome",
+   "please join with me welcoming"
+  ],
+  "why": "join me in -ing는 청중에게 환영을 청하는 격식 문구다."
+ },
+ "dumbledore-6-023.1": {
+  "blank": "I'm happy to say",
+  "options": [
+   "I'm happy saying",
+   "I'm glad to tell",
+   "happily to say"
+  ],
+  "why": "삽입구 I'm happy to say로 기쁜 소식을 연설체로 전한다."
+ },
+ "dumbledore-6-023.2": {
+  "blank": "will be assumed",
+  "options": [
+   "will be resumed",
+   "will be presumed",
+   "will be consumed"
+  ],
+  "why": "assume a post는 '직책을 새로 맡다'라는 격식 표현이다."
+ },
+ "dumbledore-6-024.1": {
+  "blank": "upon your arrival",
+  "options": [
+   "at your arrival",
+   "upon your arriving",
+   "since your arrival"
+  ],
+  "why": "upon+명사는 '~하자마자'를 뜻하는 격식 표현이다."
+ },
+ "dumbledore-6-024.2": {
+  "blank": "have a right to",
+  "options": [
+   "have a right of",
+   "have the rights to",
+   "are right to"
+  ],
+  "why": "have a right to+동사는 '~할 권리가 있다'는 뜻이다."
+ },
+ "dumbledore-6-024.3": {
+  "blank": "Once there was",
+  "options": [
+   "One time there was",
+   "Once it was",
+   "Once upon there was"
+  ],
+  "why": "Once there was는 옛이야기를 여는 문어적 표현이다."
+ },
+ "dumbledore-6-024.4": {
+  "blank": "corridors",
+  "options": [
+   "hallways",
+   "aisles",
+   "lobbies"
+  ],
+  "why": "건물 안 복도는 영국에서 corridor라고 한다."
+ },
+ "dumbledore-6-024.5": {
+  "blank": "to all the world",
+  "options": [
+   "to the all world",
+   "by all the world",
+   "in all the world"
+  ],
+  "why": "to all the world는 '누가 보아도'라는 문어적 삽입구다."
+ },
+ "dumbledore-6-024.6": {
+  "blank": "knows him by",
+  "options": [
+   "knows him with",
+   "knows him in",
+   "knows him from"
+  ],
+  "why": "know someone by a name은 '~라는 이름으로 알다'이다."
+ },
+ "dumbledore-6-024.7": {
+  "blank": "I am reminded of",
+  "options": [
+   "I am reminding of",
+   "I remind of",
+   "I am remembered of"
+  ],
+  "why": "be reminded of는 '~이 떠오르다'의 격식 표현이다."
+ },
+ "dumbledore-6-024.8": {
+  "blank": "attempt to penetrate",
+  "options": [
+   "attempt to penetrating",
+   "attempt penetrating",
+   "attempt to penetrate into"
+  ],
+  "why": "attempt to와 penetrate는 try, get into의 격식 어휘다."
+ },
+ "dumbledore-6-024.9": {
+  "blank": "remains",
+  "options": [
+   "stays",
+   "is remaining",
+   "rests"
+  ],
+  "why": "remain은 '여전히 ~이다'를 뜻하는 격식 동사다."
+ },
+ "dumbledore-6-025": {
+  "blank": "Pip pip",
+  "options": [
+   "Peep peep",
+   "Bye bye",
+   "Pop pop"
+  ],
+  "why": "Pip pip은 예스러운 영국식 작별 인사로 익살을 더한다."
+ },
+ "dumbledore-6-026": {
+  "blank": "I see",
+  "options": [
+   "I look",
+   "I watch",
+   "I saw"
+  ],
+  "why": "문미 I see는 눈앞 상황을 보고 '~했군' 하고 확인한다."
+ },
+ "dumbledore-6-027": {
+  "blank": "How are you",
+  "options": [
+   "How you are",
+   "How do you do",
+   "How is you"
+  ],
+  "why": "How are you?는 근황을 묻는 기본 인사다."
+ },
+ "dumbledore-6-028": {
+  "blank": "most impressed",
+  "options": [
+   "mostly impressed",
+   "very impressing",
+   "most impressive"
+  ],
+  "why": "강조의 most는 very의 격식형으로 정중하게 쓴다."
+ },
+ "dumbledore-6-029": {
+  "blank": "Do",
+  "options": [
+   "Are",
+   "Does",
+   "Did"
+  ],
+  "why": "think를 받아 조동사 do로 짧게 되묻는 응답이다."
+ },
+ "dumbledore-6-030": {
+  "blank": "what of",
+  "options": [
+   "what by",
+   "what for",
+   "what with"
+  ],
+  "why": "what of는 what about의 격식형으로 화제를 바꾼다."
+ },
+ "dumbledore-6-031": {
+  "blank": "One can't help but",
+  "options": [
+   "One can't stop but",
+   "One can't help and",
+   "One can't avoid but"
+  ],
+  "why": "one을 주어로 일반론처럼 에둘러 궁금증을 표현한다."
+ },
+ "dumbledore-6-032": {
+  "blank": "Forgive me",
+  "options": [
+   "My bad",
+   "Forget me",
+   "Forgive it"
+  ],
+  "why": "실례를 앞두고 쓰는 Sorry의 격식형 사과다"
+ },
+ "dumbledore-6-033.1": {
+  "blank": "merely",
+  "options": [
+   "rarely",
+   "mere",
+   "barely"
+  ],
+  "why": "just의 격식형으로 점잖게 물러설 때 쓴다"
+ },
+ "dumbledore-6-033.2": {
+  "blank": "In any event",
+  "options": [
+   "At any event",
+   "On any event",
+   "In every event"
+  ],
+  "why": "Anyway의 격식형으로 본론으로 돌아갈 때 쓴다"
+ },
+ "dumbledore-6-034.1": {
+  "blank": "pertaining to",
+  "options": [
+   "all about",
+   "pertaining with",
+   "pertained to"
+  ],
+  "why": "about 대신 쓰는 매우 격식 있는 '~에 관한'이다"
+ },
+ "dumbledore-6-034.2": {
+  "blank": "as he was known",
+  "options": [
+   "as folks called him",
+   "as he was known as",
+   "as he got known"
+  ],
+  "why": "수동태 as he was known은 예전 이름을 격식 있게 밝힌다"
+ },
+ "dumbledore-6-035.1": {
+  "blank": "a most particular",
+  "options": [
+   "a super special",
+   "a mostly particular",
+   "a much particular"
+  ],
+  "why": "a most + 형용사는 very를 대신하는 예스럽고 정중한 강조다"
+ },
+ "dumbledore-6-035.2": {
+  "blank": "If you would",
+  "options": [
+   "Go for it",
+   "If you could be",
+   "When you would"
+  ],
+  "why": "뒷말을 생략한 정중한 요청으로 영미 공통이다"
+ },
+ "dumbledore-6-036": {
+  "blank": "has been known to me",
+  "options": [
+   "has been known by me",
+   "is known to me",
+   "has known to me"
+  ],
+  "why": "since birth와 함께 현재완료 수동태로 계속을 나타낸다"
+ },
+ "dumbledore-6-037": {
+  "blank": "Perhaps you could",
+  "options": [
+   "Maybe you can",
+   "Perhaps you can to",
+   "Perhaps could you"
+  ],
+  "why": "평서문으로 돌려 부탁하는 완곡한 요청 화법이다"
+ },
+ "dumbledore-6-038": {
+  "blank": "How do you do",
+  "options": [
+   "Hi there",
+   "How are you doing",
+   "How do you go"
+  ],
+  "why": "처음 만난 사람에게 건네는 영국의 전통 격식 인사다"
+ },
+ "dumbledore-6-039": {
+  "blank": "wish",
+  "options": [
+   "want",
+   "wishes",
+   "desire"
+  ],
+  "why": "wish는 want의 격식형으로 상대의 뜻을 따를 때 쓴다"
+ },
+ "dumbledore-6-040": {
+  "blank": "I am",
+  "options": [
+   "I was",
+   "I'm being",
+   "I have been"
+  ],
+  "why": "축약하지 않고 말해 정정의 단호함을 싣는다"
+ },
+ "dumbledore-6-041": {
+  "blank": "Perhaps",
+  "options": [
+   "Possible",
+   "Perchance",
+   "Mayhap"
+  ],
+  "why": "영국에서는 구어에서도 maybe 대신 perhaps를 즐겨 쓴다"
+ },
+ "dumbledore-6-042": {
+  "blank": "mad",
+  "options": [
+   "crazy",
+   "angry",
+   "maddened"
+  ],
+  "why": "영국영어에서 mad는 주로 '화난'보다 '미친'을 뜻한다"
+ },
+ "dumbledore-6-043": {
+  "blank": "A school of",
+  "options": [
+   "A school about",
+   "A school on",
+   "A school with"
+  ],
+  "why": "school of + 분야가 '~을 가르치는 학교'의 정형 표현이다"
+ },
+ "dumbledore-6-044": {
+  "blank": "can't you",
+  "options": [
+   "right",
+   "don't you",
+   "can you"
+  ],
+  "why": "조동사 can을 반대 극성으로 받는 부가의문문이다"
+ },
+ "dumbledore-6-045": {
+  "blank": "some of the things",
+  "options": [
+   "some of the stuff",
+   "some of things",
+   "a bit of the things"
+  ],
+  "why": "stuff 대신 things를 써서 정돈된 말투를 만든다"
+ },
+ "dumbledore-6-046": {
+  "blank": "I'm like you",
+  "options": [
+   "I'm likely you",
+   "I'm alike you",
+   "I'm as you"
+  ],
+  "why": "be like you로 '너와 같은 부류'임을 간결히 말한다"
+ },
+ "dumbledore-6-047": {
+  "blank": "wardrobe",
+  "options": [
+   "closet",
+   "armoire",
+   "dresser"
+  ],
+  "why": "옷장은 wardrobe이며 closet은 미국식 표현이다"
+ },
+ "dumbledore-6-048": {
+  "blank": "out",
+  "options": [
+   "outside",
+   "off",
+   "up"
+  ],
+  "why": "안에 든 물건을 꺼낼 때는 take out을 쓴다"
+ },
+ "dumbledore-6-049": {
+  "blank": "ought not to",
+  "options": [
+   "must not to",
+   "ought to not",
+   "ought not"
+  ],
+  "why": "도리상 안 된다는 뜻을 담은 격식 있는 부정형이다"
+ },
+ "dumbledore-6-050": {
+  "blank": "these things",
+  "options": [
+   "all this stuff",
+   "these stuffs",
+   "this things"
+  ],
+  "why": "stuff 대신 these things로 차분하게 묻는 표준 표현이다"
+ },
+ "dumbledore-6-051.1": {
+  "blank": "Thievery is not tolerated",
+  "options": [
+   "Stealing isn't okay",
+   "Thievery is not tolerating",
+   "Thievery is not stood"
+  ],
+  "why": "주어를 숨긴 수동태로 기관의 방침을 통보한다"
+ },
+ "dumbledore-6-051.2": {
+  "blank": "Understood",
+  "options": [
+   "Got it",
+   "Understanding",
+   "Understand it"
+  ],
+  "why": "Got it?보다 권위 있게 지시를 못 박는 말이다"
+ },
+ "dumbledore-6-051.3": {
+  "blank": "I'll be going now",
+  "options": [
+   "I'm gonna head out",
+   "I'll go away now",
+   "I'll be gone now"
+  ],
+  "why": "미래진행형으로 자리를 뜨겠다고 부드럽게 알린다"
+ },
+ "dumbledore-6-051.4": {
+  "blank": "will bring",
+  "options": [
+   "is gonna bring",
+   "will brings",
+   "is bringing to"
+  ],
+  "why": "gonna 대신 will로 격식 있게 앞일을 알린다"
+ },
+ "dumbledore-6-052": {
+  "blank": "not unheard of",
+  "options": [
+   "not unhearing of",
+   "not unheard",
+   "not unknown of"
+  ],
+  "why": "이중부정으로 '드물지만 있다'를 절제해 말한다"
+ },
+ "dumbledore-6-053": {
+  "blank": "Had I",
+  "options": [
+   "Did I have",
+   "Have I",
+   "Was I"
+  ],
+  "why": "if를 빼고 조동사를 앞세운 격식 가정법 도치다"
+ },
+ "dumbledore-6-054.1": {
+  "blank": "grew close to",
+  "options": [
+   "got really tight with",
+   "grew closely to",
+   "grew near with"
+  ],
+  "why": "grow + 형용사로 서서히 가까워짐을 서술한다"
+ },
+ "dumbledore-6-054.2": {
+  "blank": "might be",
+  "options": [
+   "might to be",
+   "might been",
+   "could being"
+  ],
+  "why": "might be로 질문을 누그러뜨려 답을 유도한다"
+ },
+ "dumbledore-6-055.1": {
+  "blank": "I did not",
+  "options": [
+   "I have not",
+   "I do not",
+   "I had not"
+  ],
+  "why": "축약하지 않은 not에 강세가 실려 단호하게 들린다"
+ },
+ "dumbledore-6-055.2": {
+  "blank": "part with",
+  "options": [
+   "give up on",
+   "part from",
+   "part off"
+  ],
+  "why": "아끼는 것을 마지못해 내놓는다는 뜻의 구동사다"
+ },
+ "dumbledore-6-055.3": {
+  "blank": "I'd rather not divulge",
+  "options": [
+   "I don't wanna say",
+   "I'd rather not divulging",
+   "I'd prefer not divulge"
+  ],
+  "why": "완곡한 거절에 격식어 divulge를 더한 표현이다"
+ },
+ "dumbledore-6-055.4": {
+  "blank": "In time",
+  "options": [
+   "At time",
+   "On time",
+   "In the time"
+  ],
+  "why": "In time은 '때가 되면'이라는 뜻으로 On time과 다르다"
+ },
+ "dumbledore-6-058": {
+  "blank": "I would be surprised",
+  "options": [
+   "I'd be like surprised",
+   "I would surprise",
+   "I will be surprised"
+  ],
+  "why": "가정법으로 '당연하다'를 한발 물러서 말하는 표현이다"
+ },
+ "dumbledore-6-059.1": {
+  "blank": "perhaps",
+  "options": [
+   "probable",
+   "perchance",
+   "like"
+  ],
+  "why": "최상급 앞의 perhaps가 단정을 살짝 누그러뜨린다"
+ },
+ "dumbledore-6-059.2": {
+  "blank": "has been tampered with",
+  "options": [
+   "has been messed with",
+   "has been tampered",
+   "has been tampered on"
+  ],
+  "why": "허락 없이 손대 조작했음을 격식 있게 전하는 말이다"
+ },
+ "dumbledore-6-060": {
+  "blank": "I suspect",
+  "options": [
+   "I bet",
+   "I suspicion",
+   "I'm suspecting"
+  ],
+  "why": "거의 확신하면서도 한발 물러서는 단정 회피 표현이다"
+ },
+ "dumbledore-6-061": {
+  "blank": "indeed",
+  "options": [
+   "though",
+   "for real",
+   "instead"
+  ],
+  "why": "의문사에 indeed를 붙여 질문의 무게를 되받는다"
+ },
+ "dumbledore-6-062.1": {
+  "blank": "you've done so",
+  "options": [
+   "you've done such",
+   "you've done it so",
+   "you've made so"
+  ],
+  "why": "앞의 동사구를 do so로 받는 격식 대용 표현이다"
+ },
+ "dumbledore-6-062.2": {
+  "blank": "divulge",
+  "options": [
+   "divert",
+   "spill",
+   "let out"
+  ],
+  "why": "숨긴 정보를 털어놓다는 뜻의 격식 동사 divulge다."
+ },
+ "dumbledore-6-063.1": {
+  "blank": "at heart",
+  "options": [
+   "at the heart",
+   "by heart",
+   "in heart"
+  ],
+  "why": "at heart는 '본바탕은'이라는 영미 공통 격식 삽입구다."
+ },
+ "dumbledore-6-063.2": {
+  "blank": "and he will",
+  "options": [
+   "or he will",
+   "but he will",
+   "so he would"
+  ],
+  "why": "명령문+and+will로 조건을 단정하는 격식 구문이다."
+ },
+ "dumbledore-6-064.1": {
+  "blank": "is everything",
+  "options": [
+   "is all things",
+   "is the whole lot",
+   "is every bit"
+  ],
+  "why": "is everything으로 '모든 것이 달렸다'를 단호히 말한다."
+ },
+ "dumbledore-6-064.2": {
+  "blank": "to chance",
+  "options": [
+   "to luck",
+   "on chance",
+   "with chance"
+  ],
+  "why": "leave ~ to chance는 '운에 맡기다'라는 관용구다."
+ },
+ "dumbledore-6-064.3": {
+  "blank": "must not fail",
+  "options": [
+   "can't mess up",
+   "need not fail",
+   "won't be failing"
+  ],
+  "why": "축약 없는 must not이 가장 강한 금지를 나타낸다."
+ },
+ "dumbledore-6-065": {
+  "blank": "on your part",
+  "options": [
+   "from your side",
+   "by your part",
+   "in your part"
+  ],
+  "why": "on your part는 행위 주체를 밝히는 영미 공통 표현이다."
+ },
+ "dumbledore-6-066": {
+  "blank": "indeed",
+  "options": [
+   "really",
+   "actually",
+   "truly"
+  ],
+  "why": "의문사+indeed로 '바로 그 점'이라 받는 공통 화법이다."
+ },
+ "dumbledore-6-067.1": {
+  "blank": "appears to be",
+  "options": [
+   "appears being",
+   "seems as",
+   "shows to be"
+  ],
+  "why": "appears to be는 판단을 조심스럽게 내놓는 격식 표현이다."
+ },
+ "dumbledore-6-067.2": {
+  "blank": "by chance",
+  "options": [
+   "at chance",
+   "for chance",
+   "on chance"
+  ],
+  "why": "by chance(혹시)가 질문의 부담을 덜어 주는 공손한 표현이다."
+ },
+ "dumbledore-6-067.3": {
+  "blank": "possesses",
+  "options": [
+   "has got",
+   "owns",
+   "is having"
+  ],
+  "why": "has 대신 possesses를 써서 감정가 같은 격식 말투를 낸다."
+ },
+ "dumbledore-6-068": {
+  "blank": "To whom",
+  "options": [
+   "Who to",
+   "To who",
+   "Whom to"
+  ],
+  "why": "전치사를 whom 앞에 두는 것이 격식 어순이다."
+ },
+ "dumbledore-6-069": {
+  "blank": "well tended",
+  "options": [
+   "well tendered",
+   "good tended",
+   "well tending"
+  ],
+  "why": "tend는 look after의 문어적 표현으로 점잖게 들린다."
+ },
+ "dumbledore-6-070": {
+  "blank": "How is he",
+  "options": [
+   "How does he",
+   "How he is",
+   "What is he"
+  ],
+  "why": "축약 없는 How is he로 정중하게 안부를 묻는다."
+ },
+ "dumbledore-6-071.1": {
+  "blank": "beyond anything",
+  "options": [
+   "way worse than",
+   "above anything",
+   "past everything"
+  ],
+  "why": "beyond anything I imagined는 상상을 넘는 격식 강조다."
+ },
+ "dumbledore-6-071.2": {
+  "blank": "you will see",
+  "options": [
+   "you're gonna see",
+   "you'd be seeing",
+   "you've seen"
+  ],
+  "why": "축약 없는 you will see가 엄숙한 예언처럼 들린다."
+ },
+ "dumbledore-6-072": {
+  "blank": "He's just told us",
+  "options": [
+   "He just told us",
+   "He's just telling us",
+   "He just tells us"
+  ],
+  "why": "방금 일은 just+현재완료로 말하는 것이 영국식이다."
+ },
+ "dumbledore-6-073": {
+  "blank": "commonplace of objects",
+  "options": [
+   "ordinary stuff",
+   "commonplace in objects",
+   "commonly of objects"
+  ],
+  "why": "the most+형용사+of+복수명사는 격식 문어 구문이다."
+ },
+ "dumbledore-6-074.1": {
+  "blank": "yes",
+  "options": [
+   "yeah",
+   "yep",
+   "sure"
+  ],
+  "why": "문장 끝에 yes를 덧붙여 점잖게 확인해 준다."
+ },
+ "dumbledore-6-074.2": {
+  "blank": "I knew",
+  "options": [
+   "I have known",
+   "I was knowing",
+   "I knowed"
+  ],
+  "why": "짧은 I knew로 그때 이미 확신했음을 단호히 말한다."
+ },
+ "dumbledore-6-074.3": {
+  "blank": "Very powerful",
+  "options": [
+   "Really strong",
+   "Super strong",
+   "Very much powerful"
+  ],
+  "why": "Very powerful처럼 짧게 끊어 말해 무게를 싣는다."
+ },
+ "dumbledore-6-074.4": {
+  "blank": "I had no idea",
+  "options": [
+   "I had no clue",
+   "I got no idea",
+   "I didn't know of"
+  ],
+  "why": "I had no idea는 몰랐던 정도를 강조하는 표준 표현이다."
+ },
+ "dumbledore-6-075": {
+  "blank": "even more difficult",
+  "options": [
+   "way harder",
+   "even more hard",
+   "much more hard"
+  ],
+  "why": "difficult를 되받은 even more difficult로 대구를 이룬다."
+ },
+ "dumbledore-6-076": {
+  "blank": "One",
+  "options": [
+   "You",
+   "Someone",
+   "A person"
+  ],
+  "why": "일반인을 가리키는 one은 격식 있는 영국식 대명사다."
+ },
+ "dumbledore-6-078": {
+  "blank": "leaves traces",
+  "options": [
+   "leaves stuff behind",
+   "leaves tracks",
+   "drops traces"
+  ],
+  "why": "leave traces는 '흔적을 남기다'라는 자연스러운 연어다."
+ },
+ "dumbledore-6-079": {
+  "blank": "cannot hope to",
+  "options": [
+   "have no way to",
+   "cannot wish to",
+   "cannot dream to"
+  ],
+  "why": "cannot hope to는 '도저히 ~할 수 없다'는 격식 표현이다."
+ },
+ "dumbledore-6-080": {
+  "blank": "I shall",
+  "options": [
+   "I'm gonna",
+   "I would",
+   "I do"
+  ],
+  "why": "1인칭 shall은 영국에 남은 격식 있는 미래 표현이다."
+ },
+ "dumbledore-6-081.1": {
+  "blank": "is irrelevant",
+  "options": [
+   "is irrelevantly",
+   "is irrelevance",
+   "is unrelevant"
+  ],
+  "why": "whether절 주어 뒤 is irrelevant가 사무적인 격식체다."
+ },
+ "dumbledore-6-081.2": {
+  "blank": "I will not",
+  "options": [
+   "I'm not gonna",
+   "I won't ever",
+   "I don't"
+  ],
+  "why": "축약 없는 will not이 단호한 거부를 나타낸다."
+ },
+ "dumbledore-6-082": {
+  "blank": "need a shave",
+  "options": [
+   "need shaving",
+   "need a shaving",
+   "need to shave up"
+  ],
+  "why": "need a shave는 영미 공통의 자연스러운 일상 표현이다."
+ },
+ "dumbledore-6-083.1": {
+  "blank": "cupboard",
+  "options": [
+   "closet",
+   "cabinet",
+   "wardrobe"
+  ],
+  "why": "계단 밑 수납 공간은 영국영어로 cupboard라고 한다."
+ },
+ "dumbledore-6-083.2": {
+  "blank": "mawkishness",
+  "options": [
+   "sappiness",
+   "mawkishment",
+   "cheesiness"
+  ],
+  "why": "mawkishness는 '신파조'를 뜻하는 격식 어휘다."
+ },
+ "dumbledore-6-084.1": {
+  "blank": "I'm afraid",
+  "options": [
+   "I'm afraid of",
+   "I'm scared",
+   "I fear so"
+  ],
+  "why": "끝에 붙인 I'm afraid가 유감을 부드럽게 전한다."
+ },
+ "dumbledore-6-084.2": {
+  "blank": "to which we journey",
+  "options": [
+   "which we journey",
+   "to where we journey",
+   "in which we journey"
+  ],
+  "why": "to which는 전치사를 관계사 앞에 둔 격식 문어체다."
+ },
+ "dumbledore-6-084.3": {
+  "blank": "stand by",
+  "options": [
+   "stand with",
+   "stand on",
+   "stay by"
+  ],
+  "why": "stand by a promise는 '약속을 지키다'라는 연어다."
+ },
+ "dumbledore-6-084.4": {
+  "blank": "without question",
+  "options": [
+   "without questions",
+   "with no question",
+   "out of question"
+  ],
+  "why": "without question은 '토 달지 말고'의 격식 표현이다."
+ },
+ "dumbledore-6-085": {
+  "blank": "Should I tell you",
+  "options": [
+   "Should I told you",
+   "Would I tell you",
+   "Shall I tell you"
+  ],
+  "why": "if 없이 should를 앞세운 도치 조건절이 격식체다."
+ },
+ "dumbledore-6-086": {
+  "blank": "you will run",
+  "options": [
+   "you'd run",
+   "you're running",
+   "you can run"
+  ],
+  "why": "you will+동사는 반박을 허락하지 않는 명령이다."
+ },
+ "dumbledore-6-087": {
+  "blank": "should I tell you",
+  "options": [
+   "had I tell you",
+   "would I tell you",
+   "shall I tell you"
+  ],
+  "why": "if를 생략하고 should를 앞세운 격식 조건절이다."
+ },
+ "dumbledore-6-088": {
+  "blank": "do so",
+  "options": [
+   "make it",
+   "do such",
+   "make so"
+  ],
+  "why": "do so는 앞의 동사구를 받는 격식 대용 표현이다."
+ },
+ "dumbledore-6-089": {
+  "blank": "Your word",
+  "options": [
+   "Your words",
+   "Your promising",
+   "Your swear"
+  ],
+  "why": "word는 명예를 건 약속을 뜻하는 격식 관용구다"
+ },
+ "dumbledore-6-090": {
+  "blank": "Take",
+  "options": [
+   "Hold on",
+   "Catch",
+   "Seize"
+  ],
+  "why": "Take my arm은 팔을 내밀 때 쓰는 정중한 표현이다"
+ },
+ "dumbledore-6-091": {
+  "blank": "has its privileges",
+  "options": [
+   "has a few perks",
+   "holds its privileges",
+   "has privileges to it"
+  ],
+  "why": "has its privileges는 나름의 특권을 뜻하는 관용구다"
+ },
+ "dumbledore-6-092.1": {
+  "blank": "has known magic",
+  "options": [
+   "has had magic",
+   "has been magic",
+   "has known of magic"
+  ],
+  "why": "장소 주어의 know는 '겪다'라는 문어적 용법이다"
+ },
+ "dumbledore-6-092.2": {
+  "blank": "a penchant for",
+  "options": [
+   "a thing for",
+   "a pendant for",
+   "a penchant to"
+  ],
+  "why": "penchant for는 '~을 유독 즐기는 성향'의 격식어다"
+ },
+ "dumbledore-6-093.1": {
+  "blank": "lured",
+  "options": [
+   "tricked",
+   "baited",
+   "hooked"
+  ],
+  "why": "lure는 '꾀어 데려가다'라는 뜻의 문어적 동사다"
+ },
+ "dumbledore-6-093.2": {
+  "blank": "this much is known",
+  "options": [
+   "one thing's for sure",
+   "this much is told",
+   "this far is known"
+  ],
+  "why": "this much is known은 화자를 감춘 격식 수동 구문이다"
+ },
+ "dumbledore-6-094": {
+  "blank": "gain passage",
+  "options": [
+   "gain a pass",
+   "gain passing",
+   "earn a passage"
+  ],
+  "why": "gain passage는 '통과권을 얻다'라는 문어 표현이다"
+ },
+ "dumbledore-6-095": {
+  "blank": "much more precious",
+  "options": [
+   "way more precious",
+   "a lot more pricey",
+   "much more costly"
+  ],
+  "why": "much more precious는 격식 있는 비교 강조다"
+ },
+ "dumbledore-6-096": {
+  "blank": "Careful",
+  "options": [
+   "Caring",
+   "Carefully",
+   "Heedful"
+  ],
+  "why": "Careful은 Be careful을 줄인 간결한 경고다"
+ },
+ "dumbledore-6-097": {
+  "blank": "The only question is",
+  "options": [
+   "The only ask is",
+   "The lone question is",
+   "The sole query is"
+  ],
+  "why": "The only question is는 남은 과제를 짚는 관용구다"
+ },
+ "dumbledore-6-098": {
+  "blank": "Perhaps",
+  "options": [
+   "Guess",
+   "Probable",
+   "Mayhap"
+  ],
+  "why": "Perhaps not은 실패를 낮춰 말하는 영국식 절제 표현이다"
+ },
+ "dumbledore-6-099": {
+  "blank": "If you would",
+  "options": [
+   "If you should",
+   "If you do",
+   "If you did"
+  ],
+  "why": "If you would는 부탁을 줄여 말하는 정중한 표현이다"
+ },
+ "dumbledore-6-100": {
+  "blank": "one creates one's own luck",
+  "options": [
+   "one creates own luck",
+   "one creates your own luck",
+   "one forms one's own luck"
+  ],
+  "why": "일반인 주어 one과 one's를 맞춘 영국 격식체다"
+ },
+ "dumbledore-6-102": {
+  "blank": "Remember",
+  "options": [
+   "Remind",
+   "Recall",
+   "Memorise"
+  ],
+  "why": "Remember 한 마디로 앞선 경고를 상기시킨다"
+ },
+ "dumbledore-6-104": {
+  "blank": "the condition on which",
+  "options": [
+   "the condition in which",
+   "the condition at which",
+   "the condition for which"
+  ],
+  "why": "on which는 '전치사+관계대명사' 격식 구문이다"
+ },
+ "dumbledore-6-105.1": {
+  "blank": "cause me to forget",
+  "options": [
+   "get me forgetting",
+   "bring me to forget",
+   "set me forgetting"
+  ],
+  "why": "cause+목적어+to부정사는 격식 있는 사역 구문이다"
+ },
+ "dumbledore-6-105.2": {
+  "blank": "are not to",
+  "options": [
+   "don't have to",
+   "need not",
+   "are not for"
+  ],
+  "why": "be to 부정사는 단호한 지시를 전하는 격식 명령이다"
+ },
+ "dumbledore-6-105.3": {
+  "blank": "Understood",
+  "options": [
+   "Got it",
+   "Comprehended",
+   "Understanding"
+  ],
+  "why": "Understood?는 단호하게 이해를 확인하는 말이다"
+ },
+ "dumbledore-6-106": {
+  "blank": "Your good health",
+  "options": [
+   "Your fine health",
+   "Your nice health",
+   "Your well health"
+  ],
+  "why": "Your good health는 잔을 들 때 쓰는 격식 건배사다"
+ },
+ "dumbledore-6-107": {
+  "blank": "make me",
+  "options": [
+   "let me",
+   "get me to",
+   "have me to"
+  ],
+  "why": "make me는 '억지로 시키다'라는 기본 사역 표현이다"
+ },
+ "dumbledore-6-109": {
+  "blank": "Make it stop",
+  "options": [
+   "Make it stopped",
+   "Make it halt",
+   "Make it cease"
+  ],
+  "why": "Make it stop은 고통을 멈춰 달라는 사역 표현이다"
+ },
+ "dumbledore-6-110": {
+  "blank": "It's all my fault",
+  "options": [
+   "It's all on me",
+   "It's all my blame",
+   "It's all my mistake"
+  ],
+  "why": "It's all my fault는 전적인 자책의 관용구다"
+ },
+ "dumbledore-6-111": {
+  "blank": "take it",
+  "options": [
+   "take it up",
+   "bear with it",
+   "take it on"
+  ],
+  "why": "can't take it은 '견딜 수 없다'는 관용구다"
+ },
+ "dumbledore-6-112": {
+  "blank": "Your word, Harry",
+  "options": [
+   "Your wording, Harry",
+   "Your promising, Harry",
+   "Your words, Harry"
+  ],
+  "why": "word는 명예를 건 약속을 뜻하는 격식 관용구다"
+ },
+ "dumbledore-6-113": {
+  "blank": "THE ONLY WAY",
+  "options": [
+   "THE SOLE ROAD",
+   "THE LONE WAY",
+   "THE ONLY PATHWAY"
+  ],
+  "why": "the only way는 '유일한 방법'이라는 관용구다"
+ },
+ "dumbledore-6-118": {
+  "blank": "We have to",
+  "options": [
+   "We've gotta",
+   "We gotta",
+   "We are to"
+  ],
+  "why": "have to는 피할 수 없는 의무를 담담히 말한다"
+ },
+ "dumbledore-6-119": {
+  "blank": "I am not worried",
+  "options": [
+   "I am not worry",
+   "I am not worrying",
+   "I am no worried"
+  ],
+  "why": "축약을 피한 I am은 차분하고 단호한 확언이 된다"
+ },
+ "dumbledore-6-120.1": {
+  "blank": "is who I need",
+  "options": [
+   "is what I need",
+   "is which I need",
+   "is who I'm needing"
+  ],
+  "why": "사람을 강조할 때는 who로 분열문을 만든다"
+ },
+ "dumbledore-6-120.2": {
+  "blank": "Go and wake him",
+  "options": [
+   "Go wake him",
+   "Go to wake him",
+   "Go waking him"
+  ],
+  "why": "go and + 동사는 영국영어가 즐겨 쓰는 형태다"
+ },
+ "dumbledore-6-120.3": {
+  "blank": "I shall wait",
+  "options": [
+   "I shall waiting",
+   "I should wait",
+   "I would wait"
+  ],
+  "why": "1인칭 shall은 차분한 의지를 담은 영국식 격식이다"
+ },
+ "dumbledore-6-121.1": {
+  "blank": "I do not pray",
+  "options": [
+   "I am not pray",
+   "I do not praying",
+   "I pray not"
+  ],
+  "why": "do not을 풀어 쓰면 원칙을 밝히는 단호한 부정이 된다"
+ },
+ "dumbledore-6-121.2": {
+  "blank": "merely",
+  "options": [
+   "rarely",
+   "barely",
+   "mostly"
+  ],
+  "why": "merely는 just의 격식어로 행동을 낮춰 말한다"
+ },
+ "dumbledore-6-122": {
+  "blank": "do not speak",
+  "options": [
+   "do not speaking",
+   "do not say",
+   "do not talk out"
+  ],
+  "why": "명령문의 do not은 경고문 같은 엄격함을 준다"
+ },
+ "dumbledore-6-123": {
+  "blank": "Do as I say",
+  "options": [
+   "Do like I say",
+   "Do as I tell",
+   "Do so I say"
+  ],
+  "why": "Do as I say는 단호한 지시의 표준 표현이다"
+ },
+ "dumbledore-6-124": {
+  "blank": "Trust",
+  "options": [
+   "Believe in",
+   "Credit",
+   "Confide in"
+  ],
+  "why": "Trust me는 짧고 단호하게 신뢰를 요구하는 말이다"
+ },
+ "dumbledore-6-125": {
+  "blank": "What brings you out",
+  "options": [
+   "What brings out you",
+   "What takes you out",
+   "What gets you out"
+  ],
+  "why": "What brings you는 이유를 돌려 묻는 정중한 질문이다"
+ },
+ "dumbledore-6-126.1": {
+  "blank": "extraordinarily useful",
+  "options": [
+   "super useful",
+   "extraordinary useful",
+   "extremely usable"
+  ],
+  "why": "extraordinarily는 really 대신 쓰는 격식 강조어다"
+ },
+ "dumbledore-6-126.2": {
+  "blank": "That which",
+  "options": [
+   "Stuff that",
+   "That what",
+   "This which"
+  ],
+  "why": "That which는 what의 격식·문어 형태다"
+ },
+ "dumbledore-6-126.3": {
+  "blank": "have you",
+  "options": [
+   "right",
+   "haven't you",
+   "did you"
+  ],
+  "why": "부정문 뒤에는 긍정 부가의문 have you가 온다"
+ },
+ "dumbledore-6-127": {
+  "blank": "You are not",
+  "options": [
+   "You are no",
+   "You aren't being",
+   "You won't be"
+  ],
+  "why": "축약을 피한 You are not은 단호한 확언처럼 들린다"
+ },
+ "dumbledore-6-128.1": {
+  "blank": "in turn",
+  "options": [
+   "in return",
+   "by turns",
+   "on her turn"
+  ],
+  "why": "in turn은 '이번엔 그쪽이 이어서'라는 관용구다"
+ },
+ "dumbledore-6-128.2": {
+  "blank": "laced with poison",
+  "options": [
+   "laced by poison",
+   "tied with poison",
+   "spiked of poison"
+  ],
+  "why": "laced with는 '(독을) 몰래 탄'이라는 관용구다"
+ },
+ "dumbledore-6-128.3": {
+  "blank": "Forgive me",
+  "options": [
+   "Forgiving me",
+   "Pardon you",
+   "Excuse you"
+  ],
+  "why": "Forgive me, but은 반박을 예고하는 격식 서두다"
+ },
+ "dumbledore-6-128.4": {
+  "blank": "in a whisper",
+  "options": [
+   "by a whisper",
+   "on a whisper",
+   "with whisper"
+  ],
+  "why": "in a whisper는 '속삭이는 목소리로'라는 관용구다"
+ },
+ "dumbledore-6-129": {
+  "blank": "I shall",
+  "options": [
+   "I must to",
+   "I should",
+   "I would"
+  ],
+  "why": "1인칭 shall은 결심을 담은 영국식 격식이다"
+ },
+ "dumbledore-6-130": {
+  "blank": "Well done",
+  "options": [
+   "Good job",
+   "Well made",
+   "Nicely did"
+  ],
+  "why": "Well done은 영국에서 가장 흔한 칭찬 표현이다"
+ },
+ "dumbledore-6-131": {
+  "blank": "Are you",
+  "options": [
+   "Right",
+   "Aren't you",
+   "Do you"
+  ],
+  "why": "내림조 부가의문은 질문이 아닌 확인을 전한다"
+ },
+ "dumbledore-6-132": {
+  "blank": "has been broken",
+  "options": [
+   "has been busted",
+   "is broken",
+   "has broken"
+  ],
+  "why": "for years와 현재완료 수동이 지속 상태를 나타낸다"
+ },
+ "dumbledore-6-133": {
+  "blank": "Ingenious",
+  "options": [
+   "Genial",
+   "Ingenuous",
+   "Smartly"
+  ],
+  "why": "Ingenious는 clever보다 지적인 격식 칭찬이다"
+ },
+ "dumbledore-6-134.1": {
+  "blank": "Very good",
+  "options": [
+   "Nice one",
+   "Very well",
+   "Much good"
+  ],
+  "why": "Very good은 교사가 정답을 인정할 때 쓰는 말이다"
+ },
+ "dumbledore-6-134.2": {
+  "blank": "made all the wrong choices",
+  "options": [
+   "did all the wrong choices",
+   "took all the wrong choices",
+   "got all the wrong choices"
+  ],
+  "why": "choice는 동사 make와 어울리는 연어다"
+ },
+ "dumbledore-6-135": {
+  "blank": "aloud",
+  "options": [
+   "aloudly",
+   "loudly",
+   "allowed"
+  ],
+  "why": "aloud는 out loud보다 격식 있는 '소리 내어'다"
+ },
+ "dumbledore-6-136": {
+  "blank": "are in order",
+  "options": [
+   "are in line",
+   "are on order",
+   "are in place"
+  ],
+  "why": "be in order는 '~이 마땅하다'는 격식 관용구다"
+ },
+ "dumbledore-6-138": {
+  "blank": "please",
+  "options": [
+   "pretty please",
+   "kindly",
+   "pleased"
+  ],
+  "why": "please 한 마디로 절박한 간청을 전한다"
+ }
+}

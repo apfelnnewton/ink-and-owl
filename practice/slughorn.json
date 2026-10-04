@@ -1,0 +1,1496 @@
+{
+ "slughorn-6-001": {
+  "blank": "There's no need to",
+  "options": [
+   "There's no need for",
+   "There's no point to",
+   "It's no need to"
+  ],
+  "why": "There's no need to는 지나친 행동을 점잖게 나무라는 표현이다"
+ },
+ "slughorn-6-002": {
+  "blank": "come by",
+  "options": [
+   "come with",
+   "get by",
+   "come up"
+  ],
+  "why": "come by는 '얻다, 손에 넣다'라는 뜻의 구동사다"
+ },
+ "slughorn-6-003": {
+  "blank": "couldn't very well",
+  "options": [
+   "couldn't very good",
+   "couldn't quite well",
+   "couldn't so well"
+  ],
+  "why": "couldn't very well은 '도리상 ~할 수 없다'는 뜻이다"
+ },
+ "slughorn-6-004": {
+  "blank": "I'm sure I don't know",
+  "options": [
+   "I'm sure I didn't know",
+   "I sure don't know",
+   "I'm sure I'm not knowing"
+  ],
+  "why": "점잔 빼며 시치미 떼는 고전적인 영국식 표현이다"
+ },
+ "slughorn-6-005.1": {
+  "blank": "Oh all right",
+  "options": [
+   "Okay, fine",
+   "Oh all correct",
+   "Oh all well"
+  ],
+  "why": "마지못해 양보할 때 쓰는 영미 공통 관용구다"
+ },
+ "slughorn-6-005.2": {
+  "blank": "One can only",
+  "options": [
+   "One may only",
+   "One can just",
+   "One only can"
+  ],
+  "why": "자기 얘기를 one으로 일반화하는 격식 영국 화법이다"
+ },
+ "slughorn-6-006": {
+  "blank": "never stay anywhere",
+  "options": [
+   "never stay any place",
+   "never stay nowhere",
+   "never stay somewhere"
+  ],
+  "why": "never ~ anywhere로 '어디서도 결코'를 간결히 말한다"
+ },
+ "slughorn-6-007": {
+  "blank": "unequivocally",
+  "options": [
+   "equivocally",
+   "unequivalently",
+   "unequivocably"
+  ],
+  "why": "unequivocally는 '두말할 여지 없이'라는 격식 부사다"
+ },
+ "slughorn-6-008": {
+  "blank": "very like",
+  "options": [
+   "very similar",
+   "very alike",
+   "very same as"
+  ],
+  "why": "very like는 a lot like보다 예스럽고 격식 있는 말이다"
+ },
+ "slughorn-6-009": {
+  "blank": "when one considers",
+  "options": [
+   "when you think about",
+   "when one regards",
+   "when one minds"
+  ],
+  "why": "일반인 one으로 판단을 객관화하는 격식 표현이다"
+ },
+ "slughorn-6-010.1": {
+  "blank": "mustn't think",
+  "options": [
+   "don't have to think",
+   "shan't think",
+   "won't think"
+  ],
+  "why": "mustn't think로 상대의 오해를 미리 막는다"
+ },
+ "slughorn-6-010.2": {
+  "blank": "absolute favourites",
+  "options": [
+   "all-time favorites",
+   "utter favourites",
+   "complete favourites"
+  ],
+  "why": "absolute favourite는 '제일 아끼는 것'을 강조한다"
+ },
+ "slughorn-6-011.1": {
+  "blank": "You no doubt know",
+  "options": [
+   "You sure know",
+   "You no doubtly know",
+   "You doubtlessly knew"
+  ],
+  "why": "no doubt를 삽입해 '물론 아시겠지만'을 나타낸다"
+ },
+ "slughorn-6-011.2": {
+  "blank": "Shame",
+  "options": [
+   "Such shame",
+   "Shameful",
+   "Ashamed"
+  ],
+  "why": "It's a shame를 줄인 영국식 생략형이다"
+ },
+ "slughorn-6-011.3": {
+  "blank": "I'd have liked",
+  "options": [
+   "I'd like to have",
+   "I'd liked",
+   "I'd have like"
+  ],
+  "why": "이루지 못한 바람을 절제해 말하는 표현이다"
+ },
+ "slughorn-6-012": {
+  "blank": "Of course",
+  "options": [
+   "Sure thing",
+   "Of courses",
+   "In course"
+  ],
+  "why": "정중하게 승낙할 때는 Of course가 자연스럽다"
+ },
+ "slughorn-6-013.1": {
+  "blank": "I'll be wanting",
+  "options": [
+   "I'm gonna need",
+   "I'll be wanted",
+   "I'll been wanting"
+  ],
+  "why": "미래진행형으로 요구를 부드럽게 포장하는 영국식이다"
+ },
+ "slughorn-6-013.2": {
+  "blank": "mad times",
+  "options": [
+   "crazy times",
+   "angry times",
+   "mad hours"
+  ],
+  "why": "영국 영어에서 mad는 '미친, 제정신이 아닌'이다"
+ },
+ "slughorn-6-014": {
+  "blank": "we've brought someone",
+  "options": [
+   "you brought someone",
+   "we've taken someone",
+   "we've fetched someone"
+  ],
+  "why": "상대를 we로 부르는 다정한 보호자적 화법이다"
+ },
+ "slughorn-6-015": {
+  "blank": "sort you out",
+  "options": [
+   "get you set up",
+   "sort you up",
+   "sort out you"
+  ],
+  "why": "sort sb out은 '챙겨 주다'라는 영국 구동사다"
+ },
+ "slughorn-6-016": {
+  "blank": "Not to worry",
+  "options": [
+   "No worry",
+   "Not to bother",
+   "Nothing to worry"
+  ],
+  "why": "Not to worry는 '걱정 마라'의 영국식 고정 표현이다"
+ },
+ "slughorn-6-017": {
+  "blank": "what these might be",
+  "options": [
+   "what might these be",
+   "what these must be",
+   "what these should be"
+  ],
+  "why": "might be로 짐작을 청해 질문을 부드럽게 한다"
+ },
+ "slughorn-6-018.1": {
+  "blank": "it does cause",
+  "options": [
+   "it did cause",
+   "it is causing",
+   "it can't cause"
+  ],
+  "why": "강조의 does로 앞의 부정과 대조를 이룬다"
+ },
+ "slughorn-6-018.2": {
+  "blank": "For that reason",
+  "options": [
+   "By that reason",
+   "On that reason",
+   "For that cause"
+  ],
+  "why": "For that reason은 강의체의 격식 연결어다"
+ },
+ "slughorn-6-020.1": {
+  "blank": "before you",
+  "options": [
+   "before yourselves",
+   "ahead of you",
+   "before of you"
+  ],
+  "why": "before를 장소의 '앞에'로 쓴 격식 표현이다"
+ },
+ "slughorn-6-020.2": {
+  "blank": "commonly referred to as",
+  "options": [
+   "usually called as",
+   "commonly referred as",
+   "commonly known for"
+  ],
+  "why": "refer to A as B 수동형은 학술적 격식 문체다"
+ },
+ "slughorn-6-021.1": {
+  "blank": "should you get it wrong",
+  "options": [
+   "if you mess it up",
+   "should you got it wrong",
+   "should you get it wrongly"
+  ],
+  "why": "if 없이 should를 앞세운 격식 가정 도치다"
+ },
+ "slughorn-6-021.2": {
+  "blank": "brewed correctly",
+  "options": [
+   "brewed right",
+   "brewing correctly",
+   "brewed correct"
+  ],
+  "why": "과거분사 brewed로 시작해 조건을 격식 있게 나타낸다"
+ },
+ "slughorn-6-021.3": {
+  "blank": "endeavors",
+  "options": [
+   "tries",
+   "doings",
+   "strivings"
+  ],
+  "why": "endeavour는 everything you try의 격식 명사다"
+ },
+ "slughorn-6-022": {
+  "blank": "taken in excess",
+  "options": [
+   "taken in excessive",
+   "taken at excess",
+   "took in excess"
+  ],
+  "why": "taken in excess는 약 설명서식 격식 분사구문이다"
+ },
+ "slughorn-6-023.1": {
+  "blank": "I offer each of you",
+  "options": [
+   "I offer for each of you",
+   "I offer to each you",
+   "I give out to you all"
+  ],
+  "why": "offer each of you로 상을 정중하게 내건다"
+ },
+ "slughorn-6-023.2": {
+  "blank": "in the hour that remains",
+  "options": [
+   "in the hour that stays",
+   "in the hour what remains",
+   "in the hour that rests"
+  ],
+  "why": "remain을 쓴 in the hour that remains가 격식체다"
+ },
+ "slughorn-6-023.3": {
+  "blank": "for which",
+  "options": [
+   "for that",
+   "for what",
+   "for whom"
+  ],
+  "why": "전치사+관계대명사 for which는 격식 글말 구조다"
+ },
+ "slughorn-6-024.1": {
+  "blank": "my previous tenure",
+  "options": [
+   "my previous tenancy",
+   "my before tenure",
+   "my previous tenures"
+  ],
+  "why": "tenure는 '재직 기간'을 뜻하는 격식 어휘다"
+ },
+ "slughorn-6-024.2": {
+  "blank": "not once did a student",
+  "options": [
+   "not once a student did",
+   "once not did a student",
+   "not once a student"
+  ],
+  "why": "부정어 not once가 앞에 오면 did가 주어 앞에 온다"
+ },
+ "slughorn-6-024.3": {
+  "blank": "In any event",
+  "options": [
+   "Anyways",
+   "At any event",
+   "In every event"
+  ],
+  "why": "In any event는 anyway의 격식 있는 화제 전환이다"
+ },
+ "slughorn-6-025.1": {
+  "blank": "I daresay",
+  "options": [
+   "I bet",
+   "I dare to say",
+   "I darely say"
+  ],
+  "why": "I daresay는 '아마 ~일 것'이라는 예스러운 영국식이다"
+ },
+ "slughorn-6-025.2": {
+  "blank": "a dab hand at",
+  "options": [
+   "a dab hand in",
+   "a dab finger at",
+   "a dap hand at"
+  ],
+  "why": "a dab hand at은 '~에 능숙한 사람'이라는 영국 관용구다"
+ },
+ "slughorn-6-025.3": {
+  "blank": "m'boy",
+  "options": [
+   "kiddo",
+   "buddy",
+   "my dude"
+  ],
+  "why": "m'boy는 my boy를 줄인 예스러운 상류층 호칭이다"
+ },
+ "slughorn-6-026": {
+  "blank": "as promised",
+  "options": [
+   "like I promised",
+   "as promising",
+   "so promised"
+  ],
+  "why": "as promised는 as I promised를 줄인 격식 표현이다"
+ },
+ "slughorn-6-027": {
+  "blank": "I was hoping to",
+  "options": [
+   "I was wishing to",
+   "I was hoping for",
+   "I was hopeful to"
+  ],
+  "why": "과거진행 I was hoping to로 바람을 부드럽게 말한다"
+ },
+ "slughorn-6-028": {
+  "blank": "m'boy",
+  "options": [
+   "kiddo",
+   "buddy",
+   "dude"
+  ],
+  "why": "m'boy는 손아랫사람을 부르는 예스러운 호칭이다"
+ },
+ "slughorn-6-029.1": {
+  "blank": "I'd care to admit",
+  "options": [
+   "I'd care admitting",
+   "I'd mind to admit",
+   "I'd bother to admit"
+  ],
+  "why": "care to는 want to의 격식형으로 완곡하게 말한다"
+ },
+ "slughorn-6-029.2": {
+  "blank": "simply",
+  "options": [
+   "simple",
+   "simplistically",
+   "simplest"
+  ],
+  "why": "just 대신 simply를 쓰면 더 단정하게 들린다"
+ },
+ "slughorn-6-030": {
+  "blank": "All hands on deck",
+  "options": [
+   "All hands to deck",
+   "All hands on board",
+   "Every hand on deck"
+  ],
+  "why": "all hands on deck은 '모두 달려들라'는 관용구다"
+ },
+ "slughorn-6-031.1": {
+  "blank": "the occasional supper",
+  "options": [
+   "the occasionally supper",
+   "a sometimes supper",
+   "the occasion supper"
+  ],
+  "why": "the occasional + 명사로 '가끔 하는 만찬'을 가볍게 말한다"
+ },
+ "slughorn-6-031.2": {
+  "blank": "be game",
+  "options": [
+   "be gaming",
+   "be a game",
+   "have game"
+  ],
+  "why": "be game은 '해 볼 마음이 있다'는 구어 표현이다"
+ },
+ "slughorn-6-032": {
+  "blank": "You'd be welcome",
+  "options": [
+   "You'd be welcomed",
+   "You'd be welcoming",
+   "You'd welcome"
+  ],
+  "why": "would를 쓴 You'd be welcome이 정중한 초대다"
+ },
+ "slughorn-6-033": {
+  "blank": "Brilliant",
+  "options": [
+   "Awesome",
+   "Brilliantly",
+   "Bright"
+  ],
+  "why": "Brilliant는 '훌륭해'라는 영국식 구어 맞장구다"
+ },
+ "slughorn-6-035": {
+  "blank": "best and brightest",
+  "options": [
+   "best and smartest",
+   "good and brightest",
+   "best and brighter"
+  ],
+  "why": "the best and brightest는 '최고 인재'의 굳은 표현이다"
+ },
+ "slughorn-6-036": {
+  "blank": "See much of",
+  "options": [
+   "See many of",
+   "See much from",
+   "Look much of"
+  ],
+  "why": "see much of는 '~와 자주 만나다'라는 관용구다"
+ },
+ "slughorn-6-037.1": {
+  "blank": "my best",
+  "options": [
+   "my regard",
+   "my good",
+   "my bests"
+  ],
+  "why": "give someone my best는 점잖게 안부를 전하는 말이다"
+ },
+ "slughorn-6-037.2": {
+  "blank": "Working on",
+  "options": [
+   "Working in",
+   "Doing on",
+   "Busy on"
+  ],
+  "why": "주어를 생략한 Working on ~?은 가볍게 근황을 묻는다"
+ },
+ "slughorn-6-037.3": {
+  "blank": "For those of you",
+  "options": [
+   "For those of yours",
+   "For these of you",
+   "For them of you"
+  ],
+  "why": "For those of you는 좌중에 설명을 더하는 격식 도입구다"
+ },
+ "slughorn-6-038": {
+  "blank": "What is it",
+  "options": [
+   "What it is",
+   "What's it",
+   "What is that"
+  ],
+  "why": "What is it ~?은 질문을 부드럽게 하는 강조 구문이다"
+ },
+ "slughorn-6-039": {
+  "blank": "considered",
+  "options": [
+   "considering",
+   "deemed as",
+   "regarded"
+  ],
+  "why": "수동태 is considered로 일반론처럼 거리를 두고 묻는다"
+ },
+ "slughorn-6-040": {
+  "blank": "Come in, come in",
+  "options": [
+   "Come in, go in",
+   "Get in, get in",
+   "Enter, enter"
+  ],
+  "why": "같은 말을 반복해 환대를 강조하는 표현이다"
+ },
+ "slughorn-6-041": {
+  "blank": "No matter",
+  "options": [
+   "Not matter",
+   "No matters",
+   "No mind"
+  ],
+  "why": "No matter는 사과를 점잖게 넘기는 예스러운 말이다"
+ },
+ "slughorn-6-042": {
+  "blank": "one and all",
+  "options": [
+   "one and every",
+   "all and one",
+   "every and all"
+  ],
+  "why": "one and all은 everyone의 예스러운 연설 표현이다"
+ },
+ "slughorn-6-044.1": {
+  "blank": "most intriguing",
+  "options": [
+   "super intriguing",
+   "mostly intriguing",
+   "much intriguing"
+  ],
+  "why": "'a most + 형용사'는 '대단히'를 뜻하는 격식 강조 표현이다"
+ },
+ "slughorn-6-044.2": {
+  "blank": "When it is not",
+  "options": [
+   "When it does not",
+   "When it not is",
+   "When it is no"
+  ],
+  "why": "축약 없이 또박또박 말해 설명에 무게를 싣는 격식 화법이다"
+ },
+ "slughorn-6-045.1": {
+  "blank": "Nonsense",
+  "options": [
+   "No way",
+   "Nonsensical",
+   "Senseless"
+  ],
+  "why": "상대의 걱정을 다정하게 물리치는 예스러운 반박 표현이다"
+ },
+ "slughorn-6-045.2": {
+  "blank": "let's just say",
+  "options": [
+   "let's only say",
+   "let's just tell",
+   "we just say"
+  ],
+  "why": "'let's just say'로 뜸을 들여 평가를 점잖게 돌려 말한다"
+ },
+ "slughorn-6-046": {
+  "blank": "aspires to be",
+  "options": [
+   "aspires being",
+   "aspires at being",
+   "inspires to be"
+  ],
+  "why": "'aspire to be'는 높은 지위를 꿈꾼다는 격식 어휘다"
+ },
+ "slughorn-6-047": {
+  "blank": "not so much",
+  "options": [
+   "not so many",
+   "not too much",
+   "not much so"
+  ],
+  "why": "'not so much'는 대조를 건조하게 낮춰 말하는 절제 표현이다"
+ },
+ "slughorn-6-048": {
+  "blank": "while here",
+  "options": [
+   "while there",
+   "during here",
+   "meanwhile here"
+  ],
+  "why": "주어와 be동사를 생략한 'while here'는 격식 글말 구문이다"
+ },
+ "slughorn-6-049.1": {
+  "blank": "should want",
+  "options": [
+   "will want",
+   "shall want",
+   "must want"
+  ],
+  "why": "감정·판단 뒤 that절에 should를 넣는 것은 영국식 격식 용법이다"
+ },
+ "slughorn-6-049.2": {
+  "blank": "albeit",
+  "options": [
+   "whereas",
+   "notwithstanding",
+   "nevertheless"
+  ],
+  "why": "형용사 앞에서 '~이긴 하지만'을 뜻하는 격식어는 albeit다"
+ },
+ "slughorn-6-049.3": {
+  "blank": "Not unlike the others",
+  "options": [
+   "Not dislike the others",
+   "Not unlikely the others",
+   "Not alike the others"
+  ],
+  "why": "'not unlike'는 단정을 피하는 이중 부정의 격식 표현이다"
+ },
+ "slughorn-6-049.4": {
+  "blank": "deep within",
+  "options": [
+   "way down deep",
+   "deep inside of",
+   "deeply within"
+  ],
+  "why": "'deep within'은 '깊숙한 곳에'를 뜻하는 문어적 표현이다"
+ },
+ "slughorn-6-050.1": {
+  "blank": "Class of '78",
+  "options": [
+   "Year of '78",
+   "Batch of '78",
+   "Grade of '78"
+  ],
+  "why": "졸업 연도는 'Class of + 연도'로 말하는 것이 관용이다"
+ },
+ "slughorn-6-050.2": {
+  "blank": "I had hoped for",
+  "options": [
+   "I have hoped for",
+   "I had hoped of",
+   "I was hoping on"
+  ],
+  "why": "'I had hoped'는 이루지 못한 기대를 점잖게 전하는 과거완료다"
+ },
+ "slughorn-6-050.3": {
+  "blank": "I must greet",
+  "options": [
+   "I gotta greet",
+   "I must salute",
+   "I must hail"
+  ],
+  "why": "스스로 느끼는 의무의 must와 격식어 greet가 어울린다"
+ },
+ "slughorn-6-050.4": {
+  "blank": "m'boy",
+  "options": [
+   "buddy",
+   "kiddo",
+   "my kid"
+  ],
+  "why": "'m'boy'는 연장자가 격려하며 부르는 예스러운 호칭이다"
+ },
+ "slughorn-6-051.1": {
+  "blank": "could I",
+  "options": [
+   "can I",
+   "couldn't I",
+   "right"
+  ],
+  "why": "부정문 뒤 긍정 꼬리 'could I'로 동의를 구하는 부가의문문이다"
+ },
+ "slughorn-6-051.2": {
+  "blank": "m'boy",
+  "options": [
+   "buddy",
+   "kiddo",
+   "pal"
+  ],
+  "why": "'m'boy'는 아랫사람을 친근하게 부르는 구식 호칭이다"
+ },
+ "slughorn-6-051.3": {
+  "blank": "you are",
+  "options": [
+   "you be",
+   "you do",
+   "you have"
+  ],
+  "why": "칭찬을 앞세우고 주어·동사를 끝에 붙이는 영국 구어 어순이다"
+ },
+ "slughorn-6-051.4": {
+  "blank": "quite right",
+  "options": [
+   "very right",
+   "totally right",
+   "fully right"
+  ],
+  "why": "'quite right'는 '전적으로 옳다'는 격식 있는 맞장구다"
+ },
+ "slughorn-6-052.1": {
+  "blank": "Off you go",
+  "options": [
+   "You go off",
+   "Get you off",
+   "Off go you"
+  ],
+  "why": "'Off you go'는 학생을 다정하게 보내는 영국식 해산 명령이다"
+ },
+ "slughorn-6-052.2": {
+  "blank": "don't forget",
+  "options": [
+   "don't miss",
+   "don't overlook",
+   "don't drop"
+  ],
+  "why": "'don't forget your ~'는 챙길 것을 일러 주는 관용 표현이다"
+ },
+ "slughorn-6-053": {
+  "blank": "Look sharp",
+  "options": [
+   "Look sharply",
+   "Seem sharp",
+   "Watch sharp"
+  ],
+  "why": "'Look sharp'는 '서둘러라'는 뜻의 다소 구식 영국 관용구다"
+ },
+ "slughorn-6-054": {
+  "blank": "I imagine",
+  "options": [
+   "I bet",
+   "I picture",
+   "I image"
+  ],
+  "why": "'I imagine'은 단정을 피해 점잖게 짐작하는 말이다"
+ },
+ "slughorn-6-055": {
+  "blank": "Go on",
+  "options": [
+   "Go off",
+   "Go along",
+   "Go over"
+  ],
+  "why": "말을 계속하라고 재촉하는 영미 공통 구어는 'Go on'이다"
+ },
+ "slughorn-6-056.1": {
+  "blank": "such things",
+  "options": [
+   "that stuff",
+   "such stuffs",
+   "so things"
+  ],
+  "why": "'such things'는 'that stuff'보다 점잖은 격식 표현이다"
+ },
+ "slughorn-6-056.2": {
+  "blank": "at once",
+  "options": [
+   "at one",
+   "for once",
+   "at a time"
+  ],
+  "why": "명령문 끝의 'at once'는 권위를 싣는 '당장'의 격식어다"
+ },
+ "slughorn-6-057.1": {
+  "blank": "look over",
+  "options": [
+   "look after",
+   "overlook",
+   "look upon"
+  ],
+  "why": "'look over'는 '훑어보며 복습하다'라는 뜻의 구동사다"
+ },
+ "slughorn-6-057.2": {
+  "blank": "I'll be poisoning",
+  "options": [
+   "I'm gonna poison",
+   "I'll be poisoned",
+   "I'd be poisoning"
+  ],
+  "why": "미래진행형이 끔찍한 말을 사무적 공지처럼 들리게 한다"
+ },
+ "slughorn-6-057.3": {
+  "blank": "Off you go",
+  "options": [
+   "You go off",
+   "Get you off",
+   "Off go you"
+  ],
+  "why": "off를 앞세운 'Off you go'는 다정한 영국식 해산 명령이다"
+ },
+ "slughorn-6-058": {
+  "blank": "To what do I owe",
+  "options": [
+   "What do I owe",
+   "To what I owe",
+   "For what do I owe"
+  ],
+  "why": "전치사를 앞세워 방문 이유를 정중히 묻는 정형 표현이다"
+ },
+ "slughorn-6-059": {
+  "blank": "my dear boy",
+  "options": [
+   "my dear buddy",
+   "my dear kiddo",
+   "my sweet son"
+  ],
+  "why": "연장자 남성이 아랫사람을 다정하게 부르는 구식 호칭이다"
+ },
+ "slughorn-6-060": {
+  "blank": "exactly",
+  "options": [
+   "really",
+   "totally",
+   "right"
+  ],
+  "why": "의문사 앞의 exactly는 따지듯 정확한 답을 요구하는 말이다"
+ },
+ "slughorn-6-061": {
+  "blank": "would best be posed",
+  "options": [
+   "would best be posing",
+   "would better be posed",
+   "would best be poised"
+  ],
+  "why": "수동태와 would로 거절을 정중하게 포장한 표현이다"
+ },
+ "slughorn-6-062.1": {
+  "blank": "And so it is with",
+  "options": [
+   "And such it is with",
+   "And so is it with",
+   "And so it goes with"
+  ],
+  "why": "'And so it is with'는 연설조의 격식 도치 구문이다"
+ },
+ "slughorn-6-062.2": {
+  "blank": "I suggest you",
+  "options": [
+   "I suggest you to",
+   "I advise you",
+   "I'd suggest to you"
+  ],
+  "why": "suggest+주어+동사원형은 정중하지만 단호한 권고다"
+ },
+ "slughorn-6-063": {
+  "blank": "put you up to",
+  "options": [
+   "put you up with",
+   "set you up to",
+   "put you up for"
+  ],
+  "why": "put A up to B는 'A를 부추겨 B를 시키다'라는 관용구다"
+ },
+ "slughorn-6-064": {
+  "blank": "it all",
+  "options": [
+   "all of it",
+   "this all",
+   "it then"
+  ],
+  "why": "Damn it all은 구식 신사가 내뱉는 짜증 섞인 감탄이다"
+ },
+ "slughorn-6-065": {
+  "blank": "I'm afraid",
+  "options": [
+   "I'm fearful",
+   "I'm scared",
+   "I'm worried"
+  ],
+  "why": "I'm afraid는 거절 앞에 붙이는 영국식 완충 표현이다"
+ },
+ "slughorn-6-066": {
+  "blank": "the matter",
+  "options": [
+   "the deal",
+   "the matters",
+   "a matter"
+  ],
+  "why": "What's the matter with ~?는 이상을 묻는 정중한 말이다"
+ },
+ "slughorn-6-067": {
+  "blank": "Very well",
+  "options": [
+   "Okay, fine",
+   "Very fine",
+   "Quite well"
+  ],
+  "why": "Very well은 윗사람이 격식 있게 허락할 때 쓰는 말이다"
+ },
+ "slughorn-6-068": {
+  "blank": "I'd have thought",
+  "options": [
+   "I figured",
+   "I'd had thought",
+   "I'd have reckoned"
+  ],
+  "why": "I'd have thought는 의아함을 단정 없이 드러내는 화법이다"
+ },
+ "slughorn-6-069": {
+  "blank": "Perhaps",
+  "options": [
+   "Probably",
+   "Perchance",
+   "Mayhap"
+  ],
+  "why": "Perhaps는 maybe보다 차분하고 점잖게 들린다"
+ },
+ "slughorn-6-070": {
+  "blank": "water under the bridge",
+  "options": [
+   "water over the dam",
+   "water beneath the bridge",
+   "water under the river"
+  ],
+  "why": "water under the bridge는 '지나간 일'이라는 관용구다"
+ },
+ "slughorn-6-071": {
+  "blank": "I'll ask you not to",
+  "options": [
+   "I'll ask you don't",
+   "I'll ask you not",
+   "I'll beg you not to"
+  ],
+  "why": "I'll ask you not to는 정중한 형식의 단호한 금지다"
+ },
+ "slughorn-6-072.1": {
+  "blank": "With all due respect",
+  "options": [
+   "No offense",
+   "With all due respects",
+   "In all due respect"
+  ],
+  "why": "With all due respect는 반박 앞에 붙이는 격식 문구다"
+ },
+ "slughorn-6-072.2": {
+  "blank": "do not possess",
+  "options": [
+   "do not possess of",
+   "do not own",
+   "are not possessing"
+  ],
+  "why": "축약 없는 do not possess가 공식 발언의 무게를 싣는다"
+ },
+ "slughorn-6-073": {
+  "blank": "Bottoms up",
+  "options": [
+   "Cups up",
+   "Bottom up",
+   "Bottoms down"
+  ],
+  "why": "Bottoms up은 잔을 비우자는 유쾌하고 예스러운 건배 구호다"
+ },
+ "slughorn-6-074": {
+  "blank": "for the nerves",
+  "options": [
+   "for the nerve",
+   "on the nerves",
+   "against nerves"
+  ],
+  "why": "a tonic for the nerves는 예스러운 '신경 안정제' 표현이다"
+ },
+ "slughorn-6-075": {
+  "blank": "at that",
+  "options": [
+   "at this",
+   "on that",
+   "with that"
+  ],
+  "why": "'and a ~ one at that'은 '그것도 ~한'이라는 덧붙임 강조다"
+ },
+ "slughorn-6-076.1": {
+  "blank": "Do us all good",
+  "options": [
+   "Do us all well",
+   "Make us all good",
+   "Give us all good"
+  ],
+  "why": "do someone good은 '~에게 이롭다'는 관용구다"
+ },
+ "slughorn-6-076.2": {
+  "blank": "oak-matured",
+  "options": [
+   "oak-grown",
+   "oak-ripened",
+   "oak-cooked"
+  ],
+  "why": "mature는 술을 통에서 숙성시킨다는 영국식 용어다"
+ },
+ "slughorn-6-076.3": {
+  "blank": "given the circumstances",
+  "options": [
+   "since this happened",
+   "giving the circumstances",
+   "given the situations"
+  ],
+  "why": "given the circumstances는 계획 변경을 점잖게 설명한다"
+ },
+ "slughorn-6-077": {
+  "blank": "There we are",
+  "options": [
+   "There we have",
+   "There we were",
+   "There it goes"
+  ],
+  "why": "There we are는 물건을 건넬 때 쓰는 영국식 관용구다"
+ },
+ "slughorn-6-078": {
+  "blank": "understand",
+  "options": [
+   "get it",
+   "comprehend",
+   "realise"
+  ],
+  "why": "당황해 말을 더듬으며 이해가 안 된다고 하는 말이다"
+ },
+ "slughorn-6-079": {
+  "blank": "very proud",
+  "options": [
+   "very pride",
+   "real proud",
+   "very prideful"
+  ],
+  "why": "very는 really보다 차분하고 격식 있는 강조어다"
+ },
+ "slughorn-6-080": {
+  "blank": "I had intended to",
+  "options": [
+   "I was gonna",
+   "I have intended to",
+   "I had minded to"
+  ],
+  "why": "축약 없는 had intended to가 못다 한 계획을 점잖게 전한다"
+ },
+ "slughorn-6-081": {
+  "blank": "Headmaster",
+  "options": [
+   "Principal",
+   "Headman",
+   "Chief Master"
+  ],
+  "why": "영국 학교에서는 교장을 Headmaster라고 부른다"
+ },
+ "slughorn-6-082": {
+  "blank": "cherished",
+  "options": [
+   "cared",
+   "relished",
+   "charmed"
+  ],
+  "why": "cherish는 '소중히 여기다'라는 감상적 격식 동사다"
+ },
+ "slughorn-6-083": {
+  "blank": "Merlin's beard",
+  "options": [
+   "Oh my God",
+   "Merlin's chin",
+   "Merlin's moustache"
+  ],
+  "why": "Merlin's beard는 Good heavens처럼 놀람을 나타낸다"
+ },
+ "slughorn-6-084": {
+  "blank": "Well, yes, actually",
+  "options": [
+   "Yeah, kind of",
+   "Well, yes, actual",
+   "Well, yes, factually"
+  ],
+  "why": "Well과 actually로 감싸 머쓱한 사실을 시인하는 말버릇이다"
+ },
+ "slughorn-6-085.1": {
+  "blank": "not that I'm familiar",
+  "options": [
+   "not like I'm familiar",
+   "not as I'm familiar",
+   "not because I'm familiar"
+  ],
+  "why": "not that 절은 상대가 끌어낼 결론을 미리 막는다"
+ },
+ "slughorn-6-085.2": {
+  "blank": "One hears",
+  "options": [
+   "One listens",
+   "One is hearing",
+   "Ones hear"
+  ],
+  "why": "주어 one은 책임에서 한발 물러서는 격식 화법이다"
+ },
+ "slughorn-6-086": {
+  "blank": "Exactly how",
+  "options": [
+   "How even",
+   "Exact how",
+   "Exactly what"
+  ],
+  "why": "의문사 앞의 Exactly가 추궁을 점잖게 강조한다"
+ },
+ "slughorn-6-088": {
+  "blank": "Surely you realise",
+  "options": [
+   "Come on, you know",
+   "Sure you realise",
+   "Surely you notice"
+  ],
+  "why": "Surely는 동의할 수밖에 없게 점잖게 몰아가는 말이다"
+ },
+ "slughorn-6-089": {
+  "blank": "accompany me",
+  "options": [
+   "come along me",
+   "accompany with me",
+   "accompany to me"
+  ],
+  "why": "accompany는 전치사 없이 목적어를 받는 격식 동사다"
+ },
+ "slughorn-6-090": {
+  "blank": "what makes you say that",
+  "options": [
+   "how come you say that",
+   "what gets you saying that",
+   "what makes you tell that"
+  ],
+  "why": "'What makes you say that?'은 근거를 묻는 점잖은 질문이다."
+ },
+ "slughorn-6-091": {
+  "blank": "beard",
+  "options": [
+   "whiskers",
+   "hat",
+   "robes"
+  ],
+  "why": "'Merlin's beard'는 정해진 형태의 감탄 관용구다."
+ },
+ "slughorn-6-092": {
+  "blank": "an actual",
+  "options": [
+   "a for-real",
+   "a factual",
+   "an actualised"
+  ],
+  "why": "'an actual'은 '진짜 ~'라는 놀람을 담는 표현이다."
+ },
+ "slughorn-6-093": {
+  "blank": "dear man",
+  "options": [
+   "dude",
+   "my buddy",
+   "dear mate"
+  ],
+  "why": "'dear man'은 옛 영국 신사가 남자를 부르는 호칭이다."
+ },
+ "slughorn-6-094": {
+  "blank": "realise",
+  "options": [
+   "realize",
+   "get it",
+   "figure"
+  ],
+  "why": "영국에서는 'realise'처럼 -ise 철자를 주로 쓴다."
+ },
+ "slughorn-6-095.1": {
+  "blank": "indelicate",
+  "options": [
+   "delicate",
+   "undelicate",
+   "indecent"
+  ],
+  "why": "'rude' 대신 점잖은 'indelicate'로 완곡하게 말한다."
+ },
+ "slughorn-6-095.2": {
+  "blank": "my extracting",
+  "options": [
+   "me grabbing",
+   "my extract",
+   "me to extract"
+  ],
+  "why": "격식 문법은 동명사 앞에 소유격 'my'를 쓴다."
+ },
+ "slughorn-6-096": {
+  "blank": "for just such occasions",
+  "options": [
+   "for such just occasions",
+   "for just so occasions",
+   "on just such occasions"
+  ],
+  "why": "'just such + 명사'는 '바로 이런 경우'의 격식 강조다."
+ },
+ "slughorn-6-097": {
+  "blank": "I trust",
+  "options": [
+   "I bet",
+   "I'm trusting",
+   "I rely"
+  ],
+  "why": "'I trust'는 당연히 그러리라 믿는다는 격식 확인이다."
+ },
+ "slughorn-6-099.1": {
+  "blank": "Farewell",
+  "options": [
+   "Bye-bye",
+   "See you",
+   "Farewells"
+  ],
+  "why": "'Farewell'은 영원한 작별을 고하는 격식 인사다."
+ },
+ "slughorn-6-099.2": {
+  "blank": "lingers on",
+  "options": [
+   "hangs around",
+   "lingers off",
+   "lasts out"
+  ],
+  "why": "'linger on'은 사라지지 않고 남는다는 문어 표현이다."
+ },
+ "slughorn-6-099.3": {
+  "blank": "find solace",
+  "options": [
+   "feel better",
+   "make solace",
+   "seek solaces"
+  ],
+  "why": "'find solace'는 슬픔 속 위안을 뜻하는 문어 연어다."
+ },
+ "slughorn-6-100": {
+  "blank": "Lovely little thing",
+  "options": [
+   "Cute little guy",
+   "Lovely small thing",
+   "Lovable little stuff"
+  ],
+  "why": "lovely little thing은 작은 것을 아끼며 부르는 말이다"
+ },
+ "slughorn-6-101": {
+  "blank": "One goes along",
+  "options": [
+   "One go along",
+   "One goes about",
+   "One gets along"
+  ],
+  "why": "일반인 주어 'one'은 영국 격식체의 표지다."
+ },
+ "slughorn-6-102": {
+  "blank": "That's never",
+  "options": [
+   "That's ever",
+   "That's not never",
+   "That's no way"
+  ],
+  "why": "'That's never ~?'는 '설마 ~일 리가'라는 영국 구어다."
+ },
+ "slughorn-6-103": {
+  "blank": "my dear chap",
+  "options": [
+   "my dude",
+   "my dear bloke",
+   "my dear guy"
+  ],
+  "why": "'my dear chap'은 영국 신사가 남자를 부르는 호칭이다."
+ },
+ "slughorn-6-104.1": {
+  "blank": "It was a student who",
+  "options": [
+   "It is a student who",
+   "It was a student whom",
+   "It was a student which"
+  ],
+  "why": "'It was ~ who' 강조 구문으로 준 사람을 부각한다."
+ },
+ "slughorn-6-104.2": {
+  "blank": "upon my desk",
+  "options": [
+   "on top my desk",
+   "onto my desk",
+   "up my desk"
+  ],
+  "why": "'upon'은 회상 이야기에 어울리는 문어적 전치사다."
+ },
+ "slughorn-6-104.3": {
+  "blank": "upon the surface",
+  "options": [
+   "on top the surface",
+   "onto the surface",
+   "up the surface"
+  ],
+  "why": "'upon'을 써서 회상을 예스러운 이야기체로 만든다."
+ },
+ "slughorn-6-104.4": {
+  "blank": "wee fish",
+  "options": [
+   "itty-bitty fish",
+   "wee fishes",
+   "small-ish fish"
+  ],
+  "why": "'wee'는 스코틀랜드에서 온 '조그만'이라는 구어다"
+ },
+ "slughorn-6-104.5": {
+  "blank": "wondrous to behold",
+  "options": [
+   "awesome to see",
+   "wondrous for beholding",
+   "wonderful to behold at"
+  ],
+  "why": "'wondrous to behold'는 경이로움을 그리는 문학 표현이다."
+ },
+ "slughorn-6-105": {
+  "blank": "Your mother",
+  "options": [
+   "Your mom",
+   "Your mommy",
+   "Thy mother"
+  ],
+  "why": "격식 있는 화자는 'mom/mum' 대신 'mother'라고 한다."
+ },
+ "slughorn-6-106": {
+  "blank": "It will ruin me",
+  "options": [
+   "It'll wreck me",
+   "It will ruin myself",
+   "It will ruin on me"
+  ],
+  "why": "'ruin'은 명성과 인생을 망친다는 무게 있는 동사다."
+ },
+ "slughorn-6-108": {
+  "blank": "think too badly of me",
+  "options": [
+   "think too bad of me",
+   "judge me too hard",
+   "think too badly on me"
+  ],
+  "why": "'think badly of'는 남을 나쁘게 본다는 점잖은 표현이다."
+ },
+ "slughorn-6-109.1": {
+  "blank": "could I",
+  "options": [
+   "right",
+   "couldn't I",
+   "can I"
+  ],
+  "why": "부정문 뒤 긍정 꼬리 'could I?'로 당연함을 확인한다"
+ },
+ "slughorn-6-109.2": {
+  "blank": "you are",
+  "options": [
+   "are you",
+   "you is",
+   "aren't you"
+  ],
+  "why": "주어+동사를 문장 끝에 붙이는 영국 구어 어순이다."
+ },
+ "slughorn-6-109.3": {
+  "blank": "quite right",
+  "options": [
+   "totally right",
+   "quite correctly",
+   "fairly right"
+  ],
+  "why": "'quite right'는 '전적으로 옳다'는 격식 맞장구다."
+ },
+ "slughorn-6-110.1": {
+  "blank": "Good gracious",
+  "options": [
+   "Oh my gosh",
+   "Good graciousness",
+   "Good gracefully"
+  ],
+  "why": "'Good gracious'는 놀람을 점잖게 나타내는 감탄사다."
+ },
+ "slughorn-6-110.2": {
+  "blank": "Off you go",
+  "options": [
+   "You guys scram",
+   "Off go you",
+   "Out you leave"
+  ],
+  "why": "'Off you go'는 영국 교사·부모가 아이를 내보내는 말이다."
+ },
+ "slughorn-6-110.3": {
+  "blank": "essays",
+  "options": [
+   "papers",
+   "essay works",
+   "composes"
+  ],
+  "why": "영국 학교에서는 과제 글을 'essay'라고 부른다."
+ },
+ "slughorn-6-111": {
+  "blank": "Look sharp",
+  "options": [
+   "Look sharply",
+   "Hurry it",
+   "See sharp"
+  ],
+  "why": "'Look sharp'는 '서둘러라'라는 예스러운 영국 표현이다."
+ },
+ "slughorn-6-112": {
+  "blank": "I imagine you do",
+  "options": [
+   "I bet you do",
+   "I imagine you are",
+   "I imagine you does"
+  ],
+  "why": "'I imagine'은 '아마 그렇겠지'를 점잖게 말하는 표현이다."
+ },
+ "slughorn-6-115": {
+  "blank": "indeed",
+  "options": [
+   "for real",
+   "indeedly",
+   "in fact"
+  ],
+  "why": "'very ~ indeed'는 강조를 더하는 영국식 구문이다."
+ },
+ "slughorn-6-116": {
+  "blank": "in which",
+  "options": [
+   "where in",
+   "in what",
+   "in that"
+  ],
+  "why": "'전치사+which'는 정의를 내릴 때 쓰는 격식 구조다."
+ },
+ "slughorn-6-117.1": {
+  "blank": "one's soul",
+  "options": [
+   "your soul",
+   "ones soul",
+   "one soul"
+  ],
+  "why": "주어 one은 소유격도 one's로 맞추는 것이 격식이다."
+ },
+ "slughorn-6-117.2": {
+  "blank": "should you be attacked",
+  "options": [
+   "if you get attacked",
+   "should you get attack",
+   "would you be attacked"
+  ],
+  "why": "'should+주어' 도치는 격식 있는 가정 조건절이다."
+ },
+ "slughorn-6-118": {
+  "blank": "lives on",
+  "options": [
+   "keeps living",
+   "lives off",
+   "lives up"
+  ],
+  "why": "'live on'은 죽은 뒤에도 살아남는다는 문어 표현이다."
+ },
+ "slughorn-6-119": {
+  "blank": "guess the answer to that",
+  "options": [
+   "figure that one out",
+   "guess the answer of that",
+   "guess the answer for it"
+  ],
+  "why": "답을 직접 말하지 않고 짐작하게 하는 완곡어법이다."
+ },
+ "slughorn-6-120": {
+  "blank": "one is never the same",
+  "options": [
+   "one is never the similar",
+   "one is never same",
+   "one is ever the same"
+  ],
+  "why": "총칭 주어 one은 영국 학자풍의 격식 표현이다."
+ },
+ "slughorn-6-121.1": {
+  "blank": "Merlin's beard",
+  "options": [
+   "Merlin's whiskers",
+   "Oh my God",
+   "Merlin's beards"
+  ],
+  "why": "'Merlin's beard'는 'Good Lord!' 자리의 감탄사다."
+ },
+ "slughorn-6-121.2": {
+  "blank": "into seven pieces",
+  "options": [
+   "seven ways apart",
+   "in seven pieces",
+   "onto seven pieces"
+  ],
+  "why": "'rip A into pieces'는 '갈가리 찢다'라는 결과 표현이다."
+ },
+ "slughorn-6-121.3": {
+  "blank": "isn't it",
+  "options": [
+   "right",
+   "doesn't it",
+   "isn't this"
+  ],
+  "why": "영국영어는 'isn't it?' 같은 부가의문문을 즐겨 쓴다."
+ }
+}

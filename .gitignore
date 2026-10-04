@@ -1,0 +1,9 @@
+# Only the app itself is published (GitHub Pages is public). Kept on this computer only:
+docs/
+design/
+.claude/
+CLAUDE.md
+firestore.rules
+*.bak
+Thumbs.db
+desktop.ini

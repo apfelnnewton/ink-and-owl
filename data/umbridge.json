@@ -1,0 +1,5408 @@
+[
+ {
+  "id": "umbridge-5-001",
+  "speech": "umbridge-5-001",
+  "part": 1,
+  "of": 1,
+  "order": 1,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 법정, 해리의 징계 청문회. 덤블도어가 디멘터가 왜 머글 동네에 나타났는지 의문을 제기하고 퍼지가 헛소리라며 일축하자, 분홍 옷의 엄브리지가 처음으로 입을 연다.",
+  "cue_speaker": "Fudge",
+  "cue": "Yes, and they're nothing but bilge, Dumbledore.",
+  "prev_line": "",
+  "line": "Excuse me, Dumbledore, but did you just accuse the Ministry of Magic of ordering an attack on this boy?",
+  "ko": "실례지만 덤블도어, 지금 마법부가 이 아이를 공격하라고 명령했다고 비난하신 건가요?",
+  "plain": "Hold on, Dumbledore, are you saying the Ministry told the Dementors to attack this kid?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Excuse me, ..., but ...",
+    "kind": "완곡어법",
+    "note": "겉으로는 공손한 양해 표현이지만 실제로는 상대의 말을 끊고 반박하거나 추궁하는 신호입니다. 영미 공통의 화법이며, 더 직접적으로 끼어들 때는 어느 쪽이든 'Hold on' 'Wait a minute'라고 합니다. 공손한 형식 안에 적대감을 담는 엄브리지 특유의 수사이기도 합니다.",
+    "examples": [
+     {
+      "en": "Excuse me, but I don't think that's what we agreed in the meeting.",
+      "ko": "실례지만, 회의에서 합의한 내용은 그게 아니었던 것 같은데요."
+     },
+     {
+      "en": "Excuse me, but were you just about to leave without signing out?",
+      "ko": "실례지만, 지금 퇴근 기록도 안 하고 나가시려던 건가요?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "accuse someone of doing something",
+    "kind": "격식 어휘",
+    "note": "'~했다고 비난하다, 고발하다'의 격식 구문으로 뒤에 of + 동명사가 옵니다. 법정·공식 자리에서 상대의 발언을 혐의 제기로 규정해 버리는 효과가 있습니다. 미국 구어라면 'Are you saying that...?' 정도로 풀어 말할 때가 많습니다.",
+    "examples": [
+     {
+      "en": "Nobody is accusing you of lying; we just need the full picture.",
+      "ko": "거짓말했다고 비난하는 게 아니에요. 전체 상황을 알아야 해서요."
+     },
+     {
+      "en": "He accused the council of ignoring residents' complaints.",
+      "ko": "그는 구의회가 주민 민원을 무시했다고 비난했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-002",
+  "speech": "umbridge-5-002",
+  "part": 1,
+  "of": 1,
+  "order": 2,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회가 열리는 대연회장. 덤블도어가 새 교수들을 소개하던 중, 분홍 카디건 차림의 엄브리지가 자리에서 일어나 말을 끊는다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "Additionally, we have Professor Umbridge, who has kindly agreed to fill the post of Defence Against the Dark Arts--",
+  "prev_line": "",
+  "line": "Hem, hem. Headmaster, if I could address the school?",
+  "ko": "에헴, 에헴. 교장 선생님, 제가 학생들에게 한마디 해도 될까요?",
+  "plain": "Ahem. Headmaster, mind if I say something to the students?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "if I could ...?",
+    "kind": "법조동사 완화",
+    "note": "'May I...?'보다 한 단계 더 돌려 말하는 요청으로, 주절 없이 조건절만으로 허락을 구하는 격식 화법입니다. 겉으로는 허락을 구하지만 실제로는 이미 발언을 시작한 상태라 거절할 여지를 주지 않는, 엄브리지식 공손한 강요입니다. 미국 구어라면 'Can I say something?' 'Mind if I...?' 정도입니다.",
+    "examples": [
+     {
+      "en": "If I could just add one thing before we move on?",
+      "ko": "다음으로 넘어가기 전에 한 가지만 덧붙여도 될까요?"
+     },
+     {
+      "en": "If I could have everyone's attention for a moment?",
+      "ko": "잠시 모두 주목해 주시겠어요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Headmaster",
+    "kind": "호칭",
+    "note": "영국 학교에서 교장을 부르는 전통적 호칭으로, 이름 없이 직함만 불러 격식과 거리를 표시합니다. 미국 공립학교의 교장은 principal이고 보통 'Principal Smith'나 'Mr. Smith'처럼 성을 붙여 부릅니다. 직함만으로 부르는 방식 자체는 'Doctor' 'Professor' 'Senator'처럼 영미 공통이며, 'Minister'는 영국식 장관 호칭입니다.",
+    "examples": [
+     {
+      "en": "Headmaster, the parents are waiting in the hall.",
+      "ko": "교장 선생님, 학부모님들이 강당에서 기다리고 계십니다."
+     },
+     {
+      "en": "Thank you, Headmaster. I'll see to it this afternoon.",
+      "ko": "감사합니다, 교장 선생님. 오늘 오후에 처리하겠습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "address the school",
+    "kind": "격식 어휘",
+    "note": "'address + 청중'은 '~에게 연설하다, 공식적으로 말하다'라는 격식 동사입니다. 'speak to'보다 공적인 자리임을 강조합니다. 'address the nation' 'address the board'처럼 쓰입니다.",
+    "examples": [
+     {
+      "en": "The head teacher will address the whole school at assembly tomorrow.",
+      "ko": "교장 선생님께서 내일 조회 때 전교생에게 말씀하실 예정입니다."
+     },
+     {
+      "en": "She was asked to address the committee on the budget.",
+      "ko": "그녀는 위원회에서 예산에 대해 발언해 달라는 요청을 받았다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-003.1",
+  "speech": "umbridge-5-003",
+  "part": 1,
+  "of": 4,
+  "order": 3,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 덤블도어의 말을 끊고 발언권을 얻어 낸 엄브리지가 학생들 앞에 서서, 자신이 어떤 자격으로 호그와트에 왔는지부터 밝히며 연설을 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Thank you, Headmaster. Now, how are we all doing tonight?",
+  "ko": "감사합니다, 교장 선생님. 자, 오늘 밤 우리 모두 잘 지내고 있나요?",
+  "plain": "Thanks, Headmaster. So, how's everybody doing tonight?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-003.2",
+  "speech": "umbridge-5-003",
+  "part": 2,
+  "of": 4,
+  "order": 4,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 덤블도어의 말을 끊고 발언권을 얻어 낸 엄브리지가 학생들 앞에 서서, 자신이 어떤 자격으로 호그와트에 왔는지부터 밝히며 연설을 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Thank you, Headmaster. Now, how are we all doing tonight?",
+  "line": "I thought I would just say a few words.",
+  "ko": "짧게 몇 마디만 드릴까 합니다.",
+  "plain": "I just wanted to say a couple of things.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I thought I would just say a few words.",
+    "kind": "완곡어법",
+    "note": "'I thought I would...'는 자기 행동을 가볍고 즉흥적인 것처럼 포장하는 완화 표현으로 영미 공통이며, 'just'와 'a few words'가 그 효과를 더합니다. 실제로는 준비된 정치 연설을 하려는 것이므로 겉과 속이 다른 전형적 예입니다. 더 편한 구어라면 'I just wanted to say something real quick'(미국식) 정도입니다.",
+    "examples": [
+     {
+      "en": "I thought I'd just pop in and see how you're getting on.",
+      "ko": "잠깐 들러서 어떻게 지내나 보려고 했어요."
+     },
+     {
+      "en": "I thought I would just mention one small thing about the schedule.",
+      "ko": "일정에 관해 작은 것 하나만 말씀드릴까 했어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-003.3",
+  "speech": "umbridge-5-003",
+  "part": 3,
+  "of": 4,
+  "order": 5,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 덤블도어의 말을 끊고 발언권을 얻어 낸 엄브리지가 학생들 앞에 서서, 자신이 어떤 자격으로 호그와트에 왔는지부터 밝히며 연설을 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I thought I would just say a few words.",
+  "line": "I am here at the Ministry of Magic's behest, under Educational Decree twenty-two,",
+  "ko": "저는 마법부의 요청에 따라, 교육령 제22호에 근거해 이 자리에 왔습니다.",
+  "plain": "The Ministry sent me here under Educational Decree 22.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "at someone's behest",
+    "kind": "격식 어휘",
+    "note": "'~의 요청(명령)에 따라'라는 매우 격식적인 표현으로, 공문서나 연설에서 자신의 행동에 공적 권위를 부여할 때 씁니다. 미국 구어라면 'because X asked me to' 'X sent me'로 풀어 말합니다. 원문의 'bequest(유증)'는 전사 오류로, 실제 뜻은 'behest'입니다.",
+    "examples": [
+     {
+      "en": "The review was carried out at the minister's behest.",
+      "ko": "그 검토는 장관의 지시에 따라 이루어졌다."
+     },
+     {
+      "en": "I'm only here at the head's behest, so don't blame me.",
+      "ko": "저는 교장 선생님 지시로 온 것뿐이니 저한테 뭐라 하지 마세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-003.4",
+  "speech": "umbridge-5-003",
+  "part": 4,
+  "of": 4,
+  "order": 6,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 덤블도어의 말을 끊고 발언권을 얻어 낸 엄브리지가 학생들 앞에 서서, 자신이 어떤 자격으로 호그와트에 왔는지부터 밝히며 연설을 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I am here at the Ministry of Magic's behest, under Educational Decree twenty-two,",
+  "line": "which states that if the Headmaster of Hogwarts is unable to fill any teaching post, the Ministry shall select one for the position.",
+  "ko": "이 교육령은 호그와트 교장이 교사 자리를 채우지 못할 경우 마법부가 그 자리에 사람을 선임한다고 규정하고 있지요.",
+  "plain": "That decree says that if the Headmaster can't fill a teaching job, the Ministry gets to pick someone.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "the Ministry shall select ...",
+    "kind": "격식·법률 문체",
+    "note": "규정·계약·법령에서 'shall'은 의무와 규정을 나타내는 법률 문체 조동사입니다. 일상 미국영어에서는 거의 사라졌고 'will' 'must'로 대체됩니다. 엄브리지는 교육령을 글자 그대로 읊어 자신의 부임이 개인 의지가 아닌 제도의 결과임을 강조합니다.",
+    "examples": [
+     {
+      "en": "The tenant shall give one month's notice in writing.",
+      "ko": "임차인은 서면으로 한 달 전에 통지해야 한다."
+     },
+     {
+      "en": "All visitors shall sign in at reception.",
+      "ko": "모든 방문자는 접수처에서 서명해야 합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-004.1",
+  "speech": "umbridge-5-004",
+  "part": 1,
+  "of": 6,
+  "order": 7,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "The Ministry has always considered the magical education of our children to be of vital importance,",
+  "ko": "마법부는 우리 아이들의 마법 교육을 언제나 매우 중요하게 여겨 왔습니다.",
+  "plain": "The Ministry has always thought your magical education matters a lot.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-004.2",
+  "speech": "umbridge-5-004",
+  "part": 2,
+  "of": 6,
+  "order": 8,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "The Ministry has always considered the magical education of our children to be of vital importance,",
+  "line": "and the passing down of this ancient and noble art must be given to the next generation, lest it be lost forever...",
+  "ko": "그리고 이 오래되고 고귀한 기예는 영원히 사라지지 않도록 반드시 다음 세대에 전해져야 하지요...",
+  "plain": "And this old, respected skill has to be handed down to the next generation so it doesn't disappear for good.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "lest it be lost forever",
+    "kind": "고어·가정법",
+    "note": "'lest'는 '~하지 않도록'이라는 뜻의 고풍스러운 접속사로, 뒤에 원형(가정법 현재)이 옵니다. 현대 일상 회화에서는 거의 쓰지 않고 연설·설교·법률문에서만 보입니다. 미국 구어라면 'so it doesn't get lost' 'before it's lost for good'입니다.",
+    "examples": [
+     {
+      "en": "Write it down now, lest we forget.",
+      "ko": "잊지 않도록 지금 적어 두세요."
+     },
+     {
+      "en": "The archive was digitised lest the originals be damaged.",
+      "ko": "원본이 손상될 것에 대비해 기록물을 디지털화했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-004.3",
+  "speech": "umbridge-5-004",
+  "part": 3,
+  "of": 6,
+  "order": 9,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "and the passing down of this ancient and noble art must be given to the next generation, lest it be lost forever...",
+  "line": "Without progress, stagnation. But progress for progress's sake is to be discouraged, for our art requires no tinkering.",
+  "ko": "진보가 없으면 정체합니다. 하지만 진보를 위한 진보는 지양해야 합니다. 우리의 기예에는 손댈 곳이 없으니까요.",
+  "plain": "No progress means things get stuck. But change just for the sake of change is a bad idea, because there's nothing wrong with how we do things.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "is to be discouraged",
+    "kind": "격식·수동 완곡",
+    "note": "'be to be + 과거분사'는 '~해야 마땅하다'를 행위자 없이 말하는 관료적 수동 구문입니다. 누가 금지하는지 감추면서 당위처럼 들리게 하는 효과가 있어 공문·규정에 흔합니다. 미국 구어라면 'We shouldn't...' 'That's a bad idea'로 주어를 드러냅니다.",
+    "examples": [
+     {
+      "en": "Mobile phones are to be switched off during the exam.",
+      "ko": "시험 중에는 휴대전화를 꺼야 합니다."
+     },
+     {
+      "en": "Running in the corridors is to be discouraged.",
+      "ko": "복도에서 뛰는 행동은 삼가야 합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-004.4",
+  "speech": "umbridge-5-004",
+  "part": 4,
+  "of": 6,
+  "order": 10,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Without progress, stagnation. But progress for progress's sake is to be discouraged, for our art requires no tinkering.",
+  "line": "A balance must be attained: the new and the old, permanence and change, tradition and innovation, order and chaos.",
+  "ko": "새것과 옛것, 영속과 변화, 전통과 혁신, 질서와 혼돈 사이에 균형이 잡혀야 합니다.",
+  "plain": "We need a balance between new and old, keeping things and changing things, tradition and new ideas, order and chaos.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-004.5",
+  "speech": "umbridge-5-004",
+  "part": 5,
+  "of": 6,
+  "order": 11,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "A balance must be attained: the new and the old, permanence and change, tradition and innovation, order and chaos.",
+  "line": "There are large changes coming soon, changes walking the fine line between order and chaos.",
+  "ko": "곧 커다란 변화가 올 것입니다. 질서와 혼돈의 경계선 위를 걷는 변화이지요.",
+  "plain": "Big changes are coming soon, and they'll walk a fine line between order and chaos.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-004.6",
+  "speech": "umbridge-5-004",
+  "part": 6,
+  "of": 6,
+  "order": 12,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "개학 연회의 대연회장. 자기소개를 마친 엄브리지가 마법 교육에 대한 마법부의 입장을 길게 늘어놓는 연설의 본론. 학생들은 지루해하지만 헤르미온느는 속뜻을 알아챈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "There are large changes coming soon, changes walking the fine line between order and chaos.",
+  "line": "Know only that these changes are for the best, and to prevent the destruction of our civilization from its own decay. Thank you.",
+  "ko": "다만 이 변화는 모두를 위한 최선이며, 우리 문명이 스스로 썩어 무너지는 것을 막기 위한 것임을 알아 두세요. 감사합니다.",
+  "plain": "Just know these changes are for the best, and they're meant to stop our society from falling apart from the inside. Thanks.",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Know only that ...",
+    "kind": "문학적 명령문",
+    "note": "'know that...'을 명령문으로 쓰고 'only'를 앞세운 수사적 구문으로, 상대에게 설명 없이 결론만 받아들이라고 요구합니다. 연설·소설 문체이며 실생활에서 그대로 쓰면 매우 거만하게 들립니다. 미국 구어라면 'Just know that...' 'All you need to know is...'입니다.",
+    "examples": [
+     {
+      "en": "Know only that the decision has been made for the good of the company.",
+      "ko": "다만 이 결정이 회사를 위한 것임을 알아 두십시오."
+     },
+     {
+      "en": "I can't tell you the details; know only that it's been dealt with.",
+      "ko": "자세히는 말 못 하지만, 처리됐다는 것만 알아 두세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-005",
+  "speech": "umbridge-5-005",
+  "part": 1,
+  "of": 1,
+  "order": 13,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 엄브리지의 첫 수업. 수업이 이미 시작된 뒤에 해리가 들어와 사과하자, 엄브리지가 두꺼비 같은 미소를 짓는다.",
+  "cue_speaker": "Harry",
+  "cue": "Sorry, Professor...",
+  "prev_line": "",
+  "line": "Hmm, let's see, five points from Gryffindor for coming in late.",
+  "ko": "음, 글쎄요... 지각했으니 그리핀도르 5점 감점이에요.",
+  "plain": "Hmm, let me think... that's five points off Gryffindor for being late.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "let's see",
+    "kind": "담화 표지",
+    "note": "결정을 내리기 전 잠시 생각하는 척하는 담화 표지입니다. 미국에서도 쓰지만, 여기서는 이미 정해진 벌점을 마치 고민해서 주는 것처럼 연출해 상냥함 뒤의 가학성을 드러내는 장치입니다. 영국 교사의 '점잖은 비꼼' 말투를 익히기에 좋은 예입니다.",
+    "examples": [
+     {
+      "en": "Let's see... I think we can squeeze you in on Thursday.",
+      "ko": "글쎄요... 목요일에 자리를 만들어 드릴 수 있을 것 같네요."
+     },
+     {
+      "en": "Right, let's see what we've got here.",
+      "ko": "자, 여기 뭐가 있는지 한번 보죠."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-006.1",
+  "speech": "umbridge-5-006",
+  "part": 1,
+  "of": 4,
+  "order": 14,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 지각한 해리에게 감점을 준 엄브리지가 끊겼던 말을 이어 가며 앞으로의 수업 방침을 밝힌다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Now, as I was saying before Mr Potter interrupted with his antics,",
+  "ko": "자, 포터 군이 소란을 피우며 끼어들기 전에 제가 말하던 대로,",
+  "plain": "Okay, like I was saying before Potter pulled his little stunt,",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-006.2",
+  "speech": "umbridge-5-006",
+  "part": 2,
+  "of": 4,
+  "order": 15,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 지각한 해리에게 감점을 준 엄브리지가 끊겼던 말을 이어 가며 앞으로의 수업 방침을 밝힌다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Now, as I was saying before Mr Potter interrupted with his antics,",
+  "line": "your Defence Against the Dark Arts education has been rather fragmented and disjointed in your past classes, hasn't it?",
+  "ko": "여러분이 지금까지 받은 어둠의 마법 방어술 교육은 꽤나 조각나고 들쭉날쭉했지요, 그렇죠?",
+  "plain": "Your Defense Against the Dark Arts classes have been pretty all over the place so far, right?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "rather fragmented and disjointed",
+    "kind": "완곡 강조어 rather",
+    "note": "'rather'는 영국영어에서 비판을 부드럽게 포장하는 대표적 완화어입니다. 'very'라고 하면 노골적이지만 'rather'를 쓰면 점잖게 깎아내리는 효과가 납니다. 미국 구어는 'pretty' 'kind of'를 쓰고, 'rather'는 글말로 느껴집니다.",
+    "examples": [
+     {
+      "en": "The report was rather thin on detail, I'm afraid.",
+      "ko": "보고서가 세부 내용이 좀 부족했던 것 같아요."
+     },
+     {
+      "en": "That's a rather optimistic timeline, isn't it?",
+      "ko": "그 일정은 좀 낙관적인 것 아닌가요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "..., hasn't it?",
+    "kind": "부가의문문",
+    "note": "영국영어는 부가의문문을 매우 자주 써서 동의를 유도합니다. 여기서는 질문이 아니라 '당연히 그렇지요'라는 압박이고, 반박하면 무례해지는 구조입니다. 미국 구어는 'right?'를 붙이는 쪽이 자연스럽습니다.",
+    "examples": [
+     {
+      "en": "We've been through this before, haven't we?",
+      "ko": "이 얘기는 전에도 했지요, 그렇죠?"
+     },
+     {
+      "en": "It's a bit late to change the plan now, isn't it?",
+      "ko": "지금 계획을 바꾸기엔 좀 늦었지요, 그렇지 않나요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-006.3",
+  "speech": "umbridge-5-006",
+  "part": 3,
+  "of": 4,
+  "order": 16,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 지각한 해리에게 감점을 준 엄브리지가 끊겼던 말을 이어 가며 앞으로의 수업 방침을 밝힌다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "your Defence Against the Dark Arts education has been rather fragmented and disjointed in your past classes, hasn't it?",
+  "line": "Know now that this is about to be rectified.",
+  "ko": "이제 그것이 바로잡힐 것임을 알아 두세요.",
+  "plain": "Well, that's about to get fixed.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "rectify",
+    "kind": "격식 어휘",
+    "note": "'fix' 'correct'의 격식 동의어로, 공문서·사과문·관료적 발화에 자주 등장합니다. 잘못을 인정하되 감정 없이 사무적으로 처리하는 느낌을 줍니다. 미국 구어라면 그냥 'fix'입니다.",
+    "examples": [
+     {
+      "en": "We apologise for the error and will rectify it immediately.",
+      "ko": "오류에 대해 사과드리며 즉시 바로잡겠습니다."
+     },
+     {
+      "en": "The timetable clash will be rectified by Monday.",
+      "ko": "시간표 중복은 월요일까지 수정될 것입니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-006.4",
+  "speech": "umbridge-5-006",
+  "part": 4,
+  "of": 4,
+  "order": 17,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 지각한 해리에게 감점을 준 엄브리지가 끊겼던 말을 이어 가며 앞으로의 수업 방침을 밝힌다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Know now that this is about to be rectified.",
+  "line": "I will be following a re-approved, Ministry-prepared, theory-centred Defence lesson plan.",
+  "ko": "저는 마법부가 재승인하고 직접 마련한 이론 중심 방어술 교육 과정을 따를 것입니다.",
+  "plain": "I'm gonna follow a Ministry-approved, theory-based lesson plan.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-007",
+  "speech": "umbridge-5-007",
+  "part": 1,
+  "of": 1,
+  "order": 18,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 마법부가 승인한 이론 중심 수업을 하겠다고 선언한 엄브리지가 칠판에 수업 목표를 띄우고 학생들에게 지시한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Copy this down.",
+  "ko": "받아 적으세요.",
+  "plain": "Write this down.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "copy something down",
+    "kind": "교실 영어",
+    "note": "칠판에 쓴 내용을 노트에 옮겨 적으라는 교실 상투어로, 영미 공통입니다. 'write down'은 자기 말을 적는 것이고 'copy down'은 보이는 것을 베껴 적는다는 차이가 있습니다. 'write this down' 'take this down'도 두 나라 교실에서 모두 흔합니다.",
+    "examples": [
+     {
+      "en": "Copy these dates down; they'll be in the test.",
+      "ko": "이 날짜들 받아 적어라. 시험에 나온다."
+     },
+     {
+      "en": "Did you copy down the homework from the board?",
+      "ko": "칠판에 쓴 숙제 베껴 적었어?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-008",
+  "speech": "umbridge-5-008",
+  "part": 1,
+  "of": 1,
+  "order": 19,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 모두가 칠판의 수업 목표를 받아 적는 가운데 헤르미온느만 손을 번쩍 들고 있고, 엄브리지가 마지못해 그쪽을 본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Yes?",
+  "ko": "네?",
+  "plain": "Yeah?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-009",
+  "speech": "umbridge-5-009",
+  "part": 1,
+  "of": 1,
+  "order": 20,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실, 첫 수업. 손을 들고 있던 헤르미온느가 칠판에 적힌 수업 목표에 대해 질문이 있다고 말한다.",
+  "cue_speaker": "Hermione",
+  "cue": "I wanted to know something about your course aims.",
+  "prev_line": "",
+  "line": "Well, they should be perfectly self-evident.",
+  "ko": "글쎄요, 그건 보면 당연히 알 수 있을 텐데요.",
+  "plain": "Well, it should be pretty obvious.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "perfectly self-evident",
+    "kind": "격식 어휘·강조",
+    "note": "'perfectly'는 'completely'보다 점잖게 들리는 격식 강조어로 영미 공통이며, 'self-evident(자명한)'와 함께 쓰여 '물어볼 필요도 없는 질문을 했다'는 비꼼을 담습니다. 일상 구어라면 'pretty obvious' 'totally obvious'입니다. 'perfectly clear' 'perfectly reasonable'도 같은 결의 표현입니다.",
+    "examples": [
+     {
+      "en": "I thought the instructions were perfectly clear.",
+      "ko": "안내문은 충분히 명확했다고 생각하는데요."
+     },
+     {
+      "en": "It should be perfectly self-evident why we can't approve this.",
+      "ko": "이걸 승인할 수 없는 이유는 보면 바로 알 수 있을 텐데요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "they should be ...",
+    "kind": "법조동사 완화",
+    "note": "여기서 'should'는 의무가 아니라 '당연히 ~일 것이다'라는 추정·기대의 용법으로, '네가 못 알아본 게 이상하다'는 뜻을 돌려 말합니다. 영미 공통의 용법이며, 직접 비난을 피하면서도 상대를 낮추는 효과가 있습니다.",
+    "examples": [
+     {
+      "en": "The file should be in the shared folder; it's always kept there.",
+      "ko": "그 파일은 공유 폴더에 있을 거예요. 항상 거기 두거든요."
+     },
+     {
+      "en": "That should answer your question.",
+      "ko": "그걸로 질문에 대한 답이 될 텐데요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-010",
+  "speech": "umbridge-5-010",
+  "part": 1,
+  "of": 1,
+  "order": 21,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 헤르미온느가 수업 목표 어디에도 주문 실습이 없다고 지적하자, 엄브리지가 가볍게 웃으며 받아친다.",
+  "cue_speaker": "Hermione",
+  "cue": "Well, I don't think they are. They say nothing about actually doing spells.",
+  "prev_line": "",
+  "line": "I can imagine no circumstance in my class where you would need to use spells, my dear!",
+  "ko": "내 수업에서 학생이 주문을 쓸 일이 있을 거라고는 상상도 안 되는데요, 얘야!",
+  "plain": "I can't think of a single reason you'd ever need to use spells in my class, sweetie!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I can imagine no circumstance where ...",
+    "kind": "격식·no 부정",
+    "note": "'I can't imagine any...' 대신 'no'를 명사 앞에 두는 부정은 영미 공통의 글말·격식 표현으로, 단호함과 거리감을 더합니다. 일상 구어에서는 영국이든 미국이든 'I can't imagine any...' 'I can't think of a single...'이 더 흔합니다. 'I see no reason' 'I have no doubt'도 같은 패턴입니다.",
+    "examples": [
+     {
+      "en": "I can see no reason why the meeting can't be moved.",
+      "ko": "회의를 옮기지 못할 이유가 전혀 없어 보이는데요."
+     },
+     {
+      "en": "I can imagine no circumstance in which I'd agree to that.",
+      "ko": "그것에 동의할 상황은 상상이 안 되네요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "my dear",
+    "kind": "호칭·반어",
+    "note": "겉으로는 다정한 애칭이지만, 교사가 반박하는 학생에게 쓰면 '어린 네가 뭘 알겠니'라는 깔보는 뉘앙스가 됩니다. 영국영어에서 'dear'는 친밀함과 생색이 모두 가능한 양날의 호칭입니다. 미국이라면 'sweetie' 'honey'가 비슷한 역할을 합니다.",
+    "examples": [
+     {
+      "en": "That's not quite how it works, my dear.",
+      "ko": "그게 그렇게 되는 게 아니란다, 얘야."
+     },
+     {
+      "en": "Oh, my dear, you've got the wrong end of the stick entirely.",
+      "ko": "아이고, 얘야, 완전히 잘못 알고 있네."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-011",
+  "speech": "umbridge-5-011",
+  "part": 1,
+  "of": 1,
+  "order": 22,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 헤르미온느가 이 과목의 핵심은 실전 연습이 아니냐며 물러서지 않자, 엄브리지가 권위를 내세워 눌러 버리려 한다.",
+  "cue_speaker": "Hermione",
+  "cue": "But surely the whole point of Defence Against the Dark Arts is practical application?",
+  "prev_line": "",
+  "line": "Miss Granger, this class has been approved by Ministry experts. Are you a Ministry expert?",
+  "ko": "그레인저 양, 이 수업은 마법부 전문가들이 승인한 것이에요. 그레인저 양이 마법부 전문가인가요?",
+  "plain": "Miss Granger, Ministry experts signed off on this class. Are you a Ministry expert?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Miss Granger",
+    "kind": "호칭",
+    "note": "교사가 학생을 'Miss/Mr + 성'으로 부르는 것은 옛 영국 사립학교풍의 전통적 격식입니다. 오늘날에는 영국 교사도 미국 교사와 마찬가지로 학생을 대개 이름(first name)으로 부르므로, 이 호칭은 꾸짖거나 일부러 거리를 둘 때 쓰는 말투로 들립니다. 엄브리지는 이 호칭으로 상냥함과 위계를 동시에 연출합니다.",
+    "examples": [
+     {
+      "en": "Miss Patel, would you care to share that with the rest of the class?",
+      "ko": "파텔 양, 그 얘기를 반 전체에 들려주겠니?"
+     },
+     {
+      "en": "Mr Hughes, see me after the lesson, please.",
+      "ko": "휴즈 군, 수업 끝나고 나 좀 보자."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "has been approved by ... experts",
+    "kind": "관료적 권위 호소",
+    "note": "결정의 근거를 자기 판단이 아니라 익명의 '전문가' '당국'에 돌리는 관료 화법입니다. 반박하는 사람을 '전문가가 아닌 자'로 만들어 토론 자체를 막는 구조로, 나라를 가리지 않고 공공기관 문서와 발화에서 매우 흔한 패턴입니다.",
+    "examples": [
+     {
+      "en": "The policy has been approved by the governing body, so it's not up for debate.",
+      "ko": "이 방침은 운영위원회가 승인한 것이라 논의 대상이 아닙니다."
+     },
+     {
+      "en": "The route has been approved by safety experts; are you a safety expert?",
+      "ko": "그 경로는 안전 전문가들이 승인했어요. 당신이 안전 전문가인가요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-012",
+  "speech": "umbridge-5-012",
+  "part": 1,
+  "of": 1,
+  "order": 23,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 엄브리지의 반문에 헤르미온느가 아니라고 하면서도 말을 이으려 하자, 엄브리지가 말허리를 잘라 버린다.",
+  "cue_speaker": "Hermione",
+  "cue": "No, but--",
+  "prev_line": "",
+  "line": "Then you have no business challenging those who are. We will be learning about spells in a safe, risk-free environment.",
+  "ko": "그렇다면 전문가인 분들에게 토를 달 자격이 없지요. 우리는 안전하고 위험 없는 환경에서 주문에 대해 배울 거예요.",
+  "plain": "Then it's not your place to argue with the people who are. We're gonna learn about spells in a safe, risk-free setting.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "have no business doing something",
+    "kind": "관용구",
+    "note": "'~할 자격이나 권한이 없다'는 뜻으로, 상대의 행동을 분수에 맞지 않는 참견으로 규정하는 꾸짖음입니다. 영미 공통 관용구로, 윗사람이 아랫사람을 질책할 때 자주 씁니다. 비슷한 표현으로 'It's not your place to...' 'You've got no right to...'가 있습니다.",
+    "examples": [
+     {
+      "en": "You had no business reading my emails.",
+      "ko": "내 이메일을 읽을 권리는 없었잖아요."
+     },
+     {
+      "en": "He's got no business telling us how to run the department.",
+      "ko": "그 사람이 우리 부서 운영에 대해 뭐라 할 자격은 없죠."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a safe, risk-free environment",
+    "kind": "완곡어법",
+    "note": "'실습을 전혀 하지 않겠다'를 '안전하고 위험 없는 환경'으로 바꿔 말하는 관료적 완곡어법입니다. 부정적 사실을 긍정적 포장어로 감싸는 방식으로, 영국만이 아니라 영어권 행정·교육 문서에 두루 쓰이는 상투어입니다. 'environment'를 붙이면 더욱 공문서 느낌이 납니다.",
+    "examples": [
+     {
+      "en": "We aim to provide a safe, supportive environment for all pupils.",
+      "ko": "우리는 모든 학생에게 안전하고 지지적인 환경을 제공하는 것을 목표로 합니다."
+     },
+     {
+      "en": "Staff will be consulted in a structured, risk-free way.",
+      "ko": "직원 의견은 체계적이고 부담 없는 방식으로 수렴될 것입니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-013",
+  "speech": "umbridge-5-013",
+  "part": 1,
+  "of": 1,
+  "order": 24,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 실습 없는 수업에 학생들의 항의가 이어지고, 해리까지 나서서 이론만 배워 무슨 소용이냐고 따진다.",
+  "cue_speaker": "Harry",
+  "cue": "What good's theory in the real world?",
+  "prev_line": "",
+  "line": "This is school, not the real world, Mr Potter. There is nothing out there waiting to get you.",
+  "ko": "여기는 학교예요, 현실 세계가 아니라. 포터 군, 저 바깥에 널 노리고 기다리는 건 아무것도 없어요.",
+  "plain": "This is school, not real life, Potter. There's nothing out there that's gonna come after you.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "There is nothing ...",
+    "kind": "격식·축약 회피",
+    "note": "구어라면 'There's nothing'으로 줄이는 것이 자연스러운데, 축약하지 않고 또박또박 말해 단정적이고 가르치는 어조를 만듭니다. 축약을 피하면 격식과 권위가 실리는 것은 영국식만의 특징이 아니라 영미 공통입니다. 일상 구어에서는 영국이든 미국이든 거의 반드시 축약합니다.",
+    "examples": [
+     {
+      "en": "There is nothing more to discuss. The matter is closed.",
+      "ko": "더 논의할 것은 없습니다. 이 건은 종결입니다."
+     },
+     {
+      "en": "There is no need to raise your voice.",
+      "ko": "목소리를 높일 필요는 없어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "out there waiting to get you",
+    "kind": "반어·유아어",
+    "note": "'get you'는 아이에게 '잡으러 온다'고 할 때 쓰는 유아적 표현으로, 해리의 공포를 어린아이의 악몽 수준으로 깎아내리는 반어입니다. 상냥한 어휘로 상대를 유치하게 만드는 엄브리지 화법의 핵심입니다.",
+    "examples": [
+     {
+      "en": "Don't worry, there's no monster under the bed waiting to get you.",
+      "ko": "걱정 마, 침대 밑에 널 잡으러 올 괴물은 없어."
+     },
+     {
+      "en": "Nobody's out to get you; it was just a scheduling mix-up.",
+      "ko": "아무도 당신을 노리는 게 아니에요. 일정이 꼬인 것뿐이에요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-014",
+  "speech": "umbridge-5-014",
+  "part": 1,
+  "of": 1,
+  "order": 25,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 학교 밖에는 위험이 없다는 엄브리지의 말에 해리가 금기시되는 이름을 입에 올리자 교실이 얼어붙는다.",
+  "cue_speaker": "Harry",
+  "cue": "What about Lord Voldemort?",
+  "prev_line": "",
+  "line": "Ten points from Gryffindor, Mr Potter. Let me set the record straight.",
+  "ko": "그리핀도르 10점 감점이에요, 포터 군. 한 가지 분명히 해 두겟어요.",
+  "plain": "That's ten points off Gryffindor, Potter. Let me clear something up.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "set the record straight",
+    "kind": "관용구",
+    "note": "'잘못 알려진 사실을 바로잡다'라는 관용구로, 영미 공통이지만 공식 성명·정치 발언에서 특히 자주 쓰입니다. 자기 말이 '공식 기록'이고 상대 말은 오해라는 전제를 깔아 토론을 끝내는 효과가 있습니다. 미국 구어라면 'clear something up' 'get this straight'로도 말합니다.",
+    "examples": [
+     {
+      "en": "Before the rumours spread any further, let me set the record straight.",
+      "ko": "소문이 더 퍼지기 전에 사실을 분명히 해 두겟습니다."
+     },
+     {
+      "en": "She wrote to the paper to set the record straight about the incident.",
+      "ko": "그녀는 그 사건에 대한 사실을 바로잡기 위해 신문에 글을 보냈다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-015",
+  "speech": "umbridge-5-015",
+  "part": 1,
+  "of": 1,
+  "order": 26,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 볼드모트의 이름을 꺼낸 해리에게 감점을 준 엄브리지가, 반 전체를 향해 마법부의 공식 입장을 못 박는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Some of you have been told that a certain dead wizard has returned. This is a lie.",
+  "ko": "여러분 중 일부는 어떤 죽은 마법사가 돌아왔다는 말을 들었을 거예요. 그건 거짓말이에요.",
+  "plain": "Some of you have heard that a certain dead wizard is back. That's not true.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "a certain dead wizard",
+    "kind": "완곡어법",
+    "note": "'a certain + 명사'는 이름을 알면서도 일부러 밝히지 않는 완곡·냉소 표현으로, 영미 공통입니다. 볼드모트의 이름을 입에 올릴 가치도 없다는 태도와, 두려워서 피하는 태도가 겹칩니다. 일상 구어에서도 'a certain someone'처럼 같은 구문으로 장난스럽게 돌려 말합니다.",
+    "examples": [
+     {
+      "en": "A certain colleague of ours still hasn't sent in his report.",
+      "ko": "우리 동료 중 어떤 분은 아직도 보고서를 안 보냈네요."
+     },
+     {
+      "en": "I heard a certain person forgot her own birthday.",
+      "ko": "어떤 분이 자기 생일을 깜빡했다고 들었는데요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Some of you have been told that ...",
+    "kind": "격식·수동 완곡",
+    "note": "누가 말했는지 감추는 수동태로 '해리와 덤블도어가 말했다'를 '여러분이 들었다'로 바꾸어, 출처를 익명화하고 신빙성을 떨어뜨립니다. 책임 소재를 흐리는 공공·관료 발화의 전형적 구문으로, 영국 특유가 아니라 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Some of you have been told that the trip is cancelled. That is not the case.",
+      "ko": "여러분 중 일부는 여행이 취소됐다고 들었을 겁니다. 사실이 아닙니다."
+     },
+     {
+      "en": "You may have been told otherwise, but the deadline hasn't moved.",
+      "ko": "다르게 들으셨을 수도 있지만, 마감은 바뀌지 않았습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-016",
+  "speech": "umbridge-5-016",
+  "part": 1,
+  "of": 1,
+  "order": 27,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 볼드모트의 귀환을 반 전체 앞에서 부정당한 해리가 참지 못하고 소리친다.",
+  "cue_speaker": "Harry",
+  "cue": "It is NOT a lie!",
+  "prev_line": "",
+  "line": "Mr Potter, you have just landed yourself in detention!",
+  "ko": "포터 군, 방금 스스로 벌을 자초했네요. 방과 후 남으세요!",
+  "plain": "Potter, you just got yourself detention!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "land yourself in ...",
+    "kind": "관용구",
+    "note": "'land (oneself) in trouble/detention'은 '스스로의 행동으로 곤경에 빠지다'라는 관용구입니다. 영국 특유의 표현은 아니며 미국에서도 'land in jail', 'land yourself in hot water'처럼 씁니다. 벌을 주는 사람은 자신인데 책임을 전부 학생에게 돌리는 어법이고, 'get yourself in trouble' 'you just earned yourself...'도 같은 뜻으로 영미 모두 씁니다.",
+    "examples": [
+     {
+      "en": "Keep talking back and you'll land yourself in detention.",
+      "ko": "계속 말대답하면 벌로 남게 될 거야."
+     },
+     {
+      "en": "He landed himself in hot water with the boss over that email.",
+      "ko": "그 이메일 때문에 상사한테 단단히 미운털이 박혔어요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "detention",
+    "kind": "학교 어휘",
+    "note": "방과 후나 쉬는 시간에 남게 하는 벌로, 단어 자체는 영미 공통입니다. 다만 영국에서는 'get a detention', 'a week's worth of detentions'처럼 셀 수 있는 명사로 쓰는 일이 많고, 미국에서는 'get detention'처럼 관사 없이 쓰는 편입니다. 'be in detention'은 영미 모두 씁니다.",
+    "examples": [
+     {
+      "en": "I got a detention for forgetting my PE kit again.",
+      "ko": "체육복 또 안 가져와서 벌로 남았어."
+     },
+     {
+      "en": "Lunchtime detentions are held in Room 12.",
+      "ko": "점심시간 벌은 12호실에서 진행됩니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-017",
+  "speech": "umbridge-5-017",
+  "part": 1,
+  "of": 1,
+  "order": 28,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 벌을 받게 된 해리가 물러서지 않고, 그렇다면 세드릭 디고리는 어떻게 죽었다는 거냐고 엄브리지에게 따져 묻는다.",
+  "cue_speaker": "Harry",
+  "cue": "So, according to you, Cedric Diggory dropped dead? Or are you calling me a murderer?",
+  "prev_line": "",
+  "line": "The boy's death was a tragic accident.",
+  "ko": "그 아이의 죽음은 비극적인 사고였어요.",
+  "plain": "What happened to that boy was a terrible accident.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "a tragic accident",
+    "kind": "완곡어법·공식 성명",
+    "note": "살인을 '비극적 사고'로 바꾸는 관료적 완곡어로, 영국·미국을 가리지 않고 정부·기관 성명서에 흔한 상투어입니다. 'tragic'으로 애도하는 척하면서 'accident'로 책임을 없애는 구조입니다. 'the boy'라고 이름을 부르지 않는 것도 거리를 두는 장치입니다.",
+    "examples": [
+     {
+      "en": "The company described the explosion as a tragic accident.",
+      "ko": "회사는 그 폭발을 비극적인 사고로 규정했다."
+     },
+     {
+      "en": "It was a tragic accident and no one is to blame.",
+      "ko": "비극적인 사고였고 누구의 책임도 아닙니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-018",
+  "speech": "umbridge-5-018",
+  "part": 1,
+  "of": 1,
+  "order": 29,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 세드릭의 죽음을 직접 봤다고 해리가 고함치자, 엄브리지가 미소를 지운 채 해리를 노려본다.",
+  "cue_speaker": "Harry",
+  "cue": "It was murder! I saw it happen!",
+  "prev_line": "",
+  "line": "Mr Potter, you have earned yourself a week's worth of detentions!",
+  "ko": "포터 군, 일주일 내내 남는 벌을 스스로 벌었네요!",
+  "plain": "Potter, that just got you a whole week of detention!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "earn yourself ...",
+    "kind": "반어",
+    "note": "'earn'은 원래 노력으로 얻는다는 긍정어인데, 벌을 '네가 벌었다'고 말해 책임을 전부 상대에게 돌리는 반어입니다. 교사·상사가 벌을 줄 때 즐겨 쓰는 어법으로 영미 공통이며, 미국에서도 'You just earned yourself a detention'이라고 그대로 말합니다. 더 구어적으로는 'You just bought yourself...'라고도 합니다.",
+    "examples": [
+     {
+      "en": "Well done, you've earned yourself an extra shift this weekend.",
+      "ko": "잘했네, 이번 주말에 추가 근무 하나 벌었어."
+     },
+     {
+      "en": "One more comment like that and you'll earn yourself a trip to the head's office.",
+      "ko": "그런 소리 한 번만 더 하면 교장실에 가게 될 거야."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a week's worth of ...",
+    "kind": "소유격 수량 표현",
+    "note": "'기간's worth of + 명사'는 '~만큼의 양'을 나타내는 표현으로 영미 공통입니다. 'a week of detentions'보다 '일주일 분량'이라는 느낌을 강조합니다.",
+    "examples": [
+     {
+      "en": "I've got a month's worth of marking to get through.",
+      "ko": "한 달 치 채점이 밀려 있어요."
+     },
+     {
+      "en": "We bought a week's worth of groceries in one go.",
+      "ko": "일주일 치 장을 한 번에 봤어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-019",
+  "speech": "umbridge-5-019",
+  "part": 1,
+  "of": 1,
+  "order": 30,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "어둠의 마법 방어술 교실. 해리가 끝까지 대들자, 엄브리지가 책상에서 분홍 양피지에 쪽지를 써서 봉한 뒤 해리에게 내민다.",
+  "cue_speaker": "Harry",
+  "cue": "Yeah, talk to somebody who cares. Voldemort killed Cedric, and you know it.",
+  "prev_line": "",
+  "line": "That goes to Professor McGonagall, dear.",
+  "ko": "이건 맥고나걸 교수님께 가져다 드리세요, 얘야.",
+  "plain": "Take that to Professor McGonagall, sweetie.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "dear",
+    "kind": "호칭·반어",
+    "note": "방금 일주일 벌을 준 학생에게 'dear'라고 부르는 것이 엄브리지 화법의 정수입니다. 영국영어에서 문장 끝의 'dear'는 다정함일 수도, 윗사람이 아랫사람을 다루는 생색일 수도 있어 맥락이 결정합니다. 미국 구어라면 'hon' 'sweetie'가 비슷한 이중성을 가집니다.",
+    "examples": [
+     {
+      "en": "You'll need to fill that form in again, dear.",
+      "ko": "그 서식은 다시 작성해야 해요, 얘야."
+     },
+     {
+      "en": "Not now, dear, I'm on the phone.",
+      "ko": "지금은 안 돼, 얘야, 전화 중이야."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "That goes to ...",
+    "kind": "간접 지시",
+    "note": "'Take that to...'를 사물 주어로 바꿔 '이것은 ~에게 갈 물건이다'라고 말하는 간접 지시입니다. 명령형을 피해 겉으로는 부드럽지만 거부할 수 없는 지시 화법으로, 영국 특유가 아니라 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "That goes to the finance office, not to me.",
+      "ko": "그건 저한테 아니고 재무팀으로 가야 해요."
+     },
+     {
+      "en": "These go in the recycling, not the general waste.",
+      "ko": "이건 일반 쓰레기가 아니라 재활용에 넣는 거예요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-020",
+  "speech": "umbridge-5-020",
+  "part": 1,
+  "of": 1,
+  "order": 31,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "분홍빛 레이스와 고양이 접시로 뒤덮인 엄브리지의 교수실, 밤. 첫 벌을 받으러 온 해리가 문을 열고 들어선다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Ah, Potter. Sit down.",
+  "ko": "아, 포터 군. 앉으세요.",
+  "plain": "Oh, hey, Potter. Have a seat.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Potter (성만으로 부르기)",
+    "kind": "호칭",
+    "note": "교사가 학생을 성(姓)만으로 부르는 것은 영국의 전통적인 기숙학교·사립학교의 오랜 관습으로, 'Mr Potter'보다 더 하대하는 느낌입니다. 요즘은 영국 학교도 대개 이름을 부르며, 미국에서도 교사는 이름을 쓰고 성만 부르는 것은 운동부 코치나 군대 정도입니다. 엄브리지가 'Mr Potter'와 'Potter'를 오가는 것은 상냥함과 위압을 조절하는 장치입니다.",
+    "examples": [
+     {
+      "en": "Jenkins, stop talking and face the front.",
+      "ko": "젱킨스, 떠들지 말고 앞을 봐라."
+     },
+     {
+      "en": "Ah, Williams. I was wondering when you'd turn up.",
+      "ko": "아, 윌리엄스. 언제 나타날까 궁금했는데."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-021",
+  "speech": "umbridge-5-021",
+  "part": 1,
+  "of": 1,
+  "order": 32,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 해리를 작은 책상 앞에 앉힌 엄브리지가 오늘 밤 받을 벌의 내용과 사용할 도구를 알려 준다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You're going to be doing lines tonight, Mr Potter, and you'll be using this quill.",
+  "ko": "오늘 밤에는 반성문을 쓰게 될 거예요, 포터 군. 그리고 이 깃펜을 쓰도록 하세요.",
+  "plain": "Tonight you're gonna write out sentences over and over, Potter, and you're gonna use this pen.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "do lines",
+    "kind": "BrE 학교 어휘",
+    "note": "'lines'는 같은 문장을 수십 번 반복해서 쓰게 하는 영국 학교의 전통적 벌입니다. 'write lines' 'do lines' 'get lines'로 쓰며, 미국에도 같은 벌이 있지만 'lines'라는 명칭보다 'write sentences'라고 하는 편입니다. 영국 학교 소설·드라마에서 매우 자주 나오는 어휘입니다.",
+    "examples": [
+     {
+      "en": "I had to do a hundred lines for talking in assembly.",
+      "ko": "조회 시간에 떠들어서 똑같은 문장 백 번 썼어."
+     },
+     {
+      "en": "Give him lines; it's quicker than a detention.",
+      "ko": "반성문 쓰게 해. 남기는 것보다 빠르잖아."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "You're going to be doing ... / you'll be using ...",
+    "kind": "미래진행 지시",
+    "note": "미래진행형으로 상대의 행동을 이미 정해진 일정처럼 통보하는 지시 화법입니다. 명령문보다 부드럽게 들리지만 선택의 여지가 없음을 전제해 더 단호합니다. 영국 특유가 아니라 영미 공통이며, 미국에서도 'You'll be staying after class'처럼 말합니다.",
+    "examples": [
+     {
+      "en": "You'll be working with Sam on this project.",
+      "ko": "이 프로젝트는 샘과 함께 하게 될 거예요."
+     },
+     {
+      "en": "We'll be starting at nine sharp, so don't be late.",
+      "ko": "9시 정각에 시작할 테니 늦지 마세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-022",
+  "speech": "umbridge-5-022",
+  "part": 1,
+  "of": 1,
+  "order": 33,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 검고 뾰족한 특별한 깃펜을 건넨 엄브리지가 해리에게 무슨 문장을 언제까지 써야 하는지 지시한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You will write \"I will not tell lies\" until I tell you to stop. Understand?",
+  "ko": "제가 그만하라고 할 때까지 '나는 거짓말을 하지 않겠습니다'라고 쓰세요. 알겠지요?",
+  "plain": "Keep writing \"I will not tell lies\" till I say stop. Got it?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "You will write ...",
+    "kind": "will 명령",
+    "note": "'You will + 동사'는 미래가 아니라 복종을 전제한 명령으로, 교사·군대·상급자의 권위적 어법이며 영미 공통입니다. 'Write...'라는 명령문보다 오히려 더 차갑고 거역 불가능한 느낌을 줍니다. 일상 구어에서는 영미 모두 'You're going to...' 'I need you to...'처럼 더 부드럽게 말합니다.",
+    "examples": [
+     {
+      "en": "You will hand in your phones at the start of every lesson.",
+      "ko": "매 수업 시작 때 휴대전화를 제출하도록 해요."
+     },
+     {
+      "en": "You will apologise to Mrs Carter before the end of the day.",
+      "ko": "오늘 안에 카터 선생님께 사과하세요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Understand?",
+    "kind": "생략 의문문",
+    "note": "'Do you understand?'에서 조동사와 주어를 떼어낸 축약 의문문으로, 짧을수록 위압적입니다. 상냥한 존댓말 흐름 끝에 이런 한 단어 확인을 붙이는 것이 엄브리지식 '웃는 얼굴의 협박'입니다. 영미 공통 표현이며, 'Got it?' 'Is that clear?'도 같은 기능을 합니다.",
+    "examples": [
+     {
+      "en": "No phones at the dinner table. Understood?",
+      "ko": "식탁에서 휴대전화 금지. 알겠지?"
+     },
+     {
+      "en": "I want this finished by Friday. Understand?",
+      "ko": "금요일까지 끝내 주세요. 알겠죠?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-023",
+  "speech": "umbridge-5-023",
+  "part": 1,
+  "of": 1,
+  "order": 34,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 반성문을 쓰려던 해리가 깃펜만 받았을 뿐 잉크병이 없다는 것을 알아챈다.",
+  "cue_speaker": "Harry",
+  "cue": "There's no ink.",
+  "prev_line": "",
+  "line": "Oh... you won't need ink.",
+  "ko": "아... 잉크는 필요 없을 거예요.",
+  "plain": "Oh, you're not gonna need any ink.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-024",
+  "speech": "umbridge-5-024",
+  "part": 1,
+  "of": 1,
+  "order": 35,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 해리가 문장을 쓸 때마다 같은 글씨가 손등에 새겨지며 피가 배어 나오고, 아픔에 움찔하며 고개를 든 해리를 엄브리지가 태연히 바라본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Problem, Potter?",
+  "ko": "무슨 문제라도 있나요, 포터 군?",
+  "plain": "Something wrong, Potter?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Problem?",
+    "kind": "생략 의문문·반어",
+    "note": "'Is there a problem?'을 한 단어로 줄인 의문문으로, 상대의 고통을 다 알면서 모르는 척 묻는 반어입니다. 짧게 던질수록 '불평할 생각은 하지 마라'는 경고가 됩니다. 영미 공통의 구어 표현이며, 'Something wrong?'도 비슷하게 씁니다.",
+    "examples": [
+     {
+      "en": "Problem, Mr Davies? You look like you want to say something.",
+      "ko": "무슨 문제 있나요, 데이비스 씨? 할 말이 있는 얼굴인데요."
+     },
+     {
+      "en": "Problem? No? Then let's carry on.",
+      "ko": "문제 있어요? 없죠? 그럼 계속하죠."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-025.1",
+  "speech": "umbridge-5-025",
+  "part": 1,
+  "of": 2,
+  "order": 36,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 피로 문장을 쓰는 벌이 한참 이어져 해리의 손등이 벌겋게 부어오르자, 엄브리지가 만족스러운 얼굴로 입을 연다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "That's enough for this evening.",
+  "ko": "오늘 저녁은 이만하면 됐어요.",
+  "plain": "Okay, that's it for tonight.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-025.2",
+  "speech": "umbridge-5-025",
+  "part": 2,
+  "of": 2,
+  "order": 37,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 밤. 피로 문장을 쓰는 벌이 한참 이어져 해리의 손등이 벌겋게 부어오르자, 엄브리지가 만족스러운 얼굴로 입을 연다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "That's enough for this evening.",
+  "line": "Same time tomorrow, and we'll see if we can get the message to sink in a bit deeper.",
+  "ko": "내일 같은 시간에 와서, 그 말이 조금 더 깊이 새겨지는지 봅시다.",
+  "plain": "Same time tomorrow, and we'll see if we can make the lesson stick a little better.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "sink in",
+    "kind": "관용구·중의",
+    "note": "'(말이나 교훈이) 머리에 스며들다, 실감되다'라는 관용구입니다. 여기서는 손등에 글씨가 '파고드는' 물리적 의미와 겹치는 잔인한 중의 표현입니다. 영미 공통이지만 영국 교사가 '교훈이 들었니?'라고 할 때 매우 자주 씁니다.",
+    "examples": [
+     {
+      "en": "Give him a day or two; the news hasn't sunk in yet.",
+      "ko": "하루 이틀 시간을 줘요. 아직 그 소식이 실감이 안 날 거예요."
+     },
+     {
+      "en": "Let's go over it once more so it really sinks in.",
+      "ko": "제대로 머리에 들어가게 한 번만 더 짚어 보죠."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a bit deeper",
+    "kind": "BrE 완화어",
+    "note": "'a bit'은 영국 구어에서 가장 흔한 완화어로, 'a little'보다 훨씬 자주 쓰입니다. 고문에 해당하는 벌을 '조금 더'라고 표현하는 축소 어법이 엄브리지의 공포를 만듭니다. 미국 구어는 'a little' 'a little bit'을 선호합니다.",
+    "examples": [
+     {
+      "en": "Could you turn the music down a bit?",
+      "ko": "음악 소리 조금만 줄여 줄래요?"
+     },
+     {
+      "en": "I think we need to dig a bit deeper into these numbers.",
+      "ko": "이 수치들을 좀 더 깊이 들여다봐야 할 것 같아요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "we'll see if we can ...",
+    "kind": "포괄 we·완곡 위협",
+    "note": "벌을 주는 사람이 '우리'라고 말해 가해자와 피해자를 한 편처럼 묶는 상냥한 위압 화법입니다. 간호사나 교사가 'How are we today?'라고 할 때와 같은 포괄 we로, 영국식이 아니라 영미 공통입니다. 'see if we can'은 겉으로는 시도해 보자는 뜻이지만 실제로는 '내일 더 심하게 하겠다'는 통보입니다.",
+    "examples": [
+     {
+      "en": "Right, we'll see if we can get this sorted before Friday.",
+      "ko": "자, 금요일 전에 이걸 해결할 수 있는지 봅시다."
+     },
+     {
+      "en": "Same time next week, and we'll see if we can make a bit more progress.",
+      "ko": "다음 주 같은 시간에, 조금 더 진전이 있는지 봅시다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-026",
+  "speech": "umbridge-5-026",
+  "part": 1,
+  "of": 1,
+  "order": 38,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 교수실, 또 다른 벌 받는 밤. 해리가 몇 시간째 자기 피로 같은 문장을 쓰고 있고, 엄브리지가 자리에서 일어나 해리에게 다가온다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "That's enough for tonight, Potter. Let's see that hand.",
+  "ko": "오늘 밤은 이만하면 됐어요, 포터. 그 손 좀 봅시다.",
+  "plain": "Okay, that's it for tonight, Potter. Show me your hand.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "That's enough for tonight.",
+    "kind": "완곡어법",
+    "note": "벌(피로 글씨 쓰기)을 끝내면서도 마치 평범한 수업을 마치는 선생님처럼 말하는 마무리 표현입니다. 교실·직장에서 '오늘은 여기까지'를 선언할 때 쓰는 말로 영미 공통이며, 'We're done for today'도 같은 뜻으로 영미 모두 씁니다.",
+    "examples": [
+     {
+      "en": "Right, that's enough for today. Pack up your things, please.",
+      "ko": "자, 오늘은 여기까지. 짐 정리하세요."
+     },
+     {
+      "en": "I think that's enough for tonight; we'll pick it up tomorrow.",
+      "ko": "오늘 밤은 이만하면 된 것 같네요. 내일 이어서 하죠."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Let's see that hand.",
+    "kind": "완곡어법",
+    "note": "직접 명령('Show me your hand')을 피하고 'Let's see…'로 부드럽게 말하지만 실제로는 복종을 요구하는 명령입니다. 겉은 상냥하고 속은 강압적인 엄브리지 특유의 화법으로, 교사·간호사·의사가 아이나 환자에게 쓰는 영미 공통의 말투입니다.",
+    "examples": [
+     {
+      "en": "Let's see that homework, then.",
+      "ko": "그럼 숙제 좀 볼까요."
+     },
+     {
+      "en": "Let's see that passport, sir.",
+      "ko": "여권 확인하겠습니다, 선생님."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-027",
+  "speech": "umbridge-5-027",
+  "part": 1,
+  "of": 1,
+  "order": 39,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실. 트릴로니가 꿈 해몽 수업을 시작하자, 클립보드를 들고 참관하던 고위 감사관 엄브리지가 다가가 심문하듯 질문을 던지기 시작한다.",
+  "cue_speaker": "Trelawney",
+  "cue": "Please divide into your groups and discuss your recent night-time visions using the text as a guide.",
+  "prev_line": "",
+  "line": "And how long have you been at this post?",
+  "ko": "그런데 이 자리에 계신 지는 얼마나 되셨죠?",
+  "plain": "So how long have you had this job?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "be at this post",
+    "kind": "격식 어휘",
+    "note": "'post'는 영국 공공기관·학교에서 '직위, 자리'를 가리키는 격식 어휘로, 미국 구어의 'job'이나 'position'에 해당합니다. 감사관이 서류를 들고 교사의 근무 경력을 캐묻는 관료적 분위기를 만듭니다. 'in post'(재직 중), 'take up a post'(부임하다)도 자주 씁니다.",
+    "examples": [
+     {
+      "en": "She has been in post as head of department since 2019.",
+      "ko": "그분은 2019년부터 학과장으로 재직 중입니다."
+     },
+     {
+      "en": "He took up a post at the embassy last spring.",
+      "ko": "그는 지난봄에 대사관에 부임했습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-028",
+  "speech": "umbridge-5-028",
+  "part": 1,
+  "of": 1,
+  "order": 40,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 엄브리지의 수업 감사. 근무 기간을 답한 트릴로니에게 엄브리지가 클립보드에 적어 가며 이번에는 집안 내력을 캐묻는다.",
+  "cue_speaker": "Trelawney",
+  "cue": "Near to sixteen years I have been the guide to young seers possessed of the Inner Sight.",
+  "prev_line": "",
+  "line": "I understand you are the descendant of the famous Seer Cassandra Trelawney?",
+  "ko": "듣자 하니 그 유명한 예언자 카산드라 트릴로니의 후손이시라고요?",
+  "plain": "So I hear you're related to the famous psychic Cassandra Trelawney?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I understand (that) you are…",
+    "kind": "완곡어법",
+    "note": "'I understand you are…?'는 이미 알고 있는 사실을 확인하는 척하면서 상대를 심문하는 격식 표현으로, 영미 공통입니다. 'I hear'보다 거리감이 있고 관료적이며, 뒤에 물음표를 붙여 확인을 요구합니다. 면접·조사·공식 통화에서 자주 들립니다.",
+    "examples": [
+     {
+      "en": "I understand you were off sick on Monday?",
+      "ko": "월요일에 병가를 내셨다고 들었는데요?"
+     },
+     {
+      "en": "I understand you're the new tenant in flat 4?",
+      "ko": "4호에 새로 들어오신 분이시죠?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "you are (축약 회피)",
+    "kind": "격식·축약 회피",
+    "note": "구어라면 'you're'로 줄이는 것이 자연스럽지만 엄브리지는 'you are'로 또박또박 말해 사무적이고 거리를 두는 느낌을 냅니다. 축약을 피하면 격식과 권위가 실리는 것은 영국 영어만이 아니라 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "I am told you are responsible for this department.",
+      "ko": "이 부서 책임자가 당신이라고 들었습니다."
+     },
+     {
+      "en": "You are aware, I take it, of the new policy?",
+      "ko": "새 방침은 당연히 알고 계시겠지요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-029",
+  "speech": "umbridge-5-029",
+  "part": 1,
+  "of": 1,
+  "order": 41,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 수업 감사 중. 유명한 예언자의 후손임을 트릴로니가 인정하자, 엄브리지가 그 혈통의 재능에 대해 날 선 확인 질문을 던진다.",
+  "cue_speaker": "Trelawney",
+  "cue": "I am.",
+  "prev_line": "",
+  "line": "And you are the first since Cassandra to have the Second Sight?",
+  "ko": "그리고 카산드라 이후로 예지력을 가진 분은 당신이 처음이라고요?",
+  "plain": "And you're the first one since Cassandra who's actually psychic?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "And you are…?",
+    "kind": "격식·축약 회피",
+    "note": "확인 질문을 평서문 어순 그대로 두고 끝만 올리는 방식으로, 이 어순 자체는 영미 공통의 일상 구어입니다. 심문하듯 사실을 하나씩 짚어 가는 느낌을 주며, 'you are'를 줄이지 않아 더 딱딱합니다. 일상 구어라면 영미 모두 'So you're the first one…?'이 자연스럽습니다.",
+    "examples": [
+     {
+      "en": "And you are the only key-holder for this office?",
+      "ko": "그리고 이 사무실 열쇠는 당신만 갖고 있는 거죠?"
+     },
+     {
+      "en": "And you are quite certain of the date?",
+      "ko": "그리고 날짜는 확실히 기억하시는 거죠?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-030",
+  "speech": "umbridge-5-030",
+  "part": 1,
+  "of": 1,
+  "order": 42,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 수업 감사 중. 집안에서 예지력을 지닌 사람이 오랫동안 없었다는 점을 찔린 트릴로니가 더듬거리며 변명한다.",
+  "cue_speaker": "Trelawney",
+  "cue": "These things tend to skip... several... generations.",
+  "prev_line": "",
+  "line": "Of course.",
+  "ko": "그렇겠죠.",
+  "plain": "Sure.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-031",
+  "speech": "umbridge-5-031",
+  "part": 1,
+  "of": 1,
+  "order": 43,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 수업 감사 중. 트릴로니의 변명을 믿지 않는 듯 가볍게 받아넘긴 엄브리지가, 미소를 띤 채 트릴로니를 궁지로 모는 요청을 한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Now, if you would kindly make a prediction for me?",
+  "ko": "그럼, 저를 위해 예언 하나 해 주시겠어요?",
+  "plain": "Okay, so can you do a prediction for me right now?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "if you would kindly…",
+    "kind": "완곡어법",
+    "note": "'if you would kindly + 동사'는 겉으로는 정중한 부탁이지만 실제로는 거절할 수 없는 지시입니다. 영미 공통의 격식 표현으로, 관료·교사·고객 응대 직원이 명령을 부드럽게 포장할 때 쓰며, 말투에 따라 짜증이나 압박이 묻어나기도 합니다. 일상 구어라면 영미 모두 'Could you just…'가 가까운 표현입니다.",
+    "examples": [
+     {
+      "en": "If you would kindly take a seat, the doctor will be with you shortly.",
+      "ko": "앉아서 기다려 주시면 곧 의사 선생님이 오실 겁니다."
+     },
+     {
+      "en": "If you would kindly stop talking, we can begin.",
+      "ko": "이야기를 멈춰 주시면 시작하겠습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Now, …",
+    "kind": "담화 표지",
+    "note": "문장 첫머리의 'Now'는 시간이 아니라 '그럼, 자' 하고 다음 단계로 넘어가는 신호입니다. 교사·면접관의 말투에서 매우 흔한 영미 공통의 담화 표지로, 상대의 변명을 끊고 본론으로 돌아가는 기능을 합니다.",
+    "examples": [
+     {
+      "en": "Now, where were we?",
+      "ko": "자, 어디까지 했죠?"
+     },
+     {
+      "en": "Now, about that report you promised me.",
+      "ko": "그럼, 약속하신 그 보고서 얘기를 해 볼까요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-032",
+  "speech": "umbridge-5-032",
+  "part": 1,
+  "of": 1,
+  "order": 44,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 수업 감사 중. 엄브리지가 지금 당장 예언을 하나 해 보라고 요구하자 발끈한 항변이 터져 나온다. 대본에는 엄브리지의 대사로 적혀 있지만 내용상 트릴로니가 하는 말이다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "The Inner Eye does not See upon command!",
+  "ko": "내면의 눈은 명령에 따라 보이는 것이 아닙니다!",
+  "plain": "",
+  "tag": "문학",
+  "card": false,
+  "corrected": false,
+  "bre": [],
+  "excluded_reason": "대본의 화자 표기 오류(트릴로니의 대사)"
+ },
+ {
+  "id": "umbridge-5-033",
+  "speech": "umbridge-5-033",
+  "part": 1,
+  "of": 1,
+  "order": 45,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "점술 교실, 수업 감사 중. 예언을 해 보라는 압박에 트릴로니가 억지로 뭔가를 짜내 보지만 신통치 않고, 엄브리지가 클립보드에 메모를 한다.",
+  "cue_speaker": "Trelawney",
+  "cue": "Perhaps you are not as in the beyond as the others.",
+  "prev_line": "",
+  "line": "Well, if that's the best you can do, Professor, I will be going.",
+  "ko": "글쎄요, 그게 최선이시라면, 교수님, 저는 이만 가 보겠습니다.",
+  "plain": "Well, if that's all you've got, Professor, I'm leaving.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "if that's the best you can do",
+    "kind": "완곡어법·반어",
+    "note": "직접 '형편없다'고 하지 않고 '그게 최선이라면'이라고 말해 상대의 무능을 공손한 틀 안에서 비꼬는 반어입니다. 표면은 양보, 실제는 평가 종료 선고입니다. 영국식이 아니라 영미 공통 표현이며, 더 구어적으로는 'If that's all you've got…'라고 합니다.",
+    "examples": [
+     {
+      "en": "If that's the best you can do, I'll ask someone else.",
+      "ko": "그게 최선이라면 다른 분께 부탁하겠습니다."
+     },
+     {
+      "en": "Well, if that's the best the garage can offer, we'll go elsewhere.",
+      "ko": "글쎄요, 그 정비소에서 해 줄 수 있는 게 그 정도라면 다른 데로 가죠."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "I will be going.",
+    "kind": "격식·축약 회피",
+    "note": "'I'll be off' 같은 가벼운 작별 대신 축약 없이 'I will be going'이라고 말해 냉정하고 사무적인 퇴장을 알립니다. 'I'm leaving'보다 감정을 뺀 거리감 있는 표현입니다.",
+    "examples": [
+     {
+      "en": "It's late, so I will be going. Thank you for your time.",
+      "ko": "늦었으니 저는 이만 가 보겠습니다. 시간 내 주셔서 감사합니다."
+     },
+     {
+      "en": "If there are no further questions, I will be going.",
+      "ko": "더 질문이 없으시면 저는 이만 물러가겠습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-034",
+  "speech": "umbridge-5-034",
+  "part": 1,
+  "of": 1,
+  "order": 46,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 퀴디치 경기 뒤 말포이와 주먹다짐을 한 해리와 조지를 맥고나걸이 꾸짖는 중에, 엄브리지가 불쑥 들어온다.",
+  "cue_speaker": "McGonagall",
+  "cue": "What is it, Dolores?",
+  "prev_line": "",
+  "line": "I thought you might need some additional authority in dealing with these two.",
+  "ko": "이 두 학생을 다루시는 데 권위가 조금 더 필요하실 것 같아서요.",
+  "plain": "I figured you could use some backup handling these two.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I thought you might need…",
+    "kind": "법조동사 완화",
+    "note": "'I thought you might…'는 과거형 thought와 might를 겹쳐 쓴 이중 완화로, 끼어드는 행위를 '도와주려는 배려'처럼 포장합니다. 남의 영역에 참견할 때 쓰는 공손한 틀로 영미 공통이며, 여기서는 맥고나걸의 권한을 깎아내리는 데 쓰입니다.",
+    "examples": [
+     {
+      "en": "I thought you might need a hand with the move.",
+      "ko": "이사하시는 데 손이 필요하실까 해서요."
+     },
+     {
+      "en": "I thought you might want to see this before the meeting.",
+      "ko": "회의 전에 이걸 보시면 좋을 것 같아서요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "additional authority",
+    "kind": "관료적 어휘",
+    "note": "'additional authority'(추가적 권위)는 사람을 두고 쓰는 말이 아니라 공문서에 나올 법한 추상 명사 조합입니다. 엄브리지는 자신을 '권위'라는 제도적 단어로 지칭해 개인적 참견을 공적 절차처럼 보이게 합니다. 'in dealing with'도 'to handle'보다 격식 있는 표현입니다.",
+    "examples": [
+     {
+      "en": "The committee was given additional authority to approve spending.",
+      "ko": "위원회에 지출 승인에 관한 추가 권한이 부여되었습니다."
+     },
+     {
+      "en": "We'll need additional authority from head office before signing.",
+      "ko": "서명 전에 본사의 추가 승인이 필요합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-035",
+  "speech": "umbridge-5-035",
+  "part": 1,
+  "of": 1,
+  "order": 47,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 맥고나걸이 해리와 조지에게 감점과 일주일 벌을 내리자, 나가지 않고 버티던 엄브리지가 다시 끼어든다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Your performance out there was shameful. Fifty points from Gryffindor, and I'm giving you both a week's worth of detentions.",
+  "prev_line": "",
+  "line": "I hardly think that's an adequate punishment for this.",
+  "ko": "그 정도로는 이번 일에 대한 벌로 충분하다고 보기 어렵겠는데요.",
+  "plain": "I don't think that's nearly enough punishment for this.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I hardly think…",
+    "kind": "완곡어법·반어",
+    "note": "'I hardly think'는 '거의 ~라고 생각하지 않는다'는 뜻으로, 실제로는 '절대 아니다'를 강하게 반박하면서도 형식상 부드럽게 들리는 영국식 축소 표현(understatement)입니다. 미국 구어라면 'I really don't think…' 또는 'No way that's enough.'로 직설적으로 말합니다.",
+    "examples": [
+     {
+      "en": "I hardly think a verbal warning is sufficient in this case.",
+      "ko": "이 경우 구두 경고로 충분하다고는 보기 어렵습니다."
+     },
+     {
+      "en": "I hardly think that's any of your business.",
+      "ko": "그건 당신이 상관할 일이 아닌 것 같은데요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "adequate",
+    "kind": "격식 어휘",
+    "note": "'adequate'는 '충분한, 적절한'을 뜻하는 격식 어휘로, 일상 구어의 'enough'를 관료적으로 바꾼 말입니다. 영국 보고서·평가서에서 '기준에 미달/충족'을 말할 때 자주 쓰며, 사람에게 쓰면 차갑고 평가하는 느낌을 줍니다.",
+    "examples": [
+     {
+      "en": "The heating in the flat is barely adequate for winter.",
+      "ko": "이 아파트 난방은 겨울을 나기에 간신히 될 정도입니다."
+     },
+     {
+      "en": "Her explanation was adequate, but not convincing.",
+      "ko": "그녀의 설명은 그럭저럭 됐지만 설득력은 없었습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-036.1",
+  "speech": "umbridge-5-036",
+  "part": 1,
+  "of": 2,
+  "order": 48,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 맥고나걸의 처벌이 약하다고 한 엄브리지가 핸드백에서 양피지 한 장을 꺼내 들고 자신에게 생긴 새 권한을 읽어 준다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Educational Decree Twenty-Five. It gives me, as High Inquisitor, the power to give punishments and privileges,",
+  "ko": "교육령 제25호입니다. 이 법령은 고위 감사관인 저에게 상벌을 내릴 권한을 부여합니다.",
+  "plain": "Educational Decree Twenty-Five. As High Inquisitor, it lets me hand out punishments and rewards.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "decree",
+    "kind": "격식 어휘",
+    "note": "'decree'는 '법령, 포고'를 뜻하는 격식·법률 어휘로, 일상 구어에서는 거의 쓰지 않고 정부·법원·군주의 명령을 가리킬 때 씁니다. 엄브리지가 학교 규칙을 'decree'라 부르는 것 자체가 권위를 과시하는 선택입니다.",
+    "examples": [
+     {
+      "en": "The council issued a decree banning cars from the city centre.",
+      "ko": "시 의회는 도심 차량 진입을 금지하는 법령을 공포했습니다."
+     },
+     {
+      "en": "She runs the office by decree; nobody dares question her.",
+      "ko": "그녀는 사무실을 명령으로 다스려서 아무도 반박하지 못합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-036.2",
+  "speech": "umbridge-5-036",
+  "part": 2,
+  "of": 2,
+  "order": 49,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 맥고나걸의 처벌이 약하다고 한 엄브리지가 핸드백에서 양피지 한 장을 꺼내 들고 자신에게 생긴 새 권한을 읽어 준다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Educational Decree Twenty-Five. It gives me, as High Inquisitor, the power to give punishments and privileges,",
+  "line": "and to alter those given out to students by other members of the staff.",
+  "ko": "그리고 다른 교직원이 학생에게 내린 상벌을 변경할 권한도 부여합니다.",
+  "plain": "It also lets me change the ones other teachers have already given to students.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "alter those given out to students by other members of the staff",
+    "kind": "관료적 어휘·수동 축약",
+    "note": "'those given out to…'는 'the punishments that were given out to…'를 줄인 과거분사 후치 수식(관계사절 축약)으로, 규정집 문체입니다. 'alter'(변경하다)와 'members of the staff'(교직원)도 각각 구어의 'change', 'other teachers'를 격식 어휘로 바꾼 것입니다. 영미 공통으로 공문서·학교 규정에서 흔히 보는 문장 구조입니다.",
+    "examples": [
+     {
+      "en": "Decisions made by junior staff may be altered by the manager.",
+      "ko": "하급 직원이 내린 결정은 관리자가 변경할 수 있습니다."
+     },
+     {
+      "en": "All members of staff are asked to attend the briefing.",
+      "ko": "전 직원은 설명회에 참석해 주시기 바랍니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-037.1",
+  "speech": "umbridge-5-037",
+  "part": 1,
+  "of": 2,
+  "order": 50,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 새 교육령으로 다른 교수의 처벌을 바꿀 권한을 얻었다고 밝힌 엄브리지가, 해리와 조지에게 내릴 벌을 직접 선고한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "So, I think a life-long ban from playing Quidditch should do the trick for both of these.",
+  "ko": "그러니 이 둘에게는 퀴디치 영구 출전 금지 정도면 적당하겠네요.",
+  "plain": "So I figure a lifetime ban from Quidditch oughta take care of these two.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "should do the trick",
+    "kind": "관용구·완곡어법",
+    "note": "'do the trick'은 '효과가 있다, 해결이 되다'라는 뜻의 가벼운 관용구로, 영미 공통입니다. 평생 출전 금지라는 가혹한 벌을 마치 작은 처방처럼 가볍게 말해 잔혹함을 상냥한 말투로 감싸는 효과를 냅니다.",
+    "examples": [
+     {
+      "en": "A cup of tea and an early night should do the trick.",
+      "ko": "차 한 잔 마시고 일찍 자면 괜찮아질 거예요."
+     },
+     {
+      "en": "Tightening that screw should do the trick.",
+      "ko": "그 나사만 조이면 해결될 겁니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-037.2",
+  "speech": "umbridge-5-037",
+  "part": 2,
+  "of": 2,
+  "order": 51,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 새 교육령으로 다른 교수의 처벌을 바꿀 권한을 얻었다고 밝힌 엄브리지가, 해리와 조지에게 내릴 벌을 직접 선고한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "So, I think a life-long ban from playing Quidditch should do the trick for both of these.",
+  "line": "Oh, and this one's twin as well. He was going to attack Malfoy as well.",
+  "ko": "아, 그리고 이 학생의 쌍둥이 형제도요. 그 아이도 말포이를 공격하려 했으니까요.",
+  "plain": "Oh, and this kid's twin too. He was gonna go after Malfoy too.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "as well",
+    "kind": "AmE 대비",
+    "note": "문장 끝의 'as well'은 'too'와 같은 뜻이지만 영국 구어에서 훨씬 자주 쓰입니다. 미국 구어는 대개 'too'를 씁니다. 한 대사에 두 번이나 나와 '하나 더, 또 하나 더'라고 벌을 덧붙이는 리듬을 만듭니다.",
+    "examples": [
+     {
+      "en": "Can you pick up some milk as well?",
+      "ko": "우유도 좀 사다 줄 수 있어요?"
+     },
+     {
+      "en": "I'll be at the meeting, and Tom's coming as well.",
+      "ko": "저도 회의에 갈 거고, 톰도 올 거예요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-038",
+  "speech": "umbridge-5-038",
+  "part": 1,
+  "of": 1,
+  "order": 52,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 엄브리지가 내린 가혹한 처분을 해리가 믿기지 않는다는 듯 되뇐다.",
+  "cue_speaker": "Harry",
+  "cue": "Ban us... for life.",
+  "prev_line": "",
+  "line": "Yes, indeed, Mr Potter.",
+  "ko": "네, 그렇습니다, 포터 군.",
+  "plain": "Yep, that's right, Potter.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "indeed",
+    "kind": "BrE 어휘·강조",
+    "note": "'indeed'는 상대의 말을 '바로 그렇다'고 확정하는 격식 강조어로, 영국 구어에서 미국보다 훨씬 자주 쓰입니다. 미국 구어라면 'That's right' 또는 'Yep'으로 말합니다. 여기서는 상냥한 어조로 잔인한 결정을 못 박는 역할을 합니다.",
+    "examples": [
+     {
+      "en": "\"So the trains are cancelled?\" \"Indeed they are.\"",
+      "ko": "\"그러니까 열차가 취소됐다고요?\" \"네, 그렇습니다.\""
+     },
+     {
+      "en": "It was a very long day indeed.",
+      "ko": "정말이지 몹시 긴 하루였어요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Mr Potter",
+    "kind": "호칭",
+    "note": "성(姓)에 Mr/Miss를 붙이는 호칭은 영국에서 공무원·은행원 등이 민원인이나 고객을 부를 때의 표준 격식입니다. 다만 요즘 영국 교사는 학생을 대개 이름으로 부르므로, 학생에게 'Mr Potter'라고 하면 옛 사립학교풍이거나 일부러 거리를 두는 엄한 말투로 들립니다. 벌을 내리는 순간에 쓰면 '개인적 감정이 아니라 공적 처분'이라는 뉘앙스가 생깁니다. 영국식 표기에서는 'Mr' 뒤에 마침표를 찍지 않습니다.",
+    "examples": [
+     {
+      "en": "Mr Khan, could you stay behind after class, please?",
+      "ko": "칸 학생, 수업 끝나고 잠깐 남아 주겠어요?"
+     },
+     {
+      "en": "I'm afraid your application has been refused, Mr Davies.",
+      "ko": "유감스럽지만 신청이 거절되었습니다, 데이비스 씨."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-039",
+  "speech": "umbridge-5-039",
+  "part": 1,
+  "of": 1,
+  "order": 53,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 해리와 위즐리 쌍둥이에게 퀴디치 평생 출전 금지를 선고한 엄브리지가, 거기서 그치지 않고 한 가지를 더 요구한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Ah, I'll take your brooms as well.",
+  "ko": "아, 빗자루도 제가 가져가겠습니다.",
+  "plain": "Oh, and I'm taking your brooms too.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "as well",
+    "kind": "AmE 대비",
+    "note": "문장 끝 'as well'은 영국 구어에서 'too' 대신 자주 쓰는 표현입니다. 마치 뒤늦게 생각난 사소한 일처럼 덧붙이지만 실제로는 가장 아픈 처분(빗자루 압수)을 추가하는 말이어서, 상냥한 말투로 잔인함을 감싸는 엄브리지 특유의 화법이 잘 드러납니다.",
+    "examples": [
+     {
+      "en": "I'll need your badge back as well, I'm afraid.",
+      "ko": "죄송하지만 출입증도 반납해 주셔야 합니다."
+     },
+     {
+      "en": "Shall I book the restaurant as well?",
+      "ko": "식당도 제가 예약할까요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-040",
+  "speech": "umbridge-5-040",
+  "part": 1,
+  "of": 1,
+  "order": 54,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸의 교수실. 퀴디치 금지에 빗자루 압수까지 통보한 엄브리지가, 할 일을 다 마쳤다는 듯 미소 지으며 문으로 향한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Well, have a wonderful day.",
+  "ko": "그럼, 즐거운 하루 보내세요.",
+  "plain": "Anyway, you guys have a great day.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Well, have a wonderful day.",
+    "kind": "반어·완곡어법",
+    "note": "상대의 인생을 망쳐 놓고 건네는 밝은 작별 인사입니다. 'Well,'로 말을 끊고 작별하는 것은 '이 대화는 끝났다'는 신호이고, 뒤에 붙는 과도하게 밝은 인사가 반어로 읽히는 것은 영미 공통입니다. 'Have a nice day'는 본래 미국식 상투 인사로 여겨지는 표현이며, 어느 쪽에서든 상황과 어조에 따라 날카로운 비꼼이 됩니다.",
+    "examples": [
+     {
+      "en": "Well, I think we're done here. Have a lovely evening.",
+      "ko": "그럼, 이쯤에서 끝내죠. 좋은 저녁 보내세요."
+     },
+     {
+      "en": "Right, that's your final warning. Have a wonderful weekend.",
+      "ko": "자, 이게 마지막 경고입니다. 즐거운 주말 보내세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-041",
+  "speech": "umbridge-5-041",
+  "part": 1,
+  "of": 1,
+  "order": 55,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 현관홀. 엄브리지가 트릴로니를 성에서 내쫓으려 하고, 짐 가방 옆에서 울부짖으며 저항하는 트릴로니를 학생들이 둘러서서 지켜본다.",
+  "cue_speaker": "Trelawney",
+  "cue": "You cannot sack me!",
+  "prev_line": "",
+  "line": "I can do whatever I wish!",
+  "ko": "저는 제가 원하는 대로 할 수 있습니다!",
+  "plain": "I can do whatever I want!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "whatever I wish",
+    "kind": "격식 어휘",
+    "note": "'wish'는 'want'의 격식형으로, 화가 난 순간에도 엄브리지는 'want' 대신 'wish'를 골라 자기 권한을 품위 있게 포장합니다. 영국 영어에서 'as you wish', 'if you wish'는 공손한 양보 표현으로 흔하지만, 'I can do whatever I wish'처럼 1인칭에 쓰면 오만하게 들립니다.",
+    "examples": [
+     {
+      "en": "You may leave whenever you wish.",
+      "ko": "원하시는 때에 언제든 나가셔도 됩니다."
+     },
+     {
+      "en": "If you wish, I can send the documents by post.",
+      "ko": "원하시면 서류를 우편으로 보내 드릴 수 있습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-042",
+  "speech": "umbridge-5-042",
+  "part": 1,
+  "of": 1,
+  "order": 56,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 현관홀. 해고당한 트릴로니가 호그와트는 자기 집이라며 흐느끼지만, 엄브리지는 눈 하나 깜짝하지 않는다.",
+  "cue_speaker": "Trelawney",
+  "cue": "This is my home!",
+  "prev_line": "",
+  "line": "Not anymore.",
+  "ko": "이제는 아니죠.",
+  "plain": "Not anymore.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-043",
+  "speech": "umbridge-5-043",
+  "part": 1,
+  "of": 1,
+  "order": 57,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 밤. 엄브리지가 트릴로니 교수를 해고하고 짐가방과 함께 내쫓으려 한다. 호그와트가 자기 집이라며 우는 트릴로니에게 '이제는 아니다'라고 쏘아붙인 직후, 마지막 통보를 한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Now remove yourself from this castle!",
+  "ko": "이제 이 성에서 나가 주시죠!",
+  "plain": "Now get out of this castle!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "remove yourself from…",
+    "kind": "완곡어법·격식 어휘",
+    "note": "'get out'이라고 하면 될 것을 'remove yourself from'이라고 말하는 것은 폭언을 격식 어휘로 포장하는 화법으로, 영국 특유가 아니라 영미 공통의 격식 표현입니다. 물건을 치우는 동사 'remove'를 사람에게 재귀적으로 써서 상대를 '치워야 할 대상'으로 취급하는 냉정함도 담겨 있습니다. 앞 장면에서 맥고나걸이 엄브리지에게 쓴 바로 그 표현을 되돌려 쓰는 점도 흥미롭습니다.",
+    "examples": [
+     {
+      "en": "Kindly remove yourself from my desk.",
+      "ko": "제 자리에서 좀 비켜 주시겠어요."
+     },
+     {
+      "en": "If you can't be civil, please remove yourself from the meeting.",
+      "ko": "예의를 지킬 수 없다면 회의에서 나가 주십시오."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-044",
+  "speech": "umbridge-5-044",
+  "part": 1,
+  "of": 1,
+  "order": 58,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 밤. 트릴로니가 쫓겨나려는 순간 덤블도어가 나타나 그녀는 떠나지 않을 것이라고 막아서고, 엄브리지가 발끈해 맞선다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "She will not be leaving.",
+  "prev_line": "",
+  "line": "I have the authority, Headmaster!",
+  "ko": "저에게는 그럴 권한이 있습니다, 교장 선생님!",
+  "plain": "I'm allowed to do this, Headmaster!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Headmaster",
+    "kind": "호칭",
+    "note": "영국 학교의 교장은 전통적으로 'Headmaster/Headmistress'라고 하며(요즘 공립학교에서는 'head teacher', 줄여서 'Head'가 일반적), 직함 자체를 호격으로 쓰기도 합니다. 미국에서는 'Principal'을 쓰고 보통 'Mr/Ms + 성'으로 부르며, 'Headmaster'는 일부 사립학교에만 남아 있습니다. 적대적인 순간에도 직함으로 부르는 것은 호그와트의 전통적·격식적 분위기를 보여 줍니다.",
+    "examples": [
+     {
+      "en": "The Headmaster would like a word with you after assembly.",
+      "ko": "조회 끝나고 교장 선생님이 잠깐 보자고 하십니다."
+     },
+     {
+      "en": "May I have a moment, Headmistress?",
+      "ko": "교장 선생님, 잠깐 시간 괜찮으세요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "I have the authority",
+    "kind": "격식·축약 회피",
+    "note": "'I've got the right' 같은 구어 대신 축약 없이 'I have the authority'라고 말해 권한을 제도적 사실로 선언합니다. 'authority'는 개인의 힘이 아니라 공식적으로 부여된 권한을 뜻하는 어휘로, 엄브리지가 늘 자신의 행위를 법령 뒤에 숨기는 습관을 보여 줍니다.",
+    "examples": [
+     {
+      "en": "I'm afraid I don't have the authority to approve a refund.",
+      "ko": "죄송하지만 저에게는 환불을 승인할 권한이 없습니다."
+     },
+     {
+      "en": "Only the director has the authority to sign this.",
+      "ko": "이 서류에 서명할 권한은 이사님에게만 있습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-045",
+  "speech": "umbridge-5-045",
+  "part": 1,
+  "of": 1,
+  "order": 59,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 밤. 덤블도어가 교사를 해임할 권한은 엄브리지에게 있어도 성에서 내보내는 것은 교장의 결정이라고 못 박자, 엄브리지가 다른 문제를 들어 따진다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "You cannot send them from this castle. That is still my decision. Professor Trelawney will remain here.",
+  "prev_line": "",
+  "line": "And what of her quarters when I appoint a new teacher?",
+  "ko": "그렇다면 제가 새 교사를 임명하면 저분의 숙소는 어떻게 되는 거죠?",
+  "plain": "So what happens to her room when I hire a new teacher?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "What of…?",
+    "kind": "격식·고어",
+    "note": "'What of X?'는 'What about X?'의 격식·문어적 형태로, 영국에서든 미국에서든 일상 구어에서는 거의 쓰지 않고 연설·토론·문학에서 '그러면 X는 어떻게 되나'라고 따질 때 씁니다. 일상 구어에서는 영미 모두 'What about…?'이라고 합니다. 덤블도어의 논리에 즉시 반격하는 날카로운 질문입니다.",
+    "examples": [
+     {
+      "en": "Fine, we'll cut the budget. But what of the staff we've already hired?",
+      "ko": "좋아요, 예산은 줄이죠. 그런데 이미 채용한 직원들은 어떻게 하죠?"
+     },
+     {
+      "en": "And what of the promises you made last year?",
+      "ko": "그럼 작년에 하신 약속은 어떻게 되는 겁니까?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "quarters / appoint",
+    "kind": "격식 어휘",
+    "note": "'quarters'는 기관이 제공하는 '숙소'를 뜻하는 격식 어휘(군대·학교·대저택 등), 'appoint'는 'hire' 대신 쓰는 공식 임명 동사입니다. 둘 다 엄브리지가 사람 문제를 행정 용어로 처리하는 태도를 보여 줍니다.",
+    "examples": [
+     {
+      "en": "Staff quarters are on the top floor of the hotel.",
+      "ko": "직원 숙소는 호텔 꼭대기 층에 있습니다."
+     },
+     {
+      "en": "The board has appointed a new finance director.",
+      "ko": "이사회가 새 재무 이사를 임명했습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-046",
+  "speech": "umbridge-5-046",
+  "part": 1,
+  "of": 1,
+  "order": 60,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 식사 중인 해리에게 부엉이들이 편지를 잔뜩 물어다 주고, 헤르미온느가 들떠서 말하는 것을 엄브리지가 듣고 다가와 끼어든다.",
+  "cue_speaker": "Hermione",
+  "cue": "Fan mail, Harry! Responses to the article.",
+  "prev_line": "",
+  "line": "Which article is that, dear?",
+  "ko": "어떤 기사를 말하는 거죠, 얘야?",
+  "plain": "What article are you talking about, sweetie?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "dear (호격)",
+    "kind": "호칭",
+    "note": "영국에서 'dear'는 나이 든 사람이 아랫사람이나 모르는 사람에게 친근하게 붙이는 호격이지만, 상황에 따라 상대를 어린아이 취급하는 거만한 뉘앙스(patronising)가 됩니다. 엄브리지는 이 단어로 적대적 심문을 다정한 말처럼 들리게 합니다. 미국 구어의 'sweetie', 'hon'에 가깝습니다.",
+    "examples": [
+     {
+      "en": "Mind the step, dear.",
+      "ko": "계단 조심하세요, 아가씨."
+     },
+     {
+      "en": "I'm sure you did your best, dear, but it's not quite right.",
+      "ko": "최선을 다한 건 알겠지만, 이건 좀 아니란다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Which article is that?",
+    "kind": "의문문·어조",
+    "note": "'Which article is that?'은 영미 공통의 평범한 질문 형태로, 특별히 영국식이거나 격식체인 것은 아닙니다. 'which'는 범위가 정해진 선택지를 전제하므로 '기사라니, 어느 기사?' 하고 꼬치꼬치 캐묻는 느낌을 주고, 끝에 붙인 'dear'가 심문을 상냥하게 포장합니다.",
+    "examples": [
+     {
+      "en": "Which meeting is that, sorry?",
+      "ko": "죄송한데, 어느 회의 말씀이시죠?"
+     },
+     {
+      "en": "Which file is that you're looking for?",
+      "ko": "찾고 계신 게 어느 파일이죠?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-047",
+  "speech": "umbridge-5-047",
+  "part": 1,
+  "of": 1,
+  "order": 61,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 편지 더미를 본 엄브리지의 물음에 해리가 지난 6월의 진실을 밝힌 기사를 냈다고 당당히 답하자, 엄브리지가 캐묻는다.",
+  "cue_speaker": "Harry",
+  "cue": "I have just published an article telling the real story about what happened last June.",
+  "prev_line": "",
+  "line": "Where is this article?",
+  "ko": "그 기사는 어디 있죠?",
+  "plain": "Where's this article?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Where is this article?",
+    "kind": "격식·축약 회피",
+    "note": "구어라면 'Where's this article?'로 줄일 자리에서 'Where is this article?'라고 또박또박 묻습니다. 축약을 피하고 지시사 'this'로 대상을 못 박는 말투는 압수·조사를 시작하는 사무적 어조를 만들며, 이는 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Where is this document you keep mentioning?",
+      "ko": "계속 말씀하시는 그 문서는 어디 있죠?"
+     },
+     {
+      "en": "And where is this receipt, exactly?",
+      "ko": "그래서 그 영수증은 정확히 어디 있습니까?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-048",
+  "speech": "umbridge-5-048",
+  "part": 1,
+  "of": 1,
+  "order": 62,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 해리의 인터뷰가 실린 잡지 '이러쿵저러쿵'을 손에 넣은 엄브리지가 학생들 앞에서 강경한 조치를 선언한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Right, I will confiscate this. Anyone found in possession of this magazine will be expelled.",
+  "ko": "좋아요, 이건 제가 압수하겠습니다. 이 잡지를 갖고 있다가 발각되는 학생은 누구든 퇴학입니다.",
+  "plain": "Okay, I'm taking this. Anybody caught with this magazine is getting kicked out of school.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Right, …",
+    "kind": "BrE 담화 표지",
+    "note": "문장 첫머리의 'Right'는 영국 구어에서 '자, 좋아, 그럼'처럼 결정을 내리고 행동으로 넘어갈 때 쓰는 담화 표지입니다. 미국 구어에서는 'Okay' 또는 'All right'를 씁니다. 여기서는 '판단 끝, 처분 시작'의 신호입니다.",
+    "examples": [
+     {
+      "en": "Right, let's get started, shall we?",
+      "ko": "자, 시작해 볼까요?"
+     },
+     {
+      "en": "Right, I've heard enough. Meeting's over.",
+      "ko": "좋아요, 충분히 들었습니다. 회의 끝."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "confiscate",
+    "kind": "격식 어휘",
+    "note": "'confiscate'는 권한을 가진 사람이 물건을 공식적으로 '압수하다'라는 뜻의 격식 어휘로, 영미 공통입니다. 영국·미국 학교 모두 교사가 휴대전화 등을 거둘 때 이 단어를 쓰며, 더 구어적으로는 'take (away)'라고 합니다.",
+    "examples": [
+     {
+      "en": "Phones will be confiscated if they're used in lessons.",
+      "ko": "수업 중에 휴대전화를 쓰면 압수합니다."
+     },
+     {
+      "en": "Customs confiscated the whole lot at the border.",
+      "ko": "세관이 국경에서 전부 압수했습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "anyone found in possession of…",
+    "kind": "관료적·법률 어법",
+    "note": "'found in possession of'는 법률·경찰 문서에서 '~을 소지한 것으로 적발된'을 뜻하는 정형 표현입니다. 'anyone caught with'를 이렇게 바꾸면 개인적 분노가 아니라 법 집행처럼 들리며, 수동태 'will be expelled'로 행위자(자신)를 숨기는 것도 엄브리지의 전형적 기법입니다.",
+    "examples": [
+     {
+      "en": "Anyone found in possession of alcohol will be removed from the venue.",
+      "ko": "주류를 소지한 것으로 적발된 분은 행사장에서 퇴장 조치됩니다."
+     },
+     {
+      "en": "Students found in possession of a mobile phone during the exam will be disqualified.",
+      "ko": "시험 중 휴대전화 소지가 적발된 학생은 실격 처리됩니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-049",
+  "speech": "umbridge-5-049",
+  "part": 1,
+  "of": 1,
+  "order": 63,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "호그와트 복도, 밤. 덤블도어의 군대 모임이 발각되어 달아나던 해리를 드레이코가 넘어뜨려 붙잡고 엄브리지를 부른다.",
+  "cue_speaker": "Draco",
+  "cue": "Got you, Potter. Over here, Professor! I've got one!",
+  "prev_line": "",
+  "line": "It's him. Well done, Draco! On your feet, Potter. We're going to see the Headmaster!",
+  "ko": "그 아이군요. 잘했어요, 드레이코! 일어나세요, 포터. 교장 선생님을 만나러 갈 거예요!",
+  "plain": "That's him. Nice work, Draco! Get up, Potter. We're going to the principal's office!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Well done",
+    "kind": "BrE 관용구",
+    "note": "'Well done'은 영국에서 칭찬할 때 가장 흔한 표현으로, 미국 구어의 'Good job' / 'Nice work'에 해당합니다. 교사가 학생에게, 상사가 부하에게 쓰는 전형적인 영국식 칭찬입니다.",
+    "examples": [
+     {
+      "en": "Well done on passing your driving test!",
+      "ko": "운전면허 시험 합격 축하해요!"
+     },
+     {
+      "en": "Well done, everyone. That was a good effort.",
+      "ko": "모두 잘했어요. 수고 많았습니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "On your feet.",
+    "kind": "명령 관용구",
+    "note": "'On your feet'은 'Stand up'을 짧고 권위적으로 말하는 명령 관용구로, 교사·경찰·군대에서 자주 씁니다. 동사 없이 전치사구만으로 명령하는 형태('On your knees', 'Out of the car')는 영국식이 아니라 영어 공통입니다. 영국 색이 강한 것은 'Off you go'처럼 부사를 앞세우고 주어·동사를 붙이는 다른 구문입니다.",
+    "examples": [
+     {
+      "en": "On your feet, everyone. The Head's coming in.",
+      "ko": "모두 일어서세요. 교장 선생님이 들어오십니다."
+     },
+     {
+      "en": "Come on, on your feet. We're going to be late.",
+      "ko": "자, 일어나. 늦겠다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-050.1",
+  "speech": "umbridge-5-050",
+  "part": 1,
+  "of": 2,
+  "order": 64,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "호그와트 복도, 밤. 드레이코가 붙잡은 해리를 교장실로 끌고 가기 직전, 엄브리지가 달아난 나머지 학생들을 두고 드레이코에게 추가 지시를 내린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Search everywhere for the others, Draco. Round them all up.",
+  "ko": "나머지 아이들을 샅샅이 찾아요, 드레이코. 전부 잡아 오세요.",
+  "plain": "Go look everywhere for the others, Draco. Grab all of them.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "round (someone) up",
+    "kind": "관용구",
+    "note": "'round up'은 흩어진 사람이나 가축을 한데 '모아 들이다, 일제히 잡아들이다'라는 구동사입니다. 영미 공통으로 사람을 모을 때('Round up the kids')도, 경찰이 용의자를 검거할 때도 씁니다. 학생을 가축처럼 취급하는 뉘앙스가 엄브리지의 태도를 드러냅니다.",
+    "examples": [
+     {
+      "en": "Can you round everyone up for the team photo?",
+      "ko": "단체 사진 찍게 다들 좀 모아 줄래요?"
+     },
+     {
+      "en": "Police rounded up a dozen suspects overnight.",
+      "ko": "경찰이 밤사이 용의자 열두 명을 검거했습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-050.2",
+  "speech": "umbridge-5-050",
+  "part": 2,
+  "of": 2,
+  "order": 65,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "호그와트 복도, 밤. 드레이코가 붙잡은 해리를 교장실로 끌고 가기 직전, 엄브리지가 달아난 나머지 학생들을 두고 드레이코에게 추가 지시를 내린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Search everywhere for the others, Draco. Round them all up.",
+  "line": "Check everywhere, bathrooms, the library, empty classrooms. We must find them!",
+  "ko": "화장실, 도서관, 빈 교실까지 다 뒤져요. 반드시 찾아내야 합니다!",
+  "plain": "Check the bathrooms, the library, empty classrooms, everywhere. We have to find them!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "We must find them!",
+    "kind": "법조동사·AmE 대비",
+    "note": "영국 영어에서 'must'는 구어에서도 강한 의무·필요를 나타낼 때 자연스럽게 쓰이지만, 미국 구어에서는 'have to' / 'need to'가 훨씬 흔하고 'must'는 딱딱하게 들립니다. 명령 연쇄 끝에 'must'를 쓰면 긴급함과 권위가 동시에 실립니다.",
+    "examples": [
+     {
+      "en": "We must leave by six or we'll miss the train.",
+      "ko": "여섯 시까지는 출발해야 해요. 안 그러면 기차를 놓쳐요."
+     },
+     {
+      "en": "You must let me know if anything changes.",
+      "ko": "무슨 변화가 있으면 꼭 알려 주세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-051.1",
+  "speech": "umbridge-5-051",
+  "part": 1,
+  "of": 3,
+  "order": 66,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 퍼지 장관 앞에 끌려온 해리가 모르쇠로 버티고, 엄브리지가 데려온 밀고자 마리에타는 울어서 부은 얼굴로 입을 열지 못한다. 엄브리지가 대신 나선다.",
+  "cue_speaker": "Harry",
+  "cue": "Not that I know of.",
+  "prev_line": "",
+  "line": "I'm afraid the poor girl is unable to speak. But I shall tell you what has transpired.",
+  "ko": "안타깝게도 이 가엾은 아이는 말을 할 수 없는 상태랍니다. 하지만 무슨 일이 있었는지는 제가 말씀드리지요.",
+  "plain": "Sorry, but the poor girl can't talk. I'll tell you what happened, though.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I'm afraid ~",
+    "kind": "완곡어법",
+    "note": "'유감스럽지만'이라는 뜻으로 나쁜 소식이나 거절 앞에 붙이는 완충 표현이다. 영미 공통이지만 영국에서 더 자주 쓰이며, 실제로 두렵다는 뜻이 아니다. 엄브리지는 이 상냥한 틀로 상황을 자기에게 유리하게 끌고 간다.",
+    "examples": [
+     {
+      "en": "I'm afraid the head is unable to see you today.",
+      "ko": "죄송하지만 교장 선생님은 오늘 만나실 수 없습니다."
+     },
+     {
+      "en": "I'm afraid we've run out of the fish.",
+      "ko": "죄송하지만 생선 요리는 다 떨어졌습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "I shall tell you what has transpired",
+    "kind": "1인칭 shall + 격식 어휘",
+    "note": "I shall은 I'll의 영국식·격식형이고, transpire는 happen을 뜻하는 관청·보고서 투의 단어다. 평범하게는 I'll tell you what happened. 자신이 공식 보고를 하고 있다는 권위를 내세우는 말투다.",
+    "examples": [
+     {
+      "en": "I shall let you know as soon as I hear anything.",
+      "ko": "소식을 듣는 대로 알려 드리겠습니다."
+     },
+     {
+      "en": "Nobody is quite sure what transpired at the meeting.",
+      "ko": "그 회의에서 무슨 일이 있었는지는 아무도 정확히 모른다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-051.2",
+  "speech": "umbridge-5-051",
+  "part": 2,
+  "of": 3,
+  "order": 67,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 퍼지 장관 앞에 끌려온 해리가 모르쇠로 버티고, 엄브리지가 데려온 밀고자 마리에타는 울어서 부은 얼굴로 입을 열지 못한다. 엄브리지가 대신 나선다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I'm afraid the poor girl is unable to speak. But I shall tell you what has transpired.",
+  "line": "Shortly after dinner she came to me and said that if I went to the Room of Requirement I would find an illegally-formed student group.",
+  "ko": "저녁 식사 직후 이 아이가 저를 찾아와서, 필요의 방에 가 보면 불법으로 결성된 학생 모임을 찾을 수 있을 거라고 하더군요.",
+  "plain": "Right after dinner she came and told me that if I went to the Room of Requirement, I'd find an illegal student group.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-051.3",
+  "speech": "umbridge-5-051",
+  "part": 3,
+  "of": 3,
+  "order": 68,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 퍼지 장관 앞에 끌려온 해리가 모르쇠로 버티고, 엄브리지가 데려온 밀고자 마리에타는 울어서 부은 얼굴로 입을 열지 못한다. 엄브리지가 대신 나선다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Shortly after dinner she came to me and said that if I went to the Room of Requirement I would find an illegally-formed student group.",
+  "line": "It was at that time that this hex took effect.",
+  "ko": "바로 그 순간 이 저주가 효력을 나타냈답니다.",
+  "plain": "That's when this hex kicked in.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "It was at that time that ~",
+    "kind": "분열문 강조(보고서체)",
+    "note": "It was ... that ~ 구문으로 '바로 그때'를 강조한 격식 문장이다. 구어라면 That's when ~이라고 한다. 진술서나 경위서처럼 시점을 또렷이 못 박는 효과가 있다.",
+    "examples": [
+     {
+      "en": "It was at that point that I realised I'd left my keys inside.",
+      "ko": "열쇠를 안에 두고 나왔다는 걸 깨달은 건 바로 그때였다."
+     },
+     {
+      "en": "It was only later that we understood what she meant.",
+      "ko": "그 말뜻을 이해한 건 나중이 되어서였다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-052",
+  "speech": "umbridge-5-052",
+  "part": 1,
+  "of": 1,
+  "order": 69,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 마리에타가 필요의 방 모임을 알려 온 경위를 퍼지에게 보고한 엄브리지가, 말을 이어 이 모임의 출발점이 된 예전 일까지 들춘다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Since I had received information some time ago that Potter and a number of other students had met in the Hog's Head to start an illegal group --",
+  "ko": "포터와 다른 여러 학생들이 호그스 헤드에서 모여 불법 모임을 결성하려 했다는 정보를 제가 이미 한참 전에 입수한 바 있었기에--",
+  "plain": "Since I'd already heard a while back that Potter and a bunch of other students had gotten together at the Hog's Head to start an illegal group--",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "receive information that ...",
+    "kind": "관료어·격식",
+    "note": "'~라는 정보를 입수하다'라는 경찰·행정 보고서 어투. 일상 구어라면 I heard that, someone told me that로 충분하다. 엄브리지는 자신을 수사 기관처럼 보이게 하려고 이런 어휘를 고른다.",
+    "examples": [
+     {
+      "en": "We received information that the shipment had been delayed.",
+      "ko": "선적이 지연되었다는 정보를 입수했습니다."
+     },
+     {
+      "en": "The school received information regarding a safety concern.",
+      "ko": "학교는 안전 문제에 관한 정보를 접수했습니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "a number of",
+    "kind": "격식 수량 표현",
+    "note": "several, some보다 한 단계 격식 있고 다소 모호한 수량 표현으로 영미 공통이다. 정확한 숫자를 밝히지 않으면서도 '꽤 있다'는 인상을 줄 때 공문서나 보고에서 자주 쓴다. 일상 구어에서는 영미 모두 several, a few를 쓰고, a bunch of는 특히 미국 구어에서 흔하다.",
+    "examples": [
+     {
+      "en": "A number of staff have raised concerns about the new rota.",
+      "ko": "여러 직원이 새 근무표에 대해 우려를 제기했습니다."
+     },
+     {
+      "en": "We've had a number of complaints about the noise.",
+      "ko": "소음에 관한 민원이 여러 건 들어왔습니다."
+     }
+    ],
+    "shared": true
+   }
+  ],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-053",
+  "speech": "umbridge-5-053",
+  "part": 1,
+  "of": 1,
+  "order": 70,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 엄브리지가 해리 일행이 호그스헤드에서 불법 단체를 만들려고 모였다고 말하는 도중, 덤블도어가 조용히 이의를 제기한다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "I'm not sure that's true, Professor.",
+  "prev_line": "",
+  "line": "I'm sorry?",
+  "ko": "뭐라고 하셨죠?",
+  "plain": "What?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I'm sorry?",
+    "kind": "되묻기·격식",
+    "note": "상대 말을 못 들었거나 믿기 어려울 때 올림조로 쓰는 되묻기로, 영미 공통이다. 여기서는 '못 들었다'가 아니라 '방금 나한테 반박한 건가요?'라는 불쾌함을 정중한 틀에 담은 것이다. 같은 상황에서 영국은 Sorry? Pardon?, 미국은 Excuse me?를 더 쓰는 편이고, What?은 어디서나 퉁명스럽게 들린다.",
+    "examples": [
+     {
+      "en": "I'm sorry? Could you say that again?",
+      "ko": "네? 다시 한번 말씀해 주시겠어요?"
+     },
+     {
+      "en": "I'm sorry, you want it done by when?",
+      "ko": "뭐라고요, 언제까지 해 달라는 거예요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-054",
+  "speech": "umbridge-5-054",
+  "part": 1,
+  "of": 1,
+  "order": 71,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 덤블도어가 호그스헤드에서 모였을 당시에는 그 모임이 불법이 아니었다고 짚자, 엄브리지가 곧바로 반박한다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "In point of fact, when young Potter met those students it was not illegal.",
+  "prev_line": "",
+  "line": "But two days later, Educational Decree Twenty-Four was introduced.",
+  "ko": "하지만 이틀 뒤에 교육령 제24호가 시행되었습니다.",
+  "plain": "But two days later, Educational Decree Number Twenty-Four went into effect.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "decree",
+    "kind": "격식 어휘",
+    "note": "'법령, 포고'를 뜻하는 격식·법률 어휘. 일상에서는 rule, policy를 쓰며, decree는 권위가 일방적으로 내려오는 느낌이 있어 엄브리지의 통치 방식과 잘 맞는다. 미국에서도 쓰지만 주로 법정·정부 맥락에 한정된다.",
+    "examples": [
+     {
+      "en": "The new dress code came down like a royal decree.",
+      "ko": "새 복장 규정이 왕의 포고처럼 내려왔다."
+     },
+     {
+      "en": "The government issued a decree banning the gatherings.",
+      "ko": "정부는 집회를 금지하는 법령을 공포했다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "be introduced (a rule/law)",
+    "kind": "격식 동사",
+    "note": "법·규정을 '도입하다, 시행하다'라고 할 때 introduce를 쓰는 것은 영미 공통의 공식 어투다. 일상 구어라면 영미 모두 start, be put in place처럼 더 쉬운 말을 쓴다. 수동태로 행위자를 숨기는 점도 관료적 말하기의 특징이다.",
+    "examples": [
+     {
+      "en": "A new parking charge was introduced last month.",
+      "ko": "지난달 새 주차 요금이 도입되었다."
+     },
+     {
+      "en": "They're introducing a ban on phones in lessons.",
+      "ko": "수업 중 휴대전화 금지 규정을 도입한대요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-055",
+  "speech": "umbridge-5-055",
+  "part": 1,
+  "of": 1,
+  "order": 72,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 덤블도어가 교육령이 생긴 뒤에도 모임이 계속됐다는 증거가 있느냐고 묻자, 엄브리지가 자신만만하게 받아친다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "However, I wonder if you have any evidence that proves this group has been meeting since then?",
+  "prev_line": "",
+  "line": "I have a witness right here!",
+  "ko": "여기 증인이 있잖습니까!",
+  "plain": "I've got a witness right here!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-056",
+  "speech": "umbridge-5-056",
+  "part": 1,
+  "of": 1,
+  "order": 73,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 덤블도어가 마리에타는 오늘 밤 모임만 알렸을 뿐이라고 지적하자, 엄브리지가 마리에타 쪽으로 돌아선다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "I must confess that I was, however, under the impression that this young girl only told you a meeting was going on tonight.",
+  "prev_line": "",
+  "line": "Let's ask her, shall we?",
+  "ko": "그럼 본인에게 직접 물어보도록 할까요?",
+  "plain": "Let's just ask her.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Let's ..., shall we?",
+    "kind": "부가의문문",
+    "note": "Let's로 시작한 제안 뒤에 붙이는 부가의문문은 shall we?가 영미 공통의 정석이다. 상냥하게 동의를 구하는 모양새지만, 실제로는 이미 결정한 것을 밀어붙이는 데 자주 쓰여 엄브리지의 어투에 딱 맞는다. 미국에서도 굳은 표현으로 통하지만 영국만큼 흔하지는 않고 다소 점잖게 들려서, 구어에서는 okay?를 붙이거나 그냥 Let's ask her로 끝내는 일이 많다.",
+    "examples": [
+     {
+      "en": "Let's get started, shall we?",
+      "ko": "그럼 시작해 볼까요?"
+     },
+     {
+      "en": "Let's not make a fuss about it, shall we?",
+      "ko": "그 일로 소란 피우지는 말기로 하죠, 네?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-057",
+  "speech": "umbridge-5-057",
+  "part": 1,
+  "of": 1,
+  "order": 74,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 저주 때문에 말을 못 하는 마리에타에게, 엄브리지가 직접 확인하겠다며 다정한 척 대답하는 방법을 일러 주고 묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You can shake your head for an answer, dear. Now, have there been more meetings?",
+  "ko": "대답은 고개를 흔들어서 하면 돼요, 아가. 자, 모임이 더 있었나요?",
+  "plain": "You can just shake your head to answer, sweetie. So, were there more meetings?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "dear (호칭)",
+    "kind": "호칭",
+    "note": "영국에서 dear는 손윗사람이 아랫사람에게, 또는 점원·간호사 등이 친근하게 부를 때 쓰는 호칭이다. 다정해 보이지만 상대를 어린아이 취급하는 느낌(patronising)이 있어, 엄브리지의 '설탕 발린 위압'을 그대로 보여 준다. 미국 구어의 sweetie, hon에 가깝다.",
+    "examples": [
+     {
+      "en": "Mind the step, dear.",
+      "ko": "계단 조심하세요, 아가씨."
+     },
+     {
+      "en": "Don't worry about it, dear, it happens to everyone.",
+      "ko": "걱정 마요, 얘, 누구나 그런 일 겪어요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Now, ...",
+    "kind": "담화표지",
+    "note": "문장 앞의 Now는 '지금'이 아니라 '자, 그럼'처럼 화제를 돌리거나 본론으로 들어가는 신호다. 영국식이 아니라 영미 공통의 담화표지로, 교사나 상급자가 통제권을 쥐고 다음 단계로 넘어갈 때 매우 자주 들린다.",
+    "examples": [
+     {
+      "en": "Now, where were we?",
+      "ko": "자, 어디까지 했죠?"
+     },
+     {
+      "en": "Now, I need everyone to listen carefully.",
+      "ko": "자, 모두 잘 들어 주세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-058",
+  "speech": "umbridge-5-058",
+  "part": 1,
+  "of": 1,
+  "order": 75,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 모임이 더 있었느냐는 물음에 마리에타가 기대와 달리 부인하는 몸짓을 하자, 당황한 엄브리지가 다그친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "What do you mean by shaking your head, girl?",
+  "ko": "고개를 흔들다니 그게 무슨 뜻이죠, 학생?",
+  "plain": "Why are you shaking your head? What's that supposed to mean?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "What do you mean by ...ing?",
+    "kind": "구문·질책",
+    "note": "'~하는 건 무슨 의도냐'고 따지는 구문. 단순히 뜻을 묻는 것이 아니라 상대 행동을 문제 삼는 어조가 실린다. 영미 공통이지만 다소 예스럽고 권위적인 꾸중 문형이며, 요즘 구어라면 영미 모두 What do you think you're doing? 또는 Why are you ...?라고 한다.",
+    "examples": [
+     {
+      "en": "What do you mean by turning up an hour late?",
+      "ko": "한 시간이나 늦게 나타난 건 무슨 생각이에요?"
+     },
+     {
+      "en": "What do you mean by that look?",
+      "ko": "그 표정은 무슨 뜻이죠?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "girl (호칭)",
+    "kind": "호칭",
+    "note": "바로 앞 대사의 dear가 원하는 답이 안 나오자 girl로 바뀐다. 이름 대신 girl, boy로 부르는 것은 영국 학교 어투에서 매우 차갑고 하대하는 호칭이다. 호칭 전환 하나로 상냥한 가면이 벗겨지는 지점이다.",
+    "examples": [
+     {
+      "en": "Sit down, girl, and stop talking.",
+      "ko": "앉아, 얘, 그리고 입 다물어."
+     },
+     {
+      "en": "Listen to me, boy.",
+      "ko": "내 말 잘 들어, 녀석."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-059",
+  "speech": "umbridge-5-059",
+  "part": 1,
+  "of": 1,
+  "order": 76,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 덤블도어가 마리에타의 몸짓을 다른 모임은 없었다는 뜻으로 풀이해 주자, 궁지에 몰린 엄브리지가 화살을 다른 쪽으로 돌린다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "I would think that she was saying there have been no other meetings. Would that be correct?",
+  "prev_line": "",
+  "line": "But what about Potter? He was the leader, and has been--",
+  "ko": "하지만 포터는요? 포터가 주동자였고, 지금까지도--",
+  "plain": "But what about Potter? He was the one running it, and he's been--",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-060",
+  "speech": "umbridge-5-060",
+  "part": 1,
+  "of": 1,
+  "order": 77,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 엄브리지가 해리를 주동자로 몰아붙이는 중에도 마리에타가 계속 부인하자, 엄브리지가 제 말을 끊고 마리에타에게 소리친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Why are you shaking your head, girl?",
+  "ko": "왜 고개를 흔드는 거죠, 학생?",
+  "plain": "Why are you shaking your head?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "girl (호칭)",
+    "kind": "호칭",
+    "note": "이름을 부르지 않고 girl이라고만 하는 것은 영국 교사 어투에서 상대를 하대하는 신호다. 다정한 dear에서 girl로 바뀐 뒤 그대로 굳어진다.",
+    "examples": [
+     {
+      "en": "Hurry up, girl, we haven't got all day.",
+      "ko": "서둘러, 얘, 하루 종일 기다릴 순 없어."
+     },
+     {
+      "en": "Speak up, girl.",
+      "ko": "크게 말해, 얘."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-061",
+  "speech": "umbridge-5-061",
+  "part": 1,
+  "of": 1,
+  "order": 78,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 화가 난 엄브리지가 마리에타를 붙잡고 거칠게 흔들자 덤블도어가 단호하게 제지하고, 엄브리지가 마지못해 물러선다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "Again, I cannot have you manhandling my students, Professor Umbridge.",
+  "prev_line": "",
+  "line": "My apologies, Headmaster. I forgot myself.",
+  "ko": "사과드립니다, 교장 선생님. 제가 잠시 분별을 잃었군요.",
+  "plain": "Sorry about that, Headmaster. I lost my cool for a second.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "My apologies.",
+    "kind": "격식 사과",
+    "note": "I'm sorry보다 격식 있고 거리감 있는 사과. 진심보다는 '절차상 사과한다'는 느낌이 강해, 체면을 유지하면서 넘어갈 때 쓴다. 영국식이 아니라 영미 공통의 격식 표현이며, 일상 구어에서는 영미 모두 Sorry about that이 흔하다(My bad는 미국에서 나온 속어).",
+    "examples": [
+     {
+      "en": "My apologies for the late reply.",
+      "ko": "답신이 늦어 죄송합니다."
+     },
+     {
+      "en": "My apologies, I didn't see you there.",
+      "ko": "실례했습니다, 거기 계신 걸 못 봤어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "forget oneself",
+    "kind": "관용구·격식",
+    "note": "'자제력을 잃고 신분·예의에 어긋나게 행동하다'라는 뜻의 다소 고풍스러운 관용구로, 영미 공통이다. 흥분해서 학생을 거칠게 붙잡은 일을 품위 있게 덮는 표현이다. 일상 구어라면 영국이든 미국이든 I lost my temper, I got carried away라고 한다.",
+    "examples": [
+     {
+      "en": "I'm sorry, I forgot myself for a moment.",
+      "ko": "죄송해요, 잠깐 제가 선을 넘었네요."
+     },
+     {
+      "en": "He forgot himself and shouted at the chairman.",
+      "ko": "그는 흥분한 나머지 의장에게 소리를 질렀다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Headmaster",
+    "kind": "호칭·BrE 어휘",
+    "note": "영국 학교의 교장(남성)을 가리키는 말이자 직접 부르는 호칭. 미국은 principal이라 하고 호칭으로는 쓰지 않는다. 여성은 Headmistress, 요즘 공립교는 성 중립적으로 Head teacher를 많이 쓴다.",
+    "examples": [
+     {
+      "en": "The Headmaster would like to see you after assembly.",
+      "ko": "교장 선생님이 조회 끝나고 보자고 하셔."
+     },
+     {
+      "en": "Good morning, Headmaster.",
+      "ko": "교장 선생님, 좋은 아침입니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-062.1",
+  "speech": "umbridge-5-062",
+  "part": 1,
+  "of": 2,
+  "order": 79,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 이전 모임에 대한 추궁이 막히자 퍼지가 오늘 밤 모임으로 화제를 돌리고, 엄브리지가 현장을 덮친 경과를 보고한다.",
+  "cue_speaker": "Fudge",
+  "cue": "Well, what about the meeting tonight?",
+  "prev_line": "",
+  "line": "Right. Of course. Well, we proceeded down to the Room and entered.",
+  "ko": "네. 그렇지요. 그래서 저희는 그 방으로 내려가 진입했습니다.",
+  "plain": "Oh, right. Okay. So we went down to the Room and walked in.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Right.",
+    "kind": "담화표지",
+    "note": "영국 구어에서 Right.은 '알겠다, 그럼 넘어가자'며 화제를 정리하거나 다음 단계로 들어가는 신호로 매우 자주 쓴다. 미국 구어의 Okay. / Alright.에 해당한다. 여기서는 당황한 상태를 수습하며 보고를 재개하는 용도다.",
+    "examples": [
+     {
+      "en": "Right, let's get going or we'll miss the train.",
+      "ko": "자, 가자, 안 그러면 기차 놓쳐."
+     },
+     {
+      "en": "Right. So what's the plan for tomorrow?",
+      "ko": "그래. 그럼 내일 계획은 뭐야?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "proceed (down) to",
+    "kind": "격식 어휘·관료어",
+    "note": "'이동하다, 진행하다'를 뜻하는 격식 동사로, 경찰 보고서나 안내 방송에서 자주 들린다. 일상 구어라면 go, head down to라고 한다. 엄브리지가 단속 상황을 공식 보고처럼 꾸미는 어휘 선택이다.",
+    "examples": [
+     {
+      "en": "Passengers should proceed to Gate 12.",
+      "ko": "승객 여러분은 12번 탑승구로 이동해 주십시오."
+     },
+     {
+      "en": "We then proceeded to the main office to file the report.",
+      "ko": "그 뒤 우리는 본사 사무실로 가서 보고서를 제출했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-062.2",
+  "speech": "umbridge-5-062",
+  "part": 2,
+  "of": 2,
+  "order": 80,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "덤블도어의 교장실, 밤. 이전 모임에 대한 추궁이 막히자 퍼지가 오늘 밤 모임으로 화제를 돌리고, 엄브리지가 현장을 덮친 경과를 보고한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Right. Of course. Well, we proceeded down to the Room and entered.",
+  "line": "We caught Potter just outside. But it doesn't matter. We've found all of their names.",
+  "ko": "포터는 바로 문 앞에서 붙잡았습니다. 하지만 그건 중요하지 않습니다. 가담자 전원의 이름을 확보했으니까요.",
+  "plain": "We caught Potter right outside. But that doesn't matter, because we got all their names.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-063",
+  "speech": "umbridge-5-063",
+  "part": 1,
+  "of": 1,
+  "order": 81,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 덤블도어가 사라진 뒤 전교생이 모인 자리에서, 엄브리지가 마법부의 새 공고문을 소리 내어 읽는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "By Order of the Ministry of Magic: Dolores Jane Umbridge will replace Albus Dumbledore as Head of Hogwarts School of Witchcraft and Wizardry.",
+  "ko": "마법부령: 돌로레스 제인 엄브리지가 알버스 덤블도어를 대신하여 호그와트 마법학교 교장에 취임한다.",
+  "plain": "Official notice from the Ministry of Magic: Dolores Jane Umbridge is taking over from Albus Dumbledore as principal of Hogwarts.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "By Order of ...",
+    "kind": "공문 어투",
+    "note": "'~의 명에 의하여'라는 뜻으로 공고문·게시물 첫머리에 쓰는 전형적 공문 표현이다. 영국 공공 장소의 안내판(By order of the management 등)에서 지금도 흔히 본다. 발화자가 아닌 기관의 권위를 내세우는 형식이다.",
+    "examples": [
+     {
+      "en": "No parking at any time. By order of the council.",
+      "ko": "상시 주차 금지. 시 의회 명령."
+     },
+     {
+      "en": "This gate is to be kept locked, by order of the headteacher.",
+      "ko": "교장 지시에 따라 이 문은 항상 잠겨 있어야 합니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Head of (a school)",
+    "kind": "BrE 어휘·호칭",
+    "note": "영국에서 학교 교장은 head, headteacher, headmaster/headmistress라고 하며, 미국의 principal에 해당한다. 공식 문서에서는 Head of X School처럼 직함으로 쓴다.",
+    "examples": [
+     {
+      "en": "She's just been appointed Head of a primary school in Leeds.",
+      "ko": "그분이 리즈의 한 초등학교 교장으로 막 임명됐어요."
+     },
+     {
+      "en": "The Head wants to see all Year 11 in the hall.",
+      "ko": "교장 선생님이 11학년 전원을 강당으로 모이라고 하셔."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-064.1",
+  "speech": "umbridge-5-064",
+  "part": 1,
+  "of": 2,
+  "order": 82,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 공고문을 읽어 자신의 교장 취임을 알린 엄브리지가, 곧바로 새 교장으로서의 첫 조치를 발표한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "My first act as your new Headmistress is to form an Inquisitorial Squad, led by Draco Malfoy.",
+  "ko": "여러분의 새 교장으로서 제가 첫 번째로 하는 일은 드레이코 말포이를 중심으로 하는 심문단을 결성하는 것입니다.",
+  "plain": "The first thing I'm doing as your new principal is setting up an Inquisitorial Squad, run by Draco Malfoy.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Headmistress",
+    "kind": "호칭·BrE 어휘",
+    "note": "영국 학교의 여성 교장. 미국은 성별 구분 없이 principal이라고 한다. 영국에서도 요즘은 head teacher가 일반적이지만, 사립·전통 학교에서는 Headmaster/Headmistress를 그대로 쓴다.",
+    "examples": [
+     {
+      "en": "The Headmistress gave a speech at prize-giving.",
+      "ko": "교장 선생님이 시상식에서 연설하셨다."
+     },
+     {
+      "en": "You'll have to take that up with the Headmistress.",
+      "ko": "그 문제는 교장 선생님께 직접 말씀드려야 할 거예요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "My first act as ... is to ...",
+    "kind": "격식 구문",
+    "note": "취임 연설의 상투적 구문. act는 '행위, 조치'를 뜻하는 격식 명사로, 일상에서는 The first thing I'll do is라고 한다. 권위를 과시하는 공적 연설 틀이다.",
+    "examples": [
+     {
+      "en": "My first act as chair will be to review the budget.",
+      "ko": "의장으로서 제 첫 조치는 예산을 검토하는 것입니다."
+     },
+     {
+      "en": "Her first act as manager was to cancel the Friday meeting.",
+      "ko": "매니저가 된 그녀가 첫 번째로 한 일은 금요 회의를 없애는 것이었다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-064.2",
+  "speech": "umbridge-5-064",
+  "part": 2,
+  "of": 2,
+  "order": 83,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 공고문을 읽어 자신의 교장 취임을 알린 엄브리지가, 곧바로 새 교장으로서의 첫 조치를 발표한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "My first act as your new Headmistress is to form an Inquisitorial Squad, led by Draco Malfoy.",
+  "line": "They will report directly to me about the goings-on in the halls of this school.",
+  "ko": "심문단은 이 학교 복도에서 벌어지는 일들을 제게 직접 보고하게 됩니다.",
+  "plain": "They'll report straight to me about whatever's going on in the hallways.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "goings-on",
+    "kind": "관용 명사",
+    "note": "'(수상하거나 흥미로운) 벌어지는 일들'을 뜻하는 구어 명사로, 약간 못마땅한 뉘앙스가 있다. 영국식이 아니라 미국에서도 흔히 쓰는 영미 공통 표현이며 늘 복수형으로 쓴다. 더 평범하게는 what's going on, what's been happening이라고 풀어 말한다.",
+    "examples": [
+     {
+      "en": "There have been some strange goings-on next door lately.",
+      "ko": "최근에 옆집에서 좀 이상한 일들이 벌어지고 있어."
+     },
+     {
+      "en": "She keeps me posted on all the goings-on at the office.",
+      "ko": "그 사람이 사무실에서 벌어지는 온갖 일들을 계속 알려 줘."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-065.1",
+  "speech": "umbridge-5-065",
+  "part": 1,
+  "of": 2,
+  "order": 84,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 새 교장이 된 엄브리지가 드레이코가 이끄는 심문단 창설을 발표한 뒤, 굳은 얼굴로 듣고 있는 학생들 앞에서 다음 발표로 넘어간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Furthermore, our good caretaker, Mr Filch, has requested we reinstate the 'old punishments.'",
+  "ko": "아울러, 우리의 성실한 관리인 필치 씨께서 '옛날식 처벌'을 되살려 달라고 요청하셨답니다.",
+  "plain": "Also, Mr. Filch, our janitor, has asked us to bring back the 'old punishments.'",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "caretaker",
+    "kind": "BrE 어휘",
+    "note": "학교나 건물을 관리하는 사람을 영국에서는 caretaker, 미국에서는 janitor 또는 custodian이라고 한다. 미국영어에서 caretaker는 주로 '돌보는 사람'을 뜻하므로 의미 차이에 주의해야 한다.",
+    "examples": [
+     {
+      "en": "Ask the caretaker to unlock the hall before assembly.",
+      "ko": "조회 전에 관리인에게 강당 문을 열어 달라고 하세요."
+     },
+     {
+      "en": "The caretaker found a pile of lost property in the gym.",
+      "ko": "관리인이 체육관에서 분실물 한 무더기를 발견했다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "has requested (that) we reinstate ~",
+    "kind": "격식 어휘·요청 구문",
+    "note": "request는 ask의 격식형, reinstate는 '(폐지된 제도를) 되살리다'라는 행정 용어다. request 뒤 that절에는 동사원형을 쓰며, 영국영어에서는 we should reinstate처럼 should를 넣기도 한다. 구어라면 has asked us to bring back.",
+    "examples": [
+     {
+      "en": "Parents have requested that the school reinstate the after-school club.",
+      "ko": "학부모들이 방과 후 클럽을 다시 운영해 달라고 학교에 요청했다."
+     },
+     {
+      "en": "The union requested that the meeting should be postponed.",
+      "ko": "노조는 회의를 연기해 달라고 요청했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-065.2",
+  "speech": "umbridge-5-065",
+  "part": 2,
+  "of": 2,
+  "order": 85,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "대연회장, 낮. 새 교장이 된 엄브리지가 드레이코가 이끄는 심문단 창설을 발표한 뒤, 굳은 얼굴로 듣고 있는 학생들 앞에서 다음 발표로 넘어간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Furthermore, our good caretaker, Mr Filch, has requested we reinstate the 'old punishments.'",
+  "line": "I have decided that there is no reason we shouldn't.",
+  "ko": "저는 그러지 않을 이유가 없다고 판단했어요.",
+  "plain": "I don't see why not, so we will.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "there is no reason we shouldn't",
+    "kind": "완곡어법(이중 부정)",
+    "note": "'하겠다'를 '하지 않을 이유가 없다'로 돌려 말하는 완곡 표현으로, 영국식이라기보다 영미 공통이다. 축약하지 않은 I have decided, there is와 어울려 공식 발표의 어조를 만든다. 가혹한 결정을 아무렇지 않은 일처럼 포장하는 엄브리지 특유의 화법이다.",
+    "examples": [
+     {
+      "en": "There's no reason we shouldn't finish by Friday.",
+      "ko": "금요일까지 못 끝낼 이유가 없지요."
+     },
+     {
+      "en": "I see no reason why you shouldn't apply.",
+      "ko": "지원하지 말아야 할 이유가 없어 보이는데요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-066",
+  "speech": "umbridge-5-066",
+  "part": 1,
+  "of": 1,
+  "order": 86,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 진로 상담에서 해리가 오러가 되고 싶다고 하자 맥고나걸이 조언을 시작하고, 구석에서 참관하던 엄브리지가 끼어들 기색을 보인다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Auror. Interesting, Potter. You'll need top grades for that. Challenging career path, but not unrewarding.",
+  "prev_line": "",
+  "line": "Hem hem.",
+  "ko": "에헴.",
+  "plain": "Ahem.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-067",
+  "speech": "umbridge-5-067",
+  "part": 1,
+  "of": 1,
+  "order": 87,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 맥고나걸이 첫 방해를 무시하고 오러에게 필요한 과목을 설명해 나가자, 엄브리지가 다시 한번 자기 존재를 드러낸다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Now then, Potter, you'll need to concentrate on Defence Against the Dark Arts, Potions, Transfiguration, and Charms to adequately prepare yourself for the general Auror requirements.",
+  "prev_line": "",
+  "line": "Hem hem.",
+  "ko": "에헴.",
+  "plain": "Ahem.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-068",
+  "speech": "umbridge-5-068",
+  "part": 1,
+  "of": 1,
+  "order": 88,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 진로 상담을 거듭 방해받은 맥고나걸이 비꼬듯 권하자, 엄브리지가 사양하며 하고 싶던 말을 꺼낸다.",
+  "cue_speaker": "McGonagall",
+  "cue": "May I offer you a cough drop, Professor Umbridge?",
+  "prev_line": "",
+  "line": "Oh, no thank you, Minerva. Actually, I was just wondering if Potter has the proper temperament to be an Auror.",
+  "ko": "아, 괜찮습니다, 미네르바. 사실 저는 포터가 오러가 되기에 적합한 기질을 갖추었는지 좀 궁금해서요.",
+  "plain": "Oh, no thanks, Minerva. I was just thinking, does Potter really have the right personality to be an Auror?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I was just wondering if ...",
+    "kind": "완곡어법",
+    "note": "직접 주장이나 질문을 '그냥 궁금해서'라는 틀로 감싸는 완충 표현으로, 영국만이 아니라 미국에서도 아주 흔한 영미 공통 표현이다. 과거진행형(was wondering)이 거리를 한 번 더 두어 더 조심스럽게 들린다. 여기서는 사실상 '포터는 자격이 없다'는 공격을 궁금증으로 포장한 것이다.",
+    "examples": [
+     {
+      "en": "I was just wondering if you'd had a chance to look at my email.",
+      "ko": "제 이메일을 혹시 보셨는지 궁금해서요."
+     },
+     {
+      "en": "I was wondering if we could move the meeting to Thursday.",
+      "ko": "회의를 목요일로 옮길 수 있을지 여쭤보고 싶었어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "the proper temperament",
+    "kind": "격식 어휘",
+    "note": "temperament는 '기질, 성정'을 뜻하는 격식 명사이고, proper는 여기서 '적합한, 알맞은'이라는 뜻으로 영미 공통의 다소 격식 있는 말이다(영국 구어 특유의 용법은 a proper meal처럼 '제대로 된'이라는 뜻일 때다). 일상 구어라면 the right personality, the right kind of person이라 한다. 사람을 평가하는 말을 점잖게 포장하는 어휘다.",
+    "examples": [
+     {
+      "en": "He hasn't got the temperament for sales.",
+      "ko": "그 사람은 영업에 맞는 기질이 아니에요."
+     },
+     {
+      "en": "She has exactly the right temperament for working with young children.",
+      "ko": "그분은 어린아이들과 일하기에 딱 맞는 성정을 지녔어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Actually, ...",
+    "kind": "담화표지·완곡",
+    "note": "영국 구어에서 Actually는 상대 말을 부드럽게 바로잡거나 본심을 꺼낼 때 앞에 붙인다. 여기서는 기침약 제의를 거절하고 끼어든 진짜 목적을 꺼내는 신호다. 미국 구어도 쓰지만 영국에서 훨씬 빈번하다.",
+    "examples": [
+     {
+      "en": "Actually, I think it's my turn.",
+      "ko": "사실은 제 차례인 것 같은데요."
+     },
+     {
+      "en": "Actually, could we do this tomorrow instead?",
+      "ko": "그런데 이거 내일 하면 안 될까요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-069",
+  "speech": "umbridge-5-069",
+  "part": 1,
+  "of": 1,
+  "order": 89,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 맥고나걸이 해리가 어둠의 마법 방어술은 줄곧 잘해 왔다며 루핀 이야기를 꺼내려는 순간, 엄브리지가 말을 자르고 들어온다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Lord knows you've consistently done well in Defence Against the Dark Arts. Professor Lupin--",
+  "prev_line": "",
+  "line": "Excuse me, Minerva, but have you seen my note on Potter's current grades in my class?",
+  "ko": "실례지만 미네르바, 제 수업에서 포터가 받은 현재 성적에 관한 제 메모는 보셨는지요?",
+  "plain": "Sorry to cut in, Minerva, but did you see my memo about Potter's grades in my class?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Excuse me, ..., but ...",
+    "kind": "완곡 끼어들기",
+    "note": "상대 말을 끊고 반박할 때 '실례지만'으로 포장하는 틀. 정중한 형식이지만 실제로는 but 뒤에 상대를 깎아내리는 내용이 온다. 영국식이 아니라 영미 공통이며, Excuse me는 오히려 미국에서 더 즐겨 쓰고 영국 구어는 같은 자리에 Sorry, but을 흔히 쓴다.",
+    "examples": [
+     {
+      "en": "Excuse me, but I think you've taken my seat.",
+      "ko": "실례지만 제 자리에 앉으신 것 같은데요."
+     },
+     {
+      "en": "Excuse me, Tom, but that's not what the report says.",
+      "ko": "미안하지만 톰, 보고서 내용은 그게 아닌데요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-070",
+  "speech": "umbridge-5-070",
+  "part": 1,
+  "of": 1,
+  "order": 90,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 자기 수업에서의 해리 성적에 관한 쪽지를 봤느냐는 엄브리지의 물음에 맥고나걸이 봤다고 짧게 답하자, 엄브리지가 말을 잇는다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Yes, indeed I have.",
+  "prev_line": "",
+  "line": "Then I think you will find that Potter's grades have been consistently poor this year.",
+  "ko": "그렇다면 올해 포터의 성적이 줄곧 형편없었다는 사실을 아실 텐데요.",
+  "plain": "Then you know Potter's grades have been bad all year.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I think you'll find (that) ...",
+    "kind": "완곡·반어적 정정",
+    "note": "겉으로는 '아마 ~라는 것을 알게 되실 겁니다'라고 조심스럽게 말하는 듯하지만, 실제로는 '당신이 틀렸다'를 매우 영국식으로 돌려 말하는 표현이다. 상대를 정정하면서 우위를 점할 때 쓰며, 미국 구어라면 Actually, ... 또는 그냥 직설적으로 말한다.",
+    "examples": [
+     {
+      "en": "I think you'll find the deadline was yesterday.",
+      "ko": "마감은 어제였던 것으로 아실 텐데요."
+     },
+     {
+      "en": "I think you'll find it's my turn to choose.",
+      "ko": "이번엔 제가 고를 차례인 것 같은데요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "you will find",
+    "kind": "격식·축약 회피",
+    "note": "you'll find로 줄이지 않고 you will find라고 또박또박 말하는 것은 격식과 권위를 더하는 장치다. 영국식에 한정된 것이 아니라 영미 공통으로, 격식 있는 발화에서는 축약을 피해 한 단어씩 힘을 준다.",
+    "examples": [
+     {
+      "en": "You will find the forms on the second floor.",
+      "ko": "서류는 2층에서 찾으실 수 있습니다."
+     },
+     {
+      "en": "I am sure you will find the arrangements satisfactory.",
+      "ko": "준비된 사항이 만족스러우실 것이라 확신합니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-071",
+  "speech": "umbridge-5-071",
+  "part": 1,
+  "of": 1,
+  "order": 91,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "맥고나걸 교수의 사무실, 낮. 맥고나걸이 엄브리지를 무시한 채 오러 선발에서 보는 인성·적성 시험을 해리에게 계속 설명하자, 참다못한 엄브리지가 폭발한다.",
+  "cue_speaker": "McGonagall",
+  "cue": "How you stand up under pressure, your perseverance, and dedication, things of this nature.",
+  "prev_line": "",
+  "line": "Harry Potter has no chance of ever becoming an Auror!",
+  "ko": "해리 포터는 오러가 될 가망이 전혀 없습니다!",
+  "plain": "There's no way Harry Potter is ever gonna be an Auror!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "have no chance of (ever) ...ing",
+    "kind": "구문",
+    "note": "'~할 가망이 전혀 없다'를 단호하게 말하는 구문으로, 영미 공통이다. ever가 들어가 '영원히'라는 강조가 추가된다. 더 구어적으로는 영미 모두 There's no way ... 또는 He'll never ...라고 한다. 가면을 벗고 소리치는 순간이라 평소의 완곡함이 사라진 점이 대비된다.",
+    "examples": [
+     {
+      "en": "We've no chance of finishing this by five.",
+      "ko": "다섯 시까지 이걸 끝낼 가망은 전혀 없어."
+     },
+     {
+      "en": "He has no chance of ever getting that promotion.",
+      "ko": "그 사람은 그 승진을 할 가능성이 전혀 없어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-072",
+  "speech": "umbridge-5-072",
+  "part": 1,
+  "of": 1,
+  "order": 92,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "호그와트 교정, 밤. 엄브리지 일행이 해그리드를 체포하러 오두막을 덮치고, 말리러 나온 맥고나걸이 기절 마법에 쓰러지자 해그리드가 격분해 고함친다.",
+  "cue_speaker": "Hagrid",
+  "cue": "Cowards!",
+  "prev_line": "",
+  "line": "Get him, get him!",
+  "ko": "잡아요, 저자를 잡아요!",
+  "plain": "Grab him!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-073",
+  "speech": "umbridge-5-073",
+  "part": 1,
+  "of": 1,
+  "order": 93,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "호그와트 복도, 낮. 필치가 달려와 위즐리 쌍둥이가 또 일을 벌였다고 알리자, 교장이 된 엄브리지가 필치에게 은근하게 묻는다.",
+  "cue_speaker": "Filch",
+  "cue": "Professor! It's those Weasley twins! They've set something off in the Astronomy Tower!",
+  "prev_line": "",
+  "line": "Ready to try out the old punishments again?",
+  "ko": "옛날 방식 체벌을 다시 한번 써 볼 준비가 됐나요?",
+  "plain": "Wanna bring back the old-school punishments?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-074",
+  "speech": "umbridge-5-074",
+  "part": 1,
+  "of": 1,
+  "order": 94,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 낮. 성 안에서 큰 장난을 벌인 프레드와 조지가 심문단에 붙잡혀, 전교생이 지켜보는 가운데 엄브리지 앞에 서자 엄브리지가 비아냥대며 입을 뗀다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "So, turning a hallway into a swamp is funny, is it?",
+  "ko": "그래서, 복도를 늪으로 만드는 게 재미있다는 거군요, 그렇죠?",
+  "plain": "So you think turning a hallway into a swamp is funny, huh?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "..., is it?",
+    "kind": "부가의문문(동일 극성)",
+    "note": "긍정문 뒤에 다시 긍정 부가의문문(is funny, is it?)을 붙이면 동의를 구하는 게 아니라 '그러셔?'라는 비꼼·질책이 된다. 영국 구어에서 매우 흔한 반어적 용법이다. 미국 구어는 ..., huh? 또는 Oh, so ..., then?으로 비슷한 뉘앙스를 낸다.",
+    "examples": [
+     {
+      "en": "Oh, so you're the expert now, are you?",
+      "ko": "아, 이제 네가 전문가라는 거야, 그래?"
+     },
+     {
+      "en": "Finished already, have you?",
+      "ko": "벌써 다 했다고, 응?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-075",
+  "speech": "umbridge-5-075",
+  "part": 1,
+  "of": 1,
+  "order": 95,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 낮. 장난이 재미있느냐는 엄브리지의 추궁에 프레드가 조금도 기죽지 않고 능청스럽게 대꾸한다.",
+  "cue_speaker": "Fred",
+  "cue": "Fairly amusing, yeah.",
+  "prev_line": "",
+  "line": "Well, now you're going to learn what happens to wrongdoers in my school.",
+  "ko": "그럼 이제 내 학교에서 규칙을 어기는 자들이 어떻게 되는지 똑똑히 배우게 될 겁니다.",
+  "plain": "Well, now you're gonna find out what happens to troublemakers in my school.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "wrongdoer",
+    "kind": "격식 어휘",
+    "note": "'잘못을 저지른 자, 범법자'를 뜻하는 격식·법률 어휘로, 도덕적 단죄의 느낌이 강하다. 일상 구어라면 troublemaker, rule-breaker, people who misbehave라고 한다. 아이들의 장난을 '범죄'로 격상시키는 엄브리지의 어휘 선택이다.",
+    "examples": [
+     {
+      "en": "The policy is designed to punish wrongdoers, not victims.",
+      "ko": "이 정책은 피해자가 아니라 가해자를 처벌하기 위한 것이다."
+     },
+     {
+      "en": "Wrongdoers will be reported to the head.",
+      "ko": "규칙 위반자는 교장에게 보고될 것이다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "my school",
+    "kind": "어조·소유 표현",
+    "note": "학교를 '내 학교'라고 부르는 것은 권위를 과시하는 전형적 어조다. 영국 교장들이 our school이라 하는 것과 대비되며, 프레드가 바로 이 점을 '여긴 당신 학교였던 적이 없다'고 받아친다.",
+    "examples": [
+     {
+      "en": "Not in my classroom, thank you.",
+      "ko": "내 교실에서는 안 돼요, 아셨죠."
+     },
+     {
+      "en": "No one talks like that in my house.",
+      "ko": "우리 집에서 그런 말투는 안 돼."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-076",
+  "speech": "umbridge-5-076",
+  "part": 1,
+  "of": 1,
+  "order": 96,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "현관 홀, 낮. 엄브리지가 호그와트를 '내 학교'라고 부르자 프레드가 정면으로 맞받아치고, 엄브리지가 쌍둥이를 본보기로 삼으려 한다.",
+  "cue_speaker": "Fred",
+  "cue": "This was never your school! Hogwarts is Dumbledore's school!",
+  "prev_line": "",
+  "line": "Well, now you're going to get your punishments right here, in front of the whole school!",
+  "ko": "자, 그렇다면 이제 벌은 바로 여기서, 전교생이 보는 앞에서 받게 될 거예요!",
+  "plain": "Okay, so now you're gonna get punished right here in front of everybody!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Well, now ...",
+    "kind": "담화표지",
+    "note": "엄브리지는 처벌을 선언하면서도 'Well'로 부드럽게 말문을 엽니다(여기서 now는 '자'가 아니라 '이제'라는 시간 부사입니다). 겉으로는 다정한 교사 어투를 유지하면서 위협을 전달하는 전형적인 '상냥한 공격성' 화법입니다. Well로 말을 여는 것 자체는 영미 공통이라 영미 차이는 없습니다.",
+    "examples": [
+     {
+      "en": "Well, now, I think we've all heard quite enough from you.",
+      "ko": "자, 그럼, 당신 얘기는 이제 충분히 들은 것 같네요."
+     },
+     {
+      "en": "Well, now, shall we see what the rules actually say?",
+      "ko": "자, 그럼, 규정에 실제로 뭐라고 쓰여 있는지 볼까요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-077",
+  "speech": "umbridge-5-077",
+  "part": 1,
+  "of": 1,
+  "order": 97,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 시리우스의 안부를 확인하려고 몰래 들어와 벽난로를 쓰던 해리가 엄브리지에게 붙잡혀 끌려 나온다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You think you could simply walk into my office without me knowing about it? Foolish boy!",
+  "ko": "제 사무실에 그냥 걸어 들어와도 제가 모를 줄 알았나요? 어리석은 아이 같으니!",
+  "plain": "You really thought you could just waltz into my office and I wouldn't find out? Stupid kid!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "simply",
+    "kind": "격식 어휘",
+    "note": "'그냥, 단순히'의 뜻으로 'just'보다 다소 격식 있는 말이며, 영미 공통입니다. 구어에서는 영국이든 미국이든 'just'를 쓰는데, 엄브리지는 'simply'를 골라 상대의 행동이 얼마나 안일했는지를 차갑게 강조합니다.",
+    "examples": [
+     {
+      "en": "You can't simply ignore the deadline and hope no one notices.",
+      "ko": "마감을 그냥 무시하고 아무도 모르길 바랄 수는 없어요."
+     },
+     {
+      "en": "He simply walked out of the meeting without a word.",
+      "ko": "그는 한마디도 없이 그냥 회의장을 나가 버렸어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Foolish boy!",
+    "kind": "호칭",
+    "note": "'형용사 + boy/girl' 형태의 호격은 영국 교사·어른이 아이를 꾸짖을 때 쓰는 전형적인 표현입니다. 'foolish'는 'stupid'보다 격식이 높고 점잖은 척하면서 더 깔보는 느낌을 줍니다.",
+    "examples": [
+     {
+      "en": "Silly boy, you've left your coat on the bus again.",
+      "ko": "바보 같은 녀석, 또 버스에 코트를 두고 왔구나."
+     },
+     {
+      "en": "Foolish girl, did you really think they wouldn't check?",
+      "ko": "어리석은 아이야, 정말 확인 안 할 줄 알았니?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-078",
+  "speech": "umbridge-5-078",
+  "part": 1,
+  "of": 1,
+  "order": 98,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 숨어든 해리를 붙잡아 호통친 엄브리지가, 해리를 무방비 상태로 만들려고 주문을 외친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Accio wand!",
+  "ko": "아키오 완드!",
+  "plain": "Accio wand!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-079",
+  "speech": "umbridge-5-079",
+  "part": 1,
+  "of": 1,
+  "order": 99,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 해리의 지팡이를 빼앗은 엄브리지가 벽난로를 쓰던 해리를 심문하기 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Who were you trying to contact?",
+  "ko": "누구와 연락하려 했던 거죠?",
+  "plain": "Who were you trying to get hold of?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "contact",
+    "kind": "격식 어휘",
+    "note": "'연락하다'를 한 단어 동사 'contact'로 표현하는 것은 중립적이지만, 구어에서 흔한 'get hold of', 'reach', 'talk to'보다 공적·심문조로 들립니다. 엄브리지의 관료적 어투에 잘 맞는 어휘 선택입니다.",
+    "examples": [
+     {
+      "en": "Have you tried to contact the landlord about the leak?",
+      "ko": "누수 문제로 집주인에게 연락해 봤어요?"
+     },
+     {
+      "en": "Please contact the office if you cannot attend.",
+      "ko": "참석이 불가능하면 사무실로 연락 주세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-080",
+  "speech": "umbridge-5-080",
+  "part": 1,
+  "of": 1,
+  "order": 100,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 누구와 연락하려 했느냐는 추궁에 해리가 대답을 거부하자, 엄브리지가 곁에 있던 심문단원에게 심부름을 시킨다.",
+  "cue_speaker": "Harry",
+  "cue": "It's none of your business.",
+  "prev_line": "",
+  "line": "Draco, would you fetch Professor Snape, please?",
+  "ko": "드레이코, 스네이프 교수님을 좀 모셔다 줄래요?",
+  "plain": "Draco, can you go grab Professor Snape for me?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "fetch",
+    "kind": "BrE 어휘",
+    "note": "'가서 데려오다/가져오다'를 뜻하는 동사로, 영국에서는 일상적으로 사람에게도 씁니다. 미국 구어에서는 'go get'을 쓰고 'fetch'는 주로 개에게 공을 던질 때 쓰는 말로 느껴집니다.",
+    "examples": [
+     {
+      "en": "Could you fetch the kids from school today?",
+      "ko": "오늘 학교에서 아이들 좀 데려와 줄 수 있어요?"
+     },
+     {
+      "en": "I'll fetch us some tea while you set up.",
+      "ko": "준비하시는 동안 제가 차를 가져올게요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "would you ..., please?",
+    "kind": "법조동사 완화",
+    "note": "명령을 'would you'와 'please'로 감싸 정중한 요청 형태로 바꾸는 화법으로, 영국식이라기보다 영미 공통입니다. 실제로는 지시인데도 형식만 공손하게 유지하는 것이 엄브리지 화법의 핵심입니다. 더 가벼운 구어로는 영미 모두 'Can you ...?'를 흔히 씁니다.",
+    "examples": [
+     {
+      "en": "Would you close the door on your way out, please?",
+      "ko": "나가시면서 문 좀 닫아 주시겠어요?"
+     },
+     {
+      "en": "Would you send me the report by Friday, please?",
+      "ko": "금요일까지 보고서를 보내 주시겠어요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-081",
+  "speech": "umbridge-5-081",
+  "part": 1,
+  "of": 1,
+  "order": 101,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 드레이코를 스네이프에게 보낸 엄브리지가, 붙잡혀 있는 해리를 향해 경고조로 말한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Very well, Potter. I have been patient enough with you.",
+  "ko": "좋아요, 포터. 저도 참을 만큼 참았어요.",
+  "plain": "Fine, Potter. I've put up with you long enough.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Very well.",
+    "kind": "격식 표현",
+    "note": "'알겠다, 그렇다면' 하고 마지못해 수용하거나 다음 단계로 넘어갈 때 쓰는 격식 표현으로, 영미 공통이지만 다소 예스럽게 들립니다. 일상 구어의 'Fine.' 'All right then.'에 해당하지만 훨씬 점잖고 차가운 느낌을 줍니다. 엄브리지는 이 말 뒤에 반드시 불쾌한 조치를 꺼냅니다.",
+    "examples": [
+     {
+      "en": "Very well, we'll do it your way this once.",
+      "ko": "좋아요, 이번 한 번은 당신 방식대로 하죠."
+     },
+     {
+      "en": "Very well. If you won't apologise, I'll have to report it.",
+      "ko": "알겠어요. 사과하지 않겠다면 보고할 수밖에 없겠네요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "I have been patient enough",
+    "kind": "격식·축약 회피",
+    "note": "구어라면 'I've been'으로 줄일 자리를 'I have been'으로 또박또박 발음하는 것은 격식과 권위를 실어 상대를 압박하는 말투로, 영국식이 아니라 영미 공통입니다. 'patient enough'는 '참을 만큼 참았다'는 경고의 관용적 표현입니다.",
+    "examples": [
+     {
+      "en": "I have been more than patient with this delay.",
+      "ko": "이 지연에 대해 저는 충분히 참아 왔습니다."
+     },
+     {
+      "en": "We have been patient enough; it's time for a decision.",
+      "ko": "우리는 충분히 기다렸습니다. 이제 결정을 내릴 때입니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-082",
+  "speech": "umbridge-5-082",
+  "part": 1,
+  "of": 1,
+  "order": 102,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 드레이코가 불러온 스네이프가 들어서고, 엄브리지가 해리의 입을 열게 하려고 그에게 도움을 청한다.",
+  "cue_speaker": "Snape",
+  "cue": "You wished to see me?",
+  "prev_line": "",
+  "line": "I have just caught Potter trying to communicate with someone in my fire. I need some Veritaserum.",
+  "ko": "방금 포터가 제 벽난로로 누군가와 연락하려는 걸 잡았어요. 베리타세룸이 좀 필요해요.",
+  "plain": "I just caught Potter trying to talk to somebody through my fireplace. I need some Veritaserum.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I have just caught ...",
+    "kind": "AmE 대비",
+    "note": "'방금 ~했다'를 영국영어는 현재완료 'have just + 과거분사'로 말하는 것이 기본입니다. 미국 구어는 'I just caught'처럼 단순과거를 흔히 씁니다. 축약하지 않은 'I have'는 격식을 더합니다.",
+    "examples": [
+     {
+      "en": "I've just seen the email; I'll reply this afternoon.",
+      "ko": "방금 그 메일을 봤어요. 오후에 답장할게요."
+     },
+     {
+      "en": "She has just left, I'm afraid.",
+      "ko": "안타깝게도 방금 나가셨어요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "catch someone doing something",
+    "kind": "구문",
+    "note": "누군가가 몰래 무언가를 하는 현장을 잡았다는 뜻의 구문입니다. 격식 표현이 아니라 영미 공통의 일상 구문이므로, 'catch + 목적어 + -ing' 형태를 그대로 익혀 두면 두루 쓸 수 있습니다.",
+    "examples": [
+     {
+      "en": "I caught him copying answers from the back of the book.",
+      "ko": "그가 책 뒤의 정답을 베끼는 걸 잡았어요."
+     },
+     {
+      "en": "She was caught using her phone during the exam.",
+      "ko": "그녀는 시험 중에 휴대폰을 쓰다가 적발됐어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-083",
+  "speech": "umbridge-5-083",
+  "part": 1,
+  "of": 1,
+  "order": 103,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 자백제가 없다며 돌아서려는 스네이프에게, 해리가 기사단원인 그만 알아들을 암호로 다급하게 외친다.",
+  "cue_speaker": "Harry",
+  "cue": "He's got Padfoot at the place it's hidden!",
+  "prev_line": "",
+  "line": "What? What does that mean?",
+  "ko": "뭐라고요? 그게 무슨 뜻이죠?",
+  "plain": "What? What's that supposed to mean?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "umbridge-5-084",
+  "speech": "umbridge-5-084",
+  "part": 1,
+  "of": 1,
+  "order": 104,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 스네이프가 해리의 외침을 헛소리로 치부하고 나가 버리자, 자백제를 얻지 못한 엄브리지가 지팡이를 든다.",
+  "cue_speaker": "Snape",
+  "cue": "Potter, if I want nonsense shouted at me, I shall inform you.",
+  "prev_line": "",
+  "line": "We've played nicely, Potter. You leave me no choice!",
+  "ko": "지금까진 좋게 대해 줬어요, 포터. 이젠 제게 다른 선택이 없게 만드는군요!",
+  "plain": "I've played nice with you, Potter. Now you're forcing my hand!",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "play nicely",
+    "kind": "AmE 대비",
+    "note": "'얌전하게 굴다, 좋게 대하다'라는 뜻으로 영국에서는 부사형 'nicely'를 씁니다. 미국 구어에서는 'play nice'처럼 형용사형을 부사처럼 쓰는 것이 일반적입니다. 아이들에게 '싸우지 말고 놀아라'라고 할 때 쓰는 말을 어른에게 써서 상대를 아이 취급하는 효과도 있습니다.",
+    "examples": [
+     {
+      "en": "Right, you two, play nicely while I make dinner.",
+      "ko": "자, 너희 둘, 내가 저녁 만드는 동안 사이좋게 놀아."
+     },
+     {
+      "en": "The two departments have never played nicely together.",
+      "ko": "그 두 부서는 한 번도 사이좋게 협력한 적이 없어요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "You leave me no choice.",
+    "kind": "격식 관용구",
+    "note": "'네가 나에게 선택지를 남기지 않는다', 즉 '네 탓에 어쩔 수 없이 이렇게 한다'는 책임 전가형 관용구입니다. 자기 폭력을 상대의 탓으로 돌리는 완곡한 위협이라 엄브리지의 화법에 딱 맞습니다.",
+    "examples": [
+     {
+      "en": "If you keep missing deadlines, you leave me no choice but to escalate this.",
+      "ko": "계속 마감을 어기면 이 문제를 윗선에 올릴 수밖에 없어요."
+     },
+     {
+      "en": "You've left us no choice; the contract will be cancelled.",
+      "ko": "당신 때문에 다른 방법이 없어요. 계약은 취소됩니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-085",
+  "speech": "umbridge-5-085",
+  "part": 1,
+  "of": 1,
+  "order": 105,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 더는 방법이 없다며 해리에게 지팡이를 겨눈 엄브리지가, 흥분한 나머지 지난여름의 일을 제 입으로 털어놓는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You could have saved me a lot of trouble if those Dementors I sent to your house had finished you off!",
+  "ko": "제가 당신 집에 보낸 디멘터들이 당신을 끝장냈더라면, 제 수고가 훨씬 덜했을 텐데 말이에요!",
+  "plain": "You'd have saved me a ton of hassle if those Dementors I sent after you had just taken you out!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "finish someone off",
+    "kind": "구동사",
+    "note": "'끝장내다, 숨통을 끊다'라는 뜻의 구동사입니다. 영미 공통으로 쓰이며, 사람뿐 아니라 '남은 음식을 다 먹어 치우다', '일을 마무리하다'처럼 가볍게도 씁니다. 여기서는 살인을 사무적인 말투로 표현해 더 섬뜩합니다.",
+    "examples": [
+     {
+      "en": "That last hill on the walk nearly finished me off.",
+      "ko": "산책 마지막 언덕에서 거의 죽을 뻔했어요."
+     },
+     {
+      "en": "Shall we finish off the leftovers for lunch?",
+      "ko": "남은 음식은 점심에 다 먹어 버릴까요?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "You could have saved me a lot of trouble if ... had ...",
+    "kind": "가정법·종속절 격식",
+    "note": "'could have + 과거분사 ... if + had + 과거분사' 형태의 과거 가정법입니다. 일어나지 않은 과거에 대한 아쉬움을 표현하며, 'save someone trouble(수고를 덜어 주다)'은 그대로 쓸 수 있는 관용구입니다.",
+    "examples": [
+     {
+      "en": "You could have saved us all a lot of trouble if you'd just asked.",
+      "ko": "그냥 물어봤으면 우리 모두 수고를 많이 덜 수 있었을 텐데요."
+     },
+     {
+      "en": "It would have saved a lot of trouble if the form had been filled in properly.",
+      "ko": "서식을 제대로 작성했더라면 번거로움이 훨씬 줄었을 거예요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-086",
+  "speech": "umbridge-5-086",
+  "part": 1,
+  "of": 1,
+  "order": 106,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 여름에 리틀 위닝에서 자신을 습격한 디멘터의 배후가 드러나자, 해리가 믿기지 않는다는 듯 되묻는다.",
+  "cue_speaker": "Harry",
+  "cue": "You sent the Dementors?",
+  "prev_line": "",
+  "line": "Of course I did! Someone had to act!",
+  "ko": "물론 제가 보냈죠! 누구라도 나서야 했으니까요!",
+  "plain": "Of course I did! Somebody had to do something!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Someone had to act.",
+    "kind": "격식 어휘",
+    "note": "'act'를 '행동하다, 조치를 취하다'의 자동사로 쓰는 것은 일상 구어의 'do something'보다 격식이 높고 관료적인 느낌이며, 이는 영미 공통입니다. 자기 범행을 '불가피한 조치'로 포장하는 완곡어법의 한 예입니다.",
+    "examples": [
+     {
+      "en": "The council had to act before the bridge became unsafe.",
+      "ko": "다리가 위험해지기 전에 의회가 조치를 취해야 했어요."
+     },
+     {
+      "en": "If no one else will act, I will.",
+      "ko": "다른 사람이 아무도 나서지 않으면 제가 하겠어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-087",
+  "speech": "umbridge-5-087",
+  "part": 1,
+  "of": 1,
+  "order": 107,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 디멘터를 보낸 사실을 뻔뻔하게 인정한 엄브리지가, 해리에게 지팡이를 겨누고 마침내 금지된 주문을 외친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "CRUCIO!",
+  "ko": "크루시오!",
+  "plain": "CRUCIO!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-088",
+  "speech": "umbridge-5-088",
+  "part": 1,
+  "of": 1,
+  "order": 108,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 엄브리지가 해리를 고문하려 하자 붙잡혀 있던 헤르미온느가 비명을 지르며 막아서고, 엄브리지가 흥미롭다는 듯 돌아본다.",
+  "cue_speaker": "Hermione",
+  "cue": "No! Please, stop!",
+  "prev_line": "",
+  "line": "Well, well.",
+  "ko": "어머, 어머.",
+  "plain": "Well, look at that.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Well, well.",
+    "kind": "감탄사",
+    "note": "상대가 약점을 드러냈을 때 느긋하게 즐기는 듯 내뱉는 감탄사입니다. 영미 공통이지만 영국 드라마의 악역·권위자가 즐겨 쓰는 어투로, 짧은 말에 비웃음과 우위를 담습니다. 뒤에 'what have we here?'가 자주 붙습니다.",
+    "examples": [
+     {
+      "en": "Well, well. So you did read the memo after all.",
+      "ko": "어머, 어머. 결국 그 공지를 읽긴 했군요."
+     },
+     {
+      "en": "Well, well, look who's finally on time.",
+      "ko": "이런, 이런, 드디어 제시간에 온 사람이 누군가 보세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-089",
+  "speech": "umbridge-5-089",
+  "part": 1,
+  "of": 1,
+  "order": 109,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 헤르미온느가 털어놓으려는 기색을 보이자 해리가 말하지 말라며 버티고, 엄브리지가 해리를 윽박지른 뒤 헤르미온느를 다그친다.",
+  "cue_speaker": "Harry",
+  "cue": "I would rather die!",
+  "prev_line": "",
+  "line": "Shut up, Potter! Now talk, you silly girl! Who were you talking to?",
+  "ko": "입 다물어요, 포터! 이제 말해요, 이 어리석은 아이야! 누구와 얘기하고 있었죠?",
+  "plain": "Shut up, Potter! Now spill it, you dumb girl! Who were you talking to?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "you silly girl",
+    "kind": "호칭",
+    "note": "'you + 형용사 + 명사' 형태로 상대를 직접 깎아내리는 호격입니다. 'silly'는 영국에서 매우 흔한 가벼운 비난 형용사로, 미국 구어의 'stupid, dumb'보다 어린아이를 대하는 느낌이 강합니다. 상냥한 가면이 벗겨진 엄브리지가 그래도 'silly'를 고르는 것이 특징적입니다.",
+    "examples": [
+     {
+      "en": "Don't be a silly girl, you'll catch your death without a coat.",
+      "ko": "바보같이 그러지 마, 코트 없이 나가면 감기 걸려."
+     },
+     {
+      "en": "Oh, you silly thing, you've put it on back to front.",
+      "ko": "아이고, 이 바보, 앞뒤를 거꾸로 입었잖아."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-090",
+  "speech": "umbridge-5-090",
+  "part": 1,
+  "of": 1,
+  "order": 110,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 헤르미온느가 울먹이는 척 거짓 자백을 시작하다 말끝을 흐리자, 엄브리지가 바짝 다가서며 재촉한다.",
+  "cue_speaker": "Hermione",
+  "cue": "We were trying to find Professor Dumbledore. We had to tell him...",
+  "prev_line": "",
+  "line": "Tell him?",
+  "ko": "말한다고요?",
+  "plain": "Tell him?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-091",
+  "speech": "umbridge-5-091",
+  "part": 1,
+  "of": 1,
+  "order": 111,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "엄브리지의 사무실, 낮. 헤르미온느가 덤블도어의 비밀 '무기'가 완성됐다고 꾸며 대자, 엄브리지가 눈을 번뜩이며 명령한다.",
+  "cue_speaker": "Hermione",
+  "cue": "That it's ready. The weapon.",
+  "prev_line": "",
+  "line": "You and Mr Potter will take me to it.",
+  "ko": "당신과 포터 군이 저를 그곳으로 안내할 거예요.",
+  "plain": "You and Potter are gonna take me there.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "You ... will take me to it.",
+    "kind": "격식 명령",
+    "note": "명령문 대신 'will'을 쓴 평서문으로 지시하는 방식입니다. 선택의 여지가 없음을 전제하는 차가운 권위의 어투로, 영국식이 아니라 영미 공통으로 교사·부모·군 상관 등이 씁니다. 더 가벼운 구어라면 'You're going to ...'나 직접 명령문을 씁니다.",
+    "examples": [
+     {
+      "en": "You will hand in your phones before the exam begins.",
+      "ko": "시험 시작 전에 휴대폰을 제출하게 될 겁니다."
+     },
+     {
+      "en": "You will report to my office at nine sharp.",
+      "ko": "9시 정각에 제 사무실로 오세요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Mr Potter",
+    "kind": "호칭",
+    "note": "학생을 성(姓)에 Mr/Miss를 붙여 부르는 것은 전통적·사립학교식의 격식 호칭으로, 현대에는 영국 교사도 대부분 이름을 부릅니다. 그래서 거리를 두는 엄격한 어조가 되고, 여기서는 체포 대상을 대하는 공무원의 말투처럼 들립니다. 영국식 표기에서는 'Mr' 뒤에 마침표를 찍지 않습니다.",
+    "examples": [
+     {
+      "en": "Mr Khan, would you care to explain why you're late?",
+      "ko": "칸 군, 왜 늦었는지 설명해 주시겠어요?"
+     },
+     {
+      "en": "Miss Taylor, see me after class, please.",
+      "ko": "테일러 양, 수업 후에 저를 보고 가세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-092",
+  "speech": "umbridge-5-092",
+  "part": 1,
+  "of": 1,
+  "order": 112,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 해리와 헤르미온느가 '무기'가 있는 곳으로 안내한다며 엄브리지를 숲 깊숙이 데리고 들어가고, 한참을 걷던 엄브리지가 의심스러운 듯 묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Much further, is it?",
+  "ko": "아직 많이 남았나요?",
+  "plain": "Is it a lot farther?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "..., is it?",
+    "kind": "부가의문문",
+    "note": "'Is it much further?'를 뒤집어 핵심만 먼저 말하고 'is it?'을 꼬리로 붙인 영국 구어 특유의 구조입니다. 짜증과 의심을 가볍게 담는 효과가 있습니다. 미국 구어라면 'Is it much farther?'라고 평범하게 묻습니다.",
+    "examples": [
+     {
+      "en": "Expensive, is it?",
+      "ko": "비싼가 봐요?"
+     },
+     {
+      "en": "Long day, was it?",
+      "ko": "힘든 하루였나 봐요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "further",
+    "kind": "AmE 대비",
+    "note": "물리적 거리를 말할 때 영국영어는 'further'를 두루 쓰고, 미국영어는 'farther'를 구분해 쓰는 경향이 있습니다. 영국에서는 'farther'가 오히려 드물게 들립니다.",
+    "examples": [
+     {
+      "en": "The station's a bit further than I thought.",
+      "ko": "역이 생각보다 좀 더 멀어요."
+     },
+     {
+      "en": "How much further is the car park?",
+      "ko": "주차장까지 얼마나 더 가야 해요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-093",
+  "speech": "umbridge-5-093",
+  "part": 1,
+  "of": 1,
+  "order": 113,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 활을 든 켄타우로스 무리가 나타나 일행을 에워싸고, 우두머리 마고리언이 엄브리지에게 따져 묻는다.",
+  "cue_speaker": "Magorian",
+  "cue": "What are you doing in our forest?",
+  "prev_line": "",
+  "line": "Your forest? This forest belongs to the Ministry of Magic!",
+  "ko": "당신들의 숲이라고요? 이 숲은 마법부 소유예요!",
+  "plain": "Your forest? This forest is Ministry of Magic property!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "belong to",
+    "kind": "소유 표현(권리 주장)",
+    "note": "'~의 소유다'를 뜻하는 중립적 표현이지만, 구어의 'is the Ministry's'나 'is ours'보다 법적·행정적 소유권을 주장하는 느낌을 줍니다. 상대의 영역을 관료적 논리로 부정하는 엄브리지의 전형적 화법입니다.",
+    "examples": [
+     {
+      "en": "This land belongs to the council, not to the developers.",
+      "ko": "이 땅은 개발업자가 아니라 지방의회 소유예요."
+     },
+     {
+      "en": "Those files belong to the department; please don't take them home.",
+      "ko": "그 파일은 부서 소유니 집에 가져가지 마세요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-094",
+  "speech": "umbridge-5-094",
+  "part": 1,
+  "of": 1,
+  "order": 114,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 숲의 주인을 두고 엄브리지가 오만하게 받아치자 켄타우로스들이 분노해 다가오고, 엄브리지가 지팡이를 겨누며 소리친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Stay back, you beasts!",
+  "ko": "물러서요, 이 짐승들!",
+  "plain": "Back off, you animals!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "you beasts",
+    "kind": "호칭",
+    "note": "'you + 명사(복수)' 형태로 상대 집단을 한 단어로 매도하는 호격입니다. 'beast'는 일상어 'animal'보다 문어적이고 예스러운 단어라(영미 공통), 욕설인데도 어딘가 점잔을 떠는 엄브리지 특유의 느낌이 납니다.",
+    "examples": [
+     {
+      "en": "Get off the furniture, you little beasts!",
+      "ko": "가구에서 내려와, 이 녀석들!"
+     },
+     {
+      "en": "Stay back, you lot, the paint's still wet.",
+      "ko": "다들 물러서, 페인트가 아직 안 말랐어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-095",
+  "speech": "umbridge-5-095",
+  "part": 1,
+  "of": 1,
+  "order": 115,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 켄타우로스들이 물러서지 않고 포위를 좁혀 오자, 엄브리지가 마법부 법규를 들먹이며 위협하려 한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "You cannot attack me! Any attack on a wizard by a half-breed--",
+  "ko": "당신들은 저를 공격할 수 없어요! 혼혈 종족이 마법사를 공격하는 행위는 그 어떤 것이든—",
+  "plain": "You can't touch me! If a half-breed attacks a wizard--",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "You cannot ...",
+    "kind": "격식·축약 회피",
+    "note": "'can't' 대신 'cannot'을 또박또박 말하는 것은 법적 금지나 규정을 인용하는 권위적 어투입니다. 'cannot'을 한 단어로 붙여 쓰는 것은 영국식이 아니라 영미 공통의 표준 표기입니다. 여기서 'cannot'은 '할 수 없다'보다 '해서는 안 된다(법으로 금지돼 있다)'에 가깝습니다.",
+    "examples": [
+     {
+      "en": "You cannot park here without a permit.",
+      "ko": "허가증 없이는 여기에 주차할 수 없습니다."
+     },
+     {
+      "en": "Staff cannot accept gifts from suppliers.",
+      "ko": "직원은 공급업체로부터 선물을 받을 수 없습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Any attack on a wizard by a half-breed ...",
+    "kind": "관료적 완곡어법",
+    "note": "'Any + 명사 + on/by ...' 식으로 법조문을 암송하듯 말하는 것은 관료가 자기 입장을 규정 뒤에 숨기는 전형적 어법입니다. 'half-breed'는 심한 경멸어로, 엄브리지가 공손한 표현 속에 노골적 편견을 섞는 인물임을 보여 줍니다.",
+    "examples": [
+     {
+      "en": "Any damage to school property will be charged to the parents.",
+      "ko": "학교 재산에 대한 모든 손상은 학부모에게 청구됩니다."
+     },
+     {
+      "en": "Any complaint about a colleague must go through HR.",
+      "ko": "동료에 대한 모든 불만은 인사부를 통해야 합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-096",
+  "speech": "umbridge-5-096",
+  "part": 1,
+  "of": 1,
+  "order": 116,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 엄브리지가 켄타우로스를 모욕적인 말로 부르자 헤르미온느가 말리고, 격노한 마고리언이 엄브리지에게 다가선다.",
+  "cue_speaker": "Magorian",
+  "cue": "You dare to insult us?",
+  "prev_line": "",
+  "line": "Come no closer!",
+  "ko": "더 가까이 오지 마세요!",
+  "plain": "Don't come any closer!",
+  "tag": "문학",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Come no closer!",
+    "kind": "고어·격식 부정 명령",
+    "note": "'Don't come any closer'를 'do' 없이 '동사 + no + 비교급'으로 줄인 고전적 부정 명령형입니다. 현대 구어에서는 거의 쓰지 않고 소설·영화·연극 대사에 남아 있는 문체라, 실생활에 그대로 쓰면 어색합니다. 'Say no more', 'Look no further' 같은 굳은 표현에 같은 구조가 남아 있습니다('Fear not'은 do 없이 not만 붙인 또 다른 옛 부정 명령형입니다).",
+    "examples": [
+     {
+      "en": "Say no more, I'll sort it out.",
+      "ko": "더 말 안 해도 돼요. 제가 처리할게요."
+     },
+     {
+      "en": "Look no further; this is the one you want.",
+      "ko": "더 찾아볼 필요 없어요. 바로 이게 당신이 원하는 거예요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-5-097",
+  "speech": "umbridge-5-097",
+  "part": 1,
+  "of": 1,
+  "order": 117,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 가까이 오지 말라는 경고에도 켄타우로스들이 다가오자, 겁에 질린 엄브리지가 먼저 주문을 쏜다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Incarcerus!",
+  "ko": "인카서러스!",
+  "plain": "Incarcerus!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-5-098",
+  "speech": "umbridge-5-098",
+  "part": 1,
+  "of": 1,
+  "order": 118,
+  "character": "Umbridge",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "금지된 숲, 낮. 엄브리지가 켄타우로스 하나를 밧줄로 묶어 버리자 분노한 무리가 그녀를 붙잡아 들어 올리고, 끌려가며 엄브리지가 악을 쓴다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Ingrates! Animals! Filthy half-bloods!",
+  "ko": "배은망덕한 것들! 짐승들! 더러운 혼혈들!",
+  "plain": "Ungrateful jerks! Animals! Dirty half-bloods!",
+  "tag": "문학",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "ingrate",
+    "kind": "격식·문학 어휘",
+    "note": "'은혜를 모르는 사람'을 뜻하는 명사로, 일상 구어에서는 거의 쓰지 않는 문어적 욕설이며 영미 공통입니다. 일상 구어라면 영미 모두 'ungrateful ~'로 풀어 말합니다(미국 구어의 ungrateful jerk 등). 분노한 순간에도 라틴어 계열 격식 어휘를 꺼내는 데서 엄브리지의 가식적 교양이 드러납니다.",
+    "examples": [
+     {
+      "en": "After everything we did for him, the ingrate didn't even say thank you.",
+      "ko": "우리가 그렇게 해 줬는데, 그 배은망덕한 녀석은 고맙다는 말도 안 했어요."
+     },
+     {
+      "en": "She called the whole committee a pack of ingrates.",
+      "ko": "그녀는 위원회 전체를 배은망덕한 무리라고 불렀어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "filthy",
+    "kind": "어휘·경멸 표현",
+    "note": "'더러운'이라는 뜻이지만 강한 혐오·경멸을 담은 강조 형용사로 널리 쓰이며, 이 용법과 'filthy rich(엄청 부자인)'는 영미 공통입니다. 'dirty, nasty'보다 훨씬 강한 말입니다. 영국 구어 특유의 용법은 'filthy weather(지독한 날씨)'처럼 날씨에 쓰는 경우입니다.",
+    "examples": [
+     {
+      "en": "Take those filthy boots off before you come in.",
+      "ko": "들어오기 전에 그 더러운 장화 좀 벗어요."
+     },
+     {
+      "en": "It was filthy weather all weekend, so we stayed in.",
+      "ko": "주말 내내 날씨가 지독해서 집에만 있었어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-001",
+  "speech": "umbridge-7-001",
+  "part": 1,
+  "of": 1,
+  "order": 119,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 1층에 멈춘 승강기. 폴리주스로 런콘(앨버트)과 마팔다로 변신한 해리와 헤르미온느가 타고 있는데, 문이 열리자 바로 앞에 엄브릿지가 서 있다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Ah, Mafalda! Travers sent you, did he? Good. We'll go straight down. Albert, aren't you getting out?",
+  "ko": "아, 마팔다! 트래버스가 보냈군요, 그렇죠? 잘됐네요. 바로 내려가죠. 앨버트, 안 내리세요?",
+  "plain": "Oh hey, Mafalda! Travers sent you, huh? Great, let's head right down. Albert, isn't this your stop?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Travers sent you, did he?",
+    "kind": "부가의문문",
+    "note": "긍정문에 긍정 꼬리(did he?)를 붙이는 '같은 극성' 부가의문문으로, 영국 영어 특유의 형태다. 사실을 확인하는 것이 아니라 '아, 그렇게 된 거군요' 하고 상대의 사정을 이미 파악했다는 듯 내려다보는 어조가 실린다. 미국 구어라면 'So Travers sent you?'나 '…, huh?'.",
+    "examples": [
+     {
+      "en": "So you've finished already, have you?",
+      "ko": "벌써 다 끝냈다고요, 그래요?"
+     },
+     {
+      "en": "Oh, he told you that, did he?",
+      "ko": "아, 그 사람이 그렇게 말하던가요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "go straight down",
+    "kind": "AmE 대비(straight / right)",
+    "note": "straight는 '곧장, 바로'. go straight home, come straight over처럼 '직행'의 뜻으로는 영미 모두 쓴다. 뚜렷이 영국식인 것은 '즉시'를 뜻하는 straight away(미국은 right away)이며, 이 문장처럼 방향 부사 앞에서는 미국 구어가 right down, right over처럼 right를 더 즐겨 쓴다.",
+    "examples": [
+     {
+      "en": "I'll come straight over after work.",
+      "ko": "퇴근하고 바로 갈게."
+     },
+     {
+      "en": "Go straight to the office when you arrive.",
+      "ko": "도착하면 바로 사무실로 가세요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "aren't you getting out?",
+    "kind": "완곡어법",
+    "note": "'내리세요'라는 지시를 부정 의문문으로 포장한 엄브릿지식 화법이다. 형식은 상냥한 질문이지만 '당연히 내려야 하지 않느냐'는 전제가 깔려 있어 거절하기 어렵다. 겉은 친절하고 속은 명령인 수동 공격적 말투의 전형이다.",
+    "examples": [
+     {
+      "en": "Aren't you going to say thank you?",
+      "ko": "고맙다는 말은 안 할 거니?"
+     },
+     {
+      "en": "Weren't you supposed to be in a meeting?",
+      "ko": "회의에 들어가 있어야 하는 거 아니었어요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-002",
+  "speech": "umbridge-7-002",
+  "part": 1,
+  "of": 1,
+  "order": 120,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정, 머글 태생 등록 위원회의 심문. 디멘터들이 떠도는 가운데 불려 나온 캐터몰 부인이 남편(으로 변신한 론)을 발견하고 애타게 부른다.",
+  "cue_speaker": "Mary Cattermole",
+  "cue": "Reg...",
+  "prev_line": "",
+  "line": "Mary Elizabeth Cattermole?",
+  "ko": "메리 엘리자베스 캐터몰?",
+  "plain": "Mary Elizabeth Cattermole?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "umbridge-7-003",
+  "speech": "umbridge-7-003",
+  "part": 1,
+  "of": 1,
+  "order": 121,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정. 높은 단상에 앉은 엄브릿지가 서류를 넘기며, 피고석에 홀로 앉은 캐터몰 부인의 신원을 하나씩 확인해 나간다.",
+  "cue_speaker": "Mary Cattermole",
+  "cue": "Yes.",
+  "prev_line": "",
+  "line": "Mother to Maisie, Ellie and Alfred? Wife to Reginald?",
+  "ko": "메이지, 엘리, 앨프리드의 어머니이시고요? 레지널드의 아내이시고?",
+  "plain": "You're Maisie, Ellie and Alfred's mom? And Reginald's wife?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "mother to … / wife to …",
+    "kind": "격식·법정 문체",
+    "note": "일상어로는 'mother of', 'Reginald's wife'라고 하지만, 관사를 빼고 to를 써서 신원을 읊는 것은 법정·공문서 투다. 엄브릿지는 아이들 이름을 하나하나 다정하게 부르면서 '당신 가족을 다 알고 있다'는 위협을 상냥한 목소리 뒤에 숨긴다.",
+    "examples": [
+     {
+      "en": "She is mother to three boys and a keen runner.",
+      "ko": "그녀는 세 아들의 어머니이자 열성적인 러너다."
+     },
+     {
+      "en": "He was husband to Anne and father to two daughters.",
+      "ko": "그는 앤의 남편이자 두 딸의 아버지였다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-004",
+  "speech": "umbridge-7-004",
+  "part": 1,
+  "of": 1,
+  "order": 122,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정. 캐터몰 부인의 신원 확인을 마친 엄브리지가 증거물로 놓여 있던 지팡이 하나를 집어 든다.",
+  "cue_speaker": "Mary Cattermole",
+  "cue": "Yes.",
+  "prev_line": "",
+  "line": "A wand was taken from you upon your arrival at the Ministry today, Mrs Cattermole. Is this that wand?",
+  "ko": "오늘 마법부에 도착하셨을 때 지팡이 하나를 압수당하셨지요, 캐터몰 부인. 이것이 그 지팡이인가요?",
+  "plain": "They took a wand from you when you got to the Ministry today, Mrs. Cattermole. This the one?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "A wand was taken from you",
+    "kind": "완곡어법(수동태)",
+    "note": "압수한 주체(마법부)를 지우고 수동태로 말해 '누가 빼앗았는지'가 문장에서 사라진다. 강제 조치를 중립적인 행정 절차처럼 들리게 하는 관료적 완곡어법이다. 구어라면 'They took your wand'.",
+    "examples": [
+     {
+      "en": "Your bag was searched as part of routine checks.",
+      "ko": "통상적인 점검의 일환으로 가방을 검사했습니다."
+     },
+     {
+      "en": "A decision has been made to close the branch.",
+      "ko": "지점을 폐쇄하기로 결정되었습니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "upon your arrival",
+    "kind": "격식 어휘",
+    "note": "'when you arrived'를 전치사 upon + 명사로 바꾼 공문체다. upon은 on의 격식형으로, 영국·미국을 가리지 않고 안내문이나 통지서에서 자주 본다. 구어라면 'when you got here'.",
+    "examples": [
+     {
+      "en": "Please report to reception upon arrival.",
+      "ko": "도착하시면 안내 데스크로 와 주세요."
+     },
+     {
+      "en": "Payment is due upon receipt of the invoice.",
+      "ko": "청구서를 받는 즉시 대금을 지불해야 합니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-005",
+  "speech": "umbridge-7-005",
+  "part": 1,
+  "of": 1,
+  "order": 123,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정. 엄브릿지가 마법부 입구에서 압수한 지팡이를 캐터몰 부인 앞에 들어 보이고는, 대답을 기다리지도 않고 미소 띤 얼굴로 다음 질문을 잇는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Would you please tell the court from which witch or wizard you took this wand.",
+  "ko": "이 지팡이를 어느 마녀나 마법사에게서 빼앗았는지 법정에 말씀해 주시겠어요?",
+  "plain": "So tell us — who'd you steal this wand from?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "from which witch or wizard you took …",
+    "kind": "격식 어순",
+    "note": "전치사를 문장 끝에 두지 않고 의문사 앞으로 끌어온 격식 어순(from which …)이다. 구어라면 'who you took this wand from'. 게다가 '빼앗았다(took)'는 것을 이미 사실로 전제한 유도 질문이라, 어떻게 대답해도 죄를 인정하는 꼴이 된다.",
+    "examples": [
+     {
+      "en": "Could you tell me to whom I should address the letter?",
+      "ko": "편지를 어느 분 앞으로 보내야 하는지 알려 주시겠어요?"
+     },
+     {
+      "en": "Please state the school from which you transferred.",
+      "ko": "전학 오기 전에 다닌 학교를 적어 주세요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Would you please tell the court …",
+    "kind": "법조동사 완화",
+    "note": "would you please로 부탁의 형식을 취하지만 거절할 수 없는 명령이다. me 대신 the court라고 해서 개인의 추궁을 기관의 절차로 포장한다. 상냥한 표면과 강압적인 내용의 대비가 엄브릿지 화법의 핵심이다.",
+    "examples": [
+     {
+      "en": "Would you please explain why the form was late?",
+      "ko": "서류가 왜 늦었는지 설명해 주시겠어요?"
+     },
+     {
+      "en": "Would you please tell the panel about your last role?",
+      "ko": "지난 직책에 대해 면접 위원들께 말씀해 주시겠습니까?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-006",
+  "speech": "umbridge-7-006",
+  "part": 1,
+  "of": 1,
+  "order": 124,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정. 지팡이를 누구에게서 빼앗았느냐는 추궁에, 캐터몰 부인이 어릴 때 정당하게 얻은 자기 지팡이라고 항변한다.",
+  "cue_speaker": "Mary Cattermole",
+  "cue": "I got it in Diagon Alley, at Ollivander's, when I was eleven. It chose me.",
+  "prev_line": "",
+  "line": "No, no, I don't think so, Mrs Cattermole. Wands only choose witches. And you are not a witch.",
+  "ko": "아뇨, 아뇨, 그럴 리가요, 캐터몰 부인. 지팡이는 마녀만 선택한답니다. 그런데 부인은 마녀가 아니잖아요.",
+  "plain": "Yeah, no, that's not true, Mrs. Cattermole. Wands only pick witches, and you're no witch.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "No, no, I don't think so",
+    "kind": "완곡어법",
+    "note": "글자 그대로는 '그렇지 않은 것 같아요'지만 실제로는 '틀렸다'는 단호한 부정이다. 영국식이라기보다 영미 공통의 완곡 부정인데, 엄브릿지는 아이 달래듯 'No, no'와 함께 써서 상대를 깔보는 효과를 낸다. 직접 말하면 'That's a lie'.",
+    "examples": [
+     {
+      "en": "I don't think so — the invoice clearly says thirty days.",
+      "ko": "그렇지 않을걸요. 청구서에 30일이라고 분명히 적혀 있는데요."
+     },
+     {
+      "en": "No, no, I don't think that's quite right.",
+      "ko": "아뇨, 아뇨, 그건 좀 아닌 것 같은데요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "you are not a witch",
+    "kind": "격식·축약 회피",
+    "note": "you're not이나 you aren't로 줄이지 않고 are와 not을 또박또박 말해 판결처럼 못 박는다. 앞의 부드러운 말투와 대비되어 더 차갑게 들린다.",
+    "examples": [
+     {
+      "en": "You are not to leave until the bell goes.",
+      "ko": "종이 울릴 때까지는 나가면 안 된다."
+     },
+     {
+      "en": "That is not what we agreed.",
+      "ko": "그건 우리가 합의한 내용이 아닙니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "umbridge-7-007",
+  "speech": "umbridge-7-007",
+  "part": 1,
+  "of": 1,
+  "order": 125,
+  "character": "Umbridge",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "마법부 지하 법정. 캐터몰 부인이 남편에게 매달려 호소하는 사이, 런콘(앨버트)으로 변신한 해리가 지팡이를 뽑아 들고 엄브릿지를 겨눈다.",
+  "cue_speaker": "Mary Cattermole",
+  "cue": "But I am! Tell them, Reg! Tell them what I am!",
+  "prev_line": "",
+  "line": "What the devil are you doing, Albert?",
+  "ko": "대체 무슨 짓을 하는 거예요, 앨버트?",
+  "plain": "What the hell are you doing, Albert?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "What the devil …?",
+    "kind": "관용구(강조, 구식)",
+    "note": "'도대체'를 뜻하는 구식 강조 표현으로, 영국 전용이 아니라 영미 공통의 예스러운 말이다(사전에도 지역 표시 없이 old-fashioned로만 실린다). 오늘날에는 영국에서도 미국에서도 'What the hell …?'이 훨씬 흔하며, the devil은 그보다 순하고 고풍스러운 쪽이다. 상냥한 가면이 벗겨지는 순간에도 엄브릿지는 점잖은 쪽의 욕을 고른다.",
+    "examples": [
+     {
+      "en": "What the devil is that noise?",
+      "ko": "대체 저게 무슨 소리야?"
+     },
+     {
+      "en": "Where the devil have you been?",
+      "ko": "도대체 어디 갔다 온 거야?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ }
+]

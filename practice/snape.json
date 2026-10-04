@@ -1,0 +1,1496 @@
+{
+ "snape-1-028.1": {
+  "blank": "There will be no",
+  "options": [
+   "There will be any",
+   "There's gonna be no",
+   "There'll be zero"
+  ],
+  "why": "축약 없이 There will be no로 단호히 금지를 선언한다."
+ },
+ "snape-1-028.2": {
+  "blank": "As such",
+  "options": [
+   "So like",
+   "Such as",
+   "Such that"
+  ],
+  "why": "'As such'는 앞 내용을 근거로 결론을 끄는 격식 연결어다."
+ },
+ "snape-1-028.3": {
+  "blank": "possess the predisposition",
+  "options": [
+   "possess the predilection",
+   "got the talent",
+   "own the predisposition"
+  ],
+  "why": "predisposition은 타고난 소질, predilection은 선호다."
+ },
+ "snape-1-028.4": {
+  "blank": "put a stopper in",
+  "options": [
+   "put a stop on",
+   "put a cap at",
+   "place a plug on"
+  ],
+  "why": "병 마개(stopper) 은유로 앞의 bottle과 짝을 이룬다."
+ },
+ "snape-1-028.5": {
+  "blank": "Then again",
+  "options": [
+   "Once again",
+   "And again",
+   "Then also"
+  ],
+  "why": "'Then again'은 '한편으로는' 하고 다른 가능성을 꺼낸다."
+ },
+ "snape-1-028.7": {
+  "blank": "what would I get",
+  "options": [
+   "what do I get",
+   "what will I get",
+   "what am I getting"
+  ],
+  "why": "if I added와 짝을 이루는 가정법 would 질문이다."
+ },
+ "snape-1-028.8": {
+  "blank": "let's try again",
+  "options": [
+   "let's try over",
+   "let's try back",
+   "let's retry again"
+  ],
+  "why": "'try again'은 '다시 해 보다'의 기본 연어다."
+ },
+ "snape-1-029": {
+  "blank": "what is the difference",
+  "options": [
+   "what's the diff",
+   "how is the difference",
+   "what is the gap"
+  ],
+  "why": "축약 없이 what is로 또박또박 물어 권위 있는 어조를 낸다."
+ },
+ "snape-1-030": {
+  "blank": "Pity",
+  "options": [
+   "Too bad",
+   "Pitiful",
+   "Piteous"
+  ],
+  "why": "'Pity.'는 '안타깝군'을 짧게 던지는 영국식 관용구다."
+ },
+ "snape-1-036.1": {
+  "blank": "Good luck",
+  "options": [
+   "Best luck",
+   "Good lucks",
+   "Much luck"
+  ],
+  "why": "'Good luck'은 행운을 비는 고정 표현이다."
+ },
+ "snape-1-036.2": {
+  "blank": "should be easy work",
+  "options": [
+   "should be easy job",
+   "should be simple labour",
+   "should do easy work"
+  ],
+  "why": "should be로 '당연히 ~일 것'이라 추정하며 비꼰다."
+ },
+ "snape-1-036.3": {
+  "blank": "against",
+  "options": [
+   "opposite",
+   "toward",
+   "versus"
+  ],
+  "why": "경기 상대를 나타낼 때는 against를 쓴다."
+ },
+ "snape-1-038": {
+  "blank": "want me as your enemy",
+  "options": [
+   "want me as enemy",
+   "want me like your enemy",
+   "want me be your enemy"
+  ],
+  "why": "상대의 바람을 서술하는 형식으로 위협을 전하는 완곡 표현이다."
+ },
+ "snape-1-039.1": {
+  "blank": "perfectly well",
+  "options": [
+   "perfectly good",
+   "perfect well",
+   "perfectly fine"
+  ],
+  "why": "know perfectly well은 시치미 떼지 말라는 상투적 강조다."
+ },
+ "snape-1-039.2": {
+  "blank": "where your loyalties lie",
+  "options": [
+   "where your loyalties lay",
+   "where your loyalties stand",
+   "where your loyalties sit"
+  ],
+  "why": "where your loyalties lie는 누구 편인지 묻는 격식 관용구다."
+ },
+ "snape-1-048": {
+  "blank": "such as yourselves",
+  "options": [
+   "such like you",
+   "as such yourselves",
+   "same as yourselves"
+  ],
+  "why": "such as yourselves는 like you보다 격식과 거리감이 높다."
+ },
+ "snape-1-049": {
+  "blank": "ought to",
+  "options": [
+   "oughta",
+   "had to",
+   "ought"
+  ],
+  "why": "ought to는 영국에서 흔한, 다소 격식 있는 훈계조다."
+ },
+ "snape-2-001.1": {
+  "blank": "no less than",
+  "options": [
+   "no more than",
+   "none less than",
+   "not least than"
+  ],
+  "why": "no less than은 숫자 앞에서 '무려'라고 강조하는 격식 표현이다."
+ },
+ "snape-2-001.2": {
+  "blank": "risked the exposure",
+  "options": [
+   "risked the showing",
+   "risked the exhibition",
+   "dared the exposure"
+  ],
+  "why": "risk the exposure of는 '~이 드러날 위험을 무릅쓰다'다."
+ },
+ "snape-2-001.3": {
+  "blank": "inflicted on",
+  "options": [
+   "inflicted to",
+   "did on",
+   "caused at"
+  ],
+  "why": "inflict damage on은 '피해를 입히다'의 격식 연어다."
+ },
+ "snape-2-003": {
+  "blank": "I assure you",
+  "options": [
+   "I ensure you",
+   "I insure you",
+   "I reassure you"
+  ],
+  "why": "I assure you는 단언에 무게를 싣는 격식 표현이다."
+ },
+ "snape-2-005": {
+  "blank": "flouted",
+  "options": [
+   "flaunted",
+   "floated",
+   "flicked"
+  ],
+  "why": "flout는 규칙을 대놓고 어기다는 뜻의 격식 동사다."
+ },
+ "snape-2-012.1": {
+  "blank": "If I might",
+  "options": [
+   "If I can",
+   "If I would",
+   "If I should"
+  ],
+  "why": "If I might는 발언 허락을 매우 공손히 구하는 격식 표현이다."
+ },
+ "snape-2-012.2": {
+  "blank": "for one",
+  "options": [
+   "for once",
+   "for myself",
+   "as one"
+  ],
+  "why": "I, for one은 '적어도 나는'이라며 입장을 세우는 관용구다."
+ },
+ "snape-2-013": {
+  "blank": "Miss Granger",
+  "options": [
+   "Miss Hermione",
+   "Mrs Granger",
+   "Lady Granger"
+  ],
+  "why": "성에 Miss를 붙여 거리를 두는 전통적 교사 호칭이다."
+ },
+ "snape-2-028": {
+  "blank": "it would be prudent",
+  "options": [
+   "it would be prudish",
+   "it would be prudential",
+   "it will be prudent"
+  ],
+  "why": "Perhaps it would be prudent로 지시를 조언처럼 포장한다."
+ },
+ "snape-2-029.1": {
+  "blank": "causes devastation",
+  "options": [
+   "makes devastation",
+   "does devastation",
+   "gives devastation"
+  ],
+  "why": "cause devastation은 '참사를 일으키다'의 격식 연어다."
+ },
+ "snape-2-029.2": {
+  "blank": "Might I suggest",
+  "options": [
+   "Will I suggest",
+   "Must I suggest",
+   "Would I suggest"
+  ],
+  "why": "Might I suggest는 may보다 한층 공손한 격식 제안이다."
+ },
+ "snape-2-030": {
+  "blank": "get rid of",
+  "options": [
+   "get rid off",
+   "get free of",
+   "take rid of"
+  ],
+  "why": "get rid of는 '없애다, 치우다'의 기본 구동사다."
+ },
+ "snape-2-055": {
+  "blank": "Your moment has come",
+  "options": [
+   "Your moment has gone",
+   "Your moment has reached",
+   "Your moment has made"
+  ],
+  "why": "장중한 Your moment has come을 겁쟁이에게 던져 비꼰다."
+ },
+ "snape-2-056": {
+  "blank": "all along",
+  "options": [
+   "all over",
+   "all through",
+   "all the way"
+  ],
+  "why": "all along은 '처음부터 쭉'이라는 관용 부사구다."
+ },
+ "snape-3-001": {
+  "blank": "Nor anywhere else",
+  "options": [
+   "Neither anywhere else",
+   "Nor nowhere else",
+   "Either anywhere else"
+  ],
+  "why": "부정문 뒤 Nor로 '~도 아니다'를 단정히 덧붙인다."
+ },
+ "snape-3-002": {
+  "blank": "on one's own",
+  "options": [
+   "by one's own",
+   "on oneself",
+   "in one's own"
+  ],
+  "why": "격식 대명사 one과 on one's own(혼자 힘으로)을 쓴다."
+ },
+ "snape-3-003": {
+  "blank": "prior to the start",
+  "options": [
+   "prior from the start",
+   "prior of the start",
+   "before to the start"
+  ],
+  "why": "prior to는 before의 격식형이다."
+ },
+ "snape-3-004": {
+  "blank": "Turn to",
+  "options": [
+   "Turn on",
+   "Turn at",
+   "Turn into"
+  ],
+  "why": "turn to page ~는 '~쪽을 펴라'의 기본 연어다."
+ },
+ "snape-3-005.1": {
+  "blank": "is it",
+  "options": [
+   "isn't it",
+   "huh",
+   "does it"
+  ],
+  "why": "부정문 뒤 긍정 꼬리 is it?으로 반박을 막는 부가의문문이다."
+ },
+ "snape-3-005.2": {
+  "blank": "Suffice it to say",
+  "options": [
+   "Suffice to saying",
+   "Sufficient it to say",
+   "Suffice it saying"
+  ],
+  "why": "Suffice it to say는 '~라고만 해 두겠다'는 격식 고정구다."
+ },
+ "snape-3-007": {
+  "blank": "Which of you",
+  "options": [
+   "Who of you",
+   "Whom of you",
+   "What of you"
+  ],
+  "why": "Which of you는 '너희 중 누가'를 뜻하는 격식 교사 화법이다."
+ },
+ "snape-3-008": {
+  "blank": "How",
+  "options": [
+   "What",
+   "Too",
+   "Such"
+  ],
+  "why": "How + 형용사 감탄문으로 차갑게 평가하는 격식 반어다."
+ },
+ "snape-3-009.1": {
+  "blank": "one must admit",
+  "options": [
+   "one must allow",
+   "one must accept",
+   "one must agree"
+  ],
+  "why": "one must admit to는 I have to admit의 격식형이다."
+ },
+ "snape-3-009.2": {
+  "blank": "spoken out of turn",
+  "options": [
+   "spoken out of time",
+   "spoken off turn",
+   "spoken over turn"
+  ],
+  "why": "speak out of turn은 차례 아닌데 말하다는 관용구다."
+ },
+ "snape-3-009.3": {
+  "blank": "insufferable",
+  "options": [
+   "insufficient",
+   "unsufferable",
+   "unbearing"
+  ],
+  "why": "insufferable은 annoying보다 차갑고 경멸적인 격식어다."
+ },
+ "snape-3-010.1": {
+  "blank": "from",
+  "options": [
+   "of",
+   "out",
+   "for"
+  ],
+  "why": "감점은 'points from + 기숙사'로 말하며 for는 가점이다."
+ },
+ "snape-3-010.2": {
+  "blank": "I prescribe",
+  "options": [
+   "I describe",
+   "I proscribe",
+   "I subscribe"
+  ],
+  "why": "숙제를 약처럼 '처방한다'고 비꼬는 약제사식 비유다."
+ },
+ "snape-3-011.1": {
+  "blank": "Not exactly",
+  "options": [
+   "Not exact",
+   "Not precisely",
+   "Not accurately"
+  ],
+  "why": "not exactly는 '전혀 아니다'를 돌려 말하는 절제 표현이다."
+ },
+ "snape-3-011.2": {
+  "blank": "pitch",
+  "options": [
+   "field",
+   "court",
+   "ground"
+  ],
+  "why": "영국은 경기장을 pitch, 미국은 field라고 한다."
+ },
+ "snape-3-011.3": {
+  "blank": "I fear",
+  "options": [
+   "I scare",
+   "I'm feared",
+   "I frighten"
+  ],
+  "why": "I fear는 우려를 담아 예측하는 격식 표현이다."
+ },
+ "snape-3-011.4": {
+  "blank": "let you off",
+  "options": [
+   "let you out",
+   "get you off",
+   "let you from"
+  ],
+  "why": "let someone off는 '~을 면제해 주다'라는 구동사다."
+ },
+ "snape-3-011.5": {
+  "blank": "Should you die",
+  "options": [
+   "Shall you die",
+   "Would you die",
+   "Could you die"
+  ],
+  "why": "if를 빼고 should를 앞세운 격식 도치 가정문이다."
+ },
+ "snape-3-012": {
+  "blank": "the corridors",
+  "options": [
+   "the hallways",
+   "the aisles",
+   "the lanes"
+  ],
+  "why": "건물 안 복도는 영국에서 corridor가 기본어다."
+ },
+ "snape-3-013": {
+  "blank": "exceedingly",
+  "options": [
+   "super",
+   "exceedly",
+   "way too"
+  ],
+  "why": "exceedingly는 very의 격식형으로 '극도로'를 뜻한다."
+ },
+ "snape-3-014": {
+  "blank": "Turn out",
+  "options": [
+   "Turn off",
+   "Turn over",
+   "Turn up"
+  ],
+  "why": "turn out your pockets는 주머니를 비우라는 영국식 구동사다."
+ },
+ "snape-3-016": {
+  "blank": "might",
+  "options": [
+   "must",
+   "shall",
+   "ought"
+  ],
+  "why": "might로 짐짓 정중하게 캐물으며 비꼬는 어법이다."
+ },
+ "snape-3-017": {
+  "blank": "Reveal",
+  "options": [
+   "Revel",
+   "Release",
+   "Relieve"
+  ],
+  "why": "reveal은 숨긴 것을 '드러내다'라는 뜻의 동사다."
+ },
+ "snape-3-020": {
+  "blank": "insolent",
+  "options": [
+   "insistent",
+   "indolent",
+   "insolvent"
+  ],
+  "why": "insolent는 윗사람에게 건방지다는 뜻의 격식어다."
+ },
+ "snape-3-021": {
+  "blank": "are we",
+  "options": [
+   "huh",
+   "do we",
+   "have we"
+  ],
+  "why": "같은 방향 꼬리 are we?로 내려다보며 비꼰다."
+ },
+ "snape-3-022.1": {
+  "blank": "That remains to be seen",
+  "options": [
+   "We'll just see",
+   "That remains to see",
+   "That stays to be seen"
+  ],
+  "why": "판단을 유보하는 격식 관용구는 remains to be seen이다."
+ },
+ "snape-3-022.2": {
+  "blank": "area of expertise",
+  "options": [
+   "expert stuff",
+   "zone of expertise",
+   "area of experts"
+  ],
+  "why": "'전문 분야'는 격식 연어 area of expertise로 말한다."
+ },
+ "snape-3-023": {
+  "blank": "full of",
+  "options": [
+   "full in",
+   "full with",
+   "filled of"
+  ],
+  "why": "'~로 가득하다'는 full of가 정확한 연어다."
+ },
+ "snape-3-025": {
+  "blank": "vengeance is sweet",
+  "options": [
+   "payback feels good",
+   "vengeance is sugary",
+   "vengeance tastes sweetly"
+  ],
+  "why": "vengeance는 revenge보다 격식 있고 문학적인 어휘다."
+ },
+ "snape-3-026": {
+  "blank": "old friend",
+  "options": [
+   "old buddy",
+   "aged friend",
+   "former buddy"
+  ],
+  "why": "buddy는 미국 구어라 격식 대사엔 old friend가 맞다."
+ },
+ "snape-3-027": {
+  "blank": "I beg you",
+  "options": [
+   "I'm begging ya",
+   "I beg to you",
+   "I pray you"
+  ],
+  "why": "I beg you는 please보다 강하고 극적인 격식 간청이다."
+ },
+ "snape-3-028": {
+  "blank": "Quarreling",
+  "options": [
+   "Disputing",
+   "Quarrying",
+   "Debating"
+  ],
+  "why": "영미 공통 동사 quarrel의 영국 철자는 quarrelling이다."
+ },
+ "snape-3-029.1": {
+  "blank": "as ever",
+  "options": [
+   "as usually",
+   "like ever",
+   "as forever"
+  ],
+  "why": "as ever는 '변함없이, 여전히'라는 격식 관용구다."
+ },
+ "snape-3-029.2": {
+  "blank": "Do I detect",
+  "options": [
+   "Do I find",
+   "Do I catch on",
+   "Do I discover"
+  ],
+  "why": "detect는 notice의 격식어로 속마음을 꿰뚫는 반어 표현이다."
+ },
+ "snape-3-029.3": {
+  "blank": "One can only imagine",
+  "options": [
+   "Someone can only imagine",
+   "One can only dream",
+   "One can solely imagine"
+  ],
+  "why": "총칭 주어 one은 영국 격식체의 대표적 특징이다."
+ },
+ "snape-3-029.4": {
+  "blank": "unbearable to witness",
+  "options": [
+   "awful to watch",
+   "unbearable to spectate",
+   "insufferable to eye"
+  ],
+  "why": "'지켜보기 힘들다'를 격식 어휘 unbearable, witness로 표현했다."
+ },
+ "snape-4-001.1": {
+  "blank": "find it difficult to believe",
+  "options": [
+   "don't buy",
+   "feel it difficult to believe",
+   "find it tough believing"
+  ],
+  "why": "find it difficult to believe는 단정을 피하는 격식 틀이다."
+ },
+ "snape-4-001.2": {
+  "blank": "if we are to",
+  "options": [
+   "if we're gonna",
+   "if we are for",
+   "if we have to"
+  ],
+  "why": "if we are to는 '~하려면'이라는 목적 조건의 격식 구문이다."
+ },
+ "snape-4-002": {
+  "blank": "am I correct",
+  "options": [
+   "right",
+   "am I correctly",
+   "do I correct"
+  ],
+  "why": "am I correct는 right?의 격식판 확인 의문이다."
+ },
+ "snape-4-003": {
+  "blank": "rather",
+  "options": [
+   "pretty",
+   "kinda",
+   "real"
+  ],
+  "why": "rather는 pretty보다 격식 있는, 영국에서 흔한 정도부사다."
+ },
+ "snape-4-004.1": {
+  "blank": "spill his darkest secrets",
+  "options": [
+   "pour his darkest secrets",
+   "drop his darkest secrets",
+   "leak his blackest secrets"
+  ],
+  "why": "spill one's secrets는 '비밀을 털어놓다'라는 관용 연어다."
+ },
+ "snape-4-004.2": {
+  "blank": "regrettably",
+  "options": [
+   "too bad",
+   "regretfully",
+   "sorrily"
+  ],
+  "why": "regrettably는 문장 전체를 꾸미는 '유감스럽게도'의 격식 부사다."
+ },
+ "snape-4-004.3": {
+  "blank": "should you ever",
+  "options": [
+   "would you ever",
+   "did you ever",
+   "shall you ever"
+  ],
+  "why": "should를 앞으로 낸 도치 조건문은 영미 공통 격식체다."
+ },
+ "snape-4-005.1": {
+  "blank": "innocuous",
+  "options": [
+   "no big deal",
+   "innocent",
+   "ingenuous"
+  ],
+  "why": "innocuous는 harmless의 격식어로 '해가 없는'이란 뜻이다."
+ },
+ "snape-4-005.2": {
+  "blank": "brewing",
+  "options": [
+   "baking",
+   "boiling",
+   "stewing"
+  ],
+  "why": "물약을 '달여 만들다'는 brew가 정확한 연어다."
+ },
+ "snape-5-001": {
+  "blank": "I'd like a word",
+  "options": [
+   "I need to talk",
+   "I'd like a talking",
+   "I'd want a word"
+  ],
+  "why": "I'd like a word는 윗사람이 불러 세울 때 쓰는 관용구다."
+ },
+ "snape-5-003": {
+  "blank": "How unfortunate",
+  "options": [
+   "Too bad",
+   "Bummer",
+   "Tough luck"
+  ],
+  "why": "How unfortunate는 동정하는 척 비꼬는 격식 감탄문이다."
+ },
+ "snape-5-004": {
+  "blank": "Very well, then",
+  "options": [
+   "Okay, fine",
+   "Well good, then",
+   "Very fine, then"
+  ],
+  "why": "Very well은 마지못한 동의를 나타내는 격식 표현이다."
+ },
+ "snape-5-005": {
+  "blank": "wish",
+  "options": [
+   "want",
+   "wishing",
+   "hoping"
+  ],
+  "why": "It is X's wish that은 '~가 바란다'의 격식 구문이다."
+ },
+ "snape-5-006.1": {
+  "blank": "external intrusion",
+  "options": [
+   "outside breaking-in",
+   "foreign intruding",
+   "exterior intrusion"
+  ],
+  "why": "external intrusion은 '외부 침입'의 라틴계 격식 어휘다."
+ },
+ "snape-5-006.2": {
+  "blank": "We begin",
+  "options": [
+   "We're gonna start",
+   "We kick off",
+   "We get going"
+  ],
+  "why": "단순현재 We begin은 일정을 통보하는 권위적 어조다."
+ },
+ "snape-5-007": {
+  "blank": "unlimited leisure time",
+  "options": [
+   "unlimited pastime",
+   "unlimited leisure times",
+   "limitless free hours"
+  ],
+  "why": "딱딱한 leisure time으로 절제된 비꼼을 만든다."
+ },
+ "snape-5-008": {
+  "blank": "How touching",
+  "options": [
+   "Aw, that's sweet",
+   "How touched",
+   "What touching"
+  ],
+  "why": "How touching은 감동한 척 상대의 진심을 비웃는 감탄문이다."
+ },
+ "snape-5-009": {
+  "blank": "one more time",
+  "options": [
+   "one time more",
+   "one more times",
+   "one more once"
+  ],
+  "why": "'한 번만 더'는 one more time이 관용 표현이다."
+ },
+ "snape-5-011.1": {
+  "blank": "As you are well aware",
+  "options": [
+   "As you're aware of",
+   "As you are good aware",
+   "Like you know well"
+  ],
+  "why": "As you are well aware는 '잘 알다시피'의 격식 도입구다."
+ },
+ "snape-5-011.2": {
+  "blank": "skilled at",
+  "options": [
+   "good in",
+   "skilled on",
+   "skillful of"
+  ],
+  "why": "skilled at은 good at보다 격식 있는 평가 어휘다."
+ },
+ "snape-5-012": {
+  "blank": "extract",
+  "options": [
+   "pull out",
+   "extort",
+   "exact"
+  ],
+  "why": "extract는 '끄집어내다'의 차갑고 전문적인 격식 동사다."
+ },
+ "snape-5-013.1": {
+  "blank": "all the subtlety of",
+  "options": [
+   "all the subtle of",
+   "the whole subtlety of",
+   "every subtlety of"
+  ],
+  "why": "all the X of a Y는 'X가 전혀 없다'는 반어적 비꼼이다."
+ },
+ "snape-5-013.2": {
+  "blank": "of which",
+  "options": [
+   "which of",
+   "of what",
+   "from which"
+  ],
+  "why": "of which는 강의조 말투를 만드는 격식 관계절이다."
+ },
+ "snape-5-014.1": {
+  "blank": "somewhat different",
+  "options": [
+   "kind of different",
+   "somehow different",
+   "sort different"
+  ],
+  "why": "somewhat은 kind of보다 격식 있는 정도부사다."
+ },
+ "snape-5-014.2": {
+  "blank": "forged",
+  "options": [
+   "faked",
+   "smithed",
+   "minted"
+  ],
+  "why": "forge a connection은 '유대를 맺다'라는 격식 연어다."
+ },
+ "snape-5-014.3": {
+  "blank": "such as during sleep",
+  "options": [
+   "like when you're asleep",
+   "such as while sleep",
+   "such like during sleep"
+  ],
+  "why": "such as는 구어 like에 해당하는 격식 예시 표현이다."
+ },
+ "snape-5-014.4": {
+  "blank": "inadvisable",
+  "options": [
+   "a bad idea",
+   "inadvised",
+   "unadvised"
+  ],
+  "why": "inadvisable은 직접 명령을 피하는 격식 형용사다."
+ },
+ "snape-5-015.1": {
+  "blank": "at the expense of",
+  "options": [
+   "at the cost for",
+   "on the expense of",
+   "by the expense of"
+  ],
+  "why": "at the expense of는 '~을 대가로'라는 격식 관용구다."
+ },
+ "snape-5-015.2": {
+  "blank": "became aware of",
+  "options": [
+   "noticed about",
+   "became aware at",
+   "got aware about"
+  ],
+  "why": "became aware of는 noticed보다 격식 있는 보고 어휘다."
+ },
+ "snape-5-015.3": {
+  "blank": "to his advantage",
+  "options": [
+   "for his advantage",
+   "to his benefits",
+   "at his advantage"
+  ],
+  "why": "use ~ to one's advantage는 '유리하게 이용하다'라는 관용구다."
+ },
+ "snape-5-016": {
+  "blank": "Wand out",
+  "options": [
+   "Wand outside",
+   "Wand off",
+   "Wand up"
+  ],
+  "why": "Wand out은 교사가 짧게 지시하는 생략 명령문이다."
+ },
+ "snape-5-017": {
+  "blank": "You may",
+  "options": [
+   "You might",
+   "You shall",
+   "You must"
+  ],
+  "why": "may는 교사가 허락할 때 쓰는 격식 조동사다."
+ },
+ "snape-5-018": {
+  "blank": "I am going to",
+  "options": [
+   "I'm gonna",
+   "I am going for",
+   "I'm fixing to"
+  ],
+  "why": "축약을 피한 I am going to는 차갑게 통보하는 어조다."
+ },
+ "snape-5-019": {
+  "blank": "Ideally",
+  "options": [
+   "Idly",
+   "Idealistically",
+   "Perfectly"
+  ],
+  "why": "Ideally는 실패를 간접 지적하는 완곡한 피드백이다."
+ },
+ "snape-5-020": {
+  "blank": "Abandon",
+  "options": [
+   "Drop",
+   "Desert",
+   "Leave off"
+  ],
+  "why": "abandon은 단호하고 무게 있는 격식 동사다."
+ },
+ "snape-5-022": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr Harry",
+   "Mister"
+  ],
+  "why": "성만으로 부르는 것은 영국 기숙학교식 엄격한 호칭이다."
+ },
+ "snape-5-023": {
+  "blank": "What",
+  "options": [
+   "How",
+   "Which",
+   "Whom"
+  ],
+  "why": "'뭐라고 했지?'는 How가 아니라 What으로 묻는다."
+ },
+ "snape-5-024": {
+  "blank": "none of which",
+  "options": [
+   "none of them",
+   "none which",
+   "no one of which"
+  ],
+  "why": "none of which는 앞 명사를 받아 잇는 격식 관계절이다."
+ },
+ "snape-5-025": {
+  "blank": "practising",
+  "options": [
+   "practicing",
+   "practiceing",
+   "practicising"
+  ],
+  "why": "영국 영어는 동사를 practise, 명사를 practice로 쓴다."
+ },
+ "snape-5-026": {
+  "blank": "we shall see",
+  "options": [
+   "we'll find out",
+   "we should see",
+   "we shall look"
+  ],
+  "why": "1인칭 미래에 shall을 쓰는 것은 영국식 격식 어법이다."
+ },
+ "snape-5-027": {
+  "blank": "on earth",
+  "options": [
+   "the heck",
+   "on the earth",
+   "in earth"
+  ],
+  "why": "on earth는 어이없음을 강조하는 영미 공통 강조어다."
+ },
+ "snape-5-028": {
+  "blank": "Any idea",
+  "options": [
+   "Some idea",
+   "An idea",
+   "Got idea"
+  ],
+  "why": "Any idea ...?는 Do you have any idea의 생략형이다."
+ },
+ "snape-5-029": {
+  "blank": "remedial",
+  "options": [
+   "makeup",
+   "remedy",
+   "remediating"
+  ],
+  "why": "remedial은 뒤처진 학생을 위한 '보충'의 교육 용어다."
+ },
+ "snape-5-030": {
+  "blank": "just wait",
+  "options": [
+   "just hold",
+   "only wait",
+   "just stay"
+  ],
+  "why": "'You just wait'는 '두고 봐'라는 위협의 구어 관용구다."
+ },
+ "snape-5-032": {
+  "blank": "help from",
+  "options": [
+   "help by",
+   "help of",
+   "helping from"
+  ],
+  "why": "도움의 출처는 help from으로 나타낸다."
+ },
+ "snape-5-033": {
+  "blank": "Having fun",
+  "options": [
+   "Doing fun",
+   "Making fun",
+   "Having funs"
+  ],
+  "why": "'Having fun?'은 'Are you having fun?'의 생략형이다."
+ },
+ "snape-5-034": {
+  "blank": "enjoying yourself",
+  "options": [
+   "enjoying you",
+   "enjoying with yourself",
+   "enjoying of yourself"
+  ],
+  "why": "enjoy oneself는 '즐겁게 지내다'라는 재귀 표현이다."
+ },
+ "snape-5-035": {
+  "blank": "Amusing",
+  "options": [
+   "Amused",
+   "Funny",
+   "Laughing"
+  ],
+  "why": "funny보다 격식 있는 amusing으로 차갑게 비꼰다."
+ },
+ "snape-5-036": {
+  "blank": "to no one",
+  "options": [
+   "for no one",
+   "to none",
+   "with no one"
+  ],
+  "why": "to no one으로 부정을 명사에 실어 단호하게 명한다."
+ },
+ "snape-5-037": {
+  "blank": "You had better not",
+  "options": [
+   "You would better not",
+   "You have better not",
+   "You'd rather not"
+  ],
+  "why": "had better not을 축약 없이 말해 경고에 무게를 싣는다."
+ },
+ "snape-5-038": {
+  "blank": "set foot in",
+  "options": [
+   "put foot in",
+   "set feet in",
+   "step foot into"
+  ],
+  "why": "set foot in은 '~에 발을 들이다'라는 격식 관용구다."
+ },
+ "snape-5-039": {
+  "blank": "wished",
+  "options": [
+   "longed",
+   "hoped",
+   "desired"
+  ],
+  "why": "want 대신 wish to를 써서 격식을 갖춘 응대다."
+ },
+ "snape-5-040": {
+  "blank": "it appears that",
+  "options": [
+   "it looks that",
+   "it seems like that",
+   "it shows that"
+  ],
+  "why": "it appears that은 단정을 피하는 정중한 격식 표현이다."
+ },
+ "snape-5-041": {
+  "blank": "I shall inform you",
+  "options": [
+   "I'll let you know",
+   "I shall informed you",
+   "I will inform to you"
+  ],
+  "why": "1인칭 shall과 inform을 쓴 영국식 격식체다."
+ },
+ "snape-6-001": {
+  "blank": "Run along",
+  "options": [
+   "Run away",
+   "Run around",
+   "Walk along"
+  ],
+  "why": "Run along은 아랫사람을 내보내는 관용구다."
+ },
+ "snape-6-002.1": {
+  "blank": "ought not to",
+  "options": [
+   "have not to",
+   "must not to",
+   "need not to"
+  ],
+  "why": "ought not to는 should not보다 격식 있는 당위다."
+ },
+ "snape-6-002.2": {
+  "blank": "mustn't",
+  "options": [
+   "don't have to",
+   "needn't",
+   "haven't to"
+  ],
+  "why": "금지의 mustn't는 영국에서 일상적으로 쓰인다."
+ },
+ "snape-6-003": {
+  "blank": "As it so happens",
+  "options": [
+   "As it so occurs",
+   "So as it happens",
+   "As it so chances"
+  ],
+  "why": "As it happens는 '공교롭게도'라는 영국식 관용구다."
+ },
+ "snape-6-004.1": {
+  "blank": "Understandable",
+  "options": [
+   "Understood",
+   "Understanding",
+   "Understandably"
+  ],
+  "why": "Understandable은 '그럴 만하다'는 형용사 한마디 평이다."
+ },
+ "snape-6-004.2": {
+  "blank": "played my part",
+  "options": [
+   "played my piece",
+   "played my share",
+   "made my part"
+  ],
+  "why": "play one's part는 '맡은 역할을 해내다'라는 관용구다."
+ },
+ "snape-6-004.3": {
+  "blank": "Only a fool would",
+  "options": [
+   "Just a fool would",
+   "Alone a fool would",
+   "Only fool would"
+  ],
+  "why": "Only a fool would는 돌려서 단정하는 격식 화법이다."
+ },
+ "snape-6-005.1": {
+  "blank": "change",
+  "options": [
+   "switch",
+   "turn",
+   "move"
+  ],
+  "why": "change one's mind는 '마음을 돌리다'라는 연어다."
+ },
+ "snape-6-005.2": {
+  "blank": "it might be possible",
+  "options": [
+   "it might be able",
+   "it might be capable",
+   "it might be likely"
+  ],
+  "why": "might be possible로 확답을 피하며 조심스레 제안한다."
+ },
+ "snape-6-006": {
+  "blank": "can try",
+  "options": [
+   "can trying",
+   "may try",
+   "can to try"
+  ],
+  "why": "조동사 can 뒤에는 동사원형 try가 온다."
+ },
+ "snape-6-007": {
+  "blank": "Take out",
+  "options": [
+   "Take off",
+   "Pull up",
+   "Get off"
+  ],
+  "why": "take out은 '꺼내다'를 뜻하는 구동사다."
+ },
+ "snape-6-011": {
+  "blank": "his father's",
+  "options": [
+   "his father",
+   "of his father",
+   "his fathers'"
+  ],
+  "why": "father's만으로 '아버지의 것'이라는 소유를 나타낸다."
+ },
+ "snape-6-012": {
+  "blank": "vouch for",
+  "options": [
+   "vouch to",
+   "vouch on",
+   "answer to"
+  ],
+  "why": "vouch for는 '신원을 보증하다'라는 격식 동사다."
+ },
+ "snape-6-013": {
+  "blank": "it",
+  "options": [
+   "that",
+   "them",
+   "its"
+  ],
+  "why": "'Is this it?'은 '이게 그것인가?'라는 관용 확인이다."
+ },
+ "snape-6-014": {
+  "blank": "Miss Bell",
+  "options": [
+   "Katie",
+   "Miss Katie",
+   "Mrs Bell"
+  ],
+  "why": "학생을 Miss+성으로 부르는 영국 전통 호칭이다."
+ },
+ "snape-6-015": {
+  "blank": "Indeed",
+  "options": [
+   "Right",
+   "Indeedy",
+   "Surely"
+  ],
+  "why": "Indeed는 영국식 격식 대화에서 흔한 맞장구다."
+ },
+ "snape-6-016.1": {
+  "blank": "mere mortals",
+  "options": [
+   "mere humans",
+   "only mortals",
+   "simple mortals"
+  ],
+  "why": "mere mortals는 '한낱 범인들'이라는 반어 관용구다."
+ },
+ "snape-6-016.2": {
+  "blank": "How grand it must be",
+  "options": [
+   "What grand it must be",
+   "So grand it must be",
+   "How grand it should be"
+  ],
+  "why": "How+형용사+it must be to는 격식 감탄문이다."
+ },
+ "snape-6-017": {
+  "blank": "going on",
+  "options": [
+   "going in",
+   "happening on",
+   "coming on"
+  ],
+  "why": "What's going on?은 '무슨 일이냐'는 관용 질문이다."
+ },
+ "snape-6-018": {
+  "blank": "You've just",
+  "options": [
+   "You just",
+   "You're just",
+   "You'd just"
+  ],
+  "why": "방금 일은 영국식으로 just+현재완료로 말한다."
+ },
+ "snape-6-019": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr Harry",
+   "boy Potter"
+  ],
+  "why": "성만 부르는 것은 옛 영국 기숙학교식 호칭이다."
+ },
+ "snape-6-020": {
+  "blank": "convey",
+  "options": [
+   "pass",
+   "tell",
+   "talk"
+  ],
+  "why": "convey는 pass on을 대신하는 격식 문어 동사다."
+ },
+ "snape-6-021.1": {
+  "blank": "give you his best",
+  "options": [
+   "give you his good",
+   "give you his better",
+   "give you his finest"
+  ],
+  "why": "give someone one's best는 '안부를 전하다'라는 뜻이다."
+ },
+ "snape-6-021.2": {
+  "blank": "term resumes",
+  "options": [
+   "semester resumes",
+   "term returns",
+   "session resumes"
+  ],
+  "why": "영국 학교 학기는 term이고 resume은 격식형이다."
+ },
+ "snape-6-022": {
+  "blank": "escort",
+  "options": [
+   "escape",
+   "bring",
+   "company"
+  ],
+  "why": "escort는 공적으로 데리고 나가는 격식 동사다."
+ },
+ "snape-6-023": {
+  "blank": "made",
+  "options": [
+   "did",
+   "gave",
+   "had"
+  ],
+  "why": "make a vow는 '엄숙히 맹세하다'라는 연어다."
+ },
+ "snape-6-024": {
+  "blank": "attempt to conceal",
+  "options": [
+   "try to hide",
+   "attempt concealing",
+   "attempt for concealing"
+  ],
+  "why": "try to hide의 격식형 attempt to conceal로 절제한다."
+ },
+ "snape-6-025.1": {
+  "blank": "Have you ever considered",
+  "options": [
+   "Did you ever consider",
+   "Have you ever considering",
+   "Have you ever regarded"
+  ],
+  "why": "consider로 완곡하게 이의를 제기하는 격식 질문이다."
+ },
+ "snape-6-025.2": {
+  "blank": "crossed",
+  "options": [
+   "passed",
+   "occurred",
+   "crossed over"
+  ],
+  "why": "cross one's mind는 '생각이 스치다'라는 관용구다."
+ },
+ "snape-6-027": {
+  "blank": "gave my word",
+  "options": [
+   "gave my words",
+   "said my word",
+   "made my word"
+  ],
+  "why": "give one's word는 명예를 건 무거운 약속이다."
+ },
+ "snape-6-029": {
+  "blank": "can no longer",
+  "options": [
+   "can not longer",
+   "can any longer",
+   "can no long"
+  ],
+  "why": "can't ~ anymore 대신 쓰는 격식 구조 can no longer다."
+ },
+ "snape-6-030": {
+  "blank": "Go",
+  "options": [
+   "Move",
+   "Keep",
+   "Run"
+  ],
+  "why": "Go on!은 '어서 가!' 하고 재촉하는 짧은 명령이다."
+ },
+ "snape-6-032": {
+  "blank": "associate",
+  "options": [
+   "relate",
+   "assemble",
+   "attach"
+  ],
+  "why": "associate는 '연관 짓다'라는 격식 문어 동사다."
+ },
+ "snape-6-033": {
+  "blank": "belongs to",
+  "options": [
+   "belongs for",
+   "belongs with",
+   "is belonging to"
+  ],
+  "why": "belong to는 '~의 것이다'라는 소유 연어다."
+ },
+ "snape-6-034": {
+  "blank": "You dare use",
+  "options": [
+   "You dare using",
+   "You daring use",
+   "You dare used"
+  ],
+  "why": "조동사 dare 뒤엔 동사원형이 와 '감히 ~하느냐'가 된다."
+ },
+ "snape-6-035.1": {
+  "blank": "dim",
+  "options": [
+   "dumb",
+   "dimmed",
+   "dark"
+  ],
+  "why": "dim은 '머리가 둔한'이라는 영국 구어다."
+ },
+ "snape-6-035.2": {
+  "blank": "It's me",
+  "options": [
+   "It's mine",
+   "Is me",
+   "It's myself"
+  ],
+  "why": "정체를 밝힐 때는 It's me라고 말한다."
+ },
+ "snape-7-001": {
+  "blank": "Saturday next",
+  "options": [
+   "Saturday later",
+   "Saturday after",
+   "Saturday soon"
+  ],
+  "why": "Saturday next는 next Saturday의 격식 영국 어순이다."
+ },
+ "snape-7-002": {
+  "blank": "discussed",
+  "options": [
+   "discussed about",
+   "talked",
+   "spoke"
+  ],
+  "why": "discuss는 about 없이 쓰는 타동사다."
+ },
+ "snape-7-003.1": {
+  "blank": "plays any part in",
+  "options": [
+   "plays any role on",
+   "does any part in",
+   "takes any part on"
+  ],
+  "why": "play a part in은 '~에 관여하다'라는 격식 구문이다."
+ },
+ "snape-7-003.2": {
+  "blank": "Those closest to him",
+  "options": [
+   "These closest to him",
+   "Them closest to him",
+   "Those closest with him"
+  ],
+  "why": "those+형용사구로 사람들을 가리키는 격식 표현이다."
+ },
+ "snape-7-004.1": {
+  "blank": "someone in the Order",
+  "options": [
+   "someone on the Order",
+   "someone at the Order",
+   "someone by the Order"
+  ],
+  "why": "단체의 일원은 in the Order처럼 in으로 나타낸다."
+ },
+ "snape-7-004.2": {
+  "blank": "every manner of",
+  "options": [
+   "every manners of",
+   "every manner for",
+   "every way of"
+  ],
+  "why": "every manner of는 all kinds of의 격식·문어형이다."
+ },
+ "snape-7-004.3": {
+  "blank": "remain loyal to",
+  "options": [
+   "remain loyal for",
+   "rest loyal to",
+   "remain loyal with"
+  ],
+  "why": "remain loyal to는 '~에게 충성을 지키다'라는 연어다."
+ },
+ "snape-7-004.4": {
+  "blank": "at their disposal",
+  "options": [
+   "at their disposition",
+   "in their disposal",
+   "on their disposal"
+  ],
+  "why": "at one's disposal은 '마음대로 쓸 수 있는'이라는 관용구다."
+ }
+}

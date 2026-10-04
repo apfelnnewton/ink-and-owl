@@ -1,0 +1,1100 @@
+{
+ "moody-4-001": {
+  "blank": "Stupid",
+  "options": [
+   "Dumb",
+   "Goofy",
+   "Dorky"
+  ],
+  "why": "dumb은 미국 구어이고 영국에서는 stupid가 기본이다."
+ },
+ "moody-4-003.1": {
+  "blank": "malcontent",
+  "options": [
+   "troublemaker",
+   "complainer",
+   "discontent"
+  ],
+  "why": "체제에 불만을 품은 사람을 가리키는 격식 명사다."
+ },
+ "moody-4-003.2": {
+  "blank": "End of story",
+  "options": [
+   "Period",
+   "End of the story",
+   "Story's end"
+  ],
+  "why": "더 말하지 않겠다고 못 박는 고정 관용구다."
+ },
+ "moody-4-003.3": {
+  "blank": "When it comes to",
+  "options": [
+   "When it goes to",
+   "When it talks about",
+   "As it comes to"
+  ],
+  "why": "'~에 관한 한'은 when it comes to로 고정된 관용구다."
+ },
+ "moody-4-003.4": {
+  "blank": "which of you",
+  "options": [
+   "whichever of you",
+   "what of you",
+   "which from you"
+  ],
+  "why": "청중 중 누구인지 물을 때는 which of you가 정확하다."
+ },
+ "moody-4-004": {
+  "blank": "so named",
+  "options": [
+   "named so",
+   "such named",
+   "that called"
+  ],
+  "why": "'so + 과거분사'로 그렇게 불리는 이유를 묻는 문어체다."
+ },
+ "moody-4-005.1": {
+  "blank": "a one-way ticket",
+  "options": [
+   "a single-way ticket",
+   "a one-time ticket",
+   "a one-direction ticket"
+  ],
+  "why": "돌아올 수 없는 길을 뜻하는 관용구는 one-way ticket이다."
+ },
+ "moody-4-005.2": {
+  "blank": "I say different",
+  "options": [
+   "I say other",
+   "I talk different",
+   "I tell different"
+  ],
+  "why": "'내 생각은 다르다'를 구어로 끊어 말하는 대구 표현이다."
+ },
+ "moody-4-005.3": {
+  "blank": "up against",
+  "options": [
+   "up for",
+   "up to",
+   "set against"
+  ],
+  "why": "맞서야 할 상대나 난관은 be up against로 표현한다."
+ },
+ "moody-4-005.4": {
+  "blank": "Mr Finnigan",
+  "options": [
+   "Mr. Finnigan",
+   "Mister Finnigan",
+   "Sir Finnigan"
+  ],
+  "why": "영국식 표기는 Mr 뒤에 마침표를 찍지 않는다."
+ },
+ "moody-4-006": {
+  "blank": "shall we see",
+  "options": [
+   "will we see",
+   "would we see",
+   "must we see"
+  ],
+  "why": "의향을 물을 때 shall we는 영국영어에서 자연스럽다."
+ },
+ "moody-4-007": {
+  "blank": "Give us",
+  "options": [
+   "Give to us",
+   "Hand us",
+   "Pass us"
+  ],
+  "why": "'Give us + 명사'는 반 전체에 답을 청하는 교실 말투다."
+ },
+ "moody-4-008.1": {
+  "blank": "know all about",
+  "options": [
+   "know all of",
+   "know everything of",
+   "know all on"
+  ],
+  "why": "'~을 훤히 알다'는 know all about으로 쓴다."
+ },
+ "moody-4-008.2": {
+  "blank": "quite a bit of grief",
+  "options": [
+   "a whole lot of trouble",
+   "quite a bit of sorrow",
+   "quite a bit of grieving"
+  ],
+  "why": "애먹인 일을 절제해 말하는 give someone grief 구문이다."
+ },
+ "moody-4-009": {
+  "blank": "a little beauty",
+  "options": [
+   "a small beauty",
+   "a little prettiness",
+   "a tiny beautiful"
+  ],
+  "why": "멋진 것을 애정 담아 부르는 구어 표현은 a little beauty다."
+ },
+ "moody-4-010": {
+  "blank": "Completely harmless",
+  "options": [
+   "Fully harmless",
+   "Completely unharmful",
+   "Entirely no harm"
+  ],
+  "why": "주어·동사를 빼고 '부사+형용사'로 단정하는 구어다."
+ },
+ "moody-4-011": {
+  "blank": "she's lethal",
+  "options": [
+   "she's deadful",
+   "she's killing",
+   "she's mortal"
+  ],
+  "why": "치명적이라는 뜻의 정확한 형용사는 lethal이다."
+ },
+ "moody-4-012": {
+  "blank": "laughing at",
+  "options": [
+   "laughing on",
+   "laughing to",
+   "laughing for"
+  ],
+  "why": "웃음의 대상은 전치사 at으로 나타낸다."
+ },
+ "moody-4-013": {
+  "blank": "isn't she",
+  "options": [
+   "huh",
+   "right",
+   "doesn't she"
+  ],
+  "why": "영국 구어는 동의를 구할 때 부가의문문을 즐겨 쓴다."
+ },
+ "moody-4-014.1": {
+  "blank": "bidding",
+  "options": [
+   "bids",
+   "orders",
+   "biddance"
+  ],
+  "why": "'시키는 대로 하다'는 do someone's bidding으로 고정된다."
+ },
+ "moody-4-014.2": {
+  "blank": "here's the rub",
+  "options": [
+   "here's the rubbing",
+   "here's the snub",
+   "here's the scrub"
+  ],
+  "why": "'문제는 이거다'라는 셰익스피어 유래의 영미 공통 관용구다."
+ },
+ "moody-4-014.3": {
+  "blank": "is it",
+  "options": [
+   "right",
+   "is he",
+   "do you"
+  ],
+  "why": "이름을 확인할 때 명사 뒤에 is it을 붙이는 영국식 말버릇이다."
+ },
+ "moody-4-015": {
+  "blank": "have an aptitude for",
+  "options": [
+   "have an aptitude at",
+   "have an attitude for",
+   "have a knack in"
+  ],
+  "why": "소질이 있다는 격식 표현은 have an aptitude for다."
+ },
+ "moody-4-016": {
+  "blank": "Particularly nasty",
+  "options": [
+   "Particularly gross",
+   "Peculiarly nasty",
+   "Particularly nastily"
+  ],
+  "why": "끔찍한 저주를 nasty로 줄여 말하는 영국식 절제 표현이다."
+ },
+ "moody-4-017": {
+  "blank": "Perhaps you could",
+  "options": [
+   "Maybe you can",
+   "Perhaps you shall",
+   "Possibly you might"
+  ],
+  "why": "공손한 제안 형식으로 지시하는 영국식 완곡 명령이다."
+ },
+ "moody-4-018": {
+  "blank": "is known to have survived",
+  "options": [
+   "is known to survive",
+   "is knowing to have survived",
+   "is known having survived"
+  ],
+  "why": "'~한 것으로 알려지다'는 be known to have p.p.로 쓴다."
+ },
+ "moody-4-019": {
+  "blank": "You alright",
+  "options": [
+   "You fine",
+   "You right",
+   "You all fine"
+  ],
+  "why": "안부나 걱정을 묻는 영국 구어는 You alright?이다."
+ },
+ "moody-4-020": {
+  "blank": "have a cup of tea",
+  "options": [
+   "go get some tea",
+   "drink a cup of tea",
+   "make a tea cup"
+  ],
+  "why": "영국에서는 위로할 때 차 한잔을 권하는 것이 정석이다."
+ },
+ "moody-4-021.1": {
+  "blank": "The hell he is",
+  "options": [
+   "The hell he does",
+   "Hell he is not",
+   "The heaven he is"
+  ],
+  "why": "조동사 is로 되받아 '그럴 리가'라고 부정하는 구어다."
+ },
+ "moody-4-021.2": {
+  "blank": "a fourth year",
+  "options": [
+   "a fourth grader",
+   "a fourth-grade",
+   "a four year"
+  ],
+  "why": "영국 학교는 학년을 year로 세어 a fourth year라고 한다."
+ },
+ "moody-4-022": {
+  "blank": "as Dark wizards do",
+  "options": [
+   "like Dark wizards do",
+   "as Dark wizards does",
+   "such Dark wizards do"
+  ],
+  "why": "절 앞에서 like 대신 as를 쓰는 것이 격식체 규범이다."
+ },
+ "moody-4-023": {
+  "blank": "do that",
+  "options": [
+   "make that",
+   "do so that",
+   "do with that"
+  ],
+  "why": "어떤 일을 해내겠다고 할 때는 동사 do를 쓴다."
+ },
+ "moody-4-024": {
+  "blank": "I'll teach you to",
+  "options": [
+   "I'll teach you for",
+   "I'll learn you to",
+   "I'll show you to"
+  ],
+  "why": "대가를 치르게 하겠다는 반어적 위협 관용구다."
+ },
+ "moody-4-026": {
+  "blank": "Technically",
+  "options": [
+   "Technical",
+   "Technologically",
+   "Mechanically"
+  ],
+  "why": "'엄밀히 따지면'이라는 뜻의 부사는 technically다."
+ },
+ "moody-4-027": {
+  "blank": "a threat",
+  "options": [
+   "a threaten",
+   "a threatening",
+   "a menacement"
+  ],
+  "why": "위협이냐고 되물을 때는 명사 threat를 쓴다."
+ },
+ "moody-4-028": {
+  "blank": "curl",
+  "options": [
+   "twist",
+   "frizz",
+   "crimp"
+  ],
+  "why": "섬뜩한 이야기에 '머리가 곱슬해진다'고 하는 관용구다."
+ },
+ "moody-4-029": {
+  "blank": "might've mentioned",
+  "options": [
+   "might've mentioning",
+   "could've mentioned",
+   "must've told"
+  ],
+  "why": "might have로 흐려 말하는 절제 표현이다."
+ },
+ "moody-4-030": {
+  "blank": "Come with",
+  "options": [
+   "Go with",
+   "Come to",
+   "Follow with"
+  ],
+  "why": "자기를 따라오라고 할 때는 come with me라고 한다."
+ },
+ "moody-4-031.1": {
+  "blank": "keep an eye on",
+  "options": [
+   "keep an eye at",
+   "keep the eye on",
+   "watch an eye on"
+  ],
+  "why": "'계속 지켜보다'는 keep an eye on으로 쓴다."
+ },
+ "moody-4-031.2": {
+  "blank": "the whites of their eyes",
+  "options": [
+   "the white of their eye",
+   "the whites in their eyes",
+   "the whiteness of their eyes"
+  ],
+  "why": "'눈의 흰자'는 복수 whites로 쓰는 관용구다."
+ },
+ "moody-4-032.1": {
+  "blank": "bother telling",
+  "options": [
+   "bother to telling",
+   "mind telling",
+   "bother tell"
+  ],
+  "why": "bother 뒤에 -ing를 쓰는 형태는 영국영어에서 더 흔하다."
+ },
+ "moody-4-032.2": {
+  "blank": "do about",
+  "options": [
+   "do with",
+   "make of",
+   "do for"
+  ],
+  "why": "do about는 문제에 어떻게 대처할지 묻는 관용 표현이다."
+ },
+ "moody-4-033.1": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr Harry",
+   "Sir Potter"
+  ],
+  "why": "교사가 학생을 성만으로 부르는 영국 전통식 호칭이다."
+ },
+ "moody-4-033.2": {
+  "blank": "By your age",
+  "options": [
+   "To your age",
+   "On your age",
+   "In your age"
+  ],
+  "why": "By your age는 '네 나이 때 이미'라는 뜻이다."
+ },
+ "moody-4-033.3": {
+  "blank": "as much a",
+  "options": [
+   "as many a",
+   "so much a",
+   "as more a"
+  ],
+  "why": "as much X as I am은 전혀 X가 아니라는 반어다."
+ },
+ "moody-4-033.4": {
+  "blank": "may be",
+  "options": [
+   "must be",
+   "can be",
+   "shall be"
+  ],
+  "why": "양보의 may는 일단 인정한 뒤 반박하는 구문이다."
+ },
+ "moody-4-033.5": {
+  "blank": "play to",
+  "options": [
+   "play for",
+   "play with",
+   "play at"
+  ],
+  "why": "play to one's strengths는 강점을 살린다는 관용구다."
+ },
+ "moody-4-033.6": {
+  "blank": "strengths",
+  "options": [
+   "strongnesses",
+   "forces",
+   "strong sides"
+  ],
+  "why": "strengths는 강점을 뜻하는 명사로 앞 대사를 받는다."
+ },
+ "moody-4-034": {
+  "blank": "fair",
+  "options": [
+   "fairly",
+   "pretty",
+   "fairness"
+  ],
+  "why": "해리의 a fair flyer를 받아 되돌린 영국식 절제 표현이다."
+ },
+ "moody-4-035": {
+  "blank": "allowed",
+  "options": [
+   "allowed to",
+   "let",
+   "accepted"
+  ],
+  "why": "be allowed + 명사는 to 없이 허용된 것을 받는 문형이다."
+ },
+ "moody-4-036.1": {
+  "blank": "Hate to",
+  "options": [
+   "Hate for",
+   "Hating to",
+   "Hated to"
+  ],
+  "why": "Hate to ~, but은 끼어들기 전에 붙이는 상투적 서두다."
+ },
+ "moody-4-036.2": {
+  "blank": "Weasley and Granger",
+  "options": [
+   "Ron and Hermione",
+   "Ronald and Hermione",
+   "Mr Ron and Miss Hermione"
+  ],
+  "why": "학생을 성만으로 부르는 영국 기숙학교식 호칭이다."
+ },
+ "moody-4-037": {
+  "blank": "could do with",
+  "options": [
+   "could use",
+   "could go with",
+   "could make with"
+  ],
+  "why": "could do with는 ~이 필요하다는 영국식 완곡 표현이다."
+ },
+ "moody-4-038": {
+  "blank": "Why don't you",
+  "options": [
+   "Why won't you",
+   "How about you",
+   "Why not you"
+  ],
+  "why": "Why don't you ~?는 지시를 권유로 부드럽게 감싼다."
+ },
+ "moody-4-039": {
+  "blank": "Put",
+  "options": [
+   "Take",
+   "Set",
+   "Lay"
+  ],
+  "why": "물건을 어디에 넣으라고 할 때는 기본 동사 put을 쓴다."
+ },
+ "moody-4-040.1": {
+  "blank": "are we",
+  "options": [
+   "do we",
+   "aren't we",
+   "right"
+  ],
+  "why": "상대에게 we를 써 넌지시 경고하는 영국식 부가의문문이다."
+ },
+ "moody-4-040.2": {
+  "blank": "Last boy who",
+  "options": [
+   "Lastly boy who",
+   "Latest boy who",
+   "Last boy whom"
+  ],
+  "why": "관사 The를 생략하고 핵심부터 던지는 무디식 구어다."
+ },
+ "moody-4-041": {
+  "blank": "mad",
+  "options": [
+   "madly",
+   "angry",
+   "maddened"
+  ],
+  "why": "영국 영어에서 mad는 미쳤다는 뜻으로 흔히 쓴다."
+ },
+ "moody-4-042": {
+  "blank": "may interest you",
+  "options": [
+   "may interest to you",
+   "may interest for you",
+   "may be interested you"
+  ],
+  "why": "정중하게 포장해 상대가 놓친 사실을 꼬집는 격식 표현이다."
+ },
+ "moody-4-043": {
+  "blank": "didn't he",
+  "options": [
+   "right",
+   "did he",
+   "wasn't he"
+  ],
+  "why": "자기 말에 못을 박는 하강조 영국식 부가의문문이다."
+ },
+ "moody-4-044": {
+  "blank": "Prepare yourselves",
+  "options": [
+   "Prepare yourself",
+   "Prepare ourselves",
+   "Prepare yourselfs"
+  ],
+  "why": "Get ready의 격식형으로 각오하라는 무게가 실린다."
+ },
+ "moody-4-045": {
+  "blank": "alright",
+  "options": [
+   "okay",
+   "allright",
+   "all fine"
+  ],
+  "why": "영국에서는 안부를 물을 때 all right(alright)을 쓴다."
+ },
+ "moody-4-046": {
+  "blank": "hurt",
+  "options": [
+   "pain",
+   "harm",
+   "injure"
+  ],
+  "why": "hurt는 자동사로 아프다를 나타내는 가장 자연스러운 말이다."
+ },
+ "moody-4-047": {
+  "blank": "I'd better",
+  "options": [
+   "I better",
+   "I'd rather",
+   "I'd good"
+  ],
+  "why": "had better는 ~하는 게 좋겠다로 영국 구어에서 흔하다."
+ },
+ "moody-4-048": {
+  "blank": "was he like",
+  "options": [
+   "did he like",
+   "was he as",
+   "was he alike"
+  ],
+  "why": "What was he like?는 사람의 인상이나 됨됨이를 묻는다."
+ },
+ "moody-4-049": {
+  "blank": "in his presence",
+  "options": [
+   "in his present",
+   "at his presence",
+   "on his presence"
+  ],
+  "why": "in someone's presence는 ~의 면전에서라는 격식 표현이다."
+ },
+ "moody-4-050": {
+  "blank": "Were there others",
+  "options": [
+   "Was there others",
+   "Were there another",
+   "Were they others"
+  ],
+  "why": "복수 others에 맞춰 Were there로 존재를 묻는다."
+ },
+ "moody-4-051.1": {
+  "blank": "Marvellous",
+  "options": [
+   "Marvelous",
+   "Marveled",
+   "Marvelling"
+  ],
+  "why": "영국식 철자는 l을 두 번 쓴 marvellous이다."
+ },
+ "moody-4-051.2": {
+  "blank": "miserable oaf",
+  "options": [
+   "miserable loaf",
+   "miserably oaf",
+   "miserable oath"
+  ],
+  "why": "oaf는 덩치만 크고 둔한 사람을 비하하는 예스러운 말이다."
+ },
+ "moody-4-051.3": {
+  "blank": "hadn't told him",
+  "options": [
+   "didn't tell him",
+   "wouldn't have told him",
+   "haven't told him"
+  ],
+  "why": "과거 사실의 반대를 가정하는 if절에는 had p.p.를 쓴다."
+ },
+ "moody-4-051.4": {
+  "blank": "provided you with",
+  "options": [
+   "provided to you",
+   "provided you of",
+   "provided for you"
+  ],
+  "why": "provide 사람 with 물건은 ~에게 ~을 마련해 주는 격식 구문이다."
+ },
+ "moody-4-052.1": {
+  "blank": "made it so",
+  "options": [
+   "made it such",
+   "made so",
+   "made it as"
+  ],
+  "why": "so 한 단어로 앞 내용을 받는 단정적인 문어체다."
+ },
+ "moody-4-052.2": {
+  "blank": "the deed is done",
+  "options": [
+   "the deed is made",
+   "the deeds is done",
+   "the deed is doing"
+  ],
+  "why": "the deed is done은 돌이킬 수 없이 끝났다는 관용구다."
+ },
+ "moody-4-052.3": {
+  "blank": "I have",
+  "options": [
+   "I did",
+   "I had",
+   "I am"
+  ],
+  "why": "현재완료를 축약 없이 풀어 승리 선언에 힘을 싣는다."
+ },
+ "moody-5-002": {
+  "blank": "too risky",
+  "options": [
+   "too risk",
+   "too riskful",
+   "way risky"
+  ],
+  "why": "too + 형용사로 너무 위험해 안 된다는 이유를 밝힌다."
+ },
+ "moody-5-003": {
+  "blank": "Blast",
+  "options": [
+   "Blasted",
+   "Burst",
+   "Bust"
+  ],
+  "why": "Blast it은 Damn it보다 순한 영국식 짜증 표현이다."
+ },
+ "moody-5-004": {
+  "blank": "on the return trip",
+  "options": [
+   "in the return trip",
+   "at the return trip",
+   "by the return trip"
+  ],
+  "why": "on the return trip은 돌아가는 길에라는 뜻이다."
+ },
+ "moody-5-005": {
+  "blank": "Right",
+  "options": [
+   "Rightly",
+   "Correct",
+   "True"
+  ],
+  "why": "Right는 다음 행동으로 넘어갈 때 쓰는 영국식 담화표지다."
+ },
+ "moody-5-006": {
+  "blank": "Make it snappy",
+  "options": [
+   "Make it snap",
+   "Do it snappy",
+   "Make it snappily"
+  ],
+  "why": "Make it snappy는 서두르라는 다소 거친 구어 명령이다."
+ },
+ "moody-5-007.1": {
+  "blank": "at all times",
+  "options": [
+   "at all time",
+   "in all times",
+   "on all times"
+  ],
+  "why": "at all times는 지시·규정에 쓰는 항상의 격식 표현이다."
+ },
+ "moody-5-007.2": {
+  "blank": "whatever you do",
+  "options": [
+   "whenever you do",
+   "whatever you are",
+   "however you do"
+  ],
+  "why": "whatever you do는 금지를 최대로 강조하는 영미 공통 표현이다."
+ },
+ "moody-5-007.3": {
+  "blank": "the rest of you",
+  "options": [
+   "the rest from you",
+   "the others of you",
+   "the remain of you"
+  ],
+  "why": "the rest of you는 나머지 너희 모두를 가리킨다."
+ },
+ "moody-5-007.4": {
+  "blank": "were to happen",
+  "options": [
+   "was to happened",
+   "would happen",
+   "were happen"
+  ],
+  "why": "were to는 바라지 않는 일을 격식 있게 가정한다."
+ },
+ "moody-5-007.5": {
+  "blank": "standing by",
+  "options": [
+   "standing on",
+   "standing up",
+   "standing for"
+  ],
+  "why": "stand by는 출동 준비를 마치고 대기한다는 뜻이다."
+ },
+ "moody-5-008": {
+  "blank": "must",
+  "options": [
+   "gotta",
+   "need",
+   "ought"
+  ],
+  "why": "영국 영어는 일상에서도 의무를 must로 단호하게 말한다."
+ },
+ "moody-5-009": {
+  "blank": "Mount",
+  "options": [
+   "Ride",
+   "Mount on",
+   "Board"
+  ],
+  "why": "mount는 탈것에 오르라는 다소 격식 있는 지시어다."
+ },
+ "moody-5-010": {
+  "blank": "everyone",
+  "options": [
+   "guys",
+   "everybodies",
+   "all one"
+  ],
+  "why": "everyone은 무리 전체를 부르는 단정한 호칭이다."
+ },
+ "moody-5-011": {
+  "blank": "in formation",
+  "options": [
+   "on formation",
+   "at formation",
+   "in form"
+  ],
+  "why": "stay in formation은 대형을 유지하라는 군사식 지시다."
+ },
+ "moody-5-012": {
+  "blank": "more height",
+  "options": [
+   "more high",
+   "more heights",
+   "higher height"
+  ],
+  "why": "more height는 고도를 더 높이라는 말을 명사로 간결히 한다."
+ },
+ "moody-5-013": {
+  "blank": "Contacts",
+  "options": [
+   "Contracts",
+   "Connections",
+   "Contactors"
+  ],
+  "why": "contacts는 레이더나 시야에 잡힌 적을 뜻하는 군사 용어다."
+ },
+ "moody-5-014": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr Harry",
+   "Harry boy"
+  ],
+  "why": "교관이 성만 불러 권위와 거리감을 드러낸 호칭이다"
+ },
+ "moody-5-015": {
+  "blank": "won't do a thing",
+  "options": [
+   "isn't gonna help",
+   "won't make a thing",
+   "won't do a stuff"
+  ],
+  "why": "'won't do a thing'은 '아무 소용 없다'는 관용구다"
+ },
+ "moody-5-016": {
+  "blank": "not far now",
+  "options": [
+   "not much far now",
+   "not distant now",
+   "no far now"
+  ],
+  "why": "'not far now'는 '거의 다 왔다'를 짧게 말하는 표현이다"
+ },
+ "moody-5-017": {
+  "blank": "get rid of",
+  "options": [
+   "get rid from",
+   "get away of",
+   "get loose of"
+  ],
+  "why": "'get rid of'는 '떨쳐 내다, 따돌리다'의 관용구다"
+ },
+ "moody-5-018": {
+  "blank": "Prepare for descent",
+  "options": [
+   "Prepare for descend",
+   "Prepare for descending",
+   "Prepare to descent"
+  ],
+  "why": "명사 descent로 지시를 짧고 공식적으로 만든 방송 문체다"
+ },
+ "moody-5-019": {
+  "blank": "Right",
+  "options": [
+   "Correct",
+   "Rightly",
+   "Proper"
+  ],
+  "why": "다음 행동으로 넘어갈 때 쓰는 영국식 '자, 좋아'다"
+ },
+ "moody-5-020": {
+  "blank": "read this",
+  "options": [
+   "read at this",
+   "look this",
+   "read over at this"
+  ],
+  "why": "read는 목적어를 바로 받으므로 전치사가 필요 없다"
+ },
+ "moody-5-021": {
+  "blank": "Hurry",
+  "options": [
+   "Make hurry",
+   "Be hurry",
+   "Hurry you"
+  ],
+  "why": "Hurry 한 단어로 다그치는 간결한 명령문이다"
+ },
+ "moody-5-022.1": {
+  "blank": "what he's up against",
+  "options": [
+   "what he's up with",
+   "what he's up across",
+   "what he's in against"
+  ],
+  "why": "'be up against'는 맞서야 할 상대나 난관을 가리킨다"
+ },
+ "moody-5-022.2": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr Harry",
+   "Harry boy"
+  ],
+  "why": "성만 불러 거리를 두는 무디식 호칭이다"
+ },
+ "moody-5-023": {
+  "blank": "He should be",
+  "options": [
+   "He must be",
+   "He should",
+   "He ought be"
+  ],
+  "why": "형용사를 생략하고 조동사+be만 남긴 '그럴 만하다' 응답이다"
+ },
+ "moody-7-001": {
+  "blank": "ruddy",
+  "options": [
+   "freaking",
+   "ruddily",
+   "rudely"
+  ],
+  "why": "ruddy는 bloody를 순화한 영국식 강조어다"
+ },
+ "moody-7-002.1": {
+  "blank": "catch-up",
+  "options": [
+   "catch-on",
+   "keep-up",
+   "catch-over"
+  ],
+  "why": "catch up을 명사로 쓴 '근황 나누는 자리'는 영국에서 흔하다"
+ },
+ "moody-7-002.2": {
+  "blank": "We've got to",
+  "options": [
+   "We gotta",
+   "We've gotten to",
+   "We got to"
+  ],
+  "why": "의무를 말할 때 영국 구어는 have got to를 즐겨 쓴다"
+ },
+ "moody-7-003": {
+  "blank": "you've still got",
+  "options": [
+   "you've still gotten",
+   "you still got",
+   "you've got still"
+  ],
+  "why": "영국 구어는 소유를 have got으로 나타낸다"
+ },
+ "moody-7-004.1": {
+  "blank": "You sneeze and",
+  "options": [
+   "You sneeze or",
+   "You sneeze but",
+   "You sneezing and"
+  ],
+  "why": "'You + 동사 and ...'는 '~하기만 하면'의 조건 구문이다"
+ },
+ "moody-7-004.2": {
+  "blank": "and the like",
+  "options": [
+   "and stuff like that",
+   "and the likes",
+   "and the alike"
+  ],
+  "why": "'and the like'는 '~ 같은 것들'의 격식 있는 표현이다"
+ },
+ "moody-7-004.3": {
+  "blank": "in pairs",
+  "options": [
+   "by pairs",
+   "on pairs",
+   "as pairs"
+  ],
+  "why": "'in pairs'는 '둘씩 짝지어'라는 정해진 전치사 표현이다"
+ },
+ "moody-7-004.4": {
+  "blank": "I reckon",
+  "options": [
+   "I figure",
+   "I calculate",
+   "I'm reckoning"
+  ],
+  "why": "I reckon은 영국 일상에서 I think만큼 흔히 쓴다"
+ },
+ "moody-7-005": {
+  "blank": "I believe you're familiar with",
+  "options": [
+   "I think you know about",
+   "I believe you're familiar to",
+   "I believe you're familiar of"
+  ],
+  "why": "뻔한 사실을 I believe로 절제해 말하는 격식 어법이다"
+ },
+ "moody-7-006": {
+  "blank": "of age",
+  "options": [
+   "of aged",
+   "at age",
+   "in age"
+  ],
+  "why": "'of age'는 '법적 성년이 된'의 격식 표현이다"
+ },
+ "moody-7-007": {
+  "blank": "as discussed",
+  "options": [
+   "like discussed",
+   "as discussing",
+   "as we discussing"
+  ],
+  "why": "'as discussed'는 '앞서 얘기한 대로'의 업무 표현이다"
+ },
+ "moody-7-008": {
+  "blank": "if you please",
+  "options": [
+   "if you pleased",
+   "if it pleases",
+   "as you please"
+  ],
+  "why": "if you please는 please의 예스럽고 격식 있는 형태다"
+ },
+ "moody-7-009": {
+  "blank": "fair warning",
+  "options": [
+   "fair warn",
+   "fair warnings",
+   "fairly warning"
+  ],
+  "why": "'fair warning'은 '미리 말해 두는데'의 영미 공통 표현이다"
+ },
+ "moody-7-010": {
+  "blank": "you aren't",
+  "options": [
+   "you don't",
+   "aren't you",
+   "you won't"
+  ],
+  "why": "상대 말의 조동사를 받아 뒤집는 짧은 반박 구문이다"
+ },
+ "moody-7-011": {
+  "blank": "shut it",
+  "options": [
+   "shut up it",
+   "shut down",
+   "shut off it"
+  ],
+  "why": "'shut it'은 shut up보다 짧고 거친 영국식 명령이다"
+ },
+ "moody-7-012": {
+  "blank": "Blimey",
+  "options": [
+   "Geez",
+   "Oh man",
+   "Wowee"
+  ],
+  "why": "Blimey는 놀람을 나타내는 대표적 영국 감탄사다"
+ },
+ "moody-7-013": {
+  "blank": "Right then",
+  "options": [
+   "Right so",
+   "Rightly then",
+   "Right now"
+  ],
+  "why": "'Right then'은 일을 시작할 때 영국인이 즐겨 쓰는 말이다"
+ },
+ "moody-7-014": {
+  "blank": "the devil",
+  "options": [
+   "the heck",
+   "the demon",
+   "a devil"
+  ],
+  "why": "the devil은 '도대체'를 뜻하는 예스러운 강조 표현이다"
+ },
+ "moody-7-015": {
+  "blank": "You'll ride",
+  "options": [
+   "You'd ride",
+   "You riding",
+   "You'll riding"
+  ],
+  "why": "will로 결정을 통보해 거절할 여지를 주지 않는 지시다"
+ },
+ "moody-7-016": {
+  "blank": "all very",
+  "options": [
+   "real",
+   "all much",
+   "very all"
+  ],
+  "why": "'all very + 형용사'는 칭찬처럼 들리는 영국식 반어다"
+ },
+ "moody-7-017": {
+  "blank": "On the count of three",
+  "options": [
+   "On the counting of three",
+   "At the count of three",
+   "In the count of three"
+  ],
+  "why": "'on the count of three'는 '셋 세면'의 정해진 표현이다"
+ }
+}

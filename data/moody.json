@@ -1,0 +1,4841 @@
+[
+ {
+  "id": "moody-4-001",
+  "speech": "moody-4-001",
+  "part": 1,
+  "of": 1,
+  "order": 1,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 대연회장의 개학 연회. 마법 걸린 천장에서 천둥번개가 몰아치자 막 들어선 무디가 지팡이로 잠재우고, 덤블도어가 다가와 반갑게 맞이한다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "My dear old friend, thanks for coming.",
+  "prev_line": "",
+  "line": "Stupid ceiling.",
+  "ko": "망할 놈의 천장.",
+  "plain": "Dumb ceiling.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-002",
+  "speech": "moody-4-002",
+  "part": 1,
+  "of": 1,
+  "order": 2,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 무디가 교실 앞으로 걸어 나와 칠판에 분필로 글씨를 휘갈겨 쓴다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Alastor Moody.",
+  "ko": "앨러스터 무디.",
+  "plain": "Alastor Moody.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "moody-4-003.1",
+  "speech": "moody-4-003",
+  "part": 1,
+  "of": 4,
+  "order": 3,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 칠판에 자기 이름을 휘갈겨 쓴 무디가 학생들을 돌아보며 자기소개를 이어 간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Ministry malcontent. And your new Defence Against the Dark Arts teacher.",
+  "ko": "마법부의 눈엣가시. 그리고 너희의 새 어둠의 마법 방어술 교수다.",
+  "plain": "I'm the guy the Ministry can't stand. I'm also your new Defense Against the Dark Arts teacher.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "malcontent",
+    "kind": "격식 어휘",
+    "note": "체제나 조직에 불만을 품은 사람, 불평분자를 뜻하는 격식 명사다. 일상 대화보다 신문·정치 논평에서 보이는 단어로, 미국 구어라면 troublemaker 정도를 쓴다. 'Ministry malcontent.'처럼 관사와 동사 없이 명사구만 던지는 것이 무디식 자기소개다.",
+    "examples": [
+     {
+      "en": "A few malcontents on the committee voted against the plan.",
+      "ko": "위원회의 불평분자 몇 명이 그 계획에 반대표를 던졌다."
+     },
+     {
+      "en": "Senior management saw him as a malcontent.",
+      "ko": "경영진은 그를 불만만 많은 사람으로 여겼다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "defence",
+    "kind": "BrE 철자",
+    "note": "영국식 철자는 defence, 미국식은 defense다. offence/offense, licence(명사)/license도 같은 대응이다. 발음은 같고 철자만 다르다.",
+    "examples": [
+     {
+      "en": "The team's defence was poor in the second half.",
+      "ko": "그 팀은 후반전에 수비가 형편없었다."
+     },
+     {
+      "en": "She takes a self-defence class at the leisure centre.",
+      "ko": "그녀는 체육센터에서 호신술 수업을 듣는다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-003.2",
+  "speech": "moody-4-003",
+  "part": 2,
+  "of": 4,
+  "order": 4,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 칠판에 자기 이름을 휘갈겨 쓴 무디가 학생들을 돌아보며 자기소개를 이어 간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Ministry malcontent. And your new Defence Against the Dark Arts teacher.",
+  "line": "I'm here because Dumbledore asked me. End of story, goodbye, the end. Any questions?",
+  "ko": "덤블도어가 부탁해서 왔다. 그게 다야, 끝, 더 없어. 질문 있나?",
+  "plain": "Dumbledore asked me to come, and that's all there is to it. Any questions?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "End of story.",
+    "kind": "단편 문장",
+    "note": "더는 설명하지 않겠다고 못 박는 구어 표현이다. 주어와 동사 없이 명사구만 툭 던져 논의를 닫아 버린다. 영미 공통이지만, 영국에서는 같은 뜻으로 'full stop'(미국식 'period')도 쓴다.",
+    "examples": [
+     {
+      "en": "You're not borrowing the car. End of story.",
+      "ko": "차는 못 빌려준다. 더 말할 것 없어."
+     },
+     {
+      "en": "I'm not working this weekend, full stop.",
+      "ko": "이번 주말엔 일 안 해. 그걸로 끝이야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-003.3",
+  "speech": "moody-4-003",
+  "part": 3,
+  "of": 4,
+  "order": 5,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 칠판에 자기 이름을 휘갈겨 쓴 무디가 학생들을 돌아보며 자기소개를 이어 간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I'm here because Dumbledore asked me. End of story, goodbye, the end. Any questions?",
+  "line": "When it comes to the Dark Arts, I believe in a practical approach.",
+  "ko": "어둠의 마법에 관해서라면 난 실전으로 배워야 한다고 본다.",
+  "plain": "I think the best way to learn about the Dark Arts is hands-on.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-003.4",
+  "speech": "moody-4-003",
+  "part": 4,
+  "of": 4,
+  "order": 6,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 칠판에 자기 이름을 휘갈겨 쓴 무디가 학생들을 돌아보며 자기소개를 이어 간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "When it comes to the Dark Arts, I believe in a practical approach.",
+  "line": "But first, which of you can tell me how many Unforgivable Curses there are?",
+  "ko": "하지만 먼저, 용서받지 못할 저주가 몇 개인지 말할 수 있는 사람?",
+  "plain": "But first, who can tell me how many Unforgivable Curses there are?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-004",
+  "speech": "moody-4-004",
+  "part": 1,
+  "of": 1,
+  "order": 7,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 용서받지 못할 저주가 몇 개냐는 물음에 헤르미온느가 답하고, 무디는 칠판에 판서를 하며 질문을 이어 간다.",
+  "cue_speaker": "Hermione",
+  "cue": "Three, sir.",
+  "prev_line": "",
+  "line": "And they are so named?",
+  "ko": "그럼 왜 그런 이름이 붙었지?",
+  "plain": "And why are they called that?",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "so named",
+    "kind": "격식 구문",
+    "note": "'so + 과거분사'로 '그렇게 ~된'을 나타내는 문어체다. 일상에서는 'Why are they called that?'이라고 한다. 여기서는 Why도 빼고 평서문 어순으로 끝을 열어 두어, 학생이 뒤를 채우게 하는 교사식 질문이 된다.",
+    "examples": [
+     {
+      "en": "The street is so named because a market was once held there.",
+      "ko": "그 거리는 예전에 장이 서던 곳이라 그런 이름이 붙었다."
+     },
+     {
+      "en": "The so-called 'quiet carriage' was anything but quiet.",
+      "ko": "이른바 '정숙 객차'는 전혀 조용하지 않았다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-005.1",
+  "speech": "moody-4-005",
+  "part": 1,
+  "of": 4,
+  "order": 8,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 등을 돌리고 판서하던 무디가 헤르미온느의 설명을 가로챈다. 뒷자리에서는 시무스가 책상 밑에 무언가를 붙이고 있다.",
+  "cue_speaker": "Hermione",
+  "cue": "Because they are unforgivable. Use of any one of them will...",
+  "prev_line": "",
+  "line": "Will earn you a one-way ticket to Azkaban. Correct.",
+  "ko": "…아즈카반행 편도 표를 끊게 되지. 맞다.",
+  "plain": "...will get you sent to Azkaban for good. Right.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-005.2",
+  "speech": "moody-4-005",
+  "part": 2,
+  "of": 4,
+  "order": 9,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 등을 돌리고 판서하던 무디가 헤르미온느의 설명을 가로챈다. 뒷자리에서는 시무스가 책상 밑에 무언가를 붙이고 있다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Will earn you a one-way ticket to Azkaban. Correct.",
+  "line": "Now, the Ministry says you're too young to see what these curses do. I say different!",
+  "ko": "마법부는 너희가 이 저주들이 어떤 건지 보기엔 너무 어리다고 한다. 내 생각은 달라!",
+  "plain": "Now, the Ministry thinks you're too young to see what these curses do. I disagree!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "I say different.",
+    "kind": "구어·단편 문장",
+    "note": "'내 생각은 다르다'를 세 단어로 끊어 말한 것이다. 문법적으로는 differently가 맞지만 구어에서는 형용사형을 부사처럼 쓰는 일이 흔하다. 'The Ministry says A. I say B.'의 대구가 권위에 맞서는 무뚝뚝한 어조를 만든다.",
+    "examples": [
+     {
+      "en": "The forecast says sunshine. I say different.",
+      "ko": "일기예보는 맑다는데, 내 생각은 달라."
+     },
+     {
+      "en": "Management thinks it's fine. The staff say different.",
+      "ko": "경영진은 괜찮다고 하지만 직원들 말은 다르다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-005.3",
+  "speech": "moody-4-005",
+  "part": 3,
+  "of": 4,
+  "order": 10,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 등을 돌리고 판서하던 무디가 헤르미온느의 설명을 가로챈다. 뒷자리에서는 시무스가 책상 밑에 무언가를 붙이고 있다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Now, the Ministry says you're too young to see what these curses do. I say different!",
+  "line": "You need to know what you're up against. You need to be prepared.",
+  "ko": "너희는 뭘 상대하는지 알아야 해. 대비가 돼 있어야 해.",
+  "plain": "You've got to know what you're dealing with, and you've got to be ready.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-005.4",
+  "speech": "moody-4-005",
+  "part": 4,
+  "of": 4,
+  "order": 11,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 첫 수업. 등을 돌리고 판서하던 무디가 헤르미온느의 설명을 가로챈다. 뒷자리에서는 시무스가 책상 밑에 무언가를 붙이고 있다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "You need to know what you're up against. You need to be prepared.",
+  "line": "You need to find somewhere else to put your chewing gum other than the underside of your desk, Mr Finnigan!",
+  "ko": "그리고 너는 씹던 껌을 책상 밑 말고 다른 데다 붙여야 하고, 피니건 군!",
+  "plain": "And you've got to quit sticking your gum under your desk, Mr. Finnigan!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Mr Finnigan",
+    "kind": "호칭",
+    "note": "교사가 학생을 'Mr/Miss + 성'으로 부르는 것은 전통적·사립학교식 호칭으로, 오늘날에는 영미 모두 거리를 두고 꾸짖거나 비꼴 때 주로 쓴다. 표기는 영국식이 Mr 뒤에 마침표를 찍지 않는다(미국식은 Mr.).",
+    "examples": [
+     {
+      "en": "Mr Davies, would you care to share the joke with the class?",
+      "ko": "데이비스 군, 뭐가 그리 우스운지 반 친구들에게도 말해 주겠나?"
+     },
+     {
+      "en": "Thank you, Miss Patel, that will do.",
+      "ko": "됐어요, 파텔 양. 그만하면 됐습니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "chewing gum",
+    "kind": "영미 공통 어휘(영국에서 더 선호)",
+    "note": "chewing gum은 영미 공통 어휘다. 다만 미국 구어에서는 그냥 gum이라고 줄여 말하는 일이 많고, 영국에서는 chewing gum이라고 온전히 말하는 경향이 더 강하다. 영국에서 gum은 잇몸이나 (다소 옛말로) 풀을 가리키기도 한다.",
+    "examples": [
+     {
+      "en": "No chewing gum in the classroom, please.",
+      "ko": "교실에서는 껌을 씹지 마세요."
+     },
+     {
+      "en": "I've got chewing gum stuck to my shoe.",
+      "ko": "신발에 껌이 붙었어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-006",
+  "speech": "moody-4-006",
+  "part": 1,
+  "of": 1,
+  "order": 12,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "뒤통수로도 본다며 투덜대는 시무스에게 무디가 분필을 내던진다. 교실이 얼어붙은 가운데 무디가 본격적으로 저주 수업을 시작한다.",
+  "cue_speaker": "Seamus",
+  "cue": "Aw, no way. The old codger can see out the back of his head.",
+  "prev_line": "",
+  "line": "So, which curse shall we see first? Weasley!",
+  "ko": "자, 어느 저주부터 볼까? 위즐리!",
+  "plain": "So, which curse do you want to see first? Weasley!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "shall we …?",
+    "kind": "법조동사",
+    "note": "제안하거나 의향을 물을 때 쓰는 shall은 영국영어에서 훨씬 자연스럽다. 미국 구어에서는 'Which one should we...?'나 'Which one do you want to...?'가 일반적이다.",
+    "examples": [
+     {
+      "en": "Shall we start with the easy ones?",
+      "ko": "쉬운 것부터 시작할까요?"
+     },
+     {
+      "en": "What shall we have for tea tonight?",
+      "ko": "오늘 저녁은 뭘 먹을까?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Weasley!",
+    "kind": "호칭",
+    "note": "성만으로 학생을 부르는 것은 영국 학교, 특히 전통적인 기숙학교의 오랜 관습이다. 이름으로 부를 때보다 훨씬 딱딱하고 명령조로 들린다. 미국 학교에서는 운동부 코치 정도를 빼면 드물다.",
+    "examples": [
+     {
+      "en": "Thompson! See me after the lesson.",
+      "ko": "톰슨! 수업 끝나고 나 좀 보자."
+     },
+     {
+      "en": "Right, Harris, you're in goal.",
+      "ko": "좋아, 해리스, 네가 골키퍼다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-007",
+  "speech": "moody-4-007",
+  "part": 1,
+  "of": 1,
+  "order": 13,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 교실. 갑자기 이름이 불린 론이 겁먹은 얼굴로 대답하자, 무디가 론의 책상 앞으로 성큼 다가선다.",
+  "cue_speaker": "Ron",
+  "cue": "Yes...",
+  "prev_line": "",
+  "line": "Give us a curse.",
+  "ko": "저주 하나 대 봐.",
+  "plain": "Name a curse for me.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Give us …",
+    "kind": "구어 표현",
+    "note": "여기서 us는 교사와 반 전체를 가리키는 평범한 복수로, 'Give us an example'처럼 영미 공통으로 쓰는 교실 말투다. 참고로 영국 구어에서는 us를 me 대신 쓰기도 한다(Give us a hand = 나 좀 도와줘). 더 짧게는 'Name one'이라고도 한다.",
+    "examples": [
+     {
+      "en": "Give us a hand with these boxes, will you?",
+      "ko": "이 상자들 옮기는 것 좀 도와줄래?"
+     },
+     {
+      "en": "Give us a ring when you get home.",
+      "ko": "집에 도착하면 전화 줘."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-008.1",
+  "speech": "moody-4-008",
+  "part": 1,
+  "of": 2,
+  "order": 14,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 교실. 론이 아버지에게 들었다며 임페리우스 저주를 대자, 무디가 교탁 위 유리병 쪽으로 걸어간다.",
+  "cue_speaker": "Ron",
+  "cue": "Well, my dad did tell me about one...",
+  "prev_line": "",
+  "line": "Ah, yes, your father would know all about that.",
+  "ko": "아, 그래. 네 아버지라면 그건 훤히 알겠지.",
+  "plain": "Oh yeah, your dad would know all about that one.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-008.2",
+  "speech": "moody-4-008",
+  "part": 2,
+  "of": 2,
+  "order": 15,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 교실. 론이 아버지에게 들었다며 임페리우스 저주를 대자, 무디가 교탁 위 유리병 쪽으로 걸어간다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Ah, yes, your father would know all about that.",
+  "line": "Gave the Ministry quite a bit of grief a few years ago. Perhaps this will show you why.",
+  "ko": "그 저주가 몇 해 전에 마법부를 꽤나 골치 아프게 했거든. 이걸 보면 왜 그랬는지 알 거다.",
+  "plain": "It caused a lot of trouble for the Ministry a few years back. Maybe this'll show you why.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "give someone grief",
+    "kind": "관용구",
+    "note": "누군가를 애먹이다, 골치 아프게 하다라는 구어 표현이다. 실제로는 엄청난 피해였던 일을 'quite a bit of'로 줄여 말해 영국식 절제 표현(understatement)이 된다.",
+    "examples": [
+     {
+      "en": "My boss has been giving me grief about the deadline all week.",
+      "ko": "상사가 일주일 내내 마감 문제로 나를 들볶고 있어."
+     },
+     {
+      "en": "The new software gave us quite a bit of grief at first.",
+      "ko": "새 소프트웨어 때문에 처음엔 꽤 애를 먹었다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Gave the Ministry …",
+    "kind": "주어 생략",
+    "note": "주어(It)를 떼고 동사로 바로 시작하는 구어체다. 메모나 무뚝뚝한 말투에서 흔하며, 무디의 군인 같은 말버릇을 만든다. 온전한 문장은 'It gave the Ministry...'.",
+    "examples": [
+     {
+      "en": "Saw your brother in town yesterday. Looked well.",
+      "ko": "어제 시내에서 네 형 봤어. 좋아 보이던데."
+     },
+     {
+      "en": "Tried ringing you earlier. Couldn't get through.",
+      "ko": "아까 전화했는데 연결이 안 되더라."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Perhaps",
+    "kind": "BrE 선호 어휘",
+    "note": "maybe와 뜻은 같지만 영국영어에서는 말할 때도 perhaps를 훨씬 자주 쓴다. 미국 구어에서는 maybe가 기본이고 perhaps는 격식 있게 들린다.",
+    "examples": [
+     {
+      "en": "Perhaps we should leave a bit earlier.",
+      "ko": "조금 일찍 출발하는 게 좋겠어."
+     },
+     {
+      "en": "Perhaps that explains why he was late.",
+      "ko": "그래서 그가 늦었나 보네."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-009",
+  "speech": "moody-4-009",
+  "part": 1,
+  "of": 1,
+  "order": 16,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 교실. 임페리우스 저주를 보여 주려는 무디가 유리병 뚜껑을 열고 안에 든 거미를 손 위에 올린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Hello. What a little beauty.",
+  "ko": "안녕. 고놈 참 예쁘기도 하지.",
+  "plain": "Hey there. Isn't she gorgeous?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "a little beauty",
+    "kind": "구어 표현",
+    "note": "beauty를 '아주 훌륭한 것, 멋진 놈'이라는 명사로 쓰는 구어 표현으로 영미 공통이다. 차, 물고기, 골 장면 등에 두루 쓰며, 'you little beauty'처럼 little을 붙인 형태는 영국·호주 구어에서 특히 흔하다. 여기서는 'What a + 명사' 감탄문에 애정 어린 little이 붙었다.",
+    "examples": [
+     {
+      "en": "Did you see that goal? What a beauty!",
+      "ko": "그 골 봤어? 정말 기막히더라!"
+     },
+     {
+      "en": "He's just bought a 1960s Mini. It's a little beauty.",
+      "ko": "그 사람이 60년대식 미니를 샀는데, 정말 근사한 놈이야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-010",
+  "speech": "moody-4-010",
+  "part": 1,
+  "of": 1,
+  "order": 17,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디가 거미를 주문으로 키운 뒤 임페리우스 저주를 걸어 학생들 책상과 머리 위로 날려 보낸다. 학생들이 움찔하며 비명을 지른다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Don't worry. Completely harmless.",
+  "ko": "걱정 마라. 전혀 해롭지 않아.",
+  "plain": "Relax. She won't hurt you at all.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Completely harmless.",
+    "kind": "주어·동사 생략",
+    "note": "'She's'를 떼고 서술어만 말하는 단편 문장이다. 짧게 끊어 말해 무뚝뚝하고 단정적인 어조를 만드는 무디 대사의 특징이다. '부사 + 형용사'만으로 평가를 내리는 것은 영미 공통의 구어 현상이다.",
+    "examples": [
+     {
+      "en": "Don't mind the dog. Perfectly friendly.",
+      "ko": "개는 신경 쓰지 마세요. 아주 순해요."
+     },
+     {
+      "en": "I've tried the new café. Absolutely dreadful.",
+      "ko": "새로 생긴 카페에 가 봤는데, 정말 형편없더라."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-011",
+  "speech": "moody-4-011",
+  "part": 1,
+  "of": 1,
+  "order": 18,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "조종당하는 거미가 론의 머리 위에 내려앉아 론이 얼어붙는다. 방금 학생들을 안심시킨 무디가 말을 덧붙이고, 교실 곳곳에서 웃음이 터진다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "But if she bites... she's lethal!",
+  "ko": "하지만 물리면... 죽는다!",
+  "plain": "But one bite from her and you're dead!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-012",
+  "speech": "moody-4-012",
+  "part": 1,
+  "of": 1,
+  "order": 19,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "거미 때문에 쩔쩔매는 론을 보고 드레이코가 낄낄거린다. 무디가 지팡이를 드레이코 쪽으로 돌린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "What are you laughing at?",
+  "ko": "넌 뭐가 우습냐?",
+  "plain": "What's so funny?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-013",
+  "speech": "moody-4-013",
+  "part": 1,
+  "of": 1,
+  "order": 20,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "거미를 드레이코 얼굴에 붙였다가 다시 공중으로 띄운 무디. 웃음이 잦아드는 가운데 지팡이 끝으로 거미를 이리저리 끌고 다니며 학생들에게 묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Talented, isn't she? What shall I have her do next? Jump out the window? Drown herself?",
+  "ko": "재주 좋지? 다음엔 뭘 시킬까? 창밖으로 뛰어내리게 할까? 물에 빠져 죽게 할까?",
+  "plain": "She's good, huh? What should I make her do next? Jump out the window? Drown herself?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Talented, isn't she?",
+    "kind": "부가의문문",
+    "note": "'She's'를 생략하고 형용사와 부가의문문만 남긴 형태다. 영국 구어에서 동의를 구하거나 비꼴 때 매우 흔하다. 미국 구어라면 'She's good, huh?'나 '..., right?'가 더 자연스럽다.",
+    "examples": [
+     {
+      "en": "Lovely, isn't it?",
+      "ko": "참 좋지?"
+     },
+     {
+      "en": "Bit chilly today, isn't it?",
+      "ko": "오늘 좀 쌀쌀하네, 그렇지?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "What shall I …?",
+    "kind": "법조동사",
+    "note": "1인칭 의문문의 shall은 상대의 의향을 묻는 영국식 표현이다. 미국식으로는 'What should I...?'를 쓴다.",
+    "examples": [
+     {
+      "en": "What shall I bring to the party?",
+      "ko": "파티에 뭘 가져갈까?"
+     },
+     {
+      "en": "Shall I put the kettle on?",
+      "ko": "차 마시게 물 올릴까?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-014.1",
+  "speech": "moody-4-014",
+  "part": 1,
+  "of": 3,
+  "order": 21,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "물 양동이 위에 매달아 두었던 거미를 손으로 거둬들인 무디가 임페리우스 저주가 왜 무서운지 설명하고, 다음 저주를 댈 학생을 찾아 교실을 둘러본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Scores of witches and wizards have claimed that they only did You-Know-Who's bidding under the influence of the Imperius Curse.",
+  "ko": "수많은 마법사와 마녀가 임페리우스 저주에 걸려서 어쩔 수 없이 그 사람이 시키는 대로 했다고 주장했다.",
+  "plain": "Tons of witches and wizards have said they only did what You-Know-Who told them because they were under the Imperius Curse.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "do someone's bidding",
+    "kind": "격식·고어",
+    "note": "누군가의 명령대로 하다라는 뜻이다. bidding(명령)은 일상어에서는 거의 이 관용구로만 남아 있는 옛말이다. 평범하게는 'do what he told them'.",
+    "examples": [
+     {
+      "en": "He expects his assistants to do his bidding without question.",
+      "ko": "그는 조수들이 군말 없이 시키는 대로 하기를 바란다."
+     },
+     {
+      "en": "I'm not here to do your bidding, you know.",
+      "ko": "내가 네 심부름이나 하려고 여기 있는 건 아니거든."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-014.2",
+  "speech": "moody-4-014",
+  "part": 2,
+  "of": 3,
+  "order": 22,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "물 양동이 위에 매달아 두었던 거미를 손으로 거둬들인 무디가 임페리우스 저주가 왜 무서운지 설명하고, 다음 저주를 댈 학생을 찾아 교실을 둘러본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Scores of witches and wizards have claimed that they only did You-Know-Who's bidding under the influence of the Imperius Curse.",
+  "line": "But here's the rub: how do we sort out the liars?",
+  "ko": "그런데 문제는 이거야. 거짓말하는 놈을 어떻게 가려내지?",
+  "plain": "But here's the problem: how do we figure out who's lying?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "here's the rub",
+    "kind": "문학 관용구",
+    "note": "'문제는 바로 이거다'라는 뜻이다. 셰익스피어 <햄릿>의 'there's the rub'에서 온 표현으로, 영미 공통의 다소 문어적인 관용구다. 평범한 구어로는 'here's the catch'나 'here's the problem'.",
+    "examples": [
+     {
+      "en": "The flat is cheap, but here's the rub: it's two hours from work.",
+      "ko": "그 집은 싸긴 한데, 문제는 직장에서 두 시간 거리라는 거야."
+     },
+     {
+      "en": "We'd love to expand, but there's the rub: we can't find the staff.",
+      "ko": "사업을 키우고 싶지만 문제는 사람을 구할 수 없다는 점이다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-014.3",
+  "speech": "moody-4-014",
+  "part": 3,
+  "of": 3,
+  "order": 23,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "물 양동이 위에 매달아 두었던 거미를 손으로 거둬들인 무디가 임페리우스 저주가 왜 무서운지 설명하고, 다음 저주를 댈 학생을 찾아 교실을 둘러본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "But here's the rub: how do we sort out the liars?",
+  "line": "Another... another... Come on, come on. Longbottom, is it? Up.",
+  "ko": "다음 저주... 다음... 어서, 어서. 롱바텀이라고 했나? 일어서.",
+  "plain": "Give me another one... another one... Come on. You're Longbottom, right? Stand up.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Longbottom, is it?",
+    "kind": "부가의문문",
+    "note": "이름이나 사실을 확인할 때 명사만 던지고 끝에 ', is it?'을 붙이는 영국식 말버릇이다. 미국식이면 'You're Longbottom, right?'. 바로 이어지는 한 단어 명령 'Up.'도 무디식 말투다.",
+    "examples": [
+     {
+      "en": "Mr Clarke, is it? Do take a seat.",
+      "ko": "클라크 씨 맞으시죠? 앉으세요."
+     },
+     {
+      "en": "Tuesday, is it? I'll check my diary.",
+      "ko": "화요일이라고요? 일정을 확인해 볼게요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-015",
+  "speech": "moody-4-015",
+  "part": 1,
+  "of": 1,
+  "order": 24,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 저주를 말할 학생으로 지목된 네빌이 쭈뼛거리며 일어선다. 무디가 네빌 앞으로 다가가 뜻밖에 누그러진 목소리로 말을 건넨다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Professor Sprout tells me you have an aptitude for Herbology.",
+  "ko": "스프라우트 교수 말로는 네가 약초학에 소질이 있다더군.",
+  "plain": "Professor Sprout says you're really good at Herbology.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "have an aptitude for",
+    "kind": "격식 어휘",
+    "note": "~에 소질·적성이 있다는 뜻이다. 성적표나 추천서에 나올 법한 격식 표현으로, 구어로는 'be good at'이나 'have a knack for'를 쓴다.",
+    "examples": [
+     {
+      "en": "She has a real aptitude for languages.",
+      "ko": "그녀는 언어에 정말 소질이 있다."
+     },
+     {
+      "en": "He showed an early aptitude for maths.",
+      "ko": "그는 어릴 때부터 수학에 재능을 보였다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "X tells me (that) …",
+    "kind": "전달 표현",
+    "note": "남에게 들은 말을 현재시제 tells로 전하는 표현이다. 'told me'보다 격식 있고, 교사나 상사가 '이미 보고받았다'는 권위를 실어 말할 때 쓴다. 영미 공통이며, 더 평범한 구어로는 'X says...'나 'X told me...'라고 한다.",
+    "examples": [
+     {
+      "en": "Your form tutor tells me you've been late three times this week.",
+      "ko": "담임 선생님 말씀으로는 네가 이번 주에 세 번 지각했다더구나."
+     },
+     {
+      "en": "My wife tells me I snore.",
+      "ko": "아내 말로는 내가 코를 곤다고 한다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-016",
+  "speech": "moody-4-016",
+  "part": 1,
+  "of": 1,
+  "order": 25,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "어둠의 마법 방어술 교실. 네빌이 더듬거리며 두 번째 저주의 이름을 댄다. 무디가 네빌을 교탁 위 거미 쪽으로 데려간다.",
+  "cue_speaker": "Neville",
+  "cue": "There's the, um... the Cruciatus Curse.",
+  "prev_line": "",
+  "line": "Correct! Correct! Come, come. Particularly nasty. The torture curse.",
+  "ko": "맞다! 맞아! 이리 와, 이리. 유난히 고약한 놈이지. 고문 저주다.",
+  "plain": "Right! Right! Come on up here. That one's really awful. The torture curse.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Come, come.",
+    "kind": "고풍 감탄사",
+    "note": "여기서는 '이리 와, 어서'라고 재촉하는 말이다. 현대 영어에서는 드문 고풍스러운 반복 표현으로, 보통은 '자, 그러지 말고' 하고 달래거나 가볍게 나무랄 때 쓴다. 현대 구어로는 영미 모두 'Come on'이라고 한다.",
+    "examples": [
+     {
+      "en": "Come, come, it can't be as bad as all that.",
+      "ko": "자, 자, 그렇게까지 나쁠 리는 없잖아."
+     },
+     {
+      "en": "Come, come, there's no need to cry.",
+      "ko": "자, 그만. 울 것까지는 없어."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "nasty",
+    "kind": "어휘·절제 표현",
+    "note": "'고약한, 지독한'이라는 뜻의 영미 공통 어휘로, 날씨·상처·사람 등에 폭넓게 쓴다(미국 구어에서는 '역겨운'이라는 뜻으로도 흔하다). 끔찍한 고문 저주를 'Particularly nasty.' 두 단어로 줄여 말하는 것은 영국식 절제 표현이다.",
+    "examples": [
+     {
+      "en": "That's a nasty cough you've got.",
+      "ko": "기침이 꽤 심하네."
+     },
+     {
+      "en": "There was a particularly nasty accident on the M25 this morning.",
+      "ko": "오늘 아침 M25 고속도로에서 유난히 끔찍한 사고가 있었다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-017",
+  "speech": "moody-4-017",
+  "part": 1,
+  "of": 1,
+  "order": 26,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디가 거미에게 크루시아투스 저주를 걸자 지켜보던 네빌이 괴로워하고, 헤르미온느가 참다못해 소리친다. 무디가 저주를 멈추고 거미를 헤르미온느의 책상에 내려놓는다.",
+  "cue_speaker": "Hermione",
+  "cue": "Stop it! Can't you see it's bothering him? Stop it!",
+  "prev_line": "",
+  "line": "Perhaps you could give us the last Unforgivable Curse, Miss Granger.",
+  "ko": "마지막 용서받지 못할 저주는 네가 말해 보지, 그레인저 양.",
+  "plain": "Why don't you tell us the last Unforgivable Curse, Miss Granger?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Perhaps you could …",
+    "kind": "완곡 명령",
+    "note": "형식은 정중한 제안이지만 실제로는 거절할 수 없는 지시다. 영국의 교사나 상사가 권위를 실어 쓰는 전형적인 완곡 명령으로, 공손할수록 오히려 차갑게 들린다. 직설적으로는 'Tell us...'.",
+    "examples": [
+     {
+      "en": "Perhaps you could explain why the report is late.",
+      "ko": "보고서가 왜 늦었는지 설명해 주시겠습니까."
+     },
+     {
+      "en": "Perhaps you could keep the noise down a little.",
+      "ko": "조금만 조용히 해 주시면 좋겠네요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Miss Granger",
+    "kind": "호칭",
+    "note": "교사가 여학생을 'Miss + 성'으로 부르는 것은 전통적인(사립·기숙학교풍) 호칭으로, 현대 영국 교사는 대개 이름을 부른다. 이름으로 부를 때보다 거리를 두는 느낌이며, 여기서는 항의를 눌러 버리는 효과가 있다.",
+    "examples": [
+     {
+      "en": "Miss Carter, your homework, please.",
+      "ko": "카터 양, 숙제 내세요."
+     },
+     {
+      "en": "That will be all, Miss Evans.",
+      "ko": "그만 가 봐도 좋아요, 에번스 양."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-018",
+  "speech": "moody-4-018",
+  "part": 1,
+  "of": 1,
+  "order": 27,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "헤르미온느가 고개를 젓자 무디가 초록빛 저주로 거미를 죽인다. 정적이 흐르는 교실에서 무디가 해리의 책상 앞으로 걸어온다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "The Killing Curse. Only one person is known to have survived it. And he's sitting in this room.",
+  "ko": "살인 저주. 이걸 맞고 살아남았다고 알려진 사람은 단 한 명뿐이다. 그리고 그 사람이 지금 이 교실에 앉아 있지.",
+  "plain": "The Killing Curse. As far as anyone knows, only one person has ever lived through it. And he's right here in this room.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "be known to have + p.p.",
+    "kind": "격식 구문",
+    "note": "'~한 것으로 알려져 있다'는 뜻이다. 수동태와 완료부정사를 결합한 문어체로 뉴스나 학술문에 흔하다. 구어로는 'As far as we know, only one person has...'처럼 푼다.",
+    "examples": [
+     {
+      "en": "He is known to have lived in Leeds during the 1980s.",
+      "ko": "그는 1980년대에 리즈에 살았던 것으로 알려져 있다."
+     },
+     {
+      "en": "Only two copies are known to have survived the fire.",
+      "ko": "그 화재에서 남은 것으로 알려진 사본은 두 부뿐이다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-019",
+  "speech": "moody-4-019",
+  "part": 1,
+  "of": 1,
+  "order": 28,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "용서받지 못할 저주 수업이 끝난 직후의 계단. 크루시아투스 저주 시연을 보고 넋이 나간 네빌이 창가에 멍하니 서 있고, 헤르미온느가 걱정스레 이름을 부른다. 그때 무디가 다가온다.",
+  "cue_speaker": "Hermione",
+  "cue": "Neville?",
+  "prev_line": "",
+  "line": "Son. You alright?",
+  "ko": "얘야. 괜찮으냐?",
+  "plain": "Hey, kid. Are you okay?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "You alright?",
+    "kind": "BrE 관용구·조동사 생략",
+    "note": "Are you all right?에서 Are를 떼어 낸 구어형이다. 영국에서는 안부 인사로도, 상대가 걱정될 때도 두루 쓰이며 미국 구어라면 'You okay?'가 훨씬 흔하다. 붙여 쓴 철자 alright도 영국에서 더 널리 통용된다.",
+    "examples": [
+     {
+      "en": "You alright? You look a bit pale.",
+      "ko": "괜찮아? 얼굴이 좀 창백해 보이는데."
+     },
+     {
+      "en": "Alright, Tom? Haven't seen you in ages.",
+      "ko": "잘 지냈어, 톰? 진짜 오랜만이다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "son",
+    "kind": "호칭",
+    "note": "나이 든 남자가 친아들이 아닌 소년이나 젊은 남자를 부르는 말로 영미 공통이다. 경찰, 코치, 군 상관, 동네 어른의 말투로 익숙하며 무뚝뚝하지만 보호자 같은 느낌을 준다. 상황에 따라서는 상대를 어린애 취급하는 말로도 들린다.",
+    "examples": [
+     {
+      "en": "Take your time, son. There's no rush.",
+      "ko": "천천히 해라, 얘야. 급할 것 없다."
+     },
+     {
+      "en": "Good effort, son. You'll get it next time.",
+      "ko": "잘했다, 얘야. 다음엔 해낼 거다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-020",
+  "speech": "moody-4-020",
+  "part": 1,
+  "of": 1,
+  "order": 29,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "용서받지 못할 저주 수업 직후의 계단. 무디가 창가에 얼어붙은 네빌의 어깨에 손을 얹고 괜찮으냐고 물은 뒤 말을 잇는다. 해리, 론, 헤르미온느가 그 모습을 지켜본다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Come on, we'll have a cup of tea. I want to show you something.",
+  "ko": "따라와라. 차나 한잔하자. 보여 줄 게 있다.",
+  "plain": "Come on, let's go get some tea. There's something you should see.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "we'll have a cup of tea",
+    "kind": "BrE 문화·권유 표현",
+    "note": "영국에서는 놀라거나 속상한 사람에게 차를 권하는 것이 위로의 정석이다. 'Let's ~'가 아니라 'we'll + 동사'로 말하면 제안이 아니라 이미 정해진 일처럼 들려서, 다정하지만 거절할 틈을 주지 않는 권유가 된다. 미국 구어라면 'Let's go get some tea.' 정도다.",
+    "examples": [
+     {
+      "en": "Sit down, we'll have a cup of tea and sort it out.",
+      "ko": "앉아 봐. 차 한잔하면서 해결해 보자."
+     },
+     {
+      "en": "Come in, we'll have a cuppa before you drive back.",
+      "ko": "들어와. 운전해서 돌아가기 전에 차 한잔하자."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-021.1",
+  "speech": "moody-4-021",
+  "part": 1,
+  "of": 2,
+  "order": 30,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "대연회장 옆 트로피 방. 불의 잔에서 해리의 이름이 네 번째로 나온 직후, 교장들과 심사위원들이 해리를 둘러싸고 추궁한다. 해리가 자기는 이름을 넣지 않았다고 하자 막심 부인이 코웃음을 친다.",
+  "cue_speaker": "Madame Maxime",
+  "cue": "Well, of course he is lying!",
+  "prev_line": "",
+  "line": "The hell he is! The Goblet of Fire is an exceptionally powerful magical object.",
+  "ko": "거짓말은 무슨! 불의 잔은 대단히 강력한 마법 물건이오.",
+  "plain": "No way he's lying. The Goblet of Fire is a really powerful object.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "The hell he is",
+    "kind": "거친 반박(조동사 되받기)",
+    "note": "상대의 말을 'The hell + 주어 + 조동사'로 되받아 '그럴 리가 있나'라고 잘라 부정하는 거친 구어다. 영미 공통이며 같은 뜻으로 'Like hell he is'도 쓴다. 문장 전체를 다시 말하지 않고 조동사만 남기는 것이 요령이다.",
+    "examples": [
+     {
+      "en": "'She says she's too busy to help.' 'The hell she is.'",
+      "ko": "'걔는 너무 바빠서 못 돕는대.' '바쁘긴 뭐가 바빠.'"
+     },
+     {
+      "en": "'He'll pay you back next week.' 'Like hell he will.'",
+      "ko": "'다음 주에 갚을 거래.' '퍽이나 갚겠다.'"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-021.2",
+  "speech": "moody-4-021",
+  "part": 2,
+  "of": 2,
+  "order": 31,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "대연회장 옆 트로피 방. 불의 잔에서 해리의 이름이 네 번째로 나온 직후, 교장들과 심사위원들이 해리를 둘러싸고 추궁한다. 해리가 자기는 이름을 넣지 않았다고 하자 막심 부인이 코웃음을 친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "The hell he is! The Goblet of Fire is an exceptionally powerful magical object.",
+  "line": "Only an exceptionally powerful Confundus Charm could have hoodwinked it. Magic way beyond the talents of a fourth year.",
+  "ko": "어지간히 강력한 혼동 마법이 아니고서는 그 잔을 속일 수 없지. 4학년 따위가 부릴 수 있는 마법이 아니란 말이오.",
+  "plain": "It'd take a seriously strong Confundus Charm to trick it. A kid in fourth year couldn't pull that off.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "hoodwink",
+    "kind": "격식·고풍 어휘",
+    "note": "trick, fool과 같은 뜻의 예스러운 낱말로, 일상 대화보다는 신문이나 논평에서 '감쪽같이 속이다'라는 뜻으로 지금도 쓰인다(영미 공통). 거친 무디의 말 속에 이런 단어가 섞여 노련한 전직 오러의 무게가 실린다.",
+    "examples": [
+     {
+      "en": "Customers were hoodwinked into paying for extras they never needed.",
+      "ko": "고객들은 속아서 필요도 없는 추가 옵션 비용을 냈다."
+     },
+     {
+      "en": "Don't let the glossy brochure hoodwink you.",
+      "ko": "번지르르한 안내 책자에 속지 마."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a fourth year",
+    "kind": "BrE 어휘(학교)",
+    "note": "영국 학교에서는 학년을 year로 세고, 학생 자체를 'a fourth year', 'the first years'처럼 부른다. 미국이라면 'a fourth grader'나 'a sophomore'처럼 전혀 다른 체계를 쓴다.",
+    "examples": [
+     {
+      "en": "The first years always get lost in their first week.",
+      "ko": "1학년들은 첫 주에 늘 길을 잃는다."
+     },
+     {
+      "en": "She's only a second year, but she's already in the school orchestra.",
+      "ko": "그 애는 겨우 2학년인데 벌써 학교 오케스트라 단원이다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-022",
+  "speech": "moody-4-022",
+  "part": 1,
+  "of": 1,
+  "order": 32,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "대연회장 옆 트로피 방. 해리가 직접 이름을 넣었을 리 없다고 무디가 단언하자, 덤스트랭 교장 카르카로프가 '꽤나 잘 아는 것 같다'며 의심스럽다는 듯 비꼰다.",
+  "cue_speaker": "Karkaroff",
+  "cue": "You seem to have given this a fair bit of thought, Mad-Eye.",
+  "prev_line": "",
+  "line": "It was once my job to think as Dark wizards do, Karkaroff. Perhaps you remember?",
+  "ko": "어둠의 마법사처럼 생각하는 게 한때 내 일이었지, 카르카로프. 자네도 기억할 텐데?",
+  "plain": "Thinking like a dark wizard used to be my job, Karkaroff. Maybe you remember that?",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "as dark wizards do",
+    "kind": "격식·접속사 as",
+    "note": "구어에서는 영미 모두 'like dark wizards do'가 흔하지만, 주어와 동사가 오는 절 앞에는 like 대신 as를 쓰는 것이 격식체 규범이다. 앞의 동사를 do로 받아 마무리하는 것도 단정한 문어 느낌을 준다.",
+    "examples": [
+     {
+      "en": "We still make the bread as my grandmother did.",
+      "ko": "우리는 지금도 할머니가 하시던 방식대로 빵을 만든다."
+     },
+     {
+      "en": "Please fill in the form as the instructions say.",
+      "ko": "안내문에 적힌 대로 양식을 작성해 주세요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Perhaps you remember?",
+    "kind": "완곡어법·반어",
+    "note": "perhaps는 maybe보다 격식 있는 말로 영국 영어에서 훨씬 자주 쓰인다. 여기서는 '기억 못 할 리가 없지'라는 뜻을 점잖게 돌려 말한 것으로, 겉은 공손하지만 속은 가시가 돋쳐 있다. 상대의 아픈 과거를 건드릴 때 쓰는 전형적인 영국식 화법이다.",
+    "examples": [
+     {
+      "en": "Perhaps you remember what we agreed at the last meeting?",
+      "ko": "지난 회의에서 합의한 내용, 기억하시겠지요?"
+     },
+     {
+      "en": "Perhaps you'd like to explain why the report is late.",
+      "ko": "보고서가 왜 늦었는지 설명해 주시면 좋겠군요."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-023",
+  "speech": "moody-4-023",
+  "part": 1,
+  "of": 1,
+  "order": 33,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "한밤의 교장실. 덤블도어, 맥고나걸, 스네이프, 무디가 해리를 대회에 그대로 내보낼지 논의한다. 일단 지켜보자는 스네이프의 의견에 덤블도어가 동의하며 무디에게 부탁한다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "I agree with Severus. Alastor, keep an eye on Harry, will you?",
+  "prev_line": "",
+  "line": "I can do that.",
+  "ko": "그 정도야 하지요.",
+  "plain": "Sure, I'm on it.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-024",
+  "speech": "moody-4-024",
+  "part": 1,
+  "of": 1,
+  "order": 34,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 해리가 말포이에게 쏘아붙이고 돌아서자, 말포이가 등 뒤에서 지팡이를 뽑는다. 그 순간 무디가 나타나 말포이를 흰 족제비로 바꿔 공중에서 위아래로 튕긴다.",
+  "cue_speaker": "Harry",
+  "cue": "I don't give a damn what you or your father thinks, Malfoy. He's vile and cruel, and you're just pathetic.",
+  "prev_line": "",
+  "line": "I'll teach you to curse when someone's back is turned!",
+  "ko": "남이 등 돌렸을 때 저주를 걸어? 그 버릇을 고쳐 주마!",
+  "plain": "I'm going to make you sorry you tried to curse someone from behind!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "I'll teach you to ...",
+    "kind": "반어 관용구(위협)",
+    "note": "글자 그대로 '가르쳐 주겠다'가 아니라 '그런 짓을 한 대가를 치르게 해 주겠다'라는 뜻의 반어적 위협이다. 영미 공통이지만 영국에서는 부모나 교사의 꾸지람 말투로 특히 익숙하고, 'That'll teach you/him to ~' 형태로도 자주 쓴다.",
+    "examples": [
+     {
+      "en": "I'll teach you to answer back!",
+      "ko": "어디서 말대꾸야, 혼 좀 나 봐라!"
+     },
+     {
+      "en": "He got a parking ticket. That'll teach him to park across my drive.",
+      "ko": "그 사람 주차 딱지 뗐대. 남의 집 진입로 막고 세우더니 꼴좋다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-025",
+  "speech": "moody-4-025",
+  "part": 1,
+  "of": 1,
+  "order": 35,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 무디가 족제비로 변한 말포이를 공중에서 튕기고 있는데, 맥고나걸 교수가 책을 안고 달려와 놀라서 묻는다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Professor Moody, what are you doing?",
+  "prev_line": "",
+  "line": "Teaching.",
+  "ko": "가르치는 중이오.",
+  "plain": "I'm teaching.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "moody-4-026",
+  "speech": "moody-4-026",
+  "part": 1,
+  "of": 1,
+  "order": 36,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 공중에서 튕겨지는 흰 족제비를 본 맥고나걸 교수가, 그것의 정체를 눈치채고 기가 막혀 묻는다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Is that a student?",
+  "prev_line": "",
+  "line": "Technically, it's a ferret.",
+  "ko": "엄밀히 말하면 족제비요.",
+  "plain": "Well, actually, right now it's a ferret.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-027",
+  "speech": "moody-4-027",
+  "part": 1,
+  "of": 1,
+  "order": 37,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 맥고나걸이 족제비를 다시 사람으로 되돌려 놓자, 헝클어진 말포이가 뒷걸음질치며 무디에게 소리친다.",
+  "cue_speaker": "Draco",
+  "cue": "My father will hear about this!",
+  "prev_line": "",
+  "line": "Is that a threat?",
+  "ko": "지금 그거 협박이냐?",
+  "plain": "Are you threatening me?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-028",
+  "speech": "moody-4-028",
+  "part": 1,
+  "of": 1,
+  "order": 38,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 사람으로 돌아온 말포이가 아버지에게 이르겠다고 소리치며 달아나자, 무디가 지팡이를 짚고 나무 둘레를 돌며 쫓아간다. 맥고나걸이 말리려 하지만 무디의 고함이 이어진다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "I could tell you stories about your father that would curl even your greasy hair, boy! It doesn't end here!",
+  "ko": "네 아비 얘기를 해 주랴? 기름 낀 네 머리털까지 곤두설 얘기가 수두룩하다, 이놈아! 이걸로 끝난 줄 알지 마라!",
+  "plain": "I know things about your dad that would freak even you out, kid! This isn't over!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "make someone's hair curl",
+    "kind": "관용구",
+    "note": "충격적이거나 섬뜩한 이야기를 두고 '머리털이 곱슬해질 정도'라고 하는 영미 공통의 구어 관용구다(make your hair curl / curl your hair). 무디는 이를 'curl even your greasy hair'로 비틀어 말포이의 번들거리는 머리까지 함께 조롱한다. 문장 끝의 'boy'는 상대를 어린애 취급하며 윽박지르는 옛 교사·군인식 호칭이다.",
+    "examples": [
+     {
+      "en": "My nan could tell you stories about the war that'd make your hair curl.",
+      "ko": "우리 할머니한테 전쟁 얘기를 들으면 소름이 쫙 끼칠걸."
+     },
+     {
+      "en": "The repair bill was enough to make your hair curl.",
+      "ko": "수리비 청구서가 기절초풍할 정도였다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-029",
+  "speech": "moody-4-029",
+  "part": 1,
+  "of": 1,
+  "order": 39,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 말포이가 달아난 뒤, 맥고나걸 교수가 학생들 앞에서 무디를 정색하고 나무란다. 무디는 딴청을 피우듯 대꾸한다.",
+  "cue_speaker": "McGonagall",
+  "cue": "We never use Transfiguration as a punishment. Surely Dumbledore told you that.",
+  "prev_line": "",
+  "line": "He might've mentioned it.",
+  "ko": "그런 말을 했던 것도 같소.",
+  "plain": "Yeah, I think he told me something like that.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "He might've mentioned it.",
+    "kind": "완곡어법(절제 표현)",
+    "note": "분명히 들었으면서 'might have'로 흐려 말하는 절제 표현(understatement)이다. 잘못은 인정하되 대수롭지 않은 척 능청을 떠는 말투로, 영국식 화법의 전형으로 꼽히지만 미국 구어에서도 똑같이 쓴다. 반대로 상대가 같은 말을 지겹도록 했을 때 비꼬는 용도로도 쓴다.",
+    "examples": [
+     {
+      "en": "'Did I tell you the deadline's moved?' 'You might've mentioned it once or twice.'",
+      "ko": "'마감일 바뀌었다고 내가 말했던가?' '한두 번쯤은 말한 것 같네.'"
+     },
+     {
+      "en": "I might've had a biscuit or two before dinner.",
+      "ko": "저녁 먹기 전에 비스킷을 한두 개 먹었을지도 몰라."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-030",
+  "speech": "moody-4-030",
+  "part": 1,
+  "of": 1,
+  "order": 40,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "호그와트 안뜰. 맥고나걸에게 한 소리 들은 무디가, 구경하던 학생들 사이에 서 있는 해리 쪽으로 돌아선다.",
+  "cue_speaker": "McGonagall",
+  "cue": "Well, you will do well to remember it.",
+  "prev_line": "",
+  "line": "Come with me.",
+  "ko": "따라와라.",
+  "plain": "Follow me.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-031.1",
+  "speech": "moody-4-031",
+  "part": 1,
+  "of": 2,
+  "order": 41,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 안뜰 소동 뒤 무디를 따라온 해리가 방 안의 기이한 물건들을 둘러보다가, 그림자 같은 형체들이 어른거리는 거울 앞에서 멈춰 선다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "That's a Foe-Glass. Lets me keep an eye on my enemies.",
+  "ko": "그건 적 탐지 거울이다. 적들을 감시하는 물건이지.",
+  "plain": "That's a Foe-Glass. It lets me watch my enemies.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Lets me keep an eye on ...",
+    "kind": "주어 생략(구어 단편문)",
+    "note": "주어 It을 떼고 동사부터 시작하는 단편문이다. 영미 공통의 구어 현상이지만 메모나 전보처럼 필요한 말만 툭툭 던지는 무디 말투의 핵심으로, 군더더기 없는 무뚝뚝한 인상을 준다. 문맥상 주어가 분명할 때만 쓸 수 있다.",
+    "examples": [
+     {
+      "en": "I bought a slow cooker. Saves me an hour every evening.",
+      "ko": "슬로 쿠커를 샀어. 저녁마다 한 시간은 벌어 주더라."
+     },
+     {
+      "en": "Looks like rain. Better take a brolly.",
+      "ko": "비 올 것 같네. 우산 챙기는 게 좋겠어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-031.2",
+  "speech": "moody-4-031",
+  "part": 2,
+  "of": 2,
+  "order": 42,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 안뜰 소동 뒤 무디를 따라온 해리가 방 안의 기이한 물건들을 둘러보다가, 그림자 같은 형체들이 어른거리는 거울 앞에서 멈춰 선다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "That's a Foe-Glass. Lets me keep an eye on my enemies.",
+  "line": "If I can see the whites of their eyes, they're standing right behind me.",
+  "ko": "놈들 눈 흰자위가 보이면 바로 내 등 뒤에 와 있다는 뜻이야.",
+  "plain": "If I can see their eyes clearly, it means they're right behind me.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-032.1",
+  "speech": "moody-4-032",
+  "part": 1,
+  "of": 2,
+  "order": 43,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 거울 설명이 끝나자 구석의 커다란 트렁크가 덜컹거리며 흔들리고, 해리가 놀라 그쪽을 쳐다본다. 무디는 대수롭지 않게 넘기고 화제를 돌린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Wouldn't even bother telling you what's in there. You wouldn't believe it if I did.",
+  "ko": "저 안에 뭐가 들었는지는 말해 줄 것도 없다. 말해 봤자 안 믿을 테니.",
+  "plain": "I'm not even going to tell you what's in there. You wouldn't believe me anyway.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Wouldn't even bother telling you",
+    "kind": "주어 생략·bother + -ing",
+    "note": "주어 I를 뗀 단편문이다. bother 뒤에 -ing를 붙이는 형태는 영국 영어에서 더 흔하고, 미국 영어는 'bother to tell'을 선호한다. 'I wouldn't bother'는 영국인이 '그럴 필요 없다, 해 봤자 소용없다'라고 말릴 때 즐겨 쓰는 말이다.",
+    "examples": [
+     {
+      "en": "I wouldn't bother ringing them; they never pick up.",
+      "ko": "거기 전화해 봤자야. 절대 안 받거든."
+     },
+     {
+      "en": "Don't bother washing up. I'll do it in the morning.",
+      "ko": "설거지는 그냥 둬. 내가 아침에 할게."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-032.2",
+  "speech": "moody-4-032",
+  "part": 2,
+  "of": 2,
+  "order": 44,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 거울 설명이 끝나자 구석의 커다란 트렁크가 덜컹거리며 흔들리고, 해리가 놀라 그쪽을 쳐다본다. 무디는 대수롭지 않게 넘기고 화제를 돌린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Wouldn't even bother telling you what's in there. You wouldn't believe it if I did.",
+  "line": "Now... what are you going to do about your dragon?",
+  "ko": "자... 용은 어떻게 할 셈이냐?",
+  "plain": "So... what's your plan for the dragon?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-033.1",
+  "speech": "moody-4-033",
+  "part": 1,
+  "of": 6,
+  "order": 45,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "Harry",
+  "cue": "Oh... um... You know, I just thought I'd...",
+  "prev_line": "",
+  "line": "Sit. Listen to me, Potter.",
+  "ko": "앉아. 잘 들어라, 포터.",
+  "plain": "Sit down and listen, Potter.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Potter / Miss Delacour",
+    "kind": "호칭",
+    "note": "영국의 전통적인(특히 사립·기숙학교) 관습에서는 교사가 남학생을 성(姓)만으로 부르고, 여학생이나 예의를 갖출 상대는 Miss + 성으로 불렀다. 오늘날에는 영국 교사도 미국 교사처럼 대부분 이름(first name)으로 부르므로, 성만 부르면 옛 기숙학교나 군대처럼 딱딱하게 들린다.",
+    "examples": [
+     {
+      "en": "Right, Jenkins, see me after the lesson.",
+      "ko": "자, 젠킨스. 수업 끝나고 나 좀 보자."
+     },
+     {
+      "en": "Miss Patel, could you read the next paragraph, please?",
+      "ko": "파텔 양, 다음 문단 좀 읽어 주겠어요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-033.2",
+  "speech": "moody-4-033",
+  "part": 2,
+  "of": 6,
+  "order": 46,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Sit. Listen to me, Potter.",
+  "line": "Your pal Diggory? By your age, he could turn a whistle into a watch and have it sing you the time.",
+  "ko": "네 친구 디고리? 그 애는 네 나이에 호루라기를 시계로 바꿔서 시간을 노래로 알리게 만들 줄 알았다.",
+  "plain": "Your buddy Diggory could already turn a whistle into a singing watch when he was your age.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-033.3",
+  "speech": "moody-4-033",
+  "part": 3,
+  "of": 6,
+  "order": 47,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Your pal Diggory? By your age, he could turn a whistle into a watch and have it sing you the time.",
+  "line": "Miss Delacour? She's as much a fairy princess as I am.",
+  "ko": "델라쿠르 양? 그 애가 요정 공주라면 나도 요정 공주다.",
+  "plain": "Delacour is no fairy princess, any more than I am.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "She's as much a fairy princess as I am",
+    "kind": "반어 비교",
+    "note": "'A is as much X as I am'은 '내가 X가 아닌 것만큼 A도 X가 아니다', 곧 '전혀 X가 아니다'라는 뜻의 반어다. 직접 부정하지 않고 비꼬아 말하는 건조한 유머로, 겉보기만 믿지 말라는 경고에 쓰인다.",
+    "examples": [
+     {
+      "en": "He's as much a chef as I am. He just reheats things.",
+      "ko": "그 사람이 요리사면 나도 요리사야. 그냥 데우기만 하잖아."
+     },
+     {
+      "en": "She's as much an expert on cars as I am, and I can't even drive.",
+      "ko": "걔가 자동차 전문가면 나도 전문가지. 난 운전도 못 하는데."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-033.4",
+  "speech": "moody-4-033",
+  "part": 4,
+  "of": 6,
+  "order": 48,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Miss Delacour? She's as much a fairy princess as I am.",
+  "line": "As for Krum, his head may be filled with sawdust, but Karkaroff's is not.",
+  "ko": "크룸은 머릿속에 톱밥만 들었을지 몰라도 카르카로프는 아니야.",
+  "plain": "And Krum might be dumb, but Karkaroff sure isn't.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "may ..., but ...",
+    "kind": "양보의 may(격식)",
+    "note": "'A may be ~, but B'는 'A가 ~일지는 몰라도 B'라고 일단 인정한 뒤 반박하는 구문으로 영미 공통이다. 편한 구어에서는 'might be'나 'Sure, he's ~, but'으로 말하기도 하고, may를 쓰면 한층 단정하고 논리적인 느낌이 난다.",
+    "examples": [
+     {
+      "en": "The flat may be small, but it's five minutes from the station.",
+      "ko": "집이 작을지는 몰라도 역에서 5분 거리야."
+     },
+     {
+      "en": "He may be new, but he knows what he's doing.",
+      "ko": "신입일지는 몰라도 일은 제대로 할 줄 안다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-033.5",
+  "speech": "moody-4-033",
+  "part": 5,
+  "of": 6,
+  "order": 49,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "As for Krum, his head may be filled with sawdust, but Karkaroff's is not.",
+  "line": "They'll have a strategy, and you can bet that it'll play to Krum's strengths.",
+  "ko": "그쪽은 전략을 짤 거다. 장담하는데 크룸의 강점을 살리는 전략이겠지.",
+  "plain": "They're going to have a plan, and I bet it's built around what Krum's good at.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-033.6",
+  "speech": "moody-4-033",
+  "part": 6,
+  "of": 6,
+  "order": 50,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 첫 번째 과제인 용을 어떻게 할 거냐는 물음에 해리가 대답을 못 하고 얼버무리자, 무디가 말을 끊고 다른 대표 선수들 이야기를 꺼낸다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "They'll have a strategy, and you can bet that it'll play to Krum's strengths.",
+  "line": "Hmm? Come on, Potter. What are your strengths?",
+  "ko": "응? 자, 포터. 네 강점은 뭐냐?",
+  "plain": "So come on, Potter. What are you good at?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-034",
+  "speech": "moody-4-034",
+  "part": 1,
+  "of": 1,
+  "order": 51,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 네 강점이 뭐냐는 다그침에 해리가 머뭇거리다 자신 없는 목소리로 겨우 하나를 꼽는다.",
+  "cue_speaker": "Harry",
+  "cue": "Um... I dunno. I can fly. I mean, I'm a fair flyer.",
+  "prev_line": "",
+  "line": "Better than fair, the way I heard it.",
+  "ko": "내가 듣기론 '꽤' 정도가 아니던데.",
+  "plain": "From what I've heard, you're a lot better than pretty good.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "fair",
+    "kind": "BrE 어휘·절제 표현",
+    "note": "영국 영어에서 fair는 '제법 괜찮은, 꽤 되는'이라는 절제된 평가로 자주 쓰인다(a fair bit, a fair few도 같은 계열). 해리가 겸손하게 'a fair flyer'라고 하자 무디가 그 단어를 되받아 'Better than fair'로 추켜세운다. 미국 구어라면 'pretty good', 'decent'가 자연스럽다.",
+    "examples": [
+     {
+      "en": "She's a fair cook, though she'd never admit it.",
+      "ko": "그 사람 요리 솜씨가 제법인데, 본인은 절대 인정 안 해."
+     },
+     {
+      "en": "It's a fair way to the station, so leave early.",
+      "ko": "역까지 꽤 머니까 일찍 나서."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-035",
+  "speech": "moody-4-035",
+  "part": 1,
+  "of": 1,
+  "order": 52,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 방. 비행이 강점이라는 말에 무디가 맞장구치자, 해리는 과제에 빗자루를 가져갈 수 없다며 고개를 젓는다. 무디가 해리의 눈을 똑바로 보며 힌트를 던진다.",
+  "cue_speaker": "Harry",
+  "cue": "But I'm not allowed a broom.",
+  "prev_line": "",
+  "line": "You're allowed a wand.",
+  "ko": "지팡이는 써도 되잖나.",
+  "plain": "But you can bring your wand.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "be allowed + 명사",
+    "kind": "문형(allow의 이중목적어 수동)",
+    "note": "'allow + 사람 + 명사'(누구에게 ~을 허용하다)를 수동태로 바꾼 문형으로, to 부정사 없이 바로 명사를 받는다. 'You're allowed one phone call.'처럼 영미 공통으로 쓰며, 'be allowed to have/use ~'로 풀어 말할 수도 있다. 학교나 직장, 경기의 규칙을 말할 때 특히 자주 들린다.",
+    "examples": [
+     {
+      "en": "We're not allowed phones in lessons.",
+      "ko": "수업 시간에는 휴대전화를 가지고 있으면 안 돼."
+     },
+     {
+      "en": "Are patients allowed visitors after six?",
+      "ko": "환자는 6시 이후에도 면회가 되나요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-036.1",
+  "speech": "moody-4-036",
+  "part": 1,
+  "of": 2,
+  "order": 53,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제 전날 밤의 도서관. 해리, 론, 헤르미온느가 물속에서 한 시간 동안 숨 쉴 방법을 찾아 책 더미를 뒤지고 있다. 헤르미온느가 해리를 다독이는 순간 무디가 문간에 나타난다.",
+  "cue_speaker": "Hermione",
+  "cue": "Look, Harry, we can do this. The three of us can figure it out.",
+  "prev_line": "",
+  "line": "Hate to break up this skull session, but Professor McGonagall would like to see you in her office.",
+  "ko": "머리 맞대고 있는데 끼어들어 미안하다만, 맥고나걸 교수가 교수실로 좀 오란다.",
+  "plain": "Sorry to interrupt your study group, but Professor McGonagall wants you in her office.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Hate to ..., but",
+    "kind": "주어 생략·완곡한 끼어들기",
+    "note": "'I hate to ~, but'은 방해하거나 싫은 소리를 하기 전에 붙이는 상투적인 서두다. 주어 I까지 떼어 내면 예의는 차리되 무뚝뚝한 무디식 말투가 된다. 참고로 'skull session'(머리를 맞대는 작전 회의)은 본래 미국 구어여서 이 대사에서 영국적인 부분은 아니다.",
+    "examples": [
+     {
+      "en": "Hate to interrupt, but your taxi's outside.",
+      "ko": "끼어들어 미안한데, 택시가 밖에 와 있어."
+     },
+     {
+      "en": "Hate to be a nuisance, but could you move your car?",
+      "ko": "귀찮게 해서 미안하지만 차 좀 빼 줄 수 있을까?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "would like to see you",
+    "kind": "법조동사 완화",
+    "note": "'wants to see you'를 한 단계 누그러뜨린 표현이다. 영미 공통으로 학교나 직장에서 윗사람의 호출을 전할 때 쓰는 표준 화법으로, 말은 부드럽지만 사실상 거절할 수 없는 지시다.",
+    "examples": [
+     {
+      "en": "The head would like to see you in her office at break.",
+      "ko": "교장 선생님이 쉬는 시간에 교장실로 오라고 하셔."
+     },
+     {
+      "en": "Mr Davies would like a word before you leave.",
+      "ko": "데이비스 씨가 퇴근 전에 잠깐 얘기 좀 하자고 하세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-036.2",
+  "speech": "moody-4-036",
+  "part": 2,
+  "of": 2,
+  "order": 54,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제 전날 밤의 도서관. 해리, 론, 헤르미온느가 물속에서 한 시간 동안 숨 쉴 방법을 찾아 책 더미를 뒤지고 있다. 헤르미온느가 해리를 다독이는 순간 무디가 문간에 나타난다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Hate to break up this skull session, but Professor McGonagall would like to see you in her office.",
+  "line": "Not you, Potter. Just Weasley and Granger.",
+  "ko": "포터, 넌 말고. 위즐리와 그레인저만.",
+  "plain": "I don't mean you, Potter. Only Weasley and Granger.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Not you, Potter. Just Weasley and Granger.",
+    "kind": "호칭",
+    "note": "학생을 성만으로 부르는 전통적인 영국 기숙학교식 호칭이다. 동사 없이 이름과 부정어만으로 지시를 끝내는 단편문이라 군대 점호처럼 들린다.",
+    "examples": [
+     {
+      "en": "Hughes and Barker, you're on first.",
+      "ko": "휴즈하고 바커, 너희가 먼저다."
+     },
+     {
+      "en": "Not you, Clarke. Sit down.",
+      "ko": "클라크, 넌 아니야. 앉아."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-037",
+  "speech": "moody-4-037",
+  "part": 1,
+  "of": 1,
+  "order": 55,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제 전날 밤의 도서관. 물속에서 한 시간을 버틸 방법을 찾지 못한 해리·론·헤르미온느가 책을 뒤지고 있는데, 무디가 나타나 맥고나걸 교수가 론과 헤르미온느를 찾는다고 전한다.",
+  "cue_speaker": "Hermione",
+  "cue": "But sir, the second task is only hours away and...",
+  "prev_line": "",
+  "line": "Exactly. Presumably Potter is well prepared by now and could do with a good night's sleep. Go. Now! Longbottom!",
+  "ko": "바로 그거다. 포터는 지금쯤 준비를 다 마쳤을 테니 푹 자 둬야지. 가라. 당장! 롱바텀!",
+  "plain": "Right. I'm guessing Potter's all set by now and could really use some sleep. Get going. Now! Longbottom!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "could do with",
+    "kind": "BrE 관용구",
+    "note": "'~이 있으면 좋겠다, ~이 필요하다'는 뜻의 영국 구어 표현이다. 미국식으로는 could use(I could use some sleep)가 더 흔하다. need라고 딱 잘라 말하지 않고 한 발 물러서는 완곡한 맛이 있다.",
+    "examples": [
+     {
+      "en": "I could do with a cup of tea.",
+      "ko": "차 한 잔 마시면 좋겠다."
+     },
+     {
+      "en": "This kitchen could do with a good clean.",
+      "ko": "이 부엌은 청소 한번 제대로 해야겠어."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Presumably …",
+    "kind": "문장부사·추정",
+    "note": "'아마 ~일 테지'라고 추정을 깔고 들어가는 문장부사로, 영미 공통의 다소 격식 있는 말이다. 단정을 피하는 척하면서 상대를 압박할 때 쓰이며, 여기서는 '준비는 다 됐겠지?'라는 빈정거림이 실려 있다. 편한 구어로는 I guess / I'm assuming(영국에서는 I suppose) 정도로 말한다.",
+    "examples": [
+     {
+      "en": "Presumably you've already told your manager.",
+      "ko": "팀장님께는 당연히 이미 말씀드렸겠죠."
+     },
+     {
+      "en": "Presumably the trains are still running.",
+      "ko": "기차는 아마 아직 다니겠지."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Potter / Longbottom (성만 부르기)",
+    "kind": "호칭",
+    "note": "영국 학교에서 교사가 학생을 성만으로 부르던 전통적인 호칭이다. 거리감과 권위가 실리며, 미국 학교에서는 이름(first name)을 부르는 것이 보통이다. 지금은 영국에서도 옛 기숙학교풍으로 들린다.",
+    "examples": [
+     {
+      "en": "Right, Thompson, you're in goal.",
+      "ko": "자, 톰프슨, 넌 골키퍼다."
+     },
+     {
+      "en": "Stop talking, Davies, and face the front.",
+      "ko": "데이비스, 그만 떠들고 앞을 봐."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-038",
+  "speech": "moody-4-038",
+  "part": 1,
+  "of": 1,
+  "order": 56,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제 전날 밤의 도서관. 론과 헤르미온느를 내보낸 무디가, 근처에서 책을 정리하던 네빌을 큰 소리로 불러 세운다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Why don't you help Potter put his books back?",
+  "ko": "포터가 책 도로 꽂는 것 좀 거들어라.",
+  "plain": "How about giving Potter a hand putting his books away?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-039",
+  "speech": "moody-4-039",
+  "part": 1,
+  "of": 1,
+  "order": 57,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "검은 호수 위의 출발대. 덤블도어가 확성 마법으로 두 번째 과제를 설명하는 동안, 네빌이 구해 준 아가미풀을 손에 쥔 해리 뒤로 무디가 다가선다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "They will have one hour to do so, and one hour only. After that, they'll be on their own.",
+  "prev_line": "",
+  "line": "Put that in your mouth.",
+  "ko": "그거 입에 넣어라.",
+  "plain": "Stick that in your mouth.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-040.1",
+  "speech": "moody-4-040",
+  "part": 1,
+  "of": 2,
+  "order": 58,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제가 끝난 직후의 호숫가. 크라우치가 해리에게 다가와 축하를 건네며 부모 이야기까지 꺼내는데, 무디가 절뚝거리며 둘 사이로 끼어든다.",
+  "cue_speaker": "Barty Crouch",
+  "cue": "Still, life goes on. And here we stand. I'm sure your parents would be very proud today, Potter.",
+  "prev_line": "",
+  "line": "Bartemius! Not trying to lure Potter into one of the Ministry's summer internships, are we?",
+  "ko": "바르테미우스! 설마 포터를 마법부 여름 인턴으로 꾀어 가려는 건 아니겠지?",
+  "plain": "Barty! You're not trying to recruit Potter for a Ministry summer internship, are you?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "…, are we?",
+    "kind": "부가의문문",
+    "note": "상대(you)에게 하는 말인데 we로 받는 부가의문문이다. 간호사나 교사가 쓰는 '우리 ~하는 거 아니지?' 식의 어르는 말투로, 영국 영어에서는 비꼬거나 넌지시 경고할 때 자주 쓴다. 미국식이라면 are you? 또는 right?로 끝낸다.",
+    "examples": [
+     {
+      "en": "Not thinking of leaving early, are we?",
+      "ko": "설마 일찍 가려는 건 아니겠지?"
+     },
+     {
+      "en": "We're not forgetting our homework again, are we?",
+      "ko": "또 숙제를 잊어버린 건 아니겠지?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-040.2",
+  "speech": "moody-4-040",
+  "part": 2,
+  "of": 2,
+  "order": 59,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제가 끝난 직후의 호숫가. 크라우치가 해리에게 다가와 축하를 건네며 부모 이야기까지 꺼내는데, 무디가 절뚝거리며 둘 사이로 끼어든다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Bartemius! Not trying to lure Potter into one of the Ministry's summer internships, are we?",
+  "line": "Last boy who went into the Department of Mysteries never came out!",
+  "ko": "지난번에 미스터리부에 들어간 녀석은 끝내 못 나왔다고!",
+  "plain": "The last kid who went into the Department of Mysteries never came back out!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Not trying to … / Last boy who …",
+    "kind": "문두 생략(구어)",
+    "note": "You're와 관사 The를 떼어 내고 핵심부터 던지는 말투다. 무디 특유의 짧고 퉁명스러운 어조가 여기서 나온다. 풀어 쓰면 You're not trying to … / The last boy who …가 된다.",
+    "examples": [
+     {
+      "en": "Not coming to the pub, then?",
+      "ko": "그럼 펍에는 안 오는 거야?"
+     },
+     {
+      "en": "Last person who touched that printer broke it.",
+      "ko": "지난번에 그 프린터 만진 사람이 고장 냈어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-041",
+  "speech": "moody-4-041",
+  "part": 1,
+  "of": 1,
+  "order": 60,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "두 번째 과제가 끝난 호숫가. 무디의 농담에 크라우치가 굳은 얼굴로 그를 뚫어지게 쳐다보다가 아무 대꾸 없이 자리를 뜬다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "And they say I'm mad.",
+  "ko": "저러고도 나더러 미쳤다고들 하지.",
+  "plain": "And I'm supposed to be the crazy one.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "mad",
+    "kind": "BrE 어휘",
+    "note": "영국 영어에서 mad는 기본적으로 '미친, 제정신이 아닌'이라는 뜻이다. 미국 영어에서는 mad가 주로 '화난'이고 '미친'은 crazy를 쓴다. 무디의 별명 Mad-Eye와도 겹치는 말장난이다.",
+    "examples": [
+     {
+      "en": "You must be mad to cycle in this weather.",
+      "ko": "이 날씨에 자전거를 타다니 제정신이 아니구나."
+     },
+     {
+      "en": "My neighbours think I'm mad for getting up at five to swim.",
+      "ko": "이웃들은 내가 수영하러 5시에 일어난다고 미쳤다고 생각해."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-042",
+  "speech": "moody-4-042",
+  "part": 1,
+  "of": 1,
+  "order": 61,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "덤블도어의 교장실. 크라우치가 숲에서 숨진 채 발견된 뒤, 시합을 중단하자는 덤블도어와 반대하는 퍼지의 언성이 높아진다. 그때 무디의 마법 눈이 문 쪽으로 돌아간다.",
+  "cue_speaker": "Fudge",
+  "cue": "What did you say? What did you say to me?",
+  "prev_line": "",
+  "line": "Excuse me, gentlemen, it may interest you to know that this conversation is no longer private.",
+  "ko": "실례하오, 신사 양반들. 알아 두는 게 좋을 텐데, 이 대화는 이제 우리끼리만의 얘기가 아니오.",
+  "plain": "Sorry to cut in, guys, but you might want to know somebody's listening.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "it may interest you to know (that) …",
+    "kind": "완곡어법·반어",
+    "note": "'알아 두시면 좋을 듯한데'라고 정중하게 포장하지만, 실제로는 상대가 놓친 사실을 꼬집는 표현이다. 영미 공통의 격식 있는 반어로, 정중할수록 가시가 돋는다. 편한 구어라면 Just so you know, … 정도로 말한다.",
+    "examples": [
+     {
+      "en": "It may interest you to know that the deadline was yesterday.",
+      "ko": "참고로 말씀드리면 마감은 어제였습니다."
+     },
+     {
+      "en": "It may interest you to know I've already paid the bill.",
+      "ko": "알려 드리자면 계산은 제가 벌써 했어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "gentlemen",
+    "kind": "호칭",
+    "note": "남성 여럿을 격식 있게 부르는 영미 공통 호칭이다. 회의나 공식 석상에서 쓰이며, 언쟁 중인 사람들에게 쓰면 '점잖은 분들이 왜 이러시나' 하는 견제가 된다. 편한 구어의 guys(영국에서는 lads도)와 대비된다.",
+    "examples": [
+     {
+      "en": "Gentlemen, shall we begin?",
+      "ko": "여러분, 시작할까요?"
+     },
+     {
+      "en": "Good evening, gentlemen. Your table is ready.",
+      "ko": "안녕하십니까. 자리가 준비되었습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "no longer",
+    "kind": "격식 어휘",
+    "note": "not … anymore의 격식형이다. 공지문이나 업무 메일에서 흔히 쓰이며, 말로 하면 딱 잘라 선을 긋는 느낌을 준다.",
+    "examples": [
+     {
+      "en": "This offer is no longer available.",
+      "ko": "이 행사는 종료되었습니다."
+     },
+     {
+      "en": "I'm afraid she no longer works here.",
+      "ko": "죄송하지만 그분은 이제 여기서 근무하지 않습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-043",
+  "speech": "moody-4-043",
+  "part": 1,
+  "of": 1,
+  "order": 62,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "펜시브 속 옛 재판정. 감형을 바라는 카르카로프가 죽음을 먹는 자 로지에의 이름을 대자, 크라우치가 그는 이미 죽었다고 잘라 말한다. 방청석의 덤블도어 옆에 무디가 앉아 있다.",
+  "cue_speaker": "Karkaroff",
+  "cue": "Dead?",
+  "prev_line": "",
+  "line": "Yeah, took a piece of me with him though, didn't he?",
+  "ko": "그래, 그놈도 내 살점 하나는 떼어 갔지만 말이야.",
+  "plain": "Yeah, but he took a chunk of me with him, you know.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "…, didn't he?",
+    "kind": "부가의문문",
+    "note": "답을 구하는 질문이 아니라 자기 말에 못을 박는 하강조 부가의문문이다. 영국 구어에서 불평이나 씁쓸한 농담 끝에 습관처럼 붙는다. 미국 구어에서는 보통 right?나 you know로 대신한다.",
+    "examples": [
+     {
+      "en": "Well, I told you it would rain, didn't I?",
+      "ko": "거봐, 비 온다고 내가 말했잖아."
+     },
+     {
+      "en": "She only went and forgot the tickets, didn't she?",
+      "ko": "글쎄, 걔가 표를 놓고 왔지 뭐야."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "(He) took a piece of me …",
+    "kind": "주어 생략(구어)",
+    "note": "주어 He를 떼고 동사부터 말하는 구어체다. 무디의 툭툭 끊기는 말투를 만드는 장치이며, 영국 일상 회화에서도 누구 얘기인지 분명할 때 흔히 쓴다.",
+    "examples": [
+     {
+      "en": "Left his keys in the door again.",
+      "ko": "(그 사람) 또 열쇠를 문에 꽂아 두고 갔어."
+     },
+     {
+      "en": "Told me he'd be here by nine.",
+      "ko": "9시까지 온다고 하더라고."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-044",
+  "speech": "moody-4-044",
+  "part": 1,
+  "of": 1,
+  "order": 63,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "세 번째 과제가 열리는 미로 입구. 관중의 함성 속에서 덤블도어가 대표 선수 네 명을 따로 모아 마지막 당부를 마친다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "Oh, find the cup if you can, but be very wary. You could just lose yourselves along the way.",
+  "prev_line": "",
+  "line": "Champions! Prepare yourselves.",
+  "ko": "대표 선수들! 준비하라.",
+  "plain": "Champions! Get ready.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Prepare yourselves",
+    "kind": "격식 어휘",
+    "note": "Get ready의 격식형으로, 재귀대명사를 붙여 '마음의 각오를 하라'는 무게가 실린다. 일상에서는 나쁜 소식이나 힘든 일을 앞두고 쓰는 경우가 많다.",
+    "examples": [
+     {
+      "en": "Prepare yourselves for a long wait at the border.",
+      "ko": "국경에서 오래 기다릴 각오를 하세요."
+     },
+     {
+      "en": "You'd better prepare yourself for some bad news.",
+      "ko": "안 좋은 소식이니 마음의 준비를 하는 게 좋겠어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-045",
+  "speech": "moody-4-045",
+  "part": 1,
+  "of": 1,
+  "order": 64,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 묘지에서 세드릭의 시신과 함께 돌아온 해리를, 무디가 아수라장이 된 경기장에서 빼내 자기 방으로 데려와 의자에 앉힌다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Are you alright, Potter?",
+  "ko": "괜찮나, 포터?",
+  "plain": "You okay, Harry?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Are you all right?",
+    "kind": "AmE 대비",
+    "note": "영국에서는 상태나 안부를 물을 때 all right(붙여 쓰면 alright)를 기본으로 쓴다. 미국 구어라면 Are you okay?가 자연스럽다. 영국에서는 You all right?이 가벼운 인사말로도 쓰인다.",
+    "examples": [
+     {
+      "en": "Are you all right? You look a bit pale.",
+      "ko": "괜찮아? 얼굴이 좀 창백한데."
+     },
+     {
+      "en": "You all right, mate? Haven't seen you in ages.",
+      "ko": "잘 지냈어? 진짜 오랜만이다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Potter (성만 부르기)",
+    "kind": "호칭",
+    "note": "교사가 학생을 성으로만 부르는 전통적인 영국 기숙학교식 호칭이다. 걱정하는 말에도 거리감이 남는다. 오늘날에는 영국에서도 미국에서도 교사는 보통 이름 Harry를 부른다.",
+    "examples": [
+     {
+      "en": "Sit down, Harris.",
+      "ko": "해리스, 앉아라."
+     },
+     {
+      "en": "Well played, Clarke.",
+      "ko": "잘했다, 클라크."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-046",
+  "speech": "moody-4-046",
+  "part": 1,
+  "of": 1,
+  "order": 65,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 묘지에서 막 돌아온 해리를 앉혀 놓은 무디의 눈길이, 칼에 베여 피가 밴 해리의 팔로 향한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Does it hurt?",
+  "ko": "아픈가?",
+  "plain": "Does it hurt?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-047",
+  "speech": "moody-4-047",
+  "part": 1,
+  "of": 1,
+  "order": 66,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 팔의 상처가 아프냐는 물음에 해리가 멍한 얼굴로 대답하고, 무디가 그 팔을 향해 손을 뻗는다.",
+  "cue_speaker": "Harry",
+  "cue": "Not so much now.",
+  "prev_line": "",
+  "line": "I'd better take a look at it.",
+  "ko": "어디, 좀 봐야겠군.",
+  "plain": "Let me take a look at that.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "I'd better …",
+    "kind": "법조동사",
+    "note": "had better는 '~하는 게 좋겠다, 안 하면 곤란하다'는 뜻으로 영국 구어에서 특히 자주 쓰인다. 미국 구어에서는 'd를 빼고 I better라고 하거나 I should로 바꿔 말하는 일이 많다. 상대에게 쓰면(You'd better …) 경고처럼 들릴 수 있다.",
+    "examples": [
+     {
+      "en": "I'd better ring my mum before she worries.",
+      "ko": "엄마가 걱정하시기 전에 전화드려야겠다."
+     },
+     {
+      "en": "We'd better get going or we'll miss the train.",
+      "ko": "이제 출발해야지, 안 그러면 기차를 놓쳐."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-048",
+  "speech": "moody-4-048",
+  "part": 1,
+  "of": 1,
+  "order": 67,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 해리가 우승컵에 누군가 손을 써 두었다고 털어놓지만, 상처를 들여다보던 무디는 전혀 다른 것을 궁금해한다.",
+  "cue_speaker": "Harry",
+  "cue": "The cup was a Portkey. Someone had bewitched it.",
+  "prev_line": "",
+  "line": "What was it like? What was he like?",
+  "ko": "어땠지? 그는 어땠나?",
+  "plain": "What was it like? What was he like?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-049",
+  "speech": "moody-4-049",
+  "part": 1,
+  "of": 1,
+  "order": 68,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 누구 얘기냐고 되묻는 해리에게, 무디가 상처 난 팔을 붙든 채 눈을 번뜩이며 다그친다.",
+  "cue_speaker": "Harry",
+  "cue": "Who?",
+  "prev_line": "",
+  "line": "The Dark Lord. What was it like to stand in his presence?",
+  "ko": "어둠의 왕 말이다. 그분 앞에 서 보니 어떻던가?",
+  "plain": "The Dark Lord. What was it like being face to face with him?",
+  "tag": "문학",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "in someone's presence",
+    "kind": "격식 어휘",
+    "note": "'~의 면전에서, ~가 있는 자리에서'라는 격식 표현이다. stand in his presence라고 하면 왕이나 신 앞에 서듯 우러르는 어감이 실린다. 구어로는 in front of him, around him 정도다.",
+    "examples": [
+     {
+      "en": "He never swears in his grandmother's presence.",
+      "ko": "그는 할머니 앞에서는 절대 욕을 하지 않는다."
+     },
+     {
+      "en": "The contract must be signed in the presence of a solicitor.",
+      "ko": "계약서는 사무 변호사 입회하에 서명해야 한다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-050",
+  "speech": "moody-4-050",
+  "part": 1,
+  "of": 1,
+  "order": 69,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 볼드모트 앞에 선 기분이 어땠느냐는 물음에 해리가 대답하고, 무디의 질문은 점점 집요해진다.",
+  "cue_speaker": "Harry",
+  "cue": "I dunno. It was like I'd fallen into one of my dreams. One of my nightmares.",
+  "prev_line": "",
+  "line": "Were there others? In the graveyard, were there others?",
+  "ko": "다른 자들도 있었나? 묘지에 말이다, 다른 자들도 있었느냐?",
+  "plain": "Was anybody else there? At the graveyard, I mean. Who else showed up?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-051.1",
+  "speech": "moody-4-051",
+  "part": 1,
+  "of": 4,
+  "order": 70,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 해리가 자기는 묘지 이야기를 꺼낸 적이 없다고 조심스럽게 짚자, 무디의 표정과 말투가 순식간에 돌변한다.",
+  "cue_speaker": "Harry",
+  "cue": "I don't think I said anything about a graveyard, Professor.",
+  "prev_line": "",
+  "line": "Marvellous creatures, dragons, aren't they?",
+  "ko": "용이란 참 굉장한 짐승이지, 안 그런가?",
+  "plain": "Dragons are amazing, right?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "Marvellous creatures, dragons, aren't they?",
+    "kind": "우측 전위 + 부가의문문",
+    "note": "평가(Marvellous creatures)를 먼저 던지고 주어(dragons)를 뒤에 덧붙인 다음 부가의문문으로 마무리하는 어순으로, 영미 모두 쓰지만 영국 구어에서 특히 흔하다. be동사까지 생략해 무디다운 토막 말투가 된다. 미국 구어라면 Dragons are amazing, right?처럼 평범한 어순에 right?를 붙이는 편이다.",
+    "examples": [
+     {
+      "en": "Lovely people, your neighbours, aren't they?",
+      "ko": "너희 이웃들 참 좋은 분들이더라, 그렇지?"
+     },
+     {
+      "en": "Awful weather, this, isn't it?",
+      "ko": "날씨 참 고약하네, 안 그래?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "marvellous",
+    "kind": "BrE 어휘·철자",
+    "note": "'훌륭한, 굉장한'이라는 뜻으로 영국에서 일상적으로 쓰는 칭찬어다. 영국식 철자는 l이 두 개(marvellous), 미국식은 하나(marvelous)이며, 미국 구어에서는 amazing이나 awesome을 더 많이 쓴다.",
+    "examples": [
+     {
+      "en": "We had a marvellous time in Cornwall.",
+      "ko": "콘월에서 정말 즐거운 시간을 보냈어요."
+     },
+     {
+      "en": "That's marvellous news about your new job.",
+      "ko": "새 직장 소식 정말 잘됐다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-051.2",
+  "speech": "moody-4-051",
+  "part": 2,
+  "of": 4,
+  "order": 71,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 해리가 자기는 묘지 이야기를 꺼낸 적이 없다고 조심스럽게 짚자, 무디의 표정과 말투가 순식간에 돌변한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Marvellous creatures, dragons, aren't they?",
+  "line": "Do you think that miserable oaf would have led you into the woods if I hadn't suggested it?",
+  "ko": "내가 귀띔하지 않았으면 그 한심한 얼간이가 널 숲으로 데려갔을 것 같으냐?",
+  "plain": "You think that big idiot would've taken you into the woods if I hadn't told him to?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "miserable oaf / witless wonder",
+    "kind": "비하 표현(예스러운 어휘)",
+    "note": "oaf는 '덩치만 크고 둔한 사람', witless는 '지각없는, 멍청한'이라는 뜻이다. 둘 다 영미 공통 어휘지만 지금은 다소 예스럽고 문어적인 욕설이며, 영국에서 상대적으로 더 자주 들린다. witless wonder는 w 두운을 맞춘 조롱조 별명이다. 미국 구어라면 idiot, moron 정도로 말한다.",
+    "examples": [
+     {
+      "en": "Some oaf has parked across our drive again.",
+      "ko": "어떤 얼간이가 또 우리 집 진입로를 막고 주차했어."
+     },
+     {
+      "en": "It was a witless thing to say in front of the head teacher.",
+      "ko": "교장 선생님 앞에서 할 말로는 참 생각 없는 소리였어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-4-051.3",
+  "speech": "moody-4-051",
+  "part": 3,
+  "of": 4,
+  "order": 72,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 해리가 자기는 묘지 이야기를 꺼낸 적이 없다고 조심스럽게 짚자, 무디의 표정과 말투가 순식간에 돌변한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Do you think that miserable oaf would have led you into the woods if I hadn't suggested it?",
+  "line": "Do you think Cedric Diggory would have told you to open the egg under the water if I hadn't told him first myself?",
+  "ko": "내가 먼저 일러 주지 않았으면 세드릭 디고리가 알을 물속에서 열어 보라고 했을 것 같으냐?",
+  "plain": "You think Cedric would've tipped you off about opening the egg underwater if I hadn't clued him in first?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-051.4",
+  "speech": "moody-4-051",
+  "part": 4,
+  "of": 4,
+  "order": 73,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 해리가 자기는 묘지 이야기를 꺼낸 적이 없다고 조심스럽게 짚자, 무디의 표정과 말투가 순식간에 돌변한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Do you think Cedric Diggory would have told you to open the egg under the water if I hadn't told him first myself?",
+  "line": "Do you think Neville Longbottom, the witless wonder, could have provided you with gillyweed if I hadn't given him the book that led him straight to it?",
+  "ko": "녀석이 아가미풀을 곧장 찾아내게 해 준 그 책을 내가 쥐여 주지 않았으면, 저 멍청이 네빌 롱바텀이 네게 아가미풀을 구해다 줄 수 있었을 것 같으냐?",
+  "plain": "You think a moron like Neville could've gotten you gillyweed if I hadn't handed him the book that pointed him right to it?",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "impostor": true,
+  "bre": []
+ },
+ {
+  "id": "moody-4-052.1",
+  "speech": "moody-4-052",
+  "part": 1,
+  "of": 3,
+  "order": 74,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 일 년 내내 자신을 도운 사람의 정체를 깨달은 해리가 뒷걸음질 치고, 무디는 지팡이를 든 채 해리를 벽으로 몰아붙인다.",
+  "cue_speaker": "Harry",
+  "cue": "It was you from the beginning. You put my name in the Goblet of Fire. You bewitched Krum. But...",
+  "prev_line": "",
+  "line": "You won because I made it so, Potter. You ended up in that graveyard tonight because it was meant to be so.",
+  "ko": "네가 우승한 건 내가 그렇게 만들었기 때문이다, 포터. 오늘 밤 네가 그 묘지에 가게 된 것도 그리 되도록 정해져 있었기 때문이지.",
+  "plain": "You only won because I rigged it, Potter. You ended up in that graveyard tonight because that was the plan.",
+  "tag": "문학",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "I made it so / it was meant to be so",
+    "kind": "격식·대용어 so",
+    "note": "앞에 나온 내용을 so 한 단어로 받아 문장을 끝맺는 문어체 구문이다. 구어라면 I made it happen, that was the plan처럼 풀어서 말한다. 짧고 단정적이어서 선언문 같은 무게가 생긴다.",
+    "examples": [
+     {
+      "en": "The office was quiet, and it stayed so all afternoon.",
+      "ko": "사무실은 조용했고, 오후 내내 그랬다."
+     },
+     {
+      "en": "She was nervous, and understandably so.",
+      "ko": "그녀는 긴장했는데, 그럴 만도 했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-052.2",
+  "speech": "moody-4-052",
+  "part": 2,
+  "of": 3,
+  "order": 75,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 일 년 내내 자신을 도운 사람의 정체를 깨달은 해리가 뒷걸음질 치고, 무디는 지팡이를 든 채 해리를 벽으로 몰아붙인다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "You won because I made it so, Potter. You ended up in that graveyard tonight because it was meant to be so.",
+  "line": "And now the deed is done. The blood that runs through these veins runs within the Dark Lord.",
+  "ko": "이제 일은 끝났다. 이 핏줄에 흐르는 피가 어둠의 왕 안에도 흐른다.",
+  "plain": "And now it's done. The blood in your veins is in the Dark Lord too.",
+  "tag": "문학",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "the deed is done",
+    "kind": "문학 관용구",
+    "note": "'일은 이미 저질러졌다, 돌이킬 수 없다'는 뜻의 관용구로, 맥베스의 'I have done the deed'를 떠올리게 하는 표현이다. 원래는 음모나 범행에 쓰는 말이지만, 일상에서는 영미 모두 내키지 않는 일을 해치웠을 때 반농담으로 쓴다.",
+    "examples": [
+     {
+      "en": "Right, the deed is done. I've handed in my notice.",
+      "ko": "자, 일은 저질렀어. 사표 냈어."
+     },
+     {
+      "en": "I've sent the email, so the deed is done.",
+      "ko": "메일을 보냈으니 이제 되돌릴 수 없어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-052.3",
+  "speech": "moody-4-052",
+  "part": 3,
+  "of": 3,
+  "order": 76,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 일 년 내내 자신을 도운 사람의 정체를 깨달은 해리가 뒷걸음질 치고, 무디는 지팡이를 든 채 해리를 벽으로 몰아붙인다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "And now the deed is done. The blood that runs through these veins runs within the Dark Lord.",
+  "line": "Imagine how he will reward me when he learns that I have, once and for all, silenced the great Harry Potter.",
+  "ko": "내가 저 위대한 해리 포터의 입을 영원히 막았다는 걸 아시면, 그분이 내게 어떤 상을 내리실지 상상해 봐라.",
+  "plain": "Just think how he's going to reward me when he finds out I finally shut up the great Harry Potter for good.",
+  "tag": "문학",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [
+   {
+    "expr": "he will / I have (축약 회피)",
+    "kind": "격식·축약 회피",
+    "note": "he'll, I've로 줄이지 않고 풀어 말해 한 단어 한 단어에 힘을 싣는다. 승리를 선언하는 연설조가 되며, 일상에서는 공식 통보나 단호한 입장 표명에 쓰인다.",
+    "examples": [
+     {
+      "en": "I will not be attending the meeting.",
+      "ko": "저는 그 회의에 참석하지 않겠습니다."
+     },
+     {
+      "en": "We have decided to accept the offer.",
+      "ko": "저희는 그 제안을 받아들이기로 결정했습니다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-4-053",
+  "speech": "moody-4-053",
+  "part": 1,
+  "of": 1,
+  "order": 77,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 덤블도어와 스네이프, 맥고나걸이 문을 부수고 들어와 무디를 제압하고, 스네이프가 진실의 약을 먹이자 덤블도어가 심문을 시작한다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "Do you know who I am?",
+  "prev_line": "",
+  "line": "Albus Dumbledore.",
+  "ko": "알버스 덤블도어.",
+  "plain": "Albus Dumbledore.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "moody-4-054",
+  "speech": "moody-4-054",
+  "part": 1,
+  "of": 1,
+  "order": 78,
+  "character": "Moody",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "무디의 연구실. 진실의 약을 먹고 의자에 붙들린 무디에게 덤블도어가 얼굴을 바짝 대고 정체를 캐묻는다.",
+  "cue_speaker": "Dumbledore",
+  "cue": "Are you Alastor Moody? Are you?",
+  "prev_line": "",
+  "line": "No.",
+  "ko": "아니.",
+  "plain": "No.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "impostor": true,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "moody-5-001",
+  "speech": "moody-5-001",
+  "part": 1,
+  "of": 1,
+  "order": 79,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가. 해리를 데리러 온 불사조 기사단 선발대가 집 앞에 나타나자, 버논 이모부가 낯선 마법사들을 보고 따져 묻는다.",
+  "cue_speaker": "Vernon",
+  "cue": "Who are all you lot?",
+  "prev_line": "",
+  "line": "Quiet, Dursley.",
+  "ko": "조용히 해, 더즐리.",
+  "plain": "Shut up, Dursley.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ },
+ {
+  "id": "moody-5-002",
+  "speech": "moody-5-002",
+  "part": 1,
+  "of": 1,
+  "order": 80,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대와 만난 해리가 그동안 무슨 일이 있었는지 캐묻다가 볼드모트의 이름을 꺼내려 하자 대원들이 움찔한다.",
+  "cue_speaker": "Harry",
+  "cue": "What's been going on? What's Lord Vol-",
+  "prev_line": "",
+  "line": "We're not talking about it here, it's too risky.",
+  "ko": "여기서 그 얘기는 안 해. 너무 위험하다.",
+  "plain": "Not here. It's way too dangerous to talk about that out in the open.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "moody-5-003",
+  "speech": "moody-5-003",
+  "part": 1,
+  "of": 1,
+  "order": 81,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 해리의 질문을 막아 세운 직후, 무디의 마법 눈이 머리 뒤쪽으로 돌아간 채 걸려 버린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Blast it.",
+  "ko": "에이, 망할.",
+  "plain": "Dammit.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Blast (it)!",
+    "kind": "BrE 감탄사",
+    "note": "짜증이나 실망을 나타내는 영국식 가벼운 욕설. 'Damn it'보다 순한 느낌으로, 나이 든 영국인이나 격식 있는 사람이 험한 말을 피할 때 자주 쓴다. 미국 구어에서는 'Dammit', 'Shoot', 'Crap' 정도가 대응된다.",
+    "examples": [
+     {
+      "en": "Blast! I've left my keys in the office again.",
+      "ko": "에이, 참! 사무실에 또 열쇠를 두고 왔네."
+     },
+     {
+      "en": "Blast it, the printer's jammed just before the meeting.",
+      "ko": "망할, 회의 직전에 프린터가 걸렸어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-004",
+  "speech": "moody-5-004",
+  "part": 1,
+  "of": 1,
+  "order": 82,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 무디의 마법 눈이 머리 뒤쪽으로 돌아가 있는 것을 보고 통스가 핀잔을 준다.",
+  "cue_speaker": "Tonks",
+  "cue": "Mad-Eye, dear, you do realise that's disgusting?",
+  "prev_line": "",
+  "line": "I want 360 degree visibility on the return trip.",
+  "ko": "돌아가는 길엔 사방을 다 봐야 한다.",
+  "plain": "I wanna be able to see all around us on the way back.",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "moody-5-005",
+  "speech": "moody-5-005",
+  "part": 1,
+  "of": 1,
+  "order": 83,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 빗자루를 들고 출발 신호를 기다리는데, 킹슬리가 하늘에 오른 첫 신호를 알린다.",
+  "cue_speaker": "Kingsley",
+  "cue": "There's the first signal.",
+  "prev_line": "",
+  "line": "Right, let's go.",
+  "ko": "좋아, 출발한다.",
+  "plain": "Okay, let's move.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Right, ...",
+    "kind": "BrE 담화표지",
+    "note": "문장 앞의 'Right'는 '자, 그럼 / 좋아'처럼 상황을 정리하고 다음 행동으로 넘어갈 때 쓰는 영국식 담화표지다. 미국 구어에서는 'Okay' 또는 'All right'가 같은 자리를 차지한다. 회의 시작, 수업 전환, 출발 신호 등 일상에서 매우 흔하다.",
+    "examples": [
+     {
+      "en": "Right, everyone, let's get started.",
+      "ko": "자, 여러분, 시작합시다."
+     },
+     {
+      "en": "Right, that's lunch sorted. What's next?",
+      "ko": "좋아, 점심은 해결됐고. 다음은?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-006",
+  "speech": "moody-5-006",
+  "part": 1,
+  "of": 1,
+  "order": 84,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 출발이 임박해 루핀이 해리를 빗자루에 태우자, 무디가 대원들에게 호령한다.",
+  "cue_speaker": "Lupin",
+  "cue": "On your broom, Harry.",
+  "prev_line": "",
+  "line": "Form up! Form up around Harry. Make it snappy!",
+  "ko": "대형 갖춰! 해리 주위로 모여. 빨리빨리 움직여!",
+  "plain": "Get in position! Everybody around Harry. Hurry it up!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Make it snappy!",
+    "kind": "구어 관용구",
+    "note": "'빨리 해, 서둘러'라는 뜻의 다소 거친 구어 명령. 20세기 초 미국 속어에서 나온 말로 영국식이 아니라 영미 공통이며, 지금은 양쪽 모두에서 약간 구식이고 무뚝뚝한 느낌이 있다. 비슷한 말로 'Hurry up', 'Step on it', 'Make it quick'이 있다.",
+    "examples": [
+     {
+      "en": "Grab your coats, and make it snappy. The taxi's here.",
+      "ko": "코트 챙겨, 빨리. 택시 왔어."
+     },
+     {
+      "en": "I need those figures by ten, so make it snappy.",
+      "ko": "열 시까지 그 수치 필요하니까 서둘러."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Form up!",
+    "kind": "군사 명령 어휘",
+    "note": "'대형을 이루다, 정렬하다'라는 군사·훈련 용어로 영국군과 미군이 모두 쓴다. 일상에서는 체육 수업이나 단체 활동에서 줄을 세울 때 쓸 수 있다. 일반 구어로 풀면 'Get in formation', 'Line up'이고, 군대식 집합 구령으로는 'Fall in!'도 있다.",
+    "examples": [
+     {
+      "en": "Form up in two lines, please, and wait for the whistle.",
+      "ko": "두 줄로 서서 호각 소리를 기다리세요."
+     },
+     {
+      "en": "The cadets formed up on the parade ground at dawn.",
+      "ko": "사관 후보생들은 새벽에 연병장에 정렬했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-007.1",
+  "speech": "moody-5-007",
+  "part": 1,
+  "of": 5,
+  "order": 85,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 둘러싸고 자리를 잡자, 무디가 이륙 전에 비행 수칙과 최악의 경우 대처법을 브리핑한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "We'll be flying in close-quarters formation. Tonks will be right in front of you; keep close to her at all times.",
+  "ko": "밀착 대형으로 비행한다. 통스가 네 바로 앞에 있을 테니 한순간도 떨어지지 마라.",
+  "plain": "We're gonna fly in a tight group. Tonks is gonna be right ahead of you, so stick with her the whole time.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "at all times",
+    "kind": "격식 어휘",
+    "note": "'항상, 한순간도 빠짐없이'라는 뜻의 격식 표현으로, 규정·안내문·지시 사항에 흔히 쓰인다. 'always'보다 강제성이 강하게 느껴진다. 영미 공통이며(미국 안내문에도 아주 흔하다), 일상 구어에서는 양쪽 모두 'the whole time'이나 'always'가 더 자연스럽다.",
+    "examples": [
+     {
+      "en": "Visitors must wear a badge at all times.",
+      "ko": "방문객은 항상 출입증을 착용해야 합니다."
+     },
+     {
+      "en": "Keep your bag with you at all times at the station.",
+      "ko": "역에서는 가방을 항상 몸에 지니고 있으세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-5-007.2",
+  "speech": "moody-5-007",
+  "part": 2,
+  "of": 5,
+  "order": 86,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 둘러싸고 자리를 잡자, 무디가 이륙 전에 비행 수칙과 최악의 경우 대처법을 브리핑한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "We'll be flying in close-quarters formation. Tonks will be right in front of you; keep close to her at all times.",
+  "line": "Don't stop, and whatever you do, don't break formation.",
+  "ko": "멈추지 마. 무슨 일이 있어도 대형을 깨지 마라.",
+  "plain": "Don't stop, and no matter what, don't break out of the group.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "whatever you do, don't ...",
+    "kind": "구어 강조",
+    "note": "'무슨 일이 있어도 ~하지 마라'라며 금지를 최대로 강조하는 관용 표현. 영국·미국 구분 없이 일상에서 똑같이 쓰는 영미 공통 표현이다. 뒤에는 꼭 지켜야 할 금지 사항이 온다.",
+    "examples": [
+     {
+      "en": "Whatever you do, don't mention the budget in front of the director.",
+      "ko": "무슨 일이 있어도 이사님 앞에서 예산 얘기는 꺼내지 마."
+     },
+     {
+      "en": "Whatever you do, don't press the red button.",
+      "ko": "절대로 빨간 버튼은 누르지 마."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-5-007.3",
+  "speech": "moody-5-007",
+  "part": 3,
+  "of": 5,
+  "order": 87,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 둘러싸고 자리를 잡자, 무디가 이륙 전에 비행 수칙과 최악의 경우 대처법을 브리핑한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Don't stop, and whatever you do, don't break formation.",
+  "line": "If any of us are killed, the rest of you keep flying.",
+  "ko": "우리 중 누가 죽더라도 나머지는 계속 날아간다.",
+  "plain": "If any of us get killed, the rest of you just keep going.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "moody-5-007.4",
+  "speech": "moody-5-007",
+  "part": 4,
+  "of": 5,
+  "order": 88,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 둘러싸고 자리를 잡자, 무디가 이륙 전에 비행 수칙과 최악의 경우 대처법을 브리핑한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "If any of us are killed, the rest of you keep flying.",
+  "line": "If that were to happen, the survivors fly to the east.",
+  "ko": "혹시 그런 일이 생기면 살아남은 자들은 동쪽으로 간다.",
+  "plain": "If that happens, whoever's left heads east.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "If that were to happen, ...",
+    "kind": "가정법·격식",
+    "note": "'혹시 그런 일이 생긴다면'이라는 뜻으로, 'were to'를 써서 일어나지 않길 바라는 일을 거리감 있게 가정하는 격식 표현이다. 'If that happens'보다 신중하고 공식적인 느낌을 주어 브리핑, 계약, 안내문에 잘 맞는다. 영국식이 아니라 영미 공통의 격식체이며, 일상 구어에서는 양쪽 모두 'If that happens' 또는 'If that ever happened'로 말한다.",
+    "examples": [
+     {
+      "en": "If the server were to go down, the backup kicks in within a minute.",
+      "ko": "혹시 서버가 멈춘다면 1분 안에 백업이 가동됩니다."
+     },
+     {
+      "en": "If I were to leave the company, who would take over my clients?",
+      "ko": "제가 회사를 떠난다면 제 고객은 누가 맡게 될까요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-5-007.5",
+  "speech": "moody-5-007",
+  "part": 5,
+  "of": 5,
+  "order": 89,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 둘러싸고 자리를 잡자, 무디가 이륙 전에 비행 수칙과 최악의 경우 대처법을 브리핑한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "If that were to happen, the survivors fly to the east.",
+  "line": "The rear guard is standing by. They will find you.",
+  "ko": "후위 부대가 대기 중이다. 그들이 너를 찾아낼 거다.",
+  "plain": "There's a backup team waiting, and they'll find you.",
+  "tag": "격식",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "moody-5-008",
+  "speech": "moody-5-008",
+  "part": 1,
+  "of": 1,
+  "order": 90,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 누가 죽더라도 계속 날라는 무디의 살벌한 브리핑에 통스가 농담조로 핀잔을 준다.",
+  "cue_speaker": "Tonks",
+  "cue": "Stop being so cheerful, Mad-Eye.",
+  "prev_line": "",
+  "line": "We must be ready. This would be the perfect moment for Voldemort to strike Harry.",
+  "ko": "준비돼 있어야 한다. 볼드모트가 해리를 치기엔 지금이 딱 좋은 순간이니까.",
+  "plain": "We gotta be ready. Right now would be the perfect time for Voldemort to go after Harry.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "We must be ready.",
+    "kind": "법조동사(must)",
+    "note": "영국영어는 의무나 필요를 말할 때 'must'를 일상 대화에서도 자연스럽게 쓴다. 미국 구어에서는 'have to', 'gotta', 'need to'가 훨씬 흔하고 'must'는 문어적이거나 강한 느낌으로 들린다. 짧고 단호한 지시에 잘 맞는다.",
+    "examples": [
+     {
+      "en": "We must leave by seven if we want to catch the train.",
+      "ko": "기차를 타려면 일곱 시에는 나가야 해."
+     },
+     {
+      "en": "You must let me know if anything changes.",
+      "ko": "무슨 변동이 생기면 꼭 알려 줘야 해."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-009",
+  "speech": "moody-5-009",
+  "part": 1,
+  "of": 1,
+  "order": 91,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 선발대가 해리를 에워싸고 대기하던 중 루핀이 두 번째 신호가 올랐다고 외친다.",
+  "cue_speaker": "Lupin",
+  "cue": "There's the second signal!",
+  "prev_line": "",
+  "line": "Mount your brooms, everyone. Here we go!",
+  "ko": "전원 빗자루에 올라. 간다!",
+  "plain": "Everybody get on your brooms. Here we go!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "mount",
+    "kind": "격식 어휘",
+    "note": "말·자전거·오토바이 등에 '올라타다'를 뜻하는 다소 격식 있는 동사. 승마나 군대식 지시에서 흔히 들리는 영미 공통어로(미국 서부극의 'Mount up!'), 일상 구어의 'get on'보다 한 단계 딱딱하다. 일상 구어에서는 영국·미국 모두 대개 'get on'을 쓴다.",
+    "examples": [
+     {
+      "en": "Mount your bikes at the start line and wait for the signal.",
+      "ko": "출발선에서 자전거에 올라 신호를 기다리세요."
+     },
+     {
+      "en": "She mounted the horse in one smooth movement.",
+      "ko": "그녀는 한 번의 매끄러운 동작으로 말에 올라탔다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-5-010",
+  "speech": "moody-5-010",
+  "part": 1,
+  "of": 1,
+  "order": 92,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤의 프리벳가 앞 거리. 모두 빗자루에 올라탄 채 숨죽이고 있는데, 기다리던 마지막 신호가 하늘에 오른다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "The third signal, everyone. Let's go!",
+  "ko": "세 번째 신호다. 출발!",
+  "plain": "That's the third signal, guys. Let's move out!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-011",
+  "speech": "moody-5-011",
+  "part": 1,
+  "of": 1,
+  "order": 93,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "프리벳가 상공, 밤. 선발대가 해리를 가운데 두고 막 날아오른 직후, 무디가 대원들에게 지시를 외친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Stay in formation!",
+  "ko": "대형 유지해!",
+  "plain": "Hold your positions, everyone!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-012",
+  "speech": "moody-5-012",
+  "part": 1,
+  "of": 1,
+  "order": 94,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤하늘을 나는 선발대. 대원들을 단속한 무디가 이번에는 비행 고도를 두고 소리친다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "We need more height!",
+  "ko": "더 높이 올라가!",
+  "plain": "We gotta climb higher!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-013",
+  "speech": "moody-5-013",
+  "part": 1,
+  "of": 1,
+  "order": 95,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤하늘을 나는 선발대. 마법 눈으로 사방을 살피던 무디가 죽음을 먹는 자들이 접근해 오는 것을 발견하고 경고한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Contacts to the south!",
+  "ko": "남쪽에 적이다!",
+  "plain": "Bad guys coming in from the south!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "contacts",
+    "kind": "군사 용어",
+    "note": "군사·항공 무선 용어로 레이더나 시야에 포착된 '미확인 물체, 적'을 가리킨다. 무디가 전투 교관 출신답게 쓰는 말로, 일상 대화에서는 거의 쓰지 않는다. 일반적인 말로 바꾸면 'enemies' 또는 'There are people coming from the south'가 된다.",
+    "examples": [
+     {
+      "en": "Two contacts on the radar, bearing north-east.",
+      "ko": "레이더에 두 개의 접촉체, 북동쪽 방향."
+     },
+     {
+      "en": "The patrol reported contact with hostile forces at dawn.",
+      "ko": "순찰대가 새벽에 적군과 접촉했다고 보고했다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-014",
+  "speech": "moody-5-014",
+  "part": 1,
+  "of": 1,
+  "order": 96,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤하늘의 추격전. 킹슬리 일행이 뒤에 남아 죽음을 먹는 자들을 막는 사이, 싸움 쪽을 돌아보며 머뭇거리는 해리를 무디가 다그친다.",
+  "cue_speaker": "Lupin",
+  "cue": "Get Harry to the safe house!",
+  "prev_line": "",
+  "line": "Come on, Potter! Keep moving!",
+  "ko": "어서, 포터! 멈추지 마!",
+  "plain": "Come on, Harry! Keep going!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Potter",
+    "kind": "호칭(성으로 부르기)",
+    "note": "영국의 전통적인 학교(특히 사립·기숙학교)와 군대에서는 교사나 상관이 학생·부하를 이름 대신 성(surname)만으로 부르는 관습이 있었다. 거리감과 권위를 드러내며, 무디가 해리를 'Potter'라 부르는 것도 전직 오러 교관의 말투다. 다만 미국에서도 군대나 운동부 코치는 성으로 부르므로 영국만의 것은 아니고, 교사가 학생을 성만으로 부르는 것은 요즘 영국에서도 구식이다.",
+    "examples": [
+     {
+      "en": "Smith, stay behind after class, please.",
+      "ko": "스미스, 수업 끝나고 남아라."
+     },
+     {
+      "en": "Well done, Jones. That's the best essay this term.",
+      "ko": "잘했다, 존스. 이번 학기 최고의 에세이야."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-015",
+  "speech": "moody-5-015",
+  "part": 1,
+  "of": 1,
+  "order": 97,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤하늘의 추격전. 계속 날라는 무디의 재촉에도 해리가 자기도 싸우겠다며 버틴다.",
+  "cue_speaker": "Harry",
+  "cue": "But I can help!",
+  "prev_line": "",
+  "line": "Potter, getting yourself killed won't do a thing. Now move!",
+  "ko": "포터, 네가 죽으면 아무 소용 없다. 어서 움직여!",
+  "plain": "Harry, you getting killed isn't gonna help anybody. Now go!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "... won't do a thing",
+    "kind": "구어 관용구",
+    "note": "'아무 소용이 없다, 아무 도움도 안 된다'라는 뜻으로, 'won't do any good'을 더 짧고 거칠게 말한 형태다. 동명사구(getting yourself killed)를 주어로 세워 '~하는 것은'이라고 묶는 구조도 함께 익혀 두면 좋다. 영미 공통 구어이며, 더 풀어 말하면 'isn't going to help' 정도가 된다.",
+    "examples": [
+     {
+      "en": "Shouting at the printer won't do a thing. Just call IT.",
+      "ko": "프린터에 소리쳐 봐도 소용없어. IT 부서에 전화해."
+     },
+     {
+      "en": "Worrying all night won't do a thing. Get some sleep.",
+      "ko": "밤새 걱정해도 아무 소용 없어. 좀 자."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Potter",
+    "kind": "호칭(성으로 부르기)",
+    "note": "교관·상관이 성만으로 부르는 호칭. 권위와 거리감을 담으며, 영국의 전통적인 학교·군대 말투이지만 미국 군대나 운동부에서도 똑같이 쓴다.",
+    "examples": [
+     {
+      "en": "Brown, you're up next.",
+      "ko": "브라운, 네 차례다."
+     },
+     {
+      "en": "Patel, see me in my office.",
+      "ko": "파텔, 내 방으로 와."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-016",
+  "speech": "moody-5-016",
+  "part": 1,
+  "of": 1,
+  "order": 98,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "밤하늘을 나는 선발대. 해리를 다그쳐 싸움터에서 떼어 낸 무디가, 은신처가 가까워지자 일행을 독려한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "We're not far now!",
+  "ko": "거의 다 왔다!",
+  "plain": "We're almost there!",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "moody-5-017",
+  "speech": "moody-5-017",
+  "part": 1,
+  "of": 1,
+  "order": 99,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "은신처 근처 상공, 밤. 뒤에 남아 싸우던 킹슬리 일행이 다시 따라붙자 무디가 상황을 확인한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Did you get rid of them?",
+  "ko": "놈들은 떨쳐냈나?",
+  "plain": "Did you lose them?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-018",
+  "speech": "moody-5-018",
+  "part": 1,
+  "of": 1,
+  "order": 100,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "런던 상공, 밤. 앞장서 날던 통스가 목적지에 도착했다고 알리자 무디가 착륙 지시를 내린다.",
+  "cue_speaker": "Tonks",
+  "cue": "We're there!",
+  "prev_line": "",
+  "line": "Prepare for descent! Form up around Harry!",
+  "ko": "하강 준비! 해리 주위로 모여!",
+  "plain": "Get ready to land! Everybody around Harry!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Prepare for descent",
+    "kind": "격식 어휘(항공·군사)",
+    "note": "'descent(하강)'는 항공기 기내 방송이나 군사 지시에서 쓰는 격식 명사형 표현이다. 일상 구어라면 'get ready to land / go down'이라고 풀어 말한다. 동사 대신 명사를 세워 지시를 짧고 공식적으로 만드는 것은 영국식이 아니라 영미 공통의 공지문·방송 문체다(미국 기내 방송도 'prepare for landing'이라고 한다).",
+    "examples": [
+     {
+      "en": "We are now beginning our descent into Manchester.",
+      "ko": "지금부터 맨체스터 공항으로 하강을 시작합니다."
+     },
+     {
+      "en": "The descent from the summit took longer than the climb.",
+      "ko": "정상에서 내려오는 데 올라갈 때보다 더 오래 걸렸다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-5-019",
+  "speech": "moody-5-019",
+  "part": 1,
+  "of": 1,
+  "order": 101,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "그리몰드 광장의 밤거리. 착륙한 뒤 주변을 살피고 온 킹슬리가 안전하다는 신호를 보낸다.",
+  "cue_speaker": "Kingsley",
+  "cue": "Clear!",
+  "prev_line": "",
+  "line": "Right, Harry, this way.",
+  "ko": "좋아, 해리. 이쪽이다.",
+  "plain": "Okay, Harry, over here.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Right, ...",
+    "kind": "BrE 담화표지",
+    "note": "다음 행동으로 넘어갈 때 쓰는 영국식 '자, 좋아'. 미국 구어의 'Okay'에 해당한다.",
+    "examples": [
+     {
+      "en": "Right, let's have a look at your essay.",
+      "ko": "자, 네 에세이를 한번 보자."
+     },
+     {
+      "en": "Right, I'm off. See you tomorrow.",
+      "ko": "그럼 난 간다. 내일 봐."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-020",
+  "speech": "moody-5-020",
+  "part": 1,
+  "of": 1,
+  "order": 102,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "그리몰드 광장의 밤거리. 11번지와 13번지 사이 앞으로 해리를 데려온 무디가 주소가 적힌 쪽지를 내민다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Here, read this.",
+  "ko": "자, 이거 읽어.",
+  "plain": "Here, take a look at this.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-021",
+  "speech": "moody-5-021",
+  "part": 1,
+  "of": 1,
+  "order": 103,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "그리몰드 광장의 밤거리. 해리가 쪽지를 읽자 두 집 사이에서 12번지가 밀려 나오듯 나타나고, 무디가 서두른다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Come on, inside. Hurry.",
+  "ko": "어서, 안으로. 빨리.",
+  "plain": "Come on, get inside. Quick.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-022.1",
+  "speech": "moody-5-022",
+  "part": 1,
+  "of": 2,
+  "order": 104,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "성 뭉고 병원, 뱀에게 물린 아서 위즐리의 병실. 병문안 온 기사단 단원들이 마법부에서 벌어진 습격을 두고 이야기를 나눈다.",
+  "cue_speaker": "Tonks",
+  "cue": "We searched the whole floor, Arthur, but we couldn't find that snake. Why a snake, anyway?",
+  "prev_line": "",
+  "line": "He probably sent it as a lookout. See what he's up against. That's the closest he's ever gotten to it.",
+  "ko": "정찰용으로 보낸 거겠지. 자기가 뭘 상대하는지 보려고. 거기까지 간 건 그놈이 처음이야.",
+  "plain": "He probably sent it to scout things out and see what he's dealing with. That's the nearest he's ever gotten to it.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "what he's up against",
+    "kind": "구어 관용구",
+    "note": "'be up against ~'는 '~에 맞서다, ~라는 어려움을 상대하다'라는 뜻의 관용구다. 상대의 전력이나 앞에 놓인 장애물을 가리킬 때 쓰며, 영국·미국 모두에서 똑같이 흔한 영미 공통 구어다. 비슷한 말로 'what he's dealing with'가 있다.",
+    "examples": [
+     {
+      "en": "We're up against a much bigger company for this contract.",
+      "ko": "이번 계약은 훨씬 큰 회사와 맞붙게 됐어."
+     },
+     {
+      "en": "You don't know what you're up against until you read the brief.",
+      "ko": "요강을 읽기 전까지는 뭘 상대하는지 모를 거야."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "gotten (vs. got)",
+    "kind": "AmE 대비",
+    "note": "'get'의 과거분사로 'gotten'을 쓰는 것은 미국영어 특징이다. 현대 영국영어에서는 'has got'을 쓰며, 'gotten'은 'ill-gotten gains' 같은 굳어진 표현에만 남아 있다. 이 대사는 팬 전사본이라 미국식 형태가 들어온 것으로 보이며, 영국식으로 말하면 'the closest he's ever got to it'이 된다.",
+    "examples": [
+     {
+      "en": "That's the furthest I've ever got with a crossword.",
+      "ko": "십자말풀이를 그렇게 멀리까지 풀어 본 건 처음이야."
+     },
+     {
+      "en": "Have you got the report finished yet?",
+      "ko": "보고서 다 끝냈어?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-5-022.2",
+  "speech": "moody-5-022",
+  "part": 2,
+  "of": 2,
+  "order": 105,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "성 뭉고 병원, 뱀에게 물린 아서 위즐리의 병실. 병문안 온 기사단 단원들이 마법부에서 벌어진 습격을 두고 이야기를 나눈다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "He probably sent it as a lookout. See what he's up against. That's the closest he's ever gotten to it.",
+  "line": "So, Potter says he saw the whole thing?",
+  "ko": "그래서, 포터가 그걸 전부 봤다는 거냐?",
+  "plain": "So Harry says he saw the whole thing happen?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-5-023",
+  "speech": "moody-5-023",
+  "part": 1,
+  "of": 1,
+  "order": 106,
+  "character": "Moody",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "성 뭉고 병원, 아서 위즐리의 병실. 해리가 뱀의 눈으로 습격을 지켜봤다는 얘기에 어른들이 걱정을 주고받고, 해리는 문밖에서 엿듣고 있다.",
+  "cue_speaker": "Mrs. Weasley",
+  "cue": "When I spoke to him this morning, he seemed very worried about Harry.",
+  "prev_line": "",
+  "line": "He should be. I mean, if You-Know-Who is really possessing him...",
+  "ko": "걱정해야지. 그러니까, 만약 그 사람이 정말로 해리를 조종하고 있는 거라면...",
+  "plain": "He's got good reason to be. I mean, if You-Know-Who really is taking over Harry's mind...",
+  "tag": "일반",
+  "card": true,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "He should be.",
+    "kind": "생략 응답",
+    "note": "앞사람의 말('he seemed very worried')에서 형용사를 생략하고 조동사(should)와 be만 남겨 '그래야 마땅하지'라고 답하는 짧은 응답. 이런 생략 응답은 영국식이 아니라 영미 공통의 일상 구어로, 동의나 평가를 간결하게 전한다. 풀어 말하면 'He has every reason to be worried'가 된다.",
+    "examples": [
+     {
+      "en": "A: She seemed nervous before the interview. B: She should be. It's a tough panel.",
+      "ko": "A: 면접 전에 긴장한 것 같더라. B: 그럴 만하지. 면접관들이 까다롭거든."
+     },
+     {
+      "en": "A: He's quite proud of that report. B: He should be. It's excellent.",
+      "ko": "A: 그 보고서를 꽤 자랑스러워하더라. B: 그래야지. 아주 훌륭하니까."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-001",
+  "speech": "moody-7-001",
+  "part": 1,
+  "of": 1,
+  "order": 107,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "프리벳가 4번지 현관 앞, 밤. 해리를 데리러 온 기사단원들이 문 앞에 몰려 서 있고, 해그리드가 반갑게 해리의 안부를 묻는다.",
+  "cue_speaker": "Hagrid",
+  "cue": "All righ', 'arry? Yeh look fit.",
+  "prev_line": "",
+  "line": "Yeah, he's ruddy gorgeous. What say we get undercover before someone murders him.",
+  "ko": "그래, 눈부시게 잘났군. 누가 이놈 목숨을 노리기 전에 안으로 들어가는 게 어떻겠나.",
+  "plain": "Yeah, he looks great. How about we get inside before somebody kills him?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "ruddy",
+    "kind": "BrE 어휘(순화 욕설)",
+    "note": "bloody를 한 단계 순화한 영국식 강조어로, '더럽게, 끝내주게' 정도의 뜻이다. 미국식이라면 damn, freaking을 쓴다. 여기서는 해그리드의 인사(fit = 건강해 보인다)를 받아 '그래, 아주 잘나셨지' 하고 비꼬는 말이다.",
+    "examples": [
+     {
+      "en": "The ruddy printer's jammed again.",
+      "ko": "이놈의 프린터가 또 걸렸어."
+     },
+     {
+      "en": "It's ruddy freezing in here.",
+      "ko": "여기 더럽게 춥네."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "What say we ...?",
+    "kind": "제안 표현(구식 구어)",
+    "note": "'What do you say we ...?'를 줄인 제안 표현으로 '~하는 게 어때'라는 뜻이다. 약간 예스러운 느낌이 있고, 질문 형식이지만 무디처럼 쓰면 사실상 명령이다. 영국식이 아니라 미국 구어에서도 흔히 쓰는 영미 공통 표현이며, 더 평범하게는 'How about we ...?'라고 한다.",
+    "examples": [
+     {
+      "en": "What say we call it a day?",
+      "ko": "오늘은 이쯤에서 끝내는 게 어때?"
+     },
+     {
+      "en": "What say we grab a curry after work?",
+      "ko": "퇴근하고 카레나 먹으러 갈까?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-002.1",
+  "speech": "moody-7-002",
+  "part": 1,
+  "of": 2,
+  "order": 108,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "프리벳가 4번지, 짐이 다 빠진 더즐리 집 거실. 해리를 데리러 온 기사단원들이 인사를 나누며 떠들썩하고, 통스가 신이 나서 소식을 전하려는 참이다.",
+  "cue_speaker": "Tonks",
+  "cue": "By the way, wait until you hear the news! Remus and I are --",
+  "prev_line": "",
+  "line": "All right, all right! You'll all have time for a cozy catch-up later!",
+  "ko": "됐어, 됐어! 오붓하게 회포 푸는 건 나중에 해!",
+  "plain": "Okay, okay! You guys can catch up later!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "a (cosy) catch-up",
+    "kind": "BrE 어휘(명사 용법)",
+    "note": "catch up을 명사로 써서 '그간의 소식을 나누는 자리'를 가리킨다. 영국에서는 친구 사이뿐 아니라 직장에서도 'have a catch-up'을 아주 흔하게 쓰고, 미국에서는 동사 catch up을 그대로 쓰는 편이다. 대본 철자 cozy는 미국식이며 영국식은 cosy다.",
+    "examples": [
+     {
+      "en": "Shall we have a quick catch-up on Monday?",
+      "ko": "월요일에 잠깐 진행 상황 좀 나눌까요?"
+     },
+     {
+      "en": "I had a lovely catch-up with Sarah over coffee.",
+      "ko": "세라랑 커피 마시면서 밀린 얘기를 실컷 했어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-002.2",
+  "speech": "moody-7-002",
+  "part": 2,
+  "of": 2,
+  "order": 109,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "프리벳가 4번지, 짐이 다 빠진 더즐리 집 거실. 해리를 데리러 온 기사단원들이 인사를 나누며 떠들썩하고, 통스가 신이 나서 소식을 전하려는 참이다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "All right, all right! You'll all have time for a cozy catch-up later!",
+  "line": "We've got to get the hell out of here and soon!",
+  "ko": "당장 여기서 빠져나가야 한다, 그것도 빨리!",
+  "plain": "We need to get out of here, fast!",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "We've got to ...",
+    "kind": "AmE 대비(have got to)",
+    "note": "의무를 말할 때 영국 구어는 have got to를 즐겨 쓴다. 미국 구어라면 'We need to', 'We gotta'가 더 자연스럽다. 뒤에 'and soon'을 덧붙여 조각 문장으로 다그치는 것이 무디식 말투다.",
+    "examples": [
+     {
+      "en": "I've got to dash — my train's in ten minutes.",
+      "ko": "나 얼른 가야 해. 기차가 10분 뒤야."
+     },
+     {
+      "en": "We've got to sort this out before Friday.",
+      "ko": "금요일 전에 이걸 해결해야 해."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-003",
+  "speech": "moody-7-003",
+  "part": 1,
+  "of": 1,
+  "order": 110,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 떠들던 기사단원들을 조용히 시킨 무디가 해리를 향해 돌아서서 이송 작전의 전제를 설명하기 시작한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Potter, you're underage, which means you've still got the Trace on you.",
+  "ko": "포터, 넌 아직 미성년자다. 그러니까 '흔적'이 아직 네 몸에 붙어 있다는 얘기지.",
+  "plain": "Potter, you're not an adult yet, so you still have the Trace on you.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "you've still got ...",
+    "kind": "AmE 대비(have got)",
+    "note": "소유를 말할 때 영국 구어는 have 대신 have got을 기본으로 쓴다. 미국식이라면 'you still have the Trace on you'가 된다.",
+    "examples": [
+     {
+      "en": "I've still got your umbrella.",
+      "ko": "네 우산 아직 내가 갖고 있어."
+     },
+     {
+      "en": "Have you got a minute?",
+      "ko": "잠깐 시간 돼요?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Potter, ...",
+    "kind": "호칭(성으로 부르기)",
+    "note": "이름 대신 성만 부르는 것은 영국 학교와 군대의 전통적인 호칭법이다. 친근함보다 위계와 거리가 느껴지며, 무디는 지시를 내릴 때 이 호칭을 쓴다. 미국에서는 운동부 코치나 군대 밖에서는 드물다.",
+    "examples": [
+     {
+      "en": "Jenkins, see me after class.",
+      "ko": "젠킨스, 수업 끝나고 나 좀 보자."
+     },
+     {
+      "en": "Right, Thompson, you're in goal.",
+      "ko": "좋아, 톰프슨, 네가 골키퍼다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-004.1",
+  "speech": "moody-7-004",
+  "part": 1,
+  "of": 4,
+  "order": 111,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 미성년 마법사에게 걸려 있다는 '흔적' 이야기를 처음 들은 해리가 그게 뭐냐고 되묻는다.",
+  "cue_speaker": "Harry",
+  "cue": "The Trace?",
+  "prev_line": "",
+  "line": "You sneeze and the Ministry will know who wipes your nose.",
+  "ko": "네가 재채기만 해도 누가 네 코를 닦아 주는지까지 마법부가 안다.",
+  "plain": "If you so much as sneeze, the Ministry finds out.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-7-004.2",
+  "speech": "moody-7-004",
+  "part": 2,
+  "of": 4,
+  "order": 112,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 미성년 마법사에게 걸려 있다는 '흔적' 이야기를 처음 들은 해리가 그게 뭐냐고 되묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "You sneeze and the Ministry will know who wipes your nose.",
+  "line": "Point is, we have to use those means of transport the Trace can't detect: brooms, thestrals and the like.",
+  "ko": "요점은, '흔적'이 못 잡아내는 이동 수단을 써야 한다는 거다. 빗자루, 세스트랄 같은 것들 말이지.",
+  "plain": "Bottom line, we can only travel in ways the Trace can't pick up, like brooms, thestrals, stuff like that.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "... and the like",
+    "kind": "격식 관용구(영미 공통)",
+    "note": "나열 끝에 붙여 '~ 같은 것들'을 뜻한다. 영국식이 아니라 영미 공통이며, 양쪽 모두에서 글이나 다소 격식 있는 말투에 어울린다. 일상 구어에서는 'and stuff like that', 'and so on'이 더 흔하다.",
+    "examples": [
+     {
+      "en": "We sell pens, notebooks and the like.",
+      "ko": "저희는 펜, 공책 같은 것들을 팝니다."
+     },
+     {
+      "en": "He's into hiking, camping and the like.",
+      "ko": "그 사람은 등산, 캠핑 같은 걸 좋아해."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Point is, ...",
+    "kind": "생략(관사 탈락)",
+    "note": "'The point is'에서 The를 떼고 바로 본론으로 들어가는 구어체다. 'Trouble is', 'Thing is'도 같은 틀이며, 군더더기를 잘라 내는 무디의 말투에 잘 맞는다.",
+    "examples": [
+     {
+      "en": "Point is, we can't afford it.",
+      "ko": "요는, 우리가 그럴 돈이 없다는 거야."
+     },
+     {
+      "en": "Trouble is, nobody told me.",
+      "ko": "문제는, 아무도 나한테 말을 안 해 줬다는 거지."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-004.3",
+  "speech": "moody-7-004",
+  "part": 3,
+  "of": 4,
+  "order": 113,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 미성년 마법사에게 걸려 있다는 '흔적' 이야기를 처음 들은 해리가 그게 뭐냐고 되묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Point is, we have to use those means of transport the Trace can't detect: brooms, thestrals and the like.",
+  "line": "We'll go in pairs.",
+  "ko": "둘씩 짝지어 간다.",
+  "plain": "We're going two by two.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-7-004.4",
+  "speech": "moody-7-004",
+  "part": 4,
+  "of": 4,
+  "order": 114,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 미성년 마법사에게 걸려 있다는 '흔적' 이야기를 처음 들은 해리가 그게 뭐냐고 되묻는다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "We'll go in pairs.",
+  "line": "That way if anyone's out there waiting for us -- and I reckon there will be -- they won't know which Harry Potter is the real one.",
+  "ko": "그렇게 하면 밖에서 누가 우릴 기다리고 있더라도, 내 보기엔 분명 있을 거다만, 어느 해리 포터가 진짜인지 모를 테니까.",
+  "plain": "So if somebody's waiting for us out there, and I bet they are, they won't be able to tell which Harry Potter is the real one.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I reckon",
+    "kind": "BrE 어휘",
+    "note": "'내 생각엔, 아마'라는 뜻으로 영국 일상에서 I think만큼 자주 쓴다. 미국에서는 남부 사투리나 옛말 느낌이 나서 I guess, I bet, I figure를 쓴다.",
+    "examples": [
+     {
+      "en": "I reckon it'll rain by lunchtime.",
+      "ko": "점심때쯤이면 비 올 것 같아."
+     },
+     {
+      "en": "How long do you reckon the meeting will last?",
+      "ko": "회의가 얼마나 걸릴 것 같아?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-005",
+  "speech": "moody-7-005",
+  "part": 1,
+  "of": 1,
+  "order": 115,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. '진짜 해리'라는 말에 해리가 어리둥절해하자, 무디가 품에서 걸쭉한 약이 든 병을 꺼내 보인다.",
+  "cue_speaker": "Harry",
+  "cue": "The real one...?",
+  "prev_line": "",
+  "line": "I believe you're familiar with this particular brew.",
+  "ko": "이 약이라면 너도 잘 알 텐데.",
+  "plain": "I think you already know what this stuff is.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "I believe you're familiar with ...",
+    "kind": "완곡어법",
+    "note": "뻔히 아는 사실을 'I believe'로 한 발 물러서 말하는 절제 표현으로, 영미 공통의 격식 어법이다. 평소 거칠게 말하는 무디가 일부러 점잖은 틀을 써서 건조한 유머가 생긴다. 일상 구어라면 'You know what this is, right?' 정도다.",
+    "examples": [
+     {
+      "en": "I believe you've met my colleague.",
+      "ko": "제 동료와는 이미 인사하신 걸로 압니다."
+     },
+     {
+      "en": "I believe you're familiar with our returns policy.",
+      "ko": "저희 반품 규정은 이미 알고 계시리라 생각합니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "this particular ...",
+    "kind": "격식 어휘",
+    "note": "'바로 이 ~'라고 대상을 콕 집는 한정어로, this만 쓸 때보다 격식 있고 살짝 비꼬는 느낌이 실린다. 영미 공통 표현이며, 건조하게 비꼬는 말투에서 자주 쓰인다.",
+    "examples": [
+     {
+      "en": "I'm not keen on this particular design.",
+      "ko": "이 디자인은 딱히 마음에 안 들어요."
+     },
+     {
+      "en": "Why did you choose this particular school?",
+      "ko": "하필 이 학교를 고른 이유가 뭐죠?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "brew",
+    "kind": "어휘(BrE 뜻 참고)",
+    "note": "여기서는 '달여 만든 약'이라는 뜻이며, 이 뜻은 영미 공통이다. 영국 구어에서 a brew는 '차 한 잔'을 가리키는 말로 훨씬 자주 쓰이니 함께 알아 두면 좋다. 미국에서는 brew라고 하면 주로 맥주나 커피를 떠올린다.",
+    "examples": [
+     {
+      "en": "Fancy a brew?",
+      "ko": "차 한잔할래?"
+     },
+     {
+      "en": "I'll put the kettle on and make a brew.",
+      "ko": "물 올려서 차 끓일게."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-006",
+  "speech": "moody-7-006",
+  "part": 1,
+  "of": 1,
+  "order": 116,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 친구들이 자기 모습으로 변신해 목숨을 거는 계획에 해리가 강하게 반대하고, 쌍둥이는 농담으로 받아넘긴다.",
+  "cue_speaker": "George",
+  "cue": "Yeah, imagine if something went wrong and we were stuck as scrawny, specky gits forever.",
+  "prev_line": "",
+  "line": "Everyone here's of age, Potter, and they've all agreed to take the risk.",
+  "ko": "여기 있는 사람은 전부 성인이다, 포터. 다들 위험을 감수하겠다고 했고.",
+  "plain": "Everybody here is an adult, Potter, and they all signed up for this.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "of age",
+    "kind": "격식 어휘",
+    "note": "'법적 성년이 된'이라는 뜻의 다소 격식 있는 표현으로 영미 공통이다. 같은 장면 앞부분에서 무디가 해리에게 한 말 'you're underage(넌 미성년이다)'와 짝을 이룬다. 일상 구어에서는 'an adult', 'over eighteen'처럼 풀어 말하는 편이고, 'come of age(성년이 되다)'도 같은 뿌리다.",
+    "examples": [
+     {
+      "en": "You can't sign the contract until you're of age.",
+      "ko": "성년이 되기 전에는 계약서에 서명할 수 없어."
+     },
+     {
+      "en": "She came of age last March.",
+      "ko": "그 애는 지난 3월에 성인이 됐어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-007",
+  "speech": "moody-7-007",
+  "part": 1,
+  "of": 1,
+  "order": 117,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 억지로 끌려온 좀도둑 먼던구스가 해리에게 넉살 좋게 자기소개를 늘어놓는다.",
+  "cue_speaker": "Mundungus",
+  "cue": "Mundungus Fletcher, Mr Potter. I've always been a huge admirer.",
+  "prev_line": "",
+  "line": "Nip it, Mundungus! All right, Granger, as discussed.",
+  "ko": "입 다물어, 먼던구스! 좋아, 그레인저, 얘기한 대로 해.",
+  "plain": "Zip it, Mundungus! Okay, Granger, go ahead like we planned.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Nip it! (cf. nip it in the bud)",
+    "kind": "명령형(구어)",
+    "note": "'nip it in the bud(싹을 자르다)'에서 온 짧은 명령으로, 여기서는 '그만 떠들어'라는 뜻이다. 이 줄임꼴 자체보다 원래 관용구가 영국 일상에서 훨씬 자주 쓰이고, '조용히 해'는 보통 'Pipe down', 'Put a sock in it'이라고 한다.",
+    "examples": [
+     {
+      "en": "We need to nip this in the bud.",
+      "ko": "이건 초장에 잡아야 해요."
+     },
+     {
+      "en": "Pipe down, you two — I'm on the phone.",
+      "ko": "너희 둘 조용히 좀 해. 나 통화 중이야."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "as discussed",
+    "kind": "생략(업무 표현)",
+    "note": "'as we discussed'를 줄인 말로 '앞서 얘기한 대로'라는 뜻이다. 동사 없이 이 한마디로 지시를 끝내는 것이 무디식 압축 화법이다. 영미 공통의 업무 표현으로 메일과 회의에서 자주 보이고, 'as agreed'도 같은 틀이다.",
+    "examples": [
+     {
+      "en": "As discussed, I'll send the report by Friday.",
+      "ko": "말씀드린 대로 금요일까지 보고서 보내겠습니다."
+     },
+     {
+      "en": "Same time next week, as agreed.",
+      "ko": "약속한 대로 다음 주 같은 시간에 봐요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-008",
+  "speech": "moody-7-008",
+  "part": 1,
+  "of": 1,
+  "order": 118,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 헤르미온느가 해리의 머리카락을 한 움큼 뽑아 내고, 무디가 약병 마개를 열어 내민다.",
+  "cue_speaker": "Harry",
+  "cue": "Blimey, Hermione!",
+  "prev_line": "",
+  "line": "Straight in here, if you please.",
+  "ko": "곧장 이 안에 넣어 주시지.",
+  "plain": "Drop it right in here, please.",
+  "tag": "격식",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "if you please",
+    "kind": "격식(구식 공손 표현)",
+    "note": "please의 예스럽고 격식 있는 형태다. 정중해 보이지만 실제로는 '어서 하시지' 하는 명령에 가까워서, 거친 무디가 쓰면 비꼬는 맛이 난다. 미국 구어에서는 거의 들을 수 없다.",
+    "examples": [
+     {
+      "en": "This way, if you please.",
+      "ko": "이쪽으로 오시지요."
+     },
+     {
+      "en": "Sign here, if you please.",
+      "ko": "여기에 서명해 주시지요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "straight (in here)",
+    "kind": "AmE 대비",
+    "note": "'곧장, 바로'라는 뜻의 부사 straight는 영미 공통이다(go straight home). 다만 영국영어는 straight away, straight after처럼 더 폭넓게 쓰고, 미국영어는 그 자리에 right away, right after처럼 right를 즐겨 써서 여기도 'right in here'가 더 흔하다. 동사 없이 방향만 말하는 조각 명령문이라는 점도 눈여겨볼 만하다.",
+    "examples": [
+     {
+      "en": "Come straight home after school.",
+      "ko": "학교 끝나면 곧장 집으로 와."
+     },
+     {
+      "en": "Put it straight in the bin.",
+      "ko": "그건 바로 쓰레기통에 넣어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-009",
+  "speech": "moody-7-009",
+  "part": 1,
+  "of": 1,
+  "order": 119,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 해리의 머리카락이 들어가자 폴리주스 약이 금빛으로 변한다. 무디가 약병을 돌리기 전에 모두에게 한마디 한다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "For those of you who haven't taken Polyjuice Potion before, fair warning. It tastes like goblin piss.",
+  "ko": "폴리주스 약을 처음 먹는 사람에게 미리 일러두지. 맛이 고블린 오줌 같다.",
+  "plain": "If you've never had Polyjuice Potion before, heads up: it tastes like goblin pee.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "fair warning",
+    "kind": "생략(조각 문장)",
+    "note": "'I'm giving you fair warning'을 명사구만 남긴 형태로 '미리 말해 두는데'라는 뜻이다. 문장을 다 갖추지 않고 툭 던지는 무디식 화법이다. 영국식이 아니라 미국에서도 아주 흔한 영미 공통 표현이며, 더 가벼운 말로는 'heads up'이 있다.",
+    "examples": [
+     {
+      "en": "Fair warning — the boss is in a foul mood today.",
+      "ko": "미리 말해 두는데, 부장님 오늘 기분 엄청 안 좋아."
+     },
+     {
+      "en": "Fair warning: the curry is seriously hot.",
+      "ko": "경고하는데, 그 카레 진짜 매워."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "piss",
+    "kind": "비속어(영미 공통)",
+    "note": "'오줌'을 뜻하는 비속어로 영미 공통이다. 다만 영국영어에는 take the piss(놀리다), pissed(취한), piss down(비가 퍼붓다)처럼 이 단어가 들어간 일상 관용구가 유난히 많다(미국에서 pissed는 '화난'이라는 뜻이다). 격식 있는 자리에서는 피해야 한다.",
+    "examples": [
+     {
+      "en": "Are you taking the piss?",
+      "ko": "지금 나 놀리는 거야?"
+     },
+     {
+      "en": "It's pissing down outside.",
+      "ko": "밖에 비가 억수같이 와."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-010",
+  "speech": "moody-7-010",
+  "part": 1,
+  "of": 1,
+  "order": 120,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 프레드가 농담을 던진 뒤 모두 약을 마시고 해리의 모습으로 변한다. 쌍둥이는 서로 똑같아졌다며 신기해하지만, 입은 옷은 아직 제각각이다.",
+  "cue_speaker": "Fred",
+  "cue": "Just trying to defuse the tension.",
+  "prev_line": "",
+  "line": "Not yet you aren't.",
+  "ko": "아직은 아니지.",
+  "plain": "No, you're not identical yet.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Not yet you aren't.",
+    "kind": "생략·되받아치기",
+    "note": "상대의 말을 받아 부사와 조동사만 남기고 뒤집는 짧은 반박이다. 'Oh no you don't', 'Not in here you won't'와 같은 틀로, 영국·미국 모두에서 쓰는 영미 공통 구어다. 평범하게 풀면 'You aren't identical yet'이다.",
+    "examples": [
+     {
+      "en": "'We're finished!' 'Not yet you aren't — there's the washing-up.'",
+      "ko": "'다 끝났다!' '아직 아니거든. 설거지가 남았어.'"
+     },
+     {
+      "en": "'I'm off home.' 'Oh no you're not, we've got a meeting.'",
+      "ko": "'나 집에 간다.' '어림없지. 우리 회의 있잖아.'"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-011",
+  "speech": "moody-7-011",
+  "part": 1,
+  "of": 1,
+  "order": 121,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 모두 해리로 변신한 뒤 무디가 자루에서 갈아입을 옷을 쏟아 놓자, 쌍둥이가 옷 스타일과 색깔을 두고 투정을 부린다.",
+  "cue_speaker": "Fred",
+  "cue": "Yes, don't fancy this colour at all.",
+  "prev_line": "",
+  "line": "Fancy this: You're not you, so shut it and strip. You'll need to change too, Potter.",
+  "ko": "그럼 이건 마음에 드나 보자. 너흰 지금 너희가 아니야. 그러니 입 다물고 벗어. 포터, 너도 갈아입어야 한다.",
+  "plain": "How about this: you're not yourselves right now, so shut up and get undressed. You need to change too, Potter.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "fancy",
+    "kind": "BrE 어휘",
+    "note": "영국영어에서 fancy는 '마음에 들다, ~하고 싶다'는 일상 동사다. 미국식이라면 like, feel like를 쓴다. 무디는 프레드가 쓴 fancy를 그대로 받아 'Fancy this(그럼 이건 어떠냐)'로 되돌려 준다.",
+    "examples": [
+     {
+      "en": "Do you fancy a cup of tea?",
+      "ko": "차 한잔할래?"
+     },
+     {
+      "en": "I don't fancy going out in this rain.",
+      "ko": "이 빗속에 나가고 싶진 않아."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "shut it",
+    "kind": "BrE 관용구(거친 명령)",
+    "note": "'shut up'보다 더 짧고 거친 영국식 표현으로 '입 닥쳐'에 가깝다. 미국에서는 'shut up', 'zip it'을 쓴다. 'shut it and strip'처럼 한 음절 동사를 연달아 던지는 것이 무디의 명령조다.",
+    "examples": [
+     {
+      "en": "Shut it, you two, I'm trying to listen.",
+      "ko": "너희 둘 입 좀 다물어. 나 듣고 있잖아."
+     },
+     {
+      "en": "Oh, shut it — nobody asked you.",
+      "ko": "아, 조용히 해. 누가 너한테 물어봤어?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-012",
+  "speech": "moody-7-012",
+  "part": 1,
+  "of": 1,
+  "order": 122,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 해리로 변신한 일행이 옷을 갈아입는 중이다. 해리의 시력까지 그대로 갖게 된 헤르미온느가 앞이 잘 안 보인다고 불평한다.",
+  "cue_speaker": "Hermione",
+  "cue": "Harry, your eyesight really is awful.",
+  "prev_line": "",
+  "line": "Blimey. I almost forgot.",
+  "ko": "이런. 깜빡할 뻔했군.",
+  "plain": "Oh, man. I almost forgot.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Blimey",
+    "kind": "BrE 어휘(감탄사)",
+    "note": "놀람이나 당황을 나타내는 대표적인 영국 감탄사로 '이런, 세상에' 정도다. 옛 표현 'God blind me'에서 왔으며 욕설이 아니어서 누구 앞에서나 쓸 수 있다. 미국식이라면 'Wow', 'Oh man', 'Geez'다.",
+    "examples": [
+     {
+      "en": "Blimey, is that the time?",
+      "ko": "이런, 벌써 시간이 이렇게 됐어?"
+     },
+     {
+      "en": "Blimey, that was close.",
+      "ko": "어휴, 큰일 날 뻔했네."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-013",
+  "speech": "moody-7-013",
+  "part": 1,
+  "of": 1,
+  "order": 123,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 일곱 명의 해리가 안경까지 쓰고 준비를 마쳤다. 무디가 모두를 둘러보며 다음 지시를 내린다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Right then. We'll be pairing off. Each Potter will have a protector. As for you, Harry...",
+  "ko": "좋아. 둘씩 짝을 짓는다. 포터 한 명당 호위가 한 명씩 붙는다. 그리고 너, 해리는...",
+  "plain": "Okay. We're splitting up into pairs. Every Potter gets a bodyguard. And you, Harry...",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Right then.",
+    "kind": "BrE 담화 표지",
+    "note": "화제를 바꾸거나 일을 시작할 때 영국인이 입버릇처럼 쓰는 말로 '자, 그럼' 정도다. 미국식이라면 'Okay', 'All right'를 쓴다. 회의나 수업을 시작하고 끝낼 때 특히 자주 들린다.",
+    "examples": [
+     {
+      "en": "Right then, shall we make a start?",
+      "ko": "자, 그럼 시작해 볼까요?"
+     },
+     {
+      "en": "Right then, I'm off.",
+      "ko": "자, 그럼 난 간다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "We'll be pairing off.",
+    "kind": "미래진행형(계획 통보)",
+    "note": "미래진행형은 이미 정해진 일정을 담담하게 통보할 때 쓴다. 'We'll pair off'보다 '그렇게 진행된다'는 기정사실 느낌이 강해 토를 달기 어렵다. 영미 공통 용법으로 안내 방송과 업무 공지에서 흔하다. pair off는 '둘씩 짝짓다'라는 구동사다.",
+    "examples": [
+     {
+      "en": "We'll be boarding from gate twelve.",
+      "ko": "탑승은 12번 게이트에서 진행됩니다."
+     },
+     {
+      "en": "I'll be working from home tomorrow.",
+      "ko": "저는 내일 재택근무합니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-014",
+  "speech": "moody-7-014",
+  "part": 1,
+  "of": 1,
+  "order": 124,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 무디가 '해리'를 부르자 똑같이 생긴 일곱 명이 한꺼번에 대답한다.",
+  "cue_speaker": "All",
+  "cue": "Yes?",
+  "prev_line": "",
+  "line": "The real Harry! Where the devil are you, anyway?",
+  "ko": "진짜 해리 말이다! 그나저나 넌 대체 어디 있는 거냐?",
+  "plain": "I mean the real Harry! Where the heck are you, anyway?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Where the devil ...?",
+    "kind": "관용구(강조, 구식)",
+    "note": "의문사 뒤에 the devil을 넣어 짜증이나 놀람을 강조하는 표현으로 '도대체'라는 뜻이다. 영국에만 있는 말이 아니라 영미 공통의 예스러운 표현이며, 지금은 양쪽 모두에서 나이 든 세대의 말투로 들린다. 요즘 구어에서는 'the hell', 'the heck'을 쓴다.",
+    "examples": [
+     {
+      "en": "Where the devil have you been?",
+      "ko": "도대체 어디 갔다 온 거야?"
+     },
+     {
+      "en": "What the devil is that noise?",
+      "ko": "저 소리는 대체 뭐야?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-015",
+  "speech": "moody-7-015",
+  "part": 1,
+  "of": 1,
+  "order": 125,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 일곱 명의 해리 틈에서 진짜 해리가 손을 들어 자기 위치를 알리고, 무디가 그를 향해 돌아선다.",
+  "cue_speaker": "Harry",
+  "cue": "Here.",
+  "prev_line": "",
+  "line": "You'll ride with Hagrid.",
+  "ko": "넌 해그리드와 함께 간다.",
+  "plain": "You're going with Hagrid.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "You'll + 동사 (지시)",
+    "kind": "will 명령",
+    "note": "명령문 대신 will을 써서 '너는 그렇게 하게 된다'고 못박는 지시다. 부탁의 여지를 남기지 않는 교사, 상관, 군대식 말투다. 영미 공통이지만 영국 학교와 직장의 권위적 어조를 익히기 좋은 틀이다.",
+    "examples": [
+     {
+      "en": "You'll sit at the front, please.",
+      "ko": "넌 앞자리에 앉는다."
+     },
+     {
+      "en": "You'll report to Mrs Clarke at nine.",
+      "ko": "9시에 클라크 선생님께 가서 보고하도록."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "moody-7-016",
+  "speech": "moody-7-016",
+  "part": 1,
+  "of": 1,
+  "order": 126,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "더즐리 집 거실. 해리와 한 조가 된 해그리드가 16년 전 아기 해리를 이 집에 데려왔던 일을 떠올리며 감상에 젖는다.",
+  "cue_speaker": "Hagrid",
+  "cue": "Brought yeh here sixteen years ago when you were barely bigger than a Bowtruckle. Seems only righ' I should be the one ter take yeh away.",
+  "prev_line": "",
+  "line": "Yeah, it's all very touching. Let's go.",
+  "ko": "그래, 참 눈물겹군. 가자.",
+  "plain": "Yeah, yeah, that's real sweet. Come on, move.",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "it's all very + 형용사",
+    "kind": "반어(일축)",
+    "note": "'all very ~'는 칭찬처럼 들리지만 실제로는 '그건 그렇다 치고' 하며 잘라 버리는 영국식 반어다. 보통 뒤에 but이 따라오는데, 무디는 but 대신 곧바로 'Let's go'를 붙였다. 'That's all very well, but ...'이 대표적인 꼴이다.",
+    "examples": [
+     {
+      "en": "That's all very well, but who's paying?",
+      "ko": "다 좋은데, 돈은 누가 내는데?"
+     },
+     {
+      "en": "It's all very nice, but we haven't got time.",
+      "ko": "참 좋긴 한데, 우리 시간이 없어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "moody-7-017",
+  "speech": "moody-7-017",
+  "part": 1,
+  "of": 1,
+  "order": 127,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "프리벳가의 밤거리. 일곱 명의 해리와 호위들이 빗자루, 세스트랄, 해그리드의 오토바이에 나눠 타고 이륙을 기다린다. 무디가 출발 신호를 준다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Good luck, everyone. On the count of three. One... two --",
+  "ko": "모두 행운을 빈다. 셋에 출발이다. 하나... 둘 --",
+  "plain": "Good luck, you guys. We go on three. One... two --",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "moody-7-018",
+  "speech": "moody-7-018",
+  "part": 1,
+  "of": 1,
+  "order": 128,
+  "character": "Moody",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "그리몰드 광장 12번지의 어두운 현관. 해리, 론, 헤르미온느가 숨어들자 침입자를 막으려고 걸어 둔 저주가 발동해, 어둠 속에서 무디의 목소리가 속삭인다.",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Severus Snape?",
+  "ko": "세베루스 스네이프?",
+  "plain": "Severus Snape?",
+  "tag": "일반",
+  "card": true,
+  "corrected": false,
+  "bre": [],
+  "minimal": true
+ }
+]

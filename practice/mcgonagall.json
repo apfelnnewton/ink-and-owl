@@ -1,0 +1,1820 @@
+{
+ "mcgonagall-1-002": {
+  "blank": "Good evening",
+  "options": [
+   "Hi there",
+   "Hey there",
+   "Good night"
+  ],
+  "why": "Good evening은 직함 호칭에 어울리는 격식 인사다"
+ },
+ "mcgonagall-1-004": {
+  "blank": "the boy",
+  "options": [
+   "the kid",
+   "a boy",
+   "the boys"
+  ],
+  "why": "the boy는 구어체 the kid보다 격식 있는 지칭이다"
+ },
+ "mcgonagall-1-006": {
+  "blank": "trust Hagrid with",
+  "options": [
+   "trust Hagrid for",
+   "trust Hagrid in",
+   "believe Hagrid with"
+  ],
+  "why": "trust A with B는 '~에게 ~을 믿고 맡기다'라는 연어다"
+ },
+ "mcgonagall-1-009.1": {
+  "blank": "Do you really think",
+  "options": [
+   "You really think",
+   "Do you real think",
+   "Are you really thinking"
+  ],
+  "why": "질문 형태로 반대 의견을 완곡하게 드러내는 표현이다"
+ },
+ "mcgonagall-1-009.2": {
+  "blank": "imaginable",
+  "options": [
+   "imaginary",
+   "imagined",
+   "imaginative"
+  ],
+  "why": "명사 뒤 imaginable이 최상급을 강조하는 격식 표현이다"
+ },
+ "mcgonagall-1-011": {
+  "blank": "There won't be a child",
+  "options": [
+   "There will be a child",
+   "There won't be no child",
+   "There won't be some child"
+  ],
+  "why": "이중 부정으로 '모두 알 것'을 강조하는 수사다"
+ },
+ "mcgonagall-1-014.1": {
+  "blank": "you will pass through",
+  "options": [
+   "you're gonna go through",
+   "you will pass by",
+   "you will pass across"
+  ],
+  "why": "축약 없는 will과 pass through가 공식 안내의 격식을 만든다"
+ },
+ "mcgonagall-1-014.2": {
+  "blank": "take your seats",
+  "options": [
+   "have your seats",
+   "take your chairs",
+   "sit your seats"
+  ],
+  "why": "take one's seat는 '착석하다'의 격식 관용 표현이다"
+ },
+ "mcgonagall-1-014.3": {
+  "blank": "will be like",
+  "options": [
+   "is basically",
+   "will be as",
+   "will be alike"
+  ],
+  "why": "will be like는 '~와 같은 존재가 될 것'이라는 비유다"
+ },
+ "mcgonagall-1-014.4": {
+  "blank": "triumphs",
+  "options": [
+   "good jobs",
+   "triumphants",
+   "winnings"
+  ],
+  "why": "triumphs는 '큰 성취'를 뜻하는 무게 있는 격식 어휘다"
+ },
+ "mcgonagall-1-014.5": {
+  "blank": "is awarded",
+  "options": [
+   "is rewarded",
+   "is awarding",
+   "is granted with"
+  ],
+  "why": "be awarded+상은 '상을 수여받다'의 격식 수동 표현이다"
+ },
+ "mcgonagall-1-015": {
+  "blank": "will begin",
+  "options": [
+   "is gonna start",
+   "will be begun",
+   "will open up"
+  ],
+  "why": "공식 안내에서는 축약 없이 will begin으로 말한다"
+ },
+ "mcgonagall-1-016": {
+  "blank": "ready for you",
+  "options": [
+   "ready to you",
+   "ready with you",
+   "set for you"
+  ],
+  "why": "be ready for you는 '맞을 준비가 됐다'는 정중한 표현이다"
+ },
+ "mcgonagall-1-017": {
+  "blank": "say a few words",
+  "options": [
+   "say some words",
+   "tell a few words",
+   "speak few words"
+  ],
+  "why": "say a few words는 '간단히 한 말씀하다'의 정형 표현이다"
+ },
+ "mcgonagall-1-019.1": {
+  "blank": "come forth",
+  "options": [
+   "come on up",
+   "come forthwith",
+   "come fore"
+  ],
+  "why": "come forth는 의식 분위기를 내는 고풍스러운 표현이다"
+ },
+ "mcgonagall-1-019.2": {
+  "blank": "I shall place",
+  "options": [
+   "I'm gonna put",
+   "I should place",
+   "I shall placing"
+  ],
+  "why": "1인칭 미래의 shall은 영국식 격식체의 특징이다"
+ },
+ "mcgonagall-1-024": {
+  "blank": "Your attention",
+  "options": [
+   "Listen up",
+   "Your attending",
+   "Your attentions"
+  ],
+  "why": "Your attention, please는 공식 안내 문구다"
+ },
+ "mcgonagall-1-026.1": {
+  "blank": "that assessment",
+  "options": [
+   "the review",
+   "that assessing",
+   "that estimation"
+  ],
+  "why": "격식 어휘 assessment로 정중히 감사하는 영국식 반어다"
+ },
+ "mcgonagall-1-026.2": {
+  "blank": "Perhaps it would be",
+  "options": [
+   "Perhaps it'd been",
+   "Perhaps it be",
+   "Perhaps would it be"
+  ],
+  "why": "Perhaps … would로 공손한 척 날카롭게 꾸짖는 반어다"
+ },
+ "mcgonagall-1-026.3": {
+  "blank": "That way",
+  "options": [
+   "By that way",
+   "By the way",
+   "That method"
+  ],
+  "why": "That way는 '그렇게 하면'이라는 자연스러운 관용 표현이다"
+ },
+ "mcgonagall-1-027": {
+  "blank": "I trust",
+  "options": [
+   "I'm guessing",
+   "I trust in",
+   "I count"
+  ],
+  "why": "I trust는 당연한 기대를 공손히 포장한 격식 표현이다"
+ },
+ "mcgonagall-1-031": {
+  "blank": "Could I borrow",
+  "options": [
+   "Can I grab",
+   "Could I lend",
+   "Could I rent"
+  ],
+  "why": "could와 borrow로 사람을 잠시 데려가길 공손히 청한다"
+ },
+ "mcgonagall-1-032": {
+  "blank": "I've found you",
+  "options": [
+   "I got you",
+   "I've found for you",
+   "I've founded you"
+  ],
+  "why": "find+사람+사물 완료형으로 '찾아 두었다'를 전한다"
+ },
+ "mcgonagall-1-035.1": {
+  "blank": "Be that as it may",
+  "options": [
+   "Be this as it may",
+   "Be that as it can",
+   "Being that as it may"
+  ],
+  "why": "Be that as it may는 '그렇다 해도'의 격식 관용구다"
+ },
+ "mcgonagall-1-035.2": {
+  "blank": "on your part",
+  "options": [
+   "on your side",
+   "in your part",
+   "for your parts"
+  ],
+  "why": "on your part는 책임 소재를 격식 있게 짚는 표현이다"
+ },
+ "mcgonagall-1-035.3": {
+  "blank": "lack of judgement",
+  "options": [
+   "lack in judgement",
+   "lacking of judgement",
+   "want for judgement"
+  ],
+  "why": "lack of judgement는 '판단력 부족'의 격식 연어다"
+ },
+ "mcgonagall-1-035.4": {
+  "blank": "As for",
+  "options": [
+   "As of",
+   "So for",
+   "As per"
+  ],
+  "why": "As for는 '~로 말하자면'으로 화제를 돌리는 표현이다"
+ },
+ "mcgonagall-1-035.5": {
+  "blank": "live to tell the tale",
+  "options": [
+   "live to say the tale",
+   "live to talk the tale",
+   "live for telling the tale"
+  ],
+  "why": "live to tell the tale은 '무사히 살아남다'의 관용구다"
+ },
+ "mcgonagall-1-035.6": {
+  "blank": "sheer dumb luck",
+  "options": [
+   "sheerly dumb luck",
+   "sheer dumb fortune",
+   "steep dumb luck"
+  ],
+  "why": "sheer dumb luck은 '순전히 운'을 강조하는 관용 표현이다"
+ },
+ "mcgonagall-1-042.1": {
+  "blank": "walk about",
+  "options": [
+   "walk out",
+   "walk off",
+   "walk by"
+  ],
+  "why": "about를 '여기저기'로 쓰는 walk about은 영국식이다"
+ },
+ "mcgonagall-1-042.2": {
+  "blank": "Therefore",
+  "options": [
+   "So then",
+   "Thereby",
+   "Therefor"
+  ],
+  "why": "therefore로 판결문 같은 격식과 권위를 세운다"
+ },
+ "mcgonagall-1-043": {
+  "blank": "to ensure",
+  "options": [
+   "to insure",
+   "to assure",
+   "for ensuring"
+  ],
+  "why": "ensure는 훈화·규정에 쓰는 '확실히 하다'의 격식 동사다"
+ },
+ "mcgonagall-1-044.1": {
+  "blank": "heard me correctly",
+  "options": [
+   "heard me correct",
+   "listened me correctly",
+   "heard to me correctly"
+  ],
+  "why": "heard me correctly는 right보다 격식 있는 표현이다"
+ },
+ "mcgonagall-1-044.2": {
+  "blank": "honourable as",
+  "options": [
+   "honourable like",
+   "honourable so",
+   "honorable as"
+  ],
+  "why": "형용사+as+주어+동사는 격식 있는 양보 구문이다"
+ },
+ "mcgonagall-1-044.3": {
+  "blank": "in detention",
+  "options": [
+   "at detention",
+   "on detention",
+   "into detention"
+  ],
+  "why": "in detention이 '방과 후 남기'의 정해진 연어다"
+ },
+ "mcgonagall-1-045.1": {
+  "blank": "I'm afraid",
+  "options": [
+   "Sorry",
+   "I'm scared",
+   "I'm frightened"
+  ],
+  "why": "I'm afraid는 나쁜 소식을 전하는 영국식 완곡 표지다"
+ },
+ "mcgonagall-1-045.2": {
+  "blank": "received",
+  "options": [
+   "got",
+   "accepted",
+   "was received"
+  ],
+  "why": "보고하는 격식 말투에서는 got 대신 received를 쓴다"
+ },
+ "mcgonagall-1-046": {
+  "blank": "did you know",
+  "options": [
+   "you knew",
+   "did you knew",
+   "have you knew"
+  ],
+  "why": "알게 된 경위를 과거로 묻는 how did you know가 맞다"
+ },
+ "mcgonagall-1-047.1": {
+  "blank": "I assure you",
+  "options": [
+   "trust me",
+   "I ensure you",
+   "I insure you"
+  ],
+  "why": "I assure you는 걱정을 권위 있게 일축하는 격식 표현이다"
+ },
+ "mcgonagall-1-047.2": {
+  "blank": "would you go back",
+  "options": [
+   "you guys head back",
+   "would you come back",
+   "shall you go back"
+  ],
+  "why": "명령을 'would you'로 감싼 교사의 정중한 지시다"
+ },
+ "mcgonagall-2-007": {
+  "blank": "Mr Weasley",
+  "options": [
+   "Mr. Weasley",
+   "Sir Weasley",
+   "Mister Ron"
+  ],
+  "why": "교사가 학생을 'Mr+성'으로 부르는 엄격한 호칭이다"
+ },
+ "mcgonagall-2-008.1": {
+  "blank": "impress on",
+  "options": [
+   "impress to",
+   "impress at",
+   "imprint on"
+  ],
+  "why": "'impress on 사람'은 중요성을 각인시키는 격식 표현이다"
+ },
+ "mcgonagall-2-008.2": {
+  "blank": "receive detention",
+  "options": [
+   "get detention",
+   "obtain detention",
+   "take detention"
+  ],
+  "why": "'receive'는 처벌을 공식 절차처럼 들리게 하는 어휘다"
+ },
+ "mcgonagall-2-016.1": {
+  "blank": "have your attention",
+  "options": [
+   "get your attention",
+   "take your attention",
+   "have your notice"
+  ],
+  "why": "'Could I have your attention'은 정중한 주목 요청이다"
+ },
+ "mcgonagall-2-016.2": {
+  "blank": "Right",
+  "options": [
+   "Okay",
+   "Correct",
+   "Rightly"
+  ],
+  "why": "'Right.'는 일을 시작할 때 쓰는 영국식 담화표지다"
+ },
+ "mcgonagall-2-016.3": {
+  "blank": "Like so",
+  "options": [
+   "As so",
+   "Like such",
+   "So like"
+  ],
+  "why": "'Like so'는 시범을 보이며 '이렇게'라고 하는 말이다"
+ },
+ "mcgonagall-2-016.4": {
+  "blank": "would like to",
+  "options": [
+   "would rather",
+   "would wish to",
+   "is liking to"
+  ],
+  "why": "'would like to'는 'want to'보다 정중한 표현이다"
+ },
+ "mcgonagall-2-016.5": {
+  "blank": "Mr Weasley",
+  "options": [
+   "Mr. Weasley",
+   "Sir Weasley",
+   "Mister Ron"
+  ],
+  "why": "학생을 'Mr+성'으로 부르는 영국 교사의 엄격한 호칭이다"
+ },
+ "mcgonagall-2-017.1": {
+  "blank": "Very well",
+  "options": [
+   "Okay fine",
+   "Much well",
+   "Very fine"
+  ],
+  "why": "'Very well'은 권위 있게 수락하는 격식 표현이다"
+ },
+ "mcgonagall-2-017.2": {
+  "blank": "the precise date is uncertain",
+  "options": [
+   "nobody really knows when",
+   "the exact date is unsure",
+   "the precise date is doubtful"
+  ],
+  "why": "'the precise date is uncertain'은 절제된 학술적 표현이다"
+ },
+ "mcgonagall-2-017.3": {
+  "blank": "Ravenclaw and",
+  "options": [
+   "Ravenclaw or",
+   "Ravenclaw, plus",
+   "Ravenclaw, also"
+  ],
+  "why": "나열의 마지막 이름 앞은 and로 잇고, 쉼표는 선택이다"
+ },
+ "mcgonagall-2-017.4": {
+  "blank": "coexisted quite harmoniously",
+  "options": [
+   "got along real good",
+   "coexisted quite harmonic",
+   "cohabited quite harmoniously"
+  ],
+  "why": "격식 어휘 'coexist'에 완곡한 'quite'를 더한 절제체다"
+ },
+ "mcgonagall-2-018.1": {
+  "blank": "wished to",
+  "options": [
+   "wanted to",
+   "was wishing to",
+   "had wish to"
+  ],
+  "why": "'wished to'는 'wanted to'보다 격식 있는 서술 어휘다"
+ },
+ "mcgonagall-2-018.2": {
+  "blank": "In other words",
+  "options": [
+   "Basically",
+   "In another word",
+   "By other words"
+  ],
+  "why": "'In other words'는 앞말을 정리해 바꿔 말하는 연결어다"
+ },
+ "mcgonagall-2-018.3": {
+  "blank": "Unable to sway",
+  "options": [
+   "Unable to swing",
+   "Unable to swerve",
+   "Incapable to sway"
+  ],
+  "why": "'sway'는 '설득해 마음을 돌리다'라는 격식 어휘다"
+ },
+ "mcgonagall-2-018.4": {
+  "blank": "according to legend",
+  "options": [
+   "according with legend",
+   "by the legend",
+   "as per legend"
+  ],
+  "why": "'according to legend'는 관사 없이 쓰는 전승 인용구다"
+ },
+ "mcgonagall-2-018.5": {
+  "blank": "shortly before departing",
+  "options": [
+   "right before leaving",
+   "briefly before departing",
+   "shortly prior departing"
+  ],
+  "why": "'shortly before departing'은 '떠나기 직전'의 격식체다"
+ },
+ "mcgonagall-2-018.6": {
+  "blank": "The heir alone",
+  "options": [
+   "The heir only",
+   "The heir lonely",
+   "Alone the heir"
+  ],
+  "why": "명사 뒤 'alone'은 'only'보다 문어적인 '~만이'다"
+ },
+ "mcgonagall-2-018.7": {
+  "blank": "by so doing",
+  "options": [
+   "by so done",
+   "with so doing",
+   "by such doing"
+  ],
+  "why": "'by so doing'은 '그렇게 함으로써'라는 문어적 연결어다"
+ },
+ "mcgonagall-2-019": {
+  "blank": "naturally",
+  "options": [
+   "obviously",
+   "naturedly",
+   "natively"
+  ],
+  "why": "'naturally'는 'of course'보다 절제된 격식 부사다"
+ },
+ "mcgonagall-2-020.1": {
+  "blank": "home to",
+  "options": [
+   "house to",
+   "home with",
+   "housing to"
+  ],
+  "why": "'be home to'는 '~이 사는 곳이다'라는 문어적 표현이다"
+ },
+ "mcgonagall-2-020.2": {
+  "blank": "is said to be",
+  "options": [
+   "is told to be",
+   "is saying to be",
+   "is spoken to be"
+  ],
+  "why": "'is said to be'는 거리를 두고 전하는 격식 구문이다"
+ },
+ "mcgonagall-2-021": {
+  "blank": "Put",
+  "options": [
+   "Pose",
+   "Post",
+   "Plant"
+  ],
+  "why": "'Put him here'는 짧고 단호한 지시로 가장 자연스럽다"
+ },
+ "mcgonagall-2-023.1": {
+  "blank": "he's been",
+  "options": [
+   "he has",
+   "he's being",
+   "he did get"
+  ],
+  "why": "결과 상태는 현재완료 수동 'he's been'으로 말한다"
+ },
+ "mcgonagall-2-023.2": {
+  "blank": "Perhaps",
+  "options": [
+   "Maybe",
+   "Perchance",
+   "Mayhap"
+  ],
+  "why": "'perhaps'는 'maybe'보다 격식 있고 영국에서 특히 흔하다"
+ },
+ "mcgonagall-2-025": {
+  "blank": "the staff",
+  "options": [
+   "the staffs",
+   "the staffers",
+   "the stuff"
+  ],
+  "why": "'the staff'는 교직원 전체를 가리키는 집합명사다"
+ },
+ "mcgonagall-2-032": {
+  "blank": "out of my hands",
+  "options": [
+   "off my hands",
+   "out of my hand",
+   "out my hands"
+  ],
+  "why": "'out of my hands'는 내 권한 밖이라는 관용구다"
+ },
+ "mcgonagall-2-046": {
+  "blank": "cancelled",
+  "options": [
+   "canceled",
+   "cancelated",
+   "called out"
+  ],
+  "why": "영국식 철자는 l을 겹쳐 'cancelled'로 쓴다"
+ },
+ "mcgonagall-2-047": {
+  "blank": "Silence",
+  "options": [
+   "Silent",
+   "Shush up",
+   "Quietness"
+  ],
+  "why": "명사 한 단어 'Silence'는 권위적인 격식 명령이다"
+ },
+ "mcgonagall-2-048.1": {
+  "blank": "the both of you",
+  "options": [
+   "the both of yous",
+   "both the you",
+   "the each of you"
+  ],
+  "why": "'the both of you'는 영미 구어에서 흔한 비격식 표현이다"
+ },
+ "mcgonagall-2-048.2": {
+  "blank": "a wee bit",
+  "options": [
+   "a wee piece",
+   "a small bit",
+   "a wee lot"
+  ],
+  "why": "'a wee bit'은 스코틀랜드식 '조금'으로 충격을 줄여 말한다"
+ },
+ "mcgonagall-2-049": {
+  "blank": "mean anything to",
+  "options": [
+   "ring a bell to",
+   "mean anything for",
+   "mean anything of"
+  ],
+  "why": "'mean anything to'는 짚이는 바를 묻는 절제된 표현이다"
+ },
+ "mcgonagall-2-050.1": {
+  "blank": "put into effect",
+  "options": [
+   "put into affect",
+   "taken into effect",
+   "put on effect"
+  ],
+  "why": "'put into effect'는 규칙을 '시행하다'라는 공식 표현이다"
+ },
+ "mcgonagall-2-050.2": {
+  "blank": "will return",
+  "options": [
+   "gotta return",
+   "are to returning",
+   "would return"
+  ],
+  "why": "명령을 'will' 평서문으로 말해 단호한 권위를 드러낸다"
+ },
+ "mcgonagall-2-050.3": {
+  "blank": "lesson",
+  "options": [
+   "class",
+   "lecture",
+   "course"
+  ],
+  "why": "영국 학교에서 한 교시의 수업은 'lesson'이라 부른다"
+ },
+ "mcgonagall-2-050.4": {
+  "blank": "I should tell you",
+  "options": [
+   "I gotta tell you",
+   "I should say you",
+   "I ought tell you"
+  ],
+  "why": "'I should tell you'는 나쁜 소식 앞에 운을 떼는 표현이다"
+ },
+ "mcgonagall-2-054.1": {
+  "blank": "are to return",
+  "options": [
+   "are to returning",
+   "are for returning",
+   "be to return"
+  ],
+  "why": "'be to + 동사'는 공식 지시를 전하는 격식 구문이다"
+ },
+ "mcgonagall-2-054.2": {
+  "blank": "has left",
+  "options": [
+   "has wrote",
+   "has written us",
+   "has leaved"
+  ],
+  "why": "메시지를 남긴 결과를 현재완료 'has left'로 전한다"
+ },
+ "mcgonagall-2-054.3": {
+  "blank": "has been realised",
+  "options": [
+   "has been realized",
+   "has been real",
+   "has realised"
+  ],
+  "why": "be realised는 '현실이 되다'이며 영국은 주로 -ise로 쓴다"
+ },
+ "mcgonagall-2-054.4": {
+  "blank": "I am afraid",
+  "options": [
+   "I'm scared",
+   "I am feared",
+   "I am fearing"
+  ],
+  "why": "'I am afraid'는 나쁜 소식을 전하는 완곡한 격식 표현이다"
+ },
+ "mcgonagall-2-057": {
+  "blank": "leave you to deal with",
+  "options": [
+   "let you to deal with",
+   "leave you for dealing with",
+   "leave you deal with"
+  ],
+  "why": "'leave 사람 to deal with'는 일을 맡기고 물러나는 표현이다"
+ },
+ "mcgonagall-2-073": {
+  "blank": "Could I have your attention",
+  "options": [
+   "Can everyone listen up",
+   "Could I take your attention",
+   "Could I hold your attention"
+  ],
+  "why": "'Could I have ~?'는 정중하지만 권위 있는 주목 요청이다"
+ },
+ "mcgonagall-3-001.1": {
+  "blank": "are a privilege",
+  "options": [
+   "are a perk",
+   "are a free pass",
+   "are an entitlement"
+  ],
+  "why": "privilege는 권리가 아니라 '허락된 특전'이라는 뜻이다"
+ },
+ "mcgonagall-3-001.2": {
+  "blank": "reflect poorly on",
+  "options": [
+   "look poorly on",
+   "reflect poorly to",
+   "show poorly on"
+  ],
+  "why": "reflect poorly on은 '평판에 누를 끼치다'는 격식 연어다"
+ },
+ "mcgonagall-3-002": {
+  "blank": "Potter",
+  "options": [
+   "Harry dear",
+   "buddy",
+   "Mr Harry"
+  ],
+  "why": "교사가 학생을 성만 부르는 영국 전통 학교식 호칭이다"
+ },
+ "mcgonagall-3-003.1": {
+  "blank": "since I am neither",
+  "options": [
+   "since I'm not either one",
+   "since I am none",
+   "since I am both not"
+  ],
+  "why": "neither를 대명사로 써 '둘 다 아니다'를 간결히 말한다"
+ },
+ "mcgonagall-3-003.2": {
+  "blank": "that's my final word",
+  "options": [
+   "that's my last say",
+   "that's my final talk",
+   "that's my end word"
+  ],
+  "why": "that's my final word는 더 논의하지 않겠다는 관용구다"
+ },
+ "mcgonagall-3-004.1": {
+  "blank": "were marked for death",
+  "options": [
+   "were signed for death",
+   "were marked to death",
+   "were picked for death"
+  ],
+  "why": "mark A for B의 수동형으로 '죽일 대상으로 점찍히다'이다"
+ },
+ "mcgonagall-3-004.2": {
+  "blank": "Few knew",
+  "options": [
+   "A few knew",
+   "Hardly anybody knew",
+   "Little knew"
+  ],
+  "why": "a 없는 few는 '거의 없다'는 부정의 격식 주어다"
+ },
+ "mcgonagall-3-005": {
+  "blank": "lump of a boy",
+  "options": [
+   "lump of the boy",
+   "lump for a boy",
+   "chunk of a kid"
+  ],
+  "why": "'a 명사 of a 명사' 구문에 영국 구어 lump를 쓴 묘사다"
+ },
+ "mcgonagall-3-006": {
+  "blank": "unfortunately",
+  "options": [
+   "the bad news is",
+   "regretfully",
+   "disappointingly"
+  ],
+  "why": "끔찍한 결말을 '불행히도'로 낮춰 말하는 절제 화법이다"
+ },
+ "mcgonagall-3-007.1": {
+  "blank": "may not have",
+  "options": [
+   "could not have",
+   "must not have",
+   "should not have"
+  ],
+  "why": "may not have ~, but은 반론을 인정한 뒤 뒤집는 양보 구문이다"
+ },
+ "mcgonagall-3-007.2": {
+  "blank": "finish what he started",
+  "options": [
+   "finish up the job",
+   "complete his start",
+   "end what he began"
+  ],
+  "why": "finish what one started는 '하던 일을 끝내다'는 관용구다"
+ },
+ "mcgonagall-3-008": {
+  "blank": "was and remains",
+  "options": [
+   "was and stays",
+   "was and continues",
+   "was and keeps"
+  ],
+  "why": "remain은 still is의 문어적 대응어로 공식 발언에 어울린다"
+ },
+ "mcgonagall-3-009": {
+  "blank": "have got through",
+  "options": [
+   "have gotten through",
+   "have got across",
+   "have gotten by"
+  ],
+  "why": "영국영어에서 get의 과거분사는 gotten이 아닌 got이다"
+ },
+ "mcgonagall-3-011": {
+  "blank": "proceeded to lose",
+  "options": [
+   "went and lost",
+   "progressed to lose",
+   "continued to lose"
+  ],
+  "why": "proceed to는 어이없는 다음 행동을 비꼬는 격식 표현이다"
+ },
+ "mcgonagall-3-015": {
+  "blank": "Is it possible that you",
+  "options": [
+   "Is it possibly that you",
+   "Is it probable that you",
+   "Is it able that you"
+  ],
+  "why": "가능성을 묻는 형식으로 돌려 책임을 추궁하는 격식 질문이다"
+ },
+ "mcgonagall-3-012": {
+  "blank": "Longbottom",
+  "options": [
+   "Neville dear",
+   "pal",
+   "Mr Neville"
+  ],
+  "why": "성만 불러 꾸짖는 거리감을 더하는 전통 학교식 호칭이다"
+ },
+ "mcgonagall-3-013.1": {
+  "blank": "safely assume",
+  "options": [
+   "securely assume",
+   "safely guess",
+   "surely assume"
+  ],
+  "why": "safely assume은 단정을 피하며 확신을 전하는 격식 표현이다"
+ },
+ "mcgonagall-3-013.2": {
+  "blank": "are not to",
+  "options": [
+   "can't",
+   "aren't gonna",
+   "are not able to"
+  ],
+  "why": "be not to는 공식적인 금지를 나타내는 격식 구문이다"
+ },
+ "mcgonagall-3-013.3": {
+  "blank": "Understood",
+  "options": [
+   "Got it",
+   "Comprehended",
+   "You hear"
+  ],
+  "why": "Understood는 지시를 확인시키는 짧고 단호한 격식 표현이다"
+ },
+ "mcgonagall-3-014": {
+  "blank": "Very well",
+  "options": [
+   "OK",
+   "Well good",
+   "Very fine"
+  ],
+  "why": "Very well은 논의를 정리하는 격식 응답으로 OK에 해당한다"
+ },
+ "mcgonagall-4-001": {
+  "blank": "go on",
+  "options": [
+   "keep on",
+   "go along",
+   "go forth"
+  ],
+  "why": "can't go on은 '더는 이대로 둘 수 없다'는 관용 표현이다"
+ },
+ "mcgonagall-4-002": {
+  "blank": "Put an end to",
+  "options": [
+   "Shut down",
+   "Make an end to",
+   "Put an end on"
+  ],
+  "why": "put an end to는 권한 있는 사람이 단호히 끝낼 때 쓴다"
+ },
+ "mcgonagall-4-003": {
+  "blank": "the devil with",
+  "options": [
+   "who cares about",
+   "the devil for",
+   "the hell of"
+  ],
+  "why": "the devil with는 '~ 따위 알 게 뭐냐'는 예스러운 표현이다"
+ },
+ "mcgonagall-4-004": {
+  "blank": "Offer him up",
+  "options": [
+   "Lay him up",
+   "Offer him out",
+   "Give him over"
+  ],
+  "why": "offer up은 '제물로 내놓다'는 뉘앙스의 구동사다"
+ },
+ "mcgonagall-4-005": {
+  "blank": "Professor Moody",
+  "options": [
+   "Hey, Moody",
+   "Mister Professor",
+   "Alastor"
+  ],
+  "why": "학생 앞에서는 동료를 직함과 성으로 부르는 것이 관례다"
+ },
+ "mcgonagall-4-006": {
+  "blank": "a student",
+  "options": [
+   "some kid",
+   "a studying one",
+   "the student one"
+  ],
+  "why": "a student로 정체를 확인하며 놀람을 드러내는 질문이다"
+ },
+ "mcgonagall-4-007": {
+  "blank": "Surely",
+  "options": [
+   "I'm sure",
+   "Certainly",
+   "Sure"
+  ],
+  "why": "문두 Surely는 놀람과 질책을 담는 영국에서 흔한 표지다"
+ },
+ "mcgonagall-4-008": {
+  "blank": "will do well to",
+  "options": [
+   "had better",
+   "will do good to",
+   "will do fine to"
+  ],
+  "why": "will do well to는 '~하는 게 좋을 것'이라는 점잖은 경고다"
+ },
+ "mcgonagall-4-009.1": {
+  "blank": "since its inception",
+  "options": [
+   "since it started",
+   "since its conception",
+   "from its inceptions"
+  ],
+  "why": "inception은 제도의 '창설'을 뜻하는 격식어다"
+ },
+ "mcgonagall-4-009.2": {
+  "blank": "well-mannered frivolity",
+  "options": [
+   "some polite fun",
+   "well-mannered futility",
+   "good-mannered silliness"
+  ],
+  "why": "frivolity는 '흥겨운 놀이'를 뜻하는 문어적 낱말이다"
+ },
+ "mcgonagall-4-009.3": {
+  "blank": "each and every one",
+  "options": [
+   "all and every one",
+   "each and any one",
+   "every and each one"
+  ],
+  "why": "each and every one은 '한 사람도 빠짐없이'를 강조한다"
+ },
+ "mcgonagall-4-009.4": {
+  "blank": "first and foremost",
+  "options": [
+   "firstly and foremost",
+   "first and utmost",
+   "foremost and first"
+  ],
+  "why": "first and foremost는 '무엇보다도'라는 격식 관용구다"
+ },
+ "mcgonagall-4-010.1": {
+  "blank": "commanded the respect of",
+  "options": [
+   "been looked up to by",
+   "ordered the respect of",
+   "demanded the respect from"
+  ],
+  "why": "command the respect of는 '존경을 받다'는 격식 연어다"
+ },
+ "mcgonagall-4-010.2": {
+  "blank": "besmirching",
+  "options": [
+   "ruining",
+   "trashing",
+   "bemuddling"
+  ],
+  "why": "besmirch는 명예를 더럽힌다는 뜻의 문어적 동사다"
+ },
+ "mcgonagall-4-011.1": {
+  "blank": "to dance is to",
+  "options": [
+   "dancing is to",
+   "dance is to",
+   "to dance helps to"
+  ],
+  "why": "'To A is to B'는 격언·연설에서 쓰는 문어체 구문이다"
+ },
+ "mcgonagall-4-011.2": {
+  "blank": "burst forth",
+  "options": [
+   "burst out",
+   "burst off",
+   "burst forward"
+  ],
+  "why": "burst forth는 burst out의 시적·문학적 표현이다"
+ },
+ "mcgonagall-4-012": {
+  "blank": "Mr Weasley",
+  "options": [
+   "Mr. Weasley",
+   "Ron",
+   "Master Weasley"
+  ],
+  "why": "학생을 'Mr+성'으로 부르는 격식 호칭이며 영국식은 마침표가 없다"
+ },
+ "mcgonagall-4-013": {
+  "blank": "place",
+  "options": [
+   "put",
+   "stick",
+   "situate"
+  ],
+  "why": "수업 지시에서는 put보다 정확하고 격식 있는 place가 어울린다"
+ },
+ "mcgonagall-4-015": {
+  "blank": "Mr Filch",
+  "options": [
+   "Mr. Filch",
+   "Filch",
+   "Mister Filch"
+  ],
+  "why": "영국식 표기에서는 Mr 뒤에 마침표를 찍지 않는다"
+ },
+ "mcgonagall-4-017": {
+  "blank": "come together",
+  "options": [
+   "get together",
+   "come around",
+   "come over together"
+  ],
+  "why": "흩어진 학생들을 한데 모을 때 come together라고 한다"
+ },
+ "mcgonagall-4-018": {
+  "blank": "on your feet",
+  "options": [
+   "at your feet",
+   "on the feet",
+   "off your seats"
+  ],
+  "why": "'On your feet'은 '일어서라'는 짧은 관용 명령이다"
+ },
+ "mcgonagall-4-019": {
+  "blank": "Miss Patil",
+  "options": [
+   "Ms. Patil",
+   "Parvati",
+   "Lady Patil"
+  ],
+  "why": "전통 학교에서는 여학생을 'Miss+성'으로 부른다"
+ },
+ "mcgonagall-4-020.1": {
+  "blank": "It's traditional that",
+  "options": [
+   "It's normal that",
+   "It's habitual that",
+   "It's classic that"
+  ],
+  "why": "It's traditional that ~은 전통을 밝히는 격식 문형이다"
+ },
+ "mcgonagall-4-020.2": {
+  "blank": "Surely",
+  "options": [
+   "Sure",
+   "Surely enough",
+   "Securely"
+  ],
+  "why": "Surely는 상대가 모르는 데 놀라며 '분명 ~했을 텐데'를 뜻한다"
+ },
+ "mcgonagall-4-021": {
+  "blank": "you may proceed",
+  "options": [
+   "you can go on",
+   "you may progress",
+   "you may advance"
+  ],
+  "why": "허가의 may와 격식 동사 proceed가 안내 말투를 만든다"
+ },
+ "mcgonagall-5-001": {
+  "blank": "shout at",
+  "options": [
+   "yell at",
+   "shout to",
+   "shout on"
+  ],
+  "why": "영국에서는 '~에게 소리치다'를 shout at으로 말하는 게 기본이다"
+ },
+ "mcgonagall-5-002.1": {
+  "blank": "My dear boy",
+  "options": [
+   "Look, kid",
+   "My dear guy",
+   "My sweet boy"
+  ],
+  "why": "My dear boy는 연장자가 애정과 권위를 섞어 부르는 호칭이다"
+ },
+ "mcgonagall-5-002.2": {
+  "blank": "reporting directly to",
+  "options": [
+   "reporting straight at",
+   "reporting directly at",
+   "reporting direct for"
+  ],
+  "why": "report directly to는 직속 보고 체계를 말하는 격식 표현이다"
+ },
+ "mcgonagall-5-002.3": {
+  "blank": "things could get",
+  "options": [
+   "it's gonna get",
+   "stuff could get",
+   "things could turn"
+  ],
+  "why": "'things could get worse'는 상황 악화를 경고하는 정형 표현이다"
+ },
+ "mcgonagall-5-002.4": {
+  "blank": "Do not mess with",
+  "options": [
+   "Do not mess up with",
+   "Do not mess at",
+   "Do not mess on"
+  ],
+  "why": "영미 공통으로, 축약하지 않은 Do not이 경고에 무게를 싣는다"
+ },
+ "mcgonagall-5-002.5": {
+  "blank": "hands are tied",
+  "options": [
+   "hands are bound",
+   "arms are tied",
+   "hands are knotted"
+  ],
+  "why": "'hands are tied'는 '손쓸 수 없다'는 관용구다"
+ },
+ "mcgonagall-5-002.6": {
+  "blank": "Do you understand",
+  "options": [
+   "Got it",
+   "You get it",
+   "Do you see it"
+  ],
+  "why": "Do you understand?는 다짐을 받는 격식 있는 확인 질문이다"
+ },
+ "mcgonagall-5-003": {
+  "blank": "Off you go",
+  "options": [
+   "You go off",
+   "Off go you",
+   "Go on off"
+  ],
+  "why": "Off you go는 아이를 보낼 때 쓰는 영국식 관용구다"
+ },
+ "mcgonagall-5-005": {
+  "blank": "on earth",
+  "options": [
+   "the heck",
+   "in earth",
+   "on world"
+  ],
+  "why": "on earth는 욕설 없이 '도대체'라는 놀람을 강조한다"
+ },
+ "mcgonagall-5-007": {
+  "blank": "might be right",
+  "options": [
+   "are right",
+   "might be true",
+   "might have right"
+  ],
+  "why": "might로 단정을 피하는 영미 공통의 완곡 어법이다"
+ },
+ "mcgonagall-5-008": {
+  "blank": "coming from",
+  "options": [
+   "coming by",
+   "coming out",
+   "coming of"
+  ],
+  "why": "어디서 오던 길인지 물을 때는 coming from을 쓴다"
+ },
+ "mcgonagall-5-009": {
+  "blank": "run her down to",
+  "options": [
+   "run down her to",
+   "run her down at",
+   "rush her down for"
+  ],
+  "why": "run ~ down to는 '얼른 가져다주다'라는 영미 공통 구어다"
+ },
+ "mcgonagall-5-010": {
+  "blank": "you are",
+  "options": [
+   "you have",
+   "it goes",
+   "you were"
+  ],
+  "why": "There you are는 건네거나 마무리할 때 쓰는 영국식 상용구다"
+ },
+ "mcgonagall-5-011": {
+  "blank": "Bear in mind",
+  "options": [
+   "Keep in mind",
+   "Bear on mind",
+   "Hold in mind"
+  ],
+  "why": "Bear in mind는 영국에서 즐겨 쓰는 격식 있는 당부 표현이다"
+ },
+ "mcgonagall-5-012": {
+  "blank": "off to bed",
+  "options": [
+   "go get bed",
+   "off at bed",
+   "off to the bed"
+  ],
+  "why": "off to bed는 동사 없이 '가서 자라'를 뜻하는 구어다"
+ },
+ "mcgonagall-5-013": {
+  "blank": "on earth",
+  "options": [
+   "the heck",
+   "in earth",
+   "on world"
+  ],
+  "why": "on earth로 '도대체'라는 분노를 욕설 없이 강조한다"
+ },
+ "mcgonagall-5-014": {
+  "blank": "My office",
+  "options": [
+   "My room",
+   "My bureau",
+   "The office"
+  ],
+  "why": "동사 없이 장소만 던지는 압축 명령이 위압감을 준다"
+ },
+ "mcgonagall-5-015": {
+  "blank": "disgusting display",
+  "options": [
+   "disgusting behavior",
+   "disgusting show",
+   "disgusting exhibit"
+  ],
+  "why": "display는 남 앞에서 보인 '작태'를 뜻하는 격식 어휘다"
+ },
+ "mcgonagall-5-016": {
+  "blank": "provoke",
+  "options": [
+   "bug",
+   "agitate",
+   "excite"
+  ],
+  "why": "provoke는 '도발하다'를 뜻하는 다소 격식 있는 동사다"
+ },
+ "mcgonagall-5-017": {
+  "blank": "cannot express in words",
+  "options": [
+   "can't even say",
+   "cannot speak in words",
+   "cannot express by words"
+  ],
+  "why": "cannot과 express in words가 꾸짖음에 무게를 싣는다"
+ },
+ "mcgonagall-5-018": {
+  "blank": "What is it",
+  "options": [
+   "What's up",
+   "What do you want",
+   "What's that"
+  ],
+  "why": "What is it?는 용건을 냉담하게 묻는 영미 공통 표현이다"
+ },
+ "mcgonagall-5-019": {
+  "blank": "kindly remove yourself",
+  "options": [
+   "please get out",
+   "kindly remove you",
+   "nicely remove yourself"
+  ],
+  "why": "kindly와 remove yourself가 정중함 속에 차가운 명령을 담는다"
+ },
+ "mcgonagall-5-020.1": {
+  "blank": "Your performance",
+  "options": [
+   "Your execution",
+   "Your acting",
+   "Your show"
+  ],
+  "why": "performance로 행동을 '보여 준 모습'이라 꼬집는다"
+ },
+ "mcgonagall-5-020.2": {
+  "blank": "a week's worth of",
+  "options": [
+   "a week worth of",
+   "a week's amount of",
+   "a weekly worth of"
+  ],
+  "why": "a week's worth of는 '일주일 치'를 뜻하는 표현이다"
+ },
+ "mcgonagall-5-021": {
+  "blank": "My hands are tied",
+  "options": [
+   "My hands are bound",
+   "My arms are tied",
+   "My hands are knotted"
+  ],
+  "why": "My hands are tied는 '어쩔 수 없다'는 관용구다"
+ },
+ "mcgonagall-5-023": {
+  "blank": "Wake up, Potter",
+  "options": [
+   "Get up, Potter",
+   "Wake on, Potter",
+   "Wake out, Potter"
+  ],
+  "why": "잠에서 깨울 때는 wake up을 쓴다"
+ },
+ "mcgonagall-5-024": {
+  "blank": "You dreamed this",
+  "options": [
+   "You dream this",
+   "You dreamed up this",
+   "Did you dreamed this"
+  ],
+  "why": "평서문 어순에 억양만 올려 되묻는 영미 공통 구어다"
+ },
+ "mcgonagall-5-025": {
+  "blank": "Potter",
+  "options": [
+   "Harry",
+   "Mr. Potter",
+   "Boy Potter"
+  ],
+  "why": "교사가 학생을 성만으로 불러 권위와 거리를 드러낸다"
+ },
+ "mcgonagall-5-026": {
+  "blank": "the Headmaster",
+  "options": [
+   "the principal",
+   "the dean",
+   "the chancellor"
+  ],
+  "why": "영국 학교 교장의 전통적 호칭은 Headmaster다"
+ },
+ "mcgonagall-5-027": {
+  "blank": "has had",
+  "options": [
+   "had",
+   "got",
+   "has got"
+  ],
+  "why": "방금 일어난 일엔 영국식으로 현재완료를 즐겨 쓴다"
+ },
+ "mcgonagall-5-028": {
+  "blank": "It usually means",
+  "options": [
+   "That's like saying",
+   "It kind of means",
+   "It usually says"
+  ],
+  "why": "뻔한 사실을 정색하고 말하는 건조한 반어다"
+ },
+ "mcgonagall-5-029": {
+  "blank": "where will you go",
+  "options": [
+   "where are you gonna go",
+   "where do you go",
+   "where did you go"
+  ],
+  "why": "앞으로의 행선지를 정중하게 묻는 미래 표현이다"
+ },
+ "mcgonagall-5-030": {
+  "blank": "Please sit",
+  "options": [
+   "Grab a seat",
+   "Park yourself",
+   "Please seat"
+  ],
+  "why": "격식을 지키며 짧게 지시하는 정중한 명령이다"
+ },
+ "mcgonagall-5-031.1": {
+  "blank": "have a talk",
+  "options": [
+   "make a talk",
+   "do a talk",
+   "take a talk"
+  ],
+  "why": "have a talk는 진지한 대화를 뜻하는 관용구다"
+ },
+ "mcgonagall-5-031.2": {
+  "blank": "prepare you for",
+  "options": [
+   "prepare you towards",
+   "prepare you to",
+   "ready you with"
+  ],
+  "why": "prepare A for B는 'A를 B에 대비시키다'라는 연어다"
+ },
+ "mcgonagall-5-032": {
+  "blank": "not unrewarding",
+  "options": [
+   "super rewarding",
+   "not rewardless",
+   "not unrewarded"
+  ],
+  "why": "이중부정으로 긍정을 절제해 말하는 영국식 표현이다"
+ },
+ "mcgonagall-5-033": {
+  "blank": "Now then",
+  "options": [
+   "Okay so",
+   "Now so",
+   "Then now"
+  ],
+  "why": "본론을 시작할 때 영국인이 즐겨 쓰는 담화 표지다"
+ },
+ "mcgonagall-5-034": {
+  "blank": "May I offer you",
+  "options": [
+   "Want me to get you",
+   "May I offer to you",
+   "Shall I offer for you"
+  ],
+  "why": "May I offer you는 격식 있는 정중한 제안이다"
+ },
+ "mcgonagall-5-035": {
+  "blank": "indeed",
+  "options": [
+   "surely",
+   "truly",
+   "in fact"
+  ],
+  "why": "indeed를 붙여 냉소적으로 되묻는 영국식 응수다"
+ },
+ "mcgonagall-5-036.1": {
+  "blank": "I would recommend",
+  "options": [
+   "I'd go with",
+   "I would push for",
+   "I would recommend to"
+  ],
+  "why": "would로 조언을 완곡하게 해 격식을 더한다"
+ },
+ "mcgonagall-5-036.2": {
+  "blank": "I daresay",
+  "options": [
+   "I guess",
+   "I dare tell",
+   "I bet say"
+  ],
+  "why": "단정을 피하며 판단을 점잖게 내놓는 영국식 표현이다"
+ },
+ "mcgonagall-5-036.3": {
+  "blank": "Lord knows",
+  "options": [
+   "Lord knew",
+   "Lord sees",
+   "Heaven says"
+  ],
+  "why": "Lord knows는 '누가 모르겠나'라는 강조 관용구다"
+ },
+ "mcgonagall-5-037": {
+  "blank": "indeed I have",
+  "options": [
+   "I sure did",
+   "indeed I did",
+   "truly I have"
+  ],
+  "why": "질문의 조동사 have를 받아 격식 있게 강조한다"
+ },
+ "mcgonagall-5-038.1": {
+  "blank": "apparently misunderstand",
+  "options": [
+   "kind of misunderstood",
+   "apparently miscomprehend",
+   "apparently misknow"
+  ],
+  "why": "apparently로 공손한 척 상대의 오해를 지적한다"
+ },
+ "mcgonagall-5-038.2": {
+  "blank": "a competent teacher",
+  "options": [
+   "a complacent teacher",
+   "a competing teacher",
+   "a compliant teacher"
+  ],
+  "why": "유능한 교사라는 조건으로 상대를 간접 비판한다"
+ },
+ "mcgonagall-5-039": {
+  "blank": "put you through",
+  "options": [
+   "put you across",
+   "put you into",
+   "make you through"
+  ],
+  "why": "put through는 힘든 시험을 치르게 한다는 뜻이다"
+ },
+ "mcgonagall-5-040": {
+  "blank": "things of this nature",
+  "options": [
+   "stuff like that",
+   "things in this nature",
+   "things with this nature"
+  ],
+  "why": "nature를 '종류'의 뜻으로 쓴 격식 표현이다"
+ },
+ "mcgonagall-5-041.1": {
+  "blank": "the very last thing",
+  "options": [
+   "the very final thing",
+   "the very last stuff",
+   "the very latest thing"
+  ],
+  "why": "죽는 한이 있어도 하겠다는 굳은 결의의 관용구다"
+ },
+ "mcgonagall-5-041.2": {
+  "blank": "I will",
+  "options": [
+   "I'm gonna",
+   "I am going",
+   "I would"
+  ],
+  "why": "축약하지 않은 I will로 결의와 권위를 강조한다"
+ },
+ "mcgonagall-5-042": {
+  "blank": "This concludes",
+  "options": [
+   "That's it for",
+   "This finishes off",
+   "This ends up"
+  ],
+  "why": "면담 종료를 알리는 격식 있는 표현이다"
+ },
+ "mcgonagall-5-043": {
+  "blank": "You're welcome",
+  "options": [
+   "No problem",
+   "No worries",
+   "You're welcomed"
+  ],
+  "why": "감사 인사에 격식 있게 답하는 표준 표현이다"
+ },
+ "mcgonagall-5-044.1": {
+  "blank": "A number of",
+  "options": [
+   "A bunch of",
+   "An amount of",
+   "A deal of"
+  ],
+  "why": "a number of는 several보다 격식 있는 수량 표현이다"
+ },
+ "mcgonagall-5-044.2": {
+  "blank": "take place",
+  "options": [
+   "take places",
+   "take part",
+   "happen on"
+  ],
+  "why": "take place는 시험·행사가 열린다는 격식 표현이다"
+ },
+ "mcgonagall-5-044.3": {
+  "blank": "I must warn you",
+  "options": [
+   "I gotta warn you",
+   "I must warn to you",
+   "I must alert you"
+  ],
+  "why": "must로 의무감을 담아 미리 경고하는 격식 표현이다"
+ },
+ "mcgonagall-5-044.4": {
+  "blank": "in a century",
+  "options": [
+   "since a century",
+   "during a century",
+   "in a hundred year"
+  ],
+  "why": "현재완료와 'in + 기간'으로 그 기간 동안을 나타낸다"
+ },
+ "mcgonagall-5-044.5": {
+  "blank": "will not be suffered",
+  "options": [
+   "won't be put up with",
+   "will not be suffering",
+   "will not be endured"
+  ],
+  "why": "suffer를 '용납하다'로 쓴 예스러운 격식 표현이다"
+ },
+ "mcgonagall-5-045": {
+  "blank": "dare you! How dare you",
+  "options": [
+   "dares you! How dares you",
+   "dared you! How dared you",
+   "dare you do! How dare you do"
+  ],
+  "why": "How dare you!는 품위 있게 분노를 드러내는 말이다"
+ },
+ "mcgonagall-6-001": {
+  "blank": "toilet",
+  "options": [
+   "bathroom",
+   "restroom",
+   "washroom"
+  ],
+  "why": "영국에선 화장실 공간 자체를 toilet이라 부른다"
+ },
+ "mcgonagall-6-003": {
+  "blank": "are we",
+  "options": [
+   "huh",
+   "do we",
+   "is it"
+  ],
+  "why": "같은 극성 부가의문문으로 비꼬며 나무라는 말이다"
+ },
+ "mcgonagall-6-004.1": {
+  "blank": "So I noticed",
+  "options": [
+   "Yeah, I noticed",
+   "So did I notice",
+   "Thus I noticed"
+  ],
+  "why": "so+주어+동사로 상대 말을 건조하게 받는 표현이다"
+ },
+ "mcgonagall-6-004.2": {
+  "blank": "no longer",
+  "options": [
+   "not anymore",
+   "no more longer",
+   "not longer"
+  ],
+  "why": "no longer는 '더 이상 ~아니다'의 격식 표현이다"
+ },
+ "mcgonagall-6-005.1": {
+  "blank": "so you did",
+  "options": [
+   "so did you",
+   "so you were",
+   "so you do"
+  ],
+  "why": "so+주어+조동사 어순으로 상대 말을 확인해 준다"
+ },
+ "mcgonagall-6-005.2": {
+  "blank": "perfectly happy",
+  "options": [
+   "totally fine",
+   "perfect happy",
+   "perfectly glad"
+  ],
+  "why": "perfectly는 '얼마든지'라는 뜻의 강조 부사다"
+ },
+ "mcgonagall-6-006": {
+  "blank": "far too",
+  "options": [
+   "way too",
+   "far very",
+   "far so"
+  ],
+  "why": "far too는 '지나치게'를 뜻하는 표준 강조 표현이다"
+ },
+ "mcgonagall-6-007": {
+  "blank": "in her possession",
+  "options": [
+   "on her",
+   "in her possessing",
+   "at her possession"
+  ],
+  "why": "in one's possession은 소지를 뜻하는 공문서 투다"
+ },
+ "mcgonagall-6-008": {
+  "blank": "to whom",
+  "options": [
+   "who to",
+   "to who",
+   "whom to"
+  ],
+  "why": "전치사+whom 어순은 영미 공통의 격식 문체다"
+ },
+ "mcgonagall-6-009": {
+  "blank": "You may go",
+  "options": [
+   "You can go",
+   "You might go",
+   "You must go"
+  ],
+  "why": "may는 윗사람이 허락을 내릴 때 쓰는 격식 조동사다"
+ },
+ "mcgonagall-6-011": {
+  "blank": "think",
+  "options": [
+   "guess",
+   "feel",
+   "say"
+  ],
+  "why": "의견을 물을 때는 What do you think가 표준이다"
+ },
+ "mcgonagall-6-012": {
+  "blank": "was cursed",
+  "options": [
+   "were cursed",
+   "was cursing",
+   "had cursed"
+  ],
+  "why": "피해를 입은 상태를 수동태 was cursed로 진술한다"
+ },
+ "mcgonagall-6-013": {
+  "blank": "a very serious accusation",
+  "options": [
+   "a pretty heavy thing",
+   "a very grave accusing",
+   "a very heavy accusal"
+  ],
+  "why": "감정을 빼고 사실처럼 말해 경고하는 절제 화법이다"
+ },
+ "mcgonagall-6-014": {
+  "blank": "I suggest you",
+  "options": [
+   "You guys should",
+   "I suggest to you",
+   "I propose you"
+  ],
+  "why": "제안의 형식을 빌린 정중하지만 단호한 지시다"
+ },
+ "mcgonagall-6-015": {
+  "blank": "I think we all agree",
+  "options": [
+   "Sure, we all agree",
+   "I think we all accord",
+   "I think we're all agreeing"
+  ],
+  "why": "모두 인정할 점을 먼저 짚는 격식 있는 화법이다"
+ },
+ "mcgonagall-6-016": {
+  "blank": "No dawdling",
+  "options": [
+   "Let's move it",
+   "No dawdle",
+   "Not dawdling"
+  ],
+  "why": "No+-ing는 짧고 단호한 금지 명령의 틀이다"
+ },
+ "mcgonagall-6-018": {
+  "blank": "should you feel the need",
+  "options": [
+   "if you ever need",
+   "would you feel the need",
+   "did you feel the need"
+  ],
+  "why": "should 도치 조건문으로 조심스럽고 정중하게 말한다"
+ },
+ "mcgonagall-6-020": {
+  "blank": "a great deal",
+  "options": [
+   "a whole lot",
+   "a great many",
+   "a big deal"
+  ],
+  "why": "a great deal은 a lot보다 격식 있는 절제된 표현이다"
+ }
+}

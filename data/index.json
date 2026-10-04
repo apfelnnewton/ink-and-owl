@@ -1,0 +1,220 @@
+{
+ "version": "2026-10-03c",
+ "films": {
+  "1": "마법사의 돌",
+  "2": "비밀의 방",
+  "3": "아즈카반의 죄수",
+  "4": "불의 잔",
+  "5": "불사조 기사단",
+  "6": "혼혈 왕자",
+  "7": "죽음의 성물 1부"
+ },
+ "sources": {
+  "transcript": "팬이 영화를 받아 적은 전사본(1·2·4편). 실제 영화 대사지만 받아쓰기 오류를 교정함",
+  "shooting_script": "촬영 대본(3·6·7편). 완성된 영화 대사와 다를 수 있음",
+  "fan_script": "팬이 원작을 각색해 쓴 대본(5편). 실제 영화 대사가 아님"
+ },
+ "fields": {
+  "card": "학습 카드 여부. 결함 3건(excluded_reason 참조)만 false",
+  "line": "정답 대사",
+  "plain": "앞면에 보여줄 평범한 미국식 표현",
+  "scene_ko": "앞면 장면 설명",
+  "cue_speaker/cue": "직전 화자와 대사",
+  "tag": "일반 | 격식 | 문학",
+  "corrected": "원본 전사 오류를 교정했는지",
+  "bre[].shared": "true면 영미 공통 표현(영국 특유가 아님)",
+  "impostor": "4편 무디(바티 크라우치 2세)",
+  "speech": "원래 대사(한 번의 발화) id. 같은 speech의 조각을 part 순서로 이으면 발화 전체",
+  "part/of": "조각 번호 / 조각 수(나누지 않은 카드는 1/1)",
+  "prev_line": "같은 발화의 바로 앞 조각(앞면에 \"이어서\"로 보여줄 것). 첫 조각은 빈 문자열",
+  "minimal": "true면 이름 부르기·주문·한 단어 응답 등 아주 짧은 대사"
+ },
+ "decks": [
+  {
+   "deck": "dumbledore",
+   "character": "Dumbledore",
+   "file": "dumbledore.json",
+   "units": 671,
+   "cards": 670,
+   "speeches": 423,
+   "by_film": {
+    "1": 52,
+    "2": 65,
+    "3": 46,
+    "4": 123,
+    "5": 188,
+    "6": 196
+   },
+   "by_tag": {
+    "격식": 415,
+    "일반": 168,
+    "문학": 87
+   },
+   "by_source": {
+    "transcript": 240,
+    "shooting_script": 242,
+    "fan_script": 188
+   },
+   "expressions": 609,
+   "cards_without_expression": 236,
+   "minimal_cards": 44
+  },
+  {
+   "deck": "mcgonagall",
+   "character": "McGonagall",
+   "file": "mcgonagall.json",
+   "units": 219,
+   "cards": 218,
+   "speeches": 148,
+   "by_film": {
+    "1": 45,
+    "2": 42,
+    "3": 21,
+    "4": 27,
+    "5": 61,
+    "6": 22
+   },
+   "by_tag": {
+    "격식": 154,
+    "일반": 59,
+    "문학": 5
+   },
+   "by_source": {
+    "transcript": 114,
+    "shooting_script": 43,
+    "fan_script": 61
+   },
+   "expressions": 218,
+   "cards_without_expression": 68,
+   "minimal_cards": 16
+  },
+  {
+   "deck": "snape",
+   "character": "Snape",
+   "file": "snape.json",
+   "units": 189,
+   "cards": 189,
+   "speeches": 139,
+   "by_film": {
+    "1": 19,
+    "2": 17,
+    "3": 43,
+    "4": 10,
+    "5": 49,
+    "6": 43,
+    "7": 8
+   },
+   "by_tag": {
+    "격식": 134,
+    "일반": 46,
+    "문학": 9
+   },
+   "by_source": {
+    "transcript": 46,
+    "shooting_script": 94,
+    "fan_script": 49
+   },
+   "expressions": 198,
+   "cards_without_expression": 57,
+   "minimal_cards": 19
+  },
+  {
+   "deck": "slughorn",
+   "character": "Slughorn",
+   "file": "slughorn.json",
+   "units": 174,
+   "cards": 174,
+   "speeches": 121,
+   "by_film": {
+    "6": 174
+   },
+   "by_tag": {
+    "일반": 83,
+    "격식": 73,
+    "문학": 18
+   },
+   "by_source": {
+    "shooting_script": 174
+   },
+   "expressions": 208,
+   "cards_without_expression": 39,
+   "minimal_cards": 8
+  },
+  {
+   "deck": "lupin",
+   "character": "Lupin",
+   "file": "lupin.json",
+   "units": 169,
+   "cards": 169,
+   "speeches": 130,
+   "by_film": {
+    "3": 125,
+    "5": 23,
+    "6": 8,
+    "7": 13
+   },
+   "by_tag": {
+    "일반": 109,
+    "격식": 54,
+    "문학": 6
+   },
+   "by_source": {
+    "shooting_script": 146,
+    "fan_script": 23
+   },
+   "expressions": 124,
+   "cards_without_expression": 81,
+   "minimal_cards": 24
+  },
+  {
+   "deck": "moody",
+   "character": "Moody",
+   "file": "moody.json",
+   "units": 128,
+   "cards": 128,
+   "speeches": 95,
+   "by_film": {
+    "4": 78,
+    "5": 28,
+    "7": 22
+   },
+   "by_tag": {
+    "일반": 107,
+    "격식": 17,
+    "문학": 4
+   },
+   "by_source": {
+    "transcript": 78,
+    "fan_script": 28,
+    "shooting_script": 22
+   },
+   "expressions": 116,
+   "cards_without_expression": 45,
+   "minimal_cards": 6
+  },
+  {
+   "deck": "umbridge",
+   "character": "Umbridge",
+   "file": "umbridge.json",
+   "units": 125,
+   "cards": 124,
+   "speeches": 104,
+   "by_film": {
+    "5": 117,
+    "7": 7
+   },
+   "by_tag": {
+    "격식": 70,
+    "문학": 8,
+    "일반": 46
+   },
+   "by_source": {
+    "fan_script": 117,
+    "shooting_script": 7
+   },
+   "expressions": 159,
+   "cards_without_expression": 25,
+   "minimal_cards": 12
+  }
+ ]
+}

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080B09">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ink &amp; Owl">
+<title>Ink &amp; Owl</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gowun+Batang:wght@400;700&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+<!-- filters and gradients: the first block is copied from design/reference-c.html; the second adds what the new props need -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0 0 0 -0.32"/>
+    </filter>
+    <filter id="paper" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .36  0 0 0 0 .24  0 0 0 0 .1  .7 0 0 0 -.16"/>
+    </filter>
+    <filter id="stain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="12"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .45  0 0 0 0 .3  0 0 0 0 .12  1.7 0 0 0 -.82"/>
+    </filter>
+    <filter id="residue" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="21"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .93  0 0 0 0 .92  0 0 0 0 .87  1.5 0 0 0 -.62"/>
+    </filter>
+    <filter id="chalk" x="-2%" y="-10%" width="104%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="3" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.5 1.3" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <!-- brass and iron: the reference colours, given a polished-metal horizon line so they read as metal, not paint -->
+    <linearGradient id="g-brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8E8AE"/><stop offset=".14" stop-color="#E0C272"/><stop offset=".44" stop-color="#A8862F"/><stop offset=".5" stop-color="#7A5C1C"/><stop offset=".58" stop-color="#A8862F"/><stop offset=".84" stop-color="#E2C574"/><stop offset="1" stop-color="#A4832F"/></linearGradient>
+    <linearGradient id="g-iron" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A7378"/><stop offset=".14" stop-color="#40474B"/><stop offset=".46" stop-color="#22262A"/><stop offset=".54" stop-color="#15181A"/><stop offset=".82" stop-color="#2C3236"/><stop offset="1" stop-color="#121415"/></linearGradient>
+    <linearGradient id="g-reveal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".62"/><stop offset=".32" stop-color="#000" stop-opacity="0"/></linearGradient>
+    <radialGradient id="g-lamp"><stop offset="0" stop-color="#F2B24C" stop-opacity=".62"/><stop offset=".45" stop-color="#F2B24C" stop-opacity=".2"/><stop offset="1" stop-color="#F2B24C" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DCEBE2" stop-opacity=".22"/><stop offset=".3" stop-color="#DCEBE2" stop-opacity=".06"/><stop offset="1" stop-color="#DCEBE2" stop-opacity=".14"/></linearGradient>
+    <linearGradient id="g-cork" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9825A"/><stop offset=".5" stop-color="#8A6A44"/><stop offset="1" stop-color="#6E5131"/></linearGradient>
+    <linearGradient id="g-plank" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A5532"/><stop offset=".25" stop-color="#5A3B22"/><stop offset="1" stop-color="#3A2413"/></linearGradient>
+
+    <linearGradient id="g-brass-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E6A1E"/><stop offset=".28" stop-color="#F3E2A6"/><stop offset=".55" stop-color="#C5A253"/><stop offset="1" stop-color="#6A5218"/></linearGradient>
+    <linearGradient id="g-pewter" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E767B"/><stop offset=".3" stop-color="#D3D8DB"/><stop offset=".6" stop-color="#8E979C"/><stop offset="1" stop-color="#4A5054"/></linearGradient>
+    <linearGradient id="g-streak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
+    <radialGradient id="g-grille" cx=".5" cy=".6" r=".7"><stop offset="0" stop-color="#5FD08E" stop-opacity=".55"/><stop offset="1" stop-color="#3FA66B" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#090D28"/><stop offset=".7" stop-color="#18205A"/><stop offset="1" stop-color="#2C3576"/></linearGradient>
+    <radialGradient id="g-nightglow" cx=".5" cy="1" r=".9"><stop offset="0" stop-color="#F2C45A" stop-opacity=".28"/><stop offset="1" stop-color="#F2C45A" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-phoenix" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A1414"/><stop offset=".35" stop-color="#C8321C"/><stop offset=".7" stop-color="#EE7A1E"/><stop offset="1" stop-color="#FFD27A"/></linearGradient>
+    <linearGradient id="g-glint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="plate-clip"><rect x="62" y="238" width="126" height="46" rx="2"/></clipPath>
+    <!-- light and material: soft shadows, pillowed stones, deckled paper edges, brushed metal -->
+    <filter id="soft3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="soft6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="soft14" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="deckle" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="3" seed="5" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="6" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <linearGradient id="g-stone" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset=".2" stop-color="#fff" stop-opacity="0"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
+    <linearGradient id="g-curl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF8E6" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#3A2A12" stop-opacity=".26"/></linearGradient>
+    <pattern id="p-brush" width="60" height="1.4" patternUnits="userSpaceOnUse"><rect width="60" height=".5" fill="#fff"/></pattern>
+    <linearGradient id="g-sheen" x1="0" y1="0" x2="1" y2=".35"><stop offset=".22" stop-color="#fff" stop-opacity="0"/><stop offset=".38" stop-color="#fff" stop-opacity=".5"/><stop offset=".46" stop-color="#fff" stop-opacity=".04"/><stop offset=".58" stop-color="#fff" stop-opacity=".26"/><stop offset=".72" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="cork" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="31"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .16  0 0 0 0 .09  0 0 0 0 .03  1.4 0 0 0 -.38"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ============ HOME: the corridor ============ -->
+<section id="home" class="screen" aria-label="복도">
+  <div class="cstage" id="cstage" tabindex="0" aria-label="교실 문이 늘어선 복도. 옆으로 밀어 고르세요">
+    <div class="cwall" id="cwall"></div>
+    <div class="cshade"></div>
+  </div>
+  <video class="copen" id="copen" muted playsinline aria-hidden="true"></video>
+  <header class="chead"><h1>The Corridor</h1><div class="day" id="hDay"></div></header>
+  <button type="button" class="cnotes" id="notesBtn" aria-label="표현 노트"><img src="assets/ui/book.webp" alt="" width="320" height="298"></button>
+  <button type="button" class="crec" id="recBtn" aria-label="기록실: 출석부와 통계"><img src="assets/ui/hourglass.webp" alt="" width="260" height="529"></button>
+  <button type="button" class="keys" id="keysBtn" aria-label="설정: 관리인의 열쇠 꾸러미"><svg viewBox="0 0 60 92" aria-hidden="true" id="keysSvg"></svg></button>
+  <div class="ccard" id="ccard" aria-live="polite"><div class="in">
+    <div class="cey" id="cey"></div>
+    <div class="cwho" id="cwho"></div>
+    <div class="cwhere" id="cwhere"></div>
+    <div class="chr"></div>
+    <div class="cstats" id="cstats"></div>
+    <div class="cline" id="cline" hidden></div>
+    <button type="button" class="cgo" id="cgo"><span>교실로 들어가기</span><i aria-hidden="true">→</i></button>
+    <button type="button" class="clink" id="clink" hidden>오늘 성적표 보기</button>
+  </div></div>
+  <div class="cticks" id="cticks" aria-hidden="true"></div>
+</section>
+
+<!-- ============ ROOM: the classroom ============ -->
+<section id="room" class="screen" hidden aria-label="교실">
+  <div class="bg" aria-hidden="true"><svg class="wall" id="roomWall"></svg><div class="photo" id="roomPhoto"></div><div class="motes" id="roomMotes"></div><div class="warm"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="backBtn" aria-label="복도로 나가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="rTitle"></div>
+    <div class="cnt" id="rCount"></div>
+  </div>
+  <div class="room-scroll" id="roomScroll">
+    <div class="room-grid">
+      <div class="col-a">
+        <div class="bk shelfwrap" id="shelfWrap"><svg class="shelf" id="shelf" viewBox="0 0 390 140" aria-hidden="true"></svg></div>
+        <div class="note" id="note">
+          <div class="paperbox"></div>
+          <div class="meta"><span id="noteFilm"></span><span class="fan" id="noteFan" hidden>팬 대본</span></div>
+          <div class="scene" id="noteScene"></div>
+          <div class="cueblock" id="noteCue"><div class="cue-who" id="noteCueWho"></div><div class="cue" id="noteCueText" lang="en"></div></div>
+        </div>
+        <div class="bk cauldronwrap" id="cauldronWrap"><svg class="cauldron" id="cauldron" viewBox="0 0 300 236" aria-hidden="true"></svg></div>
+      </div>
+      <div class="col-b">
+        <div class="board" id="board">
+          <button type="button" class="bell" id="bell" aria-label="대사 읽어 주기 (영국 영어)"><svg viewBox="0 0 44 46" aria-hidden="true" id="bellSvg"></svg></button>
+          <div class="slate" id="slate">
+            <div class="paperbox"></div>
+            <svg class="residue" aria-hidden="true">
+              <rect width="100%" height="100%" filter="url(#residue)" opacity=".16"/>
+              <g opacity=".075" stroke="#EDEBDD" fill="none" stroke-width="2" stroke-linecap="round">
+                <path d="M214 250 q26 34 60 0"/><path d="M208 250 h72"/><path d="M226 286 l-6 12 M262 286 l6 12"/>
+                <path d="M232 240 q-6 -14 4 -22 M246 238 q8 -12 0 -24 M258 240 q6 -10 -2 -18"/>
+                <path d="M24 262 h120 M24 280 h86 M24 298 h104"/>
+              </g>
+            </svg>
+            <div class="rung" id="sStage"></div>
+            <div class="front">
+              <div class="lab">보통은 이렇게 말한다</div>
+              <div class="plain" id="sPlain" lang="en"></div>
+              <div class="ko-front" id="sKoFront" hidden></div>
+            </div>
+            <div class="ask">
+              <div class="q" id="sAsk"></div>
+              <div class="cue" id="askCue" lang="en" hidden></div>
+              <div class="cue-ko" id="askKo" hidden></div>
+              <div class="play" id="askPlay" hidden>
+                <button type="button" id="playBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>듣기</button>
+                <button type="button" id="slowBtn">천천히</button>
+              </div>
+              <form class="typed" id="typedForm">
+                <textarea id="typedIn" rows="3" lang="en" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="대사를 영어로 입력하세요"></textarea>
+                <div class="typed-row">
+                  <button type="button" class="mic" id="micBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg><span>말로 하기</span></button>
+                  <button type="submit" class="ok">확인</button>
+                </div>
+              </form>
+              <div class="heard" id="heard" hidden></div>
+              <button type="button" class="dunno" id="dunnoBtn">모르겠다, 정답 보기</button>
+            </div>
+            <div class="cloze" aria-live="polite">
+              <div class="lab" id="czLab">빈칸에 들어갈 말은?</div>
+              <div class="cz-line" id="czLine" lang="en"></div>
+              <div class="cz-ko" id="czKo" hidden></div>
+              <div class="cz-opts" id="czOpts"></div>
+              <div class="cz-why" id="czWhy"></div>
+            </div>
+            <div class="arr" aria-live="polite">
+              <div class="lab">조각을 순서대로 눌러 대사를 완성하세요</div>
+              <div class="arr-line" id="arrLine" lang="en"></div>
+              <div class="arr-pool" id="arrPool" lang="en"></div>
+              <button type="button" class="arr-give" id="arrGive">모르겠다, 정답 보기</button>
+            </div>
+            <div class="ans" aria-live="polite">
+              <div class="verdict" id="verdict" hidden></div>
+              <div class="lab" id="sLineLab"></div>
+              <div class="line" id="sLine" lang="en"></div>
+              <div class="ko" id="sKo"></div>
+              <div class="bre" id="sBre"></div>
+              <button type="button" class="parts" id="sParts" hidden></button>
+            </div>
+            <div class="smear" id="smear"></div>
+            <svg class="eraser" id="eraser" viewBox="0 0 76 30" aria-hidden="true"></svg>
+          </div>
+        </div>
+        <svg class="tray" id="tray" viewBox="0 0 374 20" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="grade-bar" id="gradeBar">
+          <div class="hint" id="hint"></div>
+          <button type="button" class="next" id="nextBtn"></button>
+          <div class="grade">
+            <button type="button" data-grade="again" aria-keyshortcuts="1">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2.6" stroke-linecap="round" filter="url(#chalk)"><path pathLength="1" d="M6 6l12 12"/><path pathLength="1" d="M18 6L6 18"/></svg>
+              <span>틀림<br><small data-when></small></span>
+            </button>
+            <button type="button" data-grade="hard" aria-keyshortcuts="2">
+              <svg aria-hidden="true" width="26" height="22" viewBox="0 0 28 24" fill="none" stroke="#EDEBDD" stroke-width="2.6" stroke-linecap="round" filter="url(#chalk)"><path pathLength="1" d="M3 14 C 7 9, 10 19, 14 13 S 22 8, 25 13"/></svg>
+              <span>비슷<br><small data-when></small></span>
+            </button>
+            <button type="button" class="ok" data-grade="good" aria-keyshortcuts="3">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8D98A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)"><path pathLength="1" d="M4 13l5 5L20 6"/></svg>
+              <span>맞음<br><small data-when></small></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPORT: the end-of-lesson sheet nailed to the classroom door ============ -->
+<section id="report" class="screen" hidden aria-label="오늘의 성적표">
+  <div class="bg" aria-hidden="true"><div class="photo" id="repPhoto"></div><div class="shade"></div></div>
+  <div class="rep-scroll" id="repScroll">
+
+    <article class="rep-paper" id="repPaper">
+      <div class="paperbox"></div>
+      <header class="rp-head"><div class="rp-title" id="rpTitle">End of Lesson</div><div class="rp-sub" id="rpSub"></div></header>
+      <blockquote class="rp-remark"><p lang="en" id="rpEn"></p><p class="ko" id="rpKo"></p><p class="by" id="rpBy" lang="en"></p></blockquote>
+      <div class="rp-tallies" id="rpTallies"></div>
+      <section class="rp-wrong" id="rpWrongBox"><h2>다시 볼 대사</h2><ol id="rpWrong"></ol></section>
+      <section class="rp-extra" id="rpExtra" hidden></section>
+      <section class="rp-prog" id="rpProg"></section>
+      <div class="rp-foot">
+        <button type="button" class="enter more" id="rpMore">더 도전 · 배운 대사 10문제</button>
+        <button type="button" class="enter more" id="rpWrongGo" hidden>틀린 대사 연습</button>
+        <button type="button" class="enter" id="rpBack">복도로 돌아가기</button>
+        
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ NOTES: every expression of a deck, grouped by kind ============ -->
+<section id="notes" class="screen" hidden aria-label="표현 노트">
+  <div class="bg" aria-hidden="true"><div class="nphoto" id="notesPhoto"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="notesBack" aria-label="복도로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">Expressions</div>
+    <div class="cnt" id="notesCount"></div>
+  </div>
+  <div class="notes-scroll" id="notesScroll">
+    <div class="notes-wrap">
+      <nav class="n-who" id="notesWho" aria-label="교수 고르기"></nav>
+      <div class="n-links"><button type="button" id="notesScript">대본 읽기 <i>→</i></button><button type="button" id="notesPrint">인쇄용 활동지 <i>→</i></button></div>
+      <div class="n-tools">
+        <input type="search" id="notesQ" placeholder="표현이나 뜻으로 찾기" aria-label="표현 검색">
+        <button type="button" class="n-filter" id="notesStar" aria-pressed="false">★ 별표만</button>
+      </div>
+      <button type="button" class="n-drill" id="notesDrill" hidden></button>
+      <div id="notesList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETTINGS: the caretaker's notice board ============ -->
+<section id="records" class="screen" hidden aria-label="기록실">
+  <div class="bg" aria-hidden="true"><div class="nphoto rec-photo"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="recBack" aria-label="복도로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">The Register</div>
+    <div class="cnt" id="recStreak"></div>
+  </div>
+  <div class="notes-scroll" id="recScroll">
+    <div class="notes-wrap rec-wrap">
+      <article class="rec-paper" id="recCal"><div class="paperbox"></div><div id="recCalBody"></div></article>
+      <article class="rec-paper" id="recProf"><div class="paperbox"></div><h2 class="rec-h">교수별 진도</h2><p class="rec-sub">옅은 칸 배움 · 짙은 칸 숙달</p><ul class="rec-prof" id="recProfBody"></ul></article>
+      <article class="rec-paper" id="recMiss"><div class="paperbox"></div><h2 class="rec-h">자주 틀리는 표현</h2><div class="rec-miss" id="recMissBody"></div></article>
+      <article class="rec-paper" id="recWeeks"><div class="paperbox"></div><h2 class="rec-h">최근 8주</h2><div class="rec-weeks" id="recWeeksBody"></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="script" class="screen" hidden aria-label="대본 읽기">
+  <div class="bg" aria-hidden="true"><div class="nphoto" id="scPhoto"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="scBack" aria-label="표현 노트로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">The Script</div>
+    <div class="cnt" id="scCount"></div>
+  </div>
+  <div class="notes-scroll" id="scScroll">
+    <div class="notes-wrap">
+      <nav class="n-who" id="scWho" aria-label="교수 고르기"></nav>
+      <nav class="sc-films" id="scFilms" aria-label="편 고르기"></nav>
+      <div class="sc-tools"><span id="scFilmName"></span><button type="button" class="n-filter" id="scKo" aria-pressed="false">한국어 숨기기</button></div>
+      <p class="sc-tip">누르면 읽어 줍니다 · 밑줄은 핵심 표현</p>
+      <div class="sc-list" id="scList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="letters" class="screen" hidden aria-label="부엉이 우편">
+  <div class="bg" aria-hidden="true"><div class="nphoto" id="ltPhoto"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="ltBack" aria-label="내 방으로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">Owl Post</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="notes-scroll" id="ltScroll">
+    <div class="notes-wrap">
+      <nav class="n-who" id="ltWho" aria-label="친구 또는 교수 고르기"></nav>
+      <div class="lt-rel" id="ltRel"></div>
+      <ul class="lt-list" id="ltList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MY ROOM: the guest room at the top of the tower (letters on the desk, gifts in the specimen drawers) ============ -->
+<section id="me" class="screen" hidden aria-label="내 방">
+  <div class="bg" aria-hidden="true"><div class="photo"></div><div class="shade"></div><div class="me-dim" id="meDim"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="meBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="meTtl">The Guest Room</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="me-card" id="meCard">
+    <div class="cey">The Tower</div>
+    <div class="cwho">내 방</div>
+    <div class="cwhere">탑 꼭대기 손님 방</div>
+    <div class="chr"></div>
+    <button type="button" class="cgo" id="meMail"><span>편지함 <em id="meMailN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meJnl"><span>차 일지 <em id="meJnlN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
+  </div>
+  <div class="cab-scroll jnl-scroll" id="jnl" hidden>
+    <div class="cab-wrap">
+      <nav class="cab-who" id="jnlWho" aria-label="교수 고르기"></nav>
+      <article class="jnl-book" id="jnlBook"><div class="paperbox"></div><div class="jnl-in" id="jnlBody"></div></article>
+    </div>
+  </div>
+  <div class="cab-scroll" id="cab" hidden>
+    <div class="cab-wrap">
+      <nav class="cab-who" id="cabWho" aria-label="서랍 고르기"></nav>
+      <div class="cab-drawer">
+        <div class="cab-front"><span class="cab-label"><span class="cab-card" id="cabName" lang="en"></span></span></div>
+        <div class="cab-grid" id="cabGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="settings" class="screen" hidden aria-label="설정">
+  <div class="bg" aria-hidden="true"><svg class="wall" id="setWall"></svg><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="setBack" aria-label="복도로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">The Caretaker’s Board</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="set-scroll">
+    <div class="corkboard" id="corkboard">
+      <svg class="cork-bits" id="corkBits" aria-hidden="true"></svg>
+      <div class="hook" aria-hidden="true"><svg viewBox="0 0 60 92" id="hookKeys"></svg></div>
+      <form class="set-paper" id="setForm" autocomplete="off">
+        <div class="paperbox"></div>
+        <h1>설정</h1>
+
+        <fieldset>
+          <legend>하루 수업</legend>
+          <div class="row"><label for="fNew">하루 새 카드</label>
+            <div class="stepper"><button type="button" data-step="-1" data-for="fNew" aria-label="하나 줄이기">−</button><input id="fNew" type="number" inputmode="numeric" min="0" max="50"><button type="button" data-step="1" data-for="fNew" aria-label="하나 늘리기">+</button></div></div>
+          <div class="row"><label for="fCap">복습 상한</label>
+            <div class="stepper"><button type="button" data-step="-5" data-for="fCap" aria-label="다섯 줄이기">−</button><input id="fCap" type="number" inputmode="numeric" min="0" max="200"><button type="button" data-step="5" data-for="fCap" aria-label="다섯 늘리기">+</button></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>나</legend>
+          <div class="row name"><label for="fSur">영문 성</label><input id="fSur" type="text" autocomplete="family-name" lang="en"></div>
+          <div class="row name"><label for="fFirst">영문 이름</label><input id="fFirst" type="text" autocomplete="given-name" lang="en"></div>
+          <div class="row name"><label for="fTitle">교수들이 부르는 호칭</label><select id="fTitle"><option value="">성만</option><option value="Ms">Ms</option><option value="Miss">Miss</option><option value="Mrs">Mrs</option><option value="Mr">Mr</option><option value="Mx">Mx</option></select></div>
+          <div class="row name"><label for="fBday">생일</label><input id="fBday" type="text" inputmode="numeric" placeholder="예: 06-05 (월-일)" maxlength="5"></div>
+          <p class="note-s" id="fNamePrev"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend>친구 그룹</legend>
+          <div id="fGroup"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>카드</legend>
+          <label class="check"><input type="checkbox" id="fKo"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>앞면에 한국어 뜻 보이기</label>
+          <label class="check"><input type="checkbox" id="fAuto"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>뒷면에서 자동으로 읽어 주기</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>목소리 (영국 영어)</legend>
+          <div class="row voice"><select id="fVoice" aria-label="목소리 선택"></select><button type="button" class="brass sm" id="fTry">들어 보기</button></div>
+          <p class="note-s" id="voiceNote"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend>진도</legend>
+          <div class="row btns"><button type="button" class="brass" id="fExport">다른 기기로 보내기</button><button type="button" class="brass" id="fImport">받은 진도 합치기</button><input type="file" id="fFile" accept="application/json,.json" hidden></div>
+          <p class="note-s">아이폰·아이패드에서는 공유 창이 열립니다. AirDrop으로 다른 기기에 보내고, 받은 기기에서 '받은 진도 합치기'로 그 파일을 고르세요. 두 기기의 기록을 합치며, 같은 대사는 더 최근에 푼 쪽이 남습니다.</p>
+          <div class="row btns"><select id="fDeck" aria-label="초기화할 덱"></select><button type="button" class="wax" id="fReset">덱 진도 초기화</button></div>
+        </fieldset>
+        <p class="ver" id="fVer"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- parchment slip that rises for expression notes and the whole speech -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-dim" data-close></div>
+  <div class="sheet-paper" role="dialog" aria-modal="true" aria-labelledby="shTitle">
+    <div class="paperbox"></div>
+    <button type="button" class="sheet-close" data-close aria-label="쪽지 닫기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#2A2118" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="printArea" class="print-area"></div>
+
+</body>
+</html>

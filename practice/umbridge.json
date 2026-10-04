@@ -1,0 +1,1010 @@
+{
+ "umbridge-5-001": {
+  "blank": "Excuse me",
+  "options": [
+   "Hold on",
+   "Hey there",
+   "Excuse you"
+  ],
+  "why": "공손한 양해로 말을 끊는 영미 공통 격식 화법이다"
+ },
+ "umbridge-5-002": {
+  "blank": "if I could",
+  "options": [
+   "mind if I",
+   "if I would",
+   "if I should"
+  ],
+  "why": "조건절만으로 허락을 구하는 공손한 격식 요청이다"
+ },
+ "umbridge-5-003.1": {
+  "blank": "how are we all",
+  "options": [
+   "how's everybody",
+   "how are y'all",
+   "how are we each"
+  ],
+  "why": "청중을 '우리'로 묶어 어르는 교사식 포괄 we 화법이다."
+ },
+ "umbridge-5-003.2": {
+  "blank": "say a few words",
+  "options": [
+   "say a couple things",
+   "tell a few words",
+   "speak a few words"
+  ],
+  "why": "'say a few words'는 짧은 연설을 뜻하는 관용 표현이다"
+ },
+ "umbridge-5-003.3": {
+  "blank": "behest",
+  "options": [
+   "bequest",
+   "behalf",
+   "beckon"
+  ],
+  "why": "'at one's behest'는 '~의 명에 따라'라는 격식 표현이다"
+ },
+ "umbridge-5-003.4": {
+  "blank": "shall select",
+  "options": [
+   "gets to pick",
+   "should select",
+   "can go pick"
+  ],
+  "why": "법령 문체에서 'shall'은 의무·규정을 나타낸다"
+ },
+ "umbridge-5-004.1": {
+  "blank": "of vital importance",
+  "options": [
+   "super important",
+   "in vital importance",
+   "of vital matter"
+  ],
+  "why": "'of vital importance'는 연설에 어울리는 격식 표현이다"
+ },
+ "umbridge-5-004.2": {
+  "blank": "lest it be lost",
+  "options": [
+   "so it won't get lost",
+   "unless it be lost",
+   "in case it be lost"
+  ],
+  "why": "'lest'+원형은 '~하지 않도록'의 고풍스러운 격식체다"
+ },
+ "umbridge-5-004.3": {
+  "blank": "is to be discouraged",
+  "options": [
+   "is a bad idea",
+   "is to discourage",
+   "is being discouraged"
+  ],
+  "why": "'be to be p.p.'는 행위자 없이 당위를 말하는 관료체다"
+ },
+ "umbridge-5-004.4": {
+  "blank": "must be attained",
+  "options": [
+   "has gotta happen",
+   "must be arrived",
+   "must be reached at"
+  ],
+  "why": "'attain'은 '달성하다'의 격식 동사로 연설에 어울린다"
+ },
+ "umbridge-5-004.5": {
+  "blank": "walking the fine line",
+  "options": [
+   "walking the thin rope",
+   "stepping the fine line",
+   "running the fine line"
+  ],
+  "why": "'walk a fine line'은 아슬아슬한 균형을 뜻하는 관용구다"
+ },
+ "umbridge-5-004.6": {
+  "blank": "Know only that",
+  "options": [
+   "Just know that",
+   "Only you know that",
+   "Knowing only that"
+  ],
+  "why": "명령문 앞 'only'로 결론만 받아들이라는 연설체다"
+ },
+ "umbridge-5-005": {
+  "blank": "let's see",
+  "options": [
+   "let's look",
+   "let me see to",
+   "let's watch"
+  ],
+  "why": "'let's see'는 잠시 생각하는 척하는 담화 표지다"
+ },
+ "umbridge-5-006.1": {
+  "blank": "as I was saying",
+  "options": [
+   "like I was saying",
+   "as I said it",
+   "as I was telling"
+  ],
+  "why": "'as I was saying'은 말을 이어가는 격식 담화 표지다"
+ },
+ "umbridge-5-006.2": {
+  "blank": "rather fragmented",
+  "options": [
+   "pretty fragmented",
+   "kinda fragmented",
+   "real fragmented"
+  ],
+  "why": "'rather'는 비판을 점잖게 포장하는 영국식 완화어다"
+ },
+ "umbridge-5-006.3": {
+  "blank": "rectified",
+  "options": [
+   "fixed up",
+   "redressed up",
+   "ratified"
+  ],
+  "why": "'rectify'는 잘못을 바로잡는다는 격식 동사다"
+ },
+ "umbridge-5-006.4": {
+  "blank": "theory-centred",
+  "options": [
+   "theory-centered",
+   "theory-centering",
+   "theory-central"
+  ],
+  "why": "영국식 철자는 '-re'로 쓰는 'centred'다"
+ },
+ "umbridge-5-007": {
+  "blank": "Copy",
+  "options": [
+   "Put",
+   "Set",
+   "Bring"
+  ],
+  "why": "보이는 것을 옮겨 적을 땐 'copy down'을 쓴다"
+ },
+ "umbridge-5-009": {
+  "blank": "perfectly self-evident",
+  "options": [
+   "pretty obvious",
+   "totally self-evident",
+   "perfectly self-evidenced"
+  ],
+  "why": "'perfectly'는 점잖은 격식 강조어로 영미 공통이다"
+ },
+ "umbridge-5-010": {
+  "blank": "imagine no circumstance",
+  "options": [
+   "imagine any circumstance",
+   "think no circumstance",
+   "fancy no circumstance"
+  ],
+  "why": "명사 앞 'no'로 부정해 단호함을 더한 격식체다"
+ },
+ "umbridge-5-011": {
+  "blank": "has been approved by",
+  "options": [
+   "got the okay from",
+   "has been approved from",
+   "has been approved with"
+  ],
+  "why": "결정의 근거를 전문가에게 돌리는 관료적 수동 구문이다"
+ },
+ "umbridge-5-012": {
+  "blank": "have no business",
+  "options": [
+   "got no right",
+   "have no affair",
+   "have no work"
+  ],
+  "why": "'have no business ~ing'는 자격 없음을 꾸짖는 관용구다"
+ },
+ "umbridge-5-013": {
+  "blank": "waiting to get you",
+  "options": [
+   "gonna come after you",
+   "waiting to take you",
+   "waiting for getting you"
+  ],
+  "why": "'get you'는 아이를 겁줄 때 쓰는 말로 공포를 깎아내린다"
+ },
+ "umbridge-5-014": {
+  "blank": "set the record straight",
+  "options": [
+   "make the record straight",
+   "set the record correct",
+   "lay the record straight"
+  ],
+  "why": "'set the record straight'는 사실을 바로잡는 관용구다"
+ },
+ "umbridge-5-015": {
+  "blank": "a certain dead wizard",
+  "options": [
+   "a sure dead wizard",
+   "some certain dead wizard",
+   "a definite dead wizard"
+  ],
+  "why": "'a certain'은 이름을 일부러 밝히지 않는 완곡 표현이다"
+ },
+ "umbridge-5-016": {
+  "blank": "landed yourself in",
+  "options": [
+   "landed yourself at",
+   "dropped yourself in",
+   "arrived yourself in"
+  ],
+  "why": "'land oneself in'은 제 탓에 곤경에 빠졌음을 말한다"
+ },
+ "umbridge-5-017": {
+  "blank": "a tragic accident",
+  "options": [
+   "a tragical accident",
+   "a tragic incidence",
+   "a sad accidental"
+  ],
+  "why": "'tragic accident'는 책임을 흐리는 공식 성명의 상투어다"
+ },
+ "umbridge-5-018": {
+  "blank": "a week's worth of",
+  "options": [
+   "a week's value of",
+   "a week's amount of",
+   "a week of worth of"
+  ],
+  "why": "'기간's worth of'는 그 기간 분량을 나타내는 표현이다"
+ },
+ "umbridge-5-019": {
+  "blank": "That goes to",
+  "options": [
+   "That takes to",
+   "That goes for",
+   "That comes at"
+  ],
+  "why": "사물 주어로 부드럽게 지시하는 영미 공통 간접 화법이다"
+ },
+ "umbridge-5-020": {
+  "blank": "Potter",
+  "options": [
+   "Mister Harry",
+   "Sir Potter",
+   "Potter boy"
+  ],
+  "why": "성만 부르는 것은 영국 기숙학교식 하대 호칭이다"
+ },
+ "umbridge-5-021": {
+  "blank": "doing lines",
+  "options": [
+   "writing sentences",
+   "making lines",
+   "doing sentences"
+  ],
+  "why": "'do lines'는 같은 문장을 반복해 쓰는 영국 학교 벌이다"
+ },
+ "umbridge-5-022": {
+  "blank": "You will write",
+  "options": [
+   "You would write",
+   "You might write",
+   "You could write"
+  ],
+  "why": "'You will+동사'는 복종을 전제한 권위적 명령이다"
+ },
+ "umbridge-5-023": {
+  "blank": "won't need",
+  "options": [
+   "aren't gonna need",
+   "don't gotta have",
+   "won't be requiring of"
+  ],
+  "why": "won't need는 담담하고 표준적인 미래 부정 표현이다."
+ },
+ "umbridge-5-024": {
+  "blank": "Problem",
+  "options": [
+   "Issue",
+   "Matter",
+   "Bother"
+  ],
+  "why": "'Is there a problem?'을 한 단어로 줄인 반어적 질문이다."
+ },
+ "umbridge-5-025.1": {
+  "blank": "for this evening",
+  "options": [
+   "for this night",
+   "on this evening",
+   "at this evening"
+  ],
+  "why": "for this evening은 저녁 일을 마칠 때 쓰는 정중한 표현이다."
+ },
+ "umbridge-5-025.2": {
+  "blank": "sink in",
+  "options": [
+   "sink down",
+   "settle in",
+   "drop in"
+  ],
+  "why": "sink in은 교훈이 머리에 스며든다는 관용구이다."
+ },
+ "umbridge-5-026": {
+  "blank": "Let's see",
+  "options": [
+   "Let's look",
+   "Let's watch",
+   "Let's view"
+  ],
+  "why": "Let's see…는 명령을 상냥하게 포장하는 표현이다."
+ },
+ "umbridge-5-027": {
+  "blank": "at this post",
+  "options": [
+   "at this job",
+   "on this post",
+   "at this position"
+  ],
+  "why": "post는 기관·학교의 직위를 뜻하는 격식 어휘이다."
+ },
+ "umbridge-5-028": {
+  "blank": "I understand",
+  "options": [
+   "I figure",
+   "I get",
+   "I catch"
+  ],
+  "why": "I understand는 사실을 확인하며 묻는 격식 표현이다."
+ },
+ "umbridge-5-029": {
+  "blank": "And you are",
+  "options": [
+   "And you're being",
+   "And you be",
+   "And yourself are"
+  ],
+  "why": "평서문 어순 그대로 심문하듯 확인하는 말투이다."
+ },
+ "umbridge-5-031": {
+  "blank": "if you would kindly",
+  "options": [
+   "if you would kind",
+   "if you should kindly",
+   "if you would kindly to"
+  ],
+  "why": "if you would kindly는 지시를 정중한 부탁으로 포장한다."
+ },
+ "umbridge-5-033": {
+  "blank": "I will be going",
+  "options": [
+   "I'm gonna split",
+   "I will be gone off",
+   "I will go away"
+  ],
+  "why": "축약 없는 I will be going이 냉정한 퇴장을 알린다."
+ },
+ "umbridge-5-034": {
+  "blank": "additional authority",
+  "options": [
+   "extra backup",
+   "more bossiness",
+   "plus authority"
+  ],
+  "why": "additional authority는 참견을 공적 절차처럼 보이게 한다."
+ },
+ "umbridge-5-035": {
+  "blank": "I hardly think",
+  "options": [
+   "I hardly don't think",
+   "I barely think",
+   "I seldom think"
+  ],
+  "why": "I hardly think는 강한 반대를 부드럽게 말하는 축소 어법이다."
+ },
+ "umbridge-5-036.1": {
+  "blank": "Decree",
+  "options": [
+   "Rule",
+   "Degree",
+   "Command"
+  ],
+  "why": "decree는 공식 법령을 뜻하는 격식·법률 어휘이다."
+ },
+ "umbridge-5-036.2": {
+  "blank": "alter",
+  "options": [
+   "change up",
+   "switch round",
+   "mess with"
+  ],
+  "why": "alter는 change 대신 쓰는 규정집 문체의 격식 동사이다."
+ },
+ "umbridge-5-037.1": {
+  "blank": "should do the trick",
+  "options": [
+   "should work out good",
+   "should make the trick",
+   "should play the trick"
+  ],
+  "why": "do the trick은 효과가 있다는 영미 공통 관용구이다."
+ },
+ "umbridge-5-037.2": {
+  "blank": "this one's twin as well",
+  "options": [
+   "this one's twin also",
+   "this one's twin as also",
+   "this one's twin besides"
+  ],
+  "why": "문장 끝 as well은 영국 구어에서 too보다 흔히 쓰인다."
+ },
+ "umbridge-5-038": {
+  "blank": "indeed",
+  "options": [
+   "yep",
+   "indeedy",
+   "in fact so"
+  ],
+  "why": "indeed는 상대의 말을 확정하는 격식 강조어이다."
+ },
+ "umbridge-5-039": {
+  "blank": "as well",
+  "options": [
+   "also",
+   "as too",
+   "as good"
+  ],
+  "why": "문장 끝 as well은 영국 구어에서 too 대신 자주 쓴다."
+ },
+ "umbridge-5-040": {
+  "blank": "have a wonderful day",
+  "options": [
+   "you guys have a great day",
+   "have a wonderful days",
+   "make a wonderful day"
+  ],
+  "why": "상대를 망쳐 놓고 건네는 밝은 작별 인사라 반어가 된다."
+ },
+ "umbridge-5-041": {
+  "blank": "whatever I wish",
+  "options": [
+   "whatever I wished",
+   "whatever I wish for",
+   "whichever I wish"
+  ],
+  "why": "wish는 want의 격식형으로 권한을 품위 있게 포장한다."
+ },
+ "umbridge-5-043": {
+  "blank": "remove yourself from",
+  "options": [
+   "get out of",
+   "remove you from",
+   "remove yourself off"
+  ],
+  "why": "remove yourself from은 축출 명령을 격식 어휘로 포장한다."
+ },
+ "umbridge-5-044": {
+  "blank": "Headmaster",
+  "options": [
+   "Principal",
+   "Head Principal",
+   "Mr Principal"
+  ],
+  "why": "영국 학교 교장은 전통적으로 Headmaster라고 부른다."
+ },
+ "umbridge-5-045": {
+  "blank": "what of",
+  "options": [
+   "what for",
+   "what with",
+   "what on"
+  ],
+  "why": "What of…?는 What about…?의 격식·문어적 형태이다."
+ },
+ "umbridge-5-046": {
+  "blank": "dear",
+  "options": [
+   "sweetie",
+   "hon",
+   "dears"
+  ],
+  "why": "dear는 상대를 아랫사람 취급하는 영국식 호격이다."
+ },
+ "umbridge-5-047": {
+  "blank": "Where is",
+  "options": [
+   "Where's at",
+   "Where are",
+   "Where does"
+  ],
+  "why": "축약을 피한 Where is가 사무적인 조사 어조를 만든다."
+ },
+ "umbridge-5-048": {
+  "blank": "found in possession of",
+  "options": [
+   "caught with",
+   "found in possess of",
+   "found with possession of"
+  ],
+  "why": "found in possession of는 법률 문서의 정형 표현이다."
+ },
+ "umbridge-5-049": {
+  "blank": "Well done",
+  "options": [
+   "Good job",
+   "Good done",
+   "Well made"
+  ],
+  "why": "Well done은 영국에서 가장 흔한 칭찬 표현이다."
+ },
+ "umbridge-5-050.1": {
+  "blank": "Round them all up",
+  "options": [
+   "Round them all out",
+   "Grab them all up",
+   "Ring them all up"
+  ],
+  "why": "'round up'은 흩어진 사람을 한데 모아 잡아들이는 구동사다."
+ },
+ "umbridge-5-050.2": {
+  "blank": "must",
+  "options": [
+   "gotta",
+   "might",
+   "would"
+  ],
+  "why": "must는 긴급하고 권위 있는 강한 의무를 나타낸다."
+ },
+ "umbridge-5-051.1": {
+  "blank": "has transpired",
+  "options": [
+   "has gone down",
+   "has transposed",
+   "has come off"
+  ],
+  "why": "transpire는 happen의 격식어로 공식 보고 어투를 만든다."
+ },
+ "umbridge-5-051.2": {
+  "blank": "Shortly after dinner",
+  "options": [
+   "Right after dinner",
+   "Shortly past dinner",
+   "Briefly after dinner"
+  ],
+  "why": "shortly after는 right after보다 격식 있는 보고체 표현이다."
+ },
+ "umbridge-5-051.3": {
+  "blank": "It was at that time",
+  "options": [
+   "It was in that time",
+   "It was by that time",
+   "It was on that time"
+  ],
+  "why": "It was ... that 분열문으로 시점을 격식 있게 강조한다."
+ },
+ "umbridge-5-053": {
+  "blank": "I'm sorry",
+  "options": [
+   "What",
+   "Huh",
+   "Say what"
+  ],
+  "why": "I'm sorry?는 불쾌함을 정중한 틀에 담은 되묻기다."
+ },
+ "umbridge-5-054": {
+  "blank": "was introduced",
+  "options": [
+   "got started",
+   "was intruded",
+   "was inducted"
+  ],
+  "why": "introduce는 법·규정을 시행할 때 쓰는 공식 동사다."
+ },
+ "umbridge-5-055": {
+  "blank": "I have a witness",
+  "options": [
+   "I got a witness",
+   "I hold a witness",
+   "I have a witnesser"
+  ],
+  "why": "축약 없는 I have가 단호하고 공식적인 어조를 만든다."
+ },
+ "umbridge-5-056": {
+  "blank": "shall we",
+  "options": [
+   "won't we",
+   "do we",
+   "okay"
+  ],
+  "why": "Let's 제안 뒤 부가의문문은 shall we?가 정석이다."
+ },
+ "umbridge-5-057": {
+  "blank": "dear",
+  "options": [
+   "sweetie",
+   "hon",
+   "buddy"
+  ],
+  "why": "dear는 아랫사람을 다정한 척 부르는 영국식 호칭이다."
+ },
+ "umbridge-5-058": {
+  "blank": "What do you mean by",
+  "options": [
+   "What do you intend by",
+   "What are you meaning by",
+   "What do you mean with"
+  ],
+  "why": "What do you mean by ~ing?는 행동을 따지는 질책 문형이다."
+ },
+ "umbridge-5-059": {
+  "blank": "the leader",
+  "options": [
+   "the head honcho",
+   "the main guy",
+   "the leading one"
+  ],
+  "why": "보고하는 자리에는 속어 없이 중립적인 the leader가 맞다."
+ },
+ "umbridge-5-060": {
+  "blank": "girl",
+  "options": [
+   "kiddo",
+   "sweetie",
+   "buddy"
+  ],
+  "why": "이름 대신 girl로 부르는 것은 차갑게 하대하는 어투다."
+ },
+ "umbridge-5-061": {
+  "blank": "My apologies",
+  "options": [
+   "My bad",
+   "My apology",
+   "My sorries"
+  ],
+  "why": "My apologies는 체면을 지키며 하는 격식 있는 사과다."
+ },
+ "umbridge-5-062.1": {
+  "blank": "proceeded down",
+  "options": [
+   "headed on down",
+   "processed down",
+   "preceded down"
+  ],
+  "why": "proceed는 이동을 공식 보고처럼 말하는 격식 동사다."
+ },
+ "umbridge-5-062.2": {
+  "blank": "We've found",
+  "options": [
+   "We got",
+   "We've gotten",
+   "We've founded"
+  ],
+  "why": "영국 영어는 현재와 이어진 결과에 현재완료를 쓴다."
+ },
+ "umbridge-5-063": {
+  "blank": "By Order of",
+  "options": [
+   "Per Order of",
+   "On Order of",
+   "With Order of"
+  ],
+  "why": "By order of는 공고문 첫머리에 쓰는 전형적 공문 표현이다."
+ },
+ "umbridge-5-064.1": {
+  "blank": "My first act",
+  "options": [
+   "My first thing",
+   "My first deed",
+   "My first doing"
+  ],
+  "why": "act는 '조치'를 뜻하는 격식 명사로 취임 연설 구문이다."
+ },
+ "umbridge-5-064.2": {
+  "blank": "goings-on",
+  "options": [
+   "stuff going on",
+   "going-ons",
+   "goings-about"
+  ],
+  "why": "goings-on은 수상쩍게 벌어지는 일들을 뜻하는 복수 명사다."
+ },
+ "umbridge-5-065.1": {
+  "blank": "caretaker",
+  "options": [
+   "janitor",
+   "custodian",
+   "caregiver"
+  ],
+  "why": "학교 건물 관리인을 영국에서는 caretaker라고 한다."
+ },
+ "umbridge-5-065.2": {
+  "blank": "no reason we shouldn't",
+  "options": [
+   "no reason we should",
+   "no reason we wouldn't",
+   "no cause we shouldn't"
+  ],
+  "why": "이중 부정으로 결정을 완곡하게 포장하는 표현이다."
+ },
+ "umbridge-5-068": {
+  "blank": "I was just wondering if",
+  "options": [
+   "I was just wandering if",
+   "I was just wondering that",
+   "I was just doubting if"
+  ],
+  "why": "was wondering if는 공격을 궁금증으로 감싸는 완곡 표현이다."
+ },
+ "umbridge-5-069": {
+  "blank": "Excuse me",
+  "options": [
+   "Hey",
+   "Hold up",
+   "Excuse you"
+  ],
+  "why": "Excuse me, ..., but은 반박을 '실례지만'으로 포장한다."
+ },
+ "umbridge-5-070": {
+  "blank": "I think you will find",
+  "options": [
+   "I guess you will find",
+   "I bet you will find",
+   "I think you will discover"
+  ],
+  "why": "I think you will find는 상대를 정중히 정정하는 표현이다."
+ },
+ "umbridge-5-071": {
+  "blank": "has no chance of",
+  "options": [
+   "has no shot at",
+   "has no chance in",
+   "has no chance for"
+  ],
+  "why": "have no chance of ~ing는 가망이 전혀 없음을 단언한다."
+ },
+ "umbridge-5-073": {
+  "blank": "try out",
+  "options": [
+   "check out",
+   "try on",
+   "try up"
+  ],
+  "why": "try out은 '시험 삼아 다시 써 보다'라는 구동사다."
+ },
+ "umbridge-5-074": {
+  "blank": "is it",
+  "options": [
+   "isn't it",
+   "huh",
+   "right"
+  ],
+  "why": "같은 극성 부가의문문 is it?은 비꼬는 질책을 나타낸다."
+ },
+ "umbridge-5-075": {
+  "blank": "wrongdoers",
+  "options": [
+   "wrongdoings",
+   "wrongmakers",
+   "misdoers"
+  ],
+  "why": "wrongdoer는 장난을 범죄처럼 단죄하는 격식 어휘다."
+ },
+ "umbridge-5-076": {
+  "blank": "Well, now",
+  "options": [
+   "So, like",
+   "Okay, so",
+   "Good, now"
+  ],
+  "why": "Well로 부드럽게 말문을 열어 위협을 상냥하게 전한다."
+ },
+ "umbridge-5-077": {
+  "blank": "Foolish boy",
+  "options": [
+   "Stupid kid",
+   "Dumb kiddo",
+   "Fool kid"
+  ],
+  "why": "'형용사+boy'는 영국 어른이 아이를 꾸짖을 때 쓰는 호칭이다"
+ },
+ "umbridge-5-079": {
+  "blank": "contact",
+  "options": [
+   "reach out to",
+   "contact with",
+   "hit up"
+  ],
+  "why": "contact는 공적이고 심문조로 들리는 '연락하다'이다"
+ },
+ "umbridge-5-080": {
+  "blank": "fetch",
+  "options": [
+   "go grab",
+   "go get",
+   "fetch up"
+  ],
+  "why": "fetch는 사람을 '데려오다'에도 쓰는 영국식 동사다"
+ },
+ "umbridge-5-081": {
+  "blank": "Very well",
+  "options": [
+   "Fine then",
+   "Very fine",
+   "Alrighty"
+  ],
+  "why": "Very well은 마지못해 수용하는 점잖고 차가운 표현이다"
+ },
+ "umbridge-5-082": {
+  "blank": "I have just caught",
+  "options": [
+   "I just caught",
+   "I did just catch",
+   "I have just catched"
+  ],
+  "why": "'방금'은 영국식으로 현재완료 have just caught로 말한다"
+ },
+ "umbridge-5-083": {
+  "blank": "What does that mean",
+  "options": [
+   "What's that mean",
+   "What does that means",
+   "What is that meaning"
+  ],
+  "why": "'무슨 뜻이냐'는 What does that mean으로 묻는 것이 표준이다"
+ },
+ "umbridge-5-084": {
+  "blank": "played nicely",
+  "options": [
+   "played nice",
+   "played kindly",
+   "played softly"
+  ],
+  "why": "영국에서는 부사 nicely를 써서 play nicely라 한다"
+ },
+ "umbridge-5-085": {
+  "blank": "a lot of trouble",
+  "options": [
+   "a ton of hassle",
+   "a lot of troubles",
+   "a lots of trouble"
+  ],
+  "why": "save someone trouble은 '수고를 덜어 주다'라는 관용구다"
+ },
+ "umbridge-5-086": {
+  "blank": "act",
+  "options": [
+   "do stuff",
+   "act up",
+   "make action"
+  ],
+  "why": "자동사 act는 '조치를 취하다'의 격식 있는 말이다"
+ },
+ "umbridge-5-088": {
+  "blank": "well",
+  "options": [
+   "wow",
+   "look",
+   "yes"
+  ],
+  "why": "Well, well은 약점을 즐기는 감탄사로 반복이 핵심이다"
+ },
+ "umbridge-5-089": {
+  "blank": "you silly girl",
+  "options": [
+   "you dumb girl",
+   "you stupid kid",
+   "you goofy girl"
+  ],
+  "why": "silly는 아이 대하듯 꾸짖는 영국의 흔한 비난 형용사다"
+ },
+ "umbridge-5-091": {
+  "blank": "Mr Potter",
+  "options": [
+   "Mr. Potter",
+   "Mister Potter",
+   "Sir Potter"
+  ],
+  "why": "영국식 표기는 Mr 뒤에 마침표 없이 성을 붙인 격식 호칭이다"
+ },
+ "umbridge-5-092": {
+  "blank": "is it",
+  "options": [
+   "is that",
+   "does it",
+   "huh"
+  ],
+  "why": "핵심을 앞세우고 꼬리 is it?을 붙인 영국 구어 구조다"
+ },
+ "umbridge-5-093": {
+  "blank": "belongs to",
+  "options": [
+   "belongs at",
+   "is belonging to",
+   "belongs with"
+  ],
+  "why": "belong to는 행정적 소유권을 주장하는 표현이다"
+ },
+ "umbridge-5-094": {
+  "blank": "you beasts",
+  "options": [
+   "you beastly",
+   "you beasties",
+   "you creeps"
+  ],
+  "why": "beast는 animal보다 문어적이라 점잔 떠는 욕이 된다"
+ },
+ "umbridge-5-095": {
+  "blank": "You cannot",
+  "options": [
+   "You can not to",
+   "You couldn't",
+   "You don't can"
+  ],
+  "why": "cannot을 또박또박 말해 규정상 금지임을 강조한다"
+ },
+ "umbridge-5-096": {
+  "blank": "no closer",
+  "options": [
+   "not closer",
+   "any closer",
+   "none closer"
+  ],
+  "why": "'동사+no+비교급'은 고전적인 부정 명령형이다"
+ },
+ "umbridge-5-098": {
+  "blank": "Ingrates",
+  "options": [
+   "Ungratefuls",
+   "Ingratefuls",
+   "Thankless"
+  ],
+  "why": "ingrate는 '배은망덕한 자'를 뜻하는 문어적 명사다"
+ },
+ "umbridge-7-001": {
+  "blank": "did he",
+  "options": [
+   "huh",
+   "does he",
+   "had he"
+  ],
+  "why": "긍정문에 긍정 꼬리를 붙인 영국 특유의 부가의문문이다"
+ },
+ "umbridge-7-003": {
+  "blank": "Mother to",
+  "options": [
+   "Mom of",
+   "Mother for",
+   "The mom to"
+  ],
+  "why": "관사 없이 to를 쓴 신원 나열은 법정·공문서 투다"
+ },
+ "umbridge-7-004": {
+  "blank": "upon your arrival",
+  "options": [
+   "in your arrival",
+   "by your arrival",
+   "upon your arrive"
+  ],
+  "why": "upon+명사는 when you arrived의 격식 공문체다"
+ },
+ "umbridge-7-005": {
+  "blank": "from which",
+  "options": [
+   "of which",
+   "by which",
+   "for which"
+  ],
+  "why": "전치사를 의문사 앞에 둔 from which가 격식 어순이다"
+ },
+ "umbridge-7-006": {
+  "blank": "I don't think so",
+  "options": [
+   "I don't think it",
+   "I think not so",
+   "I don't think that"
+  ],
+  "why": "I don't think so는 단호한 부정을 감싼 완곡 표현이다"
+ },
+ "umbridge-7-007": {
+  "blank": "the devil",
+  "options": [
+   "the hell",
+   "the demon",
+   "a devil"
+  ],
+  "why": "the devil은 hell보다 순하고 고풍스러운 강조 표현이다"
+ }
+}
