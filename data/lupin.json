@@ -267,7 +267,7 @@
   "cue_speaker": "",
   "cue": "",
   "prev_line": "Terrifying, yes. Luckily, a very simple charm exists to repel a Boggart.",
-  "line": "Let's practice it now, shall we? Without wands, please... Riddikulus!",
+  "line": "Let's practise it now, shall we? Without wands, please... Riddikulus!",
   "ko": "지금 같이 연습해 볼까요? 지팡이는 내려놓고요... 리디큘러스!",
   "plain": "Let's try it out. No wands yet... Riddikulus!",
   "tag": "격식",
@@ -293,7 +293,7 @@
    {
     "expr": "practise (동사) / practice (명사)",
     "kind": "AmE 대비",
-    "note": "영국식 철자에서는 동사가 practise, 명사가 practice다(advise/advice와 같은 구분). 이 대본은 미국식 철자로 적혀 있어 동사도 practice로 되어 있다.",
+    "note": "영국식 철자에서는 동사가 practise, 명사가 practice다(advise/advice와 같은 구분). 여기서는 동사라서 practise로 쓴다(미국식 철자는 동사도 practice).",
     "examples": [
      {
       "en": "You need to practise your scales every day.",

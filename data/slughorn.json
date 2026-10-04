@@ -1317,7 +1317,7 @@
   "cue_speaker": "",
   "cue": "",
   "prev_line": "But brewed correctly, as this has been, it has remarkable powers.",
-  "line": "One sip and you will find that all your endeavors succeed... at least until the effects wear off.",
+  "line": "One sip and you will find that all your endeavours succeed... at least until the effects wear off.",
   "ko": "한 모금만 마시면 하는 일마다 뜻대로 풀린답니다... 적어도 약효가 떨어질 때까지는요.",
   "plain": "Take one sip and everything you try works out... well, until it wears off.",
   "tag": "격식",
@@ -1327,7 +1327,7 @@
    {
     "expr": "endeavours",
     "kind": "격식 어휘",
-    "note": "'노력, 시도'라는 뜻의 격식 명사로, 일상어의 'everything you try'에 해당한다. 대본은 미국식 철자 endeavors를 썼지만 영국식 철자는 endeavours.",
+    "note": "'노력, 시도'라는 뜻의 격식 명사로, 일상어의 'everything you try'에 해당한다. 영국식 철자는 endeavours이고, 미국에서는 endeavors로 쓴다.",
     "examples": [
      {
       "en": "We wish you every success in your future endeavours.",
@@ -2713,7 +2713,7 @@
   "cue_speaker": "Harry",
   "cue": "Sorry, sir, I was just admiring your hourglass.",
   "prev_line": "",
-  "line": "Ah, yes. A most intriguing object. The sands run in accordance to the quality of the conversation.",
+  "line": "Ah, yes. A most intriguing object. The sands run in accordance with the quality of the conversation.",
   "ko": "아, 그래요. 참으로 흥미로운 물건이지요. 모래가 대화의 질에 따라 흐른답니다.",
   "plain": "Oh, yeah. Pretty cool, isn't it? The sand moves depending on how good the conversation is.",
   "tag": "격식",
@@ -2737,9 +2737,9 @@
     "shared": false
    },
    {
-    "expr": "in accordance to (표준형: in accordance with)",
+    "expr": "in accordance with",
     "kind": "격식 전치사구",
-    "note": "'~에 따라'를 뜻하는 격식 표현으로, 표준형은 'in accordance with'다(대본에는 to로 적혀 있다). 규정이나 공문에 쓰는 말을 모래시계 설명에 쓰는 데서 슬러그혼의 거창한 말투가 드러난다. 구어라면 'depending on'.",
+    "note": "'~에 따라'를 뜻하는 격식 표현으로, 전치사는 with를 쓴다(in accordance to는 틀린 형태). 규정이나 공문에 쓰는 말을 모래시계 설명에 쓰는 데서 슬러그혼의 거창한 말투가 드러난다. 구어라면 'depending on'.",
     "examples": [
      {
       "en": "The exam was conducted in accordance with the regulations.",
@@ -2767,7 +2767,7 @@
   "scene_ko": "만찬이 끝난 슬러그혼의 연구실. 일부러 혼자 남은 해리가 탁자 위의 모래시계를 구경하는 척하며 말을 붙인다.",
   "cue_speaker": "",
   "cue": "",
-  "prev_line": "Ah, yes. A most intriguing object. The sands run in accordance to the quality of the conversation.",
+  "prev_line": "Ah, yes. A most intriguing object. The sands run in accordance with the quality of the conversation.",
   "line": "When it is stimulating, the sands run slow. When it is not...",
   "ko": "대화가 흥미진진하면 모래는 천천히 흐르고, 그렇지 않으면...",
   "plain": "If the talk is interesting, the sand slows down. If it's not...",
@@ -5945,7 +5945,7 @@
   "cue_speaker": "",
   "cue": "",
   "prev_line": "Though your body will decay, your spirit lingers on in the quiet, web-spun places of your Forest home.",
-  "line": "May your many-eyed descendents ever flourish and your human friends find solace for the loss they have sustained.",
+  "line": "May your many-eyed descendants ever flourish and your human friends find solace for the loss they have sustained.",
   "ko": "눈 많은 그대의 후손들이 언제까지나 번성하기를, 그리고 그대를 잃은 인간 벗들이 위안을 얻기를 빕니다.",
   "plain": "I hope your kids with all their eyes keep doing great, and that your human friends can find some comfort after losing you.",
   "tag": "문학",
@@ -6510,7 +6510,7 @@
   "cue_speaker": "",
   "cue": "",
   "prev_line": "Now, Tom, I couldn't tell you if I knew, could I?",
-  "line": "I must say, m'boy, I'd like to know where you get your information. More knowledgable than half the staff, you are.",
+  "line": "I must say, m'boy, I'd like to know where you get your information. More knowledgeable than half the staff, you are.",
   "ko": "그나저나 자네는 그런 정보를 대체 어디서 얻는지 궁금하군요. 교수진 절반보다 아는 게 많다니까요.",
   "plain": "Honestly, kid, I'd love to know where you hear this stuff. You know more than half the teachers do.",
   "tag": "일반",
@@ -6534,7 +6534,7 @@
     "shared": false
    },
    {
-    "expr": "More knowledgable than half the staff, you are.",
+    "expr": "More knowledgeable than half the staff, you are.",
     "kind": "어순(꼬리말)",
     "note": "하고 싶은 말을 먼저 던지고 주어+동사(you are)를 문장 끝에 꼬리처럼 붙이는 영국 구어 특유의 어순이다. 감탄과 강조의 느낌이 살아난다. 미국식으로는 평범하게 You're more knowledgeable than... 이라고 한다.",
     "examples": [
@@ -6564,7 +6564,7 @@
   "scene_ko": "덤블도어의 교장실, 펜시브 속 슬러그혼의 진짜 기억. 수십 년 전 슬러그혼의 방, 아끼는 학생들과의 저녁 모임이 끝나갈 무렵 학생 톰 리들이 어느 교수의 은퇴 소문을 넌지시 떠본다.",
   "cue_speaker": "",
   "cue": "",
-  "prev_line": "I must say, m'boy, I'd like to know where you get your information. More knowledgable than half the staff, you are.",
+  "prev_line": "I must say, m'boy, I'd like to know where you get your information. More knowledgeable than half the staff, you are.",
   "line": "By the way, thank you for the pineapple -- you're quite right, it is my favourite -- how is it you knew?",
   "ko": "아, 그리고 파인애플 고맙습니다. 자네 말대로 내가 제일 좋아하는 게 맞아요. 그런데 그건 또 어떻게 알았지요?",
   "plain": "Oh, and thanks for the pineapple — you're right, it's my favorite. How'd you find out?",
