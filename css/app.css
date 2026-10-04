@@ -1233,3 +1233,8 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .gr-cat span{grid-column:1;font:italic 400 14.5px var(--f-display);color:var(--ink-soft)}
 .gr-cat i{grid-column:2;grid-row:1 / span 2;align-self:center;font:italic 15px var(--f-display);color:#7A1A12}
 .gr-cat button:hover b{text-decoration:underline;text-decoration-color:rgba(122,26,18,.4);text-underline-offset:3px}
+.gr-uses li.lock{flex-direction:row;align-items:center;gap:8px;opacity:.6}
+.gr-uses li.lock::before{content:'';width:12px;height:14px;flex:none;background:currentColor;color:var(--ink-soft);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z'/%3E%3C/svg%3E") center/contain no-repeat}
+.gr-cat button.cold b,.gr-cat button.cold span{opacity:.6}

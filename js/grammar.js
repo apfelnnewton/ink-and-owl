@@ -4,7 +4,8 @@
    "문장 구조" opens the line's notes; a point's name opens the point itself with every line that uses it. The
    Expressions notebook opens the whole catalogue ("문법 노트"). Written for the decks that have a file so far;
    a deck without one simply shows no button. The source lines (data/) are never touched. */
-import {DECKS, byId} from './decks.js';
+import {DECKS} from './decks.js';
+import * as store from './store.js';
 import {$, esc, openSheet} from './ui.js';
 
 let points = null, app = null;
@@ -40,27 +41,35 @@ export async function pointSheet(id){
   for (const d of DECKS) for (const [cid, g] of Object.entries(notes[d.id] || {})){
     const n = g.notes.find(x => x.pt === id); if (n) uses.push({d, cid, n});
   }
+  /* lines already learnt are shown in full; the rest stay locked, like the expressions notebook (2026-10-04 user
+     decision B) — meeting a line here first would spoil recalling it in class */
   const lineOf = async (d, cid) => { const cards = app ? await app.loadDeck(d.id).catch(() => []) : []; return cards.find(c => c.id === cid); };
-  const rows = await Promise.all(uses.slice(0, 40).map(async u => ({...u, c: await lineOf(u.d, u.cid)})));
+  const known = uses.filter(u => learnt(u.d.id, u.cid)), locked = uses.length - known.length;
+  const rows = await Promise.all(known.slice(0, 40).map(async u => ({...u, c: await lineOf(u.d, u.cid)})));
+  const lockedBy = {}; uses.forEach(u => { if (!learnt(u.d.id, u.cid)) lockedBy[u.d.ko] = (lockedBy[u.d.ko] || 0) + 1; });
   openSheet(`<div class="sh-kind"><span>문법 노트</span><span lang="en">${esc(p.en)}</span></div>` +
     `<h2 class="sh-expr" id="shTitle">${esc(p.name)}</h2>` +
     `<p class="gr-pattern" lang="en">${esc(p.pattern)}</p><p class="sh-note">${esc(p.explain)}</p>` +
     (p.ex ? `<ul class="sh-ex"><li><span class="en" lang="en">${esc(p.ex.en)}</span><span class="kr">${esc(p.ex.ko)}</span></li></ul>` : '') +
-    `<h3 class="gr-h">이 문법이 나오는 대사 · ${uses.length}</h3>` +
+    `<h3 class="gr-h">이 문법이 나오는 대사 · 배운 대사 ${known.length} / ${uses.length}</h3>` +
     `<ul class="gr-uses">${rows.filter(r => r.c).map(r => `<li><span class="who">${esc(r.d.ko.replace(/ 교수$/, ''))}</span>` +
-      `<span class="en" lang="en">${esc(r.c.line)}</span><span class="kr">${esc(r.n.ko)}</span></li>`).join('')}</ul>`);
+      `<span class="en" lang="en">${esc(r.c.line)}</span><span class="kr">${esc(r.n.ko)}</span></li>`).join('')}` +
+      Object.entries(lockedBy).map(([who, n]) => `<li class="lock"><span class="who">${esc(who.replace(/ 교수$/, ''))}</span><span class="kr">아직 안 배운 대사 ${n}개</span></li>`).join('') + `</ul>` +
+    (locked && !known.length ? '<p class="w-lead">수업에서 배우면 여기 하나씩 채워집니다.</p>' : ''));
 }
+const learnt = (deckId, cardId) => !!(store.deck(deckId).cards || {})[cardId];
 
 /* the whole catalogue, most used first (from Expressions) */
 export async function catalogue(deckId){
   await loadAll();
-  const count = id => DECKS.reduce((n, d) => n + Object.values(notes[d.id] || {}).filter(g => g.notes.some(x => x.pt === id)).length, 0);
-  const here = id => Object.values(notes[deckId] || {}).filter(g => g.notes.some(x => x.pt === id)).length;
-  const list = (points || []).map(p => ({p, n: count(p.id), h: here(p.id)})).filter(x => x.n).sort((a, b) => b.h - a.h || b.n - a.n);
-  const who = byId(deckId);
+  /* for each point: lines that use it (all professors written so far) and how many of those are learnt */
+  const tally = id => { let n = 0, k = 0, h = 0;
+    for (const d of DECKS) for (const [cid, g] of Object.entries(notes[d.id] || {})) if (g.notes.some(x => x.pt === id)){ n++; if (learnt(d.id, cid)) k++; if (d.id === deckId) h++; }
+    return {n, k, h}; };
+  const list = (points || []).map(p => ({p, ...tally(p.id)})).filter(x => x.n).sort((a, b) => b.k - a.k || b.h - a.h || b.n - a.n);
   openSheet(`<div class="sh-kind"><span>문법 노트</span></div><h2 class="sh-expr" id="shTitle">대사 속 문법</h2>` +
-    (list.length ? `<p class="w-lead">${who && Object.keys(notes[deckId] || {}).length ? `${esc(who.ko)}의 대사에 많이 나오는 순서입니다.` : '지금까지 정리된 교수의 대사 기준입니다.'}</p>` +
-      `<ul class="gr-cat">${list.map(x => `<li><button type="button" data-gpt="${esc(x.p.id)}"><b>${esc(x.p.name)}</b><span lang="en">${esc(x.p.pattern)}</span><i>${x.h || x.n}</i></button></li>`).join('')}</ul>`
+    (list.length ? `<p class="w-lead">숫자는 배운 대사 / 그 문법이 나오는 대사입니다. 많이 만난 문법부터.</p>` +
+      `<ul class="gr-cat">${list.map(x => `<li><button type="button" data-gpt="${esc(x.p.id)}" class="${x.k ? '' : 'cold'}"><b>${esc(x.p.name)}</b><span lang="en">${esc(x.p.pattern)}</span><i>${x.k} / ${x.n}</i></button></li>`).join('')}</ul>`
       : '<p class="w-lead">아직 정리된 문법이 없습니다.</p>'));
 }
 
