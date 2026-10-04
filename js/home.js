@@ -107,14 +107,13 @@ export function initHome(app){
         line = `<span class="pick">어느 교실부터 들어가시겠습니까?</span><span class="q" lang="en">“${esc(q.en)}”</span><span class="k">${esc(q.ko)}</span>`;
         label = '이 교실로 시작'; locked = false;
       }
+      /* a locked door says nothing until you try it (rattle() shows the professor's line, 2026-10-04 user decision) */
       else if (!st.open && d.file && doors.keysLeft()){
-        const q = lockedLine(d.id, 0), k = doors.keysLeft();
-        line = `<span class="q" lang="en">“${esc(q.en)}”</span><span class="k">${esc(q.ko)}</span><span class="bond key">열쇠 ${k}개 · 이 문을 열 수 있다</span>`;
+        line = `<span class="bond key">열쇠 ${doors.keysLeft()}개 · 이 문을 열 수 있다</span>`;
         label = '열쇠로 문 열기'; locked = false;
       }
       else if (!st.open){
-        const q = lockedLine(d.id, 0);
-        line = `<span class="q" lang="en">“${esc(q.en)}”</span><span class="k">${esc(q.ko)}</span>` + (d.file ? `<span class="bond key">다음 열쇠까지 새 대사 ${doors.toNextKey()}개</span>` : '');
+        line = d.file ? `<span class="bond key">다음 열쇠까지 새 대사 ${doors.toNextKey()}개</span>` : '';
         label = '문이 잠겨 있다';
       }
       else if (st.loading) line = '대본을 펼치는 중…';
@@ -219,7 +218,7 @@ export function initHome(app){
   /* ---------- entering: the door's opening clip if there is one, otherwise we walk into its light */
   function rattle(){
     if (!reduced()) wall.animate([{marginLeft: '0px'}, {marginLeft: '-6px'}, {marginLeft: '5px'}, {marginLeft: '-3px'}, {marginLeft: '0px'}], {duration: 380});
-    const q = lockedLine(DOORS[cur].id, ++knock);
+    const q = lockedLine(DOORS[cur].id, knock++);
     toast(`<span class="q" lang="en">“${esc(q.en)}”</span><span class="k">${esc(q.ko)} — ${esc(DOORS[cur].ko)}</span>`, 3600, true);
   }
   async function enter(i){
