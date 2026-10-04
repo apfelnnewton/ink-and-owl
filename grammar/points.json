@@ -1,0 +1,418 @@
+[
+  {
+    "id": "there-be",
+    "name": "There + be (존재 구문)",
+    "en": "Existential there",
+    "pattern": "There will be no + 명사 / There are + 복수명사",
+    "explain": "‘~이 있다/없다’를 말할 때 there를 형식상 주어 자리에 두고 be동사 뒤에 진짜 주어(명사)를 놓는 구문이다. be동사의 수는 뒤에 오는 명사에 맞춘다(There is a ~ / There are ~). There will be no + 명사는 ‘~은 없을 것이다’로, Don't ~ 같은 명령보다 규칙을 선언하듯 딱딱하고 권위 있게 들린다.",
+    "ex": {"en": "There will be no talking during the exam.", "ko": "시험 중에는 잡담이 없을 것이다(잡담 금지)."}
+  },
+  {
+    "id": "as-such",
+    "name": "As such (그 자격으로 / 그러므로)",
+    "en": "As such",
+    "pattern": "As such, + 절",
+    "explain": "such가 앞에 나온 명사나 문장 내용을 받아 ‘그러한 것으로서’라는 뜻을 만든다. 본래 뜻은 ‘그 자격으로’(She is the captain and, as such, speaks for the team)이고, ‘그러므로’처럼 쓰는 것도 흔하지만 깐깐한 문법가들은 이 용법을 느슨하다고 본다. 어느 쪽이든 so나 therefore보다 격식 있고 딱딱하게 들린다.",
+    "ex": {"en": "He is a guest here and, as such, should be treated with respect.", "ko": "그는 이곳의 손님이고, 그런 만큼 정중히 대접받아야 한다."}
+  },
+  {
+    "id": "sentence-adverb",
+    "name": "문장 부사·연결 부사",
+    "en": "Sentence adverbs and linking adverbs",
+    "pattern": "Clearly, + 절 / However, + 절 / Besides, + 절",
+    "explain": "문장 앞(또는 중간)에 쉼표와 함께 놓여, 특정 동사가 아니라 문장 전체를 꾸미는 부사다. Clearly ‘분명히’, Ideally ‘이상적으로는’, Perhaps ‘어쩌면’은 말하는 사람의 판단을, However ‘하지만’, Yet ‘그런데도’, Besides ‘게다가’는 앞 문장과의 논리 관계를 나타낸다. 논리를 또박또박 짚어 가는 격식체에서 특히 자주 쓰인다.",
+    "ex": {"en": "Clearly, the plan needs more work. However, we have run out of time.", "ko": "분명 그 계획은 손볼 데가 더 있다. 하지만 우리에겐 시간이 없다."}
+  },
+  {
+    "id": "parenthetical",
+    "name": "삽입어구·삽입절",
+    "en": "Parenthetical insertions",
+    "pattern": "주어, too, + 동사 / As you are well aware, + 절 / ~, believe me, ~",
+    "explain": "문장 한가운데나 앞에 쉼표로 짧은 말(I, too, / however / regrettably / for the time being)이나 절(I assure you, believe me, you see, as you are well aware)을 끼워 넣는 방식이다. 빼도 문장은 완전하며, 끼운 말이 잠깐 멈춤을 만들어 어조를 강조하거나 덧붙인다. 말을 끊어 가며 하는 이런 리듬은 격식 있고 노련한 화자처럼 들린다.",
+    "ex": {"en": "The results, I am pleased to say, were better than expected.", "ko": "결과는, 기쁘게도, 예상보다 좋았다."}
+  },
+  {
+    "id": "verb-obj-to",
+    "name": "동사 + 목적어 + to부정사",
+    "en": "Verb + object + to-infinitive",
+    "pattern": "expect / ask / allow / teach + 사람 + to 동사원형",
+    "explain": "expect, ask, allow, teach, want 같은 동사는 ‘누가(목적어) 무엇을 하기를(to부정사)’의 틀을 취한다. 목적어가 to부정사 행동의 주인(의미상 주어)이라는 점이 핵심이다. I don't expect you to ~(‘네가 ~하리라 기대하지 않는다’)처럼 부정어는 보통 expect 쪽에 붙인다.",
+    "ex": {"en": "I didn't expect him to remember my name.", "ko": "그가 내 이름을 기억하리라고는 기대하지 않았다."}
+  },
+  {
+    "id": "how-to-infinitive",
+    "name": "how to + 동사원형",
+    "en": "how + to-infinitive",
+    "pattern": "tell / teach + 사람 + how to 동사원형",
+    "explain": "‘의문사 + to부정사’는 ‘~하는 법, ~해야 할지’라는 명사 덩어리가 되어 동사의 목적어로 쓰인다(how to ~, what to ~, where to ~). teach나 tell 뒤에서는 ‘사람 + how to ~’ 순서로 온다. how to 하나 뒤에 동사원형 여러 개를 and로 나란히 붙일 수 있다.",
+    "ex": {"en": "Nobody taught us how to cook or manage money.", "ko": "아무도 우리에게 요리하는 법이나 돈 관리하는 법을 가르쳐 주지 않았다."}
+  },
+  {
+    "id": "to-infinitive",
+    "name": "to부정사의 용법",
+    "en": "Uses of the to-infinitive",
+    "pattern": "동사 + to ~ / 명사 + to ~ / to ~(목적) / 형용사 + to ~ / for + 사람 + to ~",
+    "explain": "to + 동사원형은 명사(‘~하는 것’: 주어·보어·목적어), 형용사(‘~할’: 앞 명사 수식), 부사(‘~하기 위해, ~하기에, ~하다니’) 역할을 한다. 행동의 주인을 따로 밝혀야 할 때는 to 앞에 for + 명사를 붙이며(의미상 주어: for Legilimency to work), 형용사 + enough to ~는 ‘~할 만큼 충분히 …한’이다. unbearable to witness처럼 주어가 to부정사의 목적어 역할을 하는 형용사 구문도 있다.",
+    "ex": {"en": "She came here to help, and she has the patience to do it well.", "ko": "그녀는 도우러 여기 왔고, 그 일을 잘 해낼 인내심도 있다."}
+  },
+  {
+    "id": "be-to",
+    "name": "be to 용법",
+    "en": "be to + infinitive",
+    "pattern": "if + 주어 + be to 동사원형",
+    "explain": "be + to부정사는 예정·의무·가능·의도를 나타내는 격식체 표현이다. 특히 if 절의 if we are to ~는 ‘(정말로) ~하려면, ~하고자 한다면’이라는 목적을 띤 조건이 된다. if we want to ~보다 훨씬 무게 있고 공식적인 느낌이다.",
+    "ex": {"en": "If we are to finish on time, we must start today.", "ko": "제시간에 끝내려면 오늘 시작해야 한다."}
+  },
+  {
+    "id": "split-infinitive",
+    "name": "분리 부정사",
+    "en": "Split infinitive",
+    "pattern": "to + 부사 + 동사원형 (to truly discover)",
+    "explain": "to와 동사원형 사이에 부사를 끼워 넣은 형태를 분리 부정사라 한다(to boldly go). 예전 영국 학교 문법은 이를 피하라고 가르쳐 to discover truly 같은 어순을 권했지만, 오늘날에는 뜻이 더 분명해지면 써도 되는 것으로 본다. 부정어도 to not pay처럼 들어갈 수 있는데, 전통적인 순서는 not to pay이다.",
+    "ex": {"en": "We need to really understand the problem first.", "ko": "우리는 먼저 그 문제를 제대로 이해해야 한다."}
+  },
+  {
+    "id": "dummy-it",
+    "name": "가주어 it",
+    "en": "Anticipatory it (extraposition)",
+    "pattern": "It is + 형용사 + (for 사람) + to 동사원형 / It + 동사 + that 절",
+    "explain": "긴 to부정사나 that절이 주어일 때, 그 자리에 it(가주어: 형식상 주어)을 두고 진짜 주어를 문장 뒤로 보낸다. To attack him will be impractical보다 It will be impractical to attack him이 자연스럽다. It appears that ~, Has it ever crossed your mind that ~?처럼 that절에도 쓴다.",
+    "ex": {"en": "It is important to read the instructions carefully.", "ko": "설명서를 꼼꼼히 읽는 것이 중요하다."}
+  },
+  {
+    "id": "obj-complement",
+    "name": "목적격 보어 (5형식)",
+    "en": "Object + complement",
+    "pattern": "find + 목적어 + 형용사 / let + 목적어 + 동사원형 / want + 목적어 + 과거분사",
+    "explain": "동사 뒤에 목적어와, 그 목적어의 상태·행동을 설명하는 말(보어)이 이어지는 구조다. find it difficult to ~(가목적어 it: 뒤의 to부정사를 대신 받는 it), find oneself + 형용사, let + 목적어 + 동사원형(~하게 두다), want + 목적어 + 과거분사(~이 …되기를 원하다)가 대표적이다. 목적어와 보어 사이에 ‘주어-술어’ 관계가 숨어 있다고 보면 쉽다.",
+    "ex": {"en": "I find it hard to concentrate when the room is noisy.", "ko": "방이 시끄러우면 집중하기가 어렵다."}
+  },
+  {
+    "id": "double-object",
+    "name": "수여동사 (4형식)",
+    "en": "Double-object verbs",
+    "pattern": "give / tell / teach / buy + 사람 + 사물",
+    "explain": "give, tell, teach, find, buy 같은 동사는 ‘사람(간접목적어) + 사물(직접목적어)’을 연달아 받는다. Give me a reason은 Give a reason to me로 바꿀 수 있지만, 사람이 앞에 오는 쪽이 더 간결하다. 사람 자리에 재귀대명사가 오면(buy yourself ~) ‘스스로 ~을 얻다(자초하다)’라는 뜻이 된다.",
+    "ex": {"en": "Could you find me a quiet table by the window?", "ko": "창가에 조용한 테이블 하나 찾아 주시겠어요?"}
+  },
+  {
+    "id": "parallel-structure",
+    "name": "병렬 구조",
+    "en": "Parallel structure",
+    "pattern": "A, B, and C (같은 형태로 나열)",
+    "explain": "and, or, but으로 이을 때 같은 문법 형태(동사원형끼리, 명사구끼리, 절끼리)를 맞춰 나열하는 것이다. 형태가 맞으면 리듬이 생겨 연설처럼 힘 있게 들린다. 세 개를 나열하는 삼단 나열은 특히 웅변적인 효과를 낸다.",
+    "ex": {"en": "She came, she listened, and she left without a word.", "ko": "그녀는 와서, 듣고, 말 한마디 없이 떠났다."}
+  },
+  {
+    "id": "relative-clause",
+    "name": "관계절 (who / which / that)",
+    "en": "Relative clauses",
+    "pattern": "명사 + who/which/that + 동사 / 명사, which(who) ~ / 명사 + (that) 주어 + 동사",
+    "explain": "관계절은 앞 명사를 뒤에서 설명하는 절이다. 쉼표 없는 관계절은 명사의 범위를 좁혀 주고(제한적 용법), 쉼표 뒤 관계절은 정보를 덧붙인다(계속적 용법: that은 못 쓰고 who/which만 쓴다). 목적어 자리의 관계대명사는 흔히 생략되며(the damage you inflicted), 전치사가 끝에 홀로 남기도 한다(any spell you can think of).",
+    "ex": {"en": "The book you lent me, which I finished last night, was brilliant.", "ko": "네가 빌려준 책은, 어젯밤에 다 읽었는데, 정말 훌륭했다."}
+  },
+  {
+    "id": "what-relative",
+    "name": "관계대명사 what",
+    "en": "Nominal relative what",
+    "pattern": "what + (주어) + 동사 (= the thing(s) that ~)",
+    "explain": "what은 ‘~하는 것’이라는 뜻으로, 앞에 꾸밀 명사(선행사)를 자기 안에 품은 관계대명사다. what you saw = the things that you saw처럼 앞에 명사가 따로 없다. what절은 통째로 문장의 주어나 목적어 자리에 들어간다.",
+    "ex": {"en": "What you said yesterday really helped me.", "ko": "네가 어제 한 말이 정말 도움이 됐어."}
+  },
+  {
+    "id": "postmodifier",
+    "name": "후치 수식 (those who ~)",
+    "en": "Postmodification",
+    "pattern": "those who ~ / those + 형용사구 / 명사 + 형용사·분사·부사",
+    "explain": "수식어가 길거나 특별할 때 영어는 명사 뒤에 둔다. those who ~(‘~하는 사람들’), those closest to him(그와 가장 가까운 사람들)처럼 those 뒤에 관계절이나 형용사구를 붙이는 것이 대표적이다. every ~ possible, his allies within, something found in ~처럼 형용사·부사·분사가 명사 뒤에 오는 형태는 격식체 느낌이 강하다.",
+    "ex": {"en": "Those who arrive late will have to wait outside.", "ko": "늦게 오는 사람들은 밖에서 기다려야 한다."}
+  },
+  {
+    "id": "so-that",
+    "name": "so ~ that (결과)",
+    "en": "so … that (result)",
+    "pattern": "so + 형용사/부사 + (that) 절",
+    "explain": "‘너무/매우 …해서 ~하다’라는 결과를 나타낸다. 구어에서는 that이 자주 생략된다(so tired I fell asleep). a pain so horrible (that) ~처럼 명사 뒤에 붙여 명사를 꾸미는 형태는 더 문어적이고 극적이다.",
+    "ex": {"en": "The room was so quiet that I could hear the clock.", "ko": "방이 너무 조용해서 시계 소리가 들렸다."}
+  },
+  {
+    "id": "subjunctive-past",
+    "name": "가정법 과거·과거완료 (wish 포함)",
+    "en": "Unreal conditionals and wish",
+    "pattern": "If + 과거, would + 동사원형 / wish + 주어 + had p.p.",
+    "explain": "현재 사실과 반대이거나 실제가 아닌 가상의 일을 말할 때 시제를 한 칸 과거로 내린다(If I added ~, what would I get?). 격식체에서 be동사는 주어와 상관없이 were를 쓴다. wish + had p.p.는 ‘(과거에) ~했더라면’이라는 소망을, 조건절 없는 would는 ‘(만약 그렇다면) ~할 것이다’라는 숨은 가정을 나타낸다.",
+    "ex": {"en": "If I had more time, I would learn Japanese.", "ko": "시간이 더 있으면 일본어를 배울 텐데."}
+  },
+  {
+    "id": "inversion-conditional",
+    "name": "if 생략 도치 (Were / Should + 주어)",
+    "en": "Inverted conditionals",
+    "pattern": "Were + 주어 ~, / Should + 주어 + 동사원형 ~,",
+    "explain": "격식체에서는 if를 빼고 조동사를 주어 앞으로 보내 조건을 나타낸다. Were you ~ = If you were ~(현실과 반대), Should you ~ = If you should ~(‘혹시라도 ~한다면’, 가능성이 낮은 일)이다. 공문서나 위엄 있는 말투에 쓰이며, 일상 대화에서는 드물다.",
+    "ex": {"en": "Should you need any help, please call me.", "ko": "혹시 도움이 필요하시면 전화 주세요."}
+  },
+  {
+    "id": "should-subjunctive",
+    "name": "가정법 현재 (that + 동사원형)",
+    "en": "Mandative subjunctive",
+    "pattern": "ask / insist / wish that + 주어 + (should) 동사원형",
+    "explain": "요구·소망·제안을 나타내는 말(ask, insist, wish, suggest) 뒤 that절에서는 주어나 시제와 관계없이 동사원형을 쓴다(that he give, that she rest). 영국에서는 should를 넣은 형태(that he should give)도 흔하다. Suffice it to say(‘~라고만 해 두자’) 같은 굳은 옛 표현에도 이 동사원형이 남아 있다.",
+    "ex": {"en": "The doctor insisted that she rest for a week.", "ko": "의사는 그녀가 일주일 동안 쉬어야 한다고 강하게 말했다."}
+  },
+  {
+    "id": "present-in-time-clause",
+    "name": "시간·조건 부사절의 현재시제",
+    "en": "Present tense in time and condition clauses",
+    "pattern": "when / until / as long as / if + 현재(완료), 주절 will(shall) ~",
+    "explain": "when, until, once, as long as, if 같은 접속사가 이끄는 부사절에서는 미래의 일이라도 will을 쓰지 않고 현재시제를 쓴다(until term resumes). ‘~을 마친 뒤에’를 강조할 때는 현재완료를 쓴다(when you've had time). 주절에는 will, shall 등이 그대로 온다.",
+    "ex": {"en": "I'll call you when I've finished dinner.", "ko": "저녁 다 먹고 나면 전화할게."}
+  },
+  {
+    "id": "tag-question",
+    "name": "부가의문문",
+    "en": "Tag questions",
+    "pattern": "긍정문, 부정 꼬리? / 부정문, 긍정 꼬리?",
+    "explain": "평서문 끝에 ‘조동사 + 대명사’ 꼬리를 붙여 확인을 구하거나 동의를 압박한다(fame isn't everything, is it?). 보통 앞이 긍정이면 꼬리는 부정, 앞이 부정이면 꼬리는 긍정이다. 앞뒤가 모두 긍정인 꼬리(Out for a walk, are we?)는 확인이 아니라 비꼼이나 놀람을 나타내며, 영국 영어에서 특히 자주 들린다.",
+    "ex": {"en": "You've met my sister, haven't you?", "ko": "우리 언니 만난 적 있지, 그렇지?"}
+  },
+  {
+    "id": "ellipsis",
+    "name": "생략 (조각문)",
+    "en": "Ellipsis and fragments",
+    "pattern": "(주어 + 동사) 생략: Pity. / No sign of ~. / Having fun? / Once there",
+    "explain": "대화에서 문맥으로 알 수 있는 주어·be동사·조동사를 빼고 핵심만 말하는 것이다(Pity. = It's a pity. / Having fun? = Are you having fun?). Once there(= once he is there), If not(= if you don't)처럼 접속사 뒤에서도 흔히 생략한다. 짧게 끊어 말하면 냉정하고 위압적인 어조가 된다.",
+    "ex": {"en": "Ready to go? — Almost. Just one more minute.", "ko": "갈 준비 됐어? — 거의. 1분만 더."}
+  },
+  {
+    "id": "aux-ellipsis",
+    "name": "조동사로 대신하기·강조의 do",
+    "en": "Auxiliary ellipsis and emphatic do",
+    "pattern": "I will. / I can try. / than you do / I did express ~",
+    "explain": "앞에 나온 동사구를 반복하지 않고 조동사만 남겨 대신한다(I will. = I will do it). 일반동사는 do/does/did가 그 역할을 맡는다(more than you do). 반대로 긍정문에 do/did를 일부러 넣고 세게 읽으면 ‘정말로 ~했다’는 강조가 되며, 그 뒤에는 동사원형이 온다(I did express).",
+    "ex": {"en": "I said I would help, and I will.", "ko": "돕겠다고 했으니, 도울 거야."}
+  },
+  {
+    "id": "concession",
+    "name": "양보 (even if / though / may ~ but)",
+    "en": "Concession",
+    "pattern": "Even if ~ / Though ~ / 주어 + may (have p.p.) ~, but ~",
+    "explain": "앞의 내용을 인정하면서도 반대되는 말을 덧붙이는 구문이다. even if는 ‘설령 ~라 해도’, though는 ‘~이긴 하지만’이며, 대화에서는 주절 뒤에 따로 떼어 덧붙이기도 한다. A may be ~, but B는 ‘A는 ~일지 몰라도 B는’으로, 이때 may는 추측보다 ‘일단 인정’의 뜻이며 과거 일은 may have p.p.로 쓴다.",
+    "ex": {"en": "He may be young, but he knows what he is doing.", "ko": "그는 어릴지 몰라도 자기가 뭘 하는지 안다."}
+  },
+  {
+    "id": "advice-modals",
+    "name": "충고·당위의 조동사 (should / ought to / had better)",
+    "en": "Modals of advice and obligation",
+    "pattern": "should / ought to / had better + 동사원형",
+    "explain": "should와 ought to는 ‘~하는 게 옳다/좋다’로 뜻이 거의 같지만, ought to가 조금 더 격식 있고 도덕적인 느낌이며 부정은 ought not to다. had better는 ‘~하는 게 좋을 거다(안 그러면 곤란해진다)’라는 경고가 들어 있어 윗사람에게 쓰면 무례하다. had better의 부정은 had better not이다.",
+    "ex": {"en": "You ought to apologise, and you'd better do it soon.", "ko": "사과하는 게 도리야. 그것도 빨리 하는 게 좋을 거야."}
+  },
+  {
+    "id": "modal-possibility",
+    "name": "추측·가능·허가의 조동사",
+    "en": "Modals of possibility, deduction and permission",
+    "pattern": "must / should / may / might / can + 동사원형",
+    "explain": "조동사로 확신의 정도를 조절한다: must(틀림없이) > should(당연히 ~일 것) > may(~일지도) > might(어쩌면)이다. must be는 ‘~임에 틀림없다’는 추론이고, can't는 ‘~할 수 없다’는 불가능이며, may는 ‘~해도 좋다’는 격식 있는 허가로도 쓴다. might just ~(‘그만 ~할지도’)나 it might be possible to ~처럼 가능성을 낮춰 말하면 조심스럽거나, 반대로 은근한 위협이 된다.",
+    "ex": {"en": "You must be tired after such a long flight.", "ko": "그렇게 오래 비행했으니 피곤하시겠어요."}
+  },
+  {
+    "id": "polite-past-forms",
+    "name": "공손·완곡의 과거형",
+    "en": "Past forms for politeness and tentativeness",
+    "pattern": "Might I ~? / If I might / I'd like ~ / You wished to ~?",
+    "explain": "영어는 과거형 조동사(would, might, could)나 과거시제로 한 걸음 물러서서 공손하거나 조심스럽게 말한다. Might I suggest ~?는 Can I suggest ~?보다 훨씬 격식 있고, I'd like ~는 I want ~의 정중한 형태다. 이 정중함을 일부러 과하게 쓰면 오히려 냉소적으로 들린다(What might it be?).",
+    "ex": {"en": "Might I ask where you bought that coat?", "ko": "그 코트 어디서 사셨는지 여쭤봐도 될까요?"}
+  },
+  {
+    "id": "need-dare-modal",
+    "name": "조동사 need / dare",
+    "en": "need and dare as modals",
+    "pattern": "need not + 동사원형 / dare + 동사원형",
+    "explain": "need와 dare는 일반동사(need to ~, don't need + 명사)로도, 조동사로도 쓰인다. 조동사일 때는 to 없이 동사원형이 오고 부정은 need not(needn't)처럼 바로 not을 붙이는데, 영국식 격식체 느낌이 난다. You dare ~?는 ‘감히 ~하느냐’는 분노의 표현이다.",
+    "ex": {"en": "You needn't come early; we don't start until ten.", "ko": "일찍 올 필요 없어. 10시나 되어야 시작하니까."}
+  },
+  {
+    "id": "shall-will",
+    "name": "will / shall / be going to (미래·의지)",
+    "en": "will, shall and other future forms",
+    "pattern": "will / shall / be going to / will be -ing / 현재시제(일정)",
+    "explain": "will은 예측뿐 아니라 의지·약속(I will.), 즉석 결정·제안(I'll ~ for you), 2인칭 명령(You will ~!)도 나타낸다. shall은 I/we와 함께 쓰는 영국식 격식 미래로(we shall see) 미국에서는 거의 쓰지 않는다. be going to는 이미 마음먹은 계획, will be -ing는 ‘(일이 흘러가는 대로) ~하고 있게 될 것’, 현재시제는 시간표처럼 확정된 일정을 나타낸다.",
+    "ex": {"en": "I'm going to ask her tomorrow; I'll be seeing her at lunch anyway.", "ko": "내일 그녀에게 물어볼 거야. 어차피 점심때 만나게 되니까."}
+  },
+  {
+    "id": "embedded-question",
+    "name": "간접의문문",
+    "en": "Embedded questions",
+    "pattern": "know / idea / imagine / find out + 의문사 + 주어 + 동사",
+    "explain": "의문문이 다른 문장 안에 들어가면 평서문 어순(의문사 + 주어 + 동사)이 되고 do/does/did는 사라진다(Where is the entrance? → where the entrance is). how 바로 뒤에는 형용사·부사가 붙을 수 있다(how serious this is). 뒤 내용이 뻔하면 의문사만 남기기도 한다(find out why).",
+    "ex": {"en": "Do you know where the station is?", "ko": "역이 어디인지 아세요?"}
+  },
+  {
+    "id": "reported-that-clause",
+    "name": "that절의 생략과 시제 일치",
+    "en": "Reported that-clauses",
+    "pattern": "think / believe / fear / hope / told (사람) + (that) 주어 + 동사",
+    "explain": "think, believe, hope, fear, feel, tell 뒤에서 생각이나 말의 내용을 전할 때 구어에서는 that을 흔히 생략한다. 전하는 동사가 과거면 that절의 시제도 한 칸 과거로 맞추는 것이 원칙이다(I told him you were ~: 시제 일치). 다만 지금도 사실이거나 생생하게 전하고 싶을 때는 현재시제를 그대로 두기도 한다.",
+    "ex": {"en": "I think she's right, and I told her she was.", "ko": "나는 그녀가 옳다고 생각하고, 그녀에게도 그렇다고 말했다."}
+  },
+  {
+    "id": "reflexive",
+    "name": "재귀대명사 (-self)",
+    "en": "Reflexive pronouns",
+    "pattern": "동사 + oneself / 명사 + himself(강조)",
+    "explain": "주어와 목적어가 같은 사람일 때 목적어를 -self 형태로 쓴다(defend yourself, enjoy yourself). 명사 바로 뒤나 문장 끝에 붙은 -self는 ‘바로 그 사람조차, 직접’이라는 강조가 된다. such as yourselves처럼 you 자리에 재귀형을 쓰는 것은 정중하게 들리려는 격식체 습관이다.",
+    "ex": {"en": "Help yourselves to some cake; I made it myself.", "ko": "케이크 마음껏 드세요. 제가 직접 만들었어요."}
+  },
+  {
+    "id": "passive",
+    "name": "수동태",
+    "en": "Passive voice",
+    "pattern": "be + p.p. (by ~) / be said to ~ / be supposed to ~ / I'm told ~",
+    "explain": "행위를 당하는 쪽을 주어로 내세울 때 be + 과거분사를 쓴다. 행위자가 중요하지 않거나 뻔하면 by ~를 생략하는데, 그래서 공식적이고 비인격적으로 들린다. It's said to be ~(~라고들 한다), is supposed to be ~(~라고 되어 있다), I'm told ~(~라고 들었다)는 소문·전언을 전하는 수동 표현이며, happen처럼 목적어를 받지 않는 동사는 수동태가 될 수 없다.",
+    "ex": {"en": "The bridge was built in 1890 and is said to be the oldest in town.", "ko": "그 다리는 1890년에 지어졌고 마을에서 가장 오래되었다고들 한다."}
+  },
+  {
+    "id": "present-perfect",
+    "name": "현재완료 (vs 과거)",
+    "en": "Present perfect vs past simple",
+    "pattern": "have/has + p.p. / have been -ing",
+    "explain": "과거의 일이 지금과 이어질 때 현재완료를 쓴다: 결과(You have risked ~), 경험(Have you ever ~?), 계속(has been ~ since ~)이다. last night, in 1990처럼 끝난 과거 시점을 콕 집을 때는 현재완료가 아니라 과거시제를 쓴다. have been -ing(현재완료진행)는 ‘최근까지/지금까지 계속 ~해 왔다’는 활동을 강조한다.",
+    "ex": {"en": "I've lost my keys; I last saw them yesterday.", "ko": "열쇠를 잃어버렸어. 어제 마지막으로 봤는데."}
+  },
+  {
+    "id": "present-simple-vs-progressive",
+    "name": "현재시제 vs 현재진행 (상태동사)",
+    "en": "Present simple vs present progressive",
+    "pattern": "현재: 사실·습관·성질 / be + -ing: 지금·요즘 진행 중 / 상태동사는 보통 진행형 불가",
+    "explain": "현재시제는 늘 그런 사실·습관·성질을, 현재진행(be + -ing)은 지금 또는 요즘 일시적으로 벌어지는 일을 나타낸다. know, believe, doubt, belong, possess처럼 상태를 나타내는 동사(상태동사)는 보통 진행형으로 쓰지 않는다. 그래서 I'm knowing이 아니라 I know, It's belonging이 아니라 It belongs가 된다.",
+    "ex": {"en": "She usually walks to work, but this week she's taking the bus.", "ko": "그녀는 보통 걸어서 출근하지만 이번 주엔 버스를 탄다."}
+  },
+  {
+    "id": "how-exclamative",
+    "name": "How 감탄문",
+    "en": "How exclamatives",
+    "pattern": "How + 형용사/부사 (+ 주어 + 동사)! / How + 주어 + 동사!",
+    "explain": "How + 형용사(부사)로 ‘얼마나 ~한가!’라는 감탄을 나타내며, 주어 + 동사는 뒤에 오거나 아예 생략된다(How touching!). How + 주어 + 동사는 ‘얼마나 ~했던가!’로 동사의 정도를 강조한다(How I hoped ~). 일상 회화에서는 다소 예스럽고 연극적인 표현이라 비꼬는 데 잘 쓰인다.",
+    "ex": {"en": "How kind of you to remember my birthday!", "ko": "내 생일을 기억해 주다니 정말 고마워!"}
+  },
+  {
+    "id": "inversion-negative",
+    "name": "부정어 도치 (Nor / Neither / Only)",
+    "en": "Negative inversion",
+    "pattern": "Nor / Neither + 조동사(be) + 주어",
+    "explain": "Nor, Neither, Never, Not only 같은 부정어가 문장 앞에 오면 조동사(또는 be)가 주어 앞으로 나온다(Nor is this. = And this isn't either). ‘~도 마찬가지로 아니다’를 짧고 단호하게 말하는 격식체 방식이며, 뒷부분이 생략되면 도치가 겉으로 드러나지 않기도 한다. Only + 부사구가 앞에 올 때도 도치하지만(Only then did I ~), Only가 주어를 꾸밀 때는 도치하지 않는다(Only a fool would ~).",
+    "ex": {"en": "I don't like coffee, and nor does my husband.", "ko": "나는 커피를 안 좋아하고, 남편도 마찬가지다."}
+  },
+  {
+    "id": "fronting",
+    "name": "문두 이동 (강조 어순)",
+    "en": "Fronting",
+    "pattern": "부사구/전치사구 + 주어 + 동사 / Here + be + 주어",
+    "explain": "평소 뒤에 오는 부사구나 전치사구를 문장 맨 앞으로 끌어내 강조하거나 앞 내용과 연결하는 어순이다(For those select few ~, I can ~). 이때 주어-동사 어순은 대개 그대로 두지만, Here나 There 같은 장소 부사가 앞에 오면 동사가 주어 앞으로 나온다(Here's the proof). 말할 대상을 미리 무대에 올려놓는 효과가 있어 연설조로 들린다.",
+    "ex": {"en": "In this house, we take our shoes off. Here comes the bus!", "ko": "이 집에서는 신발을 벗어요. 버스 온다!"}
+  },
+  {
+    "id": "apposition",
+    "name": "동격·꼬리 명사구",
+    "en": "Apposition and right dislocation",
+    "pattern": "명사, 명사구(같은 대상) / 평가, 주어(꼬리)",
+    "explain": "명사 바로 뒤에 쉼표와 함께 같은 대상을 다르게 부르는 명사구를 붙이는 것을 동격이라 한다(Mr Potter. Our new celebrity.). 영국 구어에서는 평가를 먼저 말하고 주어를 꼬리처럼 끝에 붙이는 어순도 흔하다(Clever girl, your daughter). 평가가 먼저 들려 말투가 강하고 노련하게 들린다.",
+    "ex": {"en": "Clever girl, your daughter.", "ko": "똑똑한 아이더군요, 따님이."}
+  },
+  {
+    "id": "imperative",
+    "name": "명령문",
+    "en": "Imperatives",
+    "pattern": "동사원형 ~. / Don't (Do not) ~. / You + 동사원형",
+    "explain": "주어 없이 동사원형으로 시작하면 명령·지시가 된다(Turn to page 394). 부정은 Don't ~이며, 줄이지 않은 Do not ~이나 Don't ever ~는 훨씬 엄하게 들린다. Silence!, Quiet!, Wand out!처럼 동사 없이 명사·형용사·부사만으로도 명령할 수 있고, You just wait처럼 앞에 you를 넣으면 위협이나 강한 감정이 실린다.",
+    "ex": {"en": "Close the door, and don't ever leave it open again.", "ko": "문 닫아. 그리고 다시는 열어 두지 마."}
+  },
+  {
+    "id": "imperative-and-or",
+    "name": "명령문 + and / or",
+    "en": "Imperative + and / or (conditional)",
+    "pattern": "명령문(또는 명사구) + and + 결과 / ~, or + 결과",
+    "explain": "명령문 + and ~는 ‘~해 봐라, 그러면 …’으로 사실상 if 조건문이다(Touch me again, and ~ = If you touch me again, ~). 명령문이 아닌 명사구도 같은 틀에 들어간다(Three drops of this and ~). 반대로 ~, or …는 ‘~해라, 안 그러면 …’이라는 경고가 된다.",
+    "ex": {"en": "Hurry up, or we'll miss the train.", "ko": "서둘러, 안 그러면 기차 놓쳐."}
+  },
+  {
+    "id": "gerund",
+    "name": "동명사 (-ing)",
+    "en": "Gerunds",
+    "pattern": "전치사 + -ing / recall · avoid · enjoy + -ing",
+    "explain": "동사에 -ing를 붙여 ‘~하는 것’이라는 명사로 쓰는 것이 동명사다. 전치사 뒤에는 동사원형이나 to부정사가 아니라 반드시 동명사가 오며, admit to, look forward to의 to도 전치사라 뒤에 -ing가 온다. recall, avoid, enjoy처럼 목적어로 동명사만 받는 동사가 있고, swear, attempt, wish처럼 to부정사를 받는 동사가 따로 있다.",
+    "ex": {"en": "I don't recall meeting her, but I look forward to seeing her.", "ko": "그녀를 만난 기억은 없지만, 만나기를 고대한다."}
+  },
+  {
+    "id": "participle-clause",
+    "name": "분사구문",
+    "en": "Participle clauses",
+    "pattern": "-ing / p.p. ~, 주절 / with + 명사 + p.p. / What are you doing + -ing?",
+    "explain": "분사구문(동사를 -ing나 과거분사로 바꿔 접속사·주어 없이 붙인 구)은 ‘~하면서, ~한 채로, ~해서’의 뜻을 짧게 전한다. with + 명사 + 과거분사는 ‘~이 …된 채로’라는 상황을, What are you doing + -ing?는 ‘~하면서 뭘 하는 거냐’라는 힐문을 나타낸다. given ~(~을 고려하면)처럼 아예 전치사로 굳은 분사도 있다.",
+    "ex": {"en": "Walking home, I bumped into an old friend.", "ko": "집에 걸어가다가 옛 친구와 마주쳤다."}
+  },
+  {
+    "id": "comparison",
+    "name": "비교 표현 (원급·비교급·최상급)",
+    "en": "Comparatives and superlatives",
+    "pattern": "as + 원급 + as / 비교급 + than / the + 최상급 / one of the + 최상급 + 복수명사",
+    "explain": "as ~ as(~만큼 …한), -er/more ~ than(~보다 더), the -est/most(가장)가 기본이다. 최상급은 ‘가장 ~한 것조차’라는 양보의 뜻을 띠기도 하며(with the simplest spells), one of the + 최상급 + 복수명사(가장 ~한 것 중 하나)도 자주 쓴다. 다른 대상이 아니라 같은 대상의 여러 상태를 비교할 때는 최상급 앞 the를 빼기도 한다(when your mind is most relaxed).",
+    "ex": {"en": "Even the smartest students make this mistake.", "ko": "가장 똑똑한 학생들조차 이 실수를 한다."}
+  },
+  {
+    "id": "no-negation",
+    "name": "no / none / no longer 부정",
+    "en": "Negation with no, none and no longer",
+    "pattern": "no + 명사 / none (of ~) / no one / no longer",
+    "explain": "not 대신 no, none, no one을 써서 명사 쪽을 부정하면 더 단정적이고 격식 있게 들린다(repeat ~ to no one = not repeat ~ to anyone). none은 ‘하나도 없음’을 나타내는 대명사이고(I have none), no longer는 ‘더 이상 ~않다’(= not ~ any more)의 격식 표현이다. 이미 부정어가 있는 문장에서는 some 대신 any를 쓴다(no longer plays any part).",
+    "ex": {"en": "I have no idea, and none of my friends knows either.", "ko": "나는 모르고, 내 친구들 중에도 아는 사람이 없다."}
+  },
+  {
+    "id": "pronoun-uses",
+    "name": "대명사의 특별한 쓰임",
+    "en": "Special uses of pronouns",
+    "pattern": "one(사람 일반) / we(= you) / It's me / his father's",
+    "explain": "one은 ‘(누구든) 사람은’이라는 일반 주어로 쓰이며 아주 격식 있고 점잖게 들린다(one must ~, one's own). 상대를 we로 부르는 것은 간호사나 교사가 아이에게 말하듯 내려다보는 말투다(are we? = are you?). be동사나 전치사 뒤에는 목적격(It's me, like her)이 자연스럽고, his father's처럼 소유격만으로 ‘~의 것’을 나타낼 수 있다.",
+    "ex": {"en": "Is this pen yours? — No, it's my sister's.", "ko": "이 펜 네 거야? — 아니, 언니 거야."}
+  },
+  {
+    "id": "phrasal-verb-object",
+    "name": "구동사와 목적어 위치",
+    "en": "Phrasal verbs: object position",
+    "pattern": "turn out + 명사 / turn + 명사·대명사 + out / vouch for + 명사",
+    "explain": "동사 + 부사(out, in, down, up, off, over)로 된 구동사는 명사 목적어를 부사 앞뒤 어디에나 둘 수 있지만(take out your wand / take your wand out), 대명사 목적어(it, him, you)는 반드시 사이에 넣는다(hand it in ○, hand in it ✕). 목적어가 길면 보통 부사 뒤로 보낸다. vouch for, look at처럼 동사 + 전치사인 경우는 목적어가 늘 전치사 뒤에 온다.",
+    "ex": {"en": "Please put your phone away; yes, put it away now.", "ko": "휴대폰 좀 집어넣어. 그래, 지금 집어넣어."}
+  },
+  {
+    "id": "question-word-order",
+    "name": "의문문 어순",
+    "en": "Question word order",
+    "pattern": "(의문사) + 조동사/be + 주어 + 동사? / 평서문 어순 + ?",
+    "explain": "의문문은 조동사나 be동사를 주어 앞으로 보낸다(What did you say? / Is this it?). 의문사가 주어일 때는 do 없이 평서문 순서 그대로다(What's going on?). 평서문 어순에 올림 억양만 붙이면 확인·놀람·비꼼이 되고(You don't know?), 상대 말을 되물을 때는 의문사를 원래 자리에 둔다(Realized what?).",
+    "ex": {"en": "Who told you that? You're leaving already?", "ko": "누가 그래? 벌써 가?"}
+  },
+  {
+    "id": "negative-rhetorical-question",
+    "name": "부정의문문·수사의문문",
+    "en": "Negative and rhetorical questions",
+    "pattern": "Weren't you ~? / Do you have any idea ~? / Are you ~? Or do you ~?",
+    "explain": "답을 구하는 것이 아니라 주장이나 비난을 질문 형식으로 하는 것을 수사의문문이라 한다. 부정의문문(Weren't you saying ~?)은 ‘~라고 하지 않았나?’로 상대가 인정하도록 몰아붙인다. Do you have any idea ~?는 ‘알기나 해?’라는 꾸짖음이고, 둘 중 하나를 고르게 하는 질문도 두 선택지가 모두 모욕이면 수사의문문이 된다.",
+    "ex": {"en": "Didn't I tell you to lock the door?", "ko": "문 잠그라고 말하지 않았니?"}
+  },
+  {
+    "id": "nominalisation",
+    "name": "명사화 (격식 문체)",
+    "en": "Nominalisation",
+    "pattern": "동사 → 명사 (use → the use of ~, protect → the protection of ~)",
+    "explain": "동사로 말할 내용을 명사구로 바꾸어 표현하는 것을 명사화라 한다(Using this on a student → The use of this on a student). 사람이 아니라 사건·개념이 주어나 목적어가 되어 공문서나 법률처럼 객관적이고 딱딱하게 들린다. 영국의 공적인 말투와 관청 문체의 대표적인 특징이다.",
+    "ex": {"en": "The closure of the library caused great disappointment.", "ko": "도서관 폐쇄는 큰 실망을 불러왔다."}
+  },
+  {
+    "id": "incantation",
+    "name": "주문 (영어 문장이 아님)",
+    "en": "Spells (not English sentences)",
+    "pattern": "라틴어풍 주문 단어",
+    "explain": "해리 포터의 주문은 대부분 라틴어 등을 바탕으로 지어낸 말이라 영어 문법으로 분석하지 않는다. 다만 영어 단어와 뿌리가 같은 경우가 많아 어휘 학습에 도움이 된다(Expelliarmus ↔ expel ‘쫓아내다’). 주문 앞뒤에 오는 영어 문장의 구조에 집중하면 된다.",
+    "ex": {"en": "The student was expelled for cheating in his exams.", "ko": "그 학생은 시험 부정행위로 퇴학당했다."}
+  }
+]

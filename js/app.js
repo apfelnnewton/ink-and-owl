@@ -18,6 +18,7 @@ import * as post from './post.js';
 import {deliver, owlBusy} from './owl.js';
 import {askName} from './welcome.js';
 import {hint} from './hints.js';
+import * as grammar from './grammar.js';
 import {$$, wait, closeSheet, isSheetOpen} from './ui.js';
 
 store.load();
@@ -78,6 +79,7 @@ const app = {
 
 const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), me: initMyRoom(app)};
 bond.init(app);
+grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */
 bond.onPost((id, key) => {
   if (key === 'W00' || /^C-/.test(key)) return;

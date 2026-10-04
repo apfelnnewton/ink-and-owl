@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-06i';
+const VERSION = 'he-2026-10-06j';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -19,6 +19,7 @@ const CORE = [
   'js/doors.js',
   'js/post.js',
   'js/hints.js',
+  'js/grammar.js',
   'js/firebase-config.js',
   'js/friends.js',
   'js/decks.js',
@@ -102,6 +103,8 @@ const CORE = [
   /* the professors' letters and teas, and the thirty keepsakes each (small square photographs) */
   ...PROFS.map(d => `bond/${d}.json`),
   'bond/news.json',
+  'grammar/points.json',
+  'grammar/snape.json',
   ...PROFS.flatMap(d => Array.from({length: 30}, (_, i) => `assets/keepsakes/${d}-K${String(i + 1).padStart(2, '0')}.webp`))
 ];
 

@@ -1,0 +1,1308 @@
+{
+  "snape-1-028.1": {
+    "struct": "There will be no [①foolish wand-waving or ②silly incantations] in this class.",
+    "notes": [
+      {"pt": "there-be", "ko": "There will be no + 명사는 ‘~은 없을 것이다’로, Don't wave your wands 같은 명령 대신 규칙을 선언하듯 말해 더 권위 있게 들린다."},
+      {"pt": "parallel-structure", "ko": "no 하나가 foolish wand-waving과 silly incantations라는 같은 꼴(형용사 + 명사)의 두 명사구를 함께 부정한다."}
+    ]
+  },
+  "snape-1-028.2": {
+    "struct": "As such, I don't expect many of you [to appreciate ①the subtle science and ②exact art that is potion-making].",
+    "notes": [
+      {"pt": "verb-obj-to", "ko": "expect + 목적어(many of you) + to appreciate는 ‘너희 다수가 ~하리라 기대하다’이며, not을 expect 쪽에 붙여 ‘기대하지 않는다’로 부정한다."},
+      {"pt": "relative-clause", "ko": "the 하나로 묶인 subtle science and exact art는 둘 다 potion-making 하나를 가리키므로, 관계절 that is의 동사가 복수 are가 아닌 단수 is다."},
+      {"pt": "as-such", "ko": "As such는 앞 문장(마법봉 휘두르기는 없다)을 such로 받아 ‘그러니’로 잇는 말로, so보다 훨씬 딱딱하고 격식 있다."}
+    ]
+  },
+  "snape-1-028.3": {
+    "struct": "However, for [those select few who possess the predisposition], I can teach you how to [①bewitch the mind and ②ensnare the senses].",
+    "notes": [
+      {"pt": "postmodifier", "ko": "those select few who possess ~는 those(사람들) 뒤에 관계절 who possess ~가 붙은 형태로 ‘소질을 가진 엄선된 소수’이며, 여기서 select는 ‘엄선된’이라는 형용사다."},
+      {"pt": "how-to-infinitive", "ko": "teach + 사람(you) + how to 동사원형은 ‘~하는 법을 가르치다’이며, how to 뒤에 bewitch와 ensnare가 and로 나란히 온다."},
+      {"pt": "fronting", "ko": "for those select few ~를 문장 앞에 먼저 내세우고 주절에서 you로 다시 받아, 대상이 ‘소수’라는 점을 강조한다."}
+    ]
+  },
+  "snape-1-028.4": {
+    "struct": "I can tell you how to [①bottle fame, ②brew glory, and even ③put a stopper in death].",
+    "notes": [
+      {"pt": "how-to-infinitive", "ko": "tell + 사람 + how to 동사원형은 ‘~에게 ~하는 법을 알려 주다’이며, 여기서는 how to 뒤에 bottle·brew·put 세 동사가 나란히 온다."},
+      {"pt": "parallel-structure", "ko": "bottle fame, brew glory가 ‘동사 + 명사’ 같은 꼴로 짝을 이루고, 세 번째 항목에만 even을 붙여 ‘죽음까지도’로 절정을 만든다."}
+    ]
+  },
+  "snape-1-028.5": {
+    "struct": "Then again, maybe some of you have come to Hogwarts in possession of abilities [so formidable that you feel confident enough to not pay attention].",
+    "notes": [
+      {"pt": "so-that", "ko": "abilities 뒤에 so formidable that ~이 붙어 ‘너무 대단해서 ~할 정도인 능력’이 되며, 이 형용사구가 명사를 뒤에서 꾸민다."},
+      {"pt": "to-infinitive", "ko": "confident enough to ~는 ‘~할 만큼 자신 있는’으로, enough가 형용사 confident 뒤에 온다."},
+      {"pt": "split-infinitive", "ko": "to not pay는 not을 to와 동사 사이에 넣은 분리 부정사로, 전통적인 어순은 not to pay attention이다."}
+    ]
+  },
+  "snape-1-028.6": {
+    "struct": "Mr Potter. [Our new celebrity]. — 동격 명사구",
+    "notes": [
+      {"pt": "apposition", "ko": "Our new celebrity는 Mr Potter를 다르게 부르는 동격 명사구로, 동사 없이 이름 뒤에 평가를 붙여 비꼬는 어조를 만든다."}
+    ]
+  },
+  "snape-1-028.7": {
+    "struct": "Tell me, what would I get [if I added powdered root of asphodel to an infusion of wormwood]?",
+    "notes": [
+      {"pt": "subjunctive-past", "ko": "if I added ~, what would I get?은 실제 실험이 아니라 가상의 상황을 묻는 가정법 과거라 조건절에 added, 주절에 would를 쓴다."},
+      {"pt": "imperative", "ko": "Tell me,는 질문 앞에 붙인 명령문으로 ‘어디 말해 보게’라고 대답을 요구하며 시험하듯 몰아붙인다."}
+    ]
+  },
+  "snape-1-028.8": {
+    "struct": "You don't know? Well, let's try again. Where, Mr Potter, would you look [if I asked you to find me a bezoar]?",
+    "notes": [
+      {"pt": "question-word-order", "ko": "You don't know?는 평서문 어순에 올림 억양만 붙인 의문문으로 ‘모른다고?’라는 놀람과 비꼼을 담는다."},
+      {"pt": "parenthetical", "ko": "의문사 Where와 would you look 사이에 호칭 Mr Potter를 쉼표로 끼워 넣어 질문을 일부러 끊으며 압박한다."},
+      {"pt": "verb-obj-to", "ko": "asked you to find는 ask + 사람 + to부정사 구조이고, 이어지는 find me a bezoar는 ‘나에게 베조아르를 찾아 주다’라는 4형식이다."}
+    ]
+  },
+  "snape-1-029": {
+    "struct": "And what is the difference between [①monkshood and ②wolfsbane]?",
+    "notes": [
+      {"pt": "question-word-order", "ko": "의문사 what + be동사 is + 주어 the difference 순서의 의문문이며, between은 비교할 두 대상을 and로 묶는다."}
+    ]
+  },
+  "snape-1-030": {
+    "struct": "Pity. Clearly, [fame isn't everything], is it, Mr Potter?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Pity.는 It's a pity.에서 It's a를 뺀 한 단어 조각문이다."},
+      {"pt": "sentence-adverb", "ko": "Clearly,는 ‘분명히’라는 말하는 사람의 판단으로 문장 전체를 꾸미며, It is clear that fame isn't everything과 같은 뜻이다."}
+    ]
+  },
+  "snape-1-036.1": {
+    "struct": "Good luck today, Potter. — 동사 없는 인사말",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Good luck은 (I wish you) good luck에서 앞부분이 빠진 인사말로, 명사구만으로 문장 역할을 한다."}
+    ]
+  },
+  "snape-1-036.2": {
+    "struct": "Then again, [now that you've proven yourself against a troll], a little game of Quidditch should be easy work for you.",
+    "notes": [
+      {"pt": "present-perfect", "ko": "now that you've proven ~은 ‘이제 ~을 입증했으니’로, now that(~이니까) 뒤의 현재완료가 지금까지 이어진 결과를 근거로 삼는다."},
+      {"pt": "reflexive", "ko": "prove yourself는 ‘자기 실력을 입증하다’로, 주어 you와 목적어가 같은 사람이라 yourself를 쓴다."},
+      {"pt": "modal-possibility", "ko": "should be ~는 의무가 아니라 ‘당연히 ~일 것이다’라는 기대·추측의 should다."}
+    ]
+  },
+  "snape-1-036.3": {
+    "struct": "[Even if it is against Slytherin]. — 떼어 낸 양보절",
+    "notes": [
+      {"pt": "concession", "ko": "Even if ~는 ‘설령 ~라 해도’의 양보절인데, 주절 없이 앞 문장 뒤에 따로 떼어 덧붙여 빈정대는 뒷말처럼 들린다."}
+    ]
+  },
+  "snape-1-037": {
+    "struct": "Silence. — 명사 한 단어 명령",
+    "notes": [
+      {"pt": "imperative", "ko": "Silence.는 동사 없이 명사 하나로 내리는 명령으로, Be quiet.보다 짧고 권위적이다."}
+    ]
+  },
+  "snape-1-038": {
+    "struct": "You don't want [me as your enemy], Quirrell.",
+    "notes": [
+      {"pt": "obj-complement", "ko": "want + 목적어(me) + as 명사는 ‘~을 …로 두기를 원하다’로, me와 your enemy 사이에 ‘내가 네 적이다’라는 관계가 숨어 있다."}
+    ]
+  },
+  "snape-1-039.1": {
+    "struct": "You know perfectly well [what I mean].",
+    "notes": [
+      {"pt": "embedded-question", "ko": "what I mean은 What do I mean?이 know의 목적어로 들어가면서 do가 사라지고 평서문 어순이 된 형태다."}
+    ]
+  },
+  "snape-1-039.2": {
+    "struct": "We'll have another little chat soon. When you've had time [to decide where your loyalties lie].",
+    "notes": [
+      {"pt": "present-in-time-clause", "ko": "When you've had time ~은 미래의 일이지만 시간절이라 will이 아닌 현재완료를 써서 ‘시간을 가진 뒤에’를 나타낸다."},
+      {"pt": "to-infinitive", "ko": "time to decide는 to부정사가 앞 명사 time을 꾸미는 형용사적 용법으로 ‘결정할 시간’이다."},
+      {"pt": "embedded-question", "ko": "where your loyalties lie는 Where do your loyalties lie?가 decide의 목적어로 들어가며 평서문 어순이 된 간접의문문이다."}
+    ]
+  },
+  "snape-1-048": {
+    "struct": "Good afternoon. Now, what would [three young Gryffindors such as yourselves] be doing inside on a day like this?",
+    "notes": [
+      {"pt": "polite-past-forms", "ko": "what would ~ be doing?은 what are ~ doing?을 would로 한 걸음 물려 ‘대체 뭘 하고 있을까’라고 짐짓 조심스럽게 묻는 형태로, 오히려 의심을 드러낸다."},
+      {"pt": "reflexive", "ko": "such as yourselves는 such as you 대신 재귀대명사를 쓴 격식체 습관으로, 정중한 척하는 말투를 만든다."}
+    ]
+  },
+  "snape-1-049": {
+    "struct": "You ought to be careful. People will think [you're... up to something].",
+    "notes": [
+      {"pt": "advice-modals", "ko": "ought to be careful은 should와 같은 ‘~하는 게 좋다’의 충고지만 더 격식 있고, 여기서는 은근한 경고로 쓰였다."},
+      {"pt": "reported-that-clause", "ko": "think 뒤에 that이 생략되고 you're up to something이 바로 이어진다."}
+    ]
+  },
+  "snape-2-001.1": {
+    "struct": "You were seen by [no less than seven Muggles].",
+    "notes": [
+      {"pt": "passive", "ko": "You were seen by ~는 본 쪽(머글)이 아니라 ‘너희가 목격당했다’는 사실을 주어로 내세운 수동태이며, 행위자는 by 뒤에 밝힌다."}
+    ]
+  },
+  "snape-2-001.2": {
+    "struct": "Do you have any idea [how serious this is]? You have risked the exposure of our world.",
+    "notes": [
+      {"pt": "negative-rhetorical-question", "ko": "Do you have any idea ~?는 정보를 묻는 것이 아니라 ‘알기나 해?’라고 꾸짖는 수사의문문이다."},
+      {"pt": "embedded-question", "ko": "how serious this is는 How serious is this?가 문장 안에 들어가며 주어 this + 동사 is 순서로 바뀐 간접의문문으로, how 바로 뒤에 형용사 serious가 붙는다."},
+      {"pt": "nominalisation", "ko": "risked exposing our world 대신 the exposure of our world라는 명사구를 써서 판결문처럼 공식적으로 들린다."}
+    ]
+  },
+  "snape-2-001.3": {
+    "struct": "Not to mention [the damage you inflicted on a Whomping Willow that's been on these grounds since before you were born].",
+    "notes": [
+      {"pt": "relative-clause", "ko": "the damage (that) you inflicted on ~에서는 목적격 관계대명사가 생략되었고, a Whomping Willow that's been ~에서는 주격 that이 쓰였다."},
+      {"pt": "present-perfect", "ko": "that's been(= that has been) on these grounds since ~는 과거부터 지금까지 계속 서 있음을 나타내는 현재완료이며, since before you were born은 ‘너희가 태어나기 전부터’다."}
+    ]
+  },
+  "snape-2-002": {
+    "struct": "Silence! — 명사 한 단어 명령",
+    "notes": [
+      {"pt": "imperative", "ko": "명사 한 단어로 된 명령문으로, 느낌표가 붙어 날카로운 제지가 된다."}
+    ]
+  },
+  "snape-2-003": {
+    "struct": "I assure you that [were you in Slytherin and your fate rested with me], the both of you would be on the train home tonight. As it is...",
+    "notes": [
+      {"pt": "inversion-conditional", "ko": "were you in Slytherin은 if you were in Slytherin에서 if를 빼고 were를 앞으로 보낸 도치 조건절이며, and 뒤의 your fate rested with me도 같은 조건에 묶인다."},
+      {"pt": "subjunctive-past", "ko": "현실과 반대되는 가정이라 조건절은 과거형(were, rested), 결과절은 would be이며, 결과절 주어 the both of you는 구어식이고 격식 있는 표준형은 both of you다."}
+    ]
+  },
+  "snape-2-005": {
+    "struct": "Headmaster, these boys have flouted [the Decree for the Restriction of Underage Wizardry]. As such...",
+    "notes": [
+      {"pt": "present-perfect", "ko": "have flouted는 법령을 어긴 과거 행위가 지금 처벌의 근거로 이어진다는 결과의 현재완료다."},
+      {"pt": "nominalisation", "ko": "the Restriction of Underage Wizardry는 restrict라는 동사를 명사로 바꾼 전형적인 법률·관청 문체다."},
+      {"pt": "as-such", "ko": "As such...는 앞 문장(법령 위반)을 such로 받아 ‘따라서 (처벌해야 합니다)’로 이어 가려다 말을 멈춘 것이다."}
+    ]
+  },
+  "snape-2-012.1": {
+    "struct": "If I might, Headmaster? Perhaps [Potter and his friends were simply in the wrong place at the wrong time].",
+    "notes": [
+      {"pt": "polite-past-forms", "ko": "If I might?는 If I might (say something)?에서 동사가 생략된 표현으로, may 대신 과거형 might를 써서 아주 공손하게 끼어든다."},
+      {"pt": "sentence-adverb", "ko": "Perhaps는 문장 전체에 ‘어쩌면’을 씌워 단정을 피하는 말로, 겉으로는 해리를 감싸는 척하는 어조를 만든다."}
+    ]
+  },
+  "snape-2-012.2": {
+    "struct": "However, the circumstances are suspicious. I, for one, don't recall [seeing Potter at dinner].",
+    "notes": [
+      {"pt": "gerund", "ko": "recall은 목적어로 동명사를 받으므로 recall to see가 아니라 recall seeing이 되며, ‘~한 기억이 있다’는 뜻이다."},
+      {"pt": "sentence-adverb", "ko": "However,는 앞서 해리를 감싸던 말을 뒤집는 연결 부사로, 문장 맨 앞에 쉼표와 함께 온다."}
+    ]
+  },
+  "snape-2-013": {
+    "struct": "Yes, Miss Granger? — 말끝 생략 질문",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Yes, Miss Granger?는 (Yes, what were you going to say,) Miss Granger?처럼 뒷말을 생략하고 올림 억양만으로 말을 마저 하라고 다그친다."}
+    ]
+  },
+  "snape-2-027": {
+    "struct": "Expelliarmus! — 주문",
+    "notes": [
+      {"pt": "incantation", "ko": "Expelliarmus는 라틴어 expellere(내쫓다)와 arma(무기)를 합친 무장 해제 주문으로, 영어 동사 expel(쫓아내다)과 뿌리가 같다."}
+    ]
+  },
+  "snape-2-028": {
+    "struct": "Perhaps it would be prudent [to first teach the students to block unfriendly spells], Professor.",
+    "notes": [
+      {"pt": "dummy-it", "ko": "it would be prudent to ~는 가주어 it이 뒤의 to first teach ~를 대신하는 구조로 ‘~하는 것이 현명할 것이다’이며, would가 말투를 부드럽게 한다."},
+      {"pt": "split-infinitive", "ko": "to first teach는 first를 to와 동사 사이에 넣은 분리 부정사로, ‘먼저’를 동사에 바짝 붙여 강조한다."},
+      {"pt": "verb-obj-to", "ko": "teach the students to block ~은 teach + 목적어 + to부정사로 ‘학생들이 ~하도록 가르치다’이다."}
+    ]
+  },
+  "snape-2-029.1": {
+    "struct": "Weasley's wand causes devastation with [the simplest spells]. We'll be sending Potter to the hospital wing in a matchbox.",
+    "notes": [
+      {"pt": "comparison", "ko": "with the simplest spells는 최상급이 ‘가장 간단한 주문으로도’라는 양보의 뜻을 띠는 예다."},
+      {"pt": "shall-will", "ko": "We'll be sending ~은 미래진행형(will be -ing)으로, 의도보다 ‘이대로 가면 당연히 ~하게 될 것’이라는 흐름을 나타내 냉소를 더한다."},
+      {"pt": "present-simple-vs-progressive", "ko": "causes는 지금 이 순간이 아니라 그 지팡이의 늘 그런 성질을 말하는 현재시제다."}
+    ]
+  },
+  "snape-2-029.2": {
+    "struct": "Might I suggest [someone from my own house]? Malfoy, perhaps?",
+    "notes": [
+      {"pt": "polite-past-forms", "ko": "Might I suggest ~?는 Can I suggest ~?를 과거형 might로 바꾼 가장 격식 있는 제안 형태다."},
+      {"pt": "ellipsis", "ko": "Malfoy, perhaps?는 (How about) Malfoy, perhaps?처럼 동사 없이 이름만 던져 제안을 마무리하는 조각문이다."}
+    ]
+  },
+  "snape-2-030": {
+    "struct": "Don't move, Potter. I'll get rid of it for you.",
+    "notes": [
+      {"pt": "imperative", "ko": "Don't move는 Don't + 동사원형으로 된 부정 명령문이다."},
+      {"pt": "shall-will", "ko": "I'll get rid of it은 말하는 순간 정한 즉석 결정·제안의 will로 ‘내가 치워 주지’에 가깝다."}
+    ]
+  },
+  "snape-2-031": {
+    "struct": "Vipera Evanesca. — 주문",
+    "notes": [
+      {"pt": "incantation", "ko": "Vipera Evanesca는 라틴어 vipera(독사)와 evanescere(사라지다)에서 온 주문으로, 영어 viper(독사), evanescent(덧없이 사라지는)와 뿌리가 같다."}
+    ]
+  },
+  "snape-2-055": {
+    "struct": "A girl has been snatched by the monster, Lockhart. Your moment has come at last.",
+    "notes": [
+      {"pt": "passive", "ko": "has been snatched by ~는 현재완료 수동태(have been + p.p.)로, 방금 일어나 지금 문제가 된 사건을 피해자 중심으로 전한다."},
+      {"pt": "present-perfect", "ko": "Your moment has come은 ‘때가 와서 지금 여기 있다’는 결과의 현재완료로, at last와 함께 기다리던 일이 이뤄졌음을 강조한다."}
+    ]
+  },
+  "snape-2-056": {
+    "struct": "Weren't you saying just last night [that you've known all along where the entrance to the Chamber of Secrets is]?",
+    "notes": [
+      {"pt": "negative-rhetorical-question", "ko": "Weren't you saying ~?는 ‘~라고 하지 않았나?’로 상대가 한 말을 인정하게 몰아세우는 부정의문문이며, 과거진행형이 떠벌리던 장면을 그린다."},
+      {"pt": "reported-that-clause", "ko": "말한 시점은 과거지만 that절에 you've known과 is를 그대로 두어, 록하트의 말을 지금도 유효한 주장처럼 생생하게 옮긴다."},
+      {"pt": "embedded-question", "ko": "where the entrance to the Chamber of Secrets is는 긴 주어 the entrance ~ 뒤로 is가 맨 끝에 가는 간접의문문 어순이다."}
+    ]
+  },
+  "snape-3-001": {
+    "struct": "I've done the dungeons, Headmaster. No sign of Black. Nor anywhere else in the castle.",
+    "notes": [
+      {"pt": "present-perfect", "ko": "I've done the dungeons는 수색을 마친 결과를 지금 보고하는 현재완료다."},
+      {"pt": "ellipsis", "ko": "No sign of Black.은 There is no sign of Black.에서 There is를 뺀 보고체 조각문이다."},
+      {"pt": "inversion-negative", "ko": "Nor anywhere else는 Nor is there any sign of him anywhere else를 줄인 것이라, 뒷부분이 생략되어 도치가 겉으로 드러나지 않는다."}
+    ]
+  },
+  "snape-3-002": {
+    "struct": "Remarkable feat, don't you think? [To enter Hogwarts castle on one's own, completely undetected]...",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Remarkable feat는 It's a remarkable feat에서 It's a를 뺀 조각문이다."},
+      {"pt": "dummy-it", "ko": "뒤의 To enter ~는 원래 It's a remarkable feat to enter ~에서 가주어 it이 가리키는 진짜 주어로, 따로 떼어 덧붙였다."},
+      {"pt": "participle-clause", "ko": "completely undetected는 과거분사로 ‘전혀 들키지 않은 채’라는 상태를 덧붙인다."}
+    ]
+  },
+  "snape-3-003": {
+    "struct": "You may recall, prior to the start of term, I did express my concerns [when you appointed Professor --]",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "I did express는 긍정문에 did를 넣어 ‘분명히 말씀드렸다’고 강조하는 do로, did 뒤에는 동사원형 express가 오고 did를 세게 읽는다."},
+      {"pt": "parenthetical", "ko": "You may recall과 본문 사이에 prior to the start of term을 쉼표로 끼워 넣었고, You may recall 뒤의 that은 생략되었다."}
+    ]
+  },
+  "snape-3-004": {
+    "struct": "Turn to page 394. — 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "주어 없이 동사원형 Turn으로 시작하는 명령문으로, turn to + 쪽수는 ‘~쪽을 펴다’이다."}
+    ]
+  },
+  "snape-3-005.1": {
+    "struct": "[That's not really your concern], is it, Potter?",
+    "notes": [
+      {"pt": "tag-question", "ko": "부정문 That's not ~ 뒤에 긍정 꼬리 is it?을 붙였고, 호칭 Potter는 꼬리 뒤에 온다."}
+    ]
+  },
+  "snape-3-005.2": {
+    "struct": "Suffice it to say, [your Professor finds himself incapable of teaching at the present time]. Page 394.",
+    "notes": [
+      {"pt": "should-subjunctive", "ko": "Suffice it to say는 ‘~라고 말하는 것으로 족하게 하라’라는 옛 가정법 표현이 굳은 것으로, 동사원형 suffice가 주어 it 앞에 나와 있다."},
+      {"pt": "obj-complement", "ko": "finds himself incapable of ~는 find + 목적어 + 형용사로 ‘(어쩌다 보니) ~할 수 없는 처지에 있다’는 완곡한 표현이다."},
+      {"pt": "gerund", "ko": "incapable of teaching처럼 전치사 of 뒤에는 동명사가 온다."}
+    ]
+  },
+  "snape-3-006": {
+    "struct": "Quiet! — 형용사 한 단어 명령",
+    "notes": [
+      {"pt": "imperative", "ko": "Quiet!는 Be quiet!에서 Be를 뺀 형용사 한 단어 명령이다."}
+    ]
+  },
+  "snape-3-007": {
+    "struct": "Now. Which of you can tell me [the difference between an Animagus and a werewolf]?",
+    "notes": [
+      {"pt": "question-word-order", "ko": "Which of you가 주어인 의문문이라 주어와 조동사의 자리를 바꾸지 않고 Which of you + can tell 순서로 묻는다."},
+      {"pt": "double-object", "ko": "tell me the difference는 tell + 사람 + 내용의 4형식이다."}
+    ]
+  },
+  "snape-3-008": {
+    "struct": "No one? How... disappointing.",
+    "notes": [
+      {"pt": "ellipsis", "ko": "No one?은 (Can) no one (tell me)?를 줄인 조각 질문이다."},
+      {"pt": "how-exclamative", "ko": "How disappointing.은 How disappointing (that is)!에서 주어·동사를 뺀 감탄문으로, 사이의 멈춤(...)이 비꼼을 키운다."}
+    ]
+  },
+  "snape-3-009.1": {
+    "struct": "Quiet, Malfoy! [Though one must admit to feeling your pain].",
+    "notes": [
+      {"pt": "concession", "ko": "Though ~를 주절 없이 따로 떼어 덧붙여 ‘~이긴 하지만’이라고 뒤늦게 단서를 다는 구어적 방식이다."},
+      {"pt": "gerund", "ko": "admit to feeling은 admit to + 동명사로, 여기서 to는 전치사라 feel이 아닌 feeling이 온다."}
+    ]
+  },
+  "snape-3-009.2": {
+    "struct": "That is the second time [you have spoken out of turn], Miss Granger.",
+    "notes": [
+      {"pt": "present-perfect", "ko": "That is the second time (that) you have spoken ~은 ‘~한 것이 이번이 두 번째다’라는 고정 틀로, the first/second time 뒤의 절에는 현재완료를 쓴다."}
+    ]
+  },
+  "snape-3-009.3": {
+    "struct": "Tell me. Are you incapable of [restraining yourself]? Or do you take pride in [being an insufferable know-it-all]?",
+    "notes": [
+      {"pt": "negative-rhetorical-question", "ko": "Are you ~? Or do you ~?는 두 가지 중 고르라는 형식이지만 두 선택지가 모두 모욕인 수사의문문이다."},
+      {"pt": "gerund", "ko": "incapable of restraining, take pride in being처럼 전치사 of, in 뒤에는 동명사가 온다."},
+      {"pt": "reflexive", "ko": "restraining yourself는 주어 you가 자기 자신을 억누르는 것이라 재귀대명사 yourself를 쓴다."}
+    ]
+  },
+  "snape-3-010.1": {
+    "struct": "Five points from Gryffindor! — 동사 없는 선언",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Five points from Gryffindor!는 (I'm taking) five points from Gryffindor!에서 동사를 뺀 선언형 조각문이다."}
+    ]
+  },
+  "snape-3-010.2": {
+    "struct": "As an antidote to your ignorance, I prescribe two rolls of parchment on the werewolf by Monday morning, [with particular emphasis placed on recognising it]. Passing notes, Potter?",
+    "notes": [
+      {"pt": "participle-clause", "ko": "with + 명사(particular emphasis) + 과거분사(placed)는 ‘특히 ~에 중점이 놓인 채로’라는 조건을 붙이며, 전치사 on 뒤에는 동명사 recognising이 온다."},
+      {"pt": "present-simple-vs-progressive", "ko": "I prescribe는 말하는 순간 처방(지시)이라는 행위가 이루어지는 현재시제라 I'm prescribing이라고 하지 않는다."},
+      {"pt": "ellipsis", "ko": "Passing notes, Potter?는 (Are you) passing notes?에서 주어와 be동사를 뺀 질문이다."}
+    ]
+  },
+  "snape-3-011.1": {
+    "struct": "Not exactly Picasso, are you? — 주어·동사 생략 + 꼬리",
+    "notes": [
+      {"pt": "ellipsis", "ko": "(You're) not exactly Picasso에서 주어와 동사를 빼고 꼬리 are you?만 남겼는데, 이 꼬리 덕분에 생략된 주어가 you임을 알 수 있다."}
+    ]
+  },
+  "snape-3-011.2": {
+    "struct": "I hope [you demonstrate more talent on the Quidditch pitch this weekend than you do as an artist].",
+    "notes": [
+      {"pt": "comparison", "ko": "more talent ... than you do는 비교급 구문으로, than 뒤의 do가 앞의 demonstrate talent를 대신 받는다."},
+      {"pt": "reported-that-clause", "ko": "I hope 뒤에 that이 생략되었고, 이번 주말의 일이지만 hope 뒤에서는 현재시제 demonstrate로 미래를 나타낼 수 있다."}
+    ]
+  },
+  "snape-3-011.3": {
+    "struct": "If not, I fear [you'll perish], given the weather forecast.",
+    "notes": [
+      {"pt": "ellipsis", "ko": "If not은 If you don't (demonstrate more talent)를 줄인 것으로, 앞 문장 내용 전체를 not 하나로 받는다."},
+      {"pt": "reported-that-clause", "ko": "I fear (that) you'll perish는 I'm afraid ~의 격식체로, fear 뒤에 that이 생략되었다."},
+      {"pt": "participle-clause", "ko": "given the weather forecast는 분사 given이 전치사처럼 굳은 것으로 ‘일기 예보를 고려하면’이라는 뜻이다."}
+    ]
+  },
+  "snape-3-011.4": {
+    "struct": "Until that time, however, you'll forgive me [if I don't let you off homework].",
+    "notes": [
+      {"pt": "shall-will", "ko": "you'll forgive me if ~는 ‘~해도 양해해 주겠지’라는 뜻의 will로, 허락을 구하는 척하며 사실상 통보하는 정형 표현이다."},
+      {"pt": "phrasal-verb-object", "ko": "let you off homework는 let + 사람 + off + 일(‘~을 면해 주다’)의 구동사로, 대명사 you가 let과 off 사이에 들어간다."},
+      {"pt": "parenthetical", "ko": "Until that time 뒤에 however를 쉼표로 끼워 넣어 앞 문장과 대조된다는 것을 표시한다."}
+    ]
+  },
+  "snape-3-011.5": {
+    "struct": "[Should you die], I assure you... you need not hand it in.",
+    "notes": [
+      {"pt": "inversion-conditional", "ko": "Should you die는 If you should die에서 if를 빼고 should를 앞으로 보낸 도치 조건절로 ‘혹시라도 죽는다면’이다."},
+      {"pt": "need-dare-modal", "ko": "need not hand는 조동사 need의 부정으로 to 없이 동사원형이 오며, don't need to hand보다 격식 있다."},
+      {"pt": "phrasal-verb-object", "ko": "hand it in에서 대명사 it은 반드시 hand와 in 사이에 들어간다."}
+    ]
+  },
+  "snape-3-012": {
+    "struct": "Potter. What're you doing [wandering the corridors at night]?",
+    "notes": [
+      {"pt": "participle-clause", "ko": "What are you doing + -ing?는 ‘~하면서 뭘 하는 거냐’, 즉 ‘왜 ~하고 있나’라는 힐문의 틀로, wandering ~이 상대의 행동을 묘사한다."}
+    ]
+  },
+  "snape-3-013": {
+    "struct": "How extraordinarily like your father you are, Potter. He, too, was exceedingly arrogant. [Strutting about the castle] --",
+    "notes": [
+      {"pt": "how-exclamative", "ko": "You are extraordinarily like your father에서 how + 보어(extraordinarily like your father)를 앞으로 보낸 감탄문이라, 주어·동사 you are가 끝에 남는다."},
+      {"pt": "parenthetical", "ko": "He, too, was ~는 주어 뒤에 too를 쉼표로 끼워 ‘그 역시’를 강조한다."},
+      {"pt": "participle-clause", "ko": "Strutting about the castle은 주어·동사 없이 -ing로 시작해 아버지의 모습을 묘사하다가 끊긴 분사구다."}
+    ]
+  },
+  "snape-3-014": {
+    "struct": "Turn out [your pockets]. — 구동사 명령문",
+    "notes": [
+      {"pt": "phrasal-verb-object", "ko": "turn out은 동사 + 부사 구동사라 명사 목적어 your pockets가 out 뒤에 올 수 있지만, 대명사라면 turn them out이 된다."},
+      {"pt": "imperative", "ko": "주어 없이 동사원형 Turn으로 시작하는 명령문이다."}
+    ]
+  },
+  "snape-3-015": {
+    "struct": "Turn out [your pockets]! — 구동사 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "같은 명령문을 느낌표와 함께 반복해, 문장 형태는 그대로 두고 압박만 키운다."},
+      {"pt": "phrasal-verb-object", "ko": "명사 목적어라 Turn your pockets out!으로 어순을 바꿔도 같은 뜻이다."}
+    ]
+  },
+  "snape-3-016": {
+    "struct": "And this. What might it be?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "And this.는 (And what about) this?처럼 명사 하나로 화제를 바꾸는 조각문이다."},
+      {"pt": "polite-past-forms", "ko": "What might it be?는 What is it?을 might로 물린 질문으로, 공손한 척 짐짓 궁금해하며 비꼰다."}
+    ]
+  },
+  "snape-3-017": {
+    "struct": "Really... Reveal [your secret]! — 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Reveal your secret!는 양피지에 대고 내리는 명령문으로, 동사원형 reveal + 목적어 구조다."}
+    ]
+  },
+  "snape-3-018": {
+    "struct": "Read it. — 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Read it.은 동사원형 + 목적어만으로 된 가장 짧은 명령문이다."}
+    ]
+  },
+  "snape-3-019": {
+    "struct": "Go on. — 구동사 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Go on.은 구동사 go on(계속하다)을 명령문으로 쓴 것으로 ‘어서 (읽어)’라고 재촉한다."}
+    ]
+  },
+  "snape-3-020": {
+    "struct": "Why you insolent little -- — 끊긴 욕설",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Why는 ‘이런!’ 하는 감탄사이고, you insolent little ~ 같은 ‘you + 형용사 + 명사’ 꼴 욕설이 명사가 나오기 전에 끊겼다."}
+    ]
+  },
+  "snape-3-021": {
+    "struct": "Well, well. Lupin. [Out for a little walk in the moonlight], are we?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Out for a little walk ~는 (You're) out for a little walk ~에서 주어·동사를 뺀 형태다."},
+      {"pt": "tag-question", "ko": "긍정 서술 뒤에 긍정 꼬리 are we?를 붙인 같은 극성 부가의문문으로, 확인이 아니라 ‘그래, 산책 나오셨다?’라는 비꼼이다."},
+      {"pt": "pronoun-uses", "ko": "꼬리에 you 대신 we를 써서 아이를 달래듯 내려다보는 말투를 만든다."}
+    ]
+  },
+  "snape-3-022.1": {
+    "struct": "That remains [to be seen]. I've just now confiscated a rather curious artefact from Mr Potter.",
+    "notes": [
+      {"pt": "passive", "ko": "remains to be seen은 to부정사의 수동형(to be + p.p.)으로 ‘아직 두고 봐야 한다’는 뜻이다."},
+      {"pt": "present-perfect", "ko": "I've just confiscated는 방금 끝난 일을 알리는 현재완료이며, just now는 보통 과거시제와 쓰므로(I confiscated it just now) 여기서 now는 ‘바로 방금’을 덧붙인 구어적 강조다."}
+    ]
+  },
+  "snape-3-022.2": {
+    "struct": "Take a look, Lupin. This is supposed to be [your area of expertise].",
+    "notes": [
+      {"pt": "passive", "ko": "is supposed to be ~는 ‘~인 걸로 되어 있다, ~라고들 하던데’라는 뜻으로, 남들의 평판을 빌려 비꼬는 수동 표현이다."},
+      {"pt": "imperative", "ko": "Take a look은 동사 look 대신 take + a look(명사)을 쓴 명령문으로 ‘한번 보라’는 가벼운 지시다."}
+    ]
+  },
+  "snape-3-023": {
+    "struct": "Clearly, [it's full of Dark Magic].",
+    "notes": [
+      {"pt": "sentence-adverb", "ko": "Clearly,는 ‘분명히’로 문장 전체에 대한 단정을 앞세우며, It is clear that it's full of Dark Magic과 같은 뜻이다."}
+    ]
+  },
+  "snape-3-024": {
+    "struct": "Expelliarmus! — 주문",
+    "notes": [
+      {"pt": "incantation", "ko": "Expelliarmus는 expel(쫓아내다)의 뿌리인 라틴어 expellere와 arma(무기)를 합친 무장 해제 주문이라 영어 문법으로 분석하지 않는다."}
+    ]
+  },
+  "snape-3-025": {
+    "struct": "Ah, vengeance is sweet. How I hoped [I'd be the one to catch you].",
+    "notes": [
+      {"pt": "how-exclamative", "ko": "How I hoped ~는 How + 주어 + 동사 형태의 감탄문으로 ‘얼마나 ~를 바랐던가’라고 바람의 정도를 강조한다."},
+      {"pt": "reported-that-clause", "ko": "hoped가 과거라 that이 생략된 절의 will이 시제 일치로 would(I'd)가 되었다."},
+      {"pt": "to-infinitive", "ko": "the one to catch you는 to부정사가 앞 명사 the one을 꾸며 ‘너를 잡는 사람’이 된다."}
+    ]
+  },
+  "snape-3-026": {
+    "struct": "I told Dumbledore [you were helping your old friend into the castle]. And here's the proof.",
+    "notes": [
+      {"pt": "reported-that-clause", "ko": "told Dumbledore 뒤에 that이 생략되었고, 말한 시점이 과거라 that절도 과거진행 were helping으로 맞췄다."},
+      {"pt": "fronting", "ko": "here's the proof는 장소 부사 here가 앞에 나오면서 동사 is가 주어 the proof 앞으로 온 어순이다."}
+    ]
+  },
+  "snape-3-027": {
+    "struct": "Give me a reason. I beg you.",
+    "notes": [
+      {"pt": "double-object", "ko": "Give me a reason은 give + 사람 + 사물의 4형식 명령문으로, 공격할 ‘빌미를 달라’는 뜻이다."}
+    ]
+  },
+  "snape-3-028": {
+    "struct": "Listen to you two. [Quarreling like an old married couple]. The creature and the criminal.",
+    "notes": [
+      {"pt": "imperative", "ko": "Listen to you two는 명령문 형식이지만 실제로는 ‘너희 하는 말 좀 들어 봐라’라는 빈정거림으로 쓰인다."},
+      {"pt": "participle-clause", "ko": "Quarreling like ~는 (You're) quarreling like ~에서 주어·동사를 빼고 -ing구만 남긴 묘사다."},
+      {"pt": "apposition", "ko": "The creature and the criminal은 you two를 다시 가리키는 동격 명사구로, 두 사람에게 각각 꼬리표를 붙인다."}
+    ]
+  },
+  "snape-3-029.1": {
+    "struct": "Witty as ever I see. Tell me, will you be so irreverent [when I turn you over to the Dementors]?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Witty as ever I see는 (You're as) witty as ever, I see에서 주어·동사를 뺀 형태로, I see는 끝에 붙은 ‘보아하니’라는 삽입절이다."},
+      {"pt": "present-in-time-clause", "ko": "when I turn you over ~는 미래의 일이지만 시간절이라 will turn이 아닌 현재시제 turn을 쓴다."},
+      {"pt": "phrasal-verb-object", "ko": "turn you over to ~는 구동사 turn over(넘기다) 사이에 대명사 you가 들어가고, 넘기는 상대는 to 뒤에 온다."}
+    ]
+  },
+  "snape-3-029.2": {
+    "struct": "Do I detect [a flicker of fear]?",
+    "notes": [
+      {"pt": "present-simple-vs-progressive", "ko": "말하는 순간의 지각을 진행형이 아닌 단순현재 Do I detect ~?로 표현한 관용 틀로 ‘~이 감지되는데?’라는 뜻이다."},
+      {"pt": "question-word-order", "ko": "조동사 Do가 주어 I 앞에 오는 의문문인데, 자기 자신에게 묻는 척하며 상대를 비꼰다."}
+    ]
+  },
+  "snape-3-029.3": {
+    "struct": "One can only imagine [what it must be like to endure the Dementor's Kiss].",
+    "notes": [
+      {"pt": "embedded-question", "ko": "what it must be like to ~는 What must it be like to ~?가 imagine의 목적어로 들어가며 평서문 어순이 된 것으로, what ~ like는 ‘어떤 느낌인지’다."},
+      {"pt": "modal-possibility", "ko": "must be는 ‘틀림없이 ~일 것이다’라는 추론의 must다."},
+      {"pt": "dummy-it", "ko": "what it must be like to endure ~에서 it은 가주어로 뒤의 to endure ~를 가리킨다."}
+    ]
+  },
+  "snape-3-029.4": {
+    "struct": "It's said to be unbearable [to witness]. But I'll do my best.",
+    "notes": [
+      {"pt": "passive", "ko": "It's said to be ~는 ‘~라고들 한다’는 전언의 수동 표현으로, People say that it is ~와 같은 뜻이다."},
+      {"pt": "to-infinitive", "ko": "unbearable to witness는 ‘지켜보기에 견딜 수 없는’으로, 주어 It(디멘터의 입맞춤)이 witness의 목적어 역할을 하는 형용사 + to부정사 구조다."}
+    ]
+  },
+  "snape-3-030": {
+    "struct": "After you. — 관용 조각문",
+    "notes": [
+      {"pt": "ellipsis", "ko": "After you.는 (You go first, and I'll go) after you를 줄인 관용 조각문으로, 여기서는 정중함을 가장한 지시다."}
+    ]
+  },
+  "snape-3-031": {
+    "struct": "Out of the way! — 동사 없는 명령",
+    "notes": [
+      {"pt": "imperative", "ko": "Out of the way!는 (Get) out of the way!에서 동사를 빼고 전치사구만으로 내리는 명령이다."}
+    ]
+  },
+  "snape-4-001.1": {
+    "struct": "Headmaster, I, too, find it difficult [to believe this mere coincidence].",
+    "notes": [
+      {"pt": "obj-complement", "ko": "find it difficult to ~는 가목적어 it이 뒤의 to believe ~를 대신하는 5형식으로 ‘~하기가 어렵다고 느끼다’이다."},
+      {"pt": "parenthetical", "ko": "I, too,는 주어 뒤에 too를 쉼표로 끼워 ‘저 역시’를 강조한다."},
+      {"pt": "ellipsis", "ko": "believe this mere coincidence는 believe this is mere coincidence(또는 believe this to be mere coincidence)에서 동사가 빠진 구어적 표현이다."}
+    ]
+  },
+  "snape-4-001.2": {
+    "struct": "However, [if we are to truly discover the meaning of these events], perhaps we should, for the time being, let them unfold.",
+    "notes": [
+      {"pt": "be-to", "ko": "if we are to ~는 be to 용법으로 ‘(정말) ~하려면’이라는 목적을 띤 조건을 나타낸다."},
+      {"pt": "split-infinitive", "ko": "to truly discover는 truly를 to와 동사 사이에 넣은 분리 부정사다."},
+      {"pt": "obj-complement", "ko": "let them unfold는 let + 목적어 + 동사원형으로 ‘그 일들이 펼쳐지게 두다’이며, for the time being은 should와 let 사이에 끼워 넣은 삽입구다."}
+    ]
+  },
+  "snape-4-002": {
+    "struct": "Potter! What's your hurry? Congratulations, your performance in the Black Lake was inspiring. Gillyweed, am I correct?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Gillyweed, am I correct?는 (It was) gillyweed에서 주어·동사를 빼고 확인하는 꼬리를 붙인 형태다."},
+      {"pt": "tag-question", "ko": "am I correct?는 원래의 부가의문문 꼬리(wasn't it?) 대신 ‘내 말이 맞나?’를 붙인 확인 꼬리로, 형식적인 말투로 상대를 몰아붙인다."}
+    ]
+  },
+  "snape-4-003": {
+    "struct": "Ingenious. A rather rare herb, gillyweed. Not something [found in your everyday garden]. Nor is this. Know what it is?",
+    "notes": [
+      {"pt": "postmodifier", "ko": "something found in ~은 과거분사구가 something을 뒤에서 꾸며 ‘~에서 발견되는 것’이 된다."},
+      {"pt": "inversion-negative", "ko": "Nor is this.는 And this isn't (found there) either를 Nor + be + 주어 순서로 도치해 짧게 말한 것이다."},
+      {"pt": "ellipsis", "ko": "Know what it is?는 (Do you) know what it is?에서 조동사와 주어를 뺀 구어 질문이며, what it is는 간접의문문 어순이다."}
+    ]
+  },
+  "snape-4-004.1": {
+    "struct": "Veritaserum. [Three drops of this] and You-Know-Who himself will spill his darkest secrets.",
+    "notes": [
+      {"pt": "imperative-and-or", "ko": "Three drops of this and ~는 ‘명사구 + and + 결과절’로 ‘이거 세 방울이면 ~’이라는 조건을 나타낸다."},
+      {"pt": "reflexive", "ko": "You-Know-Who himself의 himself는 목적어가 아니라 ‘그 사람조차’라는 강조의 재귀대명사다."}
+    ]
+  },
+  "snape-4-004.2": {
+    "struct": "[The use of this on a student] is, regrettably, forbidden.",
+    "notes": [
+      {"pt": "nominalisation", "ko": "Using this on a student 대신 명사구 The use of this on a student를 주어로 써서 규정문처럼 들린다."},
+      {"pt": "passive", "ko": "is forbidden은 금지한 주체를 밝히지 않는 수동태로, 개인 의견이 아닌 규칙이라는 점을 내세운다."},
+      {"pt": "parenthetical", "ko": "is와 forbidden 사이에 regrettably를 쉼표로 끼워 ‘유감스럽게도’라는 짐짓 아쉬운 척을 넣었다."}
+    ]
+  },
+  "snape-4-004.3": {
+    "struct": "However, [should you ever steal from my personal stores again], my hand might just slip over your morning pumpkin juice.",
+    "notes": [
+      {"pt": "inversion-conditional", "ko": "should you ever steal ~은 If you should ever steal ~의 도치형으로 ‘혹시라도 또 ~한다면’이다."},
+      {"pt": "modal-possibility", "ko": "might just slip은 might(어쩌면) + just(그만)로 ‘우연히 미끄러질지도’라고 돌려 말하는 위협이다."}
+    ]
+  },
+  "snape-4-005.1": {
+    "struct": "Don't lie to me. [Gillyweed may be innocuous], but boomslang skin? Lacewing flies?",
+    "notes": [
+      {"pt": "concession", "ko": "Gillyweed may be innocuous, but ~은 ‘~일지는 몰라도’라고 일단 인정하는 may로, but 뒤에 반박이 온다."},
+      {"pt": "ellipsis", "ko": "but boomslang skin? Lacewing flies?는 (but what about) boomslang skin?처럼 명사만 던져 추궁하는 조각 질문이다."}
+    ]
+  },
+  "snape-4-005.2": {
+    "struct": "You and your little friends are brewing Polyjuice Potion, and believe me, I'm going to find out [why].",
+    "notes": [
+      {"pt": "shall-will", "ko": "I'm going to find out은 이미 굳게 마음먹은 의도를 나타내는 be going to다."},
+      {"pt": "embedded-question", "ko": "find out why는 why you are brewing it에서 뒤를 생략하고 의문사 why만 남긴 간접의문문이다."},
+      {"pt": "parenthetical", "ko": "believe me는 문장 중간에 끼운 삽입절로 ‘내 말 믿어라’라는 경고를 더한다."}
+    ]
+  },
+  "snape-4-006": {
+    "struct": "Polyjuice Potion. — 명사 한 마디 판정",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Polyjuice Potion.은 (This is) Polyjuice Potion.에서 주어·동사를 빼고 명사만으로 판정을 내리는 조각문이다."}
+    ]
+  },
+  "snape-5-001": {
+    "struct": "Potter, excellent. I'd like a word.",
+    "notes": [
+      {"pt": "polite-past-forms", "ko": "I'd like a word는 I want to talk to you를 would like로 정중하게 바꾼 것이지만, 실제로는 거절할 수 없는 호출이다."},
+      {"pt": "ellipsis", "ko": "Potter, excellent.는 (That's) excellent에서 주어·동사를 뺀 조각문이다."}
+    ]
+  },
+  "snape-5-002": {
+    "struct": "Sit, Potter. — 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Sit, Potter.는 Sit down보다도 짧은 동사 하나짜리 명령에 호칭을 붙여 상대를 지목한다."}
+    ]
+  },
+  "snape-5-003": {
+    "struct": "How unfortunate for you. Now kindly get out. [My instructions from Dumbledore] are to talk with Potter alone.",
+    "notes": [
+      {"pt": "how-exclamative", "ko": "How unfortunate for you.는 How unfortunate (that is) for you에서 주어·동사를 뺀 감탄문이다."},
+      {"pt": "to-infinitive", "ko": "My instructions ... are to talk ~는 to부정사가 be동사 뒤 보어로 쓰인 명사적 용법으로 ‘내 지시는 ~하는 것이다’이다."}
+    ]
+  },
+  "snape-5-004": {
+    "struct": "Very well, then. I know [how you like to pretend you're useful].",
+    "notes": [
+      {"pt": "embedded-question", "ko": "how you like to ~는 know의 목적어가 된 간접의문문으로, 여기서 how는 방법이 아니라 ‘얼마나’라는 정도를 뜻한다."},
+      {"pt": "reported-that-clause", "ko": "pretend 뒤에 that이 생략되고 you're useful이 바로 이어진다."},
+      {"pt": "to-infinitive", "ko": "like to pretend에서 to pretend는 like의 목적어인 명사적 용법이다."}
+    ]
+  },
+  "snape-5-005": {
+    "struct": "It is the Headmaster's wish [that I teach you Occlumency], Potter.",
+    "notes": [
+      {"pt": "should-subjunctive", "ko": "wish(소망) 같은 명사를 설명하는 that절은 동사원형이나 should + 동사원형을 쓰는 자리라, that I (should) teach ~로 이해한다."},
+      {"pt": "dummy-it", "ko": "It is the Headmaster's wish that ~는 가주어 It이 뒤의 that절을 가리키는 구조로, The Headmaster wants me to teach you보다 훨씬 공식적이다."},
+      {"pt": "double-object", "ko": "teach you Occlumency는 teach + 사람 + 과목의 4형식이다."}
+    ]
+  },
+  "snape-5-006.1": {
+    "struct": "Occlumency. It is an ancient form of magic [that allows you to defend your mind from external intrusion].",
+    "notes": [
+      {"pt": "relative-clause", "ko": "that allows ~는 an ancient form of magic을 꾸미는 주격 관계절이다."},
+      {"pt": "verb-obj-to", "ko": "allows you to defend는 allow + 목적어 + to부정사로 ‘네가 ~할 수 있게 해 주다’이다."}
+    ]
+  },
+  "snape-5-006.2": {
+    "struct": "We begin at six o'clock on Monday, Potter.",
+    "notes": [
+      {"pt": "shall-will", "ko": "We begin ~은 시간표처럼 정해진 일정을 현재시제로 말하는 미래 표현으로, will begin보다 확정적으로 들린다."}
+    ]
+  },
+  "snape-5-007": {
+    "struct": "Well, unlike [Sirius here], I don't have unlimited leisure time.",
+    "notes": [
+      {"pt": "postmodifier", "ko": "Sirius here는 이름 뒤에 부사 here를 붙여 ‘여기 계신 시리우스’라고 가리키는 후치 수식이다."}
+    ]
+  },
+  "snape-5-008": {
+    "struct": "How touching. Yet Potter is incredibly like his father. Criticism simply bounces off of him.",
+    "notes": [
+      {"pt": "how-exclamative", "ko": "How touching.은 How touching (that is)!에서 주어·동사를 뺀 짧은 감탄문이다."},
+      {"pt": "present-simple-vs-progressive", "ko": "bounces off는 지금 한 번이 아니라 늘 그렇다는 성질을 현재시제로 말한 것이며, off of는 미국식 구어라 영국 격식체에서는 bounces off him이 표준이다."}
+    ]
+  },
+  "snape-5-009": {
+    "struct": "[Touch me one more time], Black, and you won't touch anything again.",
+    "notes": [
+      {"pt": "imperative-and-or", "ko": "Touch me one more time, and ~는 ‘한 번만 더 손대 봐라, 그러면 ~’으로, If you touch me one more time, you won't ~와 같은 조건이다."},
+      {"pt": "no-negation", "ko": "won't touch anything처럼 부정어 뒤에서는 something이 아니라 anything을 쓴다."}
+    ]
+  },
+  "snape-5-010": {
+    "struct": "Sit, Potter. — 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "동사원형 Sit 하나로 된 명령문에 호칭을 붙인 것으로, please 없이 짧게 지시한다."}
+    ]
+  },
+  "snape-5-011.1": {
+    "struct": "As you are well aware, [I will be teaching you Occlumency].",
+    "notes": [
+      {"pt": "parenthetical", "ko": "As you are well aware는 ‘잘 알다시피’라는 삽입절로, aware 뒤에 와야 할 of it이 as에 흡수되어 빠진 형태다."},
+      {"pt": "shall-will", "ko": "I will be teaching은 미래진행형으로, 개인 의지보다 ‘정해진 일로서 ~하게 될 것’이라는 느낌을 준다."}
+    ]
+  },
+  "snape-5-011.2": {
+    "struct": "The headmaster feels [you should learn this form of magic to defend yourself against the Dark Lord], who is skilled at Legilimency.",
+    "notes": [
+      {"pt": "reported-that-clause", "ko": "feels 뒤에 that이 생략되었고, feel은 여기서 ‘~라고 생각하다’의 뜻이다."},
+      {"pt": "to-infinitive", "ko": "to defend yourself는 ‘~하기 위해’라는 목적의 부사적 용법이다."},
+      {"pt": "relative-clause", "ko": "쉼표 뒤 who is skilled ~는 the Dark Lord에 정보를 덧붙이는 계속적 용법 관계절이다."}
+    ]
+  },
+  "snape-5-012": {
+    "struct": "Legilimency is the ability [to extract thoughts and feelings from others].",
+    "notes": [
+      {"pt": "to-infinitive", "ko": "the ability to extract ~는 to부정사가 앞 명사 ability를 꾸미는 형용사적 용법으로 ‘~을 끌어내는 능력’이다."}
+    ]
+  },
+  "snape-5-013.1": {
+    "struct": "As usual, [you have all the subtlety of a stone wall], Potter.",
+    "notes": [
+      {"pt": "sentence-adverb", "ko": "As usual,은 ‘늘 그렇듯’으로 문장 전체를 꾸미는 굳은 표현이며, 부사 usually가 아니라 형용사 usual을 쓴다."}
+    ]
+  },
+  "snape-5-013.2": {
+    "struct": "The mind is not a book, [of which any page can be examined]. The mind is complex and multi-layered.",
+    "notes": [
+      {"pt": "relative-clause", "ko": "of which any page can be examined는 any page of it을 관계절로 바꾸며 전치사 of + which를 앞세운 격식 관계절로 ‘그 책의 어느 쪽이든 펼쳐 볼 수 있는’이다."},
+      {"pt": "passive", "ko": "can be examined는 조동사 + be + p.p. 형태의 수동태다."}
+    ]
+  },
+  "snape-5-014.1": {
+    "struct": "Eye contact is normally required [for Legilimency to work]. In your case, however, things are somewhat different.",
+    "notes": [
+      {"pt": "to-infinitive", "ko": "for Legilimency to work는 for + 의미상 주어 + to부정사로 ‘레질리먼시가 통하려면’이다."},
+      {"pt": "passive", "ko": "is normally required는 누가 요구하는지가 아니라 조건 자체를 말하는 수동태다."}
+    ]
+  },
+  "snape-5-014.2": {
+    "struct": "Your scar has forged [a connection between you and the Dark Lord].",
+    "notes": [
+      {"pt": "present-perfect", "ko": "has forged는 과거에 생긴 연결이 지금도 작용한다는 결과의 현재완료다."}
+    ]
+  },
+  "snape-5-014.3": {
+    "struct": "[When your mind is most relaxed, such as during sleep], you receive the Dark Lord's thoughts and feelings.",
+    "notes": [
+      {"pt": "present-simple-vs-progressive", "ko": "When ~, you receive ~는 되풀이되는 일반적 사실이라 현재시제를 쓴다."},
+      {"pt": "comparison", "ko": "most relaxed는 다른 대상과 비교하는 것이 아니라 같은 마음의 여러 상태 중 ‘가장 느슨할 때’라서 the 없이 쓴다."},
+      {"pt": "ellipsis", "ko": "such as during sleep는 such as (it is) during sleep처럼 주어·동사 없이 예를 덧붙인 것이다."}
+    ]
+  },
+  "snape-5-014.4": {
+    "struct": "The Headmaster believes that [it is inadvisable for this to continue].",
+    "notes": [
+      {"pt": "dummy-it", "ko": "it is inadvisable for this to continue는 가주어 it이 뒤의 to continue를 가리키며, for this가 to부정사의 의미상 주어다."}
+    ]
+  },
+  "snape-5-015.1": {
+    "struct": "Yes, it did, but [at the expense of our advantage].",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "it did는 해리가 말한 it helped/saved를 받아 did만 남긴 대동사로, it did (help)의 줄임이다."},
+      {"pt": "ellipsis", "ko": "but at the expense of ~는 but (it did so) at the expense of ~에서 주어·동사가 빠진 구다."}
+    ]
+  },
+  "snape-5-015.2": {
+    "struct": "The connection between you was so powerful during your vision of the snake [that the Dark Lord became aware of it].",
+    "notes": [
+      {"pt": "so-that", "ko": "so powerful ... that ~은 ‘너무 강해서 ~했다’라는 결과 구문으로, so와 that 사이에 during your vision of the snake가 끼어 있다."}
+    ]
+  },
+  "snape-5-015.3": {
+    "struct": "The Headmaster fears that he may try to use this to his advantage, [to manipulate you through false visions].",
+    "notes": [
+      {"pt": "modal-possibility", "ko": "he may try ~는 ‘~할지도 모른다’는 가능성의 may로, fears와 어울려 우려를 나타낸다."},
+      {"pt": "to-infinitive", "ko": "쉼표 뒤 to manipulate ~는 앞의 use this to his advantage를 구체적으로 풀어 주는 to부정사로 ‘즉 ~하려고’의 뜻이다."}
+    ]
+  },
+  "snape-5-016": {
+    "struct": "Wand out, Potter. — 동사 없는 명령",
+    "notes": [
+      {"pt": "imperative", "ko": "Wand out은 (Take your) wand out에서 동사를 뺀 ‘명사 + 부사’ 명령으로, Hands up!과 같은 틀이다."}
+    ]
+  },
+  "snape-5-017": {
+    "struct": "You may use [any spell you can think of] to try and repel me.",
+    "notes": [
+      {"pt": "relative-clause", "ko": "any spell (that) you can think of는 목적격 관계대명사가 생략되고 전치사 of가 끝에 홀로 남은 관계절이다."},
+      {"pt": "modal-possibility", "ko": "You may use ~는 ‘~해도 좋다’라는 허가의 may로, can보다 격식 있다."}
+    ]
+  },
+  "snape-5-018": {
+    "struct": "I am going to [break into your mind]. Legilimens!",
+    "notes": [
+      {"pt": "shall-will", "ko": "I am going to ~는 미리 정한 의도를 알리는 be going to로, 축약하지 않아 단호하게 들린다."},
+      {"pt": "incantation", "ko": "Legilimens는 라틴어 legere(읽다)와 mens(마음)를 합친 것으로 보이는 주문으로, 영어 legible(읽을 수 있는), mental(정신의)과 뿌리가 같다."}
+    ]
+  },
+  "snape-5-019": {
+    "struct": "Well, you stopped me eventually. Ideally, [you should repel me with your mind].",
+    "notes": [
+      {"pt": "present-perfect", "ko": "you stopped me eventually는 방금 끝난 시도의 과정을 eventually(결국)로 되짚는 것이라 현재완료가 아닌 과거시제가 자연스럽다."},
+      {"pt": "sentence-adverb", "ko": "Ideally,는 ‘이상적으로는’으로 문장 전체에 조건을 걸어, 지금은 그렇지 못하다는 비판을 돌려 말한다."},
+      {"pt": "advice-modals", "ko": "should repel은 ‘~해야 한다’는 당위의 should다."}
+    ]
+  },
+  "snape-5-020": {
+    "struct": "①Clear your mind, Potter. ②Abandon your emotions. Legilimens! — 명령문 나열",
+    "notes": [
+      {"pt": "imperative", "ko": "Clear ~, Abandon ~처럼 동사원형으로 시작하는 명령문 두 개를 연달아 내린다."},
+      {"pt": "parallel-structure", "ko": "두 명령이 모두 ‘동사 + your + 명사’ 꼴이라 짧고 리듬 있게 들린다."}
+    ]
+  },
+  "snape-5-021": {
+    "struct": "What was that? — 의문문",
+    "notes": [
+      {"pt": "question-word-order", "ko": "be동사 의문문이라 do 없이 의문사 What + was + 주어 that 순서로, 방금 본 장면을 가리켜 묻는다."}
+    ]
+  },
+  "snape-5-022": {
+    "struct": "Realized what, Potter? — 되묻기",
+    "notes": [
+      {"pt": "question-word-order", "ko": "Realized what?은 해리의 I've just realised...를 받아 의문사 what을 목적어 자리에 그대로 두고 되묻는 반문으로, 주어도 생략했다."}
+    ]
+  },
+  "snape-5-023": {
+    "struct": "What did you say? — 의문문",
+    "notes": [
+      {"pt": "question-word-order", "ko": "일반동사 과거 의문문이라 did가 주어 you 앞에 오고 동사는 원형 say로 돌아간다."}
+    ]
+  },
+  "snape-5-024": {
+    "struct": "There are many things in the Department of Mysteries, Potter, [none of which concern you].",
+    "notes": [
+      {"pt": "there-be", "ko": "There are many things ~는 복수 명사 things에 맞춰 are를 쓴 존재 구문이다."},
+      {"pt": "relative-clause", "ko": "none of which ~는 ‘그중 어느 것도 ~않다’로, 쉼표 뒤에서 many things를 받는 계속적 용법 관계절이다."},
+      {"pt": "no-negation", "ko": "none 뒤 동사는 단수·복수 모두 가능한데, 여기서는 여러 things를 염두에 두어 복수 concern을 썼다."}
+    ]
+  },
+  "snape-5-025": {
+    "struct": "Have you been practising, Potter?",
+    "notes": [
+      {"pt": "present-perfect", "ko": "Have you been practising?는 현재완료진행형으로 ‘(지난번부터 지금까지) 꾸준히 연습해 왔나’를 묻는다."}
+    ]
+  },
+  "snape-5-026": {
+    "struct": "Well, [we shall see], won't we?",
+    "notes": [
+      {"pt": "shall-will", "ko": "we shall see는 1인칭 주어와 쓰는 영국식 격식 미래 shall로 ‘두고 보자’는 뜻이다."},
+      {"pt": "tag-question", "ko": "shall 문장의 꼬리는 원래 shan't we?지만, 현대 영어에서는 won't we?가 더 흔하다."}
+    ]
+  },
+  "snape-5-027": {
+    "struct": "What on earth for? — 생략된 의문문",
+    "notes": [
+      {"pt": "question-word-order", "ko": "What ... for?는 ‘무엇 때문에’(= Why)로 전치사 for가 끝에 남는 의문문이며, 여기서는 (What does she want me) for?처럼 가운데가 생략되었다."}
+    ]
+  },
+  "snape-5-028": {
+    "struct": "Any idea [how he got there]?",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Any idea ~?는 (Do you have) any idea ~?에서 조동사·주어·동사를 뺀 구어 질문이다."},
+      {"pt": "embedded-question", "ko": "how he got there는 How did he get there?가 idea 뒤에 들어가며 did가 사라지고 got으로 바뀐 간접의문문이다."}
+    ]
+  },
+  "snape-5-029": {
+    "struct": "We will pick [your remedial Potions lesson] up tomorrow, Potter.",
+    "notes": [
+      {"pt": "phrasal-verb-object", "ko": "pick up(이어서 하다)의 목적어 your remedial Potions lesson이 pick과 up 사이에 들어갔는데, 이렇게 긴 명사구는 보통 뒤에 두므로(pick up your lesson) 다소 특이한 어순이다."},
+      {"pt": "shall-will", "ko": "We will ~은 말하는 사람이 지금 정해 통보하는 결정의 will이다."}
+    ]
+  },
+  "snape-5-030": {
+    "struct": "You just wait... — 주어 있는 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "You just wait는 명령문 앞에 you를 넣어 상대를 찍어 말하는 형태로 ‘두고 봐라’라는 위협이 된다."}
+    ]
+  },
+  "snape-5-031": {
+    "struct": "Semper-- — 끊긴 주문",
+    "notes": [
+      {"pt": "incantation", "ko": "Semper는 라틴어 semper(늘)와 같은 형태의 주문 조각으로, 외치다 끊긴 것이라 영어 문장으로 분석하지 않는다."}
+    ]
+  },
+  "snape-5-032": {
+    "struct": "I don't need [help from a Mudblood like her]!",
+    "notes": [
+      {"pt": "need-dare-modal", "ko": "여기 need는 조동사가 아니라 일반동사라 don't need + 명사(help)로 부정하며, 조동사 need not + 동사원형과 구별된다."},
+      {"pt": "pronoun-uses", "ko": "전치사 like 뒤라 주격 she가 아닌 목적격 her를 쓴다."}
+    ]
+  },
+  "snape-5-033": {
+    "struct": "Having fun, Potter? — 주어·조동사 생략 질문",
+    "notes": [
+      {"pt": "ellipsis", "ko": "(Are you) having fun?에서 주어와 be동사를 뺀 구어 질문으로, 짧아서 더 차갑게 들린다."}
+    ]
+  },
+  "snape-5-034": {
+    "struct": "Been enjoying yourself? — 주어·조동사 생략 질문",
+    "notes": [
+      {"pt": "ellipsis", "ko": "(Have you) been enjoying yourself?에서 조동사와 주어를 뺀 질문이다."},
+      {"pt": "present-perfect", "ko": "현재완료진행형 have been -ing로 ‘(지금까지) 계속 즐기고 있었나’라고 물어, 몰래 해 온 행동을 꼬집는다."},
+      {"pt": "reflexive", "ko": "enjoy는 목적어가 필요한 동사라 ‘즐기다’라고만 할 때도 enjoy yourself처럼 재귀대명사를 붙인다."}
+    ]
+  },
+  "snape-5-035": {
+    "struct": "Amusing man, your father... — 평가 + 꼬리 주어",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Amusing man 앞에 He was an이 생략되어 관사도 없이 명사로 시작하고, 진짜 주어 your father는 끝에 꼬리처럼 붙었다."}
+    ]
+  },
+  "snape-5-036": {
+    "struct": "You will repeat [what you saw] to no one!",
+    "notes": [
+      {"pt": "shall-will", "ko": "You will ~!는 2인칭 주어와 will로 내리는 강한 명령으로, 예측이 아니라 지시다."},
+      {"pt": "what-relative", "ko": "what you saw는 ‘네가 본 것’이라는 what 관계절로 repeat의 목적어다."},
+      {"pt": "no-negation", "ko": "to no one은 don't repeat ~ to anyone을 no로 바꾼 부정으로, 문장 끝에서 부정이 터져 더 단호하다."}
+    ]
+  },
+  "snape-5-037": {
+    "struct": "You had better not, Potter, or you will experience a pain [so horrible you will wish you had never been born]!",
+    "notes": [
+      {"pt": "imperative-and-or", "ko": "~, or you will ~는 ‘안 그러면 ~하게 될 것이다’라는 경고의 or다."},
+      {"pt": "so-that", "ko": "a pain so horrible (that) you will wish ~는 명사 뒤에 붙은 so ~ that 결과절로, that이 생략되었다."},
+      {"pt": "subjunctive-past", "ko": "wish you had never been born은 wish + 과거완료로 ‘태어나지 않았더라면’이라는 과거 사실의 반대를 바란다."}
+    ]
+  },
+  "snape-5-038": {
+    "struct": "Now get out of my sight! Do not set foot in this office ever again!",
+    "notes": [
+      {"pt": "imperative", "ko": "Do not ~ ever again은 줄이지 않은 부정 명령에 ever again을 문장 끝에 붙여 ‘다시는 절대’를 강조한다."}
+    ]
+  },
+  "snape-5-039": {
+    "struct": "You wished [to see me]? — 평서문 어순 질문",
+    "notes": [
+      {"pt": "question-word-order", "ko": "평서문 어순에 올림 억양만 붙인 확인 질문으로 ‘~하셨다고요?’에 가깝다."},
+      {"pt": "polite-past-forms", "ko": "wish to ~(~하고 싶다)를 과거형 wished로 써서 want보다 한층 공손하게 묻는다."}
+    ]
+  },
+  "snape-5-040": {
+    "struct": "Well, it appears that [I cannot help you]. I have none.",
+    "notes": [
+      {"pt": "dummy-it", "ko": "it appears that ~는 가주어 it + that절로 ‘~인 것 같다’고 돌려 말하는 격식 표현이다."},
+      {"pt": "no-negation", "ko": "I have none.은 I don't have any.를 대명사 none으로 바꾼 격식 부정이다."}
+    ]
+  },
+  "snape-5-041": {
+    "struct": "Potter, [if I want nonsense shouted at me], I shall inform you.",
+    "notes": [
+      {"pt": "obj-complement", "ko": "want + 목적어(nonsense) + 과거분사(shouted)는 ‘~이 …되기를 원하다’로, 헛소리가 나에게 고함쳐지는 수동 관계를 나타낸다."},
+      {"pt": "present-in-time-clause", "ko": "if 조건절은 앞으로의 일이라도 현재시제 want를 쓰고, 주절에 I shall이 온다."}
+    ]
+  },
+  "snape-6-001": {
+    "struct": "Run along, Wormtail. — 구동사 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Run along은 동사 + 부사로 된 구동사를 명령문으로 쓴 것으로, 아이를 내보내듯 하찮게 쫓아내는 말이다."}
+    ]
+  },
+  "snape-6-002.1": {
+    "struct": "[If the Dark Lord has forbidden it], you ought not to speak.",
+    "notes": [
+      {"pt": "advice-modals", "ko": "ought not to speak는 ought to의 부정으로, 표준 어순은 not이 ought와 to 사이에 오는 ought not to다."},
+      {"pt": "present-perfect", "ko": "has forbidden은 금지가 이미 내려져 지금도 유효하다는 뜻의 현재완료다."}
+    ]
+  },
+  "snape-6-002.2": {
+    "struct": "Put it down, Bella. We mustn't touch [what isn't ours].",
+    "notes": [
+      {"pt": "phrasal-verb-object", "ko": "Put it down에서 대명사 it은 반드시 put과 down 사이에 온다."},
+      {"pt": "what-relative", "ko": "what isn't ours는 ‘우리 것이 아닌 것’이라는 what 관계절로 touch의 목적어이며, ours는 ‘우리의 것’을 뜻하는 소유대명사다."},
+      {"pt": "pronoun-uses", "ko": "We mustn't는 실제로는 벨라를 가리키면서 we를 써서, 아이를 타이르듯 내려다보는 말투를 만든다."}
+    ]
+  },
+  "snape-6-003": {
+    "struct": "As it so happens [I'm aware of your situation], Narcissa.",
+    "notes": [
+      {"pt": "parenthetical", "ko": "As it so happens는 ‘공교롭게도’라는 문두 삽입절이며, 뒤의 본문은 be aware of + 명사(~을 알고 있다) 구조다."}
+    ]
+  },
+  "snape-6-004.1": {
+    "struct": "Your sister doubts me, Narcissa. Understandable.",
+    "notes": [
+      {"pt": "present-simple-vs-progressive", "ko": "doubt는 상태동사라 is doubting이 아니라 doubts로 지금의 상태를 말한다."},
+      {"pt": "ellipsis", "ko": "Understandable.은 (That's) understandable.에서 주어·동사를 뺀 한 단어 문장이다."}
+    ]
+  },
+  "snape-6-004.2": {
+    "struct": "Over the years I have played my part well. So well [I've deceived one of the greatest wizards of all time].",
+    "notes": [
+      {"pt": "present-perfect", "ko": "Over the years(지난 세월 동안)처럼 과거부터 지금까지의 기간을 나타내는 말과 함께 현재완료 have played를 쓴다."},
+      {"pt": "so-that", "ko": "So well (that) I've deceived ~는 앞 문장의 well을 이어받아 ‘너무 잘해서 ~했다’로 잇는 결과 구문으로, that이 생략되었고 앞 문장에 기댄 조각이라 도치도 없다."},
+      {"pt": "comparison", "ko": "one of the greatest wizards는 one of the + 최상급 + 복수명사로 ‘가장 위대한 마법사 중 하나’다."}
+    ]
+  },
+  "snape-6-004.3": {
+    "struct": "Dumbledore is a great wizard. Only a fool would [question it].",
+    "notes": [
+      {"pt": "subjunctive-past", "ko": "Only a fool would ~는 ‘(그걸 의심한다면) 그건 바보뿐일 것이다’라는 숨은 가정의 would다."},
+      {"pt": "inversion-negative", "ko": "Only가 주어 a fool을 꾸미므로 Only then did I ~ 같은 도치가 일어나지 않는다."}
+    ]
+  },
+  "snape-6-005.1": {
+    "struct": "I can't change the Dark Lord's mind.",
+    "notes": [
+      {"pt": "modal-possibility", "ko": "can't + 동사원형은 ‘~할 수 없다’는 불가능으로, 다음 문장의 it might be possible과 대비된다."}
+    ]
+  },
+  "snape-6-005.2": {
+    "struct": "But it might be possible [for me to help Draco]. To provide some... protection.",
+    "notes": [
+      {"pt": "dummy-it", "ko": "it might be possible for me to ~는 가주어 it + for 의미상 주어 + to부정사로 ‘내가 ~하는 것이 가능할지도 모른다’이다."},
+      {"pt": "modal-possibility", "ko": "might be possible은 might와 possible로 가능성을 이중으로 낮춰 아주 조심스럽게 말한다."},
+      {"pt": "to-infinitive", "ko": "To provide some protection은 앞의 to help Draco를 구체적으로 풀어 주는 to부정사를 따로 떼어 덧붙인 것이다."}
+    ]
+  },
+  "snape-6-006": {
+    "struct": "I can try. — 조동사 뒤 생략",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "I can try는 I can try (to help Draco)에서 뒤의 to부정사가 생략된 형태다."}
+    ]
+  },
+  "snape-6-007": {
+    "struct": "Take out [your wand]. — 구동사 명령문",
+    "notes": [
+      {"pt": "phrasal-verb-object", "ko": "Take out your wand는 Take your wand out으로도 쓸 수 있지만, 대명사라면 반드시 Take it out이다."},
+      {"pt": "imperative", "ko": "주어 없이 동사원형 Take로 시작하는 명령문이다."}
+    ]
+  },
+  "snape-6-008": {
+    "struct": "I will. — 조동사로 대답",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "I will.은 Will you ~ watch over Draco?의 동사구를 반복하지 않고 조동사 will만 남긴 대답이다."},
+      {"pt": "shall-will", "ko": "여기 will은 미래 예측이 아니라 ‘그러겠다’는 의지·맹세를 나타낸다."}
+    ]
+  },
+  "snape-6-009": {
+    "struct": "I will. — 조동사로 대답",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "질문 Will you ~?에 대한 대답으로, 뒤의 동사구는 반복하지 않고 조동사 will에서 멈춘다."},
+      {"pt": "shall-will", "ko": "맹세 장면의 I will은 미래 예측이 아니라 의지를 약속하는 will이다."}
+    ]
+  },
+  "snape-6-010": {
+    "struct": "I will. — 조동사로 대답",
+    "notes": [
+      {"pt": "aux-ellipsis", "ko": "세 번째 서약에도 같은 I will.로 답해, 생략된 동사구가 매번 질문 속 내용을 대신한다."},
+      {"pt": "shall-will", "ko": "will이 의지를 나타내므로 I'll로 줄이지 않고 will을 또렷하게 말한다."}
+    ]
+  },
+  "snape-6-011": {
+    "struct": "It was [his father's]. — 독립 소유격",
+    "notes": [
+      {"pt": "pronoun-uses", "ko": "his father's는 뒤의 명사(walking stick)가 생략된 독립 소유격으로 ‘그 애 아버지의 것’이다."}
+    ]
+  },
+  "snape-6-012": {
+    "struct": "It's alright, Mr Filch. I can vouch for [Mr Malfoy].",
+    "notes": [
+      {"pt": "phrasal-verb-object", "ko": "vouch for는 동사 + 전치사라 목적어 Mr Malfoy가 항상 for 뒤에 오며, 대명사여도 vouch for him이다."}
+    ]
+  },
+  "snape-6-013": {
+    "struct": "Is this it? — 의문문",
+    "notes": [
+      {"pt": "question-word-order", "ko": "be동사 Is가 주어 this 앞에 오는 의문문으로, 끝의 it은 ‘(문제의) 바로 그것’을 가리킨다."}
+    ]
+  },
+  "snape-6-014": {
+    "struct": "I think [Miss Bell is lucky to be alive].",
+    "notes": [
+      {"pt": "reported-that-clause", "ko": "I think 뒤에 that이 생략된 구조다."},
+      {"pt": "to-infinitive", "ko": "lucky to be alive는 형용사 뒤 to부정사가 ‘~하다니’라는 판단의 근거를 나타내는 부사적 용법이다."}
+    ]
+  },
+  "snape-6-015": {
+    "struct": "Indeed. Your evidence? — 조각 질문",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Your evidence?는 (What is) your evidence?에서 의문사와 동사를 빼고 명사만 남겨 날카롭게 따지는 질문이다."}
+    ]
+  },
+  "snape-6-016.1": {
+    "struct": "You... just... know. Once again you astonish with your gifts, Potter, [gifts mere mortals could only dream of possessing].",
+    "notes": [
+      {"pt": "apposition", "ko": "쉼표 뒤 gifts mere mortals ~는 앞의 your gifts를 다시 받아 설명을 덧붙이는 동격 명사구다."},
+      {"pt": "relative-clause", "ko": "gifts (that) mere mortals could only dream of possessing에서 관계대명사가 생략되었고, 앞의 gifts는 possessing의 목적어 자리에서 온 것이다."},
+      {"pt": "gerund", "ko": "dream of possessing처럼 전치사 of 뒤에는 동명사가 온다."}
+    ]
+  },
+  "snape-6-016.2": {
+    "struct": "How grand it must be [to be the Chosen One].",
+    "notes": [
+      {"pt": "how-exclamative", "ko": "It must be grand to ~에서 How + 형용사 grand를 앞으로 보낸 감탄문이다."},
+      {"pt": "dummy-it", "ko": "it은 가주어로 뒤의 to be the Chosen One을 가리킨다."},
+      {"pt": "modal-possibility", "ko": "must be는 ‘틀림없이 ~하겠지’라는 추론인데, 여기서는 빈정거림으로 쓰였다."}
+    ]
+  },
+  "snape-6-017": {
+    "struct": "What's going on back here?",
+    "notes": [
+      {"pt": "question-word-order", "ko": "What이 주어인 의문문이라 do 없이 What + is going on 순서다."},
+      {"pt": "present-simple-vs-progressive", "ko": "is going on은 지금 눈앞에서 벌어지는 일을 묻는 현재진행형이다."}
+    ]
+  },
+  "snape-6-018": {
+    "struct": "You've just bought [yourself] [a month's detention], McLaggen.",
+    "notes": [
+      {"pt": "present-perfect", "ko": "have just + p.p.는 ‘방금 ~했다’로, 막 일어난 일이 지금의 결과(징계)로 이어짐을 나타낸다."},
+      {"pt": "double-object", "ko": "bought yourself a month's detention은 buy + 사람 + 사물의 4형식에서 사람 자리에 재귀대명사가 들어가 ‘스스로 ~을 자초했다’가 된다."}
+    ]
+  },
+  "snape-6-019": {
+    "struct": "Not so quick, Potter. — 동사 없는 제지",
+    "notes": [
+      {"pt": "ellipsis", "ko": "Not so quick은 (Don't go) so quick(ly)처럼 동사를 뺀 제지로, quick을 부사처럼 쓴 구어 표현이며 관용적으로는 Not so fast가 더 흔하다."}
+    ]
+  },
+  "snape-6-020": {
+    "struct": "... can surely survive your absence for another minute or two. Besides, I only wish [to convey a message].",
+    "notes": [
+      {"pt": "sentence-adverb", "ko": "Besides,는 ‘게다가’로 앞 문장에 이유를 하나 더 얹는 연결 부사다."},
+      {"pt": "to-infinitive", "ko": "wish to convey는 want to의 격식형 wish to + 동사원형으로, to부정사가 목적어 역할을 한다."}
+    ]
+  },
+  "snape-6-021.1": {
+    "struct": "From Professor Dumbledore. He asked [①that I give you his best and ②that he hopes you enjoy your holiday].",
+    "notes": [
+      {"pt": "should-subjunctive", "ko": "요청의 ask 뒤 that절이라 asked가 과거인데도 gave가 아닌 동사원형 give를 쓴 가정법 현재(that I (should) give)다."},
+      {"pt": "parallel-structure", "ko": "두 that절이 and로 이어지지만 둘째 절은 요청이 아니라 전달하는 내용이라 평서형 hopes를 쓴, 구어에서 흔한 느슨한 병렬이다."},
+      {"pt": "ellipsis", "ko": "From Professor Dumbledore.는 (This is) from ~에서 주어·동사를 뺀 조각문이다."}
+    ]
+  },
+  "snape-6-021.2": {
+    "struct": "You see, he's travelling and won't return [until term resumes].",
+    "notes": [
+      {"pt": "present-in-time-clause", "ko": "until term resumes는 미래의 일이지만 시간절이라 will resume이 아닌 현재 resumes를 쓰며, won't ... until ~은 ‘~이 되어서야 돌아온다’는 뜻이다."},
+      {"pt": "parenthetical", "ko": "You see,는 ‘그게 말이지’라고 설명을 시작하는 문두 삽입절이다."},
+      {"pt": "present-simple-vs-progressive", "ko": "he's travelling은 지금 일시적으로 진행 중인 상황을 나타내는 현재진행형이다."}
+    ]
+  },
+  "snape-6-022": {
+    "struct": "I'll escort him out.",
+    "notes": [
+      {"pt": "shall-will", "ko": "I'll ~은 그 자리에서 내리는 결정·제안의 will로, 자신이 하겠다고 나서는 말이다."},
+      {"pt": "phrasal-verb-object", "ko": "escort out 사이에 대명사 him이 들어가 escort him out이 된다."}
+    ]
+  },
+  "snape-6-023": {
+    "struct": "I swore [to protect you]. I made the Unbreakable Vow --",
+    "notes": [
+      {"pt": "to-infinitive", "ko": "swear to + 동사원형은 ‘~하겠다고 맹세하다’로, to protect가 swore의 목적어인 명사적 용법이다."},
+      {"pt": "present-perfect", "ko": "swore, made는 맹세한 그 특정 순간을 가리키므로 현재완료가 아닌 과거시제다."}
+    ]
+  },
+  "snape-6-024": {
+    "struct": "You're afraid, Draco. You attempt [to conceal it], but it's obvious. Let me assist you --",
+    "notes": [
+      {"pt": "to-infinitive", "ko": "attempt to conceal은 attempt + to부정사(목적어)로 try to hide의 격식형이다."},
+      {"pt": "present-simple-vs-progressive", "ko": "구어라면 You're trying to hide it처럼 진행형이 자연스러운데, 단순현재 attempt를 써서 단정적이고 문어적으로 들린다."},
+      {"pt": "obj-complement", "ko": "Let me assist you는 let + 목적어(me) + 동사원형으로 ‘내가 ~하게 해 다오’, 즉 ‘도와주마’다."}
+    ]
+  },
+  "snape-6-025.1": {
+    "struct": "Have you ever considered [①that you ask too much]? [②That you take too much for granted]?",
+    "notes": [
+      {"pt": "present-perfect", "ko": "Have you ever considered ~?는 ‘~해 본 적이 있나’라는 경험의 현재완료다."},
+      {"pt": "parallel-structure", "ko": "두 번째 That you take ~?는 앞 질문의 Have you ever considered를 반복하지 않고 that절만 나란히 덧붙인 것이다."}
+    ]
+  },
+  "snape-6-025.2": {
+    "struct": "Has it ever crossed your brilliant mind [that I don't want to do this anymore]?",
+    "notes": [
+      {"pt": "dummy-it", "ko": "it은 가주어로 뒤의 that I don't want ~를 가리키며, ‘~라는 생각이 머리를 스친 적이 있나’가 된다."},
+      {"pt": "present-perfect", "ko": "Has it ever + p.p.?는 지금까지의 경험을 묻는 현재완료다."}
+    ]
+  },
+  "snape-6-026": {
+    "struct": "No. — 한 단어 문장",
+    "notes": [
+      {"pt": "ellipsis", "ko": "No.는 앞 사람의 말에 맞서 문장 전체를 대신하는 한 단어 문장이다."}
+    ]
+  },
+  "snape-6-027": {
+    "struct": "①I gave my word. ②I made a vow...",
+    "notes": [
+      {"pt": "present-perfect", "ko": "gave, made는 맹세한 그 특정 순간을 가리키는 과거시제로, ‘이미 약속해 버렸다’는 사실을 짧게 못 박는다."},
+      {"pt": "parallel-structure", "ko": "‘I + 과거동사 + 목적어’ 꼴의 짧은 두 문장을 나란히 놓아 무게를 더한다."}
+    ]
+  },
+  "snape-6-028": {
+    "struct": "Avada Kedavra! — 주문",
+    "notes": [
+      {"pt": "incantation", "ko": "Avada Kedavra는 작가 롤링이 아브라카다브라의 원형이 된 아람어 주문이라고 설명한 말로, 영어 문법으로 분석하지 않는다."}
+    ]
+  },
+  "snape-6-029": {
+    "struct": "You can no longer stay here.",
+    "notes": [
+      {"pt": "no-negation", "ko": "can no longer stay는 can't stay here any more의 격식형으로, no longer가 조동사 can 바로 뒤에 온다."}
+    ]
+  },
+  "snape-6-030": {
+    "struct": "Go on! — 구동사 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "Go on!은 구동사 go on을 명령으로 써서 ‘어서 가라’고 재촉한다."}
+    ]
+  },
+  "snape-6-031": {
+    "struct": "Go on! — 구동사 명령문",
+    "notes": [
+      {"pt": "imperative", "ko": "같은 명령을 되풀이해, 동사원형 하나짜리 명령문만으로 다급함을 키운다."}
+    ]
+  },
+  "snape-6-032": {
+    "struct": "Don't ever associate [①that word and ②my name] again.",
+    "notes": [
+      {"pt": "imperative", "ko": "Don't ever ~ again은 부정 명령에 ever를 넣어 ‘다시는 절대 ~하지 마라’로 강하게 만든다."}
+    ]
+  },
+  "snape-6-033": {
+    "struct": "No! He belongs to [the Dark Lord]!",
+    "notes": [
+      {"pt": "present-simple-vs-progressive", "ko": "belong은 상태동사라 is belonging이 아니라 belongs로 쓴다."},
+      {"pt": "ellipsis", "ko": "No!는 상대의 공격을 막는 문장 전체를 대신하는 한 단어 외침이다."}
+    ]
+  },
+  "snape-6-034": {
+    "struct": "You dare [use my own spells against me], Potter?",
+    "notes": [
+      {"pt": "need-dare-modal", "ko": "You dare use ~?는 dare를 조동사처럼 써서 to 없이 동사원형 use가 오며, ‘감히 ~하느냐’는 분노의 표현이다."},
+      {"pt": "question-word-order", "ko": "Do you dare ~? 대신 평서문 어순에 올림 억양을 붙여 놀람과 분노를 드러낸다."}
+    ]
+  },
+  "snape-6-035.1": {
+    "struct": "[You may have gotten your mother's eyes], but you're as dim as your father.",
+    "notes": [
+      {"pt": "concession", "ko": "may have + p.p. ~, but ~은 ‘~을 물려받았을지는 몰라도’라고 일단 인정한 뒤 반박하는 양보 구문이다."},
+      {"pt": "comparison", "ko": "as dim as your father는 as + 형용사 + as로 ‘네 아버지만큼이나 둔한’이다."}
+    ]
+  },
+  "snape-6-035.2": {
+    "struct": "Yes. It's me. I'm the Half-Blood Prince.",
+    "notes": [
+      {"pt": "pronoun-uses", "ko": "It's me는 be동사 뒤에 목적격 me를 쓴 현대 표준형으로, 문법책식 It is I는 지나치게 딱딱하게 들린다."}
+    ]
+  },
+  "snape-7-001": {
+    "struct": "It will happen Saturday next. At nightfall.",
+    "notes": [
+      {"pt": "passive", "ko": "happen은 목적어를 받지 않는 자동사라 will be happened처럼 수동태로 쓸 수 없고, It will happen이 맞다."},
+      {"pt": "ellipsis", "ko": "At nightfall.은 (It will happen) at nightfall에서 앞부분을 생략하고 시각만 덧붙인 조각문이다."}
+    ]
+  },
+  "snape-7-002": {
+    "struct": "-- from [the source we discussed].",
+    "notes": [
+      {"pt": "relative-clause", "ko": "the source (that) we discussed는 목적격 관계대명사가 생략된 관계절이며, discuss는 타동사라 discussed about이라고 하지 않는다."}
+    ]
+  },
+  "snape-7-003.1": {
+    "struct": "This is a false trail. The Auror Office no longer plays any part in [the protection of Harry Potter].",
+    "notes": [
+      {"pt": "no-negation", "ko": "no longer가 이미 부정이므로 뒤에 some이 아닌 any part를 써서 ‘더 이상 어떤 역할도 하지 않는다’가 된다."},
+      {"pt": "nominalisation", "ko": "protecting Harry Potter 대신 the protection of Harry Potter라는 명사구를 써서 보고서 같은 공식 어조가 된다."}
+    ]
+  },
+  "snape-7-003.2": {
+    "struct": "[Those closest to him] believe [we have infiltrated the Ministry].",
+    "notes": [
+      {"pt": "postmodifier", "ko": "Those closest to him은 those(사람들) 뒤에 형용사구 closest to him이 붙은 것으로, those who are closest to him의 줄임이다."},
+      {"pt": "reported-that-clause", "ko": "believe 뒤에 that이 생략되었고, have infiltrated는 침투가 이미 이루어졌다고 믿는다는 현재완료다."}
+    ]
+  },
+  "snape-7-004.1": {
+    "struct": "To a safehouse. Likely [the home of someone in the Order].",
+    "notes": [
+      {"pt": "ellipsis", "ko": "To a safehouse.는 (He will be moved) to a safehouse에서 앞을 생략하고 행선지만 답한 조각문이다."},
+      {"pt": "sentence-adverb", "ko": "Likely는 ‘아마’라는 문장 부사로 쓰였는데, 이렇게 단독으로 쓰는 것은 미국식에 가깝고 영국 격식체에서는 most likely나 probably가 더 자연스럽다."}
+    ]
+  },
+  "snape-7-004.2": {
+    "struct": "I'm told [it has been given every manner of protection possible]. Once there, it will be impractical to attack him.",
+    "notes": [
+      {"pt": "passive", "ko": "I'm told ~는 ‘~라고 들었다’는 전언의 수동이고, it has been given ~은 give의 간접목적어(it)를 주어로 삼은 현재완료 수동태다."},
+      {"pt": "postmodifier", "ko": "every manner of protection possible은 형용사 possible을 명사 뒤에 둔 후치 수식으로 ‘가능한 모든 종류의 보호’다."},
+      {"pt": "ellipsis", "ko": "Once there는 Once (he is) there에서 주어와 be동사를 뺀 축약 부사절이다."}
+    ]
+  },
+  "snape-7-004.3": {
+    "struct": "[We may have compromised the Ministry], but there are [those who remain loyal to him].",
+    "notes": [
+      {"pt": "concession", "ko": "may have + p.p. ~, but ~은 ‘~했을지는 몰라도’라고 인정한 뒤 반대 사실을 내세우는 양보 구문이다."},
+      {"pt": "postmodifier", "ko": "there are those who ~는 ‘~하는 자들이 있다’로, those 뒤에 관계절 who remain loyal ~이 붙어 사람들을 가리킨다."}
+    ]
+  },
+  "snape-7-004.4": {
+    "struct": "[As long as the Ministry stands], his allies within will have the means at their disposal [to insure his safety].",
+    "notes": [
+      {"pt": "present-in-time-clause", "ko": "As long as ~는 ‘~하는 한’이라는 조건 접속사라 미래의 일이라도 현재시제 stands를 쓴다."},
+      {"pt": "postmodifier", "ko": "his allies within은 부사 within을 명사 뒤에 두어 ‘(마법부) 내부의 동조자들’이라고 꾸민다."},
+      {"pt": "to-infinitive", "ko": "the means ... to insure his safety는 to부정사가 means를 꾸며 ‘~을 지킬 수단’이 되며, 영국 격식체라면 보통 insure 대신 ensure를 쓴다."}
+    ]
+  }
+}

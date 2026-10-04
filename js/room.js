@@ -16,6 +16,7 @@ import * as speech from './speech.js';
 import {$, $$, esc, wait, toast, fitPaper, paintWall, openSheet, isSheetOpen, closeSheet, reduced} from './ui.js';
 import {bakeLive, texturize} from './bake.js';
 import {hint} from './hints.js';
+import * as grammar from './grammar.js';
 
 /* Room art: every deck has a painted room, assets/rooms/<id>-portrait.webp (phones) and -wide.webp (wide screens).
    The drawn stone wall below is only the fallback while a painting is missing. */
@@ -311,6 +312,7 @@ export function initRoom(app){
     $('#sLineLab').textContent = mode === 'learn' ? `${deck.ko}는 이렇게 말한다` : (mode === 'recall' || mode === 'pick') ? '실제 대사' : '';
     $('#sKo').textContent = card.ko;
     $('#sBre').innerHTML = card.bre.map((b, i) => `<button type="button" data-bre="${i}"><b>${esc(b.expr)}</b><span class="k">${esc(b.kind)}</span><span class="go" aria-hidden="true">›</span></button>`).join('');
+    $('#sGram').hidden = !grammar.has(deck.id, card.id);
     const parts = $('#sParts');
     parts.hidden = !(card.of > 1);
     parts.textContent = `발화 전체 보기 (${card.part} / ${card.of})`;
@@ -543,6 +545,7 @@ export function initRoom(app){
   $('#arrGive').addEventListener('click', () => { if (mode === 'arrange' && !answered && !busy) checkArrange(true); });
   $('#sBre').addEventListener('click', e => { const b = e.target.closest('[data-bre]'); if (b) breSheet(+b.dataset.bre); });
   $('#sParts').addEventListener('click', partsSheet);
+  $('#sGram').addEventListener('click', () => grammar.cardSheet(deck.id, card));
   bellBtn.addEventListener('click', say);
   $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = deck && deck.id; app.go('#/'); });
   document.addEventListener('keydown', e => {
@@ -566,7 +569,7 @@ export function initRoom(app){
     $('#rTitle').textContent = d.room;
     room.setAttribute('aria-label', `${d.ko}의 교실`);
     wall();
-    try { [cards, practice, examples] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id)]); }
+    try { [cards, practice, examples] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id), grammar.load(d.id)]); }
     catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go('#/', true); return; }
     map = Object.fromEntries(cards.map(c => [c.id, c]));
     day = srs.session(d.id, cards);

@@ -1207,3 +1207,29 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ad-slip .sig{margin:6px 4px 0 0;text-align:right;font:italic 18px var(--f-display);color:#5B4A33}
 .ad-slip .sh-drill{display:block;margin:2px auto 0}
 @media (prefers-reduced-motion: reduce){ .ad-slip,.ad-note{transition:none} }
+
+/* ================================================================ grammar and sentence structure (js/grammar.js) */
+.gr-struct{margin:6px 0 14px;padding:10px 12px;border-left:3px solid rgba(122,26,18,.45);background:rgba(255,250,235,.35);
+  font:italic 400 calc(19px * var(--k, 1))/1.5 var(--f-display);color:var(--ink)}
+.gr-struct .gr-br{font-style:normal;color:#7A1A12;font-weight:700;padding:0 1px}
+.gr-struct .gr-no{font-style:normal;color:#7A1A12;font-size:.85em;margin-right:2px}
+.gr-notes{list-style:none;margin:0;padding:0;counter-reset:gr}
+.gr-notes li{margin:0 0 12px;padding:0 0 10px;border-bottom:1px solid rgba(60,40,20,.12)}
+.gr-notes li:last-child{border-bottom:0}
+.gr-notes p{margin:4px 0 0;font-size:14.5px;line-height:1.65;color:var(--ink)}
+.gr-pt{min-height:36px;padding:2px 10px;background:rgba(122,26,18,.07);border:1px solid rgba(122,26,18,.35);border-radius:14px;font:600 13px var(--f-ko);color:#7A1A12;cursor:pointer}
+.gr-pt:hover{background:rgba(122,26,18,.13)}
+.gr-pattern{margin:0 0 8px;font:italic 400 17px/1.4 var(--f-display);color:#7A1A12}
+.gr-h{margin:16px 0 6px;font:600 13px var(--f-ko);letter-spacing:.04em;color:var(--ink-soft)}
+.gr-uses{list-style:none;margin:0;padding:0}
+.gr-uses li{display:flex;flex-direction:column;gap:2px;padding:8px 0;border-top:1px solid rgba(60,40,20,.12)}
+.gr-uses .who{font-size:11.5px;color:var(--ink-soft)}
+.gr-uses .en{font:italic 400 16.5px/1.4 var(--f-display);color:var(--ink)}
+.gr-uses .kr{font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.gr-cat{list-style:none;margin:4px 0 0;padding:0;border-top:1px solid rgba(60,40,20,.18)}
+.gr-cat li{border-bottom:1px solid rgba(60,40,20,.12)}
+.gr-cat button{display:grid;grid-template-columns:1fr auto;gap:2px 10px;width:100%;min-height:52px;padding:8px 2px;background:none;border:0;text-align:left;cursor:pointer;color:var(--ink)}
+.gr-cat b{font:600 15px var(--f-ko)}
+.gr-cat span{grid-column:1;font:italic 400 14.5px var(--f-display);color:var(--ink-soft)}
+.gr-cat i{grid-column:2;grid-row:1 / span 2;align-self:center;font:italic 15px var(--f-display);color:#7A1A12}
+.gr-cat button:hover b{text-decoration:underline;text-decoration-color:rgba(122,26,18,.4);text-underline-offset:3px}

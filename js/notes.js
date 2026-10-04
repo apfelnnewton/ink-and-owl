@@ -5,6 +5,7 @@
    It opens on the professor whose door you were standing at; the row of names at the top switches to any other. */
 import {DECKS, LOCKED, byId} from './decks.js';
 import * as store from './store.js';
+import * as grammar from './grammar.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
 /* the data's kinds are fine-grained (about ninety); the notebook groups them into a handful */
@@ -127,6 +128,7 @@ export function initNotes(app){
   $('#notesBack').addEventListener('click', () => app.go('#/'));
   $('#notesScript').addEventListener('click', () => app.go('#/script/' + deck.id));
   $('#notesPrint').addEventListener('click', printSheet);
+  $('#notesGram').addEventListener('click', () => grammar.catalogue(deck.id));
 
   /* ---------- a worksheet for paper: the starred expressions (or, with none starred, every learnt one), each with its
      note, then two gap-fill sentences per expression with four choices, and an answer key at the end */
