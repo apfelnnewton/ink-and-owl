@@ -15,8 +15,6 @@ import {$, esc, toast, reduced} from './ui.js';
 
 const OVERLAP = .09;                       // each section shares its outer 9% of wall with the next
 const ART = id => `assets/corridor/${id}`;
-const EYEBROW = {me: 'Your Room · The Tower', snape: 'Potions · The Dungeons', mcgonagall: 'Transfiguration', lupin: 'Defence · 1993', moody: 'Defence · 1994',
-  umbridge: 'Defence · 1995', dumbledore: 'The Headmaster', slughorn: 'Potions · 1996'};
 /* the first door is your own: the guest room at the top of the tower, where the letters and the professors' gifts are kept */
 const ME = {id: 'me', me: true, who: 'The Guest Room', ko: '내 방', where: '탑 꼭대기 손님 방 · 편지 · 차 일지 · 선물', glow: '#9FB7E0'};
 const DOORS = [ME, ...DECKS];
@@ -90,9 +88,7 @@ export function initHome(app){
   function describe(swap){
     const d = DOORS[cur], st = status(d), go = $('#cgo');
     const fill = () => {
-      $('#cey').textContent = EYEBROW[d.id] || '';
       $('#cwho').textContent = d.who;
-      $('#cwhere').textContent = d.where;
       let stats = '', line = '', label = '교실로 들어가기', locked = !st.open, report = false;
       if (st.me){
         /* your own door: what the owls have left and how full the drawers are */
