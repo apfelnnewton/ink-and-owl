@@ -109,7 +109,7 @@ route();
 if (!store.get().settings.named) setTimeout(() => askName(() => setTimeout(() => app.owlCheck(), 2600)), 900);
 setInterval(() => app.owlCheck(), 30000);
 /* the friends' post office (Firebase) opens only for a phone in a group; a letter landing brings the owl */
-post.onChange(() => { app.refreshMail(); app.owlCheck(); });
+post.onChange(() => { bond.newsLetter().then(() => app.refreshMail()); app.refreshMail(); app.owlCheck(); });
 setTimeout(() => post.start(), 1500);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) app.owlCheck(); });
 

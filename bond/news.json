@@ -1,0 +1,204 @@
+{
+  "snape": {
+    "door": [
+      {"en": "Your friend {friend} came down to my dungeon today and opened the door without being dragged. Your friend chose a seat near the back, which I noted, and touched not a single jar on the shelves, which I also noted. We shall see whether it lasts.",
+       "ko": "네 친구 {friend} 말이다. 오늘 끌려오지도 않고 제 발로 내 지하 교실 문을 열더군. 뒷자리를 골라 앉은 것도, 선반의 병을 하나도 건드리지 않은 것도 기억해 두었다. 오래가는지 두고 보지."},
+      {"en": "{friend} has begun lessons in my classroom. I have seen more promising starts, and a great many worse ones. Tell your friend that the cauldrons are not for leaning on.",
+       "ko": "{friend}의 첫 수업이 오늘 내 교실에서 있었다. 더 나은 출발도 봤지만, 훨씬 못한 출발은 그보다 많이 봤지. 네 친구에게 전해라. 솥은 기대는 물건이 아니라고."}
+    ],
+    "stage": [
+      {"en": "I am informed that {friend} and I are now, apparently, on good terms. I would not go that far. I will admit that your friend no longer flinches when I sweep past the desks, and that is something.",
+       "ko": "{friend}하고 내가 이제 사이가 좋다는 말이 들리더군. 그렇게까지 말할 생각은 없다. 다만 내가 책상 사이를 지나가도 네 친구가 더는 움찔하지 않는다는 건 인정하지. 그 정도면 됐다."},
+      {"en": "{friend} has earned a measure of my tolerance. It is not easily given. Last week your friend stayed behind to scrub the cauldrons without being asked, which almost no one does.",
+       "ko": "{friend}에게는 내 인내를 조금 내어 주기로 했다. 쉽게 주는 게 아니다. 지난주에 네 친구는 시키지도 않았는데 남아서 솥을 닦더군. 그런 자는 거의 없다."}
+    ],
+    "learnt": [
+      {"en": "{friend} has learnt every line in my classroom. I checked twice. Do not tell your friend I was impressed; I was merely unable to find fault.",
+       "ko": "{friend}의 공책에 이제 빈칸이 없다. 내 교실의 대사를 전부 익혔더군, 두 번 확인했다. 내가 감탄했다고 전하지는 마라. 흠을 찾지 못했을 뿐이니."},
+      {"en": "Every line in my dungeon, learnt. {friend} recited the last of them over a simmering cauldron and did not miss a word. Adequate. More than adequate, if I am honest, which I rarely am about such things.",
+       "ko": "내 지하 교실의 대사가 전부 끝났다. {friend}의 마지막 낭송은 끓는 솥 앞에서였는데, 한 단어도 놓치지 않더군. 쓸 만하다. 솔직히 말하면 그 이상이지만, 그런 말은 좀처럼 하지 않는다."}
+    ],
+    "bday": [
+      {"en": "It is {friend}'s birthday today, I am told. I do not celebrate birthdays, mine or anyone else's. You may, however, pass on my regards, and tell your friend there will be no homework tonight. Do not make a habit of expecting this.",
+       "ko": "오늘이 {friend}의 생일이라더군. 나는 생일 따위 챙기지 않는다만, 네가 내 안부를 전하는 건 막지 않겠다. 오늘 밤은 숙제도 없다고 전해라. 버릇 들이지는 말고."},
+      {"en": "{friend}'s birthday. The house-elves have been baking since dawn, and the smell has reached even the dungeons. Wish your friend many happy returns from me. Briefly.",
+       "ko": "{friend}의 생일이다. 집요정들이 새벽부터 뭘 굽는 통에 그 냄새가 지하 교실까지 내려왔다. 내 몫으로도 축하한다고 전해라. 짧게."}
+    ]
+  },
+  "mcgonagall": {
+    "door": [
+      {"en": "Your friend {friend} arrived at my classroom this morning, on time and with a quill already sharpened. We have begun lessons in earnest. A sensible beginning; I expect it to continue.",
+       "ko": "네 친구 {friend} 말이다. 오늘 아침 내 교실에 제시간에, 깃펜까지 미리 깎아서 왔다. 본격적으로 수업을 시작했어. 현명한 시작이다. 계속 이어 가리라 기대하지."},
+      {"en": "{friend} has opened my classroom door and taken a seat in the front row, which I appreciate. We began with the fundamentals, as one always should. Tell your friend that the tabby cat on my desk is not a decoration.",
+       "ko": "{friend}도 오늘 내 교실 문을 열고 맨 앞줄에 앉았더군, 마음에 드는 선택이다. 언제나 그래야 하듯 기초부터 시작했다. 네 친구에게 전해라. 내 책상 위 얼룩 고양이는 장식품이 아니라고."}
+    ],
+    "stage": [
+      {"en": "I find that {friend} and I have come to understand one another rather well. Your friend now stays after class to tidy the desks, unprompted. I do not say this often, so do take note of it.",
+       "ko": "{friend}하고 나는 이제 서로를 꽤 잘 이해하게 됐다. 네 친구는 요즘 시키지 않아도 수업이 끝나면 남아서 책상을 정리하지. 이런 말은 자주 하지 않으니, 잘 새겨 두도록."},
+      {"en": "{friend} has earned a biscuit from the tartan tin on my desk. I do not hand those out lightly. Your friend has been diligent, and diligence deserves acknowledgement.",
+       "ko": "{friend}에게 내 책상 위 타탄 무늬 깡통의 비스킷을 하나 주었다. 아무에게나 주는 게 아니야. 네 친구는 성실했고, 성실함은 인정받아야 하는 법이다."}
+    ],
+    "learnt": [
+      {"en": "{friend} has learnt every line in my classroom, start to finish. I set a short test to be certain, and your friend passed it without hesitation. Well done indeed, and you may say I said so.",
+       "ko": "{friend}에게 이제 내 교실에서 배울 대사가 하나도 남지 않았다. 확인하려고 짧은 시험을 냈는데, 망설임 없이 통과하더군. 정말 잘했다고, 내가 그렇게 말했다고 전해도 좋다."},
+      {"en": "Every line in my classroom, mastered. {friend} recited the last of them without once glancing at the book. That is precisely the standard I hoped for, and your friend has met it.",
+       "ko": "내 교실의 대사를 전부 익혔다. {friend} 얘기다. 마지막 대사는 책을 한 번도 보지 않고 외우더군. 내가 바라던 기준이 바로 그거였고, 네 친구는 그걸 해냈다."}
+    ],
+    "bday": [
+      {"en": "It is {friend}'s birthday today. I have asked the kitchens to send up a slice of treacle tart, and I expect it to be eaten, not merely admired. Please give your friend my warmest wishes.",
+       "ko": "오늘이 {friend}의 생일이다. 부엌에 당밀 타르트 한 조각을 올려 보내라고 일러 두었다. 감상만 하지 말고 꼭 먹으라고 해. 네 친구에게 내 따뜻한 축하를 전해 주었으면 한다."},
+      {"en": "{friend}'s birthday, I understand. Birthdays are no excuse for slackness, but they are an excellent excuse for ginger newts, and I have set a tin aside. Many happy returns to your friend.",
+       "ko": "{friend}의 생일이라고 들었다. 생일이라고 해이해져도 된다는 건 아니지만, 생강 영원 비스킷을 먹을 핑계로는 아주 훌륭하단다. 한 통 따로 챙겨 두었어. 네 친구에게 생일 축하한다고 전해라."}
+    ]
+  },
+  "lupin": {
+    "door": [
+      {"en": "Your friend {friend} knocked on my classroom door today and stayed for a first lesson. We had tea, and I may have talked too long about grindylows. I think your friend will do very well here.",
+       "ko": "오늘 네 친구 {friend}의 노크 소리가 내 교실 문에서 들렸단다. 첫 수업을 함께했지. 차를 마시면서 그린딜로 이야기를 너무 오래 늘어놓은 것 같기도 하구나. 네 친구는 여기서 아주 잘 해낼 거야."},
+      {"en": "{friend} has started lessons with me. There was a little nervousness at first, which I quite understand, but it passed quickly. I've put an extra bar of chocolate in the desk drawer, just in case.",
+       "ko": "{friend}의 첫 수업이 오늘 내 교실에서 있었단다. 처음엔 조금 긴장한 것 같았는데, 충분히 이해해. 금방 괜찮아지더구나. 혹시 몰라서 책상 서랍에 초콜릿을 하나 더 넣어 두었지."}
+    ],
+    "stage": [
+      {"en": "I wanted to tell you that {friend} and I have become good friends. We talk over tea after lessons now, mostly about books, occasionally about boggarts. Your friend is very easy company.",
+       "ko": "{friend}하고 나는 이제 좋은 친구가 되었단다. 요즘은 수업이 끝나면 차를 마시며 이야기를 나누지. 대개는 책 이야기고, 가끔은 보가트 이야기야. 네 친구는 함께 있으면 참 편한 사람이구나."},
+      {"en": "{friend} has grown rather dear to me, I find. Your friend has a way of asking the question everyone else is too shy to ask, and I admire that. Do say hello from me.",
+       "ko": "{friend}에게 어느새 정이 많이 들었구나. 네 친구는 다들 쑥스러워서 못 하는 질문을 꼭 해 주는데, 나는 그게 참 좋더구나. 내 안부도 전해 주렴."}
+    ],
+    "learnt": [
+      {"en": "{friend} has learnt every line in my classroom. I listened to the last few read aloud by the window, and I confess I was rather moved. Please tell your friend how proud I am.",
+       "ko": "{friend}에게 이제 내 교실에서 배울 대사가 하나도 남지 않았단다. 창가에서 마지막 몇 줄을 소리 내어 읽는 걸 들었는데, 고백하자면 꽤 뭉클했어. 내가 얼마나 자랑스러워하는지 네 친구에게 전해 주렴."},
+      {"en": "Every line in my classroom, learnt by {friend}. It took patience and a good deal of chocolate, I suspect. Your friend should be very pleased, and so, I hope, are you.",
+       "ko": "{friend}하고 함께한 내 교실의 대사가 이제 하나도 남김없이 끝났단다. 인내심도, 초콜릿도 꽤 필요했을 거야. 네 친구는 아주 뿌듯해해도 돼. 너도 함께 기뻐해 주렴."}
+    ],
+    "bday": [
+      {"en": "It's {friend}'s birthday today. I've wrapped a small bar of Honeydukes' best in brown paper, though I'm afraid the string is rather crooked. Please wish your friend a very happy day from me.",
+       "ko": "오늘이 {friend}의 생일이란다. 허니듀크의 제일 좋은 초콜릿을 갈색 종이에 싸 두었는데, 끈이 좀 삐뚤게 묶였구나. 네 친구에게 정말 행복한 하루 보내라고 내 대신 전해 주렴."},
+      {"en": "Today is {friend}'s birthday. Birthdays always remind me how much a single year can hold. I hope your friend's day is full of good company and at least one slice of cake.",
+       "ko": "오늘은 {friend}의 생일이구나. 생일이 되면 한 해가 얼마나 많은 걸 담을 수 있는지 새삼 느끼곤 해. 네 친구의 하루가 좋은 사람들로, 그리고 케이크 한 조각 이상으로 가득하길 바란단다."}
+    ]
+  },
+  "moody": {
+    "door": [
+      {"en": "Your friend {friend} walked into my classroom today. Checked the door for curses first. Good instinct. We'll see if it holds.",
+       "ko": "오늘 네 친구 {friend}의 첫 수업이 있었다. 들어오기 전에 문에 저주가 걸렸나부터 확인하더군. 좋은 본능이다. 오래가는지 두고 보지."},
+      {"en": "{friend} opened my door today. Sat with back to the wall and eyes on the exits. Sensible. Constant vigilance; tell your friend I said so.",
+       "ko": "{friend}의 첫 수업이 오늘이었다. 벽을 등지고 앉아서 출구를 살피더군. 현명해. 방심은 금물이다, 네 친구에게 내가 그렇게 말했다고 전해."}
+    ],
+    "stage": [
+      {"en": "{friend} and I get on now. Don't spread it about. Your friend brought me a flask of pumpkin juice last week, and I only checked it twice. That's trust, by my standards.",
+       "ko": "{friend}하고 나는 이제 손발이 맞는다. 떠들고 다니지는 마라. 지난주에 네 친구가 호박 주스 한 병을 가져왔는데, 겨우 두 번만 확인하고 마셨다. 내 기준으론 그게 신뢰다."},
+      {"en": "I trust {friend}. More or less. Doesn't happen often. Your friend earned it the hard way.",
+       "ko": "{friend}만큼은 믿는다. 대충은. 흔한 일 아니다. 네 친구는 그걸 어렵게 얻어 냈다."}
+    ],
+    "learnt": [
+      {"en": "{friend} has learnt every line in my classroom. Tested every one myself, twice, with the magical eye on. Not a slip. Tell your friend to stay sharp anyway.",
+       "ko": "{friend}에게 이제 내 교실에서 남은 대사가 없다. 마법의 눈까지 켜고 하나하나 두 번씩 직접 시험했다. 실수 하나 없었다. 그래도 방심하지 말라고 네 친구에게 전해."},
+      {"en": "Every line, done. I went through {friend}'s notebook myself and there isn't a line missing. Good work. Don't let your friend get cocky.",
+       "ko": "대사 전부, 끝났다. {friend}의 공책을 내가 직접 뒤져 봤는데 빠진 줄이 하나도 없더군. 잘했다. 그렇다고 네 친구가 우쭐대게 두지는 마라."}
+    ],
+    "bday": [
+      {"en": "It's {friend}'s birthday. I don't eat cake I didn't watch being made, but your friend should. Tell your friend happy birthday. From me.",
+       "ko": "{friend}의 생일이다. 난 만드는 걸 직접 못 본 케이크는 안 먹지만, 네 친구는 먹어도 된다. 생일 축하한다고 전해라. 내 이름으로."},
+      {"en": "{friend}'s birthday today. Watch for anyone too keen to hand over a present. Otherwise, a good day. Many happy returns to your friend.",
+       "ko": "오늘 {friend}의 생일이다. 선물을 지나치게 건네고 싶어 하는 놈은 조심해. 그것만 빼면 좋은 날이다. 네 친구에게 축하한다고 전해."}
+    ]
+  },
+  "umbridge": {
+    "door": [
+      {"en": "Hem, hem. Your friend {friend} has opened the door to my little classroom, dear. I have entered the name in my register in my very best pink ink. I do hope your friend understands that I keep a careful record of everyone who comes and goes.",
+       "ko": "흠, 흠. 얘야, 당신 친구 {friend}의 이름이 오늘 제 작은 교실 출석부에 올랐어요. 제일 아끼는 분홍 잉크로 적어 두었답니다. 드나드는 사람은 한 명도 빠짐없이 꼼꼼히 기록해 둔다는 걸 친구분도 알아 두면 좋겠네요."},
+      {"en": "{friend} has begun lessons with me, dear, and sat ever so nicely beneath my kitten plates. Such a promising start. I shall be watching most attentively to make sure it stays that way.",
+       "ko": "얘야, {friend}의 첫 수업이 오늘 제 교실에서 있었어요. 고양이 접시들 아래에 어찌나 얌전히 앉아 있던지요. 아주 유망한 시작이죠. 계속 그렇게 유지되는지 아주 주의 깊게 지켜볼 거예요."}
+    ],
+    "stage": [
+      {"en": "Hem, hem. I am delighted to tell you that {friend} and I have become quite close, dear. We take tea together now, with two sugars and a great many questions about who your friend spends time with. One does like to know these things.",
+       "ko": "흠, 흠. 얘야, {friend}하고 저는 이제 꽤 가까워졌답니다. 요즘은 각설탕 두 개를 넣은 차를 함께 마시면서, 친구분이 누구누구와 어울리는지 이것저것 묻곤 해요. 그런 건 알아 두는 게 좋거든요."},
+      {"en": "{friend} has become one of my favourites, dear. So obedient, so tidy, never a question out of turn. Do encourage your friend to keep it that way; I should hate for anything to change.",
+       "ko": "{friend}도 이제 제가 아끼는 학생 중 하나가 되었답니다, 얘야. 어찌나 순종적이고 단정한지, 차례가 아닐 때 질문하는 법도 없죠. 친구분이 계속 그렇게 지내도록 잘 격려해 주세요. 뭐든 달라지면 정말 싫거든요."}
+    ],
+    "learnt": [
+      {"en": "Hem, hem. {friend} has learnt every line in my classroom, dear, every single approved one. I have awarded a small gold star, which I shall of course remove if standards slip.",
+       "ko": "흠, 흠. 얘야, {friend}에게 이제 제 교실에서 배울 대사가 하나도 남지 않았어요. 승인된 대사를 빠짐없이 전부 익혔답니다. 작은 금색 별을 하나 달아 주었어요. 물론 기준이 흐트러지면 바로 떼어 낼 거지만요."},
+      {"en": "Every line in my classroom, learnt by heart. I am so very pleased with {friend}, dear. Do remind your friend that knowing the rules is only the beginning; keeping them is what truly counts.",
+       "ko": "제 교실의 대사를 전부 외웠어요. {friend}에게 정말 만족한답니다, 얘야. 규칙을 아는 건 시작일 뿐이고, 진짜 중요한 건 지키는 거라고 친구분께 꼭 일러 주세요."}
+    ],
+    "bday": [
+      {"en": "Hem, hem. It is {friend}'s birthday today, dear! I have sent a card with a kitten on the front, which mews when opened. I do hope your friend will display it somewhere I can see it.",
+       "ko": "흠, 흠. 오늘이 {friend}의 생일이에요, 얘야! 앞면에 새끼 고양이가 그려진 카드를 보냈답니다. 열면 야옹 하고 울어요. 제가 볼 수 있는 곳에 걸어 두면 좋겠네요."},
+      {"en": "Many happy returns to {friend}, dear. A birthday is a lovely time to reflect on the year's behaviour, I always think. I have prepared a little list, should your friend wish to see it.",
+       "ko": "{friend}의 생일을 축하해요, 얘야. 생일은 한 해 동안의 행실을 돌아보기에 참 좋은 때라고 늘 생각한답니다. 혹시 친구분이 보고 싶어 하면 보여 주려고 작은 목록을 하나 만들어 두었어요."}
+    ]
+  },
+  "slughorn": {
+    "door": [
+      {"en": "Splendid news, my dear {first}! Your friend {friend} has stepped into my classroom at last, and I could tell at once there was real promise there. I said as much to an old pupil at the Ministry over a glass of oak-matured mead.",
+       "ko": "근사한 소식일세, {first}! 자네 친구 {friend}의 발걸음이 드디어 내 교실에 닿았네. 한눈에 진짜 재목이라는 걸 알아봤지. 마법부에 있는 옛 제자와 오크통 숙성 꿀술을 한잔하면서 그 얘기를 했다네."},
+      {"en": "{friend} has begun lessons with me, and what a pleasure! I've already saved a seat by the crystallised pineapple. Mark my words, your friend will be at one of my little suppers before the term is out.",
+       "ko": "{friend}의 첫 수업이 내 교실에서 있었네. 이 얼마나 즐거운 일인가! 벌써 설탕 절임 파인애플 옆에 자리를 하나 맡아 두었지. 두고 보게, 학기가 끝나기 전에 자네 친구도 내 작은 만찬에 초대받을 걸세."}
+    ],
+    "stage": [
+      {"en": "My dear {first}, I'm delighted to say {friend} and I have become firm friends. We've talked of everything from dragon's blood to Quidditch, and your friend laughs at all my anecdotes, which shows excellent judgement.",
+       "ko": "{first}, 기쁘게도 {friend}하고 나는 이제 막역한 사이가 되었네. 용의 피에서부터 퀴디치까지 안 해 본 이야기가 없지. 자네 친구는 내 일화마다 웃어 주는데, 그야말로 탁월한 안목 아닌가!"},
+      {"en": "I have added {friend} to my collection, of favourite pupils, I mean! There's a photograph on my mantelpiece now, between a famous Seeker and a Minister or two. Do tell your friend to drop in for tea.",
+       "ko": "{friend}도 이제 내 수집품의 일원일세. 아, 아끼는 제자들 말이네! 벽난로 선반에 유명한 수색꾼과 장관 한두 명 사이로 사진이 한 장 놓였다네. 자네 친구에게 언제든 차 마시러 들르라고 전해 주게."}
+    ],
+    "learnt": [
+      {"en": "Every line in my classroom, learnt! {friend} has done it, and with such style. I haven't seen the like since a certain young witch who now runs half the Department of Magical Games and Sports. Do give your friend my heartiest congratulations.",
+       "ko": "내 교실의 대사를 전부 익혔다네! {friend}의 솜씨가 어찌나 멋지던지. 지금 마법 게임 스포츠부의 절반을 쥐고 있는 어느 젊은 마녀 이후로 이런 건 처음 보네. 자네 친구에게 내 진심 어린 축하를 전해 주게."},
+      {"en": "{friend} has learnt every last line in my classroom, my dear {first}! I've opened a box of crystallised pineapple in celebration and eaten rather more of it than I ought. Your friend is going places, mark my words.",
+       "ko": "{first}, {friend}에게 이제 내 교실에서 배울 대사가 하나도 남지 않았네! 축하하는 뜻으로 설탕 절임 파인애플 한 상자를 열었는데, 그만 너무 많이 먹어 버렸지 뭔가. 두고 보게, 자네 친구는 크게 될 걸세."}
+    ],
+    "bday": [
+      {"en": "It's {friend}'s birthday today! I've sent down a bottle of my very best mead; well, a small bottle. A birthday is the perfect excuse for a party, and I never need much of an excuse.",
+       "ko": "오늘이 {friend}의 생일이라네! 내가 아끼는 최고급 꿀술을 한 병 보냈지. 음, 작은 병이긴 하네만. 생일만큼 파티하기 좋은 핑계도 없지. 물론 나는 핑계가 별로 필요 없는 사람이네만!"},
+      {"en": "Many happy returns to {friend}! I've just written a card and, naturally, asked a few famous friends to sign it too. Do tell your friend to expect rather a lot of owls this morning.",
+       "ko": "{friend}의 생일을 축하하네! 방금 카드를 한 장 썼는데, 물론 유명한 친구 몇 명에게도 서명을 부탁했지. 오늘 아침엔 부엉이가 꽤 많이 날아들 테니 각오하라고 자네 친구에게 전해 주게."}
+    ]
+  },
+  "dumbledore": {
+    "door": [
+      {"en": "Dear {first}, your friend {friend} opened the door to my study today. The portraits pretended to be asleep, as they always do with newcomers, and Fawkes sang a bar or two of welcome. I suspect we shall get along splendidly.",
+       "ko": "{first}에게. 오늘 자네 친구 {friend}의 첫 수업이 내 서재에서 있었네. 초상화들은 새로 온 이에게 늘 그러듯 자는 척을 했고, 폭스는 환영의 노래를 한두 소절 불렀다네. 우리는 아주 잘 지낼 것 같군."},
+      {"en": "{friend} has begun lessons in my study and went straight for the sherbet lemons, which I take as a sign of excellent character. Do tell your friend there are plenty more.",
+       "ko": "{friend}의 공부가 오늘 내 서재에서 시작되었네. 곧장 셔벗 레몬 그릇으로 손을 뻗더군. 훌륭한 됨됨이의 증거라고 보네. 아직 많이 남았다고 자네 친구에게 전해 주게."}
+    ],
+    "stage": [
+      {"en": "I am pleased to report that {friend} and I have become good friends. We have spent several pleasant evenings debating whether socks make a suitable present. Your friend, I must admit, argues very persuasively for jam.",
+       "ko": "기쁘게도 {friend}하고 나는 좋은 친구가 되었네. 양말이 선물로 적당한가를 두고 즐거운 저녁을 여러 번 보냈지. 고백하건대, 자네 친구는 잼 쪽을 아주 설득력 있게 변호하더군."},
+      {"en": "{friend} has become, I think, a true friend of mine, and I do not count those carelessly. Fawkes now drops a feather by your friend's chair at every visit. Fawkes is very particular about such things.",
+       "ko": "{friend}도 이제 내 진정한 벗이 된 것 같네. 그런 벗은 함부로 세지 않는다네. 요즘 폭스는 자네 친구가 올 때마다 의자 옆에 깃털을 하나씩 떨어뜨리지. 그런 일에 아주 까다로운 새인데 말일세."}
+    ],
+    "learnt": [
+      {"en": "{friend} has learnt every line in my study, every last one. I had hoped to catch your friend out with the final sentence, but I failed entirely, which is the most delightful sort of failure. I have celebrated with a second sherbet lemon.",
+       "ko": "{friend}에게 이제 내 서재에서 배울 말이 하나도 남지 않았네. 마지막 문장에서 한번 걸려 넘어지게 해 보려 했는데 보기 좋게 실패했지. 세상에서 가장 즐거운 종류의 실패라네. 축하하는 뜻으로 셔벗 레몬을 하나 더 먹었다네."},
+      {"en": "Every line in my study, learnt by {friend}. I find there is a particular pleasure in watching someone reach the end of a book once thought too long. Please give your friend my warmest congratulations, and a sherbet lemon.",
+       "ko": "내 서재의 대사를 모두 익혔다네. {friend} 이야기일세. 한때 너무 길다고 여겼던 책의 끝에 누군가 다다르는 걸 지켜보는 데에는 각별한 기쁨이 있지. 자네 친구에게 내 따뜻한 축하와 셔벗 레몬 하나를 전해 주게."}
+    ],
+    "bday": [
+      {"en": "Today is {friend}'s birthday. I have asked the house-elves for a cake with a great many candles, and they have assured me the ceiling will survive. Please wish your friend a very happy day from an old man who still enjoys a good party.",
+       "ko": "오늘이 {friend}의 생일이네. 집요정들에게 초를 아주 많이 꽂은 케이크를 부탁했는데, 천장은 무사할 거라고 장담하더군. 좋은 파티를 아직도 즐기는 늙은이를 대신해 자네 친구에게 즐거운 하루 보내라고 전해 주게."},
+      {"en": "It is {friend}'s birthday, and the castle seems to know it: the staircases have been unusually cooperative all morning. I have sent a pair of woollen socks, for one can never have enough. Many happy returns to your friend.",
+       "ko": "오늘은 {friend}의 생일일세. 성도 그걸 아는지, 아침 내내 계단들이 유난히 고분고분하더군. 털양말 한 켤레를 보냈네. 양말은 아무리 많아도 모자라니까. 자네 친구에게 생일 축하한다고 전해 주게."}
+    ],
+    "other": {
+      "door": [
+        {"en": "Dear {first}, I hear from {profEn} that your friend {friend} has opened that classroom door and begun lessons there. The castle grows a little livelier with each new door opened, and I am told the corridor outside has been unusually cheerful ever since.",
+         "ko": "{first}에게. {profKo}에게서 들었는데, 자네 친구 {friend}의 수업이 그 교실에서 시작되었다더군. 문이 하나 새로 열릴 때마다 성이 조금씩 활기차진다네. 그 교실 앞 복도도 그 뒤로 유난히 명랑해졌다고 들었네."},
+        {"en": "A small piece of castle news: {friend} has started lessons with {profEn}. I passed the classroom this morning and heard a confident voice reading aloud. Do tell your friend I was listening, though only for a moment.",
+         "ko": "성 소식 하나 전하겠네. {friend}의 첫 수업이 {profKo}의 교실에서 있었다네. 오늘 아침 그 교실 앞을 지나다 자신 있게 소리 내어 읽는 목소리를 들었지. 아주 잠깐 엿들었을 뿐이라고 자네 친구에게 전해 주게."}
+      ],
+      "stage": [
+        {"en": "I am told that {friend} and {profEn} have become rather close. It is one of my quieter joys to watch friendships form in unexpected corners of the castle. I suspect a good deal of tea has been involved.",
+         "ko": "{friend}하고 {profKo} 사이가 꽤 가까워졌다고 들었네. 성의 뜻밖의 구석에서 우정이 싹트는 걸 지켜보는 건 나의 소소한 기쁨 중 하나라네. 차도 꽤 많이 오갔을 것 같군."},
+        {"en": "News from along the corridor: {profEn} speaks very fondly of {friend} these days. I have known that classroom a long while, and such warmth is not handed out lightly there. Do pass on my congratulations to your friend.",
+         "ko": "복도 저편에서 소식이 왔네. 요즘 {profKo}의 입에서 {friend} 칭찬이 끊이지 않는다더군. 그 교실을 오래 알아 왔지만, 그런 다정함은 거기서 쉽게 나오는 게 아니라네. 자네 친구에게 내 축하를 전해 주게."}
+      ],
+      "learnt": [
+        {"en": "{friend} has learnt every line in {profEn}'s classroom. I heard the news over breakfast and celebrated with an extra slice of toast. Please give your friend my warmest congratulations.",
+         "ko": "{friend}에게 이제 {profKo}의 교실에서 배울 대사가 하나도 남지 않았다네. 아침 식사 때 그 소식을 듣고 토스트를 한 조각 더 먹으며 축하했지. 자네 친구에게 내 따뜻한 축하를 전해 주게."},
+        {"en": "Every line in {profEn}'s classroom, learnt by {friend}. I am told the final recitation was word-perfect, and that even the portraits applauded. That is a rare thing in this castle, and a fine one.",
+         "ko": "{friend}의 공부가 {profKo}의 교실 마지막 대사까지 다다랐다네. 마지막 낭송은 한 글자도 틀리지 않았고, 초상화들까지 박수를 쳤다더군. 이 성에서는 드물고도 멋진 일이지."}
+      ]
+    }
+  }
+}

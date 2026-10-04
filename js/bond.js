@@ -12,6 +12,8 @@
 import {DECKS, byId} from './decks.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
+import * as group from './post.js';
+import * as doors from './doors.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -60,7 +62,7 @@ function post(id, item){
 }
 function stageUp(id, before){
   const after = stage(id);
-  for (let k = before + 1; k <= after; k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); }
+  for (let k = before + 1; k <= after; k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); if (k >= 2) group.announce('stage', id, k); }
 }
 const addPts = (id, n) => { const b = bondOf(id), before = stage(id); b.pts += n; stageUp(id, before); };
 /* the bond can fall a little (a disliked answer at tea, a cold pot, a failed request) but never below the stage
@@ -77,6 +79,7 @@ function deckChecks(id){
   [[1, 'L01'], [2, 'L02'], [3, 'L03'], [7, 'L04'], [14, 'L05'], [21, 'L06'], [30, 'L07'], [45, 'L08'], [60, 'L09'], [90, 'L10'], [120, 'L11'], [180, 'L12'], [270, 'L13'], [365, 'L14']]
     .forEach(([n, l]) => { if (b.days >= n) post(id, l); });
   for (let k = 1; k <= 10; k++) if (learnt >= k / 10 - 1e-9) post(id, 'L' + (14 + k));
+  if (learnt >= 1 - 1e-9) group.announce('learnt', id);   // the friends hear of it from this professor
   if (learnt >= .5) post(id, 'K09');
   if (g.mastered >= 1) post(id, 'L25');
   [[.1, 'L26'], [.25, 'L27'], [.5, 'L28'], [.75, 'L29'], [1, 'L30']].forEach(([f, l]) => { if (mast >= f - 1e-9) post(id, l); });
@@ -178,6 +181,7 @@ export function finishTea(id, tea, score, picks){
 function greetings(){
   const t = srs.today(), y = t.slice(0, 4), md = t.slice(5), bday = store.get().settings.birthday || '';
   const near = mmdd => { if (!mmdd) return false; for (let k = 0; k <= 3; k++) if (srs.addDays(`${y}-${mmdd}`, k) === t) return true; return false; };
+  if (bday && md === bday) group.announce('bday', '', y);   // on the day itself, the friends' professors pass it on
   for (const d of DECKS){
     const b = bondOf(d.id); if (!b.days || !data[d.id]) continue;
     for (const [g, when] of Object.entries(GREET)){
@@ -231,12 +235,45 @@ export async function daily(){
     if (b.days) { deckChecks(d.id); offerRequest(d.id); everyday(d.id, 'open'); }
   }
   greetings();
+  newsLetter();
   store.save();
+}
+
+/* ---------- news of a friend (2026-10-04 user decision): at most one a day, told by the professor concerned —
+   or by Dumbledore, as host, when the guest has not met that professor yet; a birthday by the guest's first
+   professor. The words are in bond/news.json; the letter is kept as N-<news id> with what it needs to be written. */
+let NEWS = null;
+const loadNews = () => NEWS ? Promise.resolve(NEWS) : fetch('bond/news.json').then(r => r.ok ? r.json() : null).then(j => (NEWS = j)).catch(() => null);
+export async function newsLetter(){
+  const day = today(); if (day.news) return false;
+  const n = group.nextNews(); if (!n || !(await loadNews())) return false;
+  let teller, set, other = false;
+  if (n.type === 'bday') teller = doors.isOpen(doors.first()) ? doors.first() : 'dumbledore';
+  else if (byId(n.deck) && doors.isOpen(n.deck)) teller = n.deck;
+  else { teller = 'dumbledore'; other = n.deck && n.deck !== 'dumbledore'; }
+  set = other ? NEWS.dumbledore.other[n.type] : (NEWS[teller] || {})[n.type];
+  if (!set || !set.length){ group.markNewsTold(n.id); return false; }
+  await load(teller);
+  const key = 'N-' + n.id, b = bondOf(teller);
+  b.news = b.news || {};
+  b.news[key] = {type: n.type, friend: n.name, about: other ? n.deck : '', v: Math.floor(roll(n.id) * set.length)};
+  post(teller, key);
+  day.news = true;
+  group.markNewsTold(n.id);
+  store.save();
+  return true;
+}
+function newsText(id, key){
+  const x = (bondOf(id).news || {})[key]; if (!x || !NEWS) return null;
+  const set = x.about ? NEWS.dumbledore.other[x.type] : (NEWS[id] || {})[x.type], t = set && set[x.v % set.length]; if (!t) return null;
+  const p = byId(x.about) || {}, put = s => s.replace(/\{friend\}/g, x.friend || 'your friend').replace(/\{profEn\}/g, p.who || '').replace(/\{profKo\}/g, p.ko || '');
+  return {kind: '소식', en: put(t.en), ko: put(t.ko)};
 }
 
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
   if (key === 'W00') return id === 'dumbledore' ? {kind: '환영 편지', ...WELCOME} : null;
+  if (/^N-/.test(key)) return newsText(id, key);
   const d = data[id]; if (!d) return null;
   const who = byId(id);
   let m;
@@ -291,6 +328,7 @@ export const keepsakes = id => { const d = data[id], b = bondOf(id); return d ? 
 
 export function init(a){
   app = a;
+  loadNews();
   onPost((id, key) => {
     const who = byId(id);
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl

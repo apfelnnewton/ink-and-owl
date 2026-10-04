@@ -8,6 +8,7 @@
 import {DECKS} from './decks.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
+import * as group from './post.js';
 
 export const PER_KEY = 20;
 const decks = () => DECKS.filter(d => d.file);
@@ -23,6 +24,7 @@ function state(){
 }
 
 export const needsFirst = () => !state().open.length;
+export const first = () => state().first || state().open[0] || '';
 export const isOpen = id => state().open.includes(id);
 export const learnt = () => decks().reduce((n, d) => n + Object.keys(store.deck(d.id).cards || {}).length, 0);
 export const keysEarned = () => Math.floor(learnt() / PER_KEY);
@@ -32,11 +34,11 @@ export const lockedCount = () => decks().filter(d => !isOpen(d.id)).length;
 
 export function chooseFirst(id){
   const st = state(); if (st.open.length) return false;
-  st.open = [id]; st.first = id; store.save(); return true;
+  st.open = [id]; st.first = id; store.save(); group.announce('door', id); return true;
 }
 export function useKey(id){
   const st = state(); if (isOpen(id) || !keysLeft()) return false;
-  st.open.push(id); store.save(); return true;
+  st.open.push(id); store.save(); group.announce('door', id); return true;   // the friends hear of it
 }
 
 /* a new key the moment the twentieth line is learnt: tell whoever is listening (home.js shows the note) */

@@ -65,7 +65,14 @@ const practice = {
   async create(){ return {code: rnd(6)}; },
   async join(code){ return {code}; },
   async seals(){ return PRACTICE.slice(); },
-  async claim(){ const fr = f(); if (!fr.mail.length) arrive(HELLO, 8000); return ''; },
+  async claim(){
+    const fr = f(); if (!fr.mail.length) arrive(HELLO, 8000);
+    /* and a piece of news, so the professors have something to tell */
+    queueNews({id: 'pn-' + rnd(6), from: 'p-clara', name: 'Clara', type: 'door', deck: 'lupin', at: Date.now()});
+    setTimeout(() => notify(), 3000);
+    return '';
+  },
+  async announce(){},
   async leave(){},
   async send(m){
     const fr = f(), to = PRACTICE.find(p => p.uid === m.to); if (!to) return '';
@@ -137,6 +144,10 @@ const firebase = {
     try { await F.addDoc(col(code, 'mail'), {from: fb.uid, to: m.to, text: m.text, at: F.serverTimestamp()}); return ''; }
     catch (e){ return OFFLINE; }
   },
+  async announce(code, type, deck){
+    const {F} = await connect();
+    await F.addDoc(col(code, 'news'), {from: fb.uid, type, deck, at: F.serverTimestamp()});
+  },
   /* while the app is open: letters addressed to me land on the phone (and leave the server); the members list stays current */
   listen(code){
     const {F} = fb;
@@ -159,10 +170,22 @@ const firebase = {
       fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id}));
       store.save(); notify();
     }, () => {}));
-    /* my own letters nobody collected in 30 days */
+    /* friends' milestones of the last fortnight that this phone has not heard yet: a professor will pass them on */
+    const since = F.Timestamp.fromMillis(Date.now() - 14 * 864e5);
+    unsub.push(F.onSnapshot(F.query(col(code, 'news'), F.where('at', '>', since)), snap => {
+      let got = 0;
+      snap.docs.forEach(d => {
+        const x = d.data(); if (x.from === fb.uid) return;
+        const who = f().members.find(m => m.uid === x.from);
+        if (queueNews({id: d.id, from: x.from, name: who ? who.name : '', type: x.type, deck: x.deck || '', at: x.at ? x.at.toMillis() : Date.now()})) got++;
+      });
+      if (got) notify();
+    }, () => {}));
+    /* my own letters nobody collected, and my own news, after 30 days */
     const old = F.Timestamp.fromMillis(Date.now() - 30 * 864e5);
-    F.getDocs(F.query(col(code, 'mail'), F.where('from', '==', fb.uid), F.where('at', '<', old)))
-      .then(q => q.docs.forEach(d => F.deleteDoc(d.ref).catch(() => {}))).catch(() => {});
+    for (const name of ['mail', 'news'])
+      F.getDocs(F.query(col(code, name), F.where('from', '==', fb.uid), F.where('at', '<', old)))
+        .then(q => q.docs.forEach(d => F.deleteDoc(d.ref).catch(() => {}))).catch(() => {});
   }
 };
 let unsub = [];
@@ -247,6 +270,37 @@ export async function send(to, text){
   if (err) return err;
   fr.mail.push(m); store.save();
   return '';
+}
+
+/* ---------- news of friends (2026-10-04 user decision): a friend's milestone — a door opened, a professor grown close,
+   a classroom fully learnt, a birthday — reaches the others, and a professor tells it in a letter (bond.js, max one a
+   day). f().news = [{id, from, name, type, deck, at, told}] (kept to the last 60); f().said = {"type:deck": date}. */
+export const NEWS_TYPES = ['door', 'stage', 'learnt', 'bday'];
+function queueNews(n){
+  const fr = f(); if (!fr.news) fr.news = [];
+  if (!NEWS_TYPES.includes(n.type) || fr.news.some(x => x.id === n.id) || Date.now() - n.at > 14 * 864e5) return false;
+  fr.news.push({...n, told: false});
+  if (fr.news.length > 60) fr.news = fr.news.slice(-60);
+  store.save();
+  return true;
+}
+/* the oldest news not yet told, with the friend's current name */
+export function nextNews(){
+  const fr = f(), n = (fr.news || []).filter(x => !x.told && Date.now() - x.at < 14 * 864e5).sort((a, b) => a.at - b.at)[0];
+  if (!n) return null;
+  const m = fr.members.find(x => x.uid === n.from);
+  return {...n, name: (m && m.name) || n.name || 'your friend'};
+}
+export const markNewsTold = id => { const n = (f().news || []).find(x => x.id === id); if (n){ n.told = true; store.save(); } };
+/* tell the group about one of my milestones — each one once (a birthday once a year), and only from a real group */
+export function announce(type, deck = '', once = ''){
+  const fr = f();
+  if (!inGroup() || fr.practice || !NEWS_TYPES.includes(type)) return;
+  const key = `${type}:${deck}${once ? ':' + once : ''}`;
+  fr.said = fr.said || {};
+  if (fr.said[key]) return;
+  fr.said[key] = srs.today(); store.save();
+  firebase.announce(fr.code, type, deck).catch(() => { delete fr.said[key]; store.save(); });   // try again next time
 }
 
 /* app start (and back online): open the post office if this phone is in a group */
