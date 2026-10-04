@@ -507,6 +507,8 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ccard.swap .in{opacity:0;transform:translateY(6px)}
 .cey{font:500 11px/1 'Cormorant Garamond',serif;letter-spacing:.32em;text-transform:uppercase;color:#9B907A}
 .cwho{font:italic 400 calc(40px * var(--k))/1.04 'Cormorant Garamond',serif;color:#F2EADB;margin-top:12px}
+/* "내 방" is Korean: the italic Latin face has no Hangul (the browser would slant a system font), so the Korean face */
+.me-card .cwho{font:700 calc(34px * var(--k))/1.15 var(--f-ko);letter-spacing:.04em}
 .cwhere{font-size:12.5px;color:#8E8676;margin-top:8px}
 .chr{width:36px;height:1px;background:#8E8676;margin:18px 0 14px}
 .cstats{display:flex;gap:26px;font-size:12px;color:#8E8676}
