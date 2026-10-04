@@ -6,7 +6,8 @@ import * as store from './store.js';
 import * as speech from './speech.js';
 import * as srs from './srs.js';
 import {groupBox} from './friends.js';
-import {$, $$, esc, toast, fitPaper, reduced} from './ui.js';
+import * as post from './post.js';
+import {$, $$, esc, toast, fitPaper, reduced, openSheet} from './ui.js';
 
 export const APP_VERSION = '1.0.0';
 
@@ -109,6 +110,22 @@ export function initSettings(app){
     if (!confirm(`${d.ko} 덱의 진도를 모두 지웁니다. 되돌릴 수 없습니다. 지울까요?`)) return;
     store.resetDeck(d.id); app.refresh();
     toast(`${d.ko} 덱 진도를 초기화했습니다.`);
+  });
+  /* start again from nothing: Dumbledore says what will be forgotten; the friends' group is left properly first */
+  $('#fWipe').addEventListener('click', () => {
+    openSheet(`<div class="sh-kind"><span>모든 기록 지우기</span></div><h2 class="sh-expr" id="shTitle" lang="en">A clean slate?</h2>` +
+      `<div class="lt-letter" lang="en"><p>Everything will be forgotten: every line you have learnt, every letter and gift, every cup of tea, every door you have opened, even your name. The castle will greet you as a stranger once more.</p><p>It cannot be undone, I'm afraid. Not even by me.</p><p>— A.D.</p></div>` +
+      `<div class="lt-ko"><p>모든 것이 잊힐 걸세. 자네가 익힌 대사도, 받은 편지와 선물도, 함께 마신 차도, 열어 둔 문도, 자네 이름까지도. 성은 자네를 처음 보는 손님으로 다시 맞을 걸세.</p><p>되돌릴 수는 없다네. 나조차도 말일세.</p></div>` +
+      `<p class="w-lead">친구 그룹에 있다면 그룹에서도 나갑니다. 다른 기기로 옮기려면 먼저 '다른 기기로 보내기'로 진도를 저장해 두세요.</p>` +
+      `<button type="button" class="sh-drill" data-wipe>그래도 모두 지우겠습니다</button>`);
+  });
+  $('#sheetBody').addEventListener('click', async e => {
+    const b = e.target.closest('[data-wipe]'); if (!b || sec.hidden || b.disabled) return;
+    b.disabled = true;
+    if (post.joined()) await post.leave().catch(() => {});
+    store.wipe();
+    try { sessionStorage.clear(); } catch (err){}
+    location.replace(location.pathname + location.search);   // back to the corridor, a stranger again
   });
   $('#setBack').addEventListener('click', () => app.go('#/'));
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape') app.go('#/'); });

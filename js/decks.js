@@ -195,30 +195,51 @@ export const FIRST = {
 export const LOCKED = {
   snape: [
     {en: "This door is closed. I trust even you can grasp what that means.", ko: "이 문은 닫혀 있다. 그게 무슨 뜻인지쯤은 너도 알아듣겠지."},
-    {en: "Not today. Nor, I suspect, tomorrow.", ko: "오늘은 아니다. 내일도 아닐 것 같군."}
+    {en: "Not today. Nor, I suspect, tomorrow.", ko: "오늘은 아니다. 내일도 아닐 것 같군."},
+    {en: "Knocking louder will not improve your chances.", ko: "더 세게 두드린다고 네 가망이 나아지진 않는다."},
+    {en: "Learn what you have already been given. Then we shall see.", ko: "이미 받은 것부터 익혀라. 그다음에 보자."},
+    {en: "I am brewing. Go away.", ko: "약을 끓이는 중이다. 가라."}
   ],
   mcgonagall: [
     {en: "You are early. I shall send for you when you are expected.", ko: "너무 이르다. 올 때가 되면 내가 부르겠다."},
-    {en: "Patience is a discipline, not a suggestion.", ko: "인내는 권고가 아니라 규율이다."}
+    {en: "Patience is a discipline, not a suggestion.", ko: "인내는 권고가 아니라 규율이다."},
+    {en: "Twenty lines, then a key. That is the arrangement, and it is not open to debate.", ko: "대사 스무 개, 그다음에 열쇠. 그게 정해진 방식이고, 따질 일이 아니다."},
+    {en: "Rattling the handle will not get you in. Earning a key will.", ko: "손잡이를 흔든다고 들어올 수 있는 게 아니다. 열쇠를 얻어야지."},
+    {en: "I have a stack of essays to mark. Off you go.", ko: "채점할 과제가 산더미다. 가 봐라."}
   ],
   lupin: [
     {en: "Not tonight, I'm afraid. Come back when the moon is kinder.", ko: "오늘 밤은 안 되겠구나. 달이 좀 순해지면 다시 오렴."},
-    {en: "Have some chocolate. The lesson can wait a little longer.", ko: "초콜릿이나 좀 먹으렴. 수업은 조금 더 기다려 줄 테니."}
+    {en: "Have some chocolate. The lesson can wait a little longer.", ko: "초콜릿이나 좀 먹으렴. 수업은 조금 더 기다려 줄 테니."},
+    {en: "I'm still tidying up after the Grindylows. Give me a little while.", ko: "그린딜로들이 어질러 놓은 걸 아직 치우는 중이란다. 조금만 기다려 주렴."},
+    {en: "There's no hurry. The best things are worth waiting for.", ko: "서두를 것 없단다. 좋은 건 기다릴 만한 가치가 있으니까."},
+    {en: "Learn a few more lines in the other classrooms, then come back. I'll have the kettle on.", ko: "다른 교실에서 대사를 조금 더 익히고 다시 오렴. 주전자 올려 두고 기다리마."}
   ],
   moody: [
     {en: "Who sent you? Nobody comes through this door until I say so.", ko: "누가 보냈지? 내가 허락하기 전엔 아무도 이 문으로 못 들어와."},
-    {en: "Not yet. Constant vigilance!", ko: "아직 아니다. 항상 경계하라!"}
+    {en: "Not yet. Constant vigilance!", ko: "아직 아니다. 항상 경계하라!"},
+    {en: "Step away from the door. Slowly.", ko: "문에서 떨어져. 천천히."},
+    {en: "Earn a key. Then I'll check it for curses.", ko: "열쇠를 얻어 와. 그럼 저주 걸렸나 검사해 주지."},
+    {en: "The eye can see you. Still no.", ko: "이 눈으로 다 보인다. 그래도 안 된다."}
   ],
   umbridge: [
     {en: "Hem, hem. I don't believe you have an appointment, dear.", ko: "흠, 흠. 약속을 잡은 기억은 없는데요, 얘야."},
-    {en: "All in good time. The Ministry will decide when.", ko: "때가 되면요. 그때가 언제인지는 마법부가 정한답니다."}
+    {en: "All in good time. The Ministry will decide when.", ko: "때가 되면요. 그때가 언제인지는 마법부가 정한답니다."},
+    {en: "Do you have a signed permission slip, dear? No? What a pity.", ko: "서명된 허가증 있나요, 얘야? 없어요? 참 안됐네요."},
+    {en: "Rules are rules. Twenty lines, then a key. I didn't write them, but I do enjoy them.", ko: "규칙은 규칙이에요. 대사 스무 개, 그다음에 열쇠. 내가 만든 건 아니지만, 아주 마음에 든답니다."},
+    {en: "Knocking is rather rude, isn't it? We'll say no more about it. This time.", ko: "문을 두드리는 건 좀 무례하지 않나요? 이번엔 그냥 넘어가지요. 이번만요."}
   ],
   dumbledore: [
     {en: "Ah. I'm afraid the password has changed again. Do come back later.", ko: "아, 암호가 또 바뀌었나 보군. 나중에 다시 오게."},
-    {en: "It is not yet time. But the right time, I find, always comes.", ko: "아직 때가 아니라네. 하지만 알맞은 때는 늘 오기 마련이지."}
+    {en: "It is not yet time. But the right time, I find, always comes.", ko: "아직 때가 아니라네. 하지만 알맞은 때는 늘 오기 마련이지."},
+    {en: "I'm in the middle of knitting a rather absorbing sock. Another time.", ko: "아주 빠져드는 양말을 뜨는 중이라네. 다음에 오게."},
+    {en: "Even Fawkes waits for the right moment to burst into flame.", ko: "폭스조차 불꽃으로 타오를 알맞은 때를 기다린다네."},
+    {en: "Keys have a habit of turning up when one is busy learning. Do try it.", ko: "열쇠란 열심히 배우고 있을 때 불쑥 나타나는 버릇이 있다네. 한번 해 보게."}
   ],
   slughorn: [
     {en: "Not yet, my dear, not yet! The invitations go out soon enough.", ko: "아직일세, 아직! 초대장은 곧 나갈 걸세."},
-    {en: "Patience! Even crystallised pineapple takes its time.", ko: "참게나! 파인애플 설탕절임도 시간이 걸린다네."}
+    {en: "Patience! Even crystallised pineapple takes its time.", ko: "참게나! 파인애플 설탕절임도 시간이 걸린다네."},
+    {en: "The guest list is full this week, I'm afraid! Learn a few more lines and I'll squeeze you in.", ko: "이번 주는 손님 명단이 꽉 찼다네! 대사를 몇 개 더 익혀 오면 끼워 주지."},
+    {en: "Every great talent waits for a proper introduction. Twenty lines, and I'll make room for you.", ko: "위대한 재능은 다 제대로 소개받을 때를 기다리는 법이지. 대사 스무 개면, 자네 자리를 마련해 두겠네."},
+    {en: "I'm just putting my feet up. Do come back when there's a key in your pocket.", ko: "잠깐 발 좀 올리고 쉬는 중이라네. 주머니에 열쇠가 생기면 꼭 다시 오게."}
   ]
 };

@@ -68,6 +68,8 @@ export function importData(text){
 }
 
 export function resetDeck(id){ delete state.decks[id]; save(); }
+/* everything gone: progress, letters, teas, gifts, doors, friends' letters, the name (settings.js asks first) */
+export function wipe(){ state = fresh(); try { localStorage.removeItem(KEY); } catch (e){} }
 
 /* Another device's progress folded into this one: per card the more recently answered record wins (t, then the later
    due date); a day's session keeps whichever got further; the daily log keeps the larger count per field; stars are
