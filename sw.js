@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-08d';
+const VERSION = 'he-2026-10-08e';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -22,6 +22,7 @@ const CORE = [
   'js/grammar.js',
   'js/wand.js',
   'js/ollivander.js',
+  'js/prior.js',
   'js/firebase-config.js',
   'js/friends.js',
   'js/decks.js',
@@ -79,6 +80,7 @@ const CORE = [
   ...['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'slughorn', 'dumbledore'].map(p => 'assets/ui/seal-' + p + '.webp'),
   'assets/ui/snitch.webp',
   'assets/ui/seal-ollivander.webp',
+  'assets/prior/smoke.webp',
   ...['lion', 'serpent', 'eagle', 'badger', 'thestral', 'spider'].map(p => 'assets/seals/player-' + p + '.webp'),
   'assets/owl/envelope.webp',
   'assets/owl/card.webp',

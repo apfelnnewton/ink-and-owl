@@ -6,7 +6,7 @@
    Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js). A key not copied in normalise() is lost on reload. */
 const KEY = 'hogwarts-english:v1';
 
-export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, voice: '', surname: '', firstName: '', title: '', named: false, birthday: ''};
+export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, prior: true, voice: '', surname: '', firstName: '', title: '', named: false, birthday: ''};
 
 function fresh(){ return {v: 1, settings: {...DEFAULT_SETTINGS}, streak: {last: '', n: 0}, decks: {}, stars: {}, log: {}}; }
 

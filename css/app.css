@@ -1356,3 +1356,57 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 @keyframes olWaveB{0%{transform:var(--base)}32%{transform:var(--b1)}64%{transform:var(--b2)}100%{transform:var(--base)}}
 #ollivander.near .ol-stage{min-height:0;flex:1}
 @media (min-aspect-ratio:1/1){ #ollivander.near .ol-wrap{width:min(440px, 42%);margin:0 auto 0 4%} }
+
+/* ================================================================ Prior Incantato (prior.js): the last lesson's lines rising
+   from the wand in real smoke (a black-ground clip, screen-blended), materialising one by one out of a blur */
+.pi-layer{position:fixed;inset:0;z-index:60;overflow:hidden;opacity:0;transition:opacity .8s ease;
+  background:radial-gradient(ellipse 120% 90% at 50% 72%, rgba(8,10,14,.8), rgba(2,3,5,.95));-webkit-backdrop-filter:blur(3px) saturate(.6);backdrop-filter:blur(3px) saturate(.6)}
+.pi-layer.in{opacity:1}
+.pi-layer.out{opacity:0;transition:opacity .9s ease .1s}
+.pi-smoke{position:absolute;pointer-events:none;opacity:0;transition:opacity 1.8s ease .4s, transform 1.2s ease;
+  -webkit-mask-image:linear-gradient(to top, transparent 0, #000 3%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to top, transparent 0, #000 3%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);mask-composite:intersect}
+.pi-layer.in .pi-smoke{opacity:.5}
+.pi-layer.out .pi-smoke{opacity:0;transform:translateY(-60px) scale(1.05)}
+.pi-wand{position:absolute;margin:0;transform:var(--base);transform-origin:8% 50%;animation:olIn .9s cubic-bezier(.2,.8,.3,1) both}
+.pi-wand img{width:100%;display:block;filter:drop-shadow(0 8px 10px rgba(0,0,0,.75)) brightness(.92)}
+.pi-tip{position:absolute;right:3%;top:49%;width:0;height:0}
+.pi-tip::after{content:'';position:absolute;left:-28px;top:-28px;width:56px;height:56px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle, color-mix(in srgb, var(--c) 70%, #fff) 0 7%, color-mix(in srgb, var(--c) 40%, transparent) 28%, transparent 70%);animation:piTip 3.4s ease-in-out .9s infinite both}
+@keyframes piTip{0%,100%{transform:scale(.8);opacity:.55}50%{transform:scale(1.08);opacity:.95}}
+.pi-scroll{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.pi-wrap{min-height:100%;display:flex;flex-direction:column;justify-content:center;width:min(calc(100% - 40px), 560px);margin:0 auto;padding:calc(var(--st) + 36px) 0 calc(var(--sb) + 110px)}
+.pi-scroll{z-index:2}
+.pi-head{text-align:center}
+.pi-head .t{margin:0;font:italic 400 calc(28px * var(--k))/1.1 var(--f-display);letter-spacing:.05em;color:#E9EEF3;text-shadow:0 0 18px rgba(170,195,220,.4)}
+.pi-head .k{margin:7px 0 0;font-size:12.5px;letter-spacing:.08em;color:#9FB0BF}
+.pi-lines{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:20px}
+.pi-lines .en{margin:0;font:italic 400 calc(20px * var(--k))/1.6 var(--f-display);color:#E4EAF0;text-align:center;
+  text-shadow:0 0 2px rgba(0,0,0,.95), 0 0 16px rgba(150,178,205,.35)}
+.pi-layer.in .pi-head{animation:piEcho 1.6s cubic-bezier(.2,.7,.2,1) .5s both}
+.pi-layer.in .pi-lines li{animation:piEcho 1.7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(1.2s + var(--i) * .6s)}
+.pi-layer.in .pi-btns{animation:piEcho 1.2s ease both;animation-delay:calc(1.6s + var(--n, 5) * .6s)}
+@keyframes piEcho{0%{opacity:0;filter:blur(12px);transform:translateY(26px) scale(.97);letter-spacing:.14em}55%{opacity:.8;filter:blur(2px)}100%{opacity:1;filter:none;transform:none;letter-spacing:normal}}
+.pi-layer.out .pi-head,.pi-layer.out .pi-lines li,.pi-layer.out .pi-sum,.pi-layer.out .pi-btns{animation:piGone .9s ease-in both}
+.pi-layer.out .pi-lines li{animation-delay:calc(var(--i) * .07s)}
+@keyframes piGone{to{opacity:0;filter:blur(9px);transform:translateY(-34px) scale(1.02)}}
+.pi-gap{display:inline-flex;align-items:baseline;white-space:nowrap}
+.pi-gap b{font-weight:inherit;color:#FFFFFF}
+.pi-gap input{font:inherit;font-style:italic;color:#FFFFFF;background:transparent;border:0;border-bottom:1.5px solid rgba(200,215,230,.55);border-radius:0;padding:0 2px;margin:0;width:auto;min-width:2.4em;outline:none;caret-color:var(--c);text-shadow:inherit;transition:border-color .3s, box-shadow .3s}
+.pi-gap input:focus{border-bottom-color:var(--c);box-shadow:0 7px 10px -8px var(--c)}
+.pi-gap.ok b,.pi-gap.ok input{color:color-mix(in srgb, var(--c) 75%, #fff);text-shadow:0 0 12px var(--c), 0 0 2px rgba(0,0,0,.9);border-bottom-color:transparent;-webkit-text-fill-color:currentColor;opacity:1}
+.pi-gap.miss .ty{text-decoration:line-through;text-decoration-color:rgba(240,150,130,.75);opacity:.55}
+.pi-gap.ok .ty{color:color-mix(in srgb, var(--c) 75%, #fff);text-shadow:0 0 12px var(--c), 0 0 2px rgba(0,0,0,.9)}
+.pi-gap em{margin-left:6px;font-style:italic;color:#F2A897;text-shadow:0 0 10px rgba(240,120,100,.45), 0 0 2px rgba(0,0,0,.9)}
+.pi-lines li.heard{cursor:pointer}
+.pi-lines li.heard:hover .en{color:#FFFFFF}
+.pi-sum{margin:20px 0 0;text-align:center;font-size:14px;color:#C9D4DE}
+.pi-sum b{color:color-mix(in srgb, var(--c) 70%, #fff)}
+.pi-sum small{display:block;margin-top:4px;font-size:12px;color:#8B9AA8}
+.pi-btns{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:24px}
+.pi-go{min-height:52px;min-width:220px;padding:6px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:rgba(220,230,240,.06);border:1px solid rgba(220,230,240,.5);border-radius:2px;color:#EEF2F5;cursor:pointer;transition:background .3s, border-color .3s}
+.pi-go:hover{background:rgba(220,230,240,.12);border-color:rgba(220,230,240,.8)}
+.pi-go span{font:italic 400 18px/1.2 var(--f-display)}
+.pi-go small,.pi-away small{font-size:12px;opacity:.75}
+.pi-away{min-height:46px;padding:4px 14px;display:flex;flex-direction:column;align-items:center;background:none;border:0;color:#9FB0BF;cursor:pointer}
+.pi-away span{font:italic 400 15px/1.2 var(--f-display)}
+@media (prefers-reduced-motion: reduce){ .pi-layer *,.pi-layer{animation:none !important;transition:none !important} .pi-layer .pi-smoke{opacity:.5} }

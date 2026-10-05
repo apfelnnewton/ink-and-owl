@@ -14,6 +14,8 @@ const NOTES = {
     ko: '앉기 전에 한마디 하겠네. 자네의 대답이 중요하다네. 교수마다 반기는 대답이 따로 있거든. 마음에 드는 답이면 사이가 가까워지고, 언짢은 답이면 조금 멀어진다네.'},
   request: {en: 'A professor has asked a favour. Practise the lines they named before the time runs out, and they will not forget it.',
     ko: '교수가 부탁을 했군. 그 교수가 고른 대사를 기한 안에 연습하면, 잊지 않고 고마워할 걸세.', calm: true},
+  prior: {en: 'Your wand remembers. Before each lesson it will show you the echoes of what you said last time, with a word or two gone missing. Fill them in, or wave them away. Either way, the lesson will wait for you.',
+    ko: '자네 지팡이는 기억하고 있다네. 수업 전마다 지난번에 자네가 한 말의 메아리를 보여 줄 걸세. 한두 단어가 빠진 채로 말이지. 채워 넣어도 좋고, 손을 저어 흩어 버려도 좋네. 어느 쪽이든 수업은 자네를 기다릴 걸세.'},
   key: {en: 'A key! Any locked door in the corridor will take it. Choose wisely, or at least cheerfully.',
     ko: '열쇠가 생겼군! 복도의 잠긴 문 어디에나 맞는다네. 현명하게, 아니면 적어도 즐겁게 고르게.', calm: true}
 };

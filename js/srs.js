@@ -45,8 +45,9 @@ function plan(deckId, cards, date){
 export function session(deckId, cards){
   const date = today(), dk = store.deck(deckId);
   if (!dk.day || dk.day.date !== date || dk.day.pos === 0){
-    const p = plan(deckId, cards, date);
+    const p = plan(deckId, cards, date), prior = dk.day && dk.day.date === date ? dk.day.prior : undefined;
     dk.day = {date, queue: p.queue, kinds: p.kinds, pos: 0, results: {}};
+    if (prior) dk.day.prior = prior;   // today's Prior Incantato has been shown (prior.js): not again before the first card
     store.save();
   }
   return dk.day;

@@ -18,6 +18,7 @@ import {bakeLive, texturize} from './bake.js';
 import {hint} from './hints.js';
 import * as grammar from './grammar.js';
 import * as wand from './wand.js';
+import * as prior from './prior.js';
 
 /* Room art: every deck has a painted room, assets/rooms/<id>-portrait.webp (phones) and -wide.webp (wide screens).
    The drawn stone wall below is only the fallback while a painting is missing. */
@@ -640,7 +641,7 @@ export function initRoom(app){
   bellBtn.addEventListener('click', say);
   $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = deck && deck.id; app.go('#/'); });
   document.addEventListener('keydown', e => {
-    if (room.hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (room.hidden || prior.running() || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else $('#backBtn').click(); return; }
     if (isSheetOpen()) return;
     const onField = e.target.closest && e.target.closest('button, input, select, textarea');
@@ -682,6 +683,10 @@ export function initRoom(app){
     bakeProps();
     bellBtn.classList.toggle('muted', !speech.gbVoices().length);
     if (!extra) hint('lesson');   // the first lesson ever: Dumbledore's note on new lines and reviews
+    /* Prior Incantato: before the day's first card, the wand gives back the lines of the last lesson here (prior.js);
+       the first time, Dumbledore's note explains it */
+    const echoes = !extra && prior.ready(d.id, cards, day);
+    if (echoes) hint('prior', () => { if (!room.hidden && location.hash.startsWith('#/room/' + d.id)) prior.run(echoes, day); });
   }
   function resize(){
     if (!deck) return;
@@ -690,5 +695,5 @@ export function initRoom(app){
     if (slate.classList.contains('back') && !slate.classList.contains('noline'))
       writeLine(card.line, findRanges(card.line, card.bre), false, mode === 'learn' ? diffRanges(card.line, card.plain) : [], missRanges);
   }
-  return {show, resize, hide: () => { speech.stop(); resetRecall(); }};
+  return {show, resize, hide: () => { speech.stop(); resetRecall(); prior.dismiss(); }};
 }
