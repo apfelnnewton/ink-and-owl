@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-08b';
+const VERSION = 'he-2026-10-08c';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -20,6 +20,8 @@ const CORE = [
   'js/post.js',
   'js/hints.js',
   'js/grammar.js',
+  'js/wand.js',
+  'js/ollivander.js',
   'js/firebase-config.js',
   'js/friends.js',
   'js/decks.js',
@@ -76,6 +78,7 @@ const CORE = [
   'assets/ui/walnut.webp',
   ...['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'slughorn', 'dumbledore'].map(p => 'assets/ui/seal-' + p + '.webp'),
   'assets/ui/snitch.webp',
+  'assets/ui/seal-ollivander.webp',
   ...['lion', 'serpent', 'eagle', 'badger', 'thestral', 'spider'].map(p => 'assets/seals/player-' + p + '.webp'),
   'assets/owl/envelope.webp',
   'assets/owl/card.webp',
@@ -96,6 +99,11 @@ const CORE = [
   'assets/rooms/dumbledore-wide.webp',
   'assets/rooms/slughorn-portrait.webp',
   'assets/rooms/slughorn-wide.webp',
+  'assets/rooms/ollivander-portrait.webp',
+  'assets/rooms/ollivander-wide.webp',
+  'assets/rooms/ollivander-counter-portrait.webp',
+  'assets/rooms/ollivander-counter-wide.webp',
+  ...['fir', 'oak', 'cypress', 'rowan', 'willow', 'cedar', 'walnut', 'larch', 'hazel', 'maple', 'box', 'vase', 'vase-broken'].map(w => 'assets/wand/' + w + '.webp'),
   'assets/ui/book.webp',
   'assets/ui/hourglass.webp',
   'assets/ui/parchment.webp',

@@ -5,6 +5,8 @@
 import {DECKS, byId} from './decks.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
+import * as wand from './wand.js';
+import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
 /* how each keepsake is earned (bond.js: stage letters, requests, half / all learnt, every tenth tea, every fifteenth letter) */
@@ -25,7 +27,27 @@ export function initMyRoom(app){
     const n = bond.unread() + post.unread(), g = total();   // the post holds the friends' letters too
     $('#meMailN').textContent = n ? `· 새 편지 ${n}통` : '';
     $('#meCabN').textContent = `· ${g} / ${DECKS.length * 30}`;
-    $('#meJnlN').textContent = `· ${DECKS.reduce((s, d) => s + drunk(d.id).length, 0)}잔`;  }
+    $('#meJnlN').textContent = `· ${DECKS.reduce((s, d) => s + drunk(d.id).length, 0)}잔`;
+    /* the wand box appears with Ollivander's note, and holds the wand once it is made */
+    const w = wand.get();
+    $('#meWand').hidden = !w && !wand.noteArrived();
+    $('#meWandN').textContent = w ? `· ${wand.WOODS[w.wood].ko}` : '· 올리밴더의 쪽지';
+  }
+
+  /* ---------- the wand box (#/me/wand): the wand in its box and Ollivander's card; earlier wands below */
+  function drawWand(){
+    const w = wand.get(), body = $('#wndBody');
+    if (!w){
+      body.innerHTML = `<header class="jnl-head"><i class="seal o-wand"></i><div><h2 lang="en">A note from Ollivanders</h2><p>부엉이가 가져온 쪽지</p></div></header>` +
+        `<p class="wnd-note" lang="en">${esc(bond.fill(wand.NOTE.en))}</p><p class="wnd-sign" lang="en">— ${wand.NOTE.sign}</p><p class="wnd-ko">${esc(bond.fill(wand.NOTE.ko))}</p>` +
+        `<button type="button" class="wnd-go" data-shop><span lang="en">Call at the shop</span><small>올리밴더 가게로 가기</small></button>`;
+      return;
+    }
+    const old = w.old || [];
+    body.innerHTML = boxed(w.wood) + cardWords(w) +
+      (old.length ? `<h3 class="wnd-h">예전 지팡이</h3><ul class="wnd-old">${old.map(o => `<li><img src="${wand.img(o.wood)}" alt=""><span>${esc(wand.titleKo(o))}</span><small>${o.d ? fmt(o.d) : ''}</small></li>`).join('')}</ul>` : '') +
+      `<button type="button" class="wnd-go quiet" data-again><span lang="en">A new wand</span><small>새 지팡이 맞추기</small></button>`;
+  }
 
   function drawCabinet(){
     const have = new Map(gifts(deck.id).map(k => [k.id, k]));
@@ -98,8 +120,9 @@ export function initMyRoom(app){
     $('#meCard').hidden = cabinet;
     $('#cab').hidden = m !== 'cabinet';
     $('#jnl').hidden = m !== 'journal';
+    $('#wnd').hidden = m !== 'wand';
     sec.classList.toggle('cabinet', cabinet);
-    $('#meTtl').textContent = {cabinet: 'The Specimen Drawers', journal: 'The Tea Journal'}[m] || 'The Guest Room';
+    $('#meTtl').textContent = {cabinet: 'The Specimen Drawers', journal: 'The Tea Journal', wand: 'The Wand Box'}[m] || 'The Guest Room';
   }
 
   /* ---------- events */
@@ -108,6 +131,12 @@ export function initMyRoom(app){
   $('#cabWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id) app.go('#/me/cabinet/' + b.dataset.who, true); });
   $('#cabGrid').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) openGift(b.dataset.k); });
   $('#meJnl').addEventListener('click', () => app.go('#/me/journal'));
+  $('#meWand').addEventListener('click', () => app.go('#/me/wand'));
+  $('#wndBody').addEventListener('click', e => {
+    const x = e.target.closest('[data-gl]'); if (x){ gloss(x.dataset.gl); return; }
+    if (e.target.closest('[data-shop]')) app.go('#/ollivander');
+    if (e.target.closest('[data-again]')) app.go('#/ollivander/again');
+  });
   $('#jnlWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id){ page = null; app.go('#/me/journal/' + b.dataset.who, true); } });
   $('#jnlBody').addEventListener('click', e => {
     const g = e.target.closest('[data-teago]'); if (g){ app.go(`#/letters/${g.dataset.teago}/tea`); return; }
@@ -125,6 +154,11 @@ export function initMyRoom(app){
       mode('cabinet');
       drawCabinet();
       $('#cab').scrollTop = 0;
+    } else if (id === 'wand'){
+      mode('wand');
+      fitPaper($('#wndBook'));
+      drawWand();
+      $('#wnd').scrollTop = 0;
     } else if (id === 'journal'){
       deck = byId(sub) || DECKS.find(d => drunk(d.id).length) || DECKS[0];
       page = null;
@@ -137,5 +171,5 @@ export function initMyRoom(app){
       drawRoom();
     }
   }
-  return {show, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else drawRoom(); }};
+  return {show, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else if (view === 'wand') drawWand(); else drawRoom(); }};
 }

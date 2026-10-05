@@ -14,6 +14,7 @@ import * as srs from './srs.js';
 import * as store from './store.js';
 import * as group from './post.js';
 import * as doors from './doors.js';
+import * as wand from './wand.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -235,6 +236,7 @@ export async function daily(){
     if (b.days) { deckChecks(d.id); offerRequest(d.id); everyday(d.id, 'open'); }
   }
   greetings();
+  wandLetter();
   newsLetter();
   store.save();
 }
@@ -270,8 +272,21 @@ function newsText(id, key){
   return {kind: '소식', en: put(t.en), ko: put(t.ko)};
 }
 
+/* ---------- the wand (wand.js): the day after it is made, a letter about its wood (WD-<wood>) — from McGonagall,
+   Lupin or Slughorn if it is their own wood and their door is open, otherwise from Dumbledore */
+function wandLetter(){
+  const w = wand.get(); if (!w || !w.d || w.d >= srs.today()) return;
+  const {deck} = wand.letterFor(w.wood, doors.isOpen);
+  post(deck, 'WD-' + w.wood);
+}
+
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
+  if (/^WD-[a-z]+$/.test(key)){
+    const wood = key.slice(3), own = wand.OWNER[wood];
+    const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;
+    return t && {kind: '편지', ...t};
+  }
   if (key === 'W00') return id === 'dumbledore' ? {kind: '환영 편지', ...WELCOME} : null;
   if (/^N-/.test(key)) return newsText(id, key);
   const d = data[id]; if (!d) return null;

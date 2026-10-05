@@ -8,6 +8,7 @@
 import {byId} from './decks.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
+import * as wand from './wand.js';
 import {compose, paras} from './friends.js';
 import {esc, reduced, toast} from './ui.js';
 
@@ -79,6 +80,16 @@ function deliverNote(app, {deck, key}){
   fly(app, {sealCls: `s-${deck}`, label: `${esc(who.ko)}의 편지`, en: 'An owl brings a letter.',
     waits: `${esc(who.ko)}의 편지는 내 방 <b>편지함</b>에 있습니다.`,
     open: () => app.go(`#/letters/${deck}/${key}`)});
+}
+
+/* Ollivander's note (wand.js): it is kept in the wand box in my room from the moment the owl sets off; opening the
+   envelope goes straight to the shop */
+export function deliverWandNote(app){
+  if (busy) return;
+  wand.markNote();
+  fly(app, {sealCls: 'o-wand', label: '올리밴더의 쪽지', en: 'An owl brings a note.',
+    waits: '올리밴더의 쪽지는 내 방 <b>지팡이</b> 칸에 있습니다.',
+    open: () => app.go('#/ollivander')});
 }
 
 /* inv: a tea invitation ({id, invite, …} from bond.owlDue), {letter} — a friend's letter from post.undelivered — or

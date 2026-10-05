@@ -324,6 +324,12 @@
     <button type="button" class="cgo" id="meMail"><span>편지함 <em id="meMailN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meJnl"><span>차 일지 <em id="meJnlN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meWand" hidden><span>지팡이 <em id="meWandN"></em></span><i aria-hidden="true">→</i></button>
+  </div>
+  <div class="cab-scroll" id="wnd" hidden>
+    <div class="cab-wrap">
+      <article class="jnl-book wnd-book" id="wndBook"><div class="paperbox"></div><div class="jnl-in" id="wndBody"></div></article>
+    </div>
   </div>
   <div class="cab-scroll jnl-scroll" id="jnl" hidden>
     <div class="cab-wrap">
@@ -338,6 +344,23 @@
         <div class="cab-front"><span class="cab-label"><span class="cab-card" id="cabName" lang="en"></span></span></div>
         <div class="cab-grid" id="cabGrid"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OLLIVANDERS: the wand shop, reached from his note or the wand box (not a corridor door) ============ -->
+<section id="ollivander" class="screen" hidden aria-label="올리밴더 지팡이 가게">
+  <div class="bg" aria-hidden="true"><div class="photo"></div><div class="photo near"></div><div class="shade"></div><div class="ol-glow"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="olBack" aria-label="내 방으로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">Ollivanders</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="ol-near" id="olNear" aria-hidden="true"></div>
+  <div class="ol-scroll" id="olScroll">
+    <div class="ol-wrap">
+      <div class="ol-stage" id="olStage" aria-hidden="true"></div>
+      <article class="ol-card" id="olCard" aria-live="polite"><div class="paperbox"></div><div class="ol-body" id="olBody"></div></article>
     </div>
   </div>
 </section>

@@ -3,7 +3,7 @@
     decks:{<id>:{cards:{<cardId>:{i, d, g, st, t, m, h}}, day:{date, queue, kinds, pos, results, extra, wrong}}}}
    i = interval in days, d = next review date (YYYY-MM-DD), g = last grade (again | hard | good | learn), st = ladder rung,
    t = last date it was answered, m / h = how many times it was missed / nearly right. log feeds the register (records.js).
-   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js). A key not copied in normalise() is lost on reload. */
+   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js). A key not copied in normalise() is lost on reload. */
 const KEY = 'hogwarts-english:v1';
 
 export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, voice: '', surname: '', firstName: '', title: '', named: false, birthday: ''};
@@ -23,6 +23,7 @@ function normalise(s){
   if (s.doors && typeof s.doors === 'object' && Array.isArray(s.doors.open)) out.doors = s.doors;
   if (s.friends && typeof s.friends === 'object' && Array.isArray(s.friends.mail)) out.friends = s.friends;
   if (s.hints && typeof s.hints === 'object') out.hints = s.hints;
+  if (s.wand && typeof s.wand === 'object') out.wand = s.wand;
   if (s.decks && typeof s.decks === 'object'){
     for (const [id, d] of Object.entries(s.decks)){
       if (!d || typeof d !== 'object') continue;
@@ -111,6 +112,8 @@ export function mergeData(text){
   }
   /* doors opened on either device stay open; friends' letters from either device are all kept (the group stays this device's) */
   if (obj.hints) state.hints = {...obj.hints, ...(state.hints || {})};
+  /* the wand made more recently wins; Ollivander's note counts as arrived if either device had it */
+  if (obj.wand){ const a = state.wand || {}, b = obj.wand; state.wand = (b.d || '') > (a.d || '') ? {...b, note: a.note || b.note} : {...a, note: a.note || b.note}; }
   if (obj.doors){ const d = state.doors || (state.doors = {open: [], first: obj.doors.first || ''}); d.open = [...new Set([...d.open, ...obj.doors.open])]; }
   if (obj.friends){
     const fr = state.friends || (state.friends = {...obj.friends, mail: []}), have = new Set(fr.mail.map(m => m.id));

@@ -17,6 +17,7 @@ import {$, $$, esc, wait, toast, fitPaper, paintWall, openSheet, isSheetOpen, cl
 import {bakeLive, texturize} from './bake.js';
 import {hint} from './hints.js';
 import * as grammar from './grammar.js';
+import * as wand from './wand.js';
 
 /* Room art: every deck has a painted room, assets/rooms/<id>-portrait.webp (phones) and -wide.webp (wide screens).
    The drawn stone wall below is only the fallback while a painting is missing. */
@@ -468,6 +469,7 @@ export function initRoom(app){
     const help = helped ? ' · ' + [aid.letters ? `글자 ${aid.letters}개 더 봄` : '', aid.heard ? '한 번 들음' : ''].filter(Boolean).join(' · ') : '';
     v.innerHTML = react(g, said ? `${{good: '맞음', hard: '비슷', again: '틀림'}[g]} · ${Math.round(c.ratio * 100)}%${via}${help}` : '정답 보기') +
       (said ? `<div class="said" lang="en">${how && how.shown ? how.shown : esc(said)}</div>` : '');
+    if (g !== 'again') setTimeout(() => wand.spark($('.tag', v)), 420);
     if (!said) missRanges = [];
     else if (exprTask){
       /* map the missed words of the typed expression back onto the line */
@@ -503,6 +505,8 @@ export function initRoom(app){
     const ok = opt === quiz.blank;
     $$('#czOpts button').forEach(b => { b.disabled = true; if (b.dataset.opt === quiz.blank) b.classList.add('right'); else if (b.dataset.opt === opt) b.classList.add('wrong'); });
     gradeAny(ok ? 'good' : 'again', stage);
+    /* a right answer: a few sparks from the learner's wand, in the colour of its core (wand.js) */
+    if (ok) wand.spark([...document.querySelectorAll('#czOpts [data-opt]')].find(b => b.dataset.opt === opt));
     const r = react(ok ? 'good' : 'again', ok ? '맞음' : '틀림');
     if (mode === 'pick'){
       $('#czWhy').innerHTML = r;
@@ -554,6 +558,7 @@ export function initRoom(app){
     $('#arrPool').innerHTML = '';
     $('#arrLine').classList.toggle('solved', ok);
     gradeAny(ok ? 'good' : 'again', 'arrange');
+    if (ok) wand.spark($('#arrLine'));
     showAnswer(false);
     finish();
   }
