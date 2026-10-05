@@ -83,13 +83,26 @@ const KIND = {
   expr: {label: '표현 쓰기', ask: '빈칸의 표현을 쓰세요'},
   pick: {label: '대사 고르기', ask: ''}
 };
-/* each word shows its first letter; the rest are blanks of the same length (apostrophes and hyphens stay) */
-function skeleton(line){
-  return esc(line).replace(/[A-Za-z]+/g, (w, at, s) => {
-    const start = at === 0 || !/[A-Za-z'’]/.test(s[at - 1]);
-    const head = start ? w[0] : '', rest = w.slice(start ? 1 : 0);
-    return head + (rest ? `<i>${'_'.repeat(rest.length)}</i>` : '');
-  });
+/* each word shows its first letter; the rest are blanks of the same length (apostrophes and hyphens stay).
+   shown[k] = letters showing in word k (default 1). A word with letters still hidden is a button: one tap, one more
+   letter (2026-10-05 user decision). The letters given by tapping are marked .more. */
+const WORD = /[A-Za-z][A-Za-z'’]*/g;
+function skeleton(line, shown = []){
+  let k = 0, html = '', at = 0;
+  for (const m of line.matchAll(WORD)){
+    html += esc(line.slice(at, m.index)); at = m.index + m[0].length;
+    const n = shown[k] || 1, letters = m[0].replace(/['’]/g, '').length;
+    let seen = 0, out = '';
+    for (const ch of m[0]){
+      if (/['’]/.test(ch)){ out += esc(ch); continue; }
+      seen++;
+      out += seen === 1 ? ch : seen <= n ? `<b class="more">${ch}</b>` : '<i>_</i>';
+    }
+    out = out.split('</i><i>').join('');
+    html += n < letters ? `<button type="button" class="sk" data-sk="${k}" aria-label="한 글자 더">${out}</button>` : `<span class="sk done">${out}</span>`;
+    k++;
+  }
+  return html + esc(line.slice(at));
 }
 /* the expression's words in the line, as whole-word ranges, merged */
 function exprRanges(line, bre){
@@ -331,16 +344,25 @@ export function initRoom(app){
   /* ---------- recall: first letters, dictation or the expression only. Typed by default; speaking is optional */
   function resetRecall(){
     if (rec){ try { rec.abort(); } catch (e){} rec = null; }
-    $('#heard').hidden = true; $('#heard').textContent = '';
+    $('#heard').hidden = true; $('#heard').textContent = ''; $('#heard').classList.remove('fix'); heardWords = null;
     $('#typedIn').value = '';
     $('#micBtn').hidden = !SR; $('#micBtn').classList.remove('on');
     $('#askCue').hidden = true; $('#askKo').hidden = true; $('#askPlay').hidden = true;
+    $('#askAids').hidden = true;
   }
   function setupRecall(){
     $('#sAsk').textContent = KIND[kind].ask;
     const cue = $('#askCue'), ti = $('#typedIn');
     ti.rows = 3; ti.placeholder = '대사를 영어로 입력하세요';
-    if (kind === 'hint'){ cue.hidden = false; cue.className = 'cue skel'; cue.innerHTML = skeleton(card.line); target = card.line; }
+    if (kind === 'hint'){
+      aid = {shown: [], letters: 0, heard: false};
+      cue.hidden = false; cue.className = 'cue skel'; cue.innerHTML = skeleton(card.line); target = card.line;
+      /* the meaning waits behind a tap (free); one more letter and the single listen cap the grade at 비슷 */
+      $('#askAids').hidden = false;
+      $('#aidKo').hidden = !!store.get().settings.koFront;
+      const hear = $('#aidHear');
+      hear.hidden = !speech.gbVoices().length; hear.disabled = false; hear.textContent = '한 번 듣기';
+    }
     else if (kind === 'dict'){ $('#askPlay').hidden = false; target = card.line; }
     else if (kind === 'expr'){
       const rs = exprRanges(card.line, card.bre);
@@ -352,6 +374,21 @@ export function initRoom(app){
       ti.rows = 1; ti.placeholder = rs.length > 1 ? `빈칸 ${rs.length}개, 순서대로` : '빈칸에 들어갈 말';
     }
   }
+  /* first-letter aids: which letters were added, and whether the line was heard */
+  let aid = null;
+  const aidUsed = () => aid && (aid.letters || aid.heard);
+  function moreLetter(k){
+    if (mode !== 'recall' || answered || kind !== 'hint' || !aid) return;
+    aid.shown[k] = (aid.shown[k] || 1) + 1; aid.letters++;
+    $('#askCue').innerHTML = skeleton(card.line, aid.shown);
+    const b = $(`#askCue [data-sk="${k}"]`); if (b) b.focus({preventScroll: true});
+  }
+  function hearOnce(){
+    if (mode !== 'recall' || answered || kind !== 'hint' || !aid || aid.heard) return;
+    aid.heard = true;
+    const b = $('#aidHear'); b.disabled = true; b.textContent = '들었습니다';
+    speech.speak(card.line, store.get().settings.voice, null, .92);
+  }
   function typeMode(){ $('#typedIn').focus({preventScroll: true}); }
   function play(slow){ say(slow ? .62 : .92); }
   function listen(){
@@ -362,7 +399,7 @@ export function initRoom(app){
     const h = $('#heard');
     rec = new SR();
     rec.lang = 'en-GB'; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
-    h.hidden = false; h.textContent = '듣고 있습니다… 다 말하면 잠시 기다리세요';
+    h.hidden = false; h.classList.remove('fix'); heardWords = null; h.textContent = '듣고 있습니다… 다 말하면 잠시 기다리세요';
     $('#micBtn').classList.add('on');
     rec.onresult = e => { text = [...e.results].map(x => x[0].transcript).join(' ').trim(); if (text) h.textContent = '“' + text + '”'; };
     rec.onerror = e => {
@@ -373,12 +410,47 @@ export function initRoom(app){
     };
     rec.onend = () => {
       $('#micBtn').classList.remove('on'); rec = null;
-      if (text) checkRecall(text);
+      if (text) showHeard(text);
       else h.textContent = '들리지 않았습니다. 다시 눌러 말하거나 입력하세요.';
     };
     try { rec.start(); } catch (e){ rec = null; typeMode(); }
   }
-  function checkRecall(said){
+  /* what was heard waits before it is marked (2026-10-05 user decision): say it again, or tap a misheard word to fix
+     it. Up to FIX_LIMIT fixed words still count as speaking; more than that, and it is recorded as writing. */
+  const FIX_LIMIT = 3;
+  let heardWords = null;
+  const fixedCount = () => heardWords ? heardWords.filter(x => x.w !== x.was).length : 0;
+  function showHeard(text){
+    heardWords = text.split(/\s+/).filter(Boolean).map(w => ({w, was: w}));
+    drawHeard();
+  }
+  function drawHeard(){
+    const h = $('#heard'), n = fixedCount();
+    h.hidden = false; h.classList.add('fix');
+    h.innerHTML = `<p class="hd-lab">이렇게 들렸습니다 · 잘못 들은 단어는 눌러서 고치세요</p>` +
+      `<p class="hd-words" lang="en">${heardWords.map((x, i) => `<button type="button" class="hw${x.w !== x.was ? ' fixed' : ''}" data-hw="${i}">${esc(x.w || '—')}</button>`).join(' ')}</p>` +
+      `<p class="hd-note">${n > FIX_LIMIT ? `고친 단어 ${n}개 · 많이 고쳐서 쓰기로 기록됩니다` : n ? `고친 단어 ${n}개 · ${FIX_LIMIT}개까지 말하기로 인정` : ''}</p>` +
+      `<div class="hd-btns"><button type="button" data-hd="again">다시 말하기</button><button type="button" class="ok" data-hd="mark">이대로 채점</button></div>`;
+  }
+  function editHeard(i){
+    const b = $(`#heard [data-hw="${i}"]`); if (!b) return;
+    const inp = document.createElement('input');
+    inp.className = 'hw-in'; inp.value = heardWords[i].w; inp.lang = 'en';
+    inp.autocapitalize = 'off'; inp.spellcheck = false; inp.size = Math.max(4, heardWords[i].w.length + 2);
+    b.replaceWith(inp); inp.focus(); inp.select();
+    let closed = false;
+    const done = keep => { if (closed) return; closed = true; if (keep) heardWords[i].w = inp.value.trim(); drawHeard(); };
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); done(true); } else if (e.key === 'Escape'){ e.preventDefault(); done(false); } });
+    inp.addEventListener('blur', () => done(true));
+  }
+  function markHeard(){
+    if (!heardWords) return;
+    const n = fixedCount(), said = heardWords.map(x => x.w).filter(Boolean).join(' ');
+    /* the words fixed by hand stay marked in what is shown back */
+    const shown = heardWords.filter(x => x.w).map(x => x.w !== x.was ? `<u>${esc(x.w)}</u>` : esc(x.w)).join(' ');
+    checkRecall(said, {spoken: true, fixed: n, shown});
+  }
+  function checkRecall(said, how){
     if (mode !== 'recall' || answered || busy) return;
     resetRecall();
     answered = true;
@@ -386,12 +458,16 @@ export function initRoom(app){
     /* the expression task checks only the missing words; the others check the whole line */
     const exprTask = kind === 'expr';
     const c = compare(said, exprTask ? target.text : card.line);
-    const g = !said ? 'again' : c.words <= 2 ? (c.ratio === 1 ? 'good' : 'again') : c.ratio >= .9 ? 'good' : c.ratio >= .6 ? 'hard' : 'again';
+    let g = !said ? 'again' : c.words <= 2 ? (c.ratio === 1 ? 'good' : 'again') : c.ratio >= .9 ? 'good' : c.ratio >= .6 ? 'hard' : 'again';
+    const helped = kind === 'hint' && aidUsed();
+    if (helped && g === 'good') g = 'hard';
     gradeAny(g, 'recall');
     const v = $('#verdict');
     v.hidden = false; v.className = 'verdict ' + g;
-    v.innerHTML = react(g, said ? `${{good: '맞음', hard: '비슷', again: '틀림'}[g]} · ${Math.round(c.ratio * 100)}%` : '정답 보기') +
-      (said ? `<div class="said" lang="en">${esc(said)}</div>` : '');
+    const via = how && how.spoken ? (how.fixed > FIX_LIMIT ? ' · 쓰기로 기록' : how.fixed ? ` · 말하기 (${how.fixed}단어 고침)` : ' · 말하기') : '';
+    const help = helped ? ' · ' + [aid.letters ? `글자 ${aid.letters}개 더 봄` : '', aid.heard ? '한 번 들음' : ''].filter(Boolean).join(' · ') : '';
+    v.innerHTML = react(g, said ? `${{good: '맞음', hard: '비슷', again: '틀림'}[g]} · ${Math.round(c.ratio * 100)}%${via}${help}` : '정답 보기') +
+      (said ? `<div class="said" lang="en">${how && how.shown ? how.shown : esc(said)}</div>` : '');
     if (!said) missRanges = [];
     else if (exprTask){
       /* map the missed words of the typed expression back onto the line */
@@ -533,6 +609,16 @@ export function initRoom(app){
 
   /* ---------- events */
   $('#micBtn').addEventListener('click', listen);
+  $('#heard').addEventListener('click', e => {
+    if (mode !== 'recall' || answered || !heardWords) return;
+    const w = e.target.closest('[data-hw]'); if (w){ editHeard(+w.dataset.hw); return; }
+    const b = e.target.closest('[data-hd]'); if (!b) return;
+    if (b.dataset.hd === 'mark') markHeard();
+    else { heardWords = null; listen(); }
+  });
+  $('#askCue').addEventListener('click', e => { const b = e.target.closest('[data-sk]'); if (b) moreLetter(+b.dataset.sk); });
+  $('#aidKo').addEventListener('click', () => { if (mode !== 'recall' || kind !== 'hint') return; $('#aidKo').hidden = true; $('#askKo').hidden = false; $('#askKo').textContent = card.ko; });
+  $('#aidHear').addEventListener('click', hearOnce);
   $('#playBtn').addEventListener('click', () => play(false));
   $('#slowBtn').addEventListener('click', () => play(true));
   $('#dunnoBtn').addEventListener('click', () => checkRecall(''));

@@ -703,6 +703,14 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ask .cue{font-family:var(--f-display);font-size:calc(22px * var(--k));line-height:1.55;color:var(--ink)}
 .ask .cue.skel{letter-spacing:.01em;word-spacing:.12em}
 .ask .cue.skel i{font-style:normal;color:rgba(42,33,24,.38);letter-spacing:.06em}
+.ask .cue.skel .sk{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;border-radius:0;padding:5px 0;margin:0;cursor:pointer;text-decoration:underline dotted rgba(42,33,24,.32);text-underline-offset:6px;-webkit-tap-highlight-color:transparent}
+.ask .cue.skel .sk.done{cursor:default;text-decoration:none}
+.ask .cue.skel .sk:focus-visible{outline:2px solid #1F5E8C;outline-offset:2px}
+.ask .cue.skel b.more{font-weight:inherit;color:#1F5E8C}
+.ask .aids{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ask .aids button{min-height:44px;padding:0 14px;border:1.2px solid rgba(42,33,24,.5);background:transparent;border-radius:2px;font-family:var(--f-ko);font-size:14px;color:var(--ink);cursor:pointer}
+.ask .aids button:disabled{opacity:.45;cursor:default}
+.ask .aids .aid-note{flex-basis:100%;margin:0;font-family:var(--f-ko);font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
 .ask .cue .blank{display:inline-block;border-bottom:1.6px solid #8E1B1B;line-height:1.1}
 .ask .cue-ko{font-family:var(--f-ko);font-size:calc(14.5px * var(--k));line-height:1.6;color:#3E3222}
 .ask .play{display:flex;gap:10px}
@@ -1238,3 +1246,17 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z'/%3E%3C/svg%3E") center/contain no-repeat;
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z'/%3E%3C/svg%3E") center/contain no-repeat}
 .gr-cat button.cold b,.gr-cat button.cold span{opacity:.6}
+
+/* speaking: what was heard, waiting to be fixed or marked (js/room.js showHeard) */
+.heard.fix{display:flex;flex-direction:column;align-items:center;gap:6px;font-style:normal}
+.heard .hd-lab{margin:0;font:400 12.5px var(--f-ko);color:var(--ink-soft)}
+.heard .hd-words{margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 2px;line-height:1.5}
+.heard .hw{min-height:36px;padding:0 5px;background:none;border:0;border-bottom:1px dashed rgba(42,33,24,.35);font:italic 400 calc(19px * var(--k)) var(--f-display);color:var(--ink);cursor:pointer}
+.heard .hw:hover,.heard .hw:focus-visible{border-bottom-color:#7A1A12;color:#7A1A12;outline:none}
+.heard .hw.fixed{color:#1F5E8C;border-bottom:1.5px solid #1F5E8C}
+.heard .hw-in{min-height:36px;padding:0 6px;border:1px solid rgba(122,26,18,.55);border-radius:2px;background:rgba(255,250,235,.85);font:italic 400 calc(19px * var(--k)) var(--f-display);color:var(--ink)}
+.heard .hd-note{margin:0;min-height:18px;font:400 12px var(--f-ko);color:#1F5E8C}
+.heard .hd-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.heard .hd-btns button{min-height:44px;padding:0 16px;border:1px solid rgba(42,33,24,.35);border-radius:2px;background:none;font:500 14px var(--f-ko);color:var(--ink);cursor:pointer}
+.heard .hd-btns .ok{background:#2A2118;color:#F3E9CF;border-color:#2A2118}
+.react .said u,.verdict .said u{text-decoration:none;color:#1F5E8C;border-bottom:1.5px solid #1F5E8C}
