@@ -5,7 +5,14 @@ const listeners = new Set();
 
 function refresh(){
   if (!synth) return;
-  voices = synth.getVoices().filter(v => /^en[-_]GB/i.test(v.lang));
+  /* one entry per name: iPhones list the same voice twice (compact and enhanced). Keep the better one. */
+  const rank = v => (/enhanced|premium/i.test(v.voiceURI) ? 2 : 0) + (v.localService ? 1 : 0);
+  const best = new Map();
+  synth.getVoices().filter(v => /^en[-_]GB/i.test(v.lang)).forEach(v => {
+    const had = best.get(v.name);
+    if (!had || rank(v) > rank(had)) best.set(v.name, v);
+  });
+  voices = [...best.values()];
   listeners.forEach(f => f(voices));
 }
 if (synth){
