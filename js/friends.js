@@ -4,9 +4,12 @@
    the owl's envelope and unread letters (plus the seal chooser and the "to whom" list, where the seal is the point).
    Data: post.js. */
 import * as post from './post.js';
+import * as wand from './wand.js';
 import {$, esc, toast, openSheet, closeSheet} from './ui.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
+/* a friend's wand (once their letter has been read), drawn small across the corner where the wax was */
+export const wandTag = wood => wand.WOODS[wood] ? `<img class="fr-wand" src="${wand.img(wood)}" alt="" aria-hidden="true">` : '';
 export const sealTag = (seal, cls = '') => seal ? `<i class="seal p-${esc(seal)} ${cls}" aria-hidden="true"></i>` : '';
 export const paras = s => esc(s).split(/\n+/).map(p => `<p>${p}</p>`).join('');
 const practiceNote = cls => post.isPractice() || (post.practiceMode() && !post.joined()) ? `<p class="${cls}">연습용 우체국 · 가짜 친구 3명(Clara, Theo, Iris)이 답장합니다. 진짜 친구에게는 가지 않습니다.</p>` : '';
@@ -116,7 +119,7 @@ export function wireFriends(app){
     }
     const w = e.target.closest('[data-write]'); if (w){ compose(w.dataset.write, app); return; }
     const l = e.target.closest('[data-leave]');
-    if (l) await busy(l, async () => { await post.leave(); closeSheet(); after(); toast('그룹에서 나왔습니다. 받은 편지는 그대로 있습니다.'); });
+    if (l) await busy(l, async () => { await post.leave(); closeSheet(); after(); toast('그룹에서 나왔습니다. 주고받은 편지도 지웠습니다.'); });
   });
   $('#fGroup').addEventListener('click', async e => {
     const b = e.target.closest('[data-fg]'); if (!b) return;
@@ -125,7 +128,7 @@ export function wireFriends(app){
       catch (err){ toast(`그룹 코드: <b>${esc(post.code())}</b>`, 4000, true); }
     } else if (b.dataset.fg === 'leave'){
       openSheet(`<div class="sh-kind"><span>친구 그룹</span></div><h2 class="sh-expr" id="shTitle">이 그룹에서 나갈까요?</h2>` +
-        `<p class="w-lead">받은 편지는 이 폰에 그대로 남습니다. 같은 코드로 다시 들어올 수 있지만, 도장은 그때 다시 골라야 합니다.</p>` +
+        `<p class="w-lead">나가면 이 폰의 친구 편지가 모두 지워지고, 친구들의 폰에서도 나와 주고받은 편지가 사라집니다. 같은 코드로 다시 들어올 수 있지만, 도장은 그때 다시 골라야 합니다.</p>` +
         `<button type="button" class="sh-drill" data-leave>나가기</button>`);
     }
   });

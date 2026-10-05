@@ -2,8 +2,11 @@
    code; each holds one player seal nobody else in the group has; letters between them are English only, at most 600
    characters. Every letter, sent or received, is kept on this phone (state.friends.mail) — the server only carries
    them: the recipient's phone saves a letter and deletes it from the server; the sender's phone clears any of its own
-   still waiting after 30 days.
-   state.friends = {uid, code, seal, practice, members:[{uid, name, seal}], mail:[{id, from, to, t, at, text, read, seen}]}
+   still waiting after 30 days. When someone leaves the group, the letters to and from them go from every phone
+   (2026-10-05 user decision): the others' phones drop them when that seal disappears, and the leaver's own phone
+   drops all its friends' letters.
+   state.friends = {uid, code, seal, practice, members:[{uid, name, seal, wand}], mail:[{id, from, to, t, at, text, read, seen}]}
+   wand = the wood of that friend's wand (wand.js), kept on their seal so a read letter can show it (2026-10-05).
    t = date (YYYY-MM-DD), at = arrival time (ms) — a letter whose time has not come yet is still on the wing;
    seen = the owl has already brought it (owl.js), read = it has been opened.
    Server: Firebase project "ink-and-owl" (js/firebase-config.js, rules in firestore.rules), signed in anonymously.
@@ -13,6 +16,7 @@
 import * as store from './store.js';
 import * as srs from './srs.js';
 import {firebaseConfig} from './firebase-config.js';
+import * as wand from './wand.js';
 
 export const SEALS = [
   {id: 'lion', en: 'Lion', ko: '사자'}, {id: 'serpent', en: 'Serpent', ko: '뱀'}, {id: 'eagle', en: 'Eagle', ko: '독수리'},
@@ -41,9 +45,9 @@ export function onChange(fn){ notify = fn; }
 
 /* ---------- the practice post office (no server): made-up friends, canned answers */
 const PRACTICE = [
-  {uid: 'p-clara', name: 'Clara', seal: 'eagle'},
-  {uid: 'p-theo', name: 'Theo', seal: 'badger'},
-  {uid: 'p-iris', name: 'Iris', seal: 'thestral'}
+  {uid: 'p-clara', name: 'Clara', seal: 'eagle', wand: 'hazel'},
+  {uid: 'p-theo', name: 'Theo', seal: 'badger', wand: 'oak'},
+  {uid: 'p-iris', name: 'Iris', seal: 'thestral', wand: 'willow'}
 ];
 const HELLO = {from: 'p-clara', text: "Hello! I've just found the Owlery — it's freezing up here, and an owl keeps staring at me. " +
   "Snape made me say 'I don't recall asking for your opinion' three times today. I think I'm getting the hang of it. Write back?"};
@@ -122,7 +126,7 @@ const firebase = {
   async seals(code){
     const {F} = await connect();
     const q = await F.getDocs(col(code, 'seals'));
-    return q.docs.map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id}));
+    return q.docs.map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || ''}));
   },
   /* take a seal and become a member in one go; fails if someone took that seal first */
   async claim(code, seal, name){
@@ -167,7 +171,19 @@ const firebase = {
     }, () => {}));
     unsub.push(F.onSnapshot(col(code, 'seals'), snap => {
       const fr = f();
-      fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id}));
+      fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || ''}));
+      /* someone has left (their seal is gone): the letters to and from them, and their news, go from this phone too.
+         Only on a fresh answer from the server, never on a stale copy. */
+      if (!snap.metadata.fromCache){
+        const here = new Set([fb.uid, ...fr.members.map(m => m.uid)]), other = m => m.from === fb.uid ? m.to : m.from;
+        const before = fr.mail.length;
+        fr.mail = fr.mail.filter(m => here.has(other(m)));
+        if (fr.news) fr.news = fr.news.filter(n => here.has(n.from));
+        if (fr.mail.length !== before) notify();
+      }
+      /* my own seal carries my wand's wood; put it right if it is missing or out of date */
+      const own = snap.docs.find(d => d.data().uid === fb.uid), mine = (wand.get() || {}).wood || '';
+      if (own && mine && (own.data().wand || '') !== mine) F.updateDoc(own.ref, {wand: mine}).catch(() => {});
       store.save(); notify();
     }, () => {}));
     /* friends' milestones of the last fortnight that this phone has not heard yet: a professor will pass them on */
@@ -201,8 +217,14 @@ export const code = () => f().code;
 export const myUid = () => f().uid;
 export const mySeal = () => f().seal;
 export const members = () => f().members;
-export const memberOf = uid => uid === f().uid ? {uid, name: myName(), seal: f().seal} : f().members.find(m => m.uid === uid) || {uid, name: '?', seal: ''};
+export const memberOf = uid => uid === f().uid ? {uid, name: myName(), seal: f().seal, wand: (wand.get() || {}).wood || ''} : f().members.find(m => m.uid === uid) || {uid, name: '?', seal: ''};
 export const takenSeals = () => new Map(f().members.map(m => [m.seal, m.name]));
+
+/* a new wand (ollivander.js): its wood goes onto my seal for the friends to see */
+export function shareWand(){
+  const fr = f(), w = wand.get(); if (!w || !fr.code || !fr.seal || backend() === practice) return;
+  connect().then(({F}) => F.updateDoc(g(fr.code, 'seals', fr.seal), {wand: w.wood})).catch(() => {});
+}
 
 /* letters that have arrived (their time has come), newest first; sent ones are always "arrived" */
 export const letters = () => f().mail.filter(m => m.from === f().uid || m.at <= Date.now()).sort((a, b) => b.at - a.at);
@@ -251,12 +273,13 @@ export async function pickSeal(id){
   start();
   return '';
 }
-/* leaving keeps the letters already on this phone */
+/* leaving takes the friends' letters off this phone as well (2026-10-05 user decision); the others' phones drop the
+   letters to and from me when my seal disappears */
 export async function leave(){
   const fr = f();
   stopListening();
   try { await backend().leave(fr.code, fr.seal); } catch (e){ /* the server copy is cleared next time; the phone forgets now */ }
-  Object.assign(fr, {code: '', seal: '', members: [], practice: false}); store.save();
+  Object.assign(fr, {code: '', seal: '', members: [], practice: false, mail: [], news: []}); store.save();
 }
 
 export async function send(to, text){

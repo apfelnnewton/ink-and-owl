@@ -908,6 +908,8 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .lt-list li{border-bottom:1px solid rgba(237,227,200,.1)}
 .lt-list button{width:100%;min-height:64px;padding:12px 4px 12px 40px;position:relative;display:flex;flex-direction:column;gap:3px;background:none;border:0;text-align:left;cursor:pointer;color:#C9BFA6}
 .lt-list .seal{position:absolute;left:4px;top:14px;width:26px;height:26px}
+/* a read friend's letter: their wand lies across the corner where the wax was */
+.lt-list .fr-wand{position:absolute;left:-3px;top:20px;width:42px;transform:rotate(-38deg);transform-origin:50% 50%;filter:brightness(1.35) drop-shadow(0 1px 1px rgba(0,0,0,.6))}
 .lt-meta{font-size:12px;color:#8E8676}
 .lt-list li.new .lt-meta{color:#E8C877}
 .lt-first{font:italic 17px/1.35 'Cormorant Garamond',serif;color:#BDB39C}

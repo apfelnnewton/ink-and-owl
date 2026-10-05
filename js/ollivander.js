@@ -7,6 +7,7 @@
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as speech from './speech.js';
+import * as post from './post.js';
 import {$, esc, toast, openSheet, fitPaper, reduced, wait} from './ui.js';
 
 const SR = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
@@ -167,6 +168,7 @@ export function initOllivander(app){
   function showCard(){
     step = 'card';
     const w = wand.keep(made);   // kept from here on, even if the learner walks away
+    post.shareWand();
     sec.classList.remove('lit'); leaveScene();
     stage.innerHTML = boxed(w.wood);
     put(cardWords(w) + btn('home', 'Into the box, then.', '상자에 넣어 내 방으로'), {en: wand.sayings(w).map(s => s.en.replace(MARK, '$1')).join(' ')});

@@ -7,7 +7,7 @@ import * as bond from './bond.js';
 import * as store from './store.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 import * as post from './post.js';
-import {sealTag, readLetter, friendBar, wireFriends} from './friends.js';
+import {sealTag, wandTag, readLetter, friendBar, wireFriends} from './friends.js';
 import {hint} from './hints.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -27,7 +27,7 @@ export function initLetters(app){
     $('#ltWho').innerHTML = `<button type="button" data-who="friends" class="${on ? 'on' : ''}" aria-pressed="${on}">친구${n ? `<i class="dot" aria-label="안 읽은 편지 ${n}통">${n}</i>` : ''}</button>` +
       DECKS.map(d => { const n = bond.unread(d.id), on = !friends && d.id === deck.id; return `<button type="button" data-who="${d.id}" class="${on ? 'on' : ''}" aria-pressed="${on}">${esc(d.ko.replace(/ 교수$/, ''))}${n ? `<i class="dot" aria-label="안 읽은 편지 ${n}통">${n}</i>` : ''}</button>`; }).join('');
   }
-  /* wax only on a letter still sealed (2026-10-04 user decision): once read, a row is just the name and its first line */
+  /* wax only on a letter still sealed (2026-10-04 user decision); once read, the friend's wand lies in its place (2026-10-05) */
   function drawFriends(){
     tabs();
     $('#ltRel').innerHTML = friendBar();
@@ -36,7 +36,7 @@ export function initLetters(app){
     list.innerHTML = mail.length ? mail.map((m, i) => {
       const who = post.memberOf(m.from), unread = !m.read, day = i === 0 || mail[i - 1].t !== m.t;
       return (day ? `<li class="lt-day">${fmt(m.t)}</li>` : '') +
-        `<li class="${unread ? 'new' : ''}"><button type="button" data-fmail="${esc(m.id)}"${unread ? ' aria-label="새 편지"' : ''}>${unread ? sealTag(who.seal) : ''}` +
+        `<li class="${unread ? 'new' : ''}"><button type="button" data-fmail="${esc(m.id)}"${unread ? ' aria-label="새 편지"' : ''}>${unread ? sealTag(who.seal) : wandTag(who.wand)}` +
         `<span class="lt-meta" lang="en">${esc(who.name)}</span>` +
         `<span class="lt-first" lang="en">${esc(m.text.replace(/\s+/g, ' ').slice(0, 70))}${m.text.length > 70 ? '…' : ''}</span></button></li>`;
     }).join('') : (post.inGroup() ? `<li class="lt-none"><p>아직 친구에게서 온 편지가 없습니다.</p></li>` : '');
