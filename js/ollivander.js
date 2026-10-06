@@ -3,11 +3,15 @@
    wand box in my room. Five questions (the tea-time pattern: Ollivander speaks, three answers to choose from), a maple
    wand that breaks the vase, then the learner's own wand: sparks in the colour of its core, "Lumos" said aloud or
    tapped, and the result card. Leaving half-way starts again next time; the wand is kept only at the card.
-   #/ollivander/again: making a new wand (from the wand box). Words and rules: wand.js. */
+   #/ollivander/again: making a new wand (from the wand box). Once a spell is learnt, the new wand is the learner's only
+   after a test on the spells learnt (spells.wandTest: first-letter questions, every one right); otherwise Ollivander keeps
+   it until the next day, when the test can be taken again without the questions. Words and rules: wand.js. */
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as speech from './speech.js';
 import * as post from './post.js';
+import * as spells from './spells.js';
+import * as srs from './srs.js';
 import {$, esc, toast, openSheet, fitPaper, reduced, wait} from './ui.js';
 
 const SR = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
@@ -163,8 +167,50 @@ export function initOllivander(app){
     tip.innerHTML = ''; tip.classList.remove('burst'); tip.classList.add('lit');
     sec.classList.add('lit');
     await wait(reduced() ? 0 : 900);
-    put(who() + say(wand.LINES.chose) + btn('card', 'May I see it?', '내 지팡이 보기'), wand.LINES.chose);
+    put(who() + say(wand.LINES.chose) + (again && spells.learntList().length ? btn('test', 'Very well.', '시험 보기') : btn('card', 'May I see it?', '내 지팡이 보기')), wand.LINES.chose);
   }
+  /* ---------- the new-wand test */
+  let tq = [], ti = 0, tok = 0;
+  async function test(){
+    await spells.load();
+    tq = spells.wandTest(srs.today() + made.wood); ti = 0; tok = 0;
+    if (!tq.length){ showCard(); return; }
+    step = 'test';
+    put(who() + say(wand.LINES.test) + btn('tq', 'Very well.', `시작 · ${tq.length}문제`), wand.LINES.test);
+  }
+  function testQ(){
+    step = 'tq';
+    const q = tq[ti], m = q.s.match(/([A-Za-z])(_+)/), sp = spells.get(q.spell);
+    put(boxesN(ti, tq.length) + `<p class="sp-kind">${esc(sp ? sp.name : '')} · 첫 글자 보고 쓰기</p><p class="sp-qko">${esc(q.ko)}</p>` +
+      `<p class="sp-qs" lang="en">${esc(q.s.slice(0, m.index))}<span class="sp-blank">${esc(m[1])}${'_'.repeat(m[2].length)}</span>${esc(q.s.slice(m.index + m[0].length))}</p>` +
+      `<form class="sp-write" data-tw><input id="olIn" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="빈칸에 들어갈 단어" placeholder="${esc(m[1])}…"><button type="submit" class="ol-go"><span lang="en">Check</span><small>확인</small></button></form>`);
+    setTimeout(() => { const i = $('#olIn'); if (i) i.focus({preventScroll: true}); }, 60);
+  }
+  const boxesN = (k, n) => `<div class="ol-boxes" aria-label="문제 ${k + 1} / ${n}">${Array.from({length: n}, (_, i) => `<i class="${i < k ? 'on' : ''}"></i>`).join('')}</div>`;
+  function testAnswer(v){
+    const q = tq[ti], ok = spells.same(v, q.a), inp = $('#olIn');
+    if (ok) tok++;
+    inp.classList.add(ok ? 'right' : 'wrong'); inp.disabled = true; body.querySelector('.sp-write button').disabled = true;
+    body.insertAdjacentHTML('beforeend', `<div class="sp-fb ${ok ? 'ok' : 'no'}">${ok ? '<b>맞았습니다</b>' : `<b>정답</b><span lang="en">${esc(q.a)}</span>`}${btn('tnext', 'Next', '다음')}</div>`);
+  }
+  function testNext(){
+    ti++;
+    if (ti < tq.length){ testQ(); return; }
+    if (tok === tq.length){ wand.dropPending(); showCard(); return; }
+    wand.setPending(made);
+    step = 'kept';
+    put(who() + say(wand.LINES.keepIt) + `<p class="sp-next">${tok} / ${tq.length} · 내일 다른 문제로 다시 볼 수 있습니다</p>` + btn('leave', 'Until tomorrow.', '지팡이 상자로'), wand.LINES.keepIt);
+  }
+  /* back the next day for a wand that is waiting */
+  function waiting(){
+    const p = wand.pending();
+    made = {...p};
+    scene(made.wood, '');
+    if (p.d >= srs.today()){ step = 'wait'; put(who() + say(wand.LINES.tomorrow) + btn('leave', 'Tomorrow, then.', '지팡이 상자로'), wand.LINES.tomorrow); return; }
+    step = 'wait';
+    put(who() + say(wand.LINES.waiting) + btn('test', 'Let us see.', '시험 보기') + btn('fresh', 'A different wand', '문답부터 다시', 'quiet'), wand.LINES.waiting);
+  }
+
   function showCard(){
     step = 'card';
     const w = wand.keep(made);   // kept from here on, even if the learner walks away
@@ -182,8 +228,10 @@ export function initOllivander(app){
     const o = e.target.closest('[data-opt]'); if (o && step === 'q'){ answer(+o.dataset.opt); return; }
     const b = e.target.closest('[data-act]'); if (!b) return;
     ({hello, q: question, try1, wave1, try2, wave2, speak: listen, lumos, card: showCard,
-      home: () => app.go('#/me/wand'), leave: () => app.go('#/me/wand')})[b.dataset.act]?.();
+      home: () => app.go('#/me/wand'), leave: () => app.go('#/me/wand'), test, tq: testQ, tnext: testNext,
+      fresh: () => { wand.dropPending(); hello(); }})[b.dataset.act]?.();
   });
+  body.addEventListener('submit', e => { if (!e.target.closest('[data-tw]') || step !== 'tq') return; e.preventDefault(); const i = $('#olIn'); if (i && i.value.trim() && !i.disabled) testAnswer(i.value); });
   $('#olBack').addEventListener('click', () => { speech.stop(); app.go(wand.get() || wand.noteArrived() ? '#/me/wand' : '#/me'); });
 
   function show({id}){
@@ -191,7 +239,8 @@ export function initOllivander(app){
     if (rec){ try { rec.abort(); } catch (e){} rec = null; }
     sec.classList.remove('lit', 'shake'); leaveScene();
     again = id === 'again' && !!wand.get();
-    if (again) warn();
+    if (again && wand.pending()) waiting();
+    else if (again) warn();
     else if (wand.get()){ app.go('#/me/wand', true); return; }
     else note();
   }

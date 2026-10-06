@@ -1,7 +1,7 @@
 /* Start-up and routing. #/ corridor · #/room/<deck>[/extra|/wrong] classroom · #/report/<deck> end of lesson ·
    #/notes/<deck> expression notebook · #/script/<deck> the script · #/records the register · #/me your own room ·
    #/me/cabinet/<deck> the gift drawers · #/me/journal/<deck> the tea journal · #/me/wand the wand box ·
-   #/ollivander[/again] the wand shop ·
+   #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/me/spells the spellbook ·
    #/letters/<deck|friends> owl post (on the desk in your room; friends' letters in the first tab) · #/settings */
 import * as store from './store.js';
 import {DECKS, byId} from './decks.js';
@@ -15,6 +15,7 @@ import {initScript} from './script.js';
 import {initLetters} from './letters.js';
 import {initMyRoom} from './myroom.js';
 import {initOllivander} from './ollivander.js';
+import {initSpell} from './spell.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
@@ -85,7 +86,7 @@ const app = {
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), me: initMyRoom(app), ollivander: initOllivander(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app)};
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */

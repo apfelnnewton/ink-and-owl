@@ -1,0 +1,2082 @@
+[
+ {
+  "id": "expelliarmus",
+  "prof": "snape",
+  "n": 1,
+  "name": "Expelliarmus",
+  "ko": "무장 해제 마법",
+  "path": "expelliarmus",
+  "resist": false,
+  "letter": {
+   "en": "{name}. You have sat through enough of my lessons to be trusted with a wand in my presence — barely. My office, after your next lesson. Do not be late.",
+   "ko": "{name}. 내 수업을 꽤 버텨 냈으니 내 앞에서 지팡이를 들어도 되겠지. 겨우. 다음 수업이 끝나면 내 연구실로 와라. 늦지 마라."
+  },
+  "intro": {
+   "en": "The Disarming Charm. I used it on Gilderoy Lockhart in front of the entire Duelling Club, and I would do so again. It does not wound. It simply removes your opponent's wand — and, with it, their dignity.",
+   "ko": "무장 해제 마법이다. 결투 클럽에서 모두가 보는 앞에서 길더로이 록하트에게 썼지. 다시 쓰라고 해도 쓰겠다. 상처는 내지 않는다. 상대의 지팡이를, 그리고 체면까지 빼앗을 뿐이다."
+  },
+  "root": "라틴어 *expellere* 몰아내다 + *arma* 무기 → \"무기를 몰아내다\"",
+  "words": [
+   {
+    "w": "expel",
+    "pos": "v.",
+    "ko": "쫓아내다, 퇴학·제명시키다",
+    "en": "The society voted to expel two members for misconduct.",
+    "eko": "그 모임은 품행 문제로 회원 두 명을 제명하기로 의결했다."
+   },
+   {
+    "w": "expulsion",
+    "pos": "n.",
+    "ko": "퇴학, 제명, 추방",
+    "en": "Persistent absence may result in expulsion.",
+    "eko": "계속 결석하면 퇴학 처분을 받을 수 있다."
+   },
+   {
+    "w": "disarm",
+    "pos": "v.",
+    "ko": "무장 해제하다; 경계심을 풀게 하다",
+    "en": "The candour of the reply disarmed even the harshest critics.",
+    "eko": "그 솔직한 대답에 가장 날카로운 비평가들조차 마음이 누그러졌다."
+   },
+   {
+    "w": "disarming",
+    "pos": "adj.",
+    "ko": "마음을 누그러뜨리는",
+    "en": "The minister answered with a disarming smile.",
+    "eko": "장관은 경계심을 풀게 하는 미소로 답했다."
+   }
+  ],
+  "lines": [
+   "snape-2-027",
+   "mcgonagall-5-044.5",
+   "dumbledore-2-059",
+   "umbridge-5-048"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Two pupils were ____ for setting fire to the greenhouse.",
+    "opts": [
+     "expelled",
+     "expulsion",
+     "expel"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The headmaster announced the ____ of three students.",
+    "opts": [
+     "expulsion",
+     "expelled",
+     "expel"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "The frankness of the answer *disarmed* the committee.",
+    "opts": [
+     "위원회의 경계심을 누그러뜨렸다",
+     "위원회의 무기를 빼앗았다",
+     "위원회를 해산시켰다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "장관은 경계심을 풀게 하는 미소로 답했다.",
+    "s": "The minister answered with a d________ smile.",
+    "a": "disarming"
+   },
+   {
+    "t": "write",
+    "ko": "규칙을 어기는 회원은 제명된다.",
+    "s": "Members who break the rules will be e_______.",
+    "a": "expelled"
+   }
+  ]
+ },
+ {
+  "id": "protego",
+  "prof": "snape",
+  "n": 2,
+  "name": "Protego",
+  "ko": "방패 마법",
+  "path": "protego",
+  "resist": false,
+  "letter": {
+   "en": "You have proved tolerably persistent. Persistence without defence, however, is merely stubbornness. My office. Tonight.",
+   "ko": "제법 끈질기다는 건 증명했군. 하지만 방어 없는 끈기는 고집일 뿐이다. 내 연구실로 와라. 오늘 밤."
+  },
+  "intro": {
+   "en": "The Shield Charm. Potter once used it against me, in what were meant to be lessons in Occlumency. I have not forgotten. A competent wizard need not say it aloud. You, I suspect, will need to.",
+   "ko": "방패 마법이다. 포터가 한번은 오클루먼시를 가르치던 시간에 나한테 이걸 썼지. 잊지 않았다. 유능한 마법사라면 소리 내어 외울 필요도 없다. 너는, 아마 외워야 할 거다."
+  },
+  "root": "라틴어 *protego* \"나는 지킨다\" (*pro* 앞 + *tegere* 덮다 → 앞을 덮어 지키다). 이건 진짜 라틴어 그대로다.",
+  "words": [
+   {
+    "w": "protect",
+    "pos": "v.",
+    "ko": "지키다, 보호하다",
+    "en": "The castle is protected by enchantments older than the Ministry itself.",
+    "eko": "그 성은 마법부보다 오래된 마법으로 보호받고 있다."
+   },
+   {
+    "w": "protection",
+    "pos": "n.",
+    "ko": "보호",
+    "en": "The charity offers protection to those fleeing persecution.",
+    "eko": "그 자선 단체는 박해를 피해 온 사람들을 보호한다."
+   },
+   {
+    "w": "protective",
+    "pos": "adj.",
+    "ko": "보호하는; 지키려 드는",
+    "en": "The family is fiercely protective of its privacy.",
+    "eko": "그 가족은 사생활을 지키는 데 몹시 예민하다."
+   },
+   {
+    "w": "protégé",
+    "pos": "n.",
+    "ko": "아끼고 이끌어 주는 후배·제자",
+    "en": "Professor Slughorn liked nothing better than to boast of his protégés.",
+    "eko": "슬러그혼 교수는 자기가 아끼는 제자들을 자랑하는 걸 무엇보다 좋아했다."
+   }
+  ],
+  "lines": [
+   "snape-6-023",
+   "snape-6-005.2",
+   "snape-7-003.1",
+   "mcgonagall-1-047.1",
+   "dumbledore-5-103.3"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The forest is home to several ____ species.",
+    "opts": [
+     "protected",
+     "protection",
+     "protective"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The Ministry offered the witnesses round-the-clock ____.",
+    "opts": [
+     "protection",
+     "protective",
+     "protect"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a former *protégé* of the headmaster",
+    "opts": [
+     "교장이 아끼고 이끌어 준 사람",
+     "교장을 지키는 경호원",
+     "교장의 경쟁자"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "실험실에서는 항상 보호 안경을 써야 한다.",
+    "s": "P_________ goggles must be worn in the laboratory at all times.",
+    "a": "Protective"
+   },
+   {
+    "t": "write",
+    "ko": "난 널 지키겠다고 맹세했다.",
+    "s": "I swore to p______ you.",
+    "a": "protect",
+    "note": "스네이프 6편 대사"
+   }
+  ]
+ },
+ {
+  "id": "finite-incantatem",
+  "prof": "snape",
+  "n": 3,
+  "name": "Finite Incantatem",
+  "ko": "마법 끝내기",
+  "path": "finite",
+  "resist": false,
+  "letter": {
+   "en": "As a rule, I do not teach the same student twice in one evening. I am prepared, on this occasion, to make an exception. My office.",
+   "ko": "원칙적으로 나는 한 학생을 하룻밤에 두 번 가르치지 않는다. 이번에는 예외를 두겠다. 내 연구실로 와라."
+  },
+  "intro": {
+   "en": "There will be no silly incantations in my classroom — save this one. It ends whatever spell is running. When a duel I was supervising descended into chaos, it was this that restored order. It puts an end to nonsense. I find that endlessly useful.",
+   "ko": "내 수업에서 우스꽝스러운 주문 따위는 없다. 이것만 빼고. 걸려 있는 마법을 끝내는 주문이다. 내가 감독하던 결투가 아수라장이 됐을 때 질서를 되찾은 게 이 주문이었지. 헛소리를 끝낸다. 그게 끝없이 쓸모가 있더군."
+  },
+  "root": "라틴어 *finis* 끝 + *incantare* 주문을 외다(*in* + *cantare* 노래하다). *Incantatem*은 진짜 라틴어 형태가 아니다 — 마법사들이 만든 말.",
+  "words": [
+   {
+    "w": "finite",
+    "pos": "adj.",
+    "ko": "끝이 있는, 한정된",
+    "en": "We have only a finite amount of time, so use it wisely.",
+    "eko": "우리 시간은 한정되어 있으니 현명하게 써라."
+   },
+   {
+    "w": "infinitely",
+    "pos": "adv.",
+    "ko": "한없이, 훨씬",
+    "en": "I am infinitely grateful for your patience.",
+    "eko": "인내해 주셔서 한없이 감사합니다."
+   },
+   {
+    "w": "definitive",
+    "pos": "adj.",
+    "ko": "최종적인, 가장 권위 있는",
+    "en": "The Ministry has yet to issue a definitive statement.",
+    "eko": "마법부는 아직 최종 입장을 내놓지 않았다."
+   },
+   {
+    "w": "incantation",
+    "pos": "n.",
+    "ko": "주문(외는 말)",
+    "en": "Mispronounce the incantation and the spell will fail.",
+    "eko": "주문을 잘못 발음하면 마법은 실패한다."
+   }
+  ],
+  "lines": [
+   "snape-1-028.1",
+   "lupin-3-008.2",
+   "lupin-3-045.2",
+   "dumbledore-4-068.2"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Our resources are ____; we cannot help everyone.",
+    "opts": [
+     "finite",
+     "infinite",
+     "definitive"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The headmaster's patience seemed ____.",
+    "opts": [
+     "infinite",
+     "finite",
+     "definitive"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "the *definitive* history of the castle",
+    "opts": [
+     "가장 권위 있고 완결된",
+     "처음 쓰인",
+     "아직 끝나지 않은"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "이 수업에서는 어리석게 지팡이를 휘두르거나 우스꽝스러운 주문을 외는 일은 없을 것이다.",
+    "s": "There will be no foolish wand-waving or silly i___________ in this class.",
+    "a": "incantations",
+    "note": "스네이프 1편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "한없이 공정한",
+    "s": "i_________ fair-minded",
+    "a": "infinitely",
+    "note": "덤블도어 4편 대사"
+   }
+  ]
+ },
+ {
+  "id": "reparo",
+  "prof": "mcgonagall",
+  "n": 1,
+  "name": "Reparo",
+  "ko": "수리 마법",
+  "path": "reparo",
+  "resist": false,
+  "letter": {
+   "en": "{name}. Ten lines learnt and a wand in hand: that will do for a beginning. My office, after your next lesson. Bring your wand; leave your excuses outside.",
+   "ko": "{name}. 대사 열 줄을 익혔고 지팡이도 생겼다. 시작하기엔 그걸로 됐다. 다음 수업이 끝나면 내 연구실로 와라. 지팡이는 가져오고, 핑계는 문밖에 두고 와라."
+  },
+  "intro": {
+   "en": "The Mending Charm. In my years at this school I have seen a great many things broken: teacups, windows and, now and then, a rule. This will mend the first two; the third is mended in detention. Be precise — careless wandwork leaves a seam you can see from across the room.",
+   "ko": "수리 마법이다. 이 학교에 있으면서 망가지는 걸 숱하게 봤다. 찻잔, 유리창, 그리고 가끔은 규칙까지. 이 주문은 앞의 두 가지를 고친다. 세 번째는 방과 후 벌로 고친다. 정확하게 해라. 지팡이를 대충 쓰면 방 건너편에서도 보이는 이음매가 남는다."
+  },
+  "root": "라틴어 *reparo* \"나는 고친다, 되찾는다\" (*re* 다시 + *parare* 마련하다·준비하다 → 다시 마련하다). 이건 진짜 라틴어 그대로다. prepare(*prae* 미리 + *parare*)도 같은 *parare*에서 왔다.",
+  "notes": [
+   "\"…로 자리를 옮기다\"라는 뜻의 repair(repair to the drawing room)도 있는데, 철자만 같은 다른 단어다(후기 라틴어 *repatriare* 고향으로 돌아가다 → 옛 프랑스어 *repairier*)."
+  ],
+  "words": [
+   {
+    "w": "repair",
+    "pos": "v., n.",
+    "ko": "고치다; 수리",
+    "en": "The east wing will remain closed while the roof is under repair.",
+    "eko": "지붕을 수리하는 동안 동쪽 건물은 계속 닫혀 있을 것이다."
+   },
+   {
+    "w": "reparation",
+    "pos": "n.",
+    "ko": "배상, 보상",
+    "en": "The court ordered the company to make reparation to everyone it had harmed.",
+    "eko": "법원은 그 회사가 피해를 준 모든 사람에게 배상하라고 명령했다."
+   },
+   {
+    "w": "irreparable",
+    "pos": "adj.",
+    "ko": "돌이킬 수 없는, 고칠 수 없는",
+    "en": "One careless remark did irreparable damage to a friendship of twenty years.",
+    "eko": "무심한 말 한마디가 20년 우정에 돌이킬 수 없는 상처를 냈다."
+   },
+   {
+    "w": "preparatory",
+    "pos": "adj.",
+    "ko": "준비를 위한, 예비의",
+    "en": "The preparatory work alone took three months.",
+    "eko": "준비 작업만 석 달이 걸렸다."
+   }
+  ],
+  "lines": [
+   "mcgonagall-5-031.2",
+   "mcgonagall-5-033",
+   "moody-4-005.3",
+   "moody-5-018",
+   "slughorn-6-017",
+   "umbridge-5-006.4"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The flood did ____ damage to the old manuscripts.",
+    "opts": [
+     "irreparable",
+     "reparation",
+     "repaired"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The firm was ordered to make full ____ to its customers.",
+    "opts": [
+     "reparation",
+     "irreparable",
+     "repairing"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "After dinner, the guests *repaired to* the drawing room.",
+    "opts": [
+     "응접실로 자리를 옮겼다",
+     "응접실을 수리했다",
+     "응접실을 새로 꾸몄다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그렇다면, 포터, 오러 일반 자격 요건을 제대로 갖추려면 어둠의 마법 방어술, 마법약, 변신술, 그리고 마법 주문에 집중해야 할 것이다.",
+    "s": "Now then, Potter, you'll need to concentrate on Defence Against the Dark Arts, Potions, Transfiguration, and Charms to adequately p______ yourself for the general Auror requirements.",
+    "a": "prepare",
+    "note": "맥고나걸 5편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "그 쌍둥이는 열세 살에 기숙 학교로 가기 전까지 5년 동안 사립 예비 학교에 다녔다.",
+    "s": "Before going away to boarding school at thirteen, the twins spent five years at a p__________ school.",
+    "a": "preparatory"
+   }
+  ]
+ },
+ {
+  "id": "locomotor",
+  "prof": "mcgonagall",
+  "n": 2,
+  "name": "Locomotor",
+  "ko": "옮기기 마법",
+  "path": "locomotor",
+  "resist": false,
+  "letter": {
+   "en": "{name}. You have proved steadier than I expected, and I am not too proud to say so. Now let us see whether you can make something else move. My office, this evening.",
+   "ko": "{name}. 생각보다 꾸준하더군. 그걸 인정하지 못할 만큼 자존심이 세지는 않다. 이제 다른 것도 움직일 수 있는지 보자. 오늘 저녁, 내 연구실로 와라."
+  },
+  "intro": {
+   "en": "Locomotor, followed by the name of an object, moves it wherever your wand directs. It has a grander cousin, Piertotum Locomotor, which I used during the Battle of Hogwarts to wake the castle's statues and suits of armour and send them out to defend it. I confess I had been waiting years for an excuse. Begin with a trunk; the statues can wait.",
+   "ko": "로코모터 뒤에 물건 이름을 붙이면, 그 물건이 지팡이가 이끄는 대로 움직인다. 이 주문에는 더 웅장한 사촌이 있다. 피어토툼 로코모터. 호그와트 전투 때 나는 그걸로 성의 석상과 갑옷들을 깨워 성을 지키러 내보냈지. 솔직히 몇 년 동안 쓸 핑계만 기다렸다. 너는 트렁크부터 시작해라. 석상은 나중이다."
+  },
+  "root": "라틴어 *locus* 장소(*loco* 자리에서) + *movere* 움직이다(*motor* 움직이는 것) → \"자리를 옮겨 움직이게 하는 것\". 이 주문 이름은 고전 라틴어 단어가 아니다 — 라틴어 조각을 이어 근대에 만든 말로, 영어에도 형용사 locomotor(이동의)가 있다. 앞에 붙는 *Piertotum* 쪽은 공식 설명이 없다.",
+  "words": [
+   {
+    "w": "locomotion",
+    "pos": "n.",
+    "ko": "이동, 움직여 다니는 능력",
+    "en": "Some creatures use their tails as their chief means of locomotion.",
+    "eko": "어떤 동물들은 꼬리를 주된 이동 수단으로 쓴다."
+   },
+   {
+    "w": "motive",
+    "pos": "n.",
+    "ko": "동기, 이유",
+    "en": "The inquiry found no evidence of any sinister motive.",
+    "eko": "조사 결과 불순한 동기가 있었다는 증거는 나오지 않았다."
+   },
+   {
+    "w": "emotive",
+    "pos": "adj.",
+    "ko": "감정을 강하게 자극하는",
+    "en": "The closure of the village library proved a highly emotive issue.",
+    "eko": "마을 도서관 폐관은 주민들의 감정을 크게 자극하는 문제가 되었다."
+   },
+   {
+    "w": "removal",
+    "pos": "n.",
+    "ko": "제거; 해임; (영) 이사",
+    "en": "We have booked a removal firm for Saturday.",
+    "eko": "토요일로 이삿짐 업체를 예약해 두었다."
+   }
+  ],
+  "lines": [
+   "mcgonagall-5-019",
+   "mcgonagall-3-013.2",
+   "snape-5-020",
+   "dumbledore-2-053.1",
+   "dumbledore-5-069.1",
+   "umbridge-5-043"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The ____ of the old portraits took the whole afternoon.",
+    "opts": [
+     "removal",
+     "remove",
+     "removed"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "No one has yet suggested a ____ for the theft.",
+    "opts": [
+     "motive",
+     "motivate",
+     "motivated"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "an *emotive* speech",
+    "opts": [
+     "감정을 강하게 자극하는",
+     "감정을 꾹 누른",
+     "동기가 분명한"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "잘못 생각하셨군요. 그럼 이제 제 사무실에서 나가 주시지요.",
+    "s": "You thought wrong. Now kindly r_____ yourself from my office.",
+    "a": "remove",
+    "note": "맥고나걸 5편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "뱀은 다리 없이도 놀랍도록 효율적으로 움직여 다닌다.",
+    "s": "Snakes achieve remarkably efficient l_________ without the benefit of legs.",
+    "a": "locomotion"
+   }
+  ]
+ },
+ {
+  "id": "duro",
+  "prof": "mcgonagall",
+  "n": 3,
+  "name": "Duro",
+  "ko": "돌로 굳히는 마법",
+  "path": "duro",
+  "resist": false,
+  "letter": {
+   "en": "{name}, you have kept at this through weeks that would have worn down a good many people, and not one of those weeks has escaped my notice. There is a charm I teach only to those who have shown they can last. My office, whenever you are ready — though I suspect you already are.",
+   "ko": "{name}, 웬만한 사람이면 지쳐 나가떨어졌을 몇 주를 꿋꿋이 버텼다. 나는 그 하루하루를 다 지켜봤단다. 오래 버틸 줄 아는 사람에게만 가르치는 마법이 있다. 준비가 되면 언제든 내 연구실로 와라. 이미 된 것 같다만."
+  },
+  "intro": {
+   "en": "Duro turns its target to stone. During the Battle of Hogwarts, I am told, Miss Granger used it on a tapestry in the path of her pursuers, who ran straight into it. Stone, you will find, takes no interest in how fast anyone was running. It is a charm for those who hold their ground — which, I think, describes you.",
+   "ko": "두로는 대상을 돌로 바꾼다. 호그와트 전투 때 그레인저 양이 쫓아오던 자들의 앞길에 있던 태피스트리에 이걸 썼고, 그자들은 그대로 들이받았다고 들었다. 돌은 상대가 얼마나 빨리 달려왔는지 따위엔 관심이 없지. 물러서지 않는 사람을 위한 마법이다. 내가 보기엔 너도 그런 사람이란다."
+  },
+  "root": "라틴어 *duro* \"나는 단단하게 한다, 견딘다\" (*durus* 단단한 → *durare* 굳히다, 오래가다, 견디다). 이건 진짜 라틴어 그대로다. 흔한 단어 during도 같은 뿌리다(*durare* → 옛 프랑스어 *durer* 계속되다).",
+  "words": [
+   {
+    "w": "endure",
+    "pos": "v.",
+    "ko": "견디다; 오래가다",
+    "en": "Few could have endured such hardship without complaint.",
+    "eko": "그런 고생을 불평 없이 견딜 수 있는 사람은 많지 않았을 것이다."
+   },
+   {
+    "w": "durable",
+    "pos": "adj.",
+    "ko": "튼튼한, 오래가는",
+    "en": "Oak is prized for being both handsome and durable.",
+    "eko": "참나무는 보기 좋고 튼튼해서 귀하게 여겨진다."
+   },
+   {
+    "w": "duration",
+    "pos": "n.",
+    "ko": "(지속) 기간",
+    "en": "Please remain seated for the duration of the performance.",
+    "eko": "공연이 진행되는 동안에는 자리에 앉아 계십시오."
+   },
+   {
+    "w": "obdurate",
+    "pos": "adj.",
+    "ko": "완강한, 고집을 꺾지 않는",
+    "en": "The council remained obdurate in the face of every appeal.",
+    "eko": "시 의회는 어떤 호소에도 꿈쩍하지 않았다."
+   }
+  ],
+  "lines": [
+   "snape-3-029.3",
+   "dumbledore-3-012",
+   "snape-5-014.3",
+   "dumbledore-5-093"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The bridge has ____ more than two centuries of storms.",
+    "opts": [
+     "endured",
+     "endurance",
+     "durable"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "Stone is far more ____ than timber.",
+    "opts": [
+     "durable",
+     "duration",
+     "endure"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "an *obdurate* refusal",
+    "opts": [
+     "완강한",
+     "마지못한",
+     "정중한"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "마음이 스스로 쉬도록 허락할 때 몸이 얼마나 많은 것을 견뎌 내는지, 참으로 놀라운 일이지.",
+    "s": "It's astonishing what the body can e_____ when the mind allows itself to rest.",
+    "a": "endure",
+    "note": "덤블도어 3편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "회의가 열리는 동안 휴대 전화는 꺼 두어야 한다.",
+    "s": "Mobile phones must be switched off for the d_______ of the meeting.",
+    "a": "duration"
+   }
+  ]
+ },
+ {
+  "id": "riddikulus",
+  "prof": "lupin",
+  "n": 1,
+  "name": "Riddikulus",
+  "ko": "보가트 퇴치 마법",
+  "path": "riddikulus",
+  "resist": false,
+  "letter": {
+   "en": "{name}, a Boggart has taken up residence in the wardrobe in my office, and I can think of no better use for it than a little teaching. Come by after your next lesson, if you are willing. There will be tea — and chocolate afterwards.",
+   "ko": "{name}, 내 연구실 옷장에 보가트 한 마리가 들어앉았단다. 그 녀석을 수업에 쓰는 것보다 좋은 쓸모는 떠오르지 않는구나. 괜찮다면 다음 수업이 끝나고 들르렴. 차를 준비해 둘게. 끝나면 초콜릿도 있단다."
+  },
+  "intro": {
+   "en": "This one banishes a Boggart — a creature that becomes whatever you fear most. I once taught it to a class of third-years, with a real Boggart rattling inside a wardrobe. The words are simple; the trick is to laugh. Make your fear ridiculous, and it has nothing left to hold you with.",
+   "ko": "보가트를 물리치는 주문이란다. 보가트는 네가 가장 무서워하는 것으로 변하는 생물이지. 한번은 옷장 안에서 덜컹거리는 진짜 보가트를 두고 3학년 한 반에 이걸 가르친 적이 있어. 주문은 간단해. 요령은 웃는 거란다. 두려움을 우스꽝스럽게 만들어 버리면, 두려움은 더 이상 너를 붙들지 못해."
+  },
+  "root": "라틴어 *ridiculus* 우스운 (← *ridere* 웃다; deride·derisory는 *de* 아래로 + *ridere* → \"내려다보며 웃다\"). *Riddikulus*라는 철자는 진짜 라틴어가 아니다 — 라틴어는 *ridiculus*.",
+  "words": [
+   {
+    "w": "ridicule",
+    "pos": "n./v.",
+    "ko": "조롱(하다), 비웃음",
+    "en": "The proposal was met with open ridicule by the committee.",
+    "eko": "그 제안은 위원회에서 대놓고 조롱을 받았다."
+   },
+   {
+    "w": "ridiculous",
+    "pos": "adj.",
+    "ko": "터무니없는, 우스꽝스러운",
+    "en": "It would be ridiculous to cancel the whole trip over a little rain.",
+    "eko": "비가 조금 온다고 여행을 통째로 취소하는 건 터무니없는 일이다."
+   },
+   {
+    "w": "deride",
+    "pos": "v.",
+    "ko": "조롱하다, 깎아내리다",
+    "en": "Ideas that are derided today are sometimes celebrated a generation later.",
+    "eko": "오늘 조롱받는 생각이 한 세대 뒤에 칭송받기도 한다."
+   },
+   {
+    "w": "derisory",
+    "pos": "adj.",
+    "ko": "턱없이 적은, 코웃음 칠 만한",
+    "en": "The staff rejected the derisory pay offer of one per cent.",
+    "eko": "직원들은 1퍼센트라는 턱없이 적은 임금 인상안을 거부했다."
+   }
+  ],
+  "lines": [
+   "lupin-3-007.2",
+   "lupin-3-007.2"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The plan was held up to ____ in the press.",
+    "opts": [
+     "ridicule",
+     "ridiculous",
+     "ridiculously"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "They offered a ____ sum for a house of that size.",
+    "opts": [
+     "derisory",
+     "deride",
+     "derision"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "Critics *derided* the new bridge as a waste of money.",
+    "opts": [
+     "새 다리를 돈 낭비라고 깎아내렸다",
+     "새 다리를 돈 낭비라며 반대 시위를 벌였다",
+     "새 다리가 돈 낭비가 될까 걱정했다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "비가 조금 온다고 여행을 통째로 취소하는 건 터무니없는 일이다.",
+    "s": "It would be r_________ to cancel the whole trip over a little rain.",
+    "a": "ridiculous"
+   },
+   {
+    "t": "write",
+    "ko": "그 제안은 위원회에서 대놓고 조롱을 받았다.",
+    "s": "The proposal was met with open r_______ by the committee.",
+    "a": "ridicule",
+    "note": "이 가족이 든 앱 대사가 없어 새 문장"
+   }
+  ]
+ },
+ {
+  "id": "lumos-maxima",
+  "prof": "lupin",
+  "n": 2,
+  "name": "Lumos Maxima",
+  "ko": "더 센 빛",
+  "path": "lumos",
+  "resist": false,
+  "letter": {
+   "en": "{name}, you have been finding your way through some rather dim corners of the language lately, and doing it well. I thought you might like a brighter light to see by. My office, whenever it suits you.",
+   "ko": "{name}, 요즘 영어의 꽤 어둑한 구석구석을 잘 헤쳐 나가고 있더구나. 그래서 길을 비춰 줄 더 밝은 빛이 있으면 좋겠다 싶었어. 편할 때 내 연구실로 오렴."
+  },
+  "intro": {
+   "en": "You will know the ordinary Lumos — a modest glow at the tip of the wand. Lumos Maxima is its stronger cousin: a far brighter light, enough to fill a whole room. Useful in long, dark corridors. And a gentle reminder that a small light can always be made larger.",
+   "ko": "평범한 루모스는 알 거야. 지팡이 끝에 은은하게 켜지는 불빛이지. 루모스 맥시마는 그보다 센 친척이란다. 훨씬 밝은 빛이라 방 하나를 가득 채울 수 있지. 길고 어두운 복도에서 쓸모가 있어. 그리고 작은 빛도 얼마든지 크게 키울 수 있다는 걸 일깨워 주기도 한단다."
+  },
+  "root": "라틴어 *lumen* 빛 + *maximus* 가장 큰 (*maxima*는 여성형). *Maxima*는 진짜 라틴어지만 *Lumos*는 진짜 라틴어 형태가 아니다 — *lumen*에서 마법사들이 만든 말. maxim은 라틴어 *maxima (propositio)* \"가장 큰 명제\"에서 왔다. illuminate는 라틴어 *illuminare* 밝히다(*in* + *lumen*)에서 왔다.",
+  "words": [
+   {
+    "w": "maximum",
+    "pos": "n./adj.",
+    "ko": "최대(의), 최댓값",
+    "en": "The lift carries a maximum of eight people.",
+    "eko": "그 엘리베이터에는 최대 여덟 명이 탈 수 있다."
+   },
+   {
+    "w": "maximise",
+    "pos": "v.",
+    "ko": "최대한 늘리다, 최대한 활용하다",
+    "en": "The reading room was designed to maximise the light from its tall windows.",
+    "eko": "그 열람실은 높은 창으로 드는 빛을 최대한 받도록 설계되었다."
+   },
+   {
+    "w": "maxim",
+    "pos": "n.",
+    "ko": "격언, 좌우명",
+    "en": "\"Measure twice, cut once\" is a maxim worth remembering.",
+    "eko": "\"두 번 재고 한 번 자르라\"는 기억해 둘 만한 격언이다."
+   },
+   {
+    "w": "illuminate",
+    "pos": "v.",
+    "ko": "비추다; (모르던 것을) 밝혀 주다",
+    "en": "The letters illuminate a little-known period of the poet's life.",
+    "eko": "그 편지들은 그 시인의 삶에서 잘 알려지지 않은 시기를 밝혀 준다."
+   }
+  ],
+  "lines": [
+   "dumbledore-6-006"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The new timetable is designed to ____ the time available for practice.",
+    "opts": [
+     "maximise",
+     "maximum",
+     "maximally"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The hall holds a ____ of two hundred guests.",
+    "opts": [
+     "maximum",
+     "maximise",
+     "maxim"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a lecture that *illuminated* a difficult subject",
+    "opts": [
+     "어려운 주제를 알기 쉽게 밝혀 준",
+     "어려운 주제를 화려하게 꾸민",
+     "어려운 주제를 처음 소개한"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "\"두 번 재고 한 번 자르라\"는 기억해 둘 만한 격언이다.",
+    "s": "\"Measure twice, cut once\" is a m____ worth remembering.",
+    "a": "maxim"
+   },
+   {
+    "t": "write",
+    "ko": "그 열람실은 높은 창으로 드는 빛을 최대한 받도록 설계되었다.",
+    "s": "The reading room was designed to m_______ the light from its tall windows.",
+    "a": "maximise",
+    "note": "이 가족이 든 앱 대사가 없어 새 문장"
+   }
+  ]
+ },
+ {
+  "id": "expecto-patronum",
+  "prof": "lupin",
+  "n": 3,
+  "name": "Expecto Patronum",
+  "ko": "패트로누스 마법",
+  "path": "patronum",
+  "resist": false,
+  "letter": {
+   "en": "{name}, there is a charm I do not teach to everyone — not because it is secret, but because it asks a great deal of the person who casts it. I think you are ready for it. Bring your happiest memory; I shall bring the chocolate.",
+   "ko": "{name}, 아무에게나 가르치지 않는 주문이 하나 있단다. 비밀이어서가 아니라, 쓰는 사람에게 많은 걸 요구하는 주문이라서야. 이제 넌 준비가 된 것 같구나. 가장 행복한 기억을 가져오렴. 초콜릿은 내가 챙길게."
+  },
+  "intro": {
+   "en": "The Patronus Charm. I taught it to Harry Potter in his third year, at a time when no one would have blamed him for giving up. It asks you to hold your happiest memory so firmly that there is no room left for despair. Most people fail many times before they succeed. I still think it is the most hopeful spell I know.",
+   "ko": "패트로누스 마법이란다. 해리 포터가 3학년일 때 가르쳤지. 그 애가 포기했다 해도 아무도 나무라지 않았을 시절이었지. 가장 행복한 기억을 꼭 붙들어서 절망이 들어설 자리가 없게 해야 한단다. 대부분은 여러 번 실패한 뒤에야 해내지. 나는 지금도 이게 내가 아는 가장 희망찬 주문이라고 생각해."
+  },
+  "root": "라틴어 *exspectare* 기다리다, 고대하다 (*ex* 밖으로 + *spectare* 바라보다) + *patronus* 보호자, 후원자 (← *pater* 아버지). *Expecto patronum*은 \"나는 보호자를 기다린다\" — 진짜 라틴어다(*expecto*는 *exspecto*의 흔한 철자).",
+  "words": [
+   {
+    "w": "expectation",
+    "pos": "n.",
+    "ko": "기대, 예상",
+    "en": "The response to the appeal far exceeded our expectations.",
+    "eko": "그 모금 호소에 대한 반응은 우리 예상을 훨씬 뛰어넘었다."
+   },
+   {
+    "w": "expectant",
+    "pos": "adj.",
+    "ko": "기대에 찬",
+    "en": "An expectant hush fell over the hall as the doors opened.",
+    "eko": "문이 열리자 강당에 기대에 찬 정적이 내려앉았다."
+   },
+   {
+    "w": "patron",
+    "pos": "n.",
+    "ko": "후원자; (가게의) 단골손님",
+    "en": "The library owes its rare manuscripts to a generous patron.",
+    "eko": "그 도서관의 희귀 필사본은 어느 너그러운 후원자 덕분이다."
+   },
+   {
+    "w": "patronise",
+    "pos": "v.",
+    "ko": "깔보는 투로 대하다; (가게 등을) 애용하다",
+    "en": "Nothing irritates experienced travellers more than being patronised by a guide.",
+    "eko": "노련한 여행자들을 가장 짜증 나게 하는 건 가이드가 자기들을 깔보듯 대하는 것이다."
+   }
+  ],
+  "lines": [
+   "lupin-3-042",
+   "lupin-3-045.2",
+   "lupin-3-087.3",
+   "lupin-7-008.1",
+   "mcgonagall-6-005.2",
+   "snape-1-028.2"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The court waited in ____ silence for the verdict.",
+    "opts": [
+     "expectant",
+     "expectation",
+     "expectantly"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "I found the speaker's tone rather ____; we are not children.",
+    "opts": [
+     "patronising",
+     "patron",
+     "patronage"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a loyal *patron* of the bookshop for forty years",
+    "opts": [
+     "40년 동안 그 서점을 꾸준히 찾은 단골손님",
+     "40년 동안 그 서점을 운영한 주인",
+     "40년 동안 그 서점에 책을 대 준 출판사"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그 모금 호소에 대한 반응은 우리 예상을 훨씬 뛰어넘었다.",
+    "s": "The response to the appeal far exceeded our e___________.",
+    "a": "expectations"
+   },
+   {
+    "t": "write",
+    "ko": "매드아이는 그자가 진짜 해리는 가장 뛰어난 오러와 함께 있을 거라 예상하리라고 봤어요.",
+    "s": "Mad-Eye reckoned You-Know-Who would e_____ the real Harry to be with the most skilled Auror.",
+    "a": "expect",
+    "note": "루핀 7편 대사"
+   }
+  ]
+ },
+ {
+  "id": "stupefy",
+  "prof": "moody",
+  "n": 1,
+  "name": "Stupefy",
+  "ko": "기절 마법",
+  "path": "stupefy",
+  "resist": false,
+  "letter": {
+   "en": "{name}. Ten of my lines learnt, and you haven't bolted. Time you had a spell to go with them. My office, tonight — knock twice.",
+   "ko": "{name}. 내 대사 열 개를 배우고도 꽁무니를 안 뺐군. 이제 주문 하나쯤은 배울 때다. 오늘 밤 내 연구실로 와. 노크는 두 번."
+  },
+  "intro": {
+   "en": "The Stunning Spell. Red light, and your opponent drops where they stand — out cold, not dead. It's the first spell I'd put in any trainee's hand, because it ends a fight without ending a life. Aim for the middle; heads move.",
+   "ko": "기절 마법이다. 붉은 빛에 맞으면 상대는 그 자리에 쓰러진다. 정신을 잃을 뿐, 죽지는 않는다. 수련생 손에 제일 먼저 쥐여 줄 주문이지. 목숨을 끊지 않고 싸움을 끝내니까. 몸통을 노려라. 머리는 움직인다."
+  },
+  "root": "라틴어 *stupere* 멍해지다, 얼어붙다 + *facere* 만들다 → *stupefacere* \"멍하게 만들다\". 주문 *Stupefy*는 라틴어가 아니라 원래 있던 영어 동사 stupefy(멍하게 하다)를 그대로 쓴 것이다.",
+  "words": [
+   {
+    "w": "stupefied",
+    "pos": "adj.",
+    "ko": "어안이 벙벙한; (술·약에) 정신이 멍한",
+    "en": "The committee sat in stupefied silence as the figures were read out.",
+    "eko": "수치가 낭독되는 동안 위원회는 어안이 벙벙해 말을 잃었다."
+   },
+   {
+    "w": "stupor",
+    "pos": "n.",
+    "ko": "인사불성, 넋이 나간 상태",
+    "en": "After three sleepless nights, the clerk worked in a kind of stupor.",
+    "eko": "사흘 밤을 새운 서기는 거의 넋이 나간 채로 일했다."
+   },
+   {
+    "w": "stupendous",
+    "pos": "adj.",
+    "ko": "엄청난, 놀랄 만큼 큰",
+    "en": "The restoration of the cathedral was a stupendous undertaking.",
+    "eko": "대성당 복원은 엄청난 대공사였다."
+   },
+   {
+    "w": "stupidity",
+    "pos": "n.",
+    "ko": "어리석음",
+    "en": "Never underestimate the stupidity of someone who believes they cannot be fooled.",
+    "eko": "자기는 절대 안 속는다고 믿는 사람의 어리석음을 얕보지 마라."
+   }
+  ],
+  "lines": [
+   "moody-4-001"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The announcement left the entire council ____.",
+    "opts": [
+     "stupefied",
+     "stupor",
+     "stupendous"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The guard was found at the gate in a drunken ____.",
+    "opts": [
+     "stupor",
+     "stupefied",
+     "stupendous"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a *stupendous* achievement",
+    "opts": [
+     "놀랄 만큼 엄청난 업적",
+     "어리석기 짝이 없는 업적",
+     "간신히 해낸 성과"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "수면 물약에 정신이 멍해진 경비병들은 아무것도 알아채지 못했다.",
+    "s": "The guards, s________ by the sleeping draught, noticed nothing.",
+    "a": "stupefied"
+   },
+   {
+    "t": "write",
+    "ko": "망할 놈의 천장.",
+    "s": "S_____ ceiling.",
+    "a": "Stupid",
+    "note": "무디 4편 대사 — 무디 얼굴을 한 크라우치 2세"
+   }
+  ]
+ },
+ {
+  "id": "imperio",
+  "prof": "moody",
+  "n": 2,
+  "name": "Imperio",
+  "ko": "임페리우스 저주",
+  "path": null,
+  "resist": true,
+  "letter": {
+   "en": "I've watched you long enough to know you don't bend easily. Good. Tonight we find out how far that goes. My office — come alone, and come with a clear head.",
+   "ko": "한동안 지켜봤다. 쉽게 꺾이지 않더군. 좋아. 오늘 밤 그게 어디까지 가나 보자. 내 연구실로 와. 혼자, 머리는 맑게 하고."
+  },
+  "intro": {
+   "en": "The Imperius Curse. Unforgivable — use it on a person and you'll end your days in Azkaban. The man who wore my face for a year showed it to a class of fourth-years, on a spider. I won't teach you to cast it. But you can't resist what you don't recognise: it feels like calm, like someone kindly lifting every choice off your shoulders, and that's the trap. Potter learnt to throw it off at fourteen. So can you.",
+   "ko": "임페리우스 저주다. 용서받지 못할 저주지. 사람한테 쓰면 남은 평생을 아즈카반에서 보낸다. 1년 동안 내 얼굴을 쓰고 다닌 놈이 4학년 교실에서 거미한테 이걸 보여 줬다. 난 거는 법은 안 가르친다. 하지만 알아보지 못하는 건 버틸 수도 없다. 걸리면 마음이 편안해진다. 누가 친절하게 모든 선택을 대신 짊어져 주는 것처럼. 그게 덫이다. 포터는 열네 살에 그걸 떨쳐 냈다. 너도 할 수 있다."
+  },
+  "root": "라틴어 *imperare* 명령하다 (*in* 안에 + *parare* 준비시키다). *Imperio*는 진짜 라틴어 동사 꼴이 아니다 — \"나는 명령한다\"는 *impero*.",
+  "words": [
+   {
+    "w": "imperative",
+    "pos": "adj./n.",
+    "ko": "반드시 해야 하는; 꼭 필요한 일",
+    "en": "It is imperative that the gates be locked before dusk.",
+    "eko": "해 지기 전에 반드시 문을 잠가야 한다."
+   },
+   {
+    "w": "imperious",
+    "pos": "adj.",
+    "ko": "고압적인, 명령조의",
+    "en": "The magistrate dismissed the petitioners with an imperious wave of the hand.",
+    "eko": "치안 판사는 고압적으로 손을 휘저어 청원인들을 물렸다."
+   },
+   {
+    "w": "imperial",
+    "pos": "adj.",
+    "ko": "제국의; (도량형) 야드파운드법의",
+    "en": "Road signs in Britain still give distances in miles, an imperial unit.",
+    "eko": "영국의 도로 표지판은 아직도 거리를 야드파운드법 단위인 마일로 표시한다."
+   },
+   {
+    "w": "empire",
+    "pos": "n.",
+    "ko": "제국; 거대한 조직",
+    "en": "The newspaper was only one part of a vast publishing empire.",
+    "eko": "그 신문은 거대한 출판 제국의 일부일 뿐이었다. (프랑스어를 거치며 im-이 em-으로 바뀌었다)"
+   }
+  ],
+  "lines": [
+   "moody-4-014.1"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "It is ____ that you tell no one about tonight.",
+    "opts": [
+     "imperative",
+     "imperious",
+     "imperial"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The new director was ____ and cold, and nobody dared argue.",
+    "opts": [
+     "imperious",
+     "imperative",
+     "imperial"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a business *empire*",
+    "opts": [
+     "여러 회사를 거느린 거대한 사업체",
+     "나라가 소유한 기업",
+     "왕실에 물건을 대는 상점"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "해 지기 전에 반드시 문을 잠가야 한다.",
+    "s": "It is i_________ that the gates be locked before dusk.",
+    "a": "imperative"
+   },
+   {
+    "t": "write",
+    "ko": "수많은 마법사와 마녀가 임페리우스 저주에 걸려서 어쩔 수 없이 그 사람이 시키는 대로 했다고 주장했다.",
+    "s": "Scores of witches and wizards have claimed that they only did You-Know-Who's bidding under the influence of the I_______ Curse.",
+    "a": "Imperius",
+    "note": "무디 4편 대사 — 무디 얼굴을 한 크라우치 2세"
+   }
+  ]
+ },
+ {
+  "id": "crucio",
+  "prof": "moody",
+  "n": 3,
+  "name": "Crucio",
+  "ko": "크루시아투스 저주",
+  "path": null,
+  "resist": true,
+  "letter": {
+   "en": "{name}. There's one lesson left I'd sooner not give. I'm giving it to you because I reckon you can take it. My office. Bring nothing but your wits.",
+   "ko": "{name}. 웬만하면 안 하고 싶은 수업이 하나 남았다. 네가 감당할 수 있다고 보니까 하는 거다. 내 연구실로 와. 정신 하나만 챙겨서."
+  },
+  "intro": {
+   "en": "The Cruciatus Curse, and of the three it's the one I'll say least about. The man who wore my face showed it to that same class, on that same spider. I won't teach you to cast it, and I won't describe it. You learn its name so you know it when it comes — and so you know it can be endured, and that it ends. Best defence of all: don't be standing where it can reach you.",
+   "ko": "크루시아투스 저주다. 셋 중에 내가 제일 말을 아끼는 놈이지. 내 얼굴을 쓴 놈이 같은 교실에서 같은 거미한테 이걸 보여 줬다. 거는 법은 안 가르친다. 어떤 건지 늘어놓지도 않는다. 이름을 배우는 건 닥쳤을 때 알아보라는 거다. 버틸 수 있다는 것, 그리고 끝은 온다는 것도 알아 두라는 거고. 최고의 방어? 그게 닿는 자리에 아예 서 있지 않는 거다."
+  },
+  "root": "라틴어 *crux* 십자가 → *cruciare* 고통을 주다. *Crucio*는 진짜 라틴어 동사 그대로다 — \"나는 고통을 준다\".",
+  "words": [
+   {
+    "w": "crucial",
+    "pos": "adj.",
+    "ko": "결정적인, 아주 중요한",
+    "en": "The first hour after an accident is often crucial.",
+    "eko": "사고 뒤 첫 한 시간이 결정적일 때가 많다."
+   },
+   {
+    "w": "crux",
+    "pos": "n.",
+    "ko": "핵심, 가장 어려운 고비",
+    "en": "The crux of the matter is who signed the letter.",
+    "eko": "문제의 핵심은 누가 그 편지에 서명했느냐다."
+   },
+   {
+    "w": "excruciating",
+    "pos": "adj.",
+    "ko": "견디기 힘든; 몹시 민망한",
+    "en": "The speech went on for an excruciating forty minutes.",
+    "eko": "연설은 견디기 힘든 40분 동안 이어졌다."
+   },
+   {
+    "w": "crusade",
+    "pos": "n.",
+    "ko": "개혁 운동 (원래 십자군 원정)",
+    "en": "The editor led a lifelong crusade against corruption.",
+    "eko": "그 편집장은 평생 부패 척결 운동을 이끌었다."
+   }
+  ],
+  "lines": [
+   "dumbledore-6-018.3",
+   "umbridge-5-087"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Your evidence will be ____ to the outcome of the trial.",
+    "opts": [
+     "crucial",
+     "crux",
+     "excruciating"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The ____ of the argument lies in the second paragraph.",
+    "opts": [
+     "crux",
+     "crucial",
+     "crusade"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "an *excruciating* silence",
+    "opts": [
+     "견디기 힘들 만큼 어색한 침묵",
+     "깊은 생각에 잠긴 침묵",
+     "결정적인 순간의 침묵"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그 신문은 10년 동안 부패에 맞서는 운동을 벌였다.",
+    "s": "The newspaper waged a ten-year c______ against corruption.",
+    "a": "crusade"
+   },
+   {
+    "t": "write",
+    "ko": "그리고 그가 돌아오는 것은 대단히 중요하고...",
+    "s": "And it is c______ he return...",
+    "a": "crucial",
+    "note": "덤블도어 6편 대사"
+   }
+  ]
+ },
+ {
+  "id": "aguamenti",
+  "prof": "dumbledore",
+  "n": 1,
+  "name": "Aguamenti",
+  "ko": "물 뿜는 마법",
+  "path": "aguamenti",
+  "resist": false,
+  "letter": {
+   "en": "{name}, I gather your wand has settled in nicely. If you can spare an evening, I should like to show you a small and thoroughly practical charm. My study, whenever it suits you.",
+   "ko": "{name}. 듣자 하니 자네 지팡이가 손에 잘 익은 모양이더군. 저녁 시간을 좀 내줄 수 있다면, 작지만 아주 쓸모 있는 마법을 하나 보여 주고 싶네. 편할 때 내 서재로 오게."
+  },
+  "intro": {
+   "en": "Aguamenti draws clean water from the tip of your wand; Professor Flitwick teaches it in the sixth year. Harry once tried it for me in a cave by the sea, and the water vanished before it could reach my lips — some places are unkind to the thirsty. Here, I assure you, it behaves.",
+   "ko": "지팡이 끝에서 맑은 물을 끌어내는 주문일세. 플리트윅 교수가 6학년에게 가르치지. 한번은 바닷가 동굴에서 해리가 나를 위해 이 주문을 썼는데, 물이 내 입술에 닿기도 전에 사라져 버렸네. 목마른 이에게 모진 곳도 있는 법이지. 여기서는 얌전히 말을 들을 걸세. 내가 장담하지."
+  },
+  "root": "앞쪽 *agua* — 라틴어가 아니라 스페인어 철자(라틴어로는 *aqua* 물). 주문 전체의 뿌리는 공식 설명이 없어 논쟁 중이다. 라틴어 *aqua* + *menti*(*mens* 마음의 꼴)로 보는 설이 흔하고, 영어 *augment*(늘리다)를 비튼 말장난이라는 설도 있다. 아래 단어들의 뿌리는 모두 라틴어 *aqua* 물.",
+  "words": [
+   {
+    "w": "aquatic",
+    "pos": "adj.",
+    "ko": "물에 사는, 물속의",
+    "en": "The lake supports a remarkable variety of aquatic life.",
+    "eko": "그 호수에는 놀랄 만큼 다양한 수중 생물이 산다."
+   },
+   {
+    "w": "aqueduct",
+    "pos": "n.",
+    "ko": "수도교, 송수로",
+    "en": "The Romans built aqueducts to carry water across entire valleys.",
+    "eko": "로마인들은 골짜기를 가로질러 물을 나르려고 수도교를 지었다."
+   },
+   {
+    "w": "aqueous",
+    "pos": "adj.",
+    "ko": "물의, 물에 녹인",
+    "en": "The powder must first be dissolved in an aqueous solution.",
+    "eko": "그 가루는 먼저 수용액에 녹여야 한다."
+   },
+   {
+    "w": "aquamarine",
+    "pos": "n./adj.",
+    "ko": "아콰마린(남옥); 맑은 청록빛",
+    "en": "The sea that morning was a pale aquamarine.",
+    "eko": "그날 아침 바다는 옅은 청록빛이었다."
+   }
+  ],
+  "lines": [],
+  "lineNote": "없음. (참고: 6편 동굴 장면의 덤블도어 \"Water.\" · \"Remember... the water.\" 같은 대사는 있지만, *water*의 뿌리는 게르만어라 *aqua* 가족이 아니다.)",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Pike, eels and other ____ creatures live in the lake.",
+    "opts": [
+     "aquatic",
+     "aqueous",
+     "aqueduct"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "Water once reached the city along a stone ____ forty miles long.",
+    "opts": [
+     "aqueduct",
+     "aquatic",
+     "aquamarine"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "Dissolve the crystals in an *aqueous* solution.",
+    "opts": [
+     "물에 녹인",
+     "기름에 녹인",
+     "알코올에 녹인"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그 호수에는 놀랄 만큼 다양한 수중 생물이 산다.",
+    "s": "The lake supports a remarkable variety of a______ life.",
+    "a": "aquatic"
+   },
+   {
+    "t": "write",
+    "ko": "그 수도교는 거의 이천 년이 지난 지금도 서 있다.",
+    "s": "The a_______ is still standing after nearly two thousand years.",
+    "a": "aqueduct"
+   }
+  ]
+ },
+ {
+  "id": "arresto-momentum",
+  "prof": "dumbledore",
+  "n": 2,
+  "name": "Arresto Momentum",
+  "ko": "움직임 늦추기 마법",
+  "path": "arresto",
+  "resist": false,
+  "letter": {
+   "en": "{name}, you have been keeping excellent company with my lines, and the portraits have begun to notice. Do come up after supper. There is something I should like you to learn well before you ever need it.",
+   "ko": "{name}. 자네가 내 대사들과 아주 잘 지내고 있더군. 초상화들도 알아채기 시작했다네. 저녁 식사 뒤에 올라오게. 필요해지기 한참 전에 익혀 두었으면 하는 게 있어서 말일세."
+  },
+  "intro": {
+   "en": "Arresto Momentum slows whatever is moving — a falling vase, a runaway trunk, a falling friend. I used it once on the Quidditch pitch, when Harry fell from the sky in a storm with Dementors all around; I was, I confess, rather cross with the Dementors afterwards. One hopes never to need it, and one is always glad to know it.",
+   "ko": "움직이는 것은 무엇이든 늦추는 주문일세. 떨어지는 꽃병이든, 굴러가는 트렁크든, 떨어지는 친구든. 한번은 퀴디치 경기장에서 이걸 썼지. 디멘터들이 사방을 에워싼 폭풍 속에서 해리가 빗자루에서 떨어졌을 때였네. 고백하자면 그 일이 끝나고 디멘터들에게 꽤 화를 냈지. 쓸 일이 없기를 바라지만, 알아 두면 늘 다행인 주문이라네."
+  },
+  "root": "속라틴어 *arrestare* 멈춰 세우다(*ad* ~에 + *restare* 뒤에 남다, 멈추다) + 라틴어 *momentum* 움직임(*movere* 움직이다에서. 저울 바늘을 겨우 움직일 만한 아주 작은 무게라는 뜻을 거쳐 '한순간'과 '중요함'이 나왔다는 설명이 흔하다) → \"움직임을 멈춰 세우다\". *arresto*는 고전 라틴어에 없는 꼴이다(*arrestare*는 기록이 아니라 재구성된 말).",
+  "notes": [
+   "*momentarily*의 본래 뜻은 \"잠깐 동안\"이고, 영국에서는 이 뜻이 기본이다(영국의 글쓰기 지침서들도 이 뜻을 권한다). \"곧, 금방\"의 뜻은 주로 미국에서 쓰며 영국에서도 들리지만 꺼리는 사람이 많다. 맥고나걸 1편 대사는 \"곧\"의 뜻."
+  ],
+  "words": [
+   {
+    "w": "arrest",
+    "pos": "v./n.",
+    "ko": "체포(하다); (진행을) 막다, 멈추다",
+    "en": "Prompt treatment can arrest the spread of the disease.",
+    "eko": "일찍 치료하면 병이 퍼지는 것을 막을 수 있다."
+   },
+   {
+    "w": "momentum",
+    "pos": "n.",
+    "ko": "기세, 탄력; (물리) 운동량",
+    "en": "The campaign gathered momentum over the summer.",
+    "eko": "그 운동은 여름 동안 점점 힘을 얻었다."
+   },
+   {
+    "w": "momentous",
+    "pos": "adj.",
+    "ko": "중대한, 역사적인",
+    "en": "The signing of the treaty was a momentous occasion.",
+    "eko": "조약 조인은 역사에 남을 일이었다."
+   },
+   {
+    "w": "momentary",
+    "pos": "adj.",
+    "ko": "순간적인, 잠깐의",
+    "en": "After a momentary hesitation, the witness continued.",
+    "eko": "증인은 잠깐 머뭇거린 뒤 말을 이었다."
+   }
+  ],
+  "lines": [
+   "dumbledore-5-067",
+   "mcgonagall-1-015",
+   "dumbledore-5-107.1",
+   "dumbledore-4-010.4"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The election proved a ____ event in the nation's history.",
+    "opts": [
+     "momentous",
+     "momentary",
+     "momentum"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "After a strong start, the negotiations began to lose ____.",
+    "opts": [
+     "momentum",
+     "momentous",
+     "momentary"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "Nothing could *arrest* the decline of the old estate.",
+    "opts": [
+     "쇠락을 멈추게 하다",
+     "쇠락을 앞당기다",
+     "쇠락을 기록으로 남기다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "굳이 나를 체포하겠다고 고집한다면, 그런 시도가 얼마나 무의미한지 기꺼이 보여 주겠네.",
+    "s": "If you insist on trying to a_____ me, I am perfectly willing to demonstrate how useless such an attempt will be.",
+    "a": "arrest",
+    "note": "덤블도어 5편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "증인은 잠깐 머뭇거린 뒤 말을 이었다.",
+    "s": "After a m________ hesitation, the witness continued.",
+    "a": "momentary"
+   }
+  ]
+ },
+ {
+  "id": "prior-incantato",
+  "prof": "dumbledore",
+  "n": 3,
+  "name": "Prior Incantato",
+  "ko": "지난 주문 되살리기",
+  "path": "prior",
+  "resist": false,
+  "letter": {
+   "en": "{name}, you have watched a certain spell at work before your lessons, and you will have read its name, yet I have never told you where that name comes from. That hardly seems fair. Come and have tea with me, and I shall put it right.",
+   "ko": "{name}. 자네는 수업 전마다 어떤 주문이 펼쳐지는 것을 보았고 그 이름도 읽었을 테지. 그런데 그 이름이 어디서 왔는지는 내가 한 번도 말해 주지 않았군. 그건 좀 불공평하지. 나와 차 한잔하러 오게. 내가 바로잡아 주겠네."
+  },
+  "intro": {
+   "en": "Prior Incantato is what you have been watching before your lessons: your wand gives back, in smoke, the lines you said last time. Amos Diggory once used it on Harry's wand, to reveal the last spell cast with it. And at the end of a very long night, I explained to Harry its stranger cousin, Priori Incantatem — what happens when two wands that share a core are forced to duel.",
+   "ko": "자네가 수업 전마다 보아 온 것이 바로 이 주문일세. 지난번에 자네가 말한 대사를 지팡이가 연기 속에 되살려 보여 주지 않던가. 아모스 디고리가 한번은 해리의 지팡이에 이 주문을 걸어, 그 지팡이로 마지막에 건 주문을 드러냈네. 그리고 아주 긴 밤이 끝날 무렵, 나는 해리에게 이 주문의 좀 더 기이한 사촌인 프리오리 인칸타템을 설명해 주었지. 심이 같은 두 지팡이가 억지로 맞붙을 때 일어나는 일이라네."
+  },
+  "root": "라틴어 *prior* 앞의, 먼저의 + *incantare* 주문을 외다(스네이프의 마법 끝내기 주문과 같은 뿌리) → \"먼저 건 주문\". 다만 주문 이름 전체는 라틴어 문장으로 맞지 않는 마법사들의 말이다(*incantato*: 이탈리아어로 \"마법에 걸린\").",
+  "words": [
+   {
+    "w": "prior",
+    "pos": "adj.",
+    "ko": "이전의, 사전의; prior to …에 앞서",
+    "en": "Visits are by prior arrangement only.",
+    "eko": "방문은 사전 약속이 있어야만 가능합니다."
+   },
+   {
+    "w": "priority",
+    "pos": "n.",
+    "ko": "우선 사항, 우선권",
+    "en": "The safety of the passengers is our first priority.",
+    "eko": "승객의 안전이 우리의 최우선 과제다."
+   },
+   {
+    "w": "prioritise",
+    "pos": "v.",
+    "ko": "우선순위를 정하다, 먼저 처리하다",
+    "en": "When time is short, one must learn to prioritise.",
+    "eko": "시간이 부족할 때는 무엇부터 할지 정하는 법을 배워야 한다."
+   },
+   {
+    "w": "priory",
+    "pos": "n.",
+    "ko": "소수도원(대수도원장 abbot보다 한 단계 아래인 *prior*가 이끄는 수도원)",
+    "en": "The ruins of a medieval priory stand just beyond the village.",
+    "eko": "마을 바로 너머에 중세 수도원의 폐허가 서 있다."
+   }
+  ],
+  "lines": [
+   "dumbledore-4-070",
+   "dumbledore-4-042.2",
+   "snape-3-003"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Repairing the roof must take ____ over everything else.",
+    "opts": [
+     "priority",
+     "prioritise",
+     "prior"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "With so little time, the committee had to ____ the most urgent cases.",
+    "opts": [
+     "prioritise",
+     "priority",
+     "prior"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "Entry is by *prior* arrangement only.",
+    "opts": [
+     "미리 해 둔 약속이 있어야",
+     "나중에 따로 약속을 잡아야",
+     "가장 중요한 약속이 있어야"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "세베루스 스네이프는 분명 죽음을 먹는 자였으나, 볼드모트 경이 몰락하기 전에 크나큰 위험을 무릅쓰고 우리 편 첩자로 돌아섰습니다.",
+    "s": "Severus Snape was indeed a Death Eater and, p____ to Lord Voldemort's downfall, turned spy for us at great personal risk.",
+    "a": "prior",
+    "note": "덤블도어 4편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "시간이 부족할 때는 무엇부터 할지 정하는 법을 배워야 한다.",
+    "s": "When time is short, one must learn to p_________.",
+    "a": "prioritise",
+    "note": "영국 철자 -ise"
+   }
+  ]
+ },
+ {
+  "id": "descendo",
+  "prof": "slughorn",
+  "n": 1,
+  "name": "Descendo",
+  "ko": "끌어내리기 마법",
+  "path": "descendo",
+  "resist": false,
+  "letter": {
+   "en": "{name} — I am told you have been hanging on my every word. Most gratifying. Do call at my office after your next lesson; I have a small spell in mind for you, and a dish of crystallised pineapple that requires no spell whatsoever.",
+   "ko": "{name}, 자네가 내 말을 한마디도 놓치지 않는다고 들었네. 이렇게 흐뭇할 데가! 다음 수업이 끝나면 내 연구실에 들르게. 자네에게 가르쳐 줄 작은 주문을 하나 생각해 두었네. 설탕 절임 파인애플도 한 접시 있는데, 그건 주문 따위 전혀 필요 없다네."
+  },
+  "intro": {
+   "en": "Descendo brings things down — a ladder from a loft, a jar from a shelf just out of reach. Simple, I grant you, yet the simple charms are the ones people are most grateful for. Mark my words, {name}: whoever can fetch the biscuit tin down from the top shelf is never short of friends.",
+   "ko": "끌어내리기 마법일세. 다락에서 사다리를, 손이 닿지 않는 선반에서 단지를 내려오게 하지. 단순하다는 건 인정하네. 하지만 사람들이 가장 고마워하는 건 바로 그런 단순한 마법이라네. 내 말 잘 기억해 두게, {name}. 맨 위 칸의 비스킷 통을 내려 줄 줄 아는 사람은 친구가 모자랄 일이 없다네."
+  },
+  "root": "라틴어 *descendo* \"나는 내려간다\" (*de* 아래로 + *scandere* 오르다 → 타고 내려가다). 이건 진짜 라틴어 그대로다. (올라가다 ascend도 같은 *scandere*에서 왔다.)",
+  "words": [
+   {
+    "w": "descend",
+    "pos": "v.",
+    "ko": "내려가다; (정적·어둠이) 내려앉다",
+    "en": "A hush descended on the hall as the guest of honour rose to speak.",
+    "eko": "주빈이 연설하려고 일어서자 연회장에 정적이 내려앉았다."
+   },
+   {
+    "w": "descent",
+    "pos": "n.",
+    "ko": "내려감, 하강; 혈통, 가문",
+    "en": "The climbers began their slow descent before the light failed.",
+    "eko": "등반대는 해가 지기 전에 천천히 하산을 시작했다."
+   },
+   {
+    "w": "descendant",
+    "pos": "n.",
+    "ko": "후손, 자손",
+    "en": "Many of the founder's descendants still live in the village.",
+    "eko": "설립자의 후손 가운데 많은 이가 아직 그 마을에 산다."
+   },
+   {
+    "w": "condescending",
+    "pos": "adj.",
+    "ko": "깔보는 듯한, 생색내는 (원래 \"몸을 낮춰 내려오다\")",
+    "en": "Nothing spoils a dinner party quite like a condescending host.",
+    "eko": "손님을 깔보는 주인만큼 만찬을 망치는 것도 없다."
+   }
+  ],
+  "lines": [
+   "slughorn-6-099.3",
+   "umbridge-5-028",
+   "moody-5-018"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The portrait shows the founder surrounded by four generations of ____.",
+    "opts": [
+     "descendants",
+     "descent",
+     "descend"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The ____ to the dungeons is steep and poorly lit.",
+    "opts": [
+     "descent",
+     "descend",
+     "descendant"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "a family of noble *descent*",
+    "opts": [
+     "귀족 혈통의",
+     "귀족 신분을 잃은",
+     "귀족 집안에 고용된"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그 손님은 깔보는 듯한 미소를 지으며 고개를 끄덕였다.",
+    "s": "The guest nodded with a c____________ smile.",
+    "a": "condescending"
+   },
+   {
+    "t": "write",
+    "ko": "눈 많은 그대의 후손들이 언제까지나 번성하기를, 그리고 그대를 잃은 인간 벗들이 위안을 얻기를 빕니다.",
+    "s": "May your many-eyed d__________ ever flourish and your human friends find solace for the loss they have sustained.",
+    "a": "descendants",
+    "note": "슬러그혼 6편 대사"
+   }
+  ]
+ },
+ {
+  "id": "confundo",
+  "prof": "slughorn",
+  "n": 2,
+  "name": "Confundo",
+  "ko": "혼동 마법",
+  "path": "confundo",
+  "resist": false,
+  "letter": {
+   "en": "Well, {name}, you are fast becoming one of my regulars, and I do look after my regulars. Come to my office this evening. I have a charm for you that is tremendous fun — provided, of course, it is used responsibly.",
+   "ko": "자, {name}. 자네는 어느새 내 단골이 되어 가고 있군. 나는 단골은 잘 챙기는 사람일세. 오늘 저녁 내 연구실로 오게. 아주 재미있는 마법을 하나 알려 주지. 물론 책임감 있게 쓴다는 조건으로 말일세."
+  },
+  "intro": {
+   "en": "The Confundus Charm. It leaves its target thoroughly muddled — forgetting what they were about, or mistaking one thing for another. A delicate piece of work, and not to be used lightly. In my experience, {name}, the cleverest people never need to confuse anyone; they simply make sure they are the one person in the room who is not confused.",
+   "ko": "혼동 마법일세. 상대를 완전히 헷갈리게 만들지. 하던 일을 잊게 하거나, 이것을 저것으로 착각하게 하거나. 섬세한 마법이니 가볍게 써서는 안 되네. 내 경험상, {name}, 정말 영리한 사람은 남을 헷갈리게 할 필요가 없다네. 그저 그 방에서 자기 혼자만은 헷갈리지 않도록 해 둘 뿐이지."
+  },
+  "root": "라틴어 *confundo* \"나는 한데 부어 섞는다\" (*con* 함께 + *fundere* 붓다 → 뒤섞다, 헷갈리게 하다). 이건 진짜 라틴어 그대로다.",
+  "words": [
+   {
+    "w": "confuse",
+    "pos": "v.",
+    "ko": "헷갈리게 하다; 혼동하다",
+    "en": "It is easy to confuse the two potions, as both are a pale shade of blue.",
+    "eko": "두 물약은 둘 다 옅은 푸른색이라 헷갈리기 쉽다."
+   },
+   {
+    "w": "confusion",
+    "pos": "n.",
+    "ko": "혼란; 혼동",
+    "en": "In the confusion that followed, nobody noticed that the door had been left open.",
+    "eko": "뒤이은 혼란 속에서 문이 열린 채라는 걸 아무도 알아채지 못했다."
+   },
+   {
+    "w": "confound",
+    "pos": "v.",
+    "ko": "어리둥절하게 하다; (예상을) 뒤엎다",
+    "en": "The result confounded the predictions of every expert.",
+    "eko": "그 결과는 모든 전문가의 예측을 뒤엎었다."
+   },
+   {
+    "w": "infusion",
+    "pos": "n.",
+    "ko": "우려낸 물, 달인 물 (같은 뿌리 *fundere*: 안에 붓다)",
+    "en": "Steep the leaves for five minutes to make a mild infusion.",
+    "eko": "잎을 5분 동안 우려내면 순한 차가 된다."
+   }
+  ],
+  "lines": [
+   "dumbledore-6-058",
+   "moody-4-021.2",
+   "snape-1-028.7"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The new timetable caused considerable ____ among the first-years.",
+    "opts": [
+     "confusion",
+     "confuse",
+     "confound"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "Please do not ____ caution with cowardice.",
+    "opts": [
+     "confuse",
+     "confusion",
+     "confused"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "The verdict *confounded* the critics.",
+    "opts": [
+     "비평가들을 어리둥절하게 했다(예상을 뒤엎었다)",
+     "비평가들을 납득시켰다",
+     "비평가들의 의견을 한데 모았다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "박하 잎을 우린 차 한 잔이면 속이 편안해진다.",
+    "s": "A cup of peppermint i_______ settles the stomach.",
+    "a": "infusion"
+   },
+   {
+    "t": "write",
+    "ko": "어리둥절한가? 그렇지 않다면 오히려 내가 놀랐을 걸세.",
+    "s": "C_______? I would be surprised if you weren't.",
+    "a": "Confused",
+    "note": "덤블도어 6편 대사"
+   }
+  ]
+ },
+ {
+  "id": "specialis-revelio",
+  "prof": "slughorn",
+  "n": 3,
+  "name": "Specialis Revelio",
+  "ko": "숨은 것 드러내기 마법",
+  "path": "revelio",
+  "resist": false,
+  "letter": {
+   "en": "My dear {name}, I have been singing your praises to anyone who will listen — and to one or two who would rather not. You have quite earned your place in my little club, and members of my little club learn the interesting spells. My office, tonight. I shall put the kettle on.",
+   "ko": "친애하는 {name}, 요즘 들어 주는 사람만 있으면 누구에게나 자네 칭찬을 늘어놓고 있다네. 듣기 싫어하는 한두 사람에게까지 말일세! 자네는 내 작은 모임에 들 자격을 충분히 얻었네. 그리고 내 작은 모임 사람들은 흥미로운 주문을 배우지. 오늘 밤 내 연구실로 오게. 주전자를 올려 두겠네."
+  },
+  "intro": {
+   "en": "Specialis Revelio. Wave it over a potion, a book or a sweet of doubtful origin, and it will show you what has been hidden inside. Young Mr Macmillan once tried it over a cauldron in my own classroom — hoping, I suspect, that the spell would do the thinking. It will not, {name}. A spell can reveal the ingredients; only a good mind knows what to make of them.",
+   "ko": "숨은 것을 드러내는 주문일세. 물약이든 책이든 출처가 의심스러운 사탕이든, 그 위에 대고 쓰면 안에 무엇이 숨어 있는지 보여 주지. 젊은 맥밀런 군이 바로 내 교실에서 솥에 대고 이걸 써 본 적이 있네. 주문이 대신 생각해 주길 바랐던 모양이네. 그렇게는 안 되네, {name}. 주문은 재료를 드러내 줄 뿐, 그걸 어떻게 읽어 낼지는 좋은 머리만이 안다네."
+  },
+  "root": "라틴어 *specialis* 특별한, 개별적인(진짜 라틴어) + *revelare* 베일을 걷다(*re* 거꾸로 + *velare* 베일로 가리다, *velum* 베일에서). *Revelio*는 진짜 라틴어가 아니다 — 라틴어로 \"나는 드러낸다\"는 *revelo*.",
+  "words": [
+   {
+    "w": "reveal",
+    "pos": "v.",
+    "ko": "드러내다, 밝히다",
+    "en": "The inquiry revealed serious flaws in the original report.",
+    "eko": "조사 결과 원래 보고서에 심각한 결함이 있었음이 드러났다."
+   },
+   {
+    "w": "revelation",
+    "pos": "n.",
+    "ko": "뜻밖에 밝혀진 사실, 폭로",
+    "en": "The revelation that the letters had been forged caused a scandal.",
+    "eko": "그 편지들이 위조되었다는 사실이 밝혀지자 큰 추문이 일었다."
+   },
+   {
+    "w": "unveil",
+    "pos": "v.",
+    "ko": "(덮개를 벗겨) 공개하다, 발표하다 (영어 un- + veil. veil이 라틴어 *velum*에서 왔으니 reveal과 먼 친척)",
+    "en": "The museum will unveil the restored portrait next spring.",
+    "eko": "박물관은 복원된 초상화를 내년 봄에 공개할 예정이다."
+   },
+   {
+    "w": "specialise",
+    "pos": "v.",
+    "ko": "전문으로 하다 (in)",
+    "en": "The shop specialises in rare and antique books.",
+    "eko": "그 가게는 희귀한 고서를 전문으로 다룬다."
+   }
+  ],
+  "lines": [
+   "snape-3-017",
+   "dumbledore-2-060",
+   "dumbledore-4-001.2"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The minister's memoirs contain several startling ____.",
+    "opts": [
+     "revelations",
+     "reveal",
+     "revealing"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The final chapter ____ the identity of the thief.",
+    "opts": [
+     "reveals",
+     "revelation",
+     "revealing"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "The Ministry will *unveil* its new proposals on Monday.",
+    "opts": [
+     "새 안을 공개한다",
+     "새 안을 철회한다",
+     "새 안을 몰래 검토한다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "그 가게는 희귀한 고서를 전문으로 다룬다.",
+    "s": "The shop s__________ in rare and antique books.",
+    "a": "specialises"
+   },
+   {
+    "t": "write",
+    "ko": "그런가... 네 비밀을 드러내라!",
+    "s": "Really... R_____ your secret!",
+    "a": "Reveal",
+    "note": "스네이프 3편 대사"
+   }
+  ]
+ },
+ {
+  "id": "silencio",
+  "prof": "umbridge",
+  "n": 1,
+  "name": "Silencio",
+  "ko": "침묵 마법",
+  "path": "silencio",
+  "resist": false,
+  "letter": {
+   "en": "Hem, hem. Ten of my lines learnt, {name}, and not a single interruption. Such quiet diligence deserves a small reward. Do come to my office after your lesson, dear.",
+   "ko": "흠, 흠. {name}, 제 대사를 열 개나 배우는 동안 한 번도 끼어들지 않았더군요. 그렇게 조용하고 성실하면 작은 상을 받을 만하죠. 수업이 끝나면 제 사무실로 오세요, 얘야."
+  },
+  "intro": {
+   "en": "The Silencing Charm. Fifth-years practise it in Charms, and I must say it is the most sensible thing they learn all year. One small hook of the wand, and a disruptive voice simply stops — no shouting, no unpleasantness. Order, quietly restored.",
+   "ko": "침묵 마법이에요. 5학년들이 마법 수업에서 연습하는데, 정말이지 1년 동안 배우는 것 중에 이게 제일 분별 있는 공부예요. 지팡이를 살짝 갈고리처럼 꺾으면 소란스러운 목소리가 그냥 멈춰요. 고함도, 불쾌한 일도 없이요. 질서가 조용히 되돌아오는 거죠."
+  },
+  "root": "라틴어 *silere* 조용하다 → *silentium* 침묵. 그런데 *Silencio*는 라틴어가 아니라 스페인어다(스페인어로 '침묵'). 라틴어로 쓰면 *silentium*. (silere에서 온 영어 단어는 silence·silent가 거의 전부라, 셋째 칸은 silence에서 갈라진 silencer다. silently는 silent의 꼴일 뿐이다.)",
+  "words": [
+   {
+    "w": "silence",
+    "pos": "n., v.",
+    "ko": "침묵, 고요; (동사) 입을 다물게 하다, (비판·반대를) 잠재우다",
+    "en": "The minister's reply silenced the opposition for a time.",
+    "eko": "장관의 답변에 반대편은 한동안 입을 다물었다."
+   },
+   {
+    "w": "silent",
+    "pos": "adj.",
+    "ko": "말없는, 조용한; (글자가) 소리 나지 않는 (silently 말없이, 소리 없이 — 이 단어의 꼴)",
+    "en": "The 'k' in 'knowledge' is silent.",
+    "eko": "knowledge의 k는 소리 나지 않는다."
+   },
+   {
+    "w": "silencer",
+    "pos": "n.",
+    "ko": "(자동차 배기관의) 소음기 — 영국 말, 미국은 muffler",
+    "en": "The old van badly needs a new silencer; one can hear it from the end of the road.",
+    "eko": "그 낡은 승합차는 소음기를 꼭 새로 달아야 한다. 길 끝에서부터 소리가 들린다."
+   }
+  ],
+  "lines": [
+   "snape-1-037",
+   "mcgonagall-2-047",
+   "mcgonagall-4-010.1",
+   "dumbledore-1-033.1",
+   "moody-4-052.3",
+   "snape-2-002"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The hall fell ____ the moment the Minister entered.",
+    "opts": [
+     "silent",
+     "silence",
+     "silently"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "A minute's ____ was observed in memory of the founder.",
+    "opts": [
+     "silence",
+     "silent",
+     "silently"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "The new evidence *silenced* the critics.",
+    "opts": [
+     "비판하던 사람들이 더는 반박하지 못했다",
+     "비판하던 사람들이 크게 화를 냈다",
+     "비판하던 사람들이 한자리에 모였다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "조용히! 모두 당황하지 말게.",
+    "s": "S______! Everyone will please not panic.",
+    "a": "Silence",
+    "note": "덤블도어 1편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "학생들은 말없이 시험장을 나갔다.",
+    "s": "The pupils left the examination hall s_______.",
+    "a": "silently"
+   }
+  ]
+ },
+ {
+  "id": "petrificus-totalus",
+  "prof": "umbridge",
+  "n": 2,
+  "name": "Petrificus Totalus",
+  "ko": "전신 결박 마법",
+  "path": "petrificus",
+  "resist": false,
+  "letter": {
+   "en": "I have been keeping an eye on you, {name}, and I like what I see. There is a spell I teach only to people I am quite sure of. My office, this evening — and do knock first, dear.",
+   "ko": "{name}, 그동안 눈여겨보고 있었는데, 마음에 들어요. 제가 확실히 믿을 수 있는 사람에게만 가르치는 마법이 있답니다. 오늘 저녁 제 사무실로 오세요. 노크 먼저 하고요, 얘야."
+  },
+  "intro": {
+   "en": "The Full Body-Bind Curse. The arms fasten to the sides, the legs press together, and the subject topples over like a plank — unharmed, merely still. I do so appreciate stillness. Do remember to lift it afterwards, dear; leaving people lying about is terribly untidy.",
+   "ko": "전신 결박 마법이에요. 팔은 옆구리에 붙고 다리는 딱 모이고, 상대는 널빤지처럼 쓰러지죠. 다치지는 않아요. 그저 가만히 있을 뿐이에요. 저는 가만히 있는 걸 참 좋아한답니다. 끝나면 꼭 풀어 주세요, 얘야. 사람을 여기저기 눕혀 두는 건 너무 지저분하니까요."
+  },
+  "root": "그리스어에서 라틴어로 들어온 *petra* 바위 + *facere* 만들다 → '돌로 만드는' · 라틴어 *totus* 전부, 온전한. *Petrificus Totalus*는 이 뿌리로 지은 마법사들의 말이다 — 라틴어 문장이 아니다.",
+  "words": [
+   {
+    "w": "petrify",
+    "pos": "v.",
+    "ko": "돌로 만들다; 겁에 질려 꼼짝 못 하게 하다 (petrified 겁에 질린 — 이 단어의 꼴)",
+    "en": "The thought of speaking in public petrifies many otherwise confident people.",
+    "eko": "다른 일에는 자신 있는 사람도 남들 앞에서 말한다는 생각만 하면 겁에 질려 얼어붙곤 한다."
+   },
+   {
+    "w": "petrol",
+    "pos": "n.",
+    "ko": "휘발유 (영국 말, 미국은 gas) — *petra* 바위 + *oleum* 기름, '바위 기름'",
+    "en": "The nearest petrol station is some ten miles away.",
+    "eko": "가장 가까운 주유소는 10마일쯤 떨어져 있다."
+   },
+   {
+    "w": "total",
+    "pos": "adj., n.",
+    "ko": "전체의, 완전한; 합계",
+    "en": "The total cost of the repairs has yet to be disclosed.",
+    "eko": "수리비 총액은 아직 공개되지 않았다."
+   },
+   {
+    "w": "totality",
+    "pos": "n.",
+    "ko": "전체, 총체",
+    "en": "The proposal must be judged in its totality, not clause by clause.",
+    "eko": "그 제안은 조항 하나하나가 아니라 전체로 판단해야 한다."
+   }
+  ],
+  "lines": [
+   "mcgonagall-2-023.1",
+   "dumbledore-2-010",
+   "dumbledore-2-011",
+   "dumbledore-2-074.2"
+  ],
+  "lineNote": "",
+  "qs": [
+   {
+    "t": "form",
+    "s": "The sight of the inspector was enough to ____ the entire class.",
+    "opts": [
+     "petrify",
+     "petrified",
+     "petrifying"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "The report must be read in its ____ before anyone comments.",
+    "opts": [
+     "totality",
+     "total",
+     "totally"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "Many first-years are *petrified* of the moving staircases.",
+    "opts": [
+     "움직이는 계단을 몹시 무서워한다",
+     "움직이는 계단 위에서 돌처럼 굳어 버린다",
+     "움직이는 계단을 무척 신기해한다"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "두 분의 맨드레이크 즙 덕분에 석화된 모든 이가 무사히 치료되었네.",
+    "s": "…whose Mandrake juice has been so successfully administered to all who had been P________.",
+    "a": "Petrified",
+    "note": "덤블도어 2편 대사"
+   },
+   {
+    "t": "write",
+    "ko": "회의는 완전한 침묵 속에 끝났다.",
+    "s": "The meeting ended in t____ silence.",
+    "a": "total"
+   }
+  ]
+ },
+ {
+  "id": "impedimenta",
+  "prof": "umbridge",
+  "n": 3,
+  "name": "Impedimenta",
+  "ko": "방해 마법",
+  "path": "impedimenta",
+  "resist": false,
+  "letter": {
+   "en": "I have put the kettle on, {name}, and set out the good china — the saucer with the kittens. Come to my office whenever you are ready. For you, dear, I shall gladly wait.",
+   "ko": "주전자를 올려 두었어요, {name}. 좋은 찻잔도 꺼내 놨고요. 아기 고양이 그림이 있는 받침으로요. 준비되면 언제든 제 사무실로 오세요. 기꺼이 기다릴게요, 얘야."
+  },
+  "intro": {
+   "en": "The Impediment Jinx. It slows anyone rushing towards you and, with a little conviction behind it, stops them altogether. I do not, as a rule, allow wands out in my lessons. But some people, dear, simply will not stay where they have been put.",
+   "ko": "방해 마법이에요. 이쪽으로 달려드는 사람을 느려지게 하고, 마음을 조금 더 실으면 아예 멈춰 세우죠. 원칙적으로 제 수업에서는 지팡이를 꺼내지 못하게 해요. 하지만 얘야, 어떤 사람들은 정해 준 자리에 도무지 가만히 있질 않거든요."
+  },
+  "root": "라틴어 *impedire* 발을 묶다, 방해하다(*in* 안 + *pes, pedis* 발 → 발에 족쇄를 채우다). *Impedimenta*는 진짜 라틴어다 — *impedimentum*(방해물)의 복수로, 로마 군대에서는 행군을 늦추는 '짐'을 뜻했다.",
+  "words": [
+   {
+    "w": "impede",
+    "pos": "v.",
+    "ko": "방해하다, 더디게 하다",
+    "en": "Heavy snow impeded the delivery of the post for several days.",
+    "eko": "폭설 때문에 며칠 동안 우편 배달이 더뎌졌다."
+   },
+   {
+    "w": "impediment",
+    "pos": "n.",
+    "ko": "장애물, 걸림돌",
+    "en": "The lack of funding remains the chief impediment to reform.",
+    "eko": "자금 부족이 여전히 개혁을 가로막는 가장 큰 걸림돌이다."
+   },
+   {
+    "w": "expedite",
+    "pos": "v.",
+    "ko": "신속히 처리하다, 앞당기다 — **같은 뿌리, 반대 뜻**: impedire에서 나온 말이 아니라, 같은 '발(*pes*)'에 *ex-*(밖으로)가 붙은 *expedire*(발을 풀어 주다)에서 왔다",
+    "en": "A signed form will expedite your application considerably.",
+    "eko": "서명한 서류가 있으면 신청이 훨씬 빨리 처리된다."
+   },
+   {
+    "w": "expedition",
+    "pos": "n.",
+    "ko": "원정, 탐험; (격식) 신속함 — **같은 뿌리, 반대 뜻**: expedite와 같은 *expedire*에서 온 말",
+    "en": "Kindly reply with all possible expedition.",
+    "eko": "최대한 신속히 답해 주십시오."
+   }
+  ],
+  "lines": [],
+  "lineNote": "없음",
+  "qs": [
+   {
+    "t": "form",
+    "s": "Nothing must be allowed to ____ the inspection.",
+    "opts": [
+     "impede",
+     "impediment",
+     "impeding"
+    ],
+    "a": 0
+   },
+   {
+    "t": "form",
+    "s": "Poor eyesight has proved no ____ to a distinguished career.",
+    "opts": [
+     "impediment",
+     "impede",
+     "impeded"
+    ],
+    "a": 0
+   },
+   {
+    "t": "mean",
+    "s": "The Ministry has promised to *expedite* the matter.",
+    "opts": [
+     "그 일을 서둘러 처리하겠다고",
+     "그 일을 뒤로 미루겠다고",
+     "그 일을 철저히 조사하겠다고"
+    ],
+    "a": 0
+   },
+   {
+    "t": "write",
+    "ko": "다리가 무너지면서 구조 작업이 크게 지연되었다.",
+    "s": "The collapse of the bridge seriously i______ the rescue.",
+    "a": "impeded"
+   },
+   {
+    "t": "write",
+    "ko": "이 서류에 서명하시면 일이 빨라질 거예요.",
+    "s": "Signing this form will e_______ matters.",
+    "a": "expedite"
+   }
+  ]
+ }
+]

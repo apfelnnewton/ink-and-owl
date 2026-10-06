@@ -72,6 +72,7 @@ export function initLetters(app){
       (it.gift ? `<figure class="lt-gift"><img src="${giftImg(deck.id, it.gift.id)}" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()"><figcaption><b lang="en">${esc(it.gift.name.en)}</b><span>${esc(it.gift.name.ko)}</span></figcaption></figure>` : '') +
       `<div class="lt-letter${it.howler ? ' lt-burnt' : ''}" lang="en" id="shTitle">${para(it.en)}</div>` +
       `<div class="lt-ko">${para(it.ko)}</div>` +
+      (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">연구실로 가기 · 주문 배우기</button>` : '') +
       (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key));
     draw();
   }
@@ -124,6 +125,7 @@ export function initLetters(app){
   });
   $('#ltRel').addEventListener('click', e => { if (e.target.closest('#ltTea')) teaStart(); });
   $('#sheetBody').addEventListener('click', e => { if (!sec.hidden && e.target.closest('[data-reqgo]')){ closeSheet(); app.go(`#/room/${deck.id}/req`); } });
+  $('#sheetBody').addEventListener('click', e => { const s = !sec.hidden && e.target.closest('[data-spellgo]'); if (s){ closeSheet(); app.go('#/spell/' + s.dataset.spellgo); } });
   $('#sheetBody').addEventListener('click', e => { if (sec.hidden || !tea) return; const b = e.target.closest('[data-tea]'); if (b) teaPick(+b.dataset.tea); });
   $('#ltWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && !b.classList.contains('on')) app.go('#/letters/' + b.dataset.who); });
   wireFriends(app);

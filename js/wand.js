@@ -44,8 +44,13 @@ export const NOTE = {
 export const LINES = {
   hello: {en: 'Ah. I wondered when you would come. Before I fetch a single box, I must ask you a few questions. Answer honestly — the wands will know if you do not.',
     ko: '아. 언제 오시나 했습니다. 상자를 하나라도 꺼내기 전에 몇 가지 여쭤야겠군요. 솔직하게 답하십시오. 그러지 않으면 지팡이들이 압니다.'},
-  again: {en: 'Back so soon? A new wand must learn your hand afresh, and every spell with it. Are you quite sure?',
-    ko: '벌써 다시 오셨군요? 새 지팡이는 당신 손을 처음부터 다시 익혀야 합니다. 주문도 전부요. 정말 괜찮으시겠습니까?'},
+  again: {en: 'Back so soon? A new wand must learn your hand afresh, and it will want to see the spells you know. Are you quite sure?',
+    ko: '벌써 다시 오셨군요? 새 지팡이는 당신 손을 처음부터 다시 익혀야 하고, 당신이 아는 주문도 보고 싶어 할 겁니다. 정말 괜찮으시겠습니까?'},
+  /* the new-wand test (2026-10-05 user decision): every answer right, or the wand waits until tomorrow */
+  test: {en: 'Before it is yours, show me it will answer you.', ko: '당신 것이 되기 전에, 이 지팡이가 당신에게 응하는지 보여 주십시오.'},
+  keepIt: {en: 'Not quite. I shall keep it for you until tomorrow; it will not go to anyone else.', ko: '아직은 아니군요. 내일까지 맡아 두지요. 다른 사람에게 가지는 않을 겁니다.'},
+  waiting: {en: 'Ah, there you are. Your wand has been waiting in its box. Shall we see whether it answers you today?', ko: '아, 오셨군요. 지팡이가 상자 안에서 기다리고 있었습니다. 오늘은 당신에게 응하는지 볼까요?'},
+  tomorrow: {en: 'Not today, I think. Come back tomorrow; the wand will keep.', ko: '오늘은 아닌 것 같군요. 내일 다시 오십시오. 지팡이는 기다릴 겁니다.'},
   try1: {en: 'Try this one. Maple and dragon heartstring, ten inches. Give it a wave.',
     ko: '이걸 쥐어 보십시오. 단풍나무에 용의 심금, 10인치. 한번 휘둘러 보세요.'},
   no1: {en: 'No, no. Most decidedly not.', ko: '아니, 아니. 절대로 아니군요.'},
@@ -173,10 +178,14 @@ export function keep(w){
   const s = store.get(), prev = s.wand || {};
   const old = (prev.old || []).slice();
   if (prev.wood) old.unshift({wood: prev.wood, core: prev.core, len: prev.len, flex: prev.flex, d: prev.d});
-  s.wand = {note: prev.note || srs.today(), wood: w.wood, core: w.core, len: w.len, flex: w.flex, ans: w.ans, d: srs.today(), old};
+  s.wand = {note: prev.note || srs.today(), wood: w.wood, core: w.core, len: w.len, flex: w.flex, ans: w.ans, d: srs.today(), old};   // any pending wand is settled
   store.save();
   return s.wand;
 }
+/* a new wand that failed its test waits at the shop until the next day (s.wand.pending) */
+export const pending = () => (store.get().wand || {}).pending || null;
+export function setPending(w){ const s = store.get(); s.wand.pending = {wood: w.wood, core: w.core, len: w.len, flex: w.flex, ans: w.ans, d: srs.today()}; store.save(); }
+export function dropPending(){ const s = store.get(); if (s.wand) delete s.wand.pending; store.save(); }
 export const img = wood => `assets/wand/${wood}.webp`;
 
 /* ---------- the professors' letters about the wood, the day after (bond.js posts them as WD-<wood>):

@@ -1,11 +1,14 @@
 /* My room (#/me): the guest room at the top of the tower, the first door in the corridor. The letters wait on the
    desk (the owl post, #/letters); the professors' gifts are kept in the specimen drawers of the cabinet
    (#/me/cabinet/<deck>): one drawer per professor, thirty velvet compartments each. A gift that has arrived sits in
-   its compartment, its black ground melting into the velvet; an empty one says how it is earned. */
+   its compartment, its black ground melting into the velvet; an empty one says how it is earned. The wand box and
+   the spellbook (#/me/wand, #/me/spells) come with Ollivander's note and the wand. */
 import {DECKS, byId} from './decks.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
+import * as spells from './spells.js';
+import * as doors from './doors.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
@@ -32,6 +35,10 @@ export function initMyRoom(app){
     const w = wand.get();
     $('#meWand').hidden = !w && !wand.noteArrived();
     $('#meWandN').textContent = w ? `· ${wand.WOODS[w.wood].ko}` : '· 올리밴더의 쪽지';
+    /* the spellbook comes with the wand */
+    $('#meSpl').hidden = !w;
+    const due = spells.dueCount();
+    $('#meSplN').textContent = `· ${spells.learntList().length} / 21${due ? ` · 복습 ${due}` : ''}`;
   }
 
   /* ---------- the wand box (#/me/wand): the wand in its box and Ollivander's card; earlier wands below */
@@ -47,6 +54,18 @@ export function initMyRoom(app){
     body.innerHTML = boxed(w.wood) + cardWords(w) +
       (old.length ? `<h3 class="wnd-h">예전 지팡이</h3><ul class="wnd-old">${old.map(o => `<li><img src="${wand.img(o.wood)}" alt=""><span>${esc(wand.titleKo(o))}</span><small>${o.d ? fmt(o.d) : ''}</small></li>`).join('')}</ul>` : '') +
       `<button type="button" class="wnd-go quiet" data-again><span lang="en">A new wand</span><small>새 지팡이 맞추기</small></button>`;
+  }
+
+  /* ---------- the spellbook (#/me/spells): every professor's three spells — learnt ones open their page (spell.js),
+     one whose letter has come waits for its lesson, the rest say what opens them */
+  function drawSpells(){
+    const list = spells.all();
+    $('#splBody').innerHTML = `<header class="jnl-head"><div><h2 lang="en">The Spellbook</h2><p>주문서 · ${spells.learntList().length} / ${list.length || 21}</p></div></header>` +
+      DECKS.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
+        if (spells.isLearnt(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="has"><b lang="en">${esc(sp.name)}</b><span>${esc(sp.ko)}</span>${spells.reviewDue(sp.id) ? '<em>복습할 때</em>' : ''}<i aria-hidden="true">→</i></button></li>`;
+        if (spells.isSent(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="wait"><b lang="en">${esc(sp.name)}</b><span>편지가 왔습니다 · 수업 듣기</span><i aria-hidden="true">→</i></button></li>`;
+        return `<li class="lock"><b>주문 ${sp.n}</b><span>${doors.isOpen(d.id) ? esc(spells.condition(sp)) + '이 되면 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
+      }).join('')}</ol></section>`).join('');
   }
 
   function drawCabinet(){
@@ -121,8 +140,9 @@ export function initMyRoom(app){
     $('#cab').hidden = m !== 'cabinet';
     $('#jnl').hidden = m !== 'journal';
     $('#wnd').hidden = m !== 'wand';
+    $('#spl').hidden = m !== 'spells';
     sec.classList.toggle('cabinet', cabinet);
-    $('#meTtl').textContent = {cabinet: 'The Specimen Drawers', journal: 'The Tea Journal', wand: 'The Wand Box'}[m] || 'The Guest Room';
+    $('#meTtl').textContent = {cabinet: 'The Specimen Drawers', journal: 'The Tea Journal', wand: 'The Wand Box', spells: 'The Spellbook'}[m] || 'The Guest Room';
   }
 
   /* ---------- events */
@@ -132,6 +152,8 @@ export function initMyRoom(app){
   $('#cabGrid').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) openGift(b.dataset.k); });
   $('#meJnl').addEventListener('click', () => app.go('#/me/journal'));
   $('#meWand').addEventListener('click', () => app.go('#/me/wand'));
+  $('#meSpl').addEventListener('click', () => app.go('#/me/spells'));
+  $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });
   $('#wndBody').addEventListener('click', e => {
     const x = e.target.closest('[data-gl]'); if (x){ gloss(x.dataset.gl); return; }
     if (e.target.closest('[data-shop]')) app.go('#/ollivander');
@@ -148,7 +170,7 @@ export function initMyRoom(app){
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
 
   async function show({id, sub}){
-    await Promise.all(DECKS.map(d => bond.load(d.id))).catch(() => {});
+    await Promise.all([...DECKS.map(d => bond.load(d.id)), spells.load()]).catch(() => {});
     if (id === 'cabinet'){
       deck = byId(sub) || DECKS.find(d => gifts(d.id).length) || DECKS[0];
       mode('cabinet');
@@ -159,6 +181,11 @@ export function initMyRoom(app){
       fitPaper($('#wndBook'));
       drawWand();
       $('#wnd').scrollTop = 0;
+    } else if (id === 'spells'){
+      mode('spells');
+      fitPaper($('#splBook'));
+      drawSpells();
+      $('#spl').scrollTop = 0;
     } else if (id === 'journal'){
       deck = byId(sub) || DECKS.find(d => drunk(d.id).length) || DECKS[0];
       page = null;
@@ -171,5 +198,5 @@ export function initMyRoom(app){
       drawRoom();
     }
   }
-  return {show, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else if (view === 'wand') drawWand(); else drawRoom(); }};
+  return {show, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else if (view === 'wand') drawWand(); else if (view === 'spells') drawSpells(); else drawRoom(); }};
 }

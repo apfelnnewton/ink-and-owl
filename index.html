@@ -325,6 +325,12 @@
     <button type="button" class="cgo me-second" id="meJnl"><span>차 일지 <em id="meJnlN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meWand" hidden><span>지팡이 <em id="meWandN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meSpl" hidden><span>주문서 <em id="meSplN"></em></span><i aria-hidden="true">→</i></button>
+  </div>
+  <div class="cab-scroll" id="spl" hidden>
+    <div class="cab-wrap">
+      <article class="jnl-book spl-book" id="splBook"><div class="paperbox"></div><div class="jnl-in" id="splBody"></div></article>
+    </div>
   </div>
   <div class="cab-scroll" id="wnd" hidden>
     <div class="cab-wrap">
@@ -346,6 +352,22 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============ A SPELL LESSON in the professor's office (spell.js), from their letter or the spellbook ============ -->
+<section id="spell" class="screen" hidden aria-label="주문 수업">
+  <div class="bg" aria-hidden="true"><div class="photo"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="spBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="spTtl" lang="en"></div>
+    <div class="cnt"></div>
+  </div>
+  <div class="ol-scroll sp-scroll" id="spScroll">
+    <div class="ol-wrap sp-wrap">
+      <article class="ol-card sp-card" id="spCard" aria-live="polite"><div class="paperbox"></div><div class="ol-body" id="spBody"></div></article>
+    </div>
+  </div>
+  <div class="sp-fxl" id="spFx" aria-hidden="true"></div>
 </section>
 
 <!-- ============ OLLIVANDERS: the wand shop, reached from his note or the wand box (not a corridor door) ============ -->
