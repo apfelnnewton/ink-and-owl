@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-10b';
+const VERSION = 'he-2026-10-11a';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -29,6 +29,21 @@ const CORE = [
   'js/spell.js',
   'js/trace.js',
   'js/map.js',
+  'js/prophet.js',
+  'prophet/prophet.json',
+  'assets/prophet/roll.webp',
+  'assets/prophet/01.webp',
+  'assets/prophet/02.webp',
+  'assets/prophet/03.webp',
+  'assets/prophet/04.webp',
+  'assets/prophet/05.webp',
+  'assets/prophet/06.webp',
+  'assets/prophet/07.webp',
+  'assets/prophet/08.webp',
+  'assets/prophet/09.webp',
+  'assets/prophet/10.webp',
+  'assets/prophet/11.webp',
+  'assets/prophet/12.webp',
   'js/sfx.js',
   'bond/howlers.json',
   'spells/spells.json',

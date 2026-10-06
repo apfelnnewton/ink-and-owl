@@ -1,7 +1,7 @@
 /* Start-up and routing. #/ corridor · #/room/<deck>[/extra|/wrong] classroom · #/report/<deck> end of lesson ·
    #/notes/<deck> expression notebook · #/script/<deck> the script · #/records the register · #/me your own room ·
    #/me/cabinet/<deck> the gift drawers · #/me/journal/<deck> the tea journal · #/me/wand the wand box ·
-   #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/me/spells the spellbook · #/map the Marauder's Map ·
+   #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/me/spells the spellbook · #/map the Marauder's Map · #/prophet[/<n>] the Daily Prophet ·
    #/letters/<deck|friends> owl post (on the desk in your room; friends' letters in the first tab) · #/settings */
 import * as store from './store.js';
 import {DECKS, byId} from './decks.js';
@@ -20,7 +20,9 @@ import {initMap} from './map.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
-import {deliver, deliverWandNote, deliverHowler, owlBusy} from './owl.js';
+import {deliver, deliverWandNote, deliverHowler, deliverProphet, owlBusy} from './owl.js';
+import * as prophet from './prophet.js';
+import {initProphet} from './prophet.js';
 import * as howler from './howler.js';
 import {askName} from './welcome.js';
 import {hint} from './hints.js';
@@ -80,6 +82,8 @@ const app = {
     if (wand.noteDue()){ setTimeout(() => deliverWandNote(app), 700); return; }
     /* days without a lesson: a Howler (or, from Dumbledore and Lupin, a gentle note) */
     const hw = howler.due(); if (hw){ setTimeout(() => deliverHowler(app, hw), 700); return; }
+    /* Mondays: the Daily Prophet */
+    if (prophet.due()){ setTimeout(() => deliverProphet(app), 700); return; }
     const inv = bond.owlDue(); if (inv) setTimeout(() => deliver(app, inv), 700);
   },
   /* friends' letters moved (arrived, read, sent): the counts in your room, the post and the corridor */
@@ -87,7 +91,7 @@ const app = {
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app)};
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */

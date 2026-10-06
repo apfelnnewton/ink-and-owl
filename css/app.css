@@ -1645,3 +1645,80 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .fr-map span{font:italic 17px var(--f-display)}
 .fr-map small{font-size:12px;color:#5B4A33}
 @media (prefers-reduced-motion: reduce){ .mp-who i,#map.open .mp-tags,.mp-words.in .en,.mp-words.in .ko{animation:none} .mp-img{transition:none} }
+
+/* ============ THE DAILY PROPHET (prophet.js): newsprint on a dark desk ============ */
+#prophet{background:radial-gradient(ellipse 100% 80% at 50% 30%, #2a2119, #0c0907)}
+.dp-scroll{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(64px + var(--st)) 12px calc(40px + var(--sb))}
+.dp-paper{max-width:620px;margin:0 auto;padding:18px 18px 26px;color:#1d1812;font-family:var(--f-ko);
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 40%, rgba(255,250,235,.0) 55%, rgba(120,95,55,.22)),
+    repeating-linear-gradient(0deg, rgba(60,45,25,.025) 0 1px, transparent 1px 3px),
+    linear-gradient(#ece4cf, #e4dbc2);
+  box-shadow:0 18px 50px rgba(0,0,0,.65), 0 0 0 1px rgba(80,60,30,.25);transform:rotate(-.25deg)}
+.dp-paper .en{font-family:var(--f-display)}
+.dp-mast{text-align:center;padding-bottom:10px;border-bottom:3px double #1d1812}
+.dp-ear{display:flex;justify-content:space-between;gap:8px;margin:0 0 6px;padding:0 0 5px;border-bottom:1px solid #1d1812;font:italic 12px var(--f-display);color:#3a2f22}
+.dp-mast h1{margin:4px 0 0;font:400 calc(44px * var(--k))/1 'UnifrakturMaguntia', var(--f-display);letter-spacing:.5px}
+.dp-motto{margin:6px 0 0;font:italic 12.5px var(--f-display);color:#3a2f22}
+.dp-lead{padding-top:12px}
+.dp-serial{margin:0;text-align:center;font:12px var(--f-caps);letter-spacing:.12em;color:#7a1e14}
+.dp-hl{margin:6px 0 2px;text-align:center;font:400 calc(27px * var(--k))/1.08 var(--f-caps);letter-spacing:.01em}
+.dp-hlko{margin:0 0 8px;text-align:center;font-size:13px;color:#5b4a33}
+.dp-sub{margin:0 0 10px;text-align:center;font:italic 16px/1.35 var(--f-display);color:#2f261b;padding:6px 0;border-top:1px solid rgba(29,24,18,.45);border-bottom:1px solid rgba(29,24,18,.45)}
+.dp-photo{margin:0 0 4px;padding:5px;background:#d9cfb5;box-shadow:inset 0 0 0 1px rgba(29,24,18,.35)}
+.dp-photo video{display:block;width:100%;aspect-ratio:1;object-fit:cover;filter:contrast(1.04) saturate(.85)}
+.dp-by{margin:8px 0 6px;font:italic 14px var(--f-display);text-align:right}
+.dp-text .dp-p{cursor:pointer;border-radius:2px;padding:2px 4px;margin:0 -4px 8px;transition:background .2s}
+.dp-text .dp-p.open,.dp-soc .dp-p.open,.dp-ad.open{background:rgba(122,30,20,.06)}
+.dp-p .en{margin:0;font-size:calc(17px * var(--k));line-height:1.45}
+.dp-lead .dp-text .dp-p:first-child .en::first-letter{float:left;font:400 3.1em/.8 'UnifrakturMaguntia', var(--f-display);margin:.06em .08em 0 0}
+.dp-p .ko{margin:4px 0 2px;font-size:14px;line-height:1.6;color:#5b4a33}
+.dp-k{font-weight:normal;background:linear-gradient(transparent 60%, rgba(181,140,60,.45) 60%);cursor:pointer}
+.dp-tap{margin:2px 0 8px;font-size:12px;color:#7a6a4f;text-align:center}
+.dp-keys{list-style:none;margin:6px 0 0;padding:8px 0 0;border-top:1px solid rgba(29,24,18,.4);display:grid;gap:4px}
+.dp-keys button{width:100%;min-height:44px;display:flex;align-items:baseline;gap:10px;padding:6px 4px;border:0;background:none;text-align:left;cursor:pointer;color:#1d1812}
+.dp-keys b{font:italic 16px var(--f-display);white-space:nowrap}
+.dp-keys span{font-size:13px;color:#5b4a33}
+.dp-box{margin:18px 0;padding:12px 14px;background:rgba(29,24,18,.07);box-shadow:inset 0 0 0 1px rgba(29,24,18,.45), inset 0 0 0 4px rgba(236,228,207,1), inset 0 0 0 5px rgba(29,24,18,.3)}
+.dp-box h3{margin:0 0 6px;font:400 17px var(--f-caps);display:flex;flex-direction:column}
+.dp-box h3 small{font:12.5px var(--f-ko);color:#5b4a33}
+.dp-box p{margin:4px 0;font-size:14px;line-height:1.6}
+.dp-box i{font-family:var(--f-display);font-size:16px}
+.dp-col,.dp-soc{padding-top:14px;border-top:3px double #1d1812;margin-top:18px}
+.dp-kicker{margin:0;font:italic 13px var(--f-display);text-align:center;color:#3a2f22}
+.dp-col h2,.dp-soc h2{margin:4px 0 10px;text-align:center;font:400 calc(21px * var(--k)) var(--f-caps)}
+.dp-soc .dp-p{cursor:pointer;padding:2px 4px;margin:0 -4px 8px}
+.dp-ads{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:14px;border-top:3px double #1d1812}
+.dp-ad{cursor:pointer;padding:10px;text-align:center;box-shadow:inset 0 0 0 1px rgba(29,24,18,.55)}
+.dp-ad:last-child:nth-child(odd){grid-column:1 / -1}
+.dp-ad .en{font-size:14.5px;line-height:1.35;text-align:center}
+.dp-ad .en b{display:block;margin-bottom:4px;font:400 13px var(--f-caps);letter-spacing:.06em}
+.dp-ad .ko{font-size:12.5px}
+.dp-puz{margin-top:18px;padding-top:14px;border-top:3px double #1d1812}
+.dp-puz h2{margin:0 0 10px;text-align:center;font:400 calc(21px * var(--k)) var(--f-caps);display:flex;flex-direction:column}
+.dp-puz h2 small{font:12.5px var(--f-ko);color:#5b4a33}
+.dp-q{margin:0 0 14px}
+.dp-q .en{margin:0;font-size:calc(16.5px * var(--k));line-height:1.45}
+.dp-q .no{font-style:italic;margin-right:2px}
+.dp-q .blank{display:inline-block;min-width:3.5em;padding:0 3px;border-bottom:1px solid #1d1812;text-align:center}
+.dp-q.ok .blank{color:#7a1e14;font-style:italic;border-bottom-color:transparent;background:linear-gradient(transparent 62%, rgba(181,140,60,.4) 62%)}
+.dp-q .ko{margin:4px 0 0;font-size:13px;color:#5b4a33}
+.dp-opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.dp-opts button{min-height:44px;padding:6px 12px;border:1px solid rgba(29,24,18,.55);border-radius:2px;background:rgba(255,255,255,.25);color:#1d1812;font:italic 15px var(--f-display);cursor:pointer}
+.dp-opts button.wrong{opacity:.4;text-decoration:line-through}
+.dp-opts button.right{background:rgba(122,30,20,.12);border-color:#7a1e14;color:#7a1e14}
+.dp-opts button:disabled{cursor:default}
+.dp-back{margin-top:20px;padding-top:12px;border-top:1px solid rgba(29,24,18,.45)}
+.dp-back h3{margin:0 0 8px;font-size:13px;font-weight:400;color:#5b4a33;text-align:center}
+.dp-back div{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.dp-back button{min-width:64px;min-height:44px;padding:4px 8px;border:1px solid rgba(29,24,18,.4);background:none;color:#1d1812;font:14px var(--f-display);cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.dp-back button small{font:11px var(--f-ko);color:#7a6a4f}
+.dp-back button.on{background:#1d1812;color:#ece4cf}
+.dp-back button.on small{color:#cbbd9c}
+.dp-back button.new::after{content:'';width:6px;height:6px;border-radius:50%;background:#7a1e14;margin-top:2px}
+.dp-end{margin:18px 0 0;text-align:center;font-size:13.5px;color:#5b4a33}
+.dp-end b{font:italic 16px var(--f-display);font-weight:normal;color:#1d1812}
+.dp-none{margin:40px 0;text-align:center;font-size:15px;color:#3a2f22}
+.owl-env.dp-roll img{transform:scale(1.15) rotate(-8deg);filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))}
+@media (max-width:380px){ .dp-paper{padding:14px 12px 22px} .dp-ads{grid-template-columns:1fr} .dp-ear{font-size:11px} }
+@media (prefers-reduced-motion: reduce){ .dp-paper{transform:none} }

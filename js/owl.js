@@ -10,6 +10,7 @@ import * as bond from './bond.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
 import * as howler from './howler.js';
+import * as prophet from './prophet.js';
 import {compose, paras} from './friends.js';
 import {esc, reduced, toast} from './ui.js';
 
@@ -103,6 +104,20 @@ export function deliverHowler(app, due){
   fly(app, {sealCls: '', img: `assets/howler/${pink ? 'pink' : 'red'}-env.webp`, cls: 'hw-env-drop', label: `${esc(who.ko)}의 호울러`, en: 'An owl brings a Howler.',
     waits: `${esc(who.ko)}의 호울러는 편지함에 있습니다. 열면 소리가 날 수 있습니다.`,
     open: () => howler.play(due.who, key, () => app.refreshMail && app.refreshMail())});
+}
+
+/* the Daily Prophet (prophet.js): once a week the owl drops the paper, rolled and tied; it is printed (this week's
+   column, ads and society news fixed into it) as the owl sets off, and waits in my room under 신문 */
+export function deliverProphet(app){
+  if (busy) return;
+  busy = true;
+  prophet.load().then(d => {
+    busy = false;
+    if (!d || !prophet.due()) return;
+    const iss = prophet.take(); if (!iss) return;
+    fly(app, {sealCls: '', img: 'assets/prophet/roll.webp', cls: 'dp-roll', label: `예언자 일보 ${iss.n}호`, en: 'An owl brings the Daily Prophet.',
+      waits: '신문은 내 방 <b>신문</b> 칸에 있습니다.', open: () => app.go('#/prophet/' + iss.n)});
+  });
 }
 
 /* inv: a tea invitation ({id, invite, …} from bond.owlDue), {letter} — a friend's letter from post.undelivered — or

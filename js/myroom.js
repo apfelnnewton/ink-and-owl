@@ -10,6 +10,7 @@ import * as wand from './wand.js';
 import * as spells from './spells.js';
 import * as doors from './doors.js';
 import * as map from './map.js';
+import * as prophet from './prophet.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
@@ -39,6 +40,9 @@ export function initMyRoom(app){
     /* the Marauder's Map comes from Lupin on the fifth day of study */
     $('#meMap').hidden = !map.have();
     $('#meMapN').textContent = "· Marauder's Map";
+    /* the Daily Prophet: every paper the owl has brought */
+    $('#meNews').hidden = !prophet.have();
+    { const u = prophet.unread(), n = prophet.issues().length; $('#meNewsN').textContent = `· ${n}호까지${u ? ` · 새 신문` : ''}`; }
     /* the spellbook comes with the wand */
     $('#meSpl').hidden = !w;
     const due = spells.dueCount();
@@ -158,6 +162,7 @@ export function initMyRoom(app){
   $('#meWand').addEventListener('click', () => app.go('#/me/wand'));
   $('#meSpl').addEventListener('click', () => app.go('#/me/spells'));
   $('#meMap').addEventListener('click', () => app.go('#/map'));
+  $('#meNews').addEventListener('click', () => app.go('#/prophet'));
   $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });
   $('#wndBody').addEventListener('click', e => {
     const x = e.target.closest('[data-gl]'); if (x){ gloss(x.dataset.gl); return; }

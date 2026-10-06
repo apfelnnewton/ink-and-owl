@@ -56,6 +56,11 @@ const CASTLE = {
   slughorn: {x: .735, y: .815, en: "Professor Slughorn's Office", ko: '슬러그혼 교수 연구실'},
   snape: {x: .45, y: .935, en: 'The Potions Dungeon', ko: '지하 마법약 교실 · 스네이프'}
 };
+/* the Painted Gallery: the hidden room the Daily Prophet's serial finds (prophet.js, issue 12) — its fog lifts once the
+   twelfth paper has come; tapping it opens that issue */
+const GALLERY = {x: .33, y: .335, en: 'The Painted Gallery', ko: '그림 화랑 · 예언자 일보 12호'};
+const galleryOpen = () => ((store.get().prophet || {}).got || []).some(i => i.n === 12);
+const placesOf = f => f.id === 'castle' && galleryOpen() ? {...f.places, gallery: GALLERY} : f.places;
 const DIAGON = {ollivander: {x: .55, y: .085, en: 'Ollivanders', ko: '올리밴더 가게'}};
 const FOLDS = [{id: 'castle', en: 'Hogwarts', ko: '호그와트', img: 'assets/map/castle.webp', places: CASTLE},
   {id: 'diagon', en: 'Diagon Alley', ko: '다이애건 앨리', img: 'assets/map/diagon.webp', places: DIAGON, need: () => !!wand.get()}];
@@ -63,6 +68,7 @@ const FOLDS = [{id: 'castle', en: 'Hogwarts', ko: '호그와트', img: 'assets/m
 /* ---------- when it comes */
 const st = () => { const s = store.get(); return s.map || (s.map = {}); };
 export const have = () => !!st().got;
+export const got = () => st().got || '';
 const studyDays = () => Object.keys(store.get().log || {}).filter(d => Object.keys(store.get().log[d] || {}).length).length;
 export async function daily(){
   if (have() || studyDays() < STUDY_DAYS) return false;
@@ -178,14 +184,14 @@ export function initMap(app){
     /* the places in use: soft clear holes */
     x.globalCompositeOperation = 'destination-out';
     const r0 = Math.min(w, h) * .16;
-    Object.values(fold.places).forEach(p => { const cx = p.x * w, cy = p.y * h, g = x.createRadialGradient(cx, cy, r0 * .35, cx, cy, r0);
+    Object.values(placesOf(fold)).forEach(p => { const cx = p.x * w, cy = p.y * h, g = x.createRadialGradient(cx, cy, r0 * .35, cx, cy, r0);
       g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(cx - r0, cy - r0, r0 * 2, r0 * 2); });
     x.globalCompositeOperation = 'source-over';
   }
   function placeTags(){
-    tags.innerHTML = Object.entries(fold.places).map(([id, p]) =>
+    tags.innerHTML = Object.entries(placesOf(fold)).map(([id, p]) =>
       `<button type="button" class="mp-tag${p.x < .22 ? ' l' : p.x > .78 ? ' r' : ''}" data-place="${id}" style="left:${p.x * 100}%;top:${p.y * 100}%"><span lang="en">${esc(p.en)}</span></button>`).join('') +
-      '<span class="mp-unrevealed" style="left:30%;top:33%" lang="en">Not yet revealed</span><span class="mp-unrevealed" style="left:64%;top:72%" lang="en">Not yet revealed</span>';
+      (galleryOpen() ? '' : '<span class="mp-unrevealed" style="left:30%;top:33%" lang="en">Not yet revealed</span>') + '<span class="mp-unrevealed" style="left:64%;top:72%" lang="en">Not yet revealed</span>';
     if (fold.id !== 'castle') return;
     tags.insertAdjacentHTML('beforeend', people.map((p, i) => `<button type="button" class="mp-who${p.rooms.length ? '' : ' asleep'}" data-who="${i}" id="mpWho${i}"><span lang="en">${esc(p.name)}</span>${p.rooms.length ? '' : '<i aria-hidden="true">zzz</i>'}</button>`).join(''));
   }
@@ -321,7 +327,7 @@ export function initMap(app){
   $('#mpFolds').addEventListener('click', e => { const b = e.target.closest('[data-fold]'); if (b) showFold(FOLDS.find(f => f.id === b.dataset.fold)); });
   tags.addEventListener('click', e => {
     const t = e.target.closest('[data-place]');
-    if (t){ const p = fold.places[t.dataset.place]; if (t.dataset.place === 'ollivander'){ app.go('#/me/wand'); return; } toast(`<span class="q" lang="en">${esc(p.en)}</span><span class="k">${esc(p.ko)}</span>`, 2400, true); return; }
+    if (t){ const p = placesOf(fold)[t.dataset.place]; if (t.dataset.place === 'ollivander'){ app.go('#/me/wand'); return; } if (t.dataset.place === 'gallery'){ app.go('#/prophet/12'); return; } toast(`<span class="q" lang="en">${esc(p.en)}</span><span class="k">${esc(p.ko)}</span>`, 2400, true); return; }
     const w = e.target.closest('[data-who]');
     if (w){ const p = people[+w.dataset.who];
       const en = p.rooms.length ? `${p.name} · Today: ${p.rooms.map(id => byId(id).who.replace(/^Professor /, '').replace(/^Alastor /, '')).join(' → ')}` : `${p.name} · Asleep in the Guest Tower`;

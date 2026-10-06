@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gowun+Batang:wght@400;700&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gowun+Batang:wght@400;700&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Nanum+Pen+Script&family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
 <link rel="stylesheet" href="css/app.css">
 <script type="module" src="js/app.js"></script>
 </head>
@@ -326,6 +326,7 @@
     <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meWand" hidden><span>지팡이 <em id="meWandN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meMap" hidden><span>지도 <em id="meMapN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meNews" hidden><span>신문 <em id="meNewsN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meSpl" hidden><span>주문서 <em id="meSplN"></em></span><i aria-hidden="true">→</i></button>
   </div>
   <div class="cab-scroll" id="spl" hidden>
@@ -382,6 +383,16 @@
     </form>
     <button type="button" class="mp-peek" id="mpPeek" hidden>루핀의 편지에서 문장 보기</button>
   </div>
+</section>
+
+<!-- ============ THE DAILY PROPHET (prophet.js): the weekly paper, from my room or the owl ============ -->
+<section id="prophet" class="screen" hidden aria-label="예언자 일보">
+  <div class="r-top">
+    <button type="button" class="back" id="dpBack" aria-label="내 방으로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" lang="en">The Daily Prophet</div>
+    <div class="cnt" id="dpCnt"></div>
+  </div>
+  <div class="dp-scroll" id="dpScroll"><div class="dp-paper" id="dpBody"></div></div>
 </section>
 
 <!-- ============ A SPELL LESSON in the professor's office (spell.js), from their letter or the spellbook ============ -->

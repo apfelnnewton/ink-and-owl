@@ -321,6 +321,12 @@ export function nextNews(){
   const m = fr.members.find(x => x.uid === n.from);
   return {...n, name: (m && m.name) || n.name || 'your friend'};
 }
+/* the Daily Prophet's society column (prophet.js): every friend's news of the last week, told or not */
+export function weekNews(days = 7){
+  const fr = f();
+  return (fr.news || []).filter(n => Date.now() - n.at < days * 864e5).sort((a, b) => a.at - b.at)
+    .map(n => { const m = fr.members.find(x => x.uid === n.from); return {...n, name: (m && m.name) || n.name || 'a friend'}; });
+}
 export const markNewsTold = id => { const n = (f().news || []).find(x => x.id === id); if (n){ n.told = true; store.save(); } };
 /* tell the group about one of my milestones — each one once (a birthday once a year), and only from a real group */
 export function announce(type, deck = '', once = ''){
