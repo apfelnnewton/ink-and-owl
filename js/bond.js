@@ -15,6 +15,7 @@ import * as store from './store.js';
 import * as group from './post.js';
 import * as doors from './doors.js';
 import * as wand from './wand.js';
+import * as howler from './howler.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -280,8 +281,12 @@ function wandLetter(){
   post(deck, 'WD-' + w.wood);
 }
 
+/* a piece of post from elsewhere (howler.js): into the professor's post, once */
+export const postItem = (id, key) => post(id, key);
+
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
+  if (/^H-/.test(key)) return howler.textOf(id, key);
   if (/^WD-[a-z]+$/.test(key)){
     const wood = key.slice(3), own = wand.OWNER[wood];
     const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;
@@ -344,9 +349,11 @@ export const keepsakes = id => { const d = data[id], b = bondOf(id); return d ? 
 export function init(a){
   app = a;
   loadNews();
+  howler.load();
   onPost((id, key) => {
     const who = byId(id);
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl
+    if (/^H-/.test(key) && howler.isHowler(id)) return;   // a Howler comes by owl (owl.js)
     toast(`<span class="q" lang="en">An owl arrives.</span><span class="k">${esc(who.ko)}에게서 ${/^K/.test(key) ? '선물이' : /^R\d\d-ask/.test(key) ? '부탁이' : /^G/.test(key) ? '카드가' : '편지가'} 왔습니다.</span>`, 3200, true);
   });
 }

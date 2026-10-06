@@ -18,7 +18,8 @@ import {initOllivander} from './ollivander.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
-import {deliver, deliverWandNote, owlBusy} from './owl.js';
+import {deliver, deliverWandNote, deliverHowler, owlBusy} from './owl.js';
+import * as howler from './howler.js';
 import {askName} from './welcome.js';
 import {hint} from './hints.js';
 import * as grammar from './grammar.js';
@@ -68,13 +69,15 @@ const app = {
   refresh(){ screens.home.refresh(); },
   /* the daily owl with a tea invitation: only on calm screens (not mid-lesson), never over an open sheet */
   owlCheck(){
-    if (app.entering || !store.get().settings.named || !['home', 'me', 'letters', 'records'].includes(current) || owlBusy() || isSheetOpen() || document.hidden) return;
+    if (app.entering || howler.playing() || !store.get().settings.named || !['home', 'me', 'letters', 'records'].includes(current) || owlBusy() || isSheetOpen() || document.hidden) return;
     /* a friend's letter that has arrived comes first; the day's tea invitation waits for the next check */
     /* the very first: Dumbledore's welcome, as soon as the guest has a name */
     if (bond.welcomeDue()){ setTimeout(() => deliver(app, {note: {deck: 'dumbledore', key: 'W00'}}), 700); return; }
     const fl = post.undelivered(); if (fl){ setTimeout(() => deliver(app, {letter: fl}), 700); return; }
     /* the day after the first lesson: Ollivander's note, asking the guest to call for a wand */
     if (wand.noteDue()){ setTimeout(() => deliverWandNote(app), 700); return; }
+    /* days without a lesson: a Howler (or, from Dumbledore and Lupin, a gentle note) */
+    const hw = howler.due(); if (hw){ setTimeout(() => deliverHowler(app, hw), 700); return; }
     const inv = bond.owlDue(); if (inv) setTimeout(() => deliver(app, inv), 700);
   },
   /* friends' letters moved (arrived, read, sent): the counts in your room, the post and the corridor */

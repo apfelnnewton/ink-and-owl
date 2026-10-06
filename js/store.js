@@ -3,10 +3,10 @@
     decks:{<id>:{cards:{<cardId>:{i, d, g, st, t, m, h}}, day:{date, queue, kinds, pos, results, extra, wrong}}}}
    i = interval in days, d = next review date (YYYY-MM-DD), g = last grade (again | hard | good | learn), st = ladder rung,
    t = last date it was answered, m / h = how many times it was missed / nearly right. log feeds the register (records.js).
-   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js). A key not copied in normalise() is lost on reload. */
+   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js), howl (howler.js). A key not copied in normalise() is lost on reload. */
 const KEY = 'hogwarts-english:v1';
 
-export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, prior: true, voice: '', surname: '', firstName: '', title: '', named: false, birthday: ''};
+export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, prior: true, howler: true, voice: '', surname: '', firstName: '', title: '', named: false, birthday: ''};
 
 function fresh(){ return {v: 1, settings: {...DEFAULT_SETTINGS}, streak: {last: '', n: 0}, decks: {}, stars: {}, log: {}}; }
 
@@ -24,6 +24,7 @@ function normalise(s){
   if (s.friends && typeof s.friends === 'object' && Array.isArray(s.friends.mail)) out.friends = s.friends;
   if (s.hints && typeof s.hints === 'object') out.hints = s.hints;
   if (s.wand && typeof s.wand === 'object') out.wand = s.wand;
+  if (s.howl && typeof s.howl === 'object') out.howl = s.howl;
   if (s.decks && typeof s.decks === 'object'){
     for (const [id, d] of Object.entries(s.decks)){
       if (!d || typeof d !== 'object') continue;

@@ -9,9 +9,11 @@ import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 import * as post from './post.js';
 import {sealTag, wandTag, readLetter, friendBar, wireFriends} from './friends.js';
 import {hint} from './hints.js';
+import * as howler from './howler.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
-const para = s => esc(bond.fill(s)).split(/\n+/).map(p => `<p>${p}</p>`).join('');
+/* [[words]] in a Howler or note are its key expressions: in bold, explained under the letter */
+const para = s => esc(bond.fill(s)).replace(/\[\[([^\]]+)\]\]/g, '<b class="kx">$1</b>').split(/\n+/).map(p => `<p>${p}</p>`).join('');
 /* the three answers at tea in a fixed but shuffled order per turn, so the professor's favourite is not always first */
 const order = (key, n) => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--){ h = Math.imul(h ^ i, 16777619); const j = (h >>> 0) % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -51,20 +53,26 @@ export function initLetters(app){
     const mail = b.mail.slice().reverse();
     list.innerHTML = mail.length ? mail.map(m => {
       const it = bond.itemOf(deck.id, m.id); if (!it) return '';
-      const first = bond.fill(it.en).replace(/\s+/g, ' ').slice(0, 70);
-      return `<li class="${m.read ? '' : 'new'}"><button type="button" data-mail="${esc(m.id)}">${m.read ? '' : `<i class="seal s-${deck.id}"></i>`}` +
+      const first = bond.fill(it.en).replace(/\[\[|\]\]/g, '').replace(/\s+/g, ' ').slice(0, 70);
+      /* an unopened Howler shows its red (or pink) envelope colour instead of the professor's wax */
+      const mark = m.read ? '' : it.howler ? `<i class="seal hw-${it.pink ? 'pink' : 'red'}"></i>` : `<i class="seal s-${deck.id}"></i>`;
+      return `<li class="${m.read ? '' : 'new'}${it.howler ? ' hw' : ''}"><button type="button" data-mail="${esc(m.id)}">${mark}` +
         `<span class="lt-meta">${esc(it.kind)} · ${fmt(m.t)}</span><span class="lt-first" lang="en">${esc(first)}…</span></button></li>`;
     }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${esc(deck.ko)}와(과) 공부하면 부엉이가 옵니다.</p></li>`;
   }
 
   function openMail(key){
     const it = bond.itemOf(deck.id, key); if (!it) return;
-    const m = bond.bondOf(deck.id).mail.find(x => x.id === key); if (m && !m.read){ m.read = true; store.save(); }
+    const m = bond.bondOf(deck.id).mail.find(x => x.id === key);
+    /* a Howler not yet opened: it speaks and burns (howler.js); afterwards it reads as ash here */
+    if (it.howler && m && !m.read){ howler.play(deck.id, key, () => draw()); return; }
+    if (m && !m.read){ m.read = true; store.save(); }
     if (it.gift) bond.bondOf(deck.id).keep[it.gift.id] = bond.bondOf(deck.id).keep[it.gift.id] || m.t;
     openSheet(`<div class="sh-kind"><span>${esc(it.kind)}${m ? ' · ' + fmt(m.t) : ''}</span></div>` +
       (it.gift ? `<figure class="lt-gift"><img src="${giftImg(deck.id, it.gift.id)}" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()"><figcaption><b lang="en">${esc(it.gift.name.en)}</b><span>${esc(it.gift.name.ko)}</span></figcaption></figure>` : '') +
-      `<div class="lt-letter" lang="en" id="shTitle">${para(it.en)}</div>` +
-      `<div class="lt-ko">${para(it.ko)}</div>` + reqBlock(key));
+      `<div class="lt-letter${it.howler ? ' lt-burnt' : ''}" lang="en" id="shTitle">${para(it.en)}</div>` +
+      `<div class="lt-ko">${para(it.ko)}</div>` +
+      (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key));
     draw();
   }
 

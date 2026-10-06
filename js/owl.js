@@ -9,6 +9,7 @@ import {byId} from './decks.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
+import * as howler from './howler.js';
 import {compose, paras} from './friends.js';
 import {esc, reduced, toast} from './ui.js';
 
@@ -24,13 +25,13 @@ export const dismissOwl = () => { if (hush) hush(); };
 
 /* the owl's flight and the falling envelope for a letter that is read elsewhere (no card on the spot): open() runs
    when the envelope is tapped. (deliver() below keeps its own copy because its card opens inside the layer.) */
-function fly(app, {sealCls, label, en, waits, open}){
+function fly(app, {sealCls, label, en, waits, open, img = 'assets/owl/envelope.webp', cls = ''}){
   busy = true;
   const layer = document.createElement('div');
   layer.className = 'owl-layer';
   layer.innerHTML =
     `<div class="owl-sky"></div>` +
-    `<button type="button" class="owl-env" aria-label="${label} 열기"><img src="assets/owl/envelope.webp" alt=""><i class="seal ${sealCls}"></i></button>` +
+    `<button type="button" class="owl-env ${cls}" aria-label="${label} 열기"><img src="${img}" alt="">${sealCls ? `<i class="seal ${sealCls}"></i>` : ''}</button>` +
     `<p class="owl-cap" aria-live="polite"><span lang="en">${en}</span><b>${label}</b><button type="button" class="owl-later">나중에 열기</button></p>`;
   document.body.appendChild(layer);
   const env = layer.querySelector('.owl-env'), sky = layer.querySelector('.owl-sky');
@@ -90,6 +91,18 @@ export function deliverWandNote(app){
   fly(app, {sealCls: 'o-wand', label: '올리밴더의 쪽지', en: 'An owl brings a note.',
     waits: '올리밴더의 쪽지는 내 방 <b>지팡이</b> 칸에 있습니다.',
     open: () => app.go('#/ollivander')});
+}
+
+/* a Howler (howler.js): the owl brings a red envelope — or Umbridge's pink one; tapped, it opens right there.
+   A gentle note from Dumbledore or Lupin simply lands in the post like any letter. */
+export function deliverHowler(app, due){
+  if (busy) return;
+  const {key, howler: loud} = howler.take(due);
+  if (!loud) return;
+  const who = byId(due.who), pink = howler.isPink(due.who);
+  fly(app, {sealCls: '', img: `assets/howler/${pink ? 'pink' : 'red'}-env.webp`, cls: 'hw-env-drop', label: `${esc(who.ko)}의 호울러`, en: 'An owl brings a Howler.',
+    waits: `${esc(who.ko)}의 호울러는 편지함에 있습니다. 열면 소리가 날 수 있습니다.`,
+    open: () => howler.play(due.who, key, () => app.refreshMail && app.refreshMail())});
 }
 
 /* inv: a tea invitation ({id, invite, …} from bond.owlDue), {letter} — a friend's letter from post.undelivered — or

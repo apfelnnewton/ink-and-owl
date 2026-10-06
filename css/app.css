@@ -1410,3 +1410,62 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .pi-away{min-height:46px;padding:4px 14px;display:flex;flex-direction:column;align-items:center;background:none;border:0;color:#9FB0BF;cursor:pointer}
 .pi-away span{font:italic 400 15px/1.2 var(--f-display)}
 @media (prefers-reduced-motion: reduce){ .pi-layer *,.pi-layer{animation:none !important;transition:none !important} .pi-layer .pi-smoke{opacity:.5} }
+
+/* ================================================================ Howlers (howler.js): a red (or Umbridge's pink) envelope that
+   hovers, snaps its flap like a mouth, lets fall a letter the shouted words are written on; burnt (when the learner says) to ash */
+.seal.hw-red{--c:#9E2219}
+.seal.hw-pink{--c:#E07AA4}
+.owl-env.hw-env-drop img{transform:scale(1.55);filter:drop-shadow(0 8px 14px rgba(120,10,0,.55))}
+.owl-layer.landed .owl-env.hw-env-drop{animation:hwShiver .16s linear infinite}
+@keyframes hwShiver{0%,100%{translate:0 0}25%{translate:-1.5px .5px}50%{translate:1px -1px}75%{translate:1.5px 1px}}
+.hw-layer{position:fixed;inset:0;z-index:66;overflow:hidden;opacity:0;transition:opacity .6s ease}
+/* the dark film is its own layer, so it can lift away while the envelope burns and the ash falls over the room */
+.hw-back{position:absolute;inset:0;background:radial-gradient(ellipse 110% 80% at 50% 26%, rgba(70,10,6,.82), rgba(10,2,2,.96));-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);transition:opacity 2.8s ease .6s}
+.hw-layer.pink .hw-back{background:radial-gradient(ellipse 110% 80% at 50% 26%, rgba(80,20,48,.82), rgba(12,4,8,.96))}
+.hw-layer.burn .hw-back{opacity:0}
+.hw-ash{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.hw-layer.in{opacity:1}
+.hw-layer.out{opacity:0;transition:opacity .8s ease}
+.hw-env{position:absolute;z-index:1;left:50%;top:calc(var(--st) + 3vh);width:min(64vw, 300px);aspect-ratio:1;transform:translateX(-50%);pointer-events:none;
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 78%, transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 78%, transparent 100%)}
+.hw-layer:not(.open):not(.burn) .hw-env{animation:hwShake .14s linear infinite}
+@keyframes hwShake{0%,100%{transform:translateX(-50%)}25%{transform:translateX(calc(-50% - 2px)) rotate(-.6deg)}50%{transform:translateX(calc(-50% + 1.5px)) rotate(.5deg)}75%{transform:translateX(calc(-50% + 2px)) translateY(-1px)}}
+.hw-layer.open .hw-env{animation:hwJolt .5s ease-out}
+@keyframes hwJolt{0%{transform:translateX(-50%) scale(1)}30%{transform:translateX(-50%) scale(1.12) rotate(-3deg)}100%{transform:translateX(-50%) scale(1)}}
+.hw-scroll{position:absolute;z-index:2;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.hw-wrap{width:min(calc(100% - 40px), 560px);margin:0 auto;padding:calc(var(--st) + 3vh + min(64vw, 300px) - 8px) 0 calc(var(--sb) + 40px);display:flex;flex-direction:column;align-items:center;text-align:center}
+.hw-from{margin:0 0 14px;font-size:12.5px;letter-spacing:.1em;color:#E2B9AE}
+.hw-from span{font:italic 15px var(--f-display);letter-spacing:.06em}
+.hw-layer.pink .hw-from{color:#EDC2D6}
+/* the letter it lets fall: drawn on a canvas (howler.js), it comes out of the envelope and unfolds; the envelope goes */
+.hw-wrap{transition:padding-top .9s cubic-bezier(.3,.7,.2,1)}
+.hw-layer.letter-out .hw-wrap{padding-top:calc(var(--st) + 5vh)}
+.hw-layer.letter-out .hw-env{opacity:0;transform:translateX(-50%) translateY(-30%) scale(.8);transition:opacity .9s ease .15s, transform 1s ease}
+.hw-sheet{display:block;max-width:100%;filter:drop-shadow(0 12px 20px rgba(0,0,0,.6));transform-origin:50% 0;animation:hwUnfold 1s cubic-bezier(.25,.8,.25,1) both}
+.hw-sheet[hidden]{display:none}
+@keyframes hwUnfold{0%{opacity:0;transform:translateY(-90px) scale(.42,.05)}35%{opacity:1;transform:translateY(-60px) scale(.55,.2)}70%{transform:translateY(0) scale(1,.6)}100%{transform:none}}
+.hw-sheet.jolt{animation:hwJoltSheet .45s ease-out}
+@keyframes hwJoltSheet{0%{transform:none}20%{transform:scale(1.025) rotate(-.6deg)}45%{transform:translateX(3px) rotate(.4deg)}70%{transform:translateX(-2px)}100%{transform:none}}
+.hw-layer.burn .hw-sheet{animation:none;filter:drop-shadow(0 10px 16px rgba(0,0,0,.45))}
+.hw-layer.burn .hw-scroll{overflow:hidden}
+.hw-layer.burn .hw-from{transition:opacity .8s;opacity:0}
+.hw-choose{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:6px}
+.hw-choose p{margin:0 0 4px;font-size:13px;color:#D9AFA4}
+.hw-go{min-height:52px;min-width:230px;padding:6px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:rgba(255,220,210,.07);border:1px solid rgba(255,210,200,.55);border-radius:2px;color:#FFF1EA;cursor:pointer}
+.hw-go span{font:italic 400 18px/1.2 var(--f-display)}
+.hw-go small{font-size:12px;opacity:.75}
+.hw-go.quiet{background:none;border-color:rgba(255,210,200,.3)}
+.hw-burn{margin-top:22px;min-width:200px;background:none;border-color:rgba(255,210,200,.28);color:#D9AFA4}
+.hw-burn.ready{min-width:230px;background:rgba(255,140,60,.1);border-color:rgba(255,170,110,.75);color:#FFF1EA;box-shadow:0 0 18px rgba(255,110,30,.25);animation:hwReady 2.4s ease-in-out infinite}
+@keyframes hwReady{50%{box-shadow:0 0 26px rgba(255,120,40,.45)}}
+.hw-layer.pink .hw-burn.ready{background:rgba(255,140,190,.1);border-color:rgba(255,170,210,.75)}
+/* what a Howler leaves in the post: scorched paper, and its key expressions explained underneath */
+.sheet-paper:has(.lt-burnt) > .paperbox.parch{border-image:url(../assets/howler/burnt.webp) 110 fill / 44px / 0 stretch}
+.sheet-paper:has(.lt-burnt){padding:46px 46px 40px}
+.lt-letter b.kx{font-weight:700;color:#7A1A12}
+.lt-keys{list-style:none;margin:14px 0 0;padding:10px 0 0;border-top:1px dashed rgba(42,33,24,.3);display:flex;flex-direction:column;gap:6px}
+.lt-keys li{display:flex;flex-direction:column;gap:1px}
+.lt-keys b{font:italic 700 16px var(--f-display);color:#7A1A12}
+.lt-keys span{font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.lt-list li.hw .lt-meta{color:#C9786A}
+@media (prefers-reduced-motion: reduce){ .hw-layer *,.hw-layer{animation:none !important;transition:none !important} .owl-layer.landed .owl-env.hw-env-drop{animation:none} }

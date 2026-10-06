@@ -39,7 +39,7 @@ export function initSettings(app){
   function fill(){
     const s = S();
     $('#fNew').value = s.newPerDay; $('#fCap').value = s.reviewCap;
-    $('#fKo').checked = s.koFront; $('#fAuto').checked = s.autoRead; $('#fPrior').checked = s.prior !== false;
+    $('#fKo').checked = s.koFront; $('#fAuto').checked = s.autoRead; $('#fPrior').checked = s.prior !== false; $('#fHowl').checked = s.howler !== false;
     $('#fSur').value = s.surname || ''; $('#fFirst').value = s.firstName || ''; $('#fTitle').value = s.title ?? ''; $('#fBday').value = s.birthday || '';
     namePreview();
     $('#fGroup').innerHTML = groupBox();
@@ -66,7 +66,7 @@ export function initSettings(app){
     const s = S();
     s.newPerDay = num($('#fNew'), $('#fNew').value);
     s.reviewCap = num($('#fCap'), $('#fCap').value);
-    s.koFront = $('#fKo').checked; s.autoRead = $('#fAuto').checked; s.prior = $('#fPrior').checked;
+    s.koFront = $('#fKo').checked; s.autoRead = $('#fAuto').checked; s.prior = $('#fPrior').checked; s.howler = $('#fHowl').checked;
     if (!$('#fVoice').disabled) s.voice = $('#fVoice').value;
     s.surname = $('#fSur').value.trim(); s.firstName = $('#fFirst').value.trim() || s.firstName || ''; if (s.firstName) s.named = true; s.title = $('#fTitle').value;
     const bd = $('#fBday').value.trim().replace(/[./]/g, '-'), m = bd.match(/^(\d{1,2})-(\d{1,2})$/);
