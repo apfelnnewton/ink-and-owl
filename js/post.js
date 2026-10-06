@@ -7,6 +7,7 @@
    drops all its friends' letters.
    state.friends = {uid, code, seal, practice, members:[{uid, name, seal, wand}], mail:[{id, from, to, t, at, text, read, seen}]}
    wand = the wood of that friend's wand (wand.js), kept on their seal so a read letter can show it (2026-10-05).
+   day = {d, rooms} that friend's classrooms today, in order, for the Marauder's Map (map.js, 2026-10-06).
    t = date (YYYY-MM-DD), at = arrival time (ms) — a letter whose time has not come yet is still on the wing;
    seen = the owl has already brought it (owl.js), read = it has been opened.
    Server: Firebase project "ink-and-owl" (js/firebase-config.js, rules in firestore.rules), signed in anonymously.
@@ -171,7 +172,7 @@ const firebase = {
     }, () => {}));
     unsub.push(F.onSnapshot(col(code, 'seals'), snap => {
       const fr = f();
-      fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || ''}));
+      fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || '', day: d.data().day || null}));
       /* someone has left (their seal is gone): the letters to and from them, and their news, go from this phone too.
          Only on a fresh answer from the server, never on a stale copy. */
       if (!snap.metadata.fromCache){
@@ -219,6 +220,12 @@ export const mySeal = () => f().seal;
 export const members = () => f().members;
 export const memberOf = uid => uid === f().uid ? {uid, name: myName(), seal: f().seal, wand: (wand.get() || {}).wood || ''} : f().members.find(m => m.uid === uid) || {uid, name: '?', seal: ''};
 export const takenSeals = () => new Map(f().members.map(m => [m.seal, m.name]));
+
+/* the Marauder's Map (map.js): today's classrooms, in order, go onto my seal — only the date and the professors' ids */
+export function shareDay(rooms){
+  const fr = f(); if (!fr.code || !fr.seal || backend() === practice) return;
+  connect().then(({F}) => F.updateDoc(g(fr.code, 'seals', fr.seal), {day: {d: srs.today(), rooms: rooms.slice(0, 7)}})).catch(() => {});
+}
 
 /* a new wand (ollivander.js): its wood goes onto my seal for the friends to see */
 export function shareWand(){

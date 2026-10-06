@@ -325,6 +325,7 @@
     <button type="button" class="cgo me-second" id="meJnl"><span>차 일지 <em id="meJnlN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meWand" hidden><span>지팡이 <em id="meWandN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meMap" hidden><span>지도 <em id="meMapN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meSpl" hidden><span>주문서 <em id="meSplN"></em></span><i aria-hidden="true">→</i></button>
   </div>
   <div class="cab-scroll" id="spl" hidden>
@@ -351,6 +352,35 @@
         <div class="cab-grid" id="cabGrid"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ THE MARAUDER'S MAP (map.js): a blank parchment until it is sworn to ============ -->
+<section id="map" class="screen" hidden aria-label="호그와트 지도">
+  <div class="r-top">
+    <button type="button" class="back" id="mpBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" lang="en">The Marauder's Map</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="mp-scroll" id="mpScroll">
+    <div class="mp-sheet" id="mpSheet">
+      <img class="mp-img" id="mpImg" src="assets/map/blank.webp" alt="">
+      <video class="mp-vid" id="mpVid" src="assets/map/reveal.mp4" muted playsinline preload="auto" hidden></video>
+      <canvas class="mp-fog" id="mpFog" hidden></canvas>
+      <canvas class="mp-steps" id="mpSteps" hidden></canvas>
+      <div class="mp-tags" id="mpTags"></div>
+      <div class="mp-words" id="mpWords" aria-live="polite"></div>
+    </div>
+  </div>
+  <nav class="mp-folds" id="mpFolds" hidden aria-label="지도 펼치기"></nav>
+  <div class="mp-bar" id="mpBar">
+    <p class="mp-hint" id="mpHint"></p>
+    <form class="mp-form" id="mpForm" data-want="open" autocomplete="off">
+      <input id="mpIn" lang="en" autocapitalize="sentences" spellcheck="false" aria-label="지도에게 할 말">
+      <button type="button" class="mp-mic" id="mpMic" aria-label="말로 하기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button>
+      <button type="submit" class="mp-go"><span lang="en">Say it</span></button>
+    </form>
+    <button type="button" class="mp-peek" id="mpPeek" hidden>루핀의 편지에서 문장 보기</button>
   </div>
 </section>
 

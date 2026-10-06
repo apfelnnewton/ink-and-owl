@@ -5,6 +5,7 @@
    Data: post.js. */
 import * as post from './post.js';
 import * as wand from './wand.js';
+import * as map from './map.js';
 import {$, esc, toast, openSheet, closeSheet} from './ui.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -16,6 +17,11 @@ const practiceNote = cls => post.isPractice() || (post.practiceMode() && !post.j
 
 /* the top of the "친구" tab in the post */
 export function friendBar(){
+  /* the Marauder's Map, folded, at the top of the friends' tab once Lupin has sent it */
+  const mapBtn = map.have() ? `<button type="button" class="fr-map" data-fr="map"><i aria-hidden="true"></i><span lang="en">The Marauder's Map</span><small>오늘 친구들이 어느 교실에 갔는지</small></button>` : '';
+  return mapBtn + friendBarInner();
+}
+function friendBarInner(){
   if (!post.joined()) return `<p class="fr-lead">친구들과 같은 그룹 코드를 쓰면 서로 영어 편지를 주고받을 수 있습니다. 한 그룹은 8명까지입니다.</p>` +
     `<button type="button" class="cgo fr-go" data-fr="create"><span>새 그룹 만들기</span><i aria-hidden="true">→</i></button>` +
     `<form class="fr-join" id="frJoin" autocomplete="off"><input id="frCode" maxlength="6" placeholder="받은 그룹 코드" aria-label="그룹 코드" autocapitalize="characters" spellcheck="false" lang="en"><button type="submit">들어가기</button></form>` +
@@ -95,6 +101,7 @@ export function wireFriends(app){
     if (a.dataset.fr === 'create') await busy(a, async () => { const err = await post.create(); if (err){ toast(err); return; } after(); openSeals(); });
     else if (a.dataset.fr === 'seal') await busy(a, async () => { await post.refreshSeals(); openSeals(); });
     else if (a.dataset.fr === 'write') pickFriend();
+    else if (a.dataset.fr === 'map') app.go('#/map');
   });
   $('#ltRel').addEventListener('submit', async e => {
     if (e.target.id !== 'frJoin') return;

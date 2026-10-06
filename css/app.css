@@ -1589,3 +1589,59 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .crucio .rs-vid{opacity:1;object-fit:fill}
 .rs-layer.press .rs-vid{filter:brightness(1.35)}
 .rs-layer.clear .rs-vid{opacity:0}
+
+/* ================================================================ the Marauder's Map (map.js): one parchment, blank until
+   sworn to; the plan with its fog, names and walking footprints; folds along the bottom; the words to say below */
+#map{background:radial-gradient(ellipse 90% 70% at 50% 40%, #2a2018, #0e0a07)}
+.mp-scroll{position:absolute;left:0;right:0;top:calc(52px + var(--st));bottom:calc(132px + var(--sb));display:flex;align-items:center;justify-content:center;overflow:auto}
+.mp-sheet{position:relative;flex:none;width:min(calc(100vw - 16px), calc((100dvh - 196px - var(--st) - var(--sb)) * 1520 / 2688), 640px);aspect-ratio:1520 / 2688;
+  box-shadow:0 14px 40px rgba(0,0,0,.7);border-radius:3px;overflow:hidden}
+.mp-img,.mp-vid,.mp-fog,.mp-steps{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mp-img{object-fit:cover;transition:filter 1.4s ease}
+.mp-vid{object-fit:cover}
+.mp-fog,.mp-steps{pointer-events:none;transition:opacity 1.2s ease}
+.mp-tags{position:absolute;inset:0;transition:opacity 1.2s ease}
+#map.open .mp-tags{animation:ink 1.2s ease-out both}
+#map.closing .mp-img{filter:brightness(1.12) contrast(.55) saturate(.7)}
+#map.closing .mp-tags,#map.closing .mp-steps,#map.closing .mp-fog{opacity:0}
+.mp-tag{position:absolute;transform:translate(-50%,-50%);padding:2px 6px;min-height:24px;background:rgba(236,220,182,.82);border:1px solid rgba(59,36,20,.55);border-radius:2px;cursor:pointer;
+  font:italic 400 calc(11px * var(--k))/1.1 var(--f-display);color:#3B2414;white-space:nowrap;box-shadow:0 1px 2px rgba(59,36,20,.25)}
+.mp-tag.l{transform:translate(-14%,-50%)}
+.mp-tag.r{transform:translate(-86%,-50%)}
+.mp-unrevealed{position:absolute;transform:translate(-50%,-50%) rotate(-8deg);font:italic 400 13px var(--f-display);color:rgba(59,36,20,.45);pointer-events:none;white-space:nowrap}
+.mp-who{position:absolute;left:48%;top:8%;transform:translate(-50%,-140%);padding:1px 7px;min-height:22px;background:#F0E2BE;border:1px solid #3B2414;border-radius:1px;cursor:pointer;
+  font:italic 700 calc(12px * var(--k))/1.2 var(--f-display);color:#2A160A;white-space:nowrap;z-index:2;box-shadow:0 2px 3px rgba(40,20,8,.35)}
+.mp-who::after{content:'';position:absolute;left:50%;bottom:-5px;width:7px;height:7px;background:#F0E2BE;border-right:1px solid #3B2414;border-bottom:1px solid #3B2414;transform:translateX(-50%) rotate(45deg)}
+.mp-who.asleep{opacity:.82}
+.mp-who i{margin-left:4px;font-style:italic;font-weight:400;font-size:10px;letter-spacing:.05em;display:inline-block;animation:mpZ 2.4s ease-in-out infinite}
+@keyframes mpZ{50%{transform:translateY(-3px);opacity:.5}}
+.mp-words{position:absolute;left:9%;right:9%;top:36%;text-align:center;pointer-events:none}
+.mp-words .en{margin:0;font:italic 400 calc(19px * var(--k))/1.45 var(--f-display);color:#3B2414}
+.mp-words .ko{margin:8px 0 0;font-size:12.5px;line-height:1.6;color:#4A3420;text-shadow:0 0 6px rgba(236,220,182,.9)}
+.mp-words.in .en{animation:mpWrite 1.6s ease-out both}
+.mp-words.in .ko{animation:ink 1s ease-out .9s both}
+@keyframes mpWrite{from{clip-path:inset(0 100% 0 0);filter:blur(1px)}to{clip-path:inset(0 0 0 0);filter:none}}
+.mp-folds{position:absolute;left:0;right:0;bottom:calc(132px + var(--sb));display:flex;justify-content:center;gap:6px;padding:4px 8px;transform:translateY(100%);z-index:3}
+.mp-folds button{min-height:40px;padding:3px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(236,220,182,.12);border:1px solid rgba(236,220,182,.4);border-radius:0 0 3px 3px;color:#E8D6AC;cursor:pointer}
+.mp-folds button.on{background:#E8D6AC;color:#2A160A}
+.mp-folds span{font:italic 14px var(--f-display)}
+.mp-folds small{font-size:10.5px;opacity:.8}
+.mp-bar{position:absolute;left:0;right:0;bottom:0;padding:8px 14px calc(var(--sb) + 12px);display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(rgba(14,10,7,0),rgba(14,10,7,.92) 30%)}
+.mp-hint{margin:0;font-size:12.5px;color:#D9C8A0}
+.mp-form{display:flex;gap:6px;width:min(100%, 560px)}
+.mp-form input{flex:1;min-width:0;min-height:48px;padding:0 12px;border:1px solid rgba(236,220,182,.5);border-radius:2px;background:rgba(236,220,182,.92);font:italic 400 17px var(--f-display);color:#2A160A}
+.mp-mic,.mp-go{flex:none;min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(236,220,182,.5);border-radius:2px;background:rgba(14,10,7,.6);color:#E8D6AC;cursor:pointer}
+.mp-mic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.mp-mic.on{background:#8E1B1B;border-color:#8E1B1B;animation:pulse 1.2s ease-in-out infinite}
+.mp-go{padding:0 14px}
+.mp-go span{font:italic 16px var(--f-display)}
+.mp-peek{min-height:36px;padding:0 10px;background:none;border:0;color:#C9B07A;font-size:12.5px;text-decoration:underline dotted;cursor:pointer}
+/* the folded map at the top of the friends' tab */
+.fr-map{width:100%;min-height:56px;margin:0 0 12px;padding:8px 12px 8px 54px;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  background:#E6D4AA url(../assets/map/castle.webp) center 30%/180% auto;border:1px solid rgba(59,36,20,.5);border-radius:2px;cursor:pointer;color:#2A160A;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.fr-map::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(236,220,182,.95) 30%, rgba(236,220,182,.55))}
+.fr-map i{position:absolute;left:14px;top:50%;width:28px;height:34px;transform:translateY(-50%);background:linear-gradient(135deg,#d9c08a 50%,#c2a66c 50%);border:1px solid rgba(59,36,20,.5)}
+.fr-map span,.fr-map small{position:relative}
+.fr-map span{font:italic 17px var(--f-display)}
+.fr-map small{font-size:12px;color:#5B4A33}
+@media (prefers-reduced-motion: reduce){ .mp-who i,#map.open .mp-tags,.mp-words.in .en,.mp-words.in .ko{animation:none} .mp-img{transition:none} }

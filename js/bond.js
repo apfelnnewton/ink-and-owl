@@ -17,6 +17,7 @@ import * as doors from './doors.js';
 import * as wand from './wand.js';
 import * as howler from './howler.js';
 import * as spells from './spells.js';
+import * as map from './map.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -240,6 +241,7 @@ export async function daily(){
   greetings();
   wandLetter();
   await spells.daily();
+  await map.daily();
   newsLetter();
   store.save();
 }
@@ -290,6 +292,7 @@ export const postItem = (id, key) => post(id, key);
 export function itemOf(id, key){
   if (/^H-/.test(key)) return howler.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
+  if (key === 'MAP') return map.textOf(id, key);
   if (/^WD-[a-z]+$/.test(key)){
     const wood = key.slice(3), own = wand.OWNER[wood];
     const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;
