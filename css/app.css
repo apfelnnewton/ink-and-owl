@@ -1740,11 +1740,28 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .verdict .gap-full{flex-basis:100%;margin:8px 0 0;font-family:var(--f-display);font-size:calc(16.5px * var(--k));line-height:1.45;color:var(--ink)}
 .verdict .gap-full b{font-weight:normal;color:#1F5E8C;border-bottom:1.5px solid #1F5E8C}
 .verdict .gap-ko{flex-basis:100%;margin:4px 0 0;font-size:13.5px;color:var(--ink-soft)}
-.ask .play button.nohear{background:transparent;border-style:dashed;font-weight:400;font-size:14px;margin-left:auto}
+/* Listen · Slowly · Can't listen: one line, in English, never squeezed into vertical letters (2026-10-07) */
+.ask .play{gap:8px}
+.ask .play button{white-space:nowrap;flex:none;padding:0 12px;font-family:var(--f-display);font-weight:400;font-size:16px}
+.ask .play button.nohear{margin-left:auto;background:transparent;border-style:dashed;font-style:italic}
+@media (max-width:340px){ .ask .play{flex-wrap:wrap} .ask .play button.nohear{margin-left:0} }
 .r-top .quiet-btn{width:44px;height:44px;flex:none;display:flex;align-items:center;justify-content:center;border:0;background:none;cursor:pointer;opacity:.75}
 .r-top .quiet-btn svg{width:22px;height:22px;fill:none;stroke:#EDEBDD;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .r-top .quiet-btn .off{display:none}
 .r-top .quiet-btn.on{opacity:1}
 .r-top .quiet-btn.on .on{display:none}
 .r-top .quiet-btn.on .off{display:inline;stroke:var(--flame)}
-@media (max-width:380px){ .ask .play{flex-wrap:wrap} .ask .play button.nohear{margin-left:0} }
+
+
+/* ============ THE CASTLE DOOR (door.js): the first visit asks for the opening spell ============ */
+.door-gate{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+  background:radial-gradient(ellipse 80% 60% at 50% 45%, rgba(40,30,20,.82), rgba(6,5,4,.96));transition:opacity .6s}
+.door-gate.open{opacity:0}
+.door-card{position:relative;width:min(420px, 100%);color:var(--ink)}
+.door-card > .paperbox{position:absolute;inset:0}
+.door-in{position:relative;padding:30px 26px 24px}
+.door-in .sh-expr{margin:6px 0 10px}
+.door-msg{min-height:20px;margin:0;font-size:13.5px;color:var(--ink-red)}
+.door-card.shake{animation:doorShake .45s}
+@keyframes doorShake{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+@media (prefers-reduced-motion: reduce){ .door-card.shake{animation:none} .door-gate{transition:none} }

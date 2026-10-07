@@ -14,6 +14,7 @@
    The SDK is loaded from Google's CDN only when the friends' group is used, so studying never needs the network.
    Add ?practice to the address to use the PRACTICE post office instead: three made-up friends who answer within a
    minute, no server (for trying the screens). */
+import * as door from './door.js';
 import * as store from './store.js';
 import * as srs from './srs.js';
 import {firebaseConfig} from './firebase-config.js';
@@ -114,7 +115,7 @@ const firebase = {
     const {F} = await connect();
     for (let i = 0; i < 4; i++){
       const code = rnd(6);
-      try { await F.setDoc(g(code), {by: fb.uid, t: F.serverTimestamp()}); return {code}; }
+      try { await F.setDoc(g(code), {by: fb.uid, t: F.serverTimestamp(), k: door.word()}); return {code}; }   // k: the door's word, checked by the rules
       catch (e){ /* that code is taken (or the network failed): try another */ }
     }
     throw new Error('create');

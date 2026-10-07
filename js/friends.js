@@ -3,6 +3,7 @@
    received, by date. The group code, who is in it and leaving are in settings. Wax only on what is still sealed:
    the owl's envelope and unread letters (plus the seal chooser and the "to whom" list, where the seal is the point).
    Data: post.js. */
+import * as door from './door.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
 import * as map from './map.js';
@@ -98,7 +99,8 @@ export function wireFriends(app){
   const busy = async (el, job) => { if (!el || el.disabled) return; el.disabled = true; el.classList.add('wait'); try { return await job(); } finally { el.disabled = false; el.classList.remove('wait'); } };
   $('#ltRel').addEventListener('click', async e => {
     const a = e.target.closest('[data-fr]'); if (!a) return;
-    if (a.dataset.fr === 'create') await busy(a, async () => { const err = await post.create(); if (err){ toast(err); return; } after(); openSeals(); });
+    /* a new group needs the castle door's word (door.js) — asked once from a guest who came before the door */
+    if (a.dataset.fr === 'create'){ const make = () => busy(a, async () => { const err = await post.create(); if (err){ toast(err); return; } after(); openSeals(); }); if (post.practiceMode() || door.word()) await make(); else door.ask(make); }
     else if (a.dataset.fr === 'seal') await busy(a, async () => { await post.refreshSeals(); openSeals(); });
     else if (a.dataset.fr === 'write') pickFriend();
     else if (a.dataset.fr === 'map') app.go('#/map');

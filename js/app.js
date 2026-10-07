@@ -25,6 +25,7 @@ import * as prophet from './prophet.js';
 import {initProphet} from './prophet.js';
 import * as howler from './howler.js';
 import {askName} from './welcome.js';
+import * as door from './door.js';
 import {hint} from './hints.js';
 import * as grammar from './grammar.js';
 import {$$, wait, closeSheet, isSheetOpen} from './ui.js';
@@ -124,7 +125,9 @@ Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => nu
 app.fontsReady.then(() => { if (current === 'home') screens.home.refresh(); });
 route();
 /* first visit: ask for the name the professors will write to */
-if (!store.get().settings.named) setTimeout(() => askName(() => setTimeout(() => app.owlCheck(), 2600)), 900);
+/* first visit: the castle door wants its spell (door.js), then the name the professors will write to */
+if (!door.isOpen()) setTimeout(() => door.gate(() => askName(() => setTimeout(() => app.owlCheck(), 2600))), 600);
+else if (!store.get().settings.named) setTimeout(() => askName(() => setTimeout(() => app.owlCheck(), 2600)), 900);
 setInterval(() => app.owlCheck(), 30000);
 /* the friends' post office (Firebase) opens only for a phone in a group; a letter landing brings the owl */
 post.onChange(() => { bond.newsLetter().then(() => app.refreshMail()); app.refreshMail(); app.owlCheck(); });

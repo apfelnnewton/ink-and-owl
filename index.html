@@ -151,9 +151,9 @@
                 <p class="aid-note">단어를 누르면 한 글자 더 · 글자나 듣기를 쓰면 ‘비슷’까지</p>
               </div>
               <div class="play" id="askPlay" hidden>
-                <button type="button" id="playBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>듣기</button>
-                <button type="button" id="slowBtn">천천히</button>
-                <button type="button" id="noHearBtn" class="nohear">지금은 못 들어요</button>
+                <button type="button" id="playBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg><span lang="en">Listen</span></button>
+                <button type="button" id="slowBtn" aria-label="천천히 듣기"><span lang="en">Slowly</span></button>
+                <button type="button" id="noHearBtn" class="nohear" aria-label="지금은 못 들어요 · 첫 글자 문제로 바꾸기"><span lang="en">Can't listen</span></button>
               </div>
               <form class="typed" id="typedForm">
                 <textarea id="typedIn" rows="3" lang="en" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="대사를 영어로 입력하세요"></textarea>
