@@ -77,6 +77,8 @@ const app = {
     /* a friend's letter that has arrived comes first; the day's tea invitation waits for the next check */
     /* the very first: Dumbledore's welcome, as soon as the guest has a name */
     if (bond.welcomeDue()){ setTimeout(() => deliver(app, {note: {deck: 'dumbledore', key: 'W00'}}), 700); return; }
+    /* something new in the castle: Dumbledore's notice (bond.NOTICES), once each */
+    const nt = bond.noticeDue(); if (nt){ setTimeout(() => deliver(app, {note: {deck: 'dumbledore', key: nt}}), 700); return; }
     const fl = post.undelivered(); if (fl){ setTimeout(() => deliver(app, {letter: fl}), 700); return; }
     /* the day after the first lesson: Ollivander's note, asking the guest to call for a wand */
     if (wand.noteDue()){ setTimeout(() => deliverWandNote(app), 700); return; }

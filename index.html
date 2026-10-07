@@ -107,6 +107,7 @@
   <div class="r-top">
     <button type="button" class="back" id="backBtn" aria-label="복도로 나가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="ttl" id="rTitle"></div>
+    <button type="button" class="quiet-btn" id="quietBtn" aria-pressed="false" aria-label="소리 없이 공부하기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
     <div class="cnt" id="rCount"></div>
   </div>
   <div class="room-scroll" id="roomScroll">
@@ -152,6 +153,7 @@
               <div class="play" id="askPlay" hidden>
                 <button type="button" id="playBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>듣기</button>
                 <button type="button" id="slowBtn">천천히</button>
+                <button type="button" id="noHearBtn" class="nohear">지금은 못 들어요</button>
               </div>
               <form class="typed" id="typedForm">
                 <textarea id="typedIn" rows="3" lang="en" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="대사를 영어로 입력하세요"></textarea>
@@ -443,6 +445,16 @@
         <div class="paperbox"></div>
         <h1>설정</h1>
 
+        <fieldset class="lv">
+          <legend>공부 난이도</legend>
+          <div class="lv-pick" role="radiogroup" aria-label="공부 난이도">
+            <label><input type="radio" name="fLv" value="low"><span><b>하</b><small>편하게</small></span></label>
+            <label><input type="radio" name="fLv" value="mid"><span><b>중</b><small>기본</small></span></label>
+            <label><input type="radio" name="fLv" value="high"><span><b>상</b><small>도전</small></span></label>
+          </div>
+          <p class="note-s" id="fLvNote"></p>
+        </fieldset>
+
         <fieldset>
           <legend>하루 수업</legend>
           <div class="row"><label for="fNew">하루 새 카드</label>
@@ -469,6 +481,7 @@
           <legend>카드</legend>
           <label class="check"><input type="checkbox" id="fKo"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>앞면에 한국어 뜻 보이기</label>
           <label class="check"><input type="checkbox" id="fAuto"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>뒷면에서 자동으로 읽어 주기</label>
+          <label class="check"><input type="checkbox" id="fQuiet"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>소리 없이 공부 (받아쓰기·자동 읽기·호울러 소리 끔)</label>
           <label class="check"><input type="checkbox" id="fPrior"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>수업 전 되감기 (지팡이가 지난번 대사를 보여 줌)</label>
           <label class="check"><input type="checkbox" id="fHowl"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="M4 13 C7 15 8 17 9.5 19 C12 13 16 8 21 4"/></svg></span>호울러 받기 (사흘 넘게 쉬면 교수가 보냄)</label>
         </fieldset>

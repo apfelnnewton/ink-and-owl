@@ -69,13 +69,21 @@ export function preview(deckId, cards){
    Learn sets the next visit 3 days out, so the rungs land on the 1 → 3 → 7 → 18 → 45 day ladder.
    Cards saved before the ladder existed have no st and count as "say it". */
 export const STAGES = ['learn', 'cloze', 'arrange', 'recall'];
+/* study level (2026-10-07 user decision, docs/plan-level.md): the review intervals are the same at every level; what
+   changes is the shape of the questions, the marking, the help and the day's amount. "mid" is the app as it was. */
+export const LEVELS = {
+  low:  {ko: '하', name: '편하게', good: .8, hard: .5, newPerDay: 3, koFront: true},
+  mid:  {ko: '중', name: '기본', good: .9, hard: .6, newPerDay: 5, koFront: false},
+  high: {ko: '상', name: '도전', good: .95, hard: .7, newPerDay: 8, koFront: false}
+};
+export const level = () => LEVELS[store.get().settings.level] ? store.get().settings.level : 'mid';
 export const arrangeable = card => card.line.trim().split(/\s+/).length >= 4;
 export function stageOf(deckId, card, practice){
   const st = store.deck(deckId).cards[card.id];
   let s = st ? (st.st ?? 3) : 0;
   if (card.minimal && s > 0) s = 3;
   if (s === 1 && !(practice && practice[card.id])) s = 2;
-  if (s === 2 && !arrangeable(card)) s = 3;
+  if (s === 2 && (!arrangeable(card) || level() === 'high')) s = 3;   // the hard level skips the tiles
   return STAGES[s];
 }
 

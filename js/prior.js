@@ -40,7 +40,8 @@ function gaps(c, seed){
   const ranges = findRanges(c.line, c.bre || []);
   const inExpr = t => ranges.some(([a, b]) => t.a >= a && t.b <= b);
   const cand = toks.filter(ok);
-  const n = toks.length > 8 ? 2 : 1;
+  /* one word on the easy level, two on the hard one (if the line is long enough), otherwise by length */
+  const lv = srs.level(), n = lv === 'low' ? 1 : lv === 'high' ? (toks.length > 4 ? 2 : 1) : toks.length > 8 ? 2 : 1;
   const first = cand.filter(inExpr), rest = cand.filter(t => !inExpr(t)).sort((x, y) => y.w.length - x.w.length);
   const order = [...first.sort((x, y) => hash(seed + x.k) - hash(seed + y.k)), ...rest];
   const out = [];

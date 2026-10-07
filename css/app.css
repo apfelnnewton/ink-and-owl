@@ -1722,3 +1722,29 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .owl-env.dp-roll img{transform:scale(1.15) rotate(-8deg);filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))}
 @media (max-width:380px){ .dp-paper{padding:14px 12px 22px} .dp-ads{grid-template-columns:1fr} .dp-ear{font-size:11px} }
 @media (prefers-reduced-motion: reduce){ .dp-paper{transform:none} }
+
+/* ============ STUDY LEVEL and QUIET (2026-10-07): settings, the written blank, the "can't listen" button ============ */
+.lv-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lv-pick label{position:relative;cursor:pointer}
+.lv-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.lv-pick span{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1.4px solid rgba(42,33,24,.45);border-radius:2px;background:rgba(255,255,255,.18);color:var(--ink);transition:background .2s, color .2s}
+.lv-pick b{font:700 18px var(--f-ko)}
+.lv-pick small{font-size:12px;color:var(--ink-soft)}
+.lv-pick input:checked + span{background:#2A2118;color:#F3E9CF;border-color:#2A2118}
+.lv-pick input:checked + span small{color:#D8C9A2}
+.lv-pick input:focus-visible + span{outline:2px solid var(--flame);outline-offset:3px}
+#room[data-kind=gap] .front{display:none}
+.ask .cue .skel-gap{letter-spacing:.04em;word-spacing:.12em;color:#1F5E8C;border-bottom:1.5px solid rgba(42,33,24,.5);padding:0 2px}
+.ask .cue .skel-gap i{font-style:normal;color:rgba(31,94,140,.4)}
+.ask .cue .skel-gap .sk{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:default}
+.verdict .gap-full{flex-basis:100%;margin:8px 0 0;font-family:var(--f-display);font-size:calc(16.5px * var(--k));line-height:1.45;color:var(--ink)}
+.verdict .gap-full b{font-weight:normal;color:#1F5E8C;border-bottom:1.5px solid #1F5E8C}
+.verdict .gap-ko{flex-basis:100%;margin:4px 0 0;font-size:13.5px;color:var(--ink-soft)}
+.ask .play button.nohear{background:transparent;border-style:dashed;font-weight:400;font-size:14px;margin-left:auto}
+.r-top .quiet-btn{width:44px;height:44px;flex:none;display:flex;align-items:center;justify-content:center;border:0;background:none;cursor:pointer;opacity:.75}
+.r-top .quiet-btn svg{width:22px;height:22px;fill:none;stroke:#EDEBDD;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.r-top .quiet-btn .off{display:none}
+.r-top .quiet-btn.on{opacity:1}
+.r-top .quiet-btn.on .on{display:none}
+.r-top .quiet-btn.on .off{display:inline;stroke:var(--flame)}
+@media (max-width:380px){ .ask .play{flex-wrap:wrap} .ask .play button.nohear{margin-left:0} }

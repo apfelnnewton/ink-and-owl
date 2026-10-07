@@ -74,6 +74,7 @@ export function initLetters(app){
       `<div class="lt-ko">${para(it.ko)}</div>` +
       (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">연구실로 가기 · 주문 배우기</button>` : '') +
       (it.map ? '<button type="button" class="sh-drill" data-mapgo="1">양피지 펼치기</button>' : '') +
+      (it.go ? `<button type="button" class="sh-drill" data-go="${esc(it.go)}">${esc(it.btn)}</button>` : '') +
       (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key));
     draw();
   }
@@ -128,6 +129,7 @@ export function initLetters(app){
   $('#sheetBody').addEventListener('click', e => { if (!sec.hidden && e.target.closest('[data-reqgo]')){ closeSheet(); app.go(`#/room/${deck.id}/req`); } });
   $('#sheetBody').addEventListener('click', e => { const s = !sec.hidden && e.target.closest('[data-spellgo]'); if (s){ closeSheet(); app.go('#/spell/' + s.dataset.spellgo); } });
   $('#sheetBody').addEventListener('click', e => { if (!sec.hidden && e.target.closest('[data-mapgo]')){ closeSheet(); app.go('#/map'); } });
+  $('#sheetBody').addEventListener('click', e => { const g = !sec.hidden && e.target.closest('[data-go]'); if (g){ closeSheet(); app.go(g.dataset.go); } });
   $('#sheetBody').addEventListener('click', e => { if (sec.hidden || !tea) return; const b = e.target.closest('[data-tea]'); if (b) teaPick(+b.dataset.tea); });
   $('#ltWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && !b.classList.contains('on')) app.go('#/letters/' + b.dataset.who); });
   wireFriends(app);

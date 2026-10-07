@@ -79,6 +79,7 @@ function fly(app, {sealCls, label, en, waits, open, img = 'assets/owl/envelope.w
 function deliverNote(app, {deck, key}){
   const who = byId(deck);
   if (key === 'W00') bond.postWelcome();
+  else if (bond.NOTICES[key]) bond.postNotice(key);
   fly(app, {sealCls: `s-${deck}`, label: `${esc(who.ko)}의 편지`, en: 'An owl brings a letter.',
     waits: `${esc(who.ko)}의 편지는 내 방 <b>편지함</b>에 있습니다.`,
     open: () => app.go(`#/letters/${deck}/${key}`)});

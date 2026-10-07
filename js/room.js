@@ -83,7 +83,9 @@ const KIND = {
   hint: {label: '첫 글자', ask: '첫 글자를 보고 대사를 완성하세요'},
   dict: {label: '받아쓰기', ask: '듣고 그대로 쓰세요. 영국식 철자로.'},
   expr: {label: '표현 쓰기', ask: '빈칸의 표현을 쓰세요'},
-  pick: {label: '대사 고르기', ask: ''}
+  pick: {label: '대사 고르기', ask: ''},
+  /* the hard level: a blank in the line (or in an example) written out, its first letters showing */
+  gap: {label: '빈칸 쓰기', ask: '빈칸에 들어갈 말을 쓰세요'}
 };
 /* each word shows its first letter; the rest are blanks of the same length (apostrophes and hyphens stay).
    shown[k] = letters showing in word k (default 1). A word with letters still hidden is a button: one tap, one more
@@ -136,6 +138,7 @@ const SR = typeof window !== 'undefined' && (window.SpeechRecognition || window.
 export function initRoom(app){
   const room = $('#room'), slate = $('#slate'), note = $('#note'), scroll = $('#roomScroll');
   const lineEl = $('#sLine'), bellBtn = $('#bell'), nextBtn = $('#nextBtn');
+  let gapOf = null;
   let deck = null, cards = [], map = {}, practice = {}, examples = {}, day = null, card = null, mode = 'recall', stage = 'recall', answered = false, done = false, busy = false, writeAnim = null;
   let extra = '', quiz = null, missRanges = [], rec = null, kind = '', target = null;
   const sess = () => extra ? day[extra] : day;
@@ -199,9 +202,11 @@ export function initRoom(app){
   }
 
   /* which recall task this card gets today: varied by day and card, limited to what the card allows */
+  /* by level (2026-10-07): the easy one has no dictation, the hard one no choosing; "quiet" leaves dictation out */
+  const canHear = () => speech.gbVoices().length && !store.get().settings.quiet;
   function kindFor(c){
-    const ks = ['hint', 'pick'];
-    if (speech.gbVoices().length) ks.push('dict');
+    const lv = srs.level(), ks = lv === 'high' ? ['hint'] : ['hint', 'pick'];
+    if (lv !== 'low' && canHear()) ks.push('dict');
     if (exprRanges(c.line, c.bre).length) ks.push('expr');
     /* high bits of a differently-built key: the low bits of hash(today + id) already decide the example swap */
     return ks[(hash((extra ? 'x' : 'r') + c.id + '|' + srs.today()) >>> 7) % ks.length];
@@ -226,6 +231,11 @@ export function initRoom(app){
       if (kind === 'pick'){ mode = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.ko}; }
     }
     if (!extra && stage !== 'learn'){ const ex = exampleFor(card); if (ex){ mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; } }
+    /* the hard level: no options — the blank is written, its first letters showing */
+    gapOf = null;
+    if (srs.level() === 'high' && (mode === 'cloze' || mode === 'example') && quiz && quiz.text.includes(quiz.blank)){
+      gapOf = {...quiz, from: mode}; mode = 'recall'; kind = 'gap';
+    }
     answered = false; done = false;
     room.dataset.mode = mode;
     room.dataset.kind = kind;
@@ -233,7 +243,7 @@ export function initRoom(app){
     slate.classList.remove('back', 'writing', 'wiping', 'noline');
     if (writeAnim){ writeAnim.cancel(); writeAnim = null; }
     $('#rCount').textContent = extra ? `${ROUND[extra]} ${S.pos + 1} / ${S.queue.length}` : `${S.pos + 1} / ${S.queue.length}`;
-    $('#sStage').textContent = kind ? `${extra ? ROUND[extra] : '복습'} · ${KIND[kind].label}` : STAGE_LABEL[mode];
+    $('#sStage').textContent = kind ? `${extra ? ROUND[extra] : '복습'} · ${kind === 'gap' && gapOf.from === 'example' ? '예문 쓰기' : KIND[kind].label}` : STAGE_LABEL[mode];
     $('#hint').textContent = HINT[mode] || '';
 
     $('#noteFilm').textContent = `${card.film}편 · ${card.film_ko}`;
@@ -335,7 +345,7 @@ export function initRoom(app){
     if (writeIt) writeLine(card.line, findRanges(card.line, card.bre), anim, mode === 'learn' ? diffRanges(card.line, card.plain) : [], missRanges);
     else { slate.classList.add('noline'); slate.style.setProperty('--after', '0s'); }
     if (anim){ slate.classList.remove('writing'); void slate.offsetWidth; slate.classList.add('writing'); }
-    if (store.get().settings.autoRead) say();
+    if (store.get().settings.autoRead && !store.get().settings.quiet) say();
   }
   function finish(){
     done = true;
@@ -360,12 +370,21 @@ export function initRoom(app){
       aid = {shown: [], letters: 0, heard: false};
       cue.hidden = false; cue.className = 'cue skel'; cue.innerHTML = skeleton(card.line); target = card.line;
       /* the meaning waits behind a tap (free); one more letter and the single listen cap the grade at 비슷 */
-      $('#askAids').hidden = false;
+      const lv = srs.level();
+      $('#askAids').hidden = lv === 'high';   // the hard level: no help
       $('#aidKo').hidden = !!store.get().settings.koFront;
       const hear = $('#aidHear');
-      hear.hidden = !speech.gbVoices().length; hear.disabled = false; hear.textContent = '한 번 듣기';
+      hear.hidden = !canHear(); hear.disabled = false; hear.textContent = '한 번 듣기';
+      $('#askAids .aid-note').textContent = lv === 'low' ? '단어를 누르면 한 글자 더 · 도움을 써도 맞을 수 있습니다' : '단어를 누르면 한 글자 더 · 글자나 듣기를 쓰면 ‘비슷’까지';
     }
     else if (kind === 'dict'){ $('#askPlay').hidden = false; target = card.line; }
+    else if (kind === 'gap'){
+      const q = gapOf, at = q.text.indexOf(q.blank);
+      cue.hidden = false; cue.className = 'cue gaps';
+      cue.innerHTML = esc(q.text.slice(0, at)) + `<span class="blank skel-gap">${skeleton(q.blank)}</span>` + esc(q.text.slice(at + q.blank.length));
+      target = q.blank;
+      ti.rows = 1; ti.placeholder = '빈칸에 들어갈 말';
+    }
     else if (kind === 'expr'){
       const rs = exprRanges(card.line, card.bre);
       let html = '', at = 0;
@@ -458,20 +477,23 @@ export function initRoom(app){
     answered = true;
     room.classList.add('answered');
     /* the expression task checks only the missing words; the others check the whole line */
-    const exprTask = kind === 'expr';
-    const c = compare(said, exprTask ? target.text : card.line);
-    let g = !said ? 'again' : c.words <= 2 ? (c.ratio === 1 ? 'good' : 'again') : c.ratio >= .9 ? 'good' : c.ratio >= .6 ? 'hard' : 'again';
+    const exprTask = kind === 'expr', gapTask = kind === 'gap';
+    const c = compare(said, exprTask ? target.text : gapTask ? target : card.line);
+    const L = srs.LEVELS[srs.level()];
+    let g = !said ? 'again' : c.words <= 2 ? (c.ratio === 1 ? 'good' : 'again') : c.ratio >= L.good ? 'good' : c.ratio >= L.hard ? 'hard' : 'again';
     const helped = kind === 'hint' && aidUsed();
-    if (helped && g === 'good') g = 'hard';
-    gradeAny(g, 'recall');
+    if (helped && g === 'good' && srs.level() !== 'low') g = 'hard';   // the easy level: help does not cost the mark
+    gradeAny(g, gapTask ? stage : 'recall');
     const v = $('#verdict');
     v.hidden = false; v.className = 'verdict ' + g;
     const via = how && how.spoken ? (how.fixed > FIX_LIMIT ? ' · 쓰기로 기록' : how.fixed ? ` · 말하기 (${how.fixed}단어 고침)` : ' · 말하기') : '';
     const help = helped ? ' · ' + [aid.letters ? `글자 ${aid.letters}개 더 봄` : '', aid.heard ? '한 번 들음' : ''].filter(Boolean).join(' · ') : '';
     v.innerHTML = react(g, said ? `${{good: '맞음', hard: '비슷', again: '틀림'}[g]} · ${Math.round(c.ratio * 100)}%${via}${help}` : '정답 보기') +
-      (said ? `<div class="said" lang="en">${how && how.shown ? how.shown : esc(said)}</div>` : '');
+      (said ? `<div class="said" lang="en">${how && how.shown ? how.shown : esc(said)}</div>` : '') +
+      (gapTask ? `<p class="gap-full" lang="en">${esc(gapOf.text.slice(0, gapOf.text.indexOf(gapOf.blank)))}<b>${esc(gapOf.blank)}</b>${esc(gapOf.text.slice(gapOf.text.indexOf(gapOf.blank) + gapOf.blank.length))}</p>` +
+        (gapOf.from === 'example' ? `<p class="gap-ko">${esc(gapOf.ko)} · 표현 <em lang="en">${esc(gapOf.expr)}</em></p>` : gapOf.why ? `<p class="gap-ko">${esc(gapOf.why)}</p>` : '') : '');
     if (g !== 'again') setTimeout(() => wand.spark($('.tag', v)), 420);
-    if (!said) missRanges = [];
+    if (!said || gapTask) missRanges = [];
     else if (exprTask){
       /* map the missed words of the typed expression back onto the line */
       const inGap = toks(card.line).filter(t => target.ranges.some(([a, b]) => t.a >= a && t.b <= b));
@@ -628,6 +650,21 @@ export function initRoom(app){
   $('#playBtn').addEventListener('click', () => play(false));
   $('#slowBtn').addEventListener('click', () => play(true));
   $('#dunnoBtn').addEventListener('click', () => checkRecall(''));
+  /* dictation in a place where one cannot listen: this card becomes a first-letters task, no mark lost */
+  function noHear(){
+    if (mode !== 'recall' || answered || kind !== 'dict') return;
+    speech.stop(); kind = 'hint'; room.dataset.kind = kind;
+    resetRecall(); setupRecall();
+    $('#sStage').textContent = `${extra ? ROUND[extra] : '복습'} · ${KIND.hint.label}`;
+  }
+  $('#noHearBtn').addEventListener('click', noHear);
+  const quietBtn = $('#quietBtn');
+  const showQuiet = () => { const q = !!store.get().settings.quiet; quietBtn.setAttribute('aria-pressed', q); quietBtn.classList.toggle('on', q); quietBtn.setAttribute('aria-label', q ? '소리 없이 공부하는 중 · 누르면 소리 켜기' : '소리 없이 공부하기'); };
+  quietBtn.addEventListener('click', () => {
+    const s = store.get().settings; s.quiet = !s.quiet; store.save(); showQuiet();
+    if (s.quiet){ speech.stop(); noHear(); }
+    toast(s.quiet ? '소리 없이 · 받아쓰기와 자동 읽기를 끕니다' : '소리 켬 · 받아쓰기가 다시 나옵니다', 2200);
+  });
   $('#typedIn').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing){ e.preventDefault(); $('#typedForm').requestSubmit(); } });
   $('#typedForm').addEventListener('submit', e => { e.preventDefault(); const v = $('#typedIn').value.trim(); if (v) checkRecall(v); });
   nextBtn.addEventListener('click', next);
@@ -658,6 +695,7 @@ export function initRoom(app){
     const d = byId(id);
     if (!d || !d.file){ toast('아직 준비 중인 교실입니다.'); app.go('#/', true); return; }
     deck = d;
+    showQuiet();
     $('#rTitle').textContent = d.room;
     room.setAttribute('aria-label', `${d.ko}의 교실`);
     wall();

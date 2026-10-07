@@ -36,8 +36,18 @@ export function initSettings(app){
   const S = () => store.get().settings;
   const num = (el, v) => { const n = Math.max(+el.min, Math.min(+el.max, Math.round(+v || 0))); el.value = n; return n; };
 
+  /* the study level: choosing one sets the day's new lines and the Korean on the front to its own values (both can
+     still be changed below) */
+  const LV_NOTE = {
+    low: '하루 새 대사 3개 · 앞면에 한국어 뜻 · 고르기·첫 글자·표현 쓰기(받아쓰기 없음) · 80%면 맞음 · 도움을 써도 맞음',
+    mid: '하루 새 대사 5개 · 네 가지 문제를 고루 · 90%면 맞음 · 글자 더 보기나 듣기를 쓰면 비슷까지',
+    high: '하루 새 대사 8개 · 빈칸·예문도 보기 없이 직접 쓰기 · 배열 없음 · 고르기 없음 · 95%면 맞음 · 도움 없음'
+  };
+  const lvNote = lv => { $('#fLvNote').textContent = LV_NOTE[lv] + ' · 복습 간격은 세 단계 모두 같습니다.'; };
   function fill(){
     const s = S();
+    const lv = srs.level(); $$('[name="fLv"]').forEach(r => { r.checked = r.value === lv; }); lvNote(lv);
+    $('#fQuiet').checked = !!s.quiet;
     $('#fNew').value = s.newPerDay; $('#fCap').value = s.reviewCap;
     $('#fKo').checked = s.koFront; $('#fAuto').checked = s.autoRead; $('#fPrior').checked = s.prior !== false; $('#fHowl').checked = s.howler !== false;
     $('#fSur').value = s.surname || ''; $('#fFirst').value = s.firstName || ''; $('#fTitle').value = s.title ?? ''; $('#fBday').value = s.birthday || '';
@@ -64,6 +74,14 @@ export function initSettings(app){
 
   function commit(){
     const s = S();
+    const lv = ($$('[name="fLv"]').find(r => r.checked) || {}).value || 'mid';
+    if (lv !== srs.level()){
+      const L = srs.LEVELS[lv]; s.level = lv;
+      $('#fNew').value = L.newPerDay; $('#fKo').checked = L.koFront;
+      lvNote(lv);
+      toast(`공부 난이도 <b>${L.ko} · ${L.name}</b> · 다음 카드부터 적용됩니다`, 2600, true);
+    }
+    s.quiet = $('#fQuiet').checked;
     s.newPerDay = num($('#fNew'), $('#fNew').value);
     s.reviewCap = num($('#fCap'), $('#fCap').value);
     s.koFront = $('#fKo').checked; s.autoRead = $('#fAuto').checked; s.prior = $('#fPrior').checked; s.howler = $('#fHowl').checked;

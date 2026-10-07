@@ -299,6 +299,7 @@ export function itemOf(id, key){
     return t && {kind: '편지', ...t};
   }
   if (key === 'W00') return id === 'dumbledore' ? {kind: '환영 편지', ...WELCOME} : null;
+  if (/^A\d\d$/.test(key)) return id === 'dumbledore' && NOTICES[key] ? {kind: '공지', ...NOTICES[key]} : null;
   if (/^N-/.test(key)) return newsText(id, key);
   const d = data[id]; if (!d) return null;
   const who = byId(id);
@@ -346,6 +347,30 @@ const WELCOME = {
     "여기서 즐겁게 지내길 바라네.\n" +
     "알버스 덤블도어"
 };
+/* notices (2026-10-07): when something new comes to the castle, Dumbledore writes once to say so — by owl, kept in
+   his post, with a button to the place it concerns. Only for guests whose welcome came on an earlier day (a newcomer
+   has enough to read). Add the next as A02, A03… */
+export const NOTICES = {
+  A01: {go: '#/settings', btn: '관리인 게시판에서 난이도 고르기',
+    en: "Dear {name},\n" +
+      "A small change in the castle, which I thought you had better hear from me rather than from the portraits.\n" +
+      "Every guest learns at their own pace, and after a debate that lasted most of an evening, the professors have agreed to let you choose yours. On the caretaker's board you will now find three levels: an easy one, a middling one and a demanding one. The easy one offers more help and gentler marking; the demanding one asks you to write out what you might otherwise have chosen, and offers no help at all. Whichever you choose, your lines will come back to you on the same days.\n" +
+      "One thing more. If you find yourself somewhere you cannot listen, on a crowded train, perhaps, or in a library where even a whisper is frowned upon, tell the classroom so. The little speaker at the top of the room will hush it, and dictation will wait for a better moment.\n" +
+      "Choose as you like, and change your mind as often as you need. Wisdom, I find, seldom arrives at the first attempt.\n" +
+      "Albus Dumbledore",
+    ko: "{name}에게\n" +
+      "성에 작은 변화가 생겼다네. 초상화들한테 듣기 전에 내가 먼저 알려 주는 게 좋겠다 싶었지.\n" +
+      "손님마다 배우는 속도가 다르니, 교수들이 저녁 내내 이어진 토론 끝에 그 속도를 자네가 고르게 하자고 뜻을 모았다네. 이제 관리인 게시판(설정)에 난이도가 세 가지 있네. 하는 도움이 넉넉하고 채점이 너그럽지. 상은 고르던 것도 직접 써야 하고 도움은 전혀 없다네. 어느 쪽을 고르든 대사들은 같은 날에 자네를 다시 찾아올 걸세.\n" +
+      "하나 더 있네. 사람 많은 기차 안이나 속삭임조차 눈총받는 도서관처럼 소리를 들을 수 없는 곳에 있다면, 교실에 그렇게 말해 주게. 교실 위쪽의 작은 스피커를 누르면 조용해지고, 받아쓰기는 더 좋은 때를 기다릴 걸세.\n" +
+      "마음대로 고르고, 필요한 만큼 몇 번이든 바꾸게. 지혜란 첫 시도에 찾아오는 일이 드물더군.\n" +
+      "알버스 덤블도어"}
+};
+export function noticeDue(){
+  const w = bondOf('dumbledore').sent.W00;
+  if (!store.get().settings.named || !w || w >= srs.today()) return null;
+  return Object.keys(NOTICES).find(k => !bondOf('dumbledore').sent[k]) || null;
+}
+export const postNotice = key => { const r = post('dumbledore', key); store.save(); return r; };
 export const welcomeDue = () => store.get().settings.named && !bondOf('dumbledore').sent.W00;
 export const postWelcome = () => { const r = post('dumbledore', 'W00'); store.save(); return r; };
 

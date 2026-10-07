@@ -249,7 +249,7 @@ export async function play(who, key, done = () => {}){
     `<div class="hw-scroll"><div class="hw-wrap">` +
       `<p class="hw-from"><span lang="en">A Howler</span> · ${esc(prof.ko)}</p>` +
       `<div class="hw-choose"><p>열면 큰 소리가 날 수 있습니다.</p>` +
-        `<button type="button" class="hw-go" data-hw="loud"><span lang="en">Open it aloud</span><small>소리 내어 열기</small></button>` +
+        (store.get().settings.quiet ? '' : `<button type="button" class="hw-go" data-hw="loud"><span lang="en">Open it aloud</span><small>소리 내어 열기</small></button>`) +
         `<button type="button" class="hw-go quiet" data-hw="quiet"><span lang="en">Open it quietly</span><small>조용히 열기</small></button></div>` +
       `<canvas class="hw-sheet" aria-hidden="true" hidden></canvas><div class="sr" aria-live="polite"></div>` +
       `<button type="button" class="hw-go hw-burn" data-hw="burn" hidden><span lang="en">Let it burn</span><small>태워 버리기</small></button>` +
