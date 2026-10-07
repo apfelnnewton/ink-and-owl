@@ -387,12 +387,17 @@ export function initRoom(app){
     }
     else if (kind === 'expr'){
       const rs = exprRanges(card.line, card.bre);
-      let html = '', at = 0;
-      rs.forEach(([a, b]) => { html += esc(card.line.slice(at, a)) + `<span class="blank">${'\u00a0'.repeat(Math.max(5, Math.round((b - a) * 1.1)))}</span>`; at = b; });
+      /* one blank per word (2026-10-07: one long line per expression hid how many words go in), each as long as its word */
+      let html = '', at = 0, words = 0;
+      rs.forEach(([a, b]) => {
+        const ws = card.line.slice(a, b).trim().split(/\s+/); words += ws.length;
+        html += esc(card.line.slice(at, a)) + ws.map(w => `<span class="blank">${' '.repeat(Math.max(3, Math.round(w.length * 1.2)))}</span>`).join(' ');
+        at = b;
+      });
       cue.hidden = false; cue.className = 'cue gaps'; cue.innerHTML = html + esc(card.line.slice(at));
       $('#askKo').hidden = false; $('#askKo').textContent = card.ko;
       target = {ranges: rs, text: rs.map(([a, b]) => card.line.slice(a, b)).join(' ')};
-      ti.rows = 1; ti.placeholder = rs.length > 1 ? `빈칸 ${rs.length}개, 순서대로` : '빈칸에 들어갈 말';
+      ti.rows = 1; ti.placeholder = words > 1 ? `빈칸 ${words}단어, 순서대로` : '빈칸에 들어갈 한 단어';
     }
   }
   /* first-letter aids: which letters were added, and whether the line was heard */
