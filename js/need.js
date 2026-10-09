@@ -77,6 +77,30 @@ const LUPIN = {
   en: "{name}, there is something I have wanted to tell you since you opened your second door. At the very end of your corridor there is a stretch of wall where, as far as I know, there has never been a door. My friends and I walked past it for seven years, map and all, and never once found what was behind it. I found out later that we had simply never needed it badly enough.\nIf you ever do, walk past it three times and think hard about what you need. Then see what happens.",
   ko: '{name}, 네가 두 번째 문을 연 뒤로 꼭 말해 주고 싶은 게 있었단다. 네 복도 맨 끝에, 내가 아는 한 한 번도 문이 있었던 적 없는 벽이 있어. 내 친구들과 나는 칠 년 동안, 그 지도를 들고도, 그 앞을 지나다니면서 뒤에 뭐가 있는지 끝내 찾지 못했지. 나중에 알았는데, 그저 우리가 그게 그만큼 절실하지 않았던 거더구나.\n혹시 네게 절실해지면, 그 앞을 세 번 지나가며 필요한 걸 깊이 생각해 보렴. 그리고 무슨 일이 일어나는지 보렴.'
 };
+/* the room answers instead of a professor (2026-10-09 user decision: no one else is in here): not a voice, only
+   something that happens in that day's room — one of two lines for each result (approved 2026-10-09) */
+export const REACT = {
+  hidden: {
+    good: [['Something in the pile shifts, as if it heard you.', '더미 속 무언가가 그 말을 들은 듯 움찔한다.'], ['A tower of forgotten things leans aside, just a little.', '잊힌 물건 더미 하나가 아주 조금 비켜선다.']],
+    hard: [['The pile creaks, but holds on to what it has.', '더미가 삐걱이지만, 쥔 것을 놓지 않는다.'], ['Dust drifts down through the light and settles nowhere in particular.', '먼지가 빛줄기를 지나 어디라 할 것 없이 내려앉는다.']],
+    again: [['Somewhere in the pile, something slides out of sight.', '더미 어딘가에서 무언가가 미끄러지듯 숨는다.'], ['The towers of things seem a little taller than before.', '물건 더미가 조금 전보다 더 높아 보인다.']]},
+  catch: {
+    good: [['The clock on the wall ticks a little more slowly.', '벽시계가 조금 더 느긋하게 똑딱인다.'], ['A sheet lifts itself off the stack on the desk and is gone.', '책상 위 종이 한 장이 스스로 떠올라 사라진다.']],
+    hard: [['The clock hesitates between one tick and the next.', '시계가 똑딱과 똑딱 사이에서 머뭇거린다.'], ['The candle on the desk leans, then straightens.', '책상 위 촛불이 기울었다가 다시 선다.']],
+    again: [['The clock ticks on, a little louder.', '시계가 조금 더 크게 똑딱인다.'], ['Another sheet slips onto the stack on the desk.', '책상 위 더미에 종이 한 장이 또 얹힌다.']]},
+  expr: {
+    good: [['A note peels itself off the wall and drifts to the floor.', '쪽지 하나가 벽에서 저절로 떨어져 바닥으로 내려앉는다.'], ['The scrawl on one note settles into neat, steady letters.', '한 쪽지의 휘갈긴 글씨가 단정한 글자로 가라앉는다.']],
+    hard: [['One note flutters, as if unsure whether to stay.', '쪽지 하나가 남을지 말지 망설이듯 팔랑인다.'], ['The ink on a note blurs, then sharpens again.', '쪽지의 잉크가 번졌다가 다시 또렷해진다.']],
+    again: [['The notes on the wall rustle all at once.', '벽의 쪽지들이 한꺼번에 바스락거린다.'], ['A new note pins itself to the wall, in a hurried hand.', '급히 휘갈긴 새 쪽지 하나가 벽에 저절로 붙는다.']]},
+  shelf: {
+    good: [['The dust lifts from the spine of a book.', '책등 하나에서 먼지가 걷힌다.'], ['A book slides back into its place with a soft knock.', '책 한 권이 톡 소리를 내며 제자리로 들어간다.']],
+    hard: [['A book tilts forward on its shelf, then thinks better of it.', '책 한 권이 앞으로 기울었다가 마음을 바꾼다.'], ['The ladder rolls a few inches along the shelves, then stops.', '사다리가 서가를 따라 몇 뼘 굴러가다 멈춘다.']],
+    again: [['The dust settles a little thicker.', '먼지가 조금 더 두껍게 내려앉는다.'], ['A book eases out of its row, waiting to be read again.', '책 한 권이 다시 읽히기를 기다리며 줄에서 슬며시 빠져나온다.']]},
+  reply: {
+    good: [['The fire answers with a bright crackle.', '벽난로 불이 탁 소리를 내며 밝게 대답한다.'], ['For a moment, the empty chair across from you seems less empty.', '잠시, 맞은편 빈 의자가 덜 비어 보인다.']],
+    hard: [['The fire flickers, not quite convinced.', '불길이 흔들린다. 아직 다 믿지는 않는 듯.'], ['The chair opposite creaks, as if someone had shifted in it.', '맞은편 의자가 누가 고쳐 앉은 듯 삐걱인다.']],
+    again: [['The fire sinks low for a moment.', '불길이 잠시 낮게 가라앉는다.'], ['The room goes quiet, waiting for a better answer.', '방이 조용해진다. 더 나은 대답을 기다리며.']]}
+};
 export function textOf(prof, key){ return prof === 'lupin' && key === 'NEED' ? {kind: '편지', ...LUPIN} : null; }
 
 /* ---------- state */

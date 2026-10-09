@@ -310,7 +310,9 @@ export function initRoom(app){
     miss.forEach(([a, b]) => { for (let i = a; i < b; i++) mark[i] |= 4; });
     for (let i = 1; i < text.length; i++) if (/\s/.test(text[i]) && (mark[i - 1] & 1)){ let j = i; while (j < text.length && /\s/.test(text[j])) j++; if (j < text.length && (mark[j] & 1)) for (let k = i; k < j; k++) mark[k] |= 1; }
     const toks = [...text.matchAll(/\S+\s*/g)].map(m => ({s: m.index, t: m[0]}));
-    lineEl.innerHTML = toks.map(t => `<span class="tk">${esc(t.t)}</span>`).join('');
+    /* a word is never split while the lines are measured (a hyphenated one like wand-waving would otherwise break at
+       its hyphen here, then be drawn whole and run off the slate) */
+    lineEl.innerHTML = toks.map(t => { const w = t.t.trimEnd(); return `<span class="tk" style="white-space:nowrap">${esc(w)}</span>${esc(t.t.slice(w.length))}`; }).join('');
     const groups = [];
     let top = null;
     [...lineEl.children].forEach((sp, k) => { const y = sp.offsetTop; if (top === null || Math.abs(y - top) > 4){ groups.push([]); top = y; } groups[groups.length - 1].push(k); });
@@ -534,6 +536,10 @@ export function initRoom(app){
 
   /* ---------- the professor's reaction to an answer, in their own voice; the plain result stays as a small tag */
   function react(g, tag){
+    /* in the Room of Requirement no one speaks: the room itself answers (need.REACT, by the day's form) */
+    const own = extra === 'need' && need.REACT[sess().form];
+    if (own){ const [en, ko] = own[g][hash(card.id + srs.today() + g) % own[g].length];
+      return `<div class="react ${g} room-says"><span class="tag">${esc(tag)}</span><p class="q" lang="en">${esc(en)}</p><p class="k">${esc(ko)}</p></div>`; }
     const list = voiceOf(deck.id).react[g], l = list[hash(card.id + srs.today() + g) % list.length];
     return `<div class="react ${g}"><span class="tag">${esc(tag)}</span><p class="q" lang="en">“${esc(l.en)}”</p><p class="k">${esc(l.ko)}</p></div>`;
   }
