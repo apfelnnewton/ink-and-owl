@@ -39,7 +39,7 @@ const app = {
   data: {},
   leftRoom: null,
   fontsReady: Promise.race([
-    Promise.all(['22px "Fredericka the Great"', '20px "Nanum Pen Script"', 'italic 16px "IM Fell English"', '15px "Gowun Batang"'].map(f => document.fonts.load(f))).catch(() => {}),
+    Promise.all(['22px "Fredericka the Great"', 'italic 16px "IM Fell English"', '15px "Gowun Batang"'].map(f => document.fonts.load(f))).catch(() => {}),
     wait(3000)
   ]),
   async loadDeck(id){
