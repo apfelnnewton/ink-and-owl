@@ -301,6 +301,7 @@ export function initHome(app){
     if (app.leftRoom){ const i = DOORS.findIndex(d => d.id === app.leftRoom); if (i >= 0) pos = target = i; }
     app.leftRoom = null;
     bond.daily().then(() => {
+      if (need.daily(app)) size();   // the wall at the corridor's end appears
       mailCount(); describe(false);
       /* once a day an owl brings a tea invitation (js/owl.js; app.js also checks while the app stays open) */
       app.owlCheck();

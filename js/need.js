@@ -88,14 +88,19 @@ export const hiddenCount = () => Object.keys(st().hidden || {}).length;
 export const foundKinds = () => Object.keys(st().found || {}).length;
 const openDecks = () => DECKS.filter(d => d.file && doors.isOpen(d.id));
 
-/* opens the day after the second classroom door: Lupin's letter, and the first pile from the lines missed so far */
+/* opens the day after the second classroom door: Lupin's letter, and the first pile from the lines missed so far.
+   Someone who already studied in two classrooms before today (e.g. doors opened before the room existed) need not
+   wait. Called at start-up and each time the corridor shows (an app left open overnight); true when it opened. */
 export function daily(app){
   const s = st();
-  if (s.open || !store.get().settings.named) return;
-  if (((store.get().doors || {}).open || []).length < 2) return;
-  const t = srs.today();
-  if (!s.ready){ s.ready = t; store.save(); return; }
-  if (s.ready >= t) return;
+  if (s.open || !store.get().settings.named) return false;
+  if (((store.get().doors || {}).open || []).length < 2) return false;
+  const t = srs.today(), log = store.get().log || {}, before = new Set();
+  Object.keys(log).forEach(d => { if (d < t) Object.keys(log[d] || {}).forEach(k => before.add(k)); });
+  const early = openDecks().filter(d => before.has(d.id)).length >= 2;
+  if (!s.ready){ s.ready = t; store.save(); }
+  if (s.ready >= t && !early) return false;
+  if (openDecks().some(d => !app.data[d.id])) return false;   // the classrooms' lines are still loading
   s.open = t; s.hidden = s.hidden || {}; s.found = s.found || {};
   for (const d of openDecks()){
     const cards = app.data[d.id]; if (!cards) continue;
@@ -103,6 +108,7 @@ export function daily(app){
   }
   bond.postItem('lupin', 'NEED');
   store.save();
+  return true;
 }
 
 /* every answer anywhere: a review line missed is hidden here; answered right again, it is found */
