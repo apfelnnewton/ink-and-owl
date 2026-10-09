@@ -18,6 +18,7 @@ import * as wand from './wand.js';
 import * as howler from './howler.js';
 import * as spells from './spells.js';
 import * as map from './map.js';
+import * as need from './need.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -198,6 +199,7 @@ function greetings(){
 
 /* ---------- every answer */
 srs.hooks.push(ev => {
+  if (ev.kind === 'need') return;   // the Room of Requirement: no bond with the professors (2026-10-09 user decision)
   const id = ev.deckId, b = bondOf(id), t = srs.today(), before = stage(id);
   if (b.lastDay !== t){
     const gap = b.lastDay ? Math.round((new Date(t) - new Date(b.lastDay)) / 864e5) : 0;
@@ -293,6 +295,7 @@ export function itemOf(id, key){
   if (/^H-/.test(key)) return howler.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
   if (key === 'MAP') return map.textOf(id, key);
+  if (key === 'NEED') return need.textOf(id, key);
   if (/^WD-[a-z]+$/.test(key)){
     const wood = key.slice(3), own = wand.OWNER[wood];
     const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;

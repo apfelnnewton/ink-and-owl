@@ -5,24 +5,31 @@
 import {shade} from './art.js';
 import {keyring} from './art-plus.js';
 import {DECKS, LOCKED, FIRST} from './decks.js';
+import {RITUAL_FULL} from './need.js';
 import * as doors from './doors.js';
 import {dismissOwl} from './owl.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
 import {hint, hintSeen} from './hints.js';
 import * as srs from './srs.js';
+import * as need from './need.js';
 import {$, esc, toast, reduced} from './ui.js';
 
 const OVERLAP = .09;                       // each section shares its outer 9% of wall with the next
 const ART = id => `assets/corridor/${id}`;
 /* the first door is your own: the guest room at the top of the tower, where the letters and the professors' gifts are kept */
 const ME = {id: 'me', me: true, who: 'The Guest Room', ko: '내 방', where: '탑 꼭대기 손님 방 · 편지 · 차 일지 · 선물', glow: '#9FB7E0'};
-const DOORS = [ME, ...DECKS];
+/* the last section: a blank stretch of wall, there once the Room of Requirement has opened (need.js). Walk past it
+   three times and a door comes out of the stone. */
+const NEED = {id: 'need', need: true, who: 'A Stretch of Blank Wall', ko: '아무것도 없는 벽', glow: '#C9A86A'};
+const DOORS = [ME, ...DECKS, NEED];
+const lastIdx = () => need.isOpen() ? DOORS.length - 1 : DOORS.length - 2;
 const START = 1;                           // the corridor opens on the first professor's door
 
 export function initHome(app){
   const home = $('#home'), stage = $('#cstage'), wall = $('#cwall'), card = $('#ccard'), ticks = $('#cticks'), veil = $('#veil');
   let w = 0, step = 0, top = 0, pos = START, target = START, cur = -1, drag = null, vel = 0, raf = 0, busy = false, moved = false, knock = 0;
+  let walk = 0, walkT = 0;   // passes in front of the blank wall (need.js)
   /* a closed door answers in its professor's voice: not yet, in their own way */
   const lockedLine = (id, k) => { const l = LOCKED[id] || [{en: 'Not yet.', ko: '아직이다.'}]; return l[k % l.length]; };
 
@@ -41,7 +48,7 @@ export function initHome(app){
     s.className = 'csec';
     s.style.backgroundImage = `url(${ART(d.id)}.webp)`;
     s.innerHTML = `<video muted loop playsinline preload="none" aria-hidden="true"></video>` +
-      (d.me ? '' : `<i class="door-inv" hidden aria-hidden="true"><img src="assets/owl/envelope.webp" alt=""><i class="seal s-${d.id}"></i></i>`);
+      (d.me || d.need ? '' : `<i class="door-inv" hidden aria-hidden="true"><img src="assets/owl/envelope.webp" alt=""><i class="seal s-${d.id}"></i></i>`);
     wall.appendChild(s);
     return s;
   });
@@ -57,6 +64,7 @@ export function initHome(app){
   /* ---------- state of each deck for today */
   function status(d){
     if (d.me) return {open: true, me: true};
+    if (d.need) return {open: true, need: true};
     if (!d.file || !doors.isOpen(d.id)) return {open: false};
     const cards = app.data[d.id];
     if (!cards) return {open: true, loading: true};
@@ -71,17 +79,19 @@ export function initHome(app){
     top = phone ? Math.max(0, (vh - h) * .18) : 0;
     w = h * 9 / 16; step = w * (1 - OVERLAP);
     const f = (OVERLAP * 100).toFixed(1), feather = `linear-gradient(90deg, transparent 0%, #000 ${f}%, #000 ${100 - f}%, transparent 100%)`;
+    const last = lastIdx();
     secs.forEach((s, i) => {
-      Object.assign(s.style, {left: i * step + 'px', top: top + 'px', width: w + 'px', height: h + 'px', webkitMaskImage: feather, maskImage: feather});
+      Object.assign(s.style, {left: i * step + 'px', top: top + 'px', width: w + 'px', height: h + 'px', webkitMaskImage: feather, maskImage: feather, display: i > last ? 'none' : ''});
     });
+    [...ticks.children].forEach((t, k) => { t.hidden = k > last; });
     const fade = `linear-gradient(90deg, transparent 0%, #000 ${f}%, #000 30%, transparent 100%)`;
-    ends.forEach(s => Object.assign(s.style, {left: (+s.dataset.k) * step + 'px', top: top + 'px', width: w + 'px', height: h + 'px', webkitMaskImage: fade, maskImage: fade}));
+    ends.forEach(s => Object.assign(s.style, {left: (+s.dataset.k < 0 ? -1 : last + 1) * step + 'px', top: top + 'px', width: w + 'px', height: h + 'px', webkitMaskImage: fade, maskImage: fade}));
     place();
   }
   function place(){
     wall.style.transform = `translate3d(${(stage.clientWidth / 2 - w / 2 - pos * step).toFixed(1)}px,0,0)`;
-    const n = Math.max(0, Math.min(DOORS.length - 1, Math.round(pos)));
-    if (n !== cur){ cur = n; describe(true); }
+    const n = Math.max(0, Math.min(lastIdx(), Math.round(pos)));
+    if (n !== cur){ cur = n; walk = 0; clearTimeout(walkT); describe(true); }
   }
 
   /* ---------- the title card */
@@ -90,7 +100,13 @@ export function initHome(app){
     const fill = () => {
       $('#cwho').textContent = d.who;
       let stats = '', line = '', label = '교실로 들어가기', locked = !st.open, report = false;
-      if (st.me){
+      if (st.need){
+        /* the blank wall: each pass brings one more thought; the third brings the door */
+        line = walk ? RITUAL_FULL.slice(0, walk).map(([en, ko]) => `<span class="q" lang="en">${esc(en)}</span><span class="k">${esc(ko)}</span>`).join('')
+          : '<span class="q" lang="en">A stretch of blank wall.</span><span class="k">아무것도 없는 벽</span>';
+        label = '벽 앞을 지나가기';
+      }
+      else if (st.me){
         /* your own door: what the owls have left and how full the drawers are */
         const n = bond.unread() + post.unread(), g =DECKS.reduce((s, x) => s + bond.keepsakes(x.id).length, 0), t = DECKS.find(x => bond.teaReady(x.id));
         stats = `<div><b>${n}</b>새 편지</div><div><b>${g}</b>선물 / ${DECKS.length * 30}</div>`;
@@ -170,7 +186,7 @@ export function initHome(app){
     };
     raf = requestAnimationFrame(tick);
   }
-  const goTo = i => { target = Math.max(0, Math.min(DOORS.length - 1, i)); glide(); };
+  const goTo = i => { target = Math.max(0, Math.min(lastIdx(), i)); glide(); };
   stage.addEventListener('pointerdown', e => {
     if (busy) return;
     cancelAnimationFrame(raf);
@@ -180,7 +196,7 @@ export function initHome(app){
     if (!drag) return;
     if (!moved && Math.abs(e.clientX - drag.x) < 6) return;
     if (!moved){ moved = true; stage.setPointerCapture(e.pointerId); secs.forEach(s => s.classList.remove('playing')); }
-    const now = performance.now(), n = DOORS.length - 1;
+    const now = performance.now(), n = lastIdx();
     let p = drag.p - (e.clientX - drag.x) / step;
     if (p < 0) p *= .3; if (p > n) p = n + (p - n) * .3;
     vel = (e.clientX - drag.lx) / Math.max(1, now - drag.t); drag.lx = e.clientX; drag.t = now;
@@ -192,7 +208,7 @@ export function initHome(app){
     if (wasMove){ goTo(Math.round(pos - vel * .4)); return; }
     /* a tap on a door: go to it, or enter it if it is already in front of us */
     const x = e.clientX - stage.getBoundingClientRect().left, i = Math.round(pos + (x - stage.clientWidth / 2) / step);
-    if (i === cur) enter(cur); else if (i >= 0 && i < DOORS.length) goTo(i);
+    if (i === cur) enter(cur); else if (i >= 0 && i <= lastIdx()) goTo(i);
   };
   stage.addEventListener('pointerup', release);
   stage.addEventListener('pointercancel', () => { if (drag){ drag = null; goTo(Math.round(pos)); } });
@@ -220,7 +236,16 @@ export function initHome(app){
   async function enter(i){
     const d = DOORS[i];
     let to = '#/me';
-    if (!d.me){
+    if (d.need){
+      /* walk past it three times; once only, and a while later Dumbledore has a word */
+      if (busy) return;
+      walk++; clearTimeout(walkT);
+      if (!reduced()) secs[i].animate([{filter: 'brightness(1)'}, {filter: 'brightness(1.25) blur(.4px)'}, {filter: 'brightness(1)'}], {duration: 900});
+      describe(false);
+      if (walk < 3){ walkT = setTimeout(() => { if (walk === 1) hint('need'); walk = 0; describe(false); }, 7000); return; }
+      walk = 0; to = '#/need';
+    }
+    else if (!d.me){
       if (!d.file){ rattle(); return; }
       /* a closed door: on the first visit it becomes your first classroom; later a key opens it; otherwise it stays shut */
       if (!doors.isOpen(d.id)){
@@ -241,7 +266,7 @@ export function initHome(app){
     busy = true; app.entering = true;
     home.classList.add('entering');
     const clip = $('#copen');
-    const played = (to.startsWith('#/room') || d.me) && await new Promise(res => {
+    const played = (to.startsWith('#/room') || d.me || d.need) && await new Promise(res => {
       clip.onended = () => res(true);
       clip.onerror = () => res(false);
       clip.src = `${ART(d.id)}-open.mp4`;

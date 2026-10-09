@@ -1,11 +1,13 @@
-/* The register (#/records): an attendance calendar on parchment, each studied day sealed in the wax colour of the
-   professor studied most that day (a star when every answer was right); each professor's progress; the lines missed
+/* The register (#/records): an attendance calendar on parchment, each studied day sealed with the wax of every place
+   studied that day, overlapping, the most-studied on top (2026-10-09 user decision; up to four show, then "+n"; the
+   Room of Requirement has its own grey seal); a snitch when every answer was right; each professor's progress; the lines missed
    most often; and eight weeks of accuracy and volume drawn in ink. Everything comes from state.log and the cards. */
 import {DECKS, byId} from './decks.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as bond from './bond.js';
-import {$, esc, fitPaper} from './ui.js';
+import * as need from './need.js';
+import {$, esc, fitPaper, toast} from './ui.js';
 
 const pad = n => String(n).padStart(2, '0');
 const ymd = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
@@ -20,16 +22,23 @@ export function initRecords(app){
   let y = 0, m = 0;
 
   /* ---------- attendance */
+  const placeKo = id => id === 'need' ? '필요의 방' : byId(id) ? byId(id).ko : id;
   function dayInfo(date){
     const e = store.get().log[date]; if (!e) return null;
-    let n = 0, wrong = 0, top = null, topN = 0;
+    let n = 0, wrong = 0; const places = [];
     for (const [id, o] of Object.entries(e)){
       const k = (o.good || 0) + (o.hard || 0) + (o.again || 0) + (o.learn || 0);
       n += k; wrong += (o.hard || 0) + (o.again || 0);
-      if (k > topN){ topN = k; top = id; }
+      if (k && (id === 'need' || byId(id))) places.push({id, k});
     }
-    return n ? {n, perfect: !wrong && Object.values(e).some(o => o.good), deck: byId(top)} : null;
+    places.sort((a, b) => b.k - a.k);
+    return n ? {n, perfect: !wrong && Object.values(e).some(o => o.good), places} : null;
   }
+  /* the seals of the day, overlapping: the place studied most lies on top, the rest peep out beneath it */
+  const seals = ps => {
+    const show = ps.slice(0, 4), more = ps.length - show.length;
+    return `<span class="rc-seals n${show.length}">${show.map((p, i) => `<i class="seal s-${p.id}" style="--i:${i}"></i>`).join('')}${more ? `<small>+${more}</small>` : ''}</span>`;
+  };
   function drawCal(){
     const first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate(), lead = (first.getDay() + 6) % 7, today = srs.today();
     let cells = '', seen = 0;
@@ -37,17 +46,21 @@ export function initRecords(app){
     for (let d = 1; d <= days; d++){
       const date = ymd(y, m, d), info = dayInfo(date);
       if (info) seen++;
-      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}" title="${info ? `${info.deck ? info.deck.ko : ''} · ${info.n}문제` : ''}">` +
-        `<b>${d}</b>${info ? `<i class="seal${info.deck ? ' s-' + info.deck.id : ''}" style="--c:${info.deck ? info.deck.glow : '#8E1B1B'}"></i>${info.perfect ? '<em class="snitch" role="img" aria-label="모두 맞음"></em>' : ''}` : ''}</span>`;
+      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}"${info ? ` data-day="${date}"` : ''} title="${info ? `${info.places.map(p => placeKo(p.id)).join(' · ')} · ${info.n}문제` : ''}">` +
+        `<b>${d}</b>${info ? seals(info.places) + (info.perfect ? '<em class="snitch" role="img" aria-label="모두 맞음"></em>' : '') : ''}</span>`;
     }
     $('#recCalBody').innerHTML = `<div class="rc-head"><button type="button" data-mo="-1" aria-label="이전 달">‹</button>` +
       `<div><span class="rc-term">${term(m)} · ${y}</span><span class="rc-month">${MONTH[m]}</span></div>` +
       `<button type="button" data-mo="1" aria-label="다음 달">›</button></div>` +
       `<div class="rc-grid">${['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map(w => `<span class="rc-w">${w}</span>`).join('')}${cells}</div>` +
       `<p class="rc-sum">이달 출석 ${seen}일 · 연속 ${srs.streak()}일</p>` +
-      `<p class="rc-key">${DECKS.map(d => `<span><i class="seal s-${d.id}" style="--c:${d.glow}"></i>${esc(d.ko.replace(/ 교수$/, ''))}</span>`).join('')}<span><em class="snitch" aria-hidden="true"></em>모두 맞은 날</span></p>`;
+      `<p class="rc-key">${DECKS.map(d => `<span><i class="seal s-${d.id}" style="--c:${d.glow}"></i>${esc(d.ko.replace(/ 교수$/, ''))}</span>`).join('')}${need.isOpen() ? '<span><i class="seal s-need"></i>필요의 방</span>' : ''}<span><em class="snitch" aria-hidden="true"></em>모두 맞은 날</span></p>`;
   }
   $('#recCalBody').addEventListener('click', e => {
+    /* a day: every place studied, in order */
+    const dd = e.target.closest('[data-day]');
+    if (dd){ const info = dayInfo(dd.dataset.day), [, mm, ddn] = dd.dataset.day.split('-').map(Number);
+      toast(`<span class="q">${mm}월 ${ddn}일 · ${info.n}문제</span><span class="k">${info.places.map(p => `${esc(placeKo(p.id))} ${p.k}`).join(' · ')}</span>`, 3200, true); return; }
     const b = e.target.closest('[data-mo]'); if (!b) return;
     m += +b.dataset.mo; if (m < 0){ m = 11; y--; } if (m > 11){ m = 0; y++; }
     drawCal();

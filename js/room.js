@@ -19,13 +19,16 @@ import {hint} from './hints.js';
 import * as grammar from './grammar.js';
 import * as wand from './wand.js';
 import * as prior from './prior.js';
+import * as need from './need.js';
 
 /* Room art: every deck has a painted room, assets/rooms/<id>-portrait.webp (phones) and -wide.webp (wide screens).
    The drawn stone wall below is only the fallback while a painting is missing. */
 const ROOMS = {snape: {wallSeed: 31, wallBase: '#1F2823', light: '#3FA66B'}};
 const roomOf = id => ({...(ROOMS[id] || {wallSeed: 31, wallBase: '#1F2823', light: (byId(id) || {}).glow || '#3FA66B'}),
   photo: {portrait: `assets/rooms/${id}-portrait.webp`, wide: `assets/rooms/${id}-wide.webp`}});
-const ROUND = {extra: '더 도전', wrong: '틀린 대사', req: '교수의 부탁'};
+const ROUND = {extra: '더 도전', wrong: '틀린 대사', req: '교수의 부탁', need: '필요의 방'};
+/* the Room of Requirement (need.js): its own pictures, one per form of the day */
+const NEED_ROOM = {hidden: 1, catch: 2, expr: 3, shelf: 4, reply: 7};
 
 /* ---------- where each expression sits in the line (for the yellow underline).
    Expressions are written as patterns ("..., is it?", "kindly + 명령문", "Potter (성만으로 호칭)"); the literal
@@ -141,9 +144,19 @@ export function initRoom(app){
   let gapOf = null;
   let deck = null, cards = [], map = {}, practice = {}, examples = {}, day = null, card = null, mode = 'recall', stage = 'recall', answered = false, done = false, busy = false, writeAnim = null;
   let extra = '', quiz = null, missRanges = [], rec = null, kind = '', target = null;
-  const sess = () => extra ? day[extra] : day;
-  /* grading goes to the ladder, or — in a side round — only misses touch the schedule */
-  const gradeAny = (g, st) => extra ? srs.gradeRound(deck.id, card.id, g, extra) : srs.grade(deck.id, card.id, g, st, card.minimal);
+  const sess = () => extra === 'need' ? day : extra ? day[extra] : day;
+  /* grading goes to the ladder, or — in a side round — only misses touch the schedule; the Room of Requirement keeps
+     its own round (need.js) and its own rules (srs.gradeNeed) */
+  const gradeAny = (g, st) => {
+    if (extra === 'need'){ const r = day; srs.gradeNeed(deck.id, card.id, g, r.form, st); r.results[r.queue[r.pos]] = g; r.pos++; store.save(); return; }
+    return extra ? srs.gradeRound(deck.id, card.id, g, extra) : srs.grade(deck.id, card.id, g, st, card.minimal);
+  };
+  /* a round in the Room of Requirement draws on every classroom: switch to the deck of the card in hand */
+  const maps = {};
+  function useDeck(id){
+    deck = byId(id); cards = app.data[id] || []; practice = app.practice[id] || {}; examples = app.examples[id] || {};
+    map = maps[id] || (maps[id] = Object.fromEntries(cards.map(c => [c.id, c])));
+  }
   let placed = [], tiles = [];
 
   $('#shelf').innerHTML = shelf();
@@ -171,7 +184,7 @@ export function initRoom(app){
   }).join('');
 
   function wall(){
-    const R = roomOf(deck.id);
+    const R = extra === 'need' && day ? {...roomOf(deck.id), photo: {portrait: `assets/need/room${NEED_ROOM[day.form]}-portrait.webp`, wide: `assets/need/room${NEED_ROOM[day.form]}-wide.webp`}} : roomOf(deck.id);
     room.style.setProperty('--glow', deck.glow);
     /* a painted classroom when there is one; otherwise the drawn stone wall, shelf and cauldron */
     room.classList.toggle('has-photo', !!R.photo);
@@ -222,8 +235,10 @@ export function initRoom(app){
   /* ---------- one card, in the mode its stage calls for */
   function render(){
     const S = sess();
-    card = map[S.queue[S.pos]];
-    stage = extra ? 'recall' : srs.stageOf(deck.id, card, practice);
+    let nq = null;
+    if (extra === 'need'){ nq = S.queue[S.pos]; const [dk, cid] = nq.split('/'); useDeck(dk); card = map[cid]; room.style.setProperty('--glow', deck.glow); }
+    else card = map[S.queue[S.pos]];
+    stage = extra === 'need' && S.form === 'catch' ? srs.stageOf(deck.id, card, practice) : extra ? 'recall' : srs.stageOf(deck.id, card, practice);
     mode = stage; quiz = null; missRanges = []; kind = ''; target = null;
     if (stage === 'cloze') quiz = {...practice[card.id], text: card.line};
     if (stage === 'recall'){
@@ -231,6 +246,11 @@ export function initRoom(app){
       if (kind === 'pick'){ mode = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.ko}; }
     }
     if (!extra && stage !== 'learn'){ const ex = exampleFor(card); if (ex){ mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; } }
+    /* the Room of Requirement: an expression in a fresh sentence, or the professor's reply to the line before */
+    if (nq && S.form === 'expr' && S.ex[nq]){ const ex = S.ex[nq]; mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; }
+    if (nq && S.form === 'reply'){ mode = 'pick'; kind = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.cue, reply: true}; }
+    if (extra === 'need'){ room.dataset.reply = S.form === 'reply' ? '1' : ''; }
+    else room.dataset.reply = '';
     /* the hard level: no options — the blank is written, its first letters showing */
     gapOf = null;
     if (srs.level() === 'high' && (mode === 'cloze' || mode === 'example') && quiz && quiz.text.includes(quiz.blank)){
@@ -243,10 +263,11 @@ export function initRoom(app){
     slate.classList.remove('back', 'writing', 'wiping', 'noline');
     if (writeAnim){ writeAnim.cancel(); writeAnim = null; }
     $('#rCount').textContent = extra ? `${ROUND[extra]} ${S.pos + 1} / ${S.queue.length}` : `${S.pos + 1} / ${S.queue.length}`;
-    $('#sStage').textContent = kind ? `${extra ? ROUND[extra] : '복습'} · ${kind === 'gap' && gapOf.from === 'example' ? '예문 쓰기' : KIND[kind].label}` : STAGE_LABEL[mode];
+    $('#sStage').textContent = kind ? `${extra ? ROUND[extra] : '복습'} · ${kind === 'gap' && gapOf.from === 'example' ? '예문 쓰기' : KIND[kind].label}` : extra === 'need' ? STAGE_LABEL[mode].replace('복습', '필요의 방') : STAGE_LABEL[mode];
     $('#hint').textContent = HINT[mode] || '';
 
-    $('#noteFilm').textContent = `${card.film}편 · ${card.film_ko}`;
+    if (extra === 'need') $('#noteFilm').innerHTML = `<i class="seal s-${deck.id}"></i>${esc(deck.ko)} · ${card.film}편 · ${esc(card.film_ko)}`;
+    else $('#noteFilm').textContent = `${card.film}편 · ${card.film_ko}`;
     $('#noteFan').hidden = card.source !== 'fan_script';
     $('#noteScene').textContent = card.scene_ko;
     const cue = $('#noteCue');
@@ -521,10 +542,10 @@ export function initRoom(app){
   function setupQuiz(){
     const at = quiz.text.indexOf(quiz.blank);
     const pad = '\u00a0'.repeat(Math.max(6, Math.round(quiz.blank.length * 1.3)));
-    $('#czLab').textContent = mode === 'pick' ? '이 뜻의 대사는?' : mode === 'example' ? '예문 · 빈칸에 알맞은 표현은?' : '빈칸에 들어갈 말은?';
-    if (mode === 'pick') $('#czLine').textContent = quiz.text;
+    $('#czLab').textContent = mode === 'pick' ? (quiz.reply ? `${SPEAKERS[card.cue_speaker] || card.cue_speaker}의 말 · ${deck.ko}는 뭐라고 받았을까?` : '이 뜻의 대사는?') : mode === 'example' ? '예문 · 빈칸에 알맞은 표현은?' : '빈칸에 들어갈 말은?';
+    if (mode === 'pick') $('#czLine').textContent = quiz.reply ? `“${quiz.text}”` : quiz.text;
     else $('#czLine').innerHTML = esc(quiz.text.slice(0, at)) + `<span class="blank" id="czBlank">${pad}</span>` + esc(quiz.text.slice(at + quiz.blank.length));
-    $('#czLine').lang = mode === 'pick' ? 'ko' : 'en';
+    $('#czLine').lang = mode === 'pick' && !quiz.reply ? 'ko' : 'en';
     $('#czOpts').innerHTML = shuffle([quiz.blank, ...quiz.options], card.id + mode).map((o, k) => `<button type="button" data-opt="${esc(o)}"><i>${k + 1}</i>${esc(o)}</button>`).join('');
   }
   function choose(opt){
@@ -613,7 +634,7 @@ export function initRoom(app){
     speech.stop();
     await wipe();
     const S = sess();
-    if (S.pos >= S.queue.length){ busy = false; app.go(`#/report/${deck.id}`); return; }
+    if (S.pos >= S.queue.length){ busy = false; app.go(extra === 'need' ? '#/need/end' : `#/report/${deck.id}`); return; }
     render();
     if (!reduced()){ note.classList.remove('swap'); void note.offsetWidth; note.classList.add('swap'); }
     busy = false;
@@ -681,7 +702,7 @@ export function initRoom(app){
   $('#sParts').addEventListener('click', partsSheet);
   $('#sGram').addEventListener('click', () => grammar.cardSheet(deck.id, card));
   bellBtn.addEventListener('click', say);
-  $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = deck && deck.id; app.go('#/'); });
+  $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = extra === 'need' ? 'need' : deck && deck.id; app.go('#/'); });
   document.addEventListener('keydown', e => {
     if (room.hidden || prior.running() || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else $('#backBtn').click(); return; }
@@ -696,7 +717,26 @@ export function initRoom(app){
     else if (e.key === 'r' || e.key === 'R'){ if (slate.classList.contains('back')) say(); }
   });
 
+  /* a round in the Room of Requirement (need.js): every deck it draws on is loaded first */
+  async function showNeed(){
+    const r = need.round();
+    if (!r || r.pos >= r.queue.length){ app.go('#/need', true); return; }
+    extra = 'need'; day = r;
+    const ids = [...new Set(r.queue.map(q => q.split('/')[0]))];
+    try { await Promise.all(ids.map(id => Promise.all([app.loadDeck(id), app.loadPractice(id), app.loadExamples(id), grammar.load(id)]))); }
+    catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go('#/need', true); return; }
+    useDeck(r.queue[r.pos].split('/')[0]);
+    showQuiet();
+    $('#rTitle').textContent = 'The Room of Requirement';
+    room.setAttribute('aria-label', '필요의 방');
+    wall();
+    await app.fontsReady;
+    render();
+    bakeProps();
+    bellBtn.classList.toggle('muted', !speech.gbVoices().length);
+  }
   async function show({id, sub}){
+    if (id === 'need') return showNeed();
     const d = byId(id);
     if (!d || !d.file){ toast('아직 준비 중인 교실입니다.'); app.go('#/', true); return; }
     deck = d;

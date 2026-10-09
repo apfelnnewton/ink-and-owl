@@ -100,16 +100,40 @@ export function grade(deckId, cardId, g, stage = 'recall', minimal = false){
     dk.day.results[cardId] = g; dk.day.pos++;
     if (dk.day.pos >= dk.day.queue.length){ const rs = Object.values(dk.day.results); dayDone = true; dayPerfect = rs.some(x => x === 'good') && rs.every(x => x === 'good' || x === 'learn'); }
   }
-  note(deckId, g, {cardId, kind: '', dayDone, dayPerfect});
+  note(deckId, g, {cardId, kind: '', stage, dayDone, dayPerfect});
   store.save();
   return i;
+}
+
+/* the Room of Requirement (need.js, 2026-10-09): lines from every classroom in one round, kept apart from the day's
+   lessons. catch = a normal review; hidden = like the wrong-lines round (a right answer lowers the miss count);
+   shelf = like the extra round (only a miss touches the schedule); expr / reply = practice only. The register writes
+   these answers under "need" (not under the professor), and the professors' bond does not count them. */
+export function gradeNeed(deckId, cardId, g, form, stage = 'recall'){
+  const date = today(), dk = store.deck(deckId), st = dk.cards[cardId];
+  if (form === 'catch'){
+    let i, s;
+    if (stage === 'learn'){ i = 3; s = 1; g = 'learn'; }
+    else if (g === 'again'){ i = 1; s = 0; }
+    else if (stage === 'recall'){ i = nextInterval(st ? st.i : 0, g); s = 3; }
+    else { i = nextInterval(st ? st.i : 0, 'good'); s = Math.min(3, STAGES.indexOf(stage) + 1); }
+    dk.cards[cardId] = {...(st || {}), i, d: addDays(date, i), g, st: s, t: date, m: (st && st.m || 0) + (g === 'again' ? 1 : 0), h: (st && st.h || 0) + (g === 'hard' ? 1 : 0)};
+  }
+  else if ((form === 'hidden' || form === 'shelf') && st){
+    st.t = date;
+    if (g === 'again'){ st.i = 1; st.d = addDays(date, 1); st.g = 'again'; st.st = 0; st.m = (st.m || 0) + 1; }
+    else if (g === 'hard') st.h = (st.h || 0) + 1;
+    else if (form === 'hidden'){ if (st.m) st.m--; else if (st.h) st.h--; if (st.g === 'again' || st.g === 'hard') st.g = 'good'; }
+  }
+  note(deckId, g, {cardId, kind: 'need', form, stage});
+  store.save();
 }
 
 /* listeners told about every answer (bond.js): {deckId, g, cardId, kind, dayDone, dayPerfect, roundDone, roundPerfect, roundGood} */
 export const hooks = [];
 /* the day's register: one line per deck per day, and the streak */
 function note(deckId, g, ev = {}){
-  const date = today(), log = store.get().log, day = log[date] || (log[date] = {}), e = day[deckId] || (day[deckId] = {n: 0, good: 0, hard: 0, again: 0, learn: 0});
+  const date = today(), log = store.get().log, day = log[date] || (log[date] = {}), at = ev.kind === 'need' ? 'need' : deckId, e = day[at] || (day[at] = {n: 0, good: 0, hard: 0, again: 0, learn: 0});
   e.n++; e[g] = (e[g] || 0) + 1;
   const s = store.get().streak;
   if (s.last !== date){ s.n = (s.last === addDays(date, -1)) ? s.n + 1 : 1; s.last = date; }
@@ -178,7 +202,7 @@ export function gradeRound(deckId, cardId, g, kind){
     r.results[cardId] = g; r.pos++;
     if (r.pos >= r.queue.length){ const rs = Object.values(r.results); roundDone = true; roundGood = rs.filter(x => x === 'good').length; roundPerfect = roundGood === rs.length; }
   }
-  note(deckId, g, {cardId, kind, roundDone, roundPerfect, roundGood});
+  note(deckId, g, {cardId, kind, stage: 'recall', roundDone, roundPerfect, roundGood});
   store.save();
 }
 export const learnedCount = (deckId, cards) => usable(cards).filter(c => store.deck(deckId).cards[c.id]).length;

@@ -328,6 +328,7 @@
     <button type="button" class="cgo me-second" id="meCab"><span>진열장 <em id="meCabN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meWand" hidden><span>지팡이 <em id="meWandN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meMap" hidden><span>지도 <em id="meMapN"></em></span><i aria-hidden="true">→</i></button>
+    <button type="button" class="cgo me-second" id="meShelf" hidden><span>선반 <em id="meShelfN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meNews" hidden><span>신문 <em id="meNewsN"></em></span><i aria-hidden="true">→</i></button>
     <button type="button" class="cgo me-second" id="meSpl" hidden><span>주문서 <em id="meSplN"></em></span><i aria-hidden="true">→</i></button>
   </div>
@@ -385,6 +386,17 @@
     </form>
     <button type="button" class="mp-peek" id="mpPeek" hidden>루핀의 편지에서 문장 보기</button>
   </div>
+</section>
+
+<!-- ============ THE ROOM OF REQUIREMENT (need.js): what the room has become today · the end of a round · the shelf ============ -->
+<section id="need" class="screen" hidden aria-label="필요의 방">
+  <div class="bg" aria-hidden="true"><div class="photo" id="ndPhoto"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="ndBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="ndTtl" lang="en">The Room of Requirement</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="nd-scroll"><div class="nd-wrap" id="ndBody"></div></div>
 </section>
 
 <!-- ============ THE DAILY PROPHET (prophet.js): the weekly paper, from my room or the owl ============ -->
