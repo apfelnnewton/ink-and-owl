@@ -29,28 +29,53 @@ export function initMyRoom(app){
   const gifts = id => bond.keepsakes(id);
   const total = () => DECKS.reduce((s, d) => s + gifts(d.id).length, 0);
 
+  /* ---------- the room itself (2026-10-09 user decision): the things in the picture open what they keep — a small
+     candle-light on each and its name floating beside it, no boxes; only the post and the Daily Prophet stay as lines
+     below. A thing appears when what it keeps has come (the wand with Ollivander's note, the map from Lupin, …).
+     Places are fractions of the photograph, one set for the tall picture and one for the wide (side: t above, b below,
+     l right of, r left of the light). */
+  const SPOTS = [
+    {id: 'journal', ko: '차 일지', go: '#/me/journal', p: [.392, .536, 't'], w: [.425, .535, 't']},
+    {id: 'spells', ko: '주문서', go: '#/me/spells', p: [.64, .536, 't'], w: [.556, .545, 't']},
+    {id: 'map', ko: '지도', go: '#/map', p: [.43, .566, 'b'], w: [.445, .598, 'b']},
+    {id: 'wand', ko: '지팡이', go: '#/me/wand', p: [.168, .468, 'b'], w: [.224, .405, 'l']},
+    {id: 'shelf', ko: '선반', go: '#/need/shelf', p: [.875, .36, 'r'], w: [.80, .33, 'r']},
+    {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']}
+  ];
+  const PHOTO = {p: [1080, 1910], w: [1920, 1086]};   // assets/rooms/me-portrait|wide.webp
+  function spotsOn(){
+    const w = wand.get(), due = spells.dueCount(), kinds = need.foundKinds();
+    return {
+      journal: '', cabinet: '',
+      spells: w ? (due ? `복습 ${due}` : '') : null,
+      map: map.have() ? '' : null,
+      wand: w ? '' : wand.noteArrived() ? '쪽지' : null,
+      shelf: need.isOpen() ? (kinds ? `${kinds}종` : '') : null
+    };
+  }
   function drawRoom(){
-    const n = bond.unread() + post.unread(), g = total();   // the post holds the friends' letters too
+    const n = bond.unread() + post.unread();   // the post holds the friends' letters too
     $('#meMailN').textContent = n ? `· 새 편지 ${n}통` : '';
-    $('#meCabN').textContent = `· ${g} / ${DECKS.length * 30}`;
-    $('#meJnlN').textContent = `· ${DECKS.reduce((s, d) => s + drunk(d.id).length, 0)}잔`;
-    /* the wand box appears with Ollivander's note, and holds the wand once it is made */
-    const w = wand.get();
-    $('#meWand').hidden = !w && !wand.noteArrived();
-    $('#meWandN').textContent = w ? `· ${wand.WOODS[w.wood].ko}` : '· 올리밴더의 쪽지';
-    /* the Marauder's Map comes from Lupin on the fifth day of study */
-    $('#meMap').hidden = !map.have();
-    $('#meMapN').textContent = "· Marauder's Map";
-    /* the shelf: things found in the Room of Requirement */
-    $('#meShelf').hidden = !need.isOpen();
-    $('#meShelfN').textContent = need.foundKinds() ? `· ${need.foundKinds()}종` : '';
     /* the Daily Prophet: every paper the owl has brought */
     $('#meNews').hidden = !prophet.have();
-    { const u = prophet.unread(), n = prophet.issues().length; $('#meNewsN').textContent = `· ${n}호까지${u ? ` · 새 신문` : ''}`; }
-    /* the spellbook comes with the wand */
-    $('#meSpl').hidden = !w;
-    const due = spells.dueCount();
-    $('#meSplN').textContent = `· ${spells.learntList().length} / 21${due ? ` · 복습 ${due}` : ''}`;
+    { const u = prophet.unread(), k = prophet.issues().length; $('#meNewsN').textContent = `· ${k}호까지${u ? ' · 새 호' : ''}`; }
+    const on = spotsOn();
+    $('#meSpots').innerHTML = SPOTS.filter(t => on[t.id] !== null).map(t =>
+      `<button type="button" class="me-spot" data-go="${t.go}" data-spot="${t.id}" aria-label="${esc(t.ko)}"><i aria-hidden="true"></i><b>${esc(t.ko)}${on[t.id] ? `<small>${esc(on[t.id])}</small>` : ''}</b></button>`).join('');
+    placeSpots();
+  }
+  /* the photograph is laid with background-size: cover (tall: centred, 35% down; wide: centred), so a place in the
+     picture is found by the same crop */
+  function placeSpots(){
+    const ph = $('#me .bg .photo'), r = ph.getBoundingClientRect(); if (!r.width) return;
+    const wide = matchMedia('(min-aspect-ratio: 1/1)').matches, [iw, ih] = PHOTO[wide ? 'w' : 'p'];
+    const k = Math.max(r.width / iw, r.height / ih), dw = iw * k, dh = ih * k;
+    const ox = (r.width - dw) * .5, oy = (r.height - dh) * (wide ? .5 : .35);
+    $('#meSpots').querySelectorAll('[data-spot]').forEach(b => {
+      const t = SPOTS.find(x => x.id === b.dataset.spot), [fx, fy, side] = wide ? t.w : t.p;
+      b.className = 'me-spot ' + side;
+      b.style.left = (ox + fx * dw) + 'px'; b.style.top = (oy + fy * dh) + 'px';
+    });
   }
 
   /* ---------- the wand box (#/me/wand): the wand in its box and Ollivander's card; earlier wands below */
@@ -148,7 +173,7 @@ export function initMyRoom(app){
   function mode(m){
     cabinet = m !== 'room';
     view = m;
-    $('#meCard').hidden = cabinet;
+    $('#meCard').hidden = cabinet; $('#meSpots').hidden = cabinet;
     $('#cab').hidden = m !== 'cabinet';
     $('#jnl').hidden = m !== 'journal';
     $('#wnd').hidden = m !== 'wand';
@@ -159,15 +184,10 @@ export function initMyRoom(app){
 
   /* ---------- events */
   $('#meMail').addEventListener('click', () => app.go('#/letters'));
-  $('#meCab').addEventListener('click', () => app.go('#/me/cabinet'));
   $('#cabWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id) app.go('#/me/cabinet/' + b.dataset.who, true); });
   $('#cabGrid').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) openGift(b.dataset.k); });
-  $('#meJnl').addEventListener('click', () => app.go('#/me/journal'));
-  $('#meWand').addEventListener('click', () => app.go('#/me/wand'));
-  $('#meSpl').addEventListener('click', () => app.go('#/me/spells'));
-  $('#meMap').addEventListener('click', () => app.go('#/map'));
   $('#meNews').addEventListener('click', () => app.go('#/prophet'));
-  $('#meShelf').addEventListener('click', () => app.go('#/need/shelf'));
+  $('#meSpots').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) app.go(b.dataset.go); });
   $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });
   $('#wndBody').addEventListener('click', e => {
     const x = e.target.closest('[data-gl]'); if (x){ gloss(x.dataset.gl); return; }
@@ -213,5 +233,5 @@ export function initMyRoom(app){
       drawRoom();
     }
   }
-  return {show, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else if (view === 'wand') drawWand(); else if (view === 'spells') drawSpells(); else drawRoom(); }};
+  return {show, resize: () => { if (view === 'room') placeSpots(); }, refresh: () => { if (sec.hidden) return; if (view === 'cabinet') drawCabinet(); else if (view === 'journal') drawJournal(); else if (view === 'wand') drawWand(); else if (view === 'spells') drawSpells(); else drawRoom(); }};
 }

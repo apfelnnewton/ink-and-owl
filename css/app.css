@@ -973,7 +973,21 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .me-card{position:absolute;z-index:5;left:calc(30px + var(--sl));right:calc(30px + var(--sr));bottom:calc(var(--sb) + 40px)}
 @media (min-width:700px){ .me-card{left:50%;right:auto;width:min(460px, 80vw);transform:translateX(-50%)} }
 .me-card .cgo em{font-style:normal;font-size:13px;letter-spacing:.02em;color:#C9BFA6;margin-left:4px}
-.me-card .me-second{margin-top:0;border-top:0}/* the corridor tick for your own door: a small diamond, gold when an owl has left something */
+.me-card .me-second{margin-top:0;border-top:0}
+/* the things in my room (2026-10-09): a candle-light on each and its name floating beside it — no box, no frame */
+.me-spots{position:absolute;inset:0;z-index:4;pointer-events:none}
+.me-spot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;padding:0;background:none;border:0;cursor:pointer;pointer-events:auto;color:#F7ECD4}
+.me-spot i{position:absolute;left:17px;top:17px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle,#FFEBC0 0,#F2C46B 38%,rgba(242,196,107,0) 72%);box-shadow:0 0 12px 4px rgba(255,214,140,.42);animation:meGlow 3.4s ease-in-out infinite}
+.me-spot b{position:absolute;white-space:nowrap;font:400 calc(15px * var(--k))/1 var(--f-ko);letter-spacing:.08em;padding:6px 2px;
+  text-shadow:0 0 2px #000,0 0 4px rgba(0,0,0,.95),0 0 10px rgba(0,0,0,.9),0 0 22px rgba(0,0,0,.6),0 0 18px rgba(255,196,110,.3);transition:color .25s}
+.me-spot b small{font-size:.76em;color:#EBC97C;margin-left:6px;letter-spacing:.02em}
+.me-spot.t b{left:22px;bottom:30px;transform:translateX(-50%)}
+.me-spot.b b{left:22px;top:30px;transform:translateX(-50%)}
+.me-spot.l b{left:32px;top:22px;transform:translateY(-50%)}
+.me-spot.r b{right:32px;top:22px;transform:translateY(-50%)}
+.me-spot:hover b,.me-spot:focus-visible b{color:#FFE4A8}
+@keyframes meGlow{0%,100%{opacity:.7;transform:scale(.9)}50%{opacity:1;transform:scale(1.12)}}
+@media (prefers-reduced-motion: reduce){ .me-spot i{animation:none} }/* the corridor tick for your own door: a small diamond, gold when an owl has left something */
 .cticks i.me{width:6px;height:6px;margin-top:-2.5px;transform:rotate(45deg);background:rgba(237,227,200,.3)}
 .cticks i.me.on{width:6px;background:#EDE3C8}
 .cticks i.me.new{background:#E8C877;box-shadow:0 0 6px rgba(232,200,119,.9)}
