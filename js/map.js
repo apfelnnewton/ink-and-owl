@@ -23,10 +23,10 @@ const STUDY_DAYS = 5;
 
 /* the letters (Lupin's voice: warm 반말 with -렴/-단다) */
 export const LETTERS = {
-  met: {en: "{name}, five days of study. I confess I have been counting. I have something for you: I once had to take it from a student, and I gave it back in the end. It looks like a blank piece of parchment. Tap it with your wand and tell it, honestly, what you are up to. The words, if I remember them rightly, are: I solemnly swear that I am up to no good.\nDo keep it out of Severus's way.",
-    ko: '{name}, 공부한 지 닷새째구나. 사실 나도 세고 있었단다. 너에게 줄 게 하나 있어. 예전에 한 학생에게서 빼앗았다가 결국 돌려준 물건이야. 보기엔 그냥 빈 양피지지. 지팡이로 톡 건드리고, 네가 무슨 꿍꿍이인지 솔직하게 말해 보렴. 내 기억이 맞다면 그 말은 이렇단다. I solemnly swear that I am up to no good.\n세베루스 눈에는 띄지 않게 하렴.'},
-  new: {en: "Dear {name},\nWe have not met yet, though I hope we shall. Word travels in this castle, and word has it you have studied for five days. I enclose something I helped to make a long time ago, with three friends, when we were younger and a good deal less sensible. It looks like an old piece of parchment. It is not. Say to it: I solemnly swear that I am up to no good.\nUse it kindly.\nRemus Lupin",
-    ko: '{name}에게.\n우리는 아직 만난 적이 없지만, 언젠가 만나길 바란단다. 이 성에서는 소문이 빨라서, 네가 닷새째 공부하고 있다는 얘기가 내 귀에도 들어왔어. 아주 오래전 친구 셋과 함께 만든 물건을 하나 보낸다. 그때 우리는 어렸고, 지금보다 훨씬 철이 없었지. 보기엔 낡은 양피지 같지만 그렇지 않단다. 이렇게 말해 보렴. I solemnly swear that I am up to no good.\n다정하게 써 주렴.\n리머스 루핀'}
+  met: {en: "{name}, five days of study. I confess I have been counting. I have something for you: I once had to take it from a student, and I gave it back in the end. It looks like a blank piece of parchment. Tap it with your wand and tell it, honestly, what you are up to. The words, if I remember them rightly, are: I solemnly swear that I am up to no good. And when you have finished, do not simply fold it away. Tap it again and say: Mischief managed. Otherwise anyone at all might read it.\nDo keep it out of Severus's way.",
+    ko: '{name}, 공부한 지 닷새째구나. 사실 나도 세고 있었단다. 너에게 줄 게 하나 있어. 예전에 한 학생에게서 빼앗았다가 결국 돌려준 물건이야. 보기엔 그냥 빈 양피지지. 지팡이로 톡 건드리고, 네가 무슨 꿍꿍이인지 솔직하게 말해 보렴. 내 기억이 맞다면 그 말은 이렇단다. I solemnly swear that I am up to no good. 그리고 다 보고 나면 그냥 접어 두지 말고, 다시 톡 건드리고 이렇게 말하렴. Mischief managed. 안 그러면 아무나 읽을 수 있단다.\n세베루스 눈에는 띄지 않게 하렴.'},
+  new: {en: "Dear {name},\nWe have not met yet, though I hope we shall. Word travels in this castle, and word has it you have studied for five days. I enclose something I helped to make a long time ago, with three friends, when we were younger and a good deal less sensible. It looks like an old piece of parchment. It is not. Say to it: I solemnly swear that I am up to no good. When you are done, tell it: Mischief managed. It will go blank again and keep its secrets.\nUse it kindly.\nRemus Lupin",
+    ko: '{name}에게.\n우리는 아직 만난 적이 없지만, 언젠가 만나길 바란단다. 이 성에서는 소문이 빨라서, 네가 닷새째 공부하고 있다는 얘기가 내 귀에도 들어왔어. 아주 오래전 친구 셋과 함께 만든 물건을 하나 보낸다. 그때 우리는 어렸고, 지금보다 훨씬 철이 없었지. 보기엔 낡은 양피지 같지만 그렇지 않단다. 이렇게 말해 보렴. I solemnly swear that I am up to no good. 다 보고 나면 이렇게 말해 주렴. Mischief managed. 그러면 다시 빈 양피지로 돌아가 비밀을 지켜 준단다.\n다정하게 써 주렴.\n리머스 루핀'}
 };
 /* the makers, when the sentence is wrong — in turn, one line each time */
 const TEASE = [
@@ -112,6 +112,7 @@ export function initMap(app){
   function sealed(){
     opened = false; cancelAnimationFrame(raf);
     sec.classList.remove('open', 'closing');
+    img.onload = null;   // a fold still loading must not draw its names onto the blank parchment
     img.src = 'assets/map/blank.webp'; fog.hidden = true; steps.hidden = true; tags.innerHTML = '';
     $('#mpFolds').hidden = true;
     $('#mpWords').innerHTML = '';
@@ -164,11 +165,11 @@ export function initMap(app){
   function showFold(f){
     fold = f; opened = true;
     sec.classList.add('open'); sec.classList.remove('closing');
-    img.src = f.img;
+    img.onload = null; img.src = f.img;
     $('#mpFolds').hidden = false;
     $('#mpFolds').innerHTML = FOLDS.filter(x => !x.need || x.need()).map(x => `<button type="button" data-fold="${x.id}" class="${x.id === f.id ? 'on' : ''}"><span lang="en">${x.en}</span><small>${x.ko}</small></button>`).join('');
     ask('close');
-    const ready = () => { drawFog(); placeTags(); startSteps(); };
+    const ready = () => { img.onload = null; if (opened && fold === f){ drawFog(); placeTags(); startSteps(); } };
     if (img.complete && img.naturalWidth) ready(); else img.onload = ready;
   }
   function box(){ const r = sheet.getBoundingClientRect(); return {w: r.width, h: r.height}; }
