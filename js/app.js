@@ -137,5 +137,14 @@ setTimeout(() => post.start(), 1500);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) app.owlCheck(); });
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:'){
-  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  let reg = null;
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').then(r => { reg = r; }).catch(() => {}));
+  /* a new version (2026-10-09): look for one whenever the app comes back to the front (a phone resumes it rather than
+     starting it), and once it has taken over, reload onto it at a calm moment — the corridor or your room, nothing
+     open, no owl in flight — never mid-lesson. The very first install does not reload. */
+  const had = !!navigator.serviceWorker.controller; let fresh = false;
+  const swap = () => { if (fresh && ['home', 'me'].includes(current) && !isSheetOpen() && !owlBusy() && !app.entering && store.get().settings.named) location.reload(); };
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (had){ fresh = true; swap(); } });
+  window.addEventListener('hashchange', () => setTimeout(swap, 300));
+  document.addEventListener('visibilitychange', () => { if (document.hidden) return; if (reg) reg.update().catch(() => {}); swap(); });
 }
