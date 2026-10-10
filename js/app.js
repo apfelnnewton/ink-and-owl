@@ -25,6 +25,7 @@ import * as prophet from './prophet.js';
 import {initProphet} from './prophet.js';
 import * as need from './need.js';
 import {initNeed} from './need.js';
+import {install as smartQuotes} from './quotes.js';
 import * as howler from './howler.js';
 import {askName} from './welcome.js';
 import * as door from './door.js';
@@ -33,6 +34,9 @@ import * as grammar from './grammar.js';
 import {$$, wait, closeSheet, isSheetOpen} from './ui.js';
 
 store.load();
+
+/* plain ' and " in everything shown become proper curled marks (quotes.js) — the display face draws the plain ones as closing marks */
+smartQuotes();
 
 const app = {
   index: null,
