@@ -4,7 +4,9 @@
    chooses, the guest does not:
      catch  — reviews piled up in every classroom (over 20): the oldest first, as normal reviews
      hidden — five or more hidden things: every review line missed anywhere lies here as an object until it is
-              answered right again (here or in its classroom); found things go to the shelf in your room
+              answered right again IN THIS ROOM (2026-10-10 user decision — before, a right answer in its own
+              classroom found it too, so things reached the shelf without the room ever being visited);
+              found things go to the shelf in your room
      expr   — an expression missed twice or more: its example sentences
      reply / shelf — otherwise, by turns: the line before (someone else's words) and which reply the professor gave;
               or lines mastered long ago, to see if they are still there
@@ -135,12 +137,14 @@ export function daily(app){
   return true;
 }
 
-/* every answer anywhere: a review line missed is hidden here; answered right again, it is found */
+/* every answer anywhere: a review line missed is hidden here. It is found only by answering it right in this room
+   (any form that asks the line itself or its expression: hidden, catch, shelf) — a right answer in the classroom
+   moves its review on as usual and leaves the thing where it lies. */
 srs.hooks.push(ev => {
   if (!isOpen() || (ev.kind === 'need' && (ev.form === 'expr' || ev.form === 'reply'))) return;
   const s = st(), k = `${ev.deckId}/${ev.cardId}`;
   if (ev.g === 'again'){ if (!s.hidden[k]){ s.hidden[k] = {d: srs.today(), o: objOf(k)}; store.save(); } return; }
-  if (ev.g === 'good' && s.hidden[k]){
+  if (ev.g === 'good' && ev.kind === 'need' && s.hidden[k]){
     const o = s.hidden[k].o; delete s.hidden[k];
     s.found[o] = (s.found[o] || 0) + 1; store.save();
     const r = s.round; if (r && r.date === srs.today()) (r.found = r.found || []).push(o);
