@@ -7,6 +7,10 @@ import * as door from './door.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
 import * as map from './map.js';
+import * as store from './store.js';
+import * as srs from './srs.js';
+import * as phrase from './phrase.js';
+import {DECKS, byId} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet} from './ui.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -45,20 +49,62 @@ export function pickFriend(){
     `<ul class="fr-to">${post.members().map(m => `<li><button type="button" data-write="${esc(m.uid)}">${sealTag(m.seal)}<b lang="en">${esc(m.name)}</b><i aria-hidden="true">→</i></button></li>`).join('')}</ul>`);
 }
 
+/* ---------- the professors' expressions in a friend's letter (2026-10-09 user decision; phrase.js decides by the
+   words alone, on this phone). Writing: two or three learnt expressions are offered above the page, each lighting
+   as it appears in the letter — no marks, no score. Reading: the expressions a letter uses are underlined, and a tap
+   gives the meaning and the line it comes from. */
+const hash = s => { let h = 7; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
+const allExprs = app => phrase.index(app, DECKS.filter(d => d.file));
+function toTry(app, uid){
+  const st = store.get(), stars = st.stars || {}, wrote = st.wrote || {};
+  const rec = x => (store.deck(x.deck).cards || {})[x.card.id];
+  const mine = allExprs(app).filter(x => x.n <= 5 && rec(x) && x.b.note);
+  const score = x => (stars[x.key] ? 4 : 0) + (wrote[x.key] ? 0 : 2) + (x.n >= 2 ? 1 : 0);
+  mine.sort((a, b) => score(b) - score(a) || ((rec(b).t || '') < (rec(a).t || '') ? -1 : (rec(b).t || '') > (rec(a).t || '') ? 1 : 0));
+  /* from the dozen most fitting, three that change with the day and the friend */
+  const pool = mine.slice(0, 12), seed = hash(srs.today() + uid), out = [];
+  for (let i = 0; pool.length && out.length < 3; i++) out.push(pool.splice((seed >> (i * 3)) % pool.length, 1)[0]);
+  return out;
+}
+const shown = e => e.replace(/\s*\([^)]*[가-힣][^)]*\)/g, '').replace(/\s*\+\s*[가-힣].*$/, ' …').replace(/\s*~/g, ' …').trim();   // without the Korean label some carry
+let spotted = [];
+/* a letter's text with the expressions it uses underlined */
+function marked(app, text){
+  spotted = phrase.spot(text, allExprs(app)).filter(h => !text.slice(h.s, h.e).includes('\n'));
+  let html = '', at = 0;
+  spotted.forEach((h, i) => { html += esc(text.slice(at, h.s)) + `<u class="ow-x" data-x="${i}" tabindex="0" role="button">${esc(text.slice(h.s, h.e))}</u>`; at = h.e; });
+  html += esc(text.slice(at));
+  return html.split(/\n+/).map(p => `<p>${p}</p>`).join('');
+}
+function gloss(i){
+  const h = spotted[i], box = $('#owGloss'); if (!h || !box) return;
+  const d = byId(h.x.deck), same = box.dataset.x === String(i) && !box.hidden;
+  if (same){ box.hidden = true; return; }
+  box.dataset.x = i; box.hidden = false;
+  box.innerHTML = `<b lang="en">${esc(shown(h.x.b.expr))}</b><span>${esc(h.x.b.note)}</span><small>${esc(d.ko)}의 대사에서 · <i lang="en">${esc(h.x.card.line)}</i></small>`;
+  box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+}
+
 export function readLetter(id, app){
   const x = post.letterOf(id); if (!x) return;
   const inbound = x.to === post.myUid(), other = post.memberOf(inbound ? x.from : x.to);
+  const body = marked(app, x.text);
   openSheet(`<div class="sh-kind"><span>${inbound ? `<span lang="en">${esc(other.name)}</span>의 편지` : `<span lang="en">${esc(other.name)}</span>에게 보낸 편지`} · ${fmt(x.t)}</span></div>` +
-    `<div class="lt-letter ow-letter" lang="en" id="shTitle">${paras(x.text)}</div>` +
+    `<div class="lt-letter ow-letter" lang="en" id="shTitle">${body}</div>` +
+    (spotted.length ? `<p class="ow-xnote">밑줄 친 곳은 교수들에게 배우는 표현입니다. 누르면 뜻이 나옵니다.</p><div class="ow-gloss" id="owGloss" hidden></div>` : '') +
     (inbound && post.inGroup() ? `<button type="button" class="sh-drill" data-write="${esc(other.uid)}">답장 쓰기</button>` : ''));
   if (inbound) post.markRead(id);
   app.refreshMail && app.refreshMail();
 }
 
 export function compose(uid, app){
-  const m = post.memberOf(uid);
+  const m = post.memberOf(uid), tries = toTry(app, uid);
+  const tryBox = tries.length ? `<div class="ow-try" id="owTry"><p class="ow-try-h">써 볼 만한 표현 <small>편지에 쓰면 표시됩니다</small></p>` +
+    `<ul>${tries.map((x, i) => `<li><button type="button" data-try="${i}" aria-expanded="false" lang="en">${esc(shown(x.b.expr))}</button></li>`).join('')}</ul>` +
+    `<div class="ow-try-ex" id="owTryEx" hidden></div></div>` : '';
   openSheet(`<div class="sh-kind"><span><span lang="en">${esc(m.name)}</span>에게 · 부엉이 편지</span></div>` +
     `<h2 class="sh-expr" id="shTitle" lang="en">Dear ${esc(m.name)},</h2>` +
+    tryBox +
     `<form class="ow-pen" id="owPen" autocomplete="off"><textarea id="owText" lang="en" maxlength="${post.LIMIT}" rows="8" spellcheck="true" aria-label="편지 내용 (영어)" placeholder="Write in English…"></textarea>` +
     `<p class="ow-meta"><span id="owWarn"></span><span id="owCount">0 / ${post.LIMIT}</span></p>` +
     `<button type="submit" class="sh-drill" id="owSend" disabled>부엉이에게 맡기기</button></form>`);
@@ -68,15 +114,29 @@ export function compose(uid, app){
     $('#owCount').textContent = `${v.length} / ${post.LIMIT}`;
     $('#owWarn').textContent = bad ? '부엉이는 영어 편지만 나릅니다. 한글을 지워 주세요.' : '';
     go.disabled = !v.trim() || bad;
+    if (tries.length){ const ws = phrase.words(v); tries.forEach((x, i) => { const b = $(`#owTry [data-try="${i}"]`); if (b) b.classList.toggle('on', !!phrase.find(ws, x.pat)); }); }
   };
+  const tb = $('#owTry');
+  if (tb) tb.addEventListener('click', e => {
+    const b = e.target.closest('[data-try]'); if (!b) return;
+    const x = tries[+b.dataset.try], box = $('#owTryEx'), open = b.getAttribute('aria-expanded') === 'true';
+    tb.querySelectorAll('[data-try]').forEach(o => o.setAttribute('aria-expanded', 'false'));
+    if (open){ box.hidden = true; return; }
+    b.setAttribute('aria-expanded', 'true'); box.hidden = false;
+    const ex = (x.b.examples || [])[0];
+    box.innerHTML = `<span>${esc(x.b.note)}</span>` + (ex ? `<i lang="en">${esc(ex.en)}</i><small>${esc(ex.ko)}</small>` : '');
+  });
   ta.addEventListener('input', check);
   $('#owPen').addEventListener('submit', async e => {
     e.preventDefault(); if (go.disabled) return;
     go.disabled = true;
     const err = await post.send(uid, ta.value);
     if (err){ toast(err); go.disabled = false; return; }
+    /* the expressions this letter used: kept as a tally (state.wrote), shown in the Expressions notebook */
+    const ws = phrase.words(ta.value), hit = tries.filter(x => phrase.find(ws, x.pat));
+    if (hit.length){ const w = store.get().wrote || (store.get().wrote = {}); hit.forEach(x => { w[x.key] = (w[x.key] || 0) + 1; }); store.save(); }
     closeSheet();
-    toast(`<span class="q" lang="en">The owl is off.</span><span class="k">${esc(m.name)}에게 편지가 날아갑니다.</span>`, 2600, true);
+    toast(`<span class="q" lang="en">The owl is off.</span><span class="k">${esc(m.name)}에게 편지가 날아갑니다.${hit.length ? ` 배운 표현 ${hit.length}개를 써 보냈습니다.` : ''}</span>`, hit.length ? 3400 : 2600, true);
     app.refreshMail && app.refreshMail();
     if (post.isPractice()) setTimeout(() => app.owlCheck(), 26000);
   });
@@ -126,6 +186,7 @@ export function wireFriends(app){
       });
       return;
     }
+    const u = e.target.closest('[data-x]'); if (u){ gloss(+u.dataset.x); return; }
     const w = e.target.closest('[data-write]'); if (w){ compose(w.dataset.write, app); return; }
     const l = e.target.closest('[data-leave]');
     if (l) await busy(l, async () => { await post.leave(); closeSheet(); after(); toast('그룹에서 나왔습니다. 주고받은 편지도 지웠습니다.'); });

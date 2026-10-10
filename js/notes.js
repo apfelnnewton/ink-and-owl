@@ -59,7 +59,7 @@ export function initNotes(app){
     }).join('');
   }
 
-  /* ---------- one expression: note, source line, ten examples, practice */
+  /* ---------- one expression: note, source line, ten examples (its own one-expression drill removed 2026-10-09: the answer was always the same expression) */
   function openEntry(key){
     const e = entries.find(x => x.key === key); if (!e || !e.open) return;
     const ex = e.items.map(it => {
@@ -67,14 +67,14 @@ export function initNotes(app){
       const en = at < 0 ? esc(it.en) : esc(it.en.slice(0, at)) + `<b>${esc(it.blank)}</b>` + esc(it.en.slice(at + it.blank.length));
       return `<li><span class="en" lang="en">${en}</span><span class="kr">${esc(it.ko)}</span></li>`;
     }).join('');
-    openSheet(`<div class="sh-kind"><span>${esc(e.b.kind)}</span>${e.b.shared ? '<span class="sh-common">영미 공통</span>' : ''}</div>` +
+    const wrote = (store.get().wrote || {})[e.key];   // times used in a letter to a friend (friends.js)
+    openSheet(`<div class="sh-kind"><span>${esc(e.b.kind)}</span>${e.b.shared ? '<span class="sh-common">영미 공통</span>' : ''}${wrote ? `<span>편지에 ${wrote}번 씀</span>` : ''}</div>` +
       `<h2 class="sh-expr" id="shTitle" lang="en">${esc(e.b.expr)}</h2><p class="sh-note">${esc(e.b.note)}</p>` +
       `<div class="sh-src"><span class="lab">이 대사에서</span><span class="en" lang="en">${esc(e.card.line)}</span><span class="kr">${esc(e.card.ko)}</span></div>` +
-      (e.items.length ? `<button type="button" class="sh-drill" data-drill="${e.key}">이 표현으로 연습 (${Math.min(10, e.items.length)}문제)</button>` : '') +
       `<ul class="sh-ex">${ex}</ul>`);
   }
 
-  /* ---------- practice inside the slip: choose the expression for the gap */
+  /* ---------- practice (the starred expressions mixed): choose the expression for the gap */
   let run = null;
   function startDrill(pool){
     if (!pool.length){ toast('연습할 예문이 없습니다.'); return; }
@@ -117,7 +117,6 @@ export function initNotes(app){
   });
   $('#sheetBody').addEventListener('click', e => {
     if (sec.hidden) return;
-    const d = e.target.closest('[data-drill]'); if (d){ lastKeys = [d.dataset.drill]; startDrill(pool(lastKeys)); return; }
     const p = e.target.closest('[data-pick]'); if (p){ pick(p.dataset.pick); return; }
     if (e.target.closest('.dr-next')){ nextQ(); return; }
     if (e.target.closest('[data-again]')) startDrill(pool(lastKeys));

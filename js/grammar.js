@@ -68,8 +68,7 @@ export async function catalogue(deckId){
     return {n, k, h}; };
   const list = (points || []).map(p => ({p, ...tally(p.id)})).filter(x => x.n).sort((a, b) => b.k - a.k || b.h - a.h || b.n - a.n);
   openSheet(`<div class="sh-kind"><span>문법 노트</span></div><h2 class="sh-expr" id="shTitle">대사 속 문법</h2>` +
-    (list.length ? `<p class="w-lead">숫자는 배운 대사 / 그 문법이 나오는 대사입니다. 많이 만난 문법부터.</p>` +
-      `<ul class="gr-cat">${list.map(x => `<li><button type="button" data-gpt="${esc(x.p.id)}" class="${x.k ? '' : 'cold'}"><b>${esc(x.p.name)}</b><span lang="en">${esc(x.p.pattern)}</span><i>${x.k} / ${x.n}</i></button></li>`).join('')}</ul>`
+    (list.length ? `<ul class="gr-cat">${list.map(x => `<li><button type="button" data-gpt="${esc(x.p.id)}" class="${x.k ? '' : 'cold'}"><b>${esc(x.p.name)}</b><span lang="en">${esc(x.p.pattern)}</span><i>${x.k} / ${x.n}</i></button></li>`).join('')}</ul>`
       : '<p class="w-lead">아직 정리된 문법이 없습니다.</p>'));
 }
 

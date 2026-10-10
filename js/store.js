@@ -3,7 +3,7 @@
     decks:{<id>:{cards:{<cardId>:{i, d, g, st, t, m, h}}, day:{date, queue, kinds, pos, results, extra, wrong}}}}
    i = interval in days, d = next review date (YYYY-MM-DD), g = last grade (again | hard | good | learn), st = ladder rung,
    t = last date it was answered, m / h = how many times it was missed / nearly right. log feeds the register (records.js).
-   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js), howl (howler.js), spells (spells.js), map (map.js), prophet (prophet.js), need (need.js). A key not copied in normalise() is lost on reload. */
+   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js), howl (howler.js), spells (spells.js), map (map.js), prophet (prophet.js), need (need.js), wrote (friends.js). A key not copied in normalise() is lost on reload. */
 const KEY = 'hogwarts-english:v1';
 
 export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, prior: true, howler: true, voice: '', surname: '', firstName: '', title: '', named: false, birthday: '', level: 'mid', quiet: false, door: false, doorWord: ''};
@@ -29,6 +29,7 @@ function normalise(s){
   if (s.map && typeof s.map === 'object') out.map = s.map;
   if (s.prophet && typeof s.prophet === 'object') out.prophet = s.prophet;
   if (s.need && typeof s.need === 'object') out.need = s.need;
+  if (s.wrote && typeof s.wrote === 'object') out.wrote = s.wrote;   // expressions used in letters to friends (friends.js): {<cardId#n>: times}
   if (s.decks && typeof s.decks === 'object'){
     for (const [id, d] of Object.entries(s.decks)){
       if (!d || typeof d !== 'object') continue;
@@ -103,6 +104,7 @@ export function mergeData(text){
     }
   }
   Object.assign(state.stars, obj.stars);
+  for (const [k, v] of Object.entries(obj.wrote || {})){ const w = state.wrote || (state.wrote = {}); w[k] = Math.max(w[k] || 0, +v || 0); }
   /* the professors: keep the closer relationship, and every piece of post either device received */
   for (const [id, ob] of Object.entries(obj.bond || {})){
     const mine = (state.bond || (state.bond = {}))[id];

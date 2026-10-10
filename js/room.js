@@ -247,7 +247,7 @@ export function initRoom(app){
     }
     if (!extra && stage !== 'learn'){ const ex = exampleFor(card); if (ex){ mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; } }
     /* the Room of Requirement: an expression in a fresh sentence, or the professor's reply to the line before */
-    if (nq && S.form === 'expr' && S.ex[nq]){ const ex = S.ex[nq]; mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; }
+    if (nq && (S.form === 'expr' || S.form === 'shelf') && S.ex && S.ex[nq]){ const ex = S.ex[nq]; mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; }
     if (nq && S.form === 'reply'){ mode = 'pick'; kind = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.cue, reply: true}; }
     if (extra === 'need'){ room.dataset.reply = S.form === 'reply' ? '1' : ''; }
     else room.dataset.reply = '';

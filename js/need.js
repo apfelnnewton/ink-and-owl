@@ -192,7 +192,18 @@ export function startRound(app, sv, form, only){
   else if (form === 'catch') queue = sv.due.sort((a, b) => a.x.d < b.x.d ? -1 : a.x.d > b.x.d ? 1 : 0).slice(0, 10).map(e => `${e.d.id}/${e.c.id}`);
   else if (form === 'shelf'){
     const pool = sv.mastered.length >= 5 ? sv.mastered : sv.mastered.concat(shuffled(sv.due, t)).concat([]);
-    queue = shuffled(pool.length ? pool : sv.cues, t + '#' + n).slice(0, 10).map(e => `${e.d.id}/${e.c.id}`);
+    const picked = shuffled(pool.length ? pool : sv.cues, t + '#' + n).slice(0, 10);
+    queue = picked.map(e => `${e.d.id}/${e.c.id}`);
+    /* keeping a mastered line alive (2026-10-09 user decision): where the line has an expression with example
+       sentences, the question is that expression in a sentence not seen in its note (items 3–10; 1–2 are the note's
+       own) instead of the line itself — can it still be used, not just recited. A miss sends the line back to be
+       learnt, as before. */
+    picked.forEach(({d, c}) => {
+      const exs = app.examples[d.id] || {}, ks = c.bre.map((b, k) => k).filter(k => { const e = exs[`${c.id}#${k}`]; return e && e.items && e.items.length; });
+      if (!ks.length) return;
+      const k = ks[hash(t + c.id + 'k') % ks.length], e = exs[`${c.id}#${k}`], fresh = e.items.length > 2 ? e.items.slice(2) : e.items;
+      ex[`${d.id}/${c.id}`] = {...fresh[hash(t + c.id + n) % fresh.length], expr: e.expr};
+    });
   }
   else if (form === 'reply') queue = shuffled(sv.cues, t + '#r' + n).slice(0, 10).map(e => `${e.d.id}/${e.c.id}`);
   else if (form === 'expr'){
@@ -226,7 +237,7 @@ export function initNeed(app){
     if (f === 'hidden'){ const by = {}; Object.keys(st().hidden).forEach(k => { const d = k.split('/')[0]; by[d] = (by[d] || 0) + 1; });
       return `숨겨진 물건 ${hiddenCount()}개 · ` + Object.entries(by).sort((a, b) => b[1] - a[1]).map(([d, n]) => `${byId(d) ? byId(d).ko.replace(/ 교수$/, '') : d} ${n}`).join(' · '); }
     if (f === 'expr'){ const w = sv.weak[0], b = w.c.bre[0]; return `자꾸 틀리는 표현 <em lang="en">${esc(b.expr)}</em> · ${esc(w.d.ko)} 교실에서 ${w.x.m}번`; }
-    if (f === 'shelf') return '숨겨진 것도 밀린 것도 없습니다. 오래전에 익힌 대사가 아직 남아 있는지 봅니다.';
+    if (f === 'shelf') return '숨겨진 것도 밀린 것도 없습니다. 오래전에 익힌 대사의 표현을 처음 보는 문장에서도 쓸 수 있는지 봅니다.';
     return '상대의 말을 보고, 교수가 뭐라고 받았는지 고르세요.';
   }
   /* the pile: the hidden things scattered over the floor of the hall */

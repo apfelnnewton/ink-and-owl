@@ -1197,6 +1197,25 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ow-meta #owWarn{color:#8E1B1B}
 .ow-pen .sh-drill:disabled{opacity:.35;cursor:default}
 .ow-letter p{margin:0 0 .55em}
+/* the professors' expressions in a friend's letter (2026-10-09): offered above the page while writing, underlined when read — no boxes */
+.ow-try{margin:2px 0 10px}
+.ow-try-h{margin:0;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+.ow-try-h small{margin-left:6px;font-size:11px;opacity:.8}
+.ow-try ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 18px}
+.ow-try button{min-height:44px;padding:0;background:none;border:0;cursor:pointer;text-align:left;font:italic 400 calc(17px * var(--k))/1.25 var(--f-display);color:var(--ink);
+  text-decoration:underline dotted rgba(42,33,24,.5);text-underline-offset:5px;transition:color .4s, text-shadow .6s}
+.ow-try button[aria-expanded=true]{text-decoration-style:solid}
+.ow-try button.on{color:#2F6B45;text-decoration:none;text-shadow:0 0 10px rgba(201,162,39,.55)}
+.ow-try button.on::after{content:' ✓';font-style:normal;font-size:.8em}
+.ow-try-ex{display:flex;flex-direction:column;gap:3px;margin:0 0 4px;padding:8px 10px;background:rgba(42,33,24,.05);border-radius:2px;font-size:13px;line-height:1.5;color:var(--ink)}
+.ow-try-ex i{font:italic 400 calc(16px * var(--k))/1.35 var(--f-display);margin-top:3px}
+.ow-try-ex small{font-size:12px;color:var(--ink-soft)}
+.ow-x{text-decoration:underline;text-decoration-color:rgba(142,27,27,.55);text-decoration-thickness:1.5px;text-underline-offset:4px;cursor:pointer}
+.ow-xnote{margin:8px 0 0;font-size:12px;color:var(--ink-soft)}
+.ow-gloss{display:flex;flex-direction:column;gap:4px;margin:8px 0 0;padding:10px 12px;background:rgba(42,33,24,.05);border-radius:2px;font-size:13.5px;line-height:1.55;color:var(--ink)}
+.ow-gloss b{font:italic 400 calc(19px * var(--k))/1.25 var(--f-display);color:#7A1A12}
+.ow-gloss small{font-size:12px;color:var(--ink-soft)}
+.ow-gloss small i{font:italic 400 14px/1.35 var(--f-display)}
 .owl-card.letter .ow-letter{margin:4px 0 0;max-height:42vh;overflow-y:auto;text-align:left;font:italic 400 calc(17px * var(--k, 1))/1.45 'Cormorant Garamond','Gowun Batang',serif;color:#2A2118}
 /* the friends' tab in the post (js/friends.js): join or write, above the letters */
 .fr-lead{margin:0 0 4px;font-size:13.5px;line-height:1.65;color:#C9BFA6}

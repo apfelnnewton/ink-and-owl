@@ -7,3 +7,5 @@ firestore.rules
 *.bak
 Thumbs.db
 desktop.ini
+원서/
+*.pdf
