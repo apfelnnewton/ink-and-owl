@@ -11,7 +11,7 @@ import * as post from './post.js';
 import * as wand from './wand.js';
 import * as howler from './howler.js';
 import * as prophet from './prophet.js';
-import {compose, paras, withThing} from './friends.js';
+import {compose, paras, withThing, dress} from './friends.js';
 import {esc, reduced, toast} from './ui.js';
 
 /* the clip (5 s, played 1.3× = 3.9 s): the owl hovers left of centre, lets go at ~1.8 s, and the envelope leaves the bottom
@@ -192,7 +192,7 @@ export function deliver(app, inv){
     card.setAttribute('aria-label', label);
     card.innerHTML = letter
       ? `<div class="owl-card-in"><i class="seal ${sealCls}"></i><p class="kind">부엉이 편지 · <span lang="en">${esc(from.name)}</span></p>` +
-        withThing(letter) + `<div class="en ow-letter" lang="en">${paras(letter.text)}</div>` +
+        withThing(letter) + `<div class="en ow-letter${dress(letter)}" lang="en">${paras(letter.text)}</div>` +
         `<div class="owl-btns"><button type="button" class="yes"><span lang="en">Write back</span><small>답장 쓰기</small></button>` +
         `<button type="button" class="no"><span lang="en">Fold it away</span><small>편지함 친구 칸에 둡니다</small></button></div></div>`
       : `<div class="owl-card-in"><i class="seal ${sealCls}"></i><p class="kind">차 초대장 · ${esc(who.ko)}</p>` +

@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12m';
+const VERSION = 'he-2026-10-12n';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -38,6 +38,35 @@ const CORE = [
   'js/bella.js',
   'js/shops.js',
   'bond/gifts.json',
+  'bond/shops.json',
+  'assets/map/hogsmeade.webp',
+  'assets/shop/borgin-shelf.webp',
+  'assets/shop/sheet-whizbang.webp',
+  'assets/shop/sheet-swamp.webp',
+  'assets/shop/sheet-howler.webp',
+  'assets/rooms/weasleys-portrait.webp',
+  'assets/rooms/weasleys-wide.webp',
+  'assets/rooms/borgin-portrait.webp',
+  'assets/rooms/borgin-wide.webp',
+  'assets/shop/skiving-snackbox.webp',
+  'assets/shop/ink-changing.webp',
+  'assets/shop/ink-blushing.webp',
+  'assets/shop/ink-starlight.webp',
+  'assets/shop/paper-whizbang.webp',
+  'assets/shop/paper-swamp.webp',
+  'assets/shop/paper-howler.webp',
+  'assets/shop/borgin-01-eye.webp',
+  'assets/shop/borgin-02-cards.webp',
+  'assets/shop/borgin-03-candle.webp',
+  'assets/shop/borgin-04-musicbox.webp',
+  'assets/shop/borgin-05-watch.webp',
+  'assets/shop/borgin-06-mask.webp',
+  'assets/shop/borgin-07-shell.webp',
+  'assets/shop/borgin-08-rope.webp',
+  'assets/shop/borgin-09-mirror.webp',
+  'assets/shop/borgin-10-shadows.webp',
+  'assets/shop/borgin-11-hand.webp',
+  'assets/shop/borgin-12-opals.webp',
   'assets/rooms/diagon-portrait.webp',
   'assets/rooms/diagon-wide.webp',
   'assets/rooms/hogsmeade-portrait.webp',

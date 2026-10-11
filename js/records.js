@@ -29,6 +29,7 @@ export function initRecords(app){
   const placeKo = id => id === 'need' ? '필요의 방' : byId(id) ? byId(id).ko : id;
   function dayInfo(date){
     const e = store.get().log[date]; if (!e) return null;
+    if (e.snack && Object.keys(e).length === 1) return {n: 0, perfect: false, places: [], snack: true};   // nothing learnt, but excused (shops.js)
     let n = 0, wrong = 0; const places = [];
     for (const [id, o] of Object.entries(e)){
       const k = (o.good || 0) + (o.hard || 0) + (o.again || 0) + (o.learn || 0);
@@ -50,8 +51,8 @@ export function initRecords(app){
     for (let d = 1; d <= days; d++){
       const date = ymd(y, m, d), info = dayInfo(date);
       if (info) seen++;
-      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}"${info ? ` data-day="${date}"` : ''} title="${info ? `${info.places.map(p => placeKo(p.id)).join(' · ')} · ${info.n}문제` : ''}">` +
-        `<b>${d}</b>${info ? seals(info.places) + (info.perfect ? '<em class="snitch" role="img" aria-label="모두 맞음"></em>' : '') : ''}</span>`;
+      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}"${info ? ` data-day="${date}"` : ''} title="${info ? (info.snack ? '땡땡이 과자 상자' : `${info.places.map(p => placeKo(p.id)).join(' · ')} · ${info.n}문제`) : ''}">` +
+        `<b>${d}</b>${info ? (info.snack ? '<i class="rc-snack" role="img" aria-label="땡땡이 과자 상자"></i>' : seals(info.places)) + (info.perfect ? '<em class="snitch" role="img" aria-label="모두 맞음"></em>' : '') : ''}</span>`;
     }
     $('#recCalBody').innerHTML = `<div class="rc-head"><button type="button" data-mo="-1" aria-label="이전 달">‹</button>` +
       `<div><span class="rc-term">${term(m)} · ${y}</span><span class="rc-month">${MONTH[m]}</span></div>` +

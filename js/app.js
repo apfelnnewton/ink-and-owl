@@ -22,6 +22,7 @@ import {initMap} from './map.js';
 import {initFire} from './fire.js';
 import {initManor} from './manor.js';
 import {initTown} from './shops.js';
+import * as shops from './shops.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
@@ -86,6 +87,8 @@ const app = {
   /* the daily owl with a tea invitation: only on calm screens (not mid-lesson), never over an open sheet */
   owlCheck(){
     if (app.entering || howler.playing() || !store.get().settings.named || !['home', 'me', 'letters', 'records'].includes(current) || owlBusy() || isSheetOpen() || document.hidden) return;
+    /* yesterday was missed and a Skiving Snackbox is in the bag: it asks, once (shops.js) */
+    if (shops.snackDue()){ shops.askSnack(app); return; }
     /* a friend's letter that has arrived comes first; the day's tea invitation waits for the next check */
     /* the very first: Dumbledore's welcome, as soon as the guest has a name */
     if (bond.welcomeDue()){ setTimeout(() => deliver(app, {note: {deck: 'dumbledore', key: 'W00'}}), 700); return; }

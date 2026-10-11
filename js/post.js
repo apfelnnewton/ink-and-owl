@@ -6,7 +6,8 @@
    (2026-10-05 user decision): the others' phones drop them when that seal disappears, and the leaver's own phone
    drops all its friends' letters.
    state.friends = {uid, code, seal, practice, members:[{uid, name, seal, wand}], mail:[{id, from, to, t, at, text, read, seen, x}]}
-   x = {gift}: a sweet or a bottle of Butterbeer sent with the letter (shops.js; the rules name the things allowed)
+   x = {gift, ink, paper}: a sweet or a bottle of Butterbeer sent with the letter, the ink it is written in, the paper
+   it is written on (shops.js; the rules name the things allowed)
    wand = the wood of that friend's wand (wand.js), kept on their seal so a read letter can show it (2026-10-05).
    day = {d, rooms} that friend's classrooms today, in order, for the Marauder's Map (map.js, 2026-10-06).
    t = date (YYYY-MM-DD), at = arrival time (ms) — a letter whose time has not come yet is still on the wing;
@@ -64,7 +65,8 @@ const REPLIES = {
 };
 /* only what the rules allow is kept from a letter's extras */
 const GIFTS_OK = ['sherbet-lemons', 'pepper-imps', 'beans', 'sugar-quill', 'whizzbees', 'choc-frog', 'ginger-newts', 'coconut-ice', 'best-choc', 'pineapple', 'butterbeer'];
-const extras = x => x && typeof x === 'object' && GIFTS_OK.includes(x.gift) ? {gift: x.gift} : null;
+const INKS_OK = ['blood', 'i1', 'i2', 'i3'], PAPERS_OK = ['p1', 'p2', 'p3'];
+const extras = x => { if (!x || typeof x !== 'object') return null; const o = {}; if (GIFTS_OK.includes(x.gift)) o.gift = x.gift; if (INKS_OK.includes(x.ink)) o.ink = x.ink; if (PAPERS_OK.includes(x.paper)) o.paper = x.paper; return Object.keys(o).length ? o : null; };
 function arrive({from, text, x}, delay){
   const fr = f(), now = Date.now();
   fr.mail.push({id: 'm' + now.toString(36) + rnd(3), from, to: fr.uid, t: srs.today(), at: now + delay, text, read: false, seen: false, ...(extras(x) ? {x: extras(x)} : {})});
@@ -87,7 +89,7 @@ const practice = {
   async send(m){
     const fr = f(), to = PRACTICE.find(p => p.uid === m.to); if (!to) return '';
     const n = fr.mail.filter(x => x.to === to.uid).length, list = REPLIES[to.uid];   // how many I had sent them before this one (it is added after the owl has gone)
-    arrive({from: to.uid, text: list[n % list.length], x: m.x ? {gift: 'butterbeer'} : null}, 25000);   // a made-up friend returns the favour
+    arrive({from: to.uid, text: list[n % list.length], x: m.x ? {...(m.x.gift ? {gift: 'butterbeer'} : {}), ...(m.x.ink ? {ink: m.x.ink} : {}), ...(m.x.paper ? {paper: m.x.paper} : {})} : null}, 25000);   // a made-up friend returns the favour, in the same ink
     return '';
   },
   listen(){}

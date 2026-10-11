@@ -312,7 +312,7 @@ export const postItem = (id, key) => post(id, key);
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
   if (/^H-/.test(key)) return howler.textOf(id, key);
-  if (/^G[FM]~/.test(key)) return shops.textOf(id, key);
+  if (/^(G[FM]|BG)~/.test(key)) return shops.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
   if (key === 'MAP') return map.textOf(id, key);
   if (key === 'NEED') return need.textOf(id, key);
