@@ -350,7 +350,9 @@ const COLD = {
   dumbledore: {en: 'Your cup and I waited together until the tea went cold. Pleasant company, all the same. Another day.', ko: '자네 잔과 나는 차가 식을 때까지 함께 기다렸다네. 그래도 꽤 좋은 동무였지. 다음에 보세.'}
 };
 /* the first letter of all (2026-10-04 user decision): once the guest has a name, the owl brings Dumbledore's welcome —
-   how the castle works, in his voice. It stays in the post under Dumbledore like any other letter. */
+   how the castle works, in his voice. It stays in the post under Dumbledore like any other letter.
+   2026-10-12: one paragraph more, which hints at what comes later (the wand, the fire, the blank wall) without explaining
+   any of it — the things that arrive on their own days are not listed here, or they would stop being found. */
 const WELCOME = {
   en: "Dear {name},\n" +
     "Welcome to the castle. Your room is at the top of the tower. It is a little draughty, I'm afraid, but the view is splendid, and someone has already lit the fire.\n" +
@@ -360,6 +362,7 @@ const WELCOME = {
     "They also write letters. The better they know you, the thicker the post grows, and now and then an owl will bring an invitation to tea. Choose your words with care over the teacups. Each of my colleagues has firm views on what makes a pleasant afternoon.\n" +
     "Your letters wait on the desk in your room, beside a tea journal and a cabinet of drawers that your professors will slowly fill. At present it is rather empty.\n" +
     "Should you have friends in the castle, share a group code with them and the owls will carry your letters, in English only. Owls are stubborn about such things.\n" +
+    "There is a good deal more, which I shall not tell you. A castle that explained itself on the first evening would be a poor sort of castle. I will say only that a guest without a wand seldom remains so for long, that the fire in your room will bear watching, and that not every wall in the corridor is as blank as it pretends. All in good time.\n" +
     "I do hope you will be happy here.\n" +
     "Albus Dumbledore",
   ko: "{name}에게\n" +
@@ -370,6 +373,7 @@ const WELCOME = {
     "교수들은 편지도 쓴다네. 자네를 알아 갈수록 편지가 늘고, 가끔은 부엉이가 차 초대장을 물어 올 걸세. 찻잔 앞에서는 말을 골라 하게. 내 동료들은 저마다 즐거운 오후가 무엇인지 확고한 생각이 있으니.\n" +
     "편지는 자네 방 책상 위에서 기다린다네. 그 옆에는 차 일지와, 교수들이 하나씩 채워 갈 서랍장이 있지. 지금은 좀 비어 있지만.\n" +
     "성 안에 친구가 있다면 그룹 코드를 나누게. 부엉이들이 편지를 날라 줄 걸세. 영어 편지만이네. 부엉이들은 그런 데 고집이 세거든.\n" +
+    "이야기할 것이 훨씬 더 있네만, 말하지 않겠네. 첫날 저녁에 제 속을 다 털어놓는 성이라면 시시한 성일 테니. 이것만 일러 두지. 지팡이 없는 손님이 오래 그대로 지내는 일은 드물고, 자네 방 벽난로는 눈여겨볼 만하며, 복도의 벽이 모두 보이는 것만큼 비어 있지는 않다네. 무엇이든 때가 되면 알게 될 걸세.\n" +
     "여기서 즐겁게 지내길 바라네.\n" +
     "알버스 덤블도어"
 };

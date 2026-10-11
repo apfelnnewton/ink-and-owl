@@ -8,7 +8,7 @@
      hireling → little scribe → my scribe → the learner's own first name
    The first three follow the bond's stages (bond.js: 80 and 250 points); the own name needs the fourth stage (600)
    AND the last of her twenty talks — T20 ends "I nearly said your name. Not today."
-   The door opens after three days' work in the study: a scrap tucked into the glass cabinet (INTRO).
+   The door opens after two days' work in the study (three until 2026-10-12; the user found it long): a scrap tucked into the glass cabinet (INTRO).
    Her post: notes L01 L04 L07 L19 L24 L30 L41 L48 (the common milestones), NAME2–NAME4 with K02–K04, everyday scraps
    P001–P017, scribbles across Lucius's labels S01–S12 (S01–S07 once that object's label is written, S08–S12 every
    fourth day of work in the study; one a day), and instead of a Howler two taunts each for 3, 7, 14, 30 days away
@@ -71,7 +71,7 @@ export function daily(){
   const m = st(), s = store.get(), t = srs.today(), mm = s.manor || {};
   if (!m.open){
     const force = new URLSearchParams(location.search).has('bella');
-    if (!s.settings.named || !mm.open || !(force || (mm.days || 0) >= 3)) return;
+    if (!s.settings.named || !mm.open || !(force || (mm.days || 0) >= 2)) return;
     if (!bond.postItem(ID, 'INTRO')) return;
     m.open = t; m.from = mm.days || 0;
     store.save();
