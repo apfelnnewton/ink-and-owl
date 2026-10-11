@@ -163,14 +163,16 @@ export function initFire(app){
       const {p, g, done} = L;
       stats = done ? `<div><b>${g.mastered}</b>숙달 / ${g.total}</div><div><b>${g.seen}</b>배운 대사</div>`
         : `<div><b>${p.review}</b>복습</div><div><b>${p.fresh}</b>새 대사</div><div><b>${g.mastered}</b>숙달 / ${g.total}</div>`;
-      if (done) line = `<span class="k">${p.done ? `오늘 이야기는 여기까지 · 내일 복습 ${g.dueTomorrow}장` : g.complete ? '그의 말을 모두 익혔다' : '오늘은 되짚을 대사가 없다'}</span>`;
-      main = done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('불가에 앉기', `data-to="#/room/${ID}"`);
+      if (done) line = `<span class="k">${p.done ? `오늘 대사 공부는 여기까지 · 내일 복습 ${g.dueTomorrow}장` : g.complete ? '그의 말을 모두 익혔다' : '오늘은 되짚을 대사가 없다'}</span>`;
+      main = done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('대사 공부 시작', `data-to="#/room/${ID}"`);
       if (done && Object.keys(((store.deck(ID).day || {}).results) || {}).length) link = `<button type="button" class="clink" data-to="#/report/${ID}">오늘 성적표 보기</button>`;
     }
     if (t){
       const iv = bond.inviteText(ID);
-      /* he is calling: his words take the place of the day's figures, so the card stays below his face */
-      line = `<span class="q" lang="en">${esc(bond.fill(iv.en))}</span><span class="k">${esc(bond.fill(iv.ko))}</span>`; stats = '';
+      /* he is calling: his words take the place of the day's figures, so the card stays below his face. A line above them says
+         what this is, as a professor's invitation to tea does — and the lesson is named as a lesson, not as sitting by the
+         fire, which is what he asks for when he wants to talk (user, 2026-10-12: the two buttons could not be told apart) */
+      line = `<span class="pick">시리우스가 이야기를 청한다</span><span class="q" lang="en">${esc(bond.fill(iv.en))}</span><span class="k">${esc(bond.fill(iv.ko))}</span>`; stats = '';
       main = go(`이야기를 나눈다 · <span lang="en">${esc(t.title.en)}</span>`, 'data-talk') + main.replace('class="cgo "', 'class="cgo me-second"');
     }
     put(who, stats, line, main + flooLine() + link);
@@ -178,7 +180,7 @@ export function initFire(app){
   /* nobody in the fire: he can be called (once he has come to this fire at all); the jar stands on the hearth */
   function drawQuiet(){
     const L = isOpen() && lessonTo();
-    const note = !L ? '' : L.done ? (L.p.done ? '오늘 이야기는 끝났다' : '오늘은 되짚을 대사가 없다') : `복습 ${L.p.review} · 새 대사 ${L.p.fresh}`;
+    const note = !L ? '' : L.done ? (L.p.done ? '오늘 대사 공부는 끝났다' : '오늘은 되짚을 대사가 없다') : `복습 ${L.p.review} · 새 대사 ${L.p.fresh}`;
     put('A Quiet Fire', '', '<span class="k">탑 꼭대기 손님 방의 벽난로. 석탄불이 조용히 타고 있다.</span>',
       isOpen() ? go(`시리우스를 부른다${note ? ` <em>${note}</em>` : ''}`, 'data-call') : '');
   }

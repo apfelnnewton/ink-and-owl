@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12p';
+const VERSION = 'he-2026-10-12q';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -282,7 +282,8 @@ const CORE = [
   'assets/owl/card.webp',
   'assets/owl/owl.webm',
   'assets/owl/owl.webp',
-  ...['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'slughorn', 'dumbledore'].map(p => 'assets/journal/stain-' + p + '.webp'),
+  ...['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'slughorn', 'dumbledore', 'bellatrix'].map(p => 'assets/journal/stain-' + p + '.webp'),
+  'assets/journal/sirius-scorch.webp', 'assets/journal/sirius-ash.webp', 'assets/journal/sirius-smear.webp',
   'assets/rooms/snape-portrait.webp',
   'assets/rooms/snape-wide.webp',
   'assets/rooms/mcgonagall-portrait.webp',

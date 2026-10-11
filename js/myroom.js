@@ -141,12 +141,23 @@ export function initMyRoom(app){
       `<div class="lt-letter" lang="en" id="shTitle">${para(k.note.en)}</div><div class="lt-ko">${para(k.note.ko)}</div>`);
   }
 
-  /* ---------- the tea journal (#/me/journal/<deck>): every tea taken, one page each, with the professor's own stain */
+  /* ---------- the tea journal (#/me/journal/<deck>): every tea taken, one page each, with the professor's own stain.
+     The two who pour no tea leave their own mark (2026-10-12): by the fire a spark's scorch and ash, in the drawing room candle wax
+     and ink. Those are dark, solid things, not a ring soaked into the paper: they lie at the foot of the page, under the last words
+     (mark), never behind the writing — tried there first, and the words under them could not be read. */
   const drunk = id => bond.teasOf(id).filter(t => bond.bondOf(id).teas[t.id] !== undefined);
   const stain = (id, key) => { const n = +key.slice(1), x = (n * 37) % 3, r = (n * 53) % 50 - 25;
     const pos = [['-16px', 'auto', '-12px', 'auto'], ['auto', '-16px', '-8px', 'auto'], ['auto', '-18px', 'auto', '38%']][x];
-    if (byId(id).place !== 'corridor') return '';   // by the fire there is no cup to leave a ring
+    if (byId(id).place !== 'corridor') return '';
     return `<img class="jnl-stain" src="assets/journal/stain-${id}.webp" alt="" style="left:${pos[0]};right:${pos[1]};bottom:${pos[2]};top:${pos[3]};transform:rotate(${r}deg)">`; };
+  /* Sirius's mark is three things that fell apart from one another (user, 2026-10-12): the scorch lies in the empty stretch beside one of the
+     "다른 답" lines (which one changes from page to page — the edge of the page was tried: half of it fell off the paper and it looked
+     like a fault), the ash and the sooty smear lie at the foot, one to each side */
+  const mark = (id, key) => { if (byId(id).place === 'corridor') return ''; const n = +key.slice(1), pic = (f, cls, st) => `<img class="${cls}" src="assets/journal/${f}.webp" alt="" style="${st}">`;
+    if (id !== 'sirius') return `<div class="jnl-mark${n % 2 ? ' r' : ''}">${pic('stain-' + id, '', `transform:rotate(${(n * 53) % 30 - 15}deg)`)}</div>`;
+    const flip = n % 2, ash = pic('sirius-ash', 'jm-ash', `transform:rotate(${(n * 41) % 70 - 35}deg)`), smear = pic('sirius-smear', 'jm-smear', `transform:rotate(${(n * 67) % 50 - 25}deg);margin-top:${(n * 13) % 22}px`);
+    return `<div class="jnl-mark two">${flip ? smear + ash : ash + smear}</div>`; };
+  const burn = n => `<img class="jnl-burn" src="assets/journal/sirius-scorch.webp" alt="" style="right:${4 + (n * 31) % 46}px;transform:rotate(${(n * 97) % 360}deg)">`;
   let page = null;
 
   function drawJournal(){
@@ -171,10 +182,11 @@ export function initMyRoom(app){
     const t = bond.teasOf(deck.id).find(x => x.id === page), b = bond.bondOf(deck.id), lg = (b.teaLog || {})[page], list = drunk(deck.id);
     const i = list.findIndex(x => x.id === page), prev = list[i - 1], next = list[i + 1];
     const f = s => esc(bond.fill(s));
+    const no = +page.slice(1), burnAt = deck.id === 'sirius' ? (no * 2) % t.turns.length : -1;
     const turns = t.turns.map((tn, k) => { const c = lg ? lg.c[k] : -1, o = tn.options[c];
       return `<div class="jnl-turn"><p class="pf" lang="en">${f(tn.prof.en)}</p><p class="pk">${f(tn.prof.ko)}</p>` +
         (o ? `<p class="me${({1: ' hl', '-1': ' ink'})[bond.tasteOf(o)] || ''}" lang="en"><span>${f(o.en)}</span></p><p class="mk">${f(o.ko)}</p><p class="pf" lang="en">${f(o.reply.en)}</p><p class="pk">${f(o.reply.ko)}</p>` +
-          `<details class="jnl-other"><summary>다른 답</summary>${tn.options.map((x, j) => j === c ? '' : `<div><p class="me" lang="en">${f(x.en)}</p><p class="pf" lang="en">${f(x.reply.en)}</p><p class="pk">${f(x.reply.ko)}</p></div>`).join('')}</details>` : '') + '</div>'; }).join('');
+          `<details class="jnl-other"><summary>다른 답${k === burnAt ? burn(no) : ''}</summary>${tn.options.map((x, j) => j === c ? '' : `<div><p class="me" lang="en">${f(x.en)}</p><p class="pf" lang="en">${f(x.reply.en)}</p><p class="pk">${f(x.reply.ko)}</p></div>`).join('')}</details>` : '') + '</div>'; }).join('');
     /* the professor's own colour for the highlighter: an answer they liked is marked, one they disliked gets a blot */
     $('#jnlBook').style.setProperty('--hl', deck.glow);
     $('#jnlBody').innerHTML = stain(deck.id, page) +
@@ -182,7 +194,7 @@ export function initMyRoom(app){
       `<header class="jnl-phead"><i class="seal s-${deck.id}"></i><div><small>${lg ? fmt(lg.d) : '날짜 기록 없음'}</small><h2 lang="en" id="jnlTtl">${esc(t.title.en)}</h2><p>${esc(t.title.ko)}</p></div></header>` +
       `<p class="jnl-scene">${esc(t.scene.ko)}</p>` +
       (lg ? '' : '<p class="jnl-note">이 대화는 일지를 쓰기 전에 나눠서, 내가 고른 답은 남아 있지 않습니다.</p>') + turns +
-      `<div class="jnl-turn close"><p class="pf" lang="en">${f(t.close.en)}</p><p class="pk">${f(t.close.ko)}</p></div>` +
+      `<div class="jnl-turn close"><p class="pf" lang="en">${f(t.close.en)}</p><p class="pk">${f(t.close.ko)}</p></div>` + mark(deck.id, page) +
       `<nav class="jnl-nav">${prev ? `<button type="button" data-tea="${prev.id}">← ${esc(prev.title.en)}</button>` : '<span></span>'}${next ? `<button type="button" data-tea="${next.id}">${esc(next.title.en)} →</button>` : '<span></span>'}</nav>`;
     $('#jnl').scrollTop = 0;
   }

@@ -970,7 +970,9 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 #me .bg .photo{display:block;--p:url(../assets/rooms/me-portrait.webp);--w:url(../assets/rooms/me-wide.webp)}
 .me-dim{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%, rgba(6,5,4,.62), rgba(6,5,4,.9));opacity:0;transition:opacity .4s}
 #me.cabinet .me-dim{opacity:1}
-.me-card{position:absolute;z-index:5;left:calc(30px + var(--sl));right:calc(30px + var(--sr));bottom:calc(var(--sb) + 40px)}
+.me-card{position:absolute;z-index:5;left:calc(30px + var(--sl));right:calc(30px + var(--sr));bottom:calc(var(--sb) + 40px);pointer-events:none}
+/* the card lies over the picture, and on a short screen over a thing in it (the salver in the study, 2026-10-12): only its buttons take a touch, the rest lets it through to the picture */
+.me-card button,.me-card a,.me-card input{pointer-events:auto}
 @media (min-width:700px){ .me-card{left:50%;right:auto;width:min(460px, 80vw);transform:translateX(-50%)} }
 .me-card .cgo em{font-style:normal;font-size:13px;letter-spacing:.02em;color:#C9BFA6;margin-left:4px}
 .me-card .me-second{margin-top:0;border-top:0}
@@ -1000,6 +1002,17 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .jnl-in{position:relative}
 .jnl-stain{position:absolute;z-index:0;width:min(56%, 220px);opacity:.72;pointer-events:none}
 .jnl-in > *:not(.jnl-stain){position:relative;z-index:1}
+/* the mark of the two who pour no tea (a scorch and ash; candle wax and ink): a solid thing at the foot of the page, clear of the words */
+.jnl-mark{display:flex;margin:10px 4px 6px;pointer-events:none}
+.jnl-mark.r{justify-content:flex-end}
+.jnl-mark img{width:min(40%, 150px);height:auto;opacity:.94;filter:drop-shadow(0 1px 1px rgba(40,25,10,.25))}
+/* Sirius: ash and soot at the foot, apart; the scorch on the edge of the page, half of it past the paper */
+.jnl-mark.two{justify-content:space-between;align-items:flex-start}
+.jnl-mark.two img{filter:none}
+.jnl-mark.two .jm-ash{width:min(38%, 128px);opacity:.9}
+.jnl-mark.two .jm-smear{width:min(25%, 84px);opacity:.8}
+.jnl-other summary{position:relative}
+.jnl-other summary .jnl-burn{position:absolute;top:50%;margin-top:-24px;width:48px;height:auto;opacity:.95;pointer-events:none}
 .jnl-head,.jnl-phead{display:flex;align-items:center;gap:12px;margin:0 0 14px}
 .jnl-head .seal,.jnl-phead .seal{flex:none;width:44px;height:44px}
 .jnl-head h2,.jnl-phead h2{margin:0;font:italic 400 calc(24px * var(--k))/1.15 var(--f-display);color:var(--ink)}
