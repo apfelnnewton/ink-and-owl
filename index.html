@@ -413,6 +413,32 @@
   </div>
 </section>
 
+<!-- ============ THE SHOPS (shops.js): two streets reached by Floo powder, and the shops on them ============ -->
+<section id="town" class="screen" hidden aria-label="가게 거리">
+  <div class="bg" aria-hidden="true"><div class="photo" id="twPhoto"></div><div class="shade"></div><div class="me-dim"></div></div>
+  <div class="me-spots" id="twSpots"></div>
+  <div class="r-top">
+    <button type="button" class="back" id="twBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="twTtl">Diagon Alley</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="me-card place-card" id="twCard" aria-live="polite">
+    <div class="cwho" id="twWho" lang="en"></div>
+    <div class="chr"></div>
+    <div class="cline" id="twLine"></div>
+    <div id="twGo"></div>
+  </div>
+  <div class="cab-scroll" id="twShop" hidden>
+    <div class="cab-wrap">
+      <div class="mn-case sp-case">
+        <div class="mn-case-head" id="twHead"></div>
+        <ol class="mn-grid" id="twGrid"></ol>
+      </div>
+      <p class="cab-tip" id="twTip"></p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ THE MARAUDER'S MAP (map.js): a blank parchment until it is sworn to ============ -->
 <section id="map" class="screen" hidden aria-label="호그와트 지도">
   <div class="r-top">

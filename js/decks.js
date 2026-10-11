@@ -195,7 +195,7 @@ export const filmLabel = c => c.medium === 'novel' ? c.film_ko : `${c.film}편 �
 /* Bellatrix: written with her notes (docs/newfaces-work, BOND2.md), reviewed 2026-10-12 */
 Object.assign(REACT, {
   bellatrix: {
-    good: [{en: "Word for word. How unnerving.", ko: "한 글자도 안 틀렸네. 소름 끼치게."}, {en: "Right. I shall find a fault later.", ko: "맞았어. 흠은 나중에 찾아 줄게."}, {en: "Ooh, it listens! Clever, clever pen.", ko: "어머, 듣고는 있었네? 똑똑하기도 하지, 요 펜은."}],
+    good: [{en: "Word for word. How unnerving.", ko: "한 글자도 안 틀렸네. 소름 끼치게."}, {en: "Right. I shall find a fault later.", ko: "맞았어. 흠은 나중에 찾아 줄게."}, {en: "Ooh, it listens! Clever, clever pen.", ko: "이것 참, 듣고는 있었네? 똑똑하기도 하지, 요 펜은."}],
     hard: [{en: "Almost. I did not say 'almost'.", ko: "거의 맞았네. 난 '거의'라고 말한 적 없는데."}, {en: "Close. Did it try its very best?", ko: "비슷해. 아이고, 그게 있는 힘껏 한 거야?"}, {en: "A word went astray. Fetch it back.", ko: "낱말 하나가 딴 데로 샜어. 도로 데려와."}],
     again: [{en: "Wrong. I never said that. Never.", ko: "틀렸어. 난 그런 말 한 적 없어. 단 한 번도."}, {en: "No, no, no. Poor muddled little thing.", ko: "아니, 아니, 아니지. 가엾게도 뒤죽박죽이네."}, {en: "Tut, tut. That page gets torn up.", ko: "쯧쯧. 그 장은 찢어야겠네."}]
   }

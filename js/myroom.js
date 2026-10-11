@@ -6,6 +6,7 @@
 import {DECKS, PROFS, BONDED, byId} from './decks.js';
 import * as fire from './fire.js';
 import * as manor from './manor.js';
+import * as shops from './shops.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
@@ -44,6 +45,7 @@ export function initMyRoom(app){
     {id: 'wand', ko: '지팡이', go: '#/me/wand', p: [.168, .468, 'b'], w: [.224, .405, 'l']},
     {id: 'fire', ko: '벽난로', go: '#/fire', p: [.128, .625, 'l'], w: [.178, .70, 'l']},
     {id: 'purse', ko: '동전 주머니', go: '', p: [.875, .56, 'r'], w: [.765, .575, 'r']},
+    {id: 'bag', ko: '종이 봉지', go: '', p: [.505, .606, 'b'], w: [.479, .655, 'b']},   // left on the chair at the desk (shops.js)
     {id: 'shelf', ko: '선반', go: '#/need/shelf', p: [.875, .36, 'r'], w: [.80, .33, 'r']},
     {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']}
   ];
@@ -55,6 +57,7 @@ export function initMyRoom(app){
       /* the grate: Sirius once he has come, and the Floo once the manor has sent its card */
       fire: fire.isOpen() ? (bond.teaReady('sirius') || !fire.met() ? '누군가 부른다' : '') : manor.isOpen() ? '플루 가루' : null,
       purse: manor.isOpen() ? '' : null,
+      bag: shops.isOpen() ? (shops.bagCount() ? `${shops.bagCount()}개` : '') : null,
       spells: w ? (due ? `복습 ${due}` : '') : null,
       map: map.have() ? '' : null,
       wand: w ? '' : wand.noteArrived() ? '쪽지' : null,
@@ -204,6 +207,7 @@ export function initMyRoom(app){
   $('#meSpots').addEventListener('click', e => {
     const b = e.target.closest('[data-go]'); if (!b) return;
     if (b.dataset.spot === 'purse'){ openSheet(manor.purseSheet()); return; }
+    if (b.dataset.spot === 'bag'){ shops.bagSheet(); return; }
     app.go(b.dataset.go);
   });
   $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });

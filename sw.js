@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12l';
+const VERSION = 'he-2026-10-12m';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -36,6 +36,37 @@ const CORE = [
   /* the fireplace (Sirius) and Malfoy Manor (Lucius): not doors in the corridor, so listed one by one (2026-10-12) */
   'js/fire.js',
   'js/bella.js',
+  'js/shops.js',
+  'bond/gifts.json',
+  'assets/rooms/diagon-portrait.webp',
+  'assets/rooms/diagon-wide.webp',
+  'assets/rooms/hogsmeade-portrait.webp',
+  'assets/rooms/hogsmeade-wide.webp',
+  'assets/rooms/honeydukes-portrait.webp',
+  'assets/rooms/honeydukes-wide.webp',
+  'assets/rooms/apothecary-portrait.webp',
+  'assets/rooms/apothecary-wide.webp',
+  'assets/rooms/broomsticks-portrait.webp',
+  'assets/rooms/broomsticks-wide.webp',
+  'assets/shop/sherbet-lemons.webp',
+  'assets/shop/pepper-imps.webp',
+  'assets/shop/every-flavour-beans.webp',
+  'assets/shop/sugar-quill.webp',
+  'assets/shop/fizzing-whizzbees.webp',
+  'assets/shop/chocolate-frog.webp',
+  'assets/shop/ginger-newts.webp',
+  'assets/shop/coconut-ice.webp',
+  'assets/shop/best-chocolate.webp',
+  'assets/shop/crystallised-pineapple.webp',
+  'assets/shop/dried-nettles.webp',
+  'assets/shop/porcupine-quills.webp',
+  'assets/shop/lacewing-flies.webp',
+  'assets/shop/powdered-moonstone.webp',
+  'assets/shop/aconite.webp',
+  'assets/shop/bezoar.webp',
+  'assets/shop/boomslang-skin.webp',
+  'assets/shop/butterbeer.webp',
+  'assets/shop/bag.webp',
   'js/talk.js',
   'data/bellatrix.json',
   'practice/bellatrix.json',

@@ -11,6 +11,7 @@ import * as post from './post.js';
 import {sealTag, wandTag, readLetter, friendBar, wireFriends} from './friends.js';
 import {hint} from './hints.js';
 import * as howler from './howler.js';
+import * as shops from './shops.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
 /* [[words]] in a Howler or note are its key expressions: in bold, explained under the letter */
@@ -43,8 +44,8 @@ export function initLetters(app){
       const who = post.memberOf(m.from), unread = !m.read, day = i === 0 || mail[i - 1].t !== m.t;
       return (day ? `<li class="lt-day">${fmt(m.t)}</li>` : '') +
         `<li class="${unread ? 'new' : ''}"><button type="button" data-fmail="${esc(m.id)}"${unread ? ' aria-label="새 편지"' : ''}>${unread ? sealTag(who.seal) : wandTag(who.wand)}` +
-        `<span class="lt-meta" lang="en">${esc(who.name)}</span>` +
-        `<span class="lt-first" lang="en">${esc(m.text.replace(/\s+/g, ' ').slice(0, 70))}${m.text.length > 70 ? '…' : ''}</span></button></li>`;
+        `<span class="lt-meta" lang="en">${esc(who.name)}${m.x && shops.byWire(m.x.gift) ? `<i class="lt-with"> · ${esc(shops.byWire(m.x.gift).ko)}</i>` : ''}</span>` +
+        `<span class="lt-first" lang="en">${esc(String(m.text || '').replace(/\s+/g, ' ').slice(0, 70))}${String(m.text || '').length > 70 ? '…' : ''}</span></button></li>`;
     }).join('') : (post.inGroup() ? `<li class="lt-none"><p>아직 친구에게서 온 편지가 없습니다.</p></li>` : '');
   }
 
@@ -74,6 +75,7 @@ export function initLetters(app){
     if (it.gift) bond.bondOf(deck.id).keep[it.gift.id] = bond.bondOf(deck.id).keep[it.gift.id] || m.t;
     openSheet(`<div class="sh-kind"><span>${esc(it.kind)}${m ? ' · ' + fmt(m.t) : ''}</span></div>` +
       (it.gift ? `<figure class="lt-gift"><img src="${giftImg(deck.id, it.gift.id)}" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()"><figcaption><b lang="en">${esc(it.gift.name.en)}</b><span>${esc(it.gift.name.ko)}</span></figcaption></figure>` : '') +
+      (it.thing ? `<figure class="lt-thing"><img src="${shops.art(it.thing.id)}" alt=""><figcaption><b lang="en">${esc(it.thing.en)}</b><span>${esc(it.thing.ko)}${it.thing.back ? ' · 봉지로 돌아왔다' : ''}</span></figcaption></figure>` : '') +
       `<div class="lt-letter${it.howler ? ' lt-burnt' : ''}" lang="en" id="shTitle">${para(it.en)}</div>` +
       `<div class="lt-ko">${para(it.ko)}</div>` +
       (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">${deck.place === 'drawing' ? '응접실로 간다 · 마음 닫기' : '연구실로 가기 · 주문 배우기'}</button>` : '') +

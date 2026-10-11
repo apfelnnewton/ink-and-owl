@@ -2040,3 +2040,59 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 @keyframes ocTime{from{transform:scaleX(1)}to{transform:scaleX(0)}}
 .rs-layer.occlumency .rs-why.quiet{opacity:.7;min-height:44px}
 @media (prefers-reduced-motion: reduce){ .oc-probe.on{animation:none;opacity:.95} .oc-time{animation:none} }
+
+/* ---------- the shops (shops.js), 2026-10-12: two streets, three counters, the paper bag, presents */
+#town .bg .photo{display:block}
+#town .bg .shade{background:linear-gradient(rgba(3,5,4,.5),rgba(3,5,4,0) 18%,rgba(3,5,4,0) 46%,rgba(3,5,4,.7) 68%,rgba(3,5,4,.94))}
+#town.shop .me-dim{opacity:1;background:radial-gradient(120% 90% at 50% 40%, rgba(6,5,4,.5), rgba(6,5,4,.86))}
+#town .place-card .cgo em{font:italic 15px 'Cormorant Garamond','Gowun Batang',serif;letter-spacing:0}
+.sp-case{background:linear-gradient(rgba(24,15,10,.93),rgba(14,9,6,.97));box-shadow:inset 0 0 0 1px rgba(214,186,138,.3),inset 0 0 0 5px rgba(14,9,6,.9),inset 0 0 0 6px rgba(214,186,138,.14),0 14px 34px rgba(0,0,0,.6)}
+.sp-case .mn-case-head span{color:#F0E4CC}
+.sp-case .mn-case-head small{color:#A89A80}
+.sp-case .mn-case-head em{margin-top:6px;font-style:normal;font-size:12.5px;color:#D9BE7C;letter-spacing:.03em}
+.sp-good{color:#E9DFCB;background:radial-gradient(120% 140% at 18% 50%,rgba(74,50,30,.55),rgba(20,13,8,.6) 60%);box-shadow:inset 0 0 0 1px rgba(214,186,138,.1)}
+.sp-good.done .pic img{filter:drop-shadow(0 6px 5px rgba(0,0,0,.8))}
+.sp-good .tx b{color:#F3EBDA}
+.sp-good .tx em{color:#B9AC93}
+.sp-good.done .tx small{color:#D9BE7C}
+.sp-good:hover,.sp-good:focus-visible{box-shadow:inset 0 0 0 1px rgba(214,186,138,.4)}
+/* a thing on the parchment: in the shop's slip, in the bag, above a reply, beside a friend's letter */
+.sp-fig{margin:0 auto 6px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.sp-fig img{width:min(52vw, 200px);aspect-ratio:1;height:auto;display:block;filter:drop-shadow(0 10px 9px rgba(50,32,12,.45)) drop-shadow(0 2px 2px rgba(40,25,10,.35))}
+.sp-fig figcaption{display:flex;flex-direction:column;align-items:center;text-align:center}
+.sp-fig b{font:italic 400 calc(21px * var(--k, 1))/1.15 'Cormorant Garamond','Gowun Batang',serif}
+.sp-fig span{font-size:12.5px;color:var(--ink-soft)}
+.sp-tag{margin:10px 0 0;text-align:center;font:italic 400 calc(17px * var(--k, 1))/1.45 var(--f-display);color:var(--ink)}
+.sp-tag.ko{margin-top:4px;font:400 13px/1.65 var(--f-ko);color:var(--ink-soft)}
+.sp-bag{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid rgba(60,40,20,.18)}
+.sp-bag li{border-bottom:1px solid rgba(60,40,20,.12)}
+.sp-bag button{width:100%;min-height:60px;display:flex;align-items:center;gap:12px;padding:4px 2px;background:none;border:0;cursor:pointer;text-align:left;color:var(--ink)}
+.sp-bag img{flex:none;width:50px;height:50px;filter:drop-shadow(0 4px 4px rgba(50,32,12,.4))}
+.sp-bag span{display:flex;flex-direction:column;min-width:0}
+.sp-bag b{font:italic 400 calc(18px * var(--k, 1))/1.15 'Cormorant Garamond','Gowun Batang',serif}
+.sp-bag em{font-style:normal;font-size:12.5px;color:var(--ink-soft)}
+.sp-bag i{margin-left:auto;font:italic 16px var(--f-display);color:#7A1A12;white-space:nowrap}
+.sp-who{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.sp-who button{width:100%;min-height:48px;display:flex;align-items:center;gap:10px;padding:0 2px;background:none;border:0;border-bottom:1px solid rgba(60,40,20,.12);cursor:pointer;font:15px var(--f-ko);color:var(--ink);text-align:left}
+.sp-who button:disabled{opacity:.42;cursor:default}
+.sp-who .seal{flex:none;width:24px;height:24px}
+.sp-who em{margin-left:auto;font-style:normal;font-size:11.5px;color:var(--ink-soft);white-space:nowrap}
+.sp-back{display:block;margin:10px auto 0;color:var(--ink-soft)}
+.sheet .sh-drill:disabled{opacity:.4;cursor:default}
+.lt-thing{margin:0 auto 10px;display:flex;align-items:center;justify-content:center;gap:12px}
+.lt-thing img{width:76px;height:76px;filter:drop-shadow(0 6px 6px rgba(50,32,12,.42))}
+.lt-thing figcaption{display:flex;flex-direction:column}
+.lt-thing b{font:italic 400 calc(18px * var(--k, 1))/1.15 'Cormorant Garamond','Gowun Batang',serif}
+.lt-thing span{font-size:12px;color:var(--ink-soft)}
+.owl-card .lt-thing{margin-bottom:6px}
+.lt-with{font-style:normal;font-family:var(--f-ko);font-size:.86em;color:#7A1A12}
+/* what goes with a friend's letter */
+.ow-with{margin:2px 0 10px}
+.ow-with p{margin:0 0 4px;font:600 13px var(--f-ko);color:var(--ink-soft)}
+.ow-with p small{font-weight:400;margin-left:6px}
+.ow-with ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.ow-with button{min-height:44px;display:flex;align-items:center;gap:6px;padding:0 12px 0 8px;background:rgba(255,250,235,.3);border:1px solid rgba(42,33,24,.3);border-radius:2px;cursor:pointer;font:14px var(--f-ko);color:var(--ink)}
+.ow-with button[data-with=""]{padding:0 14px}
+.ow-with img{width:32px;height:32px}
+.ow-with small{color:var(--ink-soft)}
+.ow-with button.on{border-color:#7A1A12;background:rgba(122,26,18,.09);box-shadow:inset 0 0 0 1px rgba(122,26,18,.5)}

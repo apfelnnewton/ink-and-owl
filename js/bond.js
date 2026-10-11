@@ -22,6 +22,7 @@ import * as need from './need.js';
 import * as fire from './fire.js';
 import * as manor from './manor.js';
 import * as bella from './bella.js';
+import * as shops from './shops.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -80,6 +81,8 @@ function stageUp(id, before){
 const addPts = (id, n) => { const b = bondOf(id), before = stage(id); b.pts += n; stageUp(id, before); };
 /* the bond can fall a little (a disliked answer at tea, a cold pot, a failed request) but never below the stage
    already reached (2026-10-04 user decision), and never for simply staying away */
+/* a present well received (shops.js) */
+export const gain = (id, n) => addPts(id, n);
 const losePts = (id, n) => { const b = bondOf(id), floor = AT[stage(id)]; b.pts = Math.max(floor, b.pts - n); };
 /* what each answer at tea is worth to the professor's bond: liked, neutral, disliked (bond/<deck>.json options[].taste) */
 export const TASTE_PTS = {1: 8, 0: 3, '-1': -4};
@@ -259,6 +262,7 @@ export async function daily(){
   await spells.daily();
   await map.daily();
   fire.daily();
+  await shops.daily();   // yesterday's presents are answered; the shops open after a first day's wages
   newsLetter();
   store.save();
 }
@@ -308,6 +312,7 @@ export const postItem = (id, key) => post(id, key);
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
   if (/^H-/.test(key)) return howler.textOf(id, key);
+  if (/^G[FM]~/.test(key)) return shops.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
   if (key === 'MAP') return map.textOf(id, key);
   if (key === 'NEED') return need.textOf(id, key);
@@ -384,12 +389,28 @@ export const NOTICES = {
       "손님마다 배우는 속도가 다르니, 교수들이 저녁 내내 이어진 토론 끝에 그 속도를 자네가 고르게 하자고 뜻을 모았다네. 이제 관리인 게시판(설정)에 난이도가 세 가지 있네. 하는 도움이 넉넉하고 채점이 너그럽지. 상은 고르던 것도 직접 써야 하고 도움은 전혀 없다네. 어느 쪽을 고르든 대사들은 같은 날에 자네를 다시 찾아올 걸세.\n" +
       "하나 더 있네. 사람 많은 기차 안이나 속삭임조차 눈총받는 도서관처럼 소리를 들을 수 없는 곳에 있다면, 교실에 그렇게 말해 주게. 교실 위쪽의 작은 스피커를 누르면 조용해지고, 받아쓰기는 더 좋은 때를 기다릴 걸세.\n" +
       "마음대로 고르고, 필요한 만큼 몇 번이든 바꾸게. 지혜란 첫 시도에 찾아오는 일이 드물더군.\n" +
+      "알버스 덤블도어"},
+  /* the shops (2026-10-12): only once the guest has wages to spend (shops.js) */
+  A02: {when: () => shops.isOpen(), go: '#/fire', btn: '벽난로로 간다 · 플루 가루',
+    en: "Dear {name},\n" +
+      "I hear that you have begun to earn a wage, and I have always thought that money sitting idle in a purse is a melancholy thing.\n" +
+      "The fire in your room goes to more places than one. Take a pinch of Floo powder and say 'Diagon Alley', where an apothecary called Slug & Jiggers will sell you most things that ought not to be eaten; or say 'Hogsmeade', where Honeydukes will sell you most things that ought. Do speak clearly. It has been known for a traveller to arrive one grate too far.\n" +
+      "A present sent to one of my colleagues will be answered the next day. I should not dream of telling you who likes what: finding out is the better half of giving. One present a day is plenty. More would begin to look like bribery, and the professors are, alas, incorruptible.\n" +
+      "Should you have friends in the castle, the Three Broomsticks will sell you a bottle of Butterbeer to send along with a letter. The owls complain about the weight and carry it all the same.\n" +
+      "Whatever you buy will be waiting in a paper bag in your room.\n" +
+      "Albus Dumbledore",
+    ko: "{name}에게\n" +
+      "자네가 삯을 받기 시작했다고 들었네. 나는 주머니 속에서 놀고 있는 돈만큼 쓸쓸한 것도 드물다고 늘 생각해 왔지.\n" +
+      "자네 방 벽난로는 한 곳으로만 통하지 않는다네. 플루 가루를 한 줌 넣고 'Diagon Alley'라고 말해 보게. 슬러그 앤 지거스라는 약재상이 먹어서는 안 될 것들을 두루 팔 걸세. 'Hogsmeade'라고 말하면 허니듀크스가 먹어도 될 것들을 두루 팔 테고. 부디 또렷하게 말하게나. 벽난로 하나를 지나쳐 도착한 여행자가 없지 않았으니.\n" +
+      "내 동료들에게 선물을 보내면 이튿날 답장이 올 걸세. 누가 무엇을 좋아하는지는 일러 주지 않겠네. 알아 가는 것이 선물의 더 좋은 절반이니까. 선물은 하루에 하나면 넉넉하네. 그 이상은 뇌물처럼 보이기 시작할 텐데, 아쉽게도 교수들은 매수되지 않는다네.\n" +
+      "성 안에 친구가 있다면, 스리 브룸스틱스에서 버터맥주 한 병을 사서 편지와 함께 보낼 수 있네. 부엉이들은 무겁다고 투덜대면서도 다 날라 준다네.\n" +
+      "무엇을 사든 자네 방의 종이 봉지 안에서 기다리고 있을 걸세.\n" +
       "알버스 덤블도어"}
 };
 export function noticeDue(){
   const w = bondOf('dumbledore').sent.W00;
   if (!store.get().settings.named || !w || w >= srs.today()) return null;
-  return Object.keys(NOTICES).find(k => !bondOf('dumbledore').sent[k]) || null;
+  return Object.keys(NOTICES).find(k => !bondOf('dumbledore').sent[k] && (!NOTICES[k].when || NOTICES[k].when())) || null;
 }
 export const postNotice = key => { const r = post('dumbledore', key); store.save(); return r; };
 export const welcomeDue = () => store.get().settings.named && !bondOf('dumbledore').sent.W00;

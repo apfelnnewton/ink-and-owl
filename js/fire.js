@@ -11,6 +11,7 @@ import * as store from './store.js';
 import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as doors from './doors.js';
+import * as shops from './shops.js';
 import * as map from './map.js';
 import * as speech from './speech.js';
 import {hint} from './hints.js';
@@ -59,7 +60,9 @@ export function textOf(id, key, d){
    Without the films (offline, or motion turned down) the two paintings fade one into the other instead.
    A new place to go is one more line in DEST. */
 const DEST = [
-  {id: 'manor', en: 'Malfoy Manor', ko: '말포이 저택', to: '#/manor', open: () => doors.available('lucius')}
+  {id: 'manor', en: 'Malfoy Manor', ko: '말포이 저택', to: '#/manor', open: () => doors.available('lucius')},
+  {id: 'diagon', en: 'Diagon Alley', ko: '다이애건 앨리', to: '#/town/diagon', open: () => shops.isOpen()},
+  {id: 'hogsmeade', en: 'Hogsmeade', ko: '호그스미드', to: '#/town/hogsmeade', open: () => shops.isOpen()}
 ];
 const places = () => DEST.filter(d => d.open());
 /* what he says when the guest takes up the jar in front of him (the last: when he had come with something to tell) */

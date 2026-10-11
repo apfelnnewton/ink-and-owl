@@ -5,7 +5,8 @@
    still waiting after 30 days. When someone leaves the group, the letters to and from them go from every phone
    (2026-10-05 user decision): the others' phones drop them when that seal disappears, and the leaver's own phone
    drops all its friends' letters.
-   state.friends = {uid, code, seal, practice, members:[{uid, name, seal, wand}], mail:[{id, from, to, t, at, text, read, seen}]}
+   state.friends = {uid, code, seal, practice, members:[{uid, name, seal, wand}], mail:[{id, from, to, t, at, text, read, seen, x}]}
+   x = {gift}: a sweet or a bottle of Butterbeer sent with the letter (shops.js; the rules name the things allowed)
    wand = the wood of that friend's wand (wand.js), kept on their seal so a read letter can show it (2026-10-05).
    day = {d, rooms} that friend's classrooms today, in order, for the Marauder's Map (map.js, 2026-10-06).
    t = date (YYYY-MM-DD), at = arrival time (ms) — a letter whose time has not come yet is still on the wing;
@@ -61,9 +62,12 @@ const REPLIES = {
   'p-iris': ["Thank you for writing. It's quiet up in my tower, and your letter was a nice surprise. I'm halfway through Moody's lines.",
     "I read your letter twice. Umbridge gave me a very pink look today — I still don't know what I did."]
 };
-function arrive({from, text}, delay){
+/* only what the rules allow is kept from a letter's extras */
+const GIFTS_OK = ['sherbet-lemons', 'pepper-imps', 'beans', 'sugar-quill', 'whizzbees', 'choc-frog', 'ginger-newts', 'coconut-ice', 'best-choc', 'pineapple', 'butterbeer'];
+const extras = x => x && typeof x === 'object' && GIFTS_OK.includes(x.gift) ? {gift: x.gift} : null;
+function arrive({from, text, x}, delay){
   const fr = f(), now = Date.now();
-  fr.mail.push({id: 'm' + now.toString(36) + rnd(3), from, to: fr.uid, t: srs.today(), at: now + delay, text, read: false, seen: false});
+  fr.mail.push({id: 'm' + now.toString(36) + rnd(3), from, to: fr.uid, t: srs.today(), at: now + delay, text, read: false, seen: false, ...(extras(x) ? {x: extras(x)} : {})});
   store.save();
 }
 const practice = {
@@ -82,8 +86,8 @@ const practice = {
   async leave(){},
   async send(m){
     const fr = f(), to = PRACTICE.find(p => p.uid === m.to); if (!to) return '';
-    const n = fr.mail.filter(x => x.to === to.uid).length - 1, list = REPLIES[to.uid];   // this is my n-th letter to them
-    arrive({from: to.uid, text: list[n % list.length]}, 25000);
+    const n = fr.mail.filter(x => x.to === to.uid).length, list = REPLIES[to.uid];   // how many I had sent them before this one (it is added after the owl has gone)
+    arrive({from: to.uid, text: list[n % list.length], x: m.x ? {gift: 'butterbeer'} : null}, 25000);   // a made-up friend returns the favour
     return '';
   },
   listen(){}
@@ -147,7 +151,7 @@ const firebase = {
   },
   async send(m, code){
     const {F} = await connect();
-    try { await F.addDoc(col(code, 'mail'), {from: fb.uid, to: m.to, text: m.text, at: F.serverTimestamp()}); return ''; }
+    try { await F.addDoc(col(code, 'mail'), {from: fb.uid, to: m.to, text: m.text, at: F.serverTimestamp(), ...(m.x ? {x: m.x} : {})}); return ''; }
     catch (e){ return OFFLINE; }
   },
   async announce(code, type, deck){
@@ -164,7 +168,7 @@ const firebase = {
       snap.docs.forEach(d => {
         const x = d.data();
         if (!fr.mail.some(m => m.id === d.id)){
-          fr.mail.push({id: d.id, from: x.from, to: fb.uid, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false});
+          fr.mail.push({id: d.id, from: x.from, to: fb.uid, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false, ...(extras(x.x) ? {x: extras(x.x)} : {})});
           got++;
         }
         F.deleteDoc(d.ref).catch(() => {});
@@ -290,13 +294,13 @@ export async function leave(){
   Object.assign(fr, {code: '', seal: '', members: [], practice: false, mail: [], news: []}); store.save();
 }
 
-export async function send(to, text){
+export async function send(to, text, x){
   text = String(text).replace(/\r/g, '').trim();
   if (!text) return '편지가 비어 있습니다.';
   if (foreign(text)) return '부엉이는 영어 편지만 나릅니다.';
   if (text.length > LIMIT) return `${LIMIT}자까지 쓸 수 있습니다.`;
   const fr = f(), now = Date.now();
-  const m = {id: 'm' + now.toString(36) + rnd(3), from: fr.uid, to, t: srs.today(), at: now, text, read: true, seen: true};
+  const m = {id: 'm' + now.toString(36) + rnd(3), from: fr.uid, to, t: srs.today(), at: now, text, read: true, seen: true, ...(extras(x) ? {x: extras(x)} : {})};
   const err = await backend().send(m, fr.code);
   if (err) return err;
   fr.mail.push(m); store.save();

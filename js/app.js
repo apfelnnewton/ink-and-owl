@@ -2,7 +2,8 @@
    #/notes/<deck> expression notebook · #/script/<deck> the script · #/records the register · #/me your own room ·
    #/me/cabinet/<deck> the gift drawers · #/me/journal/<deck> the tea journal · #/me/wand the wand box ·
    #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/me/spells the spellbook · #/map the Marauder's Map · #/prophet[/<n>] the Daily Prophet · #/need[/end|/shelf] the Room of Requirement ·
-   #/fire the fireplace in your room (Sirius, Floo powder) · #/manor[/study|/cabinet] Malfoy Manor ·
+   #/fire the fireplace in your room (Sirius, Floo powder) · #/manor[/study|/cabinet|/drawing] Malfoy Manor ·
+   #/town/<diagon|hogsmeade|honeydukes|apothecary|broomsticks> the two streets and their shops (shops.js) ·
    #/letters/<deck|friends> owl post (on the desk in your room; friends' letters in the first tab) · #/settings */
 import * as store from './store.js';
 import {DECKS, byId} from './decks.js';
@@ -20,6 +21,7 @@ import {initSpell} from './spell.js';
 import {initMap} from './map.js';
 import {initFire} from './fire.js';
 import {initManor} from './manor.js';
+import {initTown} from './shops.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
@@ -99,11 +101,11 @@ const app = {
     const inv = bond.owlDue(); if (inv) setTimeout(() => deliver(app, inv), 700);
   },
   /* friends' letters moved (arrived, read, sent): the counts in your room, the post and the corridor */
-  refreshMail(){ ['me', 'letters', 'home', 'fire', 'manor'].forEach(n => { if (current === n && screens[n].refresh) screens[n].refresh(); }); }
+  refreshMail(){ ['me', 'letters', 'home', 'fire', 'manor', 'town'].forEach(n => { if (current === n && screens[n].refresh) screens[n].refresh(); }); }
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */
@@ -129,7 +131,7 @@ let rt = 0;
 window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (current && screens[current].resize) screens[current].resize(); }, 160); });
 
 fetch('data/index.json').then(r => r.json()).then(j => { app.index = j; if (current === 'home') screens.home.refresh(); }).catch(() => {});
-Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (['me', 'fire', 'manor'].includes(current)) screens[current].refresh(); });
+Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (['me', 'fire', 'manor', 'letters', 'town'].includes(current) && screens[current].refresh) screens[current].refresh(); });
 
 app.fontsReady.then(() => { if (current === 'home') screens.home.refresh(); });
 route();
