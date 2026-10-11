@@ -36,7 +36,7 @@ export const lockedCount = () => decks().filter(d => !isOpen(d.id)).length;
 export function available(id){
   if (isProf(id)) return isOpen(id);
   const s = store.get();
-  return id === 'sirius' ? !!(s.fire && s.fire.open) : id === 'lucius' ? !!(s.manor && s.manor.open) : false;
+  return id === 'sirius' ? !!(s.fire && s.fire.open) : id === 'lucius' ? !!(s.manor && s.manor.open) : id === 'bellatrix' ? !!(s.manor && s.manor.bella && s.manor.bella.open) : false;
 }
 export const availableDecks = () => DECKS.filter(d => d.file && available(d.id));
 

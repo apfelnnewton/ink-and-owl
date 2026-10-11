@@ -2,6 +2,7 @@
 import {tally} from './art-plus.js';
 import {byId, voiceOf, homeOf} from './decks.js';
 import * as manor from './manor.js';
+import * as bella from './bella.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as bond from './bond.js';
@@ -22,7 +23,7 @@ export function initReport(app){
     if (!n) return learned ? v.learned : v.empty;
     return tier(v.tiers, ratio);
   }
-  const said = r => `<p class="q" lang="en">${esc(r.en)}</p><p class="k">${esc(r.ko)}</p>`;
+  const said = r => `<p class="q" lang="en">${esc(bond.fill(r.en))}</p><p class="k">${esc(bond.fill(r.ko))}</p>`;
 
   async function show({id}){
     const d = byId(id);
@@ -41,11 +42,11 @@ export function initReport(app){
 
     const place = d.place;
     await bond.load(id);
-    $('#rpTitle').textContent = place === 'manor' ? "The Day's Work" : place === 'fire' ? 'By the Fire' : 'End of Lesson';
-    $('#rpBack').textContent = (({fire: '벽난로 앞으로', manor: '서재로'})[place] || '복도로') + ' 돌아가기';
+    $('#rpTitle').textContent = place === 'manor' ? "The Day's Work" : place === 'fire' ? 'By the Fire' : place === 'drawing' ? 'Taken Down' : 'End of Lesson';
+    $('#rpBack').textContent = (({fire: '벽난로 앞으로', manor: '서재로', drawing: '응접실로'})[place] || '복도로') + ' 돌아가기';
     $('#rpSub').textContent = `${d.room} · ${srs.dayLabel(srs.today())}${day.pos < day.queue.length ? ` · ${day.pos} / ${day.queue.length}장에서 멈춤` : ''}`;
-    $('#rpEn').textContent = r.en;
-    $('#rpKo').textContent = r.ko;
+    $('#rpEn').textContent = bond.fill(r.en);
+    $('#rpKo').textContent = bond.fill(r.ko);
     $('#rpBy').textContent = '— ' + d.who;
 
     let base = .8;
@@ -96,6 +97,11 @@ export function initReport(app){
     const tv = bond.inviteSrc(id) === 'study' && bond.inviteText(id);
     tea.hidden = !tv;
     if (place === 'manor'){ const wg = manor.reportBlock(); tea.hidden = !wg; tea.innerHTML = wg; }
+    else if (place === 'drawing'){
+      /* what crossed the floor today; and, when she is about to start one, the talk */
+      const html = bella.reportBlock() + (tv ? `<h2>응접실 대화</h2><div class="rx-say">${said(tv)}</div><button type="button" class="rp-teago" data-go="#/manor/drawing">펜을 내려놓는다 →</button>` : '');
+      tea.hidden = !html; tea.innerHTML = html;
+    }
     else if (tv && place === 'fire') tea.innerHTML = `<h2>불 속 대화</h2><div class="rx-say">${said({en: bond.fill(tv.en), ko: bond.fill(tv.ko)})}</div><button type="button" class="rp-teago" data-go="#/fire">불가에 더 앉아 있는다 →</button>`;
     else if (tv) tea.innerHTML = `<h2>차 한 잔 초대</h2><div class="rx-say">${said({en: bond.fill(tv.en), ko: bond.fill(tv.ko)})}</div><button type="button" class="rp-teago"><span lang="en">I'd be delighted.</span> 기꺼이 가겠습니다 →</button>`;
 

@@ -1,7 +1,7 @@
 /* Reading the script (#/script/<deck>): a professor's lines film by film, in order, under their scenes, with the line
    spoken just before. Key expressions are underlined; tapping a line reads it aloud (en-GB). Reading only — nothing
    here touches the review schedule. */
-import {DECKS, SPEAKERS, LOCKED, byId} from './decks.js';
+import {DECKS, SPEAKERS, LOCKED, byId, filmLabel} from './decks.js';
 import {available} from './doors.js';
 import * as store from './store.js';
 import * as speech from './speech.js';
@@ -12,6 +12,7 @@ export function initScript(app){
   const sec = $('#script'), list = $('#scList');
   let deck = null, cards = [], film = 0, showKo = true;
 
+  const part = c => c.film + (c.medium === 'novel' ? 'n' : 'f');
   function underline(line, bre){
     const rs = findRanges(line, bre).sort((a, b) => a[0] - b[0]);
     let html = '', at = 0;
@@ -19,13 +20,14 @@ export function initScript(app){
     return html + esc(line.slice(at));
   }
   function draw(){
-    const films = [...new Set(cards.map(c => c.film))].sort((a, b) => a - b);
+    /* a tab for each film — and, in a deck that also has the novels, for each book: 4권 5권 5편 … in the deck's own order */
+    const films = [...new Set(cards.map(part))].sort((a, b) => parseInt(a) - parseInt(b) || (a < b ? 1 : -1));
     if (!films.includes(film)) film = films[0];
     $('#scFilms').innerHTML = films.map(f => {
-      const c = cards.find(x => x.film === f);
-      return `<button type="button" data-film="${f}" class="${f === film ? 'on' : ''}" aria-pressed="${f === film}" title="${esc(c.film_ko)}">${f}편</button>`;
+      const c = cards.find(x => part(x) === f);
+      return `<button type="button" data-film="${f}" class="${f === film ? 'on' : ''}" aria-pressed="${f === film}" title="${esc(c.film_ko)}">${c.film}${c.medium === 'novel' ? '권' : '편'}</button>`;
     }).join('');
-    const rows = cards.filter(c => c.film === film).sort((a, b) => a.order - b.order);
+    const rows = cards.filter(c => part(c) === film).sort((a, b) => a.order - b.order);
     const learnt = store.deck(deck.id).cards;
     let scene = '', html = '';
     for (const c of rows){
@@ -37,10 +39,10 @@ export function initScript(app){
     }
     list.innerHTML = html;
     $('#scCount').textContent = `${rows.length}줄`;
-    $('#scFilmName').textContent = rows.length ? `${film}편 · ${rows[0].film_ko}` : '';
+    $('#scFilmName').textContent = [...new Set(rows.map(filmLabel))].join(' → ');
   }
 
-  $('#scFilms').addEventListener('click', e => { const b = e.target.closest('[data-film]'); if (!b) return; film = +b.dataset.film; draw(); $('#scScroll').scrollTop = 0; });
+  $('#scFilms').addEventListener('click', e => { const b = e.target.closest('[data-film]'); if (!b) return; film = b.dataset.film; draw(); $('#scScroll').scrollTop = 0; });
   $('#scKo').addEventListener('click', () => { showKo = !showKo; $('#scKo').setAttribute('aria-pressed', !showKo); $('#scKo').textContent = showKo ? '한국어 숨기기' : '한국어 보기'; draw(); });
   const say = el => {
     const c = cards.find(x => x.id === el.dataset.say); if (!c) return;

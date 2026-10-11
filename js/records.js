@@ -8,6 +8,7 @@ import * as store from './store.js';
 import * as bond from './bond.js';
 import * as need from './need.js';
 import * as doors from './doors.js';
+import * as bella from './bella.js';
 import {$, esc, fitPaper, toast} from './ui.js';
 
 const pad = n => String(n).padStart(2, '0');
@@ -75,7 +76,7 @@ export function initRecords(app){
     $('#recProfBody').innerHTML = all.map(([d, cards]) => {
       if (!cards) return '';
       const g = srs.progress(d.id, cards), pl = g.seen / g.total * 100, pm = g.mastered / g.total * 100;
-      return `<li><div class="rp-name"><span lang="en">${esc(d.who)}</span>${d.bond ? `<em class="rp-stage">${bond.STAGES[bond.stage(d.id)]}</em>` : ''}<small>${g.seen} / ${g.total} · 숙달 ${g.mastered}</small></div>` +
+      return `<li><div class="rp-name"><span lang="en">${esc(d.who)}</span>${d.place === 'drawing' ? `<em class="rp-stage" lang="en">“${esc(bella.you(false))}”</em>` : d.bond ? `<em class="rp-stage">${bond.STAGES[bond.stage(d.id)]}</em>` : ''}<small>${g.seen} / ${g.total} · 숙달 ${g.mastered}</small></div>` +
         `<div class="rp-bar" role="img" aria-label="배운 ${g.seen}장, 숙달 ${g.mastered}장, 전체 ${g.total}장"><i class="seen" style="width:${pl}%;--c:${d.glow}"></i><i class="mast" style="width:${pm}%;--c:${d.glow}"></i></div></li>`;
     }).join('');
     const rows = [];

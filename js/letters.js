@@ -62,7 +62,7 @@ export function initLetters(app){
       const mark = m.read ? '' : it.howler ? `<i class="seal hw-${it.pink ? 'pink' : 'red'}"></i>` : `<i class="seal s-${deck.id}"></i>`;
       return `<li class="${m.read ? '' : 'new'}${it.howler ? ' hw' : ''}"><button type="button" data-mail="${esc(m.id)}">${mark}` +
         `<span class="lt-meta">${esc(it.kind)} · ${fmt(m.t)}</span><span class="lt-first" lang="en">${esc(first)}…</span></button></li>`;
-    }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${deck.place === 'manor' ? '저택에서 일한 날이 쌓이면 은쟁반에 카드가 놓입니다.' : esc(deck.ko) + '와(과) 공부하면 ' + (deck.place === 'fire' ? '쪽지가' : '부엉이가') + ' 옵니다.'}</p></li>`;
+    }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${deck.place === 'manor' ? '저택에서 일한 날이 쌓이면 은쟁반에 카드가 놓입니다.' : esc(deck.ko) + '와(과) 공부하면 ' + (deck.place === 'corridor' ? '부엉이가' : '쪽지가') + ' 옵니다.'}</p></li>`;
   }
 
   function openMail(key){
@@ -76,7 +76,7 @@ export function initLetters(app){
       (it.gift ? `<figure class="lt-gift"><img src="${giftImg(deck.id, it.gift.id)}" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()"><figcaption><b lang="en">${esc(it.gift.name.en)}</b><span>${esc(it.gift.name.ko)}</span></figcaption></figure>` : '') +
       `<div class="lt-letter${it.howler ? ' lt-burnt' : ''}" lang="en" id="shTitle">${para(it.en)}</div>` +
       `<div class="lt-ko">${para(it.ko)}</div>` +
-      (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">연구실로 가기 · 주문 배우기</button>` : '') +
+      (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">${deck.place === 'drawing' ? '응접실로 간다 · 마음 닫기' : '연구실로 가기 · 주문 배우기'}</button>` : '') +
       (it.map ? '<button type="button" class="sh-drill" data-mapgo="1">양피지 펼치기</button>' : '') +
       (it.go ? `<button type="button" class="sh-drill" data-go="${esc(it.go)}">${esc(it.btn)}</button>` : '') +
       (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key));
@@ -158,7 +158,7 @@ export function initLetters(app){
     draw();
     $('#ltScroll').scrollTop = 0;
     /* arrived by accepting an invitation in the corridor: go straight in to tea */
-    if (sub === 'tea' && deck.place === 'fire'){ app.go('#/fire', true); return; }
+    { const at = ({fire: '#/fire', drawing: '#/manor/drawing'})[deck.place]; if (sub === 'tea' && at){ app.go(at, true); return; } }
     if (sub === 'tea'){ history.replaceState(null, '', '#/letters/' + deck.id); if (bond.teaReady(deck.id)) teaStart(); }
     /* arrived by opening an envelope the owl brought: that letter, open */
     else if (sub && bond.itemOf(deck.id, sub)){ history.replaceState(null, '', '#/letters/' + deck.id); openMail(sub); }

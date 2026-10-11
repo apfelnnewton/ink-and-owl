@@ -16,6 +16,8 @@ import * as bond from './bond.js';
 import * as doors from './doors.js';
 import * as wand from './wand.js';
 import {floo} from './fire.js';
+import * as bella from './bella.js';
+import {makeTalk} from './talk.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
 const ID = 'lucius';
@@ -36,7 +38,7 @@ export function money(k){
   const c = coins(k), out = [c.g && `${c.g}갈레온`, c.s && `${c.s}시클`, c.k && `${c.k}크넛`].filter(Boolean);
   return out.length ? out.join(' ') : '빈 주머니';
 }
-const earn = k => { store.get().purse = purse() + k; };
+export const earn = k => { store.get().purse = purse() + k; };
 const coinRow = k => { const c = coins(k);
   return `<ul class="purse-coins">${[['galleon', 'Galleons', '갈레온', c.g], ['sickle', 'Sickles', '시클', c.s], ['knut', 'Knuts', '크넛', c.k]].map(([f, en, ko, n]) =>
     `<li class="${n ? '' : 'none'}"><img src="assets/money/${f}.webp" alt=""><b>${n}</b><span lang="en">${en}</span><small>${ko}</small></li>`).join('')}</ul>`; };
@@ -128,7 +130,11 @@ const SPOTS = {
 
 export function initManor(app){
   const sec = $('#manor'), ph = $('#mnPhoto');
-  let view = 'hall';
+  let view = 'hall', bbeat = 0;
+  const BID = 'bellatrix';
+  const talk = makeTalk(sec, BID, {label: '응접실 대화', noted: '오늘의 이야기는 내 방 <b>차 일지</b>의 벨라트릭스 쪽에 적어 두었습니다.', close: '펜을 다시 든다'});
+  const scrap = () => bella.isOpen() && bond.bondOf(BID).mail.some(x => x.id === 'INTRO' && !x.read);   // her first scrap, still in the cabinet
+  const marked = s => esc(bond.fill(s)).replace(/\[\[([^\]]+)\]\]/g, '<b>$1</b>');
   const go = (label, attr, cls = '') => `<button type="button" class="cgo ${cls}" ${attr}><span>${label}</span><i aria-hidden="true">→</i></button>`;
   const cardsOf = () => app.data[ID] || null;
 
@@ -160,8 +166,10 @@ export function initManor(app){
     $('#mnWho').textContent = 'The Entrance Hall';
     $('#mnStats').innerHTML = '';
     $('#mnLine').innerHTML = '<span class="k">윌트셔 · 말포이 저택의 현관 홀. 양쪽에 문이 하나씩 있다.</span>';
-    $('#mnGo').innerHTML = go('서재 <em>루시우스 말포이</em>', 'data-to="#/manor/study"') + go('응접실 <em>문이 잠겨 있다</em>', 'data-shut', 'me-second locked');
-    spots({drawing: '잠김'});
+    const bo = bella.isOpen();
+    $('#mnGo').innerHTML = go('서재 <em>루시우스 말포이</em>', 'data-to="#/manor/study"') +
+      (bo ? go('응접실 <em>벨라트릭스 레스트레인지</em>', 'data-to="#/manor/drawing"', 'me-second') : go('응접실 <em>문이 잠겨 있다</em>', 'data-shut', 'me-second locked'));
+    spots({drawing: bo ? '' : '잠김'});
   }
 
   function drawStudy(){
@@ -177,11 +185,45 @@ export function initManor(app){
     /* the card stays short, clear of the salver on the desk: his words about the wages are on the salver itself */
     const line = [w && `<span class="k">오늘 삯 ${w.s}시클은 은쟁반 위에 있다</span>`,
       !w && done && `<span class="k">${g.complete ? '물건들은 할 말을 다 했다' : '오늘은 손댈 물건이 없다'}</span>`,
-      ready.length && `<span class="bond">검수를 기다리는 물건 · ${esc(ready.map(o => o.name.ko).join(' · '))}</span>`].filter(Boolean).join('');
+      ready.length && `<span class="bond">검수를 기다리는 물건 · ${esc(ready.map(o => o.name.ko).join(' · '))}</span>`,
+      scrap() && '<span class="bond">유리장 문틈에 쪽지 한 장이 꽂혀 있다</span>'].filter(Boolean).join('');
     $('#mnLine').innerHTML = line; $('#mnLine').hidden = !line;
     $('#mnGo').innerHTML = (done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('일 시작하기', `data-to="#/room/${ID}"`)) +
       (w ? `<button type="button" class="clink" data-to="#/report/${ID}">오늘 한 일 보기</button>` : '');
-    spots({cabinet: ready.length ? '검수' : '', salver: w ? `${w.s}시클` : ''});
+    spots({cabinet: scrap() ? '쪽지' : ready.length ? '검수' : '', salver: w ? `${w.s}시클` : ''});
+  }
+
+  /* the drawing room: Bellatrix dictates. Her first words in beats; then the day's dictation, a talk when she starts one,
+     and what crossed the floor today */
+  function drawDrawing(){
+    photo(BID);
+    $('#mnTtl').textContent = 'The Drawing Room';
+    $('#mnWho').textContent = byId(BID).who;
+    const d = bond.loaded(BID), cards = app.data[BID];
+    const put = (stats, line, btns) => { $('#mnStats').innerHTML = stats; $('#mnLine').innerHTML = line; $('#mnLine').hidden = !line; $('#mnGo').innerHTML = btns; spots(); };
+    if (!d || !cards){ put('', '<span class="k">촛불이 하나씩 켜지는 중…</span>', ''); return; }
+    const say = l => `<span class="q" lang="en">${esc(bond.fill(l.en))}</span><span class="k">${esc(bond.fill(l.ko))}</span>`;
+    if (!bella.met()){
+      const beats = bella.firstWords(), b = beats[bbeat] || beats[0], last = bbeat >= beats.length - 1;
+      put('', b ? say(b) : '', go(last ? '자리에 앉는다' : '듣는다', 'data-bbeat'));
+      return;
+    }
+    const p = srs.preview(BID, cards), g = srs.progress(BID, cards), done = p.done || p.empty, t = bond.teaReady(BID), {tip, gal} = bella.today();
+    let stats = done ? `<div><b>${g.mastered}</b>숙달 / ${g.total}</div><div><b>${g.seen}</b>받아 적은 말</div>`
+      : `<div><b>${p.review}</b>복습</div><div><b>${p.fresh}</b>새 대사</div><div><b>${g.mastered}</b>숙달 / ${g.total}</div>`;
+    let line = gal ? say(gal) + '<span class="bond">갈레온 한 닢이 바닥을 구른다</span>' : tip ? say(tip) + `<span class="bond">시클 ${tip.s}닢이 바닥을 구른다</span>`
+      : done ? `<span class="k">${p.done ? `오늘 받아쓰기는 끝났다 · 내일 복습 ${g.dueTomorrow}장` : g.complete ? '그녀의 말을 모두 익혔다' : '오늘은 받아 적을 말이 없다'}</span>` : '';
+    let main = done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${BID}/extra"`) : '') : go('받아쓰기 시작', `data-to="#/room/${BID}"`);
+    if (t){
+      const iv = bond.inviteText(BID);
+      line = say(iv); stats = '';
+      main = go(`펜을 내려놓는다 · <span lang="en">${esc(t.title.en)}</span>`, 'data-btalk') + main.replace('class="cgo "', 'class="cgo me-second"');
+    }
+    const link = done && Object.keys(((store.deck(BID).day || {}).results) || {}).length ? `<button type="button" class="clink" data-to="#/report/${BID}">오늘 받아쓴 것 보기</button>` : '';
+    /* Occlumency is taught in this room: once her note about it has come, the way in is here too */
+    const sps = store.get().spells || {};
+    const oc = (sps.sent || {}).occlumency ? `<button type="button" class="clink" data-to="#/spell/occlumency">${(sps.learnt || {}).occlumency ? '마음 닫기 · 문을 다시 닫아 본다' : '마음 닫기 · 그녀에게 배운다'}</button>` : '';
+    put(stats, line, main + link + oc);
   }
 
   /* the glass cabinet: the seven objects, each with how far its cleaning has come */
@@ -190,7 +232,8 @@ export function initManor(app){
     photo(ID);
     $('#mnTtl').textContent = 'The Glass Cabinet';
     const objs = objects(cardsOf());
-    $('#mnGrid').innerHTML = objs.map(o => `<li><button type="button" class="mn-obj ${o.state}" data-obj="${o.id}">` +
+    $('#mnGrid').innerHTML = (scrap() ? '<li><button type="button" class="mn-obj mn-scrap" data-to-note><span class="tx"><b lang="en">A scrap of paper</b><em>유리장 문틈에 꽂힌 쪽지</em><small>루시우스의 글씨가 아니다</small></span></button></li>' : '') +
+      objs.map(o => `<li><button type="button" class="mn-obj ${o.state}" data-obj="${o.id}">` +
       `<span class="pic"><img src="${art(o.id)}" alt="" loading="lazy"></span>` +
       `<span class="tx"><b lang="en">${esc((o.name || {}).en || '')}</b><em>${esc((o.name || {}).ko || '')}</em><small>${esc(STATE(o))}</small></span></button></li>`).join('');
   }
@@ -200,7 +243,10 @@ export function initManor(app){
       `<figure class="lt-gift mn-fig ${o.state}"><img src="${art(o.id)}" alt=""><figcaption><b lang="en">${esc(o.name.en)}</b><span>${esc(o.name.ko)}</span></figcaption></figure>`;
     const d = bond.loaded(ID);
     let body;
-    if (o.state === 'done') body = `<div class="mn-tag"><small>내력표${o.date ? ' · ' + fmt(o.date) : ''}</small><p lang="en" id="shTitle">${esc(o.tag.en)}</p><p class="ko">${esc(o.tag.ko)}</p></div>`;
+    /* a label that is written may have been scrawled across since (bella.js) */
+    const sc = o.state === 'done' && bella.scribble(o.id);
+    if (o.state === 'done') body = `<div class="mn-tag"><small>내력표${o.date ? ' · ' + fmt(o.date) : ''}</small><p lang="en" id="shTitle">${esc(o.tag.en)}</p><p class="ko">${esc(o.tag.ko)}</p></div>` +
+      (sc ? `<div class="mn-scrib"><small>누군가 그 위에 휘갈겨 썼다</small><p lang="en">${marked(sc.en)}</p><p class="ko">${esc(bond.fill(sc.ko))}</p></div>` : '');
     else if (o.state === 'ready') body = `<div class="tea-say"><p class="en" lang="en" id="shTitle">${esc(o.ask.en)}</p><p class="ko">${esc(o.ask.ko)}</p></div>` +
       `<p class="mn-how">이 물건이 들은 말 가운데 ${Math.min(ASKED, o.total)}줄을 직접 쓴다. 하나라도 틀리면 내력표는 내일로 미뤄진다.</p>` +
       `<button type="button" class="sh-drill" data-insp="${o.id}">검수를 받는다</button>`;
@@ -219,25 +265,31 @@ export function initManor(app){
   }
 
   /* ---------- events */
+  const shut = () => toast('<span class="q" lang="en">The drawing-room door is locked.</span><span class="k">응접실 문은 잠겨 있다. 안쪽에서 누군가 낮게 웃는다.</span>', 2800, true);
   $('#mnGo').addEventListener('click', e => {
-    if (e.target.closest('[data-shut]')){ toast('<span class="q" lang="en">The drawing-room door is locked.</span><span class="k">응접실 문은 잠겨 있다. 안쪽에서 누군가 낮게 웃는다.</span>', 2800, true); return; }
+    if (e.target.closest('[data-shut]')){ shut(); return; }
+    if (e.target.closest('[data-bbeat]')){ if (bbeat < bella.firstWords().length - 1) bbeat++; else bella.sit(); draw(); return; }
+    if (e.target.closest('[data-btalk]')){ talk.start(() => draw()); return; }
     const to = e.target.closest('[data-to]'); if (to) app.go(to.dataset.to);
   });
   $('#mnSpots').addEventListener('click', e => {
     const b = e.target.closest('[data-spot]'); if (!b) return;
     const id = b.dataset.spot;
     if (id === 'study') app.go('#/manor/study');
-    else if (id === 'drawing') $('#mnGo [data-shut]').click();
+    else if (id === 'drawing'){ if (bella.isOpen()) app.go('#/manor/drawing'); else shut(); }
     else if (id === 'cabinet') app.go('#/manor/cabinet');
     else if (id === 'salver') salver();
   });
-  $('#mnGrid').addEventListener('click', e => { const b = e.target.closest('[data-obj]'); if (b) openObject(+b.dataset.obj); });
+  $('#mnGrid').addEventListener('click', e => {
+    if (e.target.closest('[data-to-note]')){ app.go(`#/letters/${BID}/INTRO`); return; }
+    const b = e.target.closest('[data-obj]'); if (b) openObject(+b.dataset.obj);
+  });
   $('#sheetBody').addEventListener('click', e => {
     if (sec.hidden) return;
     const i = e.target.closest('[data-insp]'); if (i){ st().cur = +i.dataset.insp; store.save(); closeSheet(); app.go(`#/room/${ID}/insp`); return; }
     const g = e.target.closest('[data-go]'); if (g){ closeSheet(); app.go(g.dataset.go); }
   });
-  const back = () => { if (view === 'cabinet') app.go('#/manor/study'); else if (view === 'study') app.go('#/manor'); else floo(app, '#/me'); };
+  const back = () => { if (view === 'cabinet') app.go('#/manor/study'); else if (view === 'study' || view === 'drawing') app.go('#/manor'); else floo(app, '#/me'); };
   $('#mnBack').addEventListener('click', back);
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
 
@@ -248,13 +300,15 @@ export function initManor(app){
     sec.classList.toggle('cabinet', cab);
     sec.dataset.view = v;
   }
-  const draw = () => view === 'cabinet' ? drawCabinet() : view === 'study' ? drawStudy() : drawHall();
+  const draw = () => view === 'cabinet' ? drawCabinet() : view === 'study' ? drawStudy() : view === 'drawing' ? drawDrawing() : drawHall();
   async function show({id}){
     if (!isOpen()){ app.go('#/me', true); return; }
-    mode(id === 'study' || id === 'cabinet' ? id : 'hall');
+    const v = ['study', 'cabinet', 'drawing'].includes(id) ? id : 'hall';
+    if (v === 'drawing' && !bella.isOpen()){ app.go('#/manor', true); return; }
+    mode(v); bbeat = 0;
     draw();
     if (view === 'hall') return;
-    await Promise.all([bond.load(ID), app.loadDeck(ID).catch(() => null)]);
+    await Promise.all([bond.load(ID), app.loadDeck(ID).catch(() => null), bella.isOpen() ? bond.load(BID) : null, v === 'drawing' ? app.loadDeck(BID).catch(() => null) : null]);
     if (!sec.hidden) draw();
     if (view === 'cabinet') $('#mnCab').scrollTop = 0;
   }

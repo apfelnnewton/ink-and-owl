@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12k';
+const VERSION = 'he-2026-10-12l';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -35,6 +35,30 @@ const CORE = [
   'js/quotes.js',
   /* the fireplace (Sirius) and Malfoy Manor (Lucius): not doors in the corridor, so listed one by one (2026-10-12) */
   'js/fire.js',
+  'js/bella.js',
+  'js/talk.js',
+  'data/bellatrix.json',
+  'practice/bellatrix.json',
+  'practice/bellatrix-examples.json',
+  'grammar/bellatrix.json',
+  'bond/bellatrix.json',
+  'assets/rooms/bellatrix-portrait.webp',
+  'assets/rooms/bellatrix-wide.webp',
+  'assets/ui/seal-bellatrix.webp',
+  'assets/spells/occlu-0.webp',
+  'assets/spells/occlu-1.webp',
+  'assets/spells/occlu-2.webp',
+  'assets/spells/occlu-3.webp',
+  'assets/keepsakes/bellatrix-K01.webp',
+  'assets/keepsakes/bellatrix-K02.webp',
+  'assets/keepsakes/bellatrix-K03.webp',
+  'assets/keepsakes/bellatrix-K04.webp',
+  'assets/keepsakes/bellatrix-K05.webp',
+  'assets/keepsakes/bellatrix-K06.webp',
+  'assets/keepsakes/bellatrix-K07.webp',
+  'assets/keepsakes/bellatrix-K08.webp',
+  'assets/keepsakes/bellatrix-K09.webp',
+  'assets/keepsakes/bellatrix-K10.webp',
   'js/manor.js',
   'data/sirius.json',
   'data/lucius.json',

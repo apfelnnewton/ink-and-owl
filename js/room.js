@@ -8,7 +8,7 @@
    missed most often). */
 import {shelf, tray} from './art.js';
 import {cauldron, bell, eraser} from './art-plus.js';
-import {byId, SPEAKERS, voiceOf, homeOf, isProf} from './decks.js';
+import {byId, SPEAKERS, voiceOf, homeOf, isProf, filmLabel} from './decks.js';
 import * as doors from './doors.js';
 import * as manor from './manor.js';
 import * as srs from './srs.js';
@@ -269,8 +269,8 @@ export function initRoom(app){
     $('#sStage').textContent = kind ? `${extra ? ROUND[extra] : '복습'} · ${kind === 'gap' && gapOf.from === 'example' ? '예문 쓰기' : KIND[kind].label}` : extra === 'need' ? STAGE_LABEL[mode].replace('복습', '필요의 방') : STAGE_LABEL[mode];
     $('#hint').textContent = HINT[mode] || '';
 
-    if (extra === 'need') $('#noteFilm').innerHTML = `<i class="seal s-${deck.id}"></i>${esc(deck.ko)} · ${card.film}편 · ${esc(card.film_ko)}`;
-    else $('#noteFilm').textContent = `${card.film}편 · ${card.film_ko}`;
+    if (extra === 'need') $('#noteFilm').innerHTML = `<i class="seal s-${deck.id}"></i>${esc(deck.ko)} · ${esc(filmLabel(card))}`;
+    else $('#noteFilm').textContent = filmLabel(card);
     $('#noteFan').hidden = card.source !== 'fan_script';
     $('#noteScene').textContent = card.scene_ko;
     const cue = $('#noteCue');
@@ -544,7 +544,7 @@ export function initRoom(app){
     if (own){ const [en, ko] = own[g][hash(card.id + srs.today() + g) % own[g].length];
       return `<div class="react ${g} room-says"><span class="tag">${esc(tag)}</span><p class="q" lang="en">${esc(en)}</p><p class="k">${esc(ko)}</p></div>`; }
     const list = voiceOf(deck.id).react[g], l = list[hash(card.id + srs.today() + g) % list.length];
-    return `<div class="react ${g}"><span class="tag">${esc(tag)}</span><p class="q" lang="en">“${esc(l.en)}”</p><p class="k">${esc(l.ko)}</p></div>`;
+    return `<div class="react ${g}"><span class="tag">${esc(tag)}</span><p class="q" lang="en">“${esc(bond.fill(l.en))}”</p><p class="k">${esc(bond.fill(l.ko))}</p></div>`;
   }
 
   /* ---------- fill the blank: in the line itself, or in a new example sentence for one of its expressions */
@@ -675,7 +675,7 @@ export function initRoom(app){
   }
   function partsSheet(){
     const all = cards.filter(c => c.speech === card.speech).sort((a, b) => a.part - b.part);
-    openSheet(`<div class="sh-kind"><span>${card.film}편 · ${esc(card.film_ko)}</span></div><h2 class="sh-expr" id="shTitle">발화 전체 (${card.of}조각)</h2>` +
+    openSheet(`<div class="sh-kind"><span>${esc(filmLabel(card))}</span></div><h2 class="sh-expr" id="shTitle">발화 전체 (${card.of}조각)</h2>` +
       `<ol class="sh-parts">${all.map(c => `<li class="${c.id === card.id ? 'now' : ''}"><span class="no">${c.part}</span><div><div class="en" lang="en">${esc(c.line)}</div><div class="kr">${esc(c.ko)}</div></div></li>`).join('')}</ol>`);
   }
 
@@ -765,7 +765,7 @@ export function initRoom(app){
     showQuiet();
     $('#rTitle').textContent = d.room;
     room.setAttribute('aria-label', d.place === 'corridor' ? `${d.ko}의 교실` : d.where);
-    $('#backBtn').setAttribute('aria-label', ({fire: '벽난로 앞으로 돌아가기', manor: '서재로 돌아가기'})[d.place] || '복도로 나가기');
+    $('#backBtn').setAttribute('aria-label', ({fire: '벽난로 앞으로 돌아가기', manor: '서재로 돌아가기', drawing: '응접실로 돌아가기'})[d.place] || '복도로 나가기');
     wall();
     fireFilm(d.place === 'fire');
     try { [cards, practice, examples] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id), grammar.load(d.id)]); }

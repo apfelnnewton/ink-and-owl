@@ -21,12 +21,14 @@ import * as map from './map.js';
 import * as need from './need.js';
 import * as fire from './fire.js';
 import * as manor from './manor.js';
+import * as bella from './bella.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
 const AT = [0, 80, 250, 600, 1200];
 const POST_OPEN = .22, POST_STUDY = .5, POST_CAP = 2, Q_PER_TEA = 30, Q_PER_TALK = 20;
-const byFire = id => (byId(id) || {}).place === 'fire';
+const byFire = id => ['fire', 'drawing'].includes((byId(id) || {}).place);   // talks instead of tea: by the fire, and in the drawing room
+const inDrawing = id => (byId(id) || {}).place === 'drawing';
 /* a fixed roll for (day, professor, purpose): the same answer however often the app is opened that day */
 const roll = key => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return ((h >>> 0) % 10000) / 10000; };
 const pad3 = n => String(n).padStart(3, '0');
@@ -54,7 +56,8 @@ export const unread = id => (id ? [id] : DECKS.map(d => d.id)).reduce((n, d) => 
 /* the learner's names, from settings: {name} formal, {first} first name */
 export function fill(text){
   const st = store.get().settings, first = st.firstName || 'friend', sur = st.surname || '', title = st.title ?? '';
-  return String(text).replace(/\{name\}/g, sur ? (title ? `${title} ${sur}` : sur) : first).replace(/\{first\}/g, first);
+  return String(text).replace(/\{name\}/g, sur ? (title ? `${title} ${sur}` : sur) : first).replace(/\{first\}/g, first)
+    .replace(/\{you\}/g, (m, at, all) => { const ko = /[가-힣]/.test(all), w = bella.you(ko); return !ko && (at === 0 || /[.!?]["')]?\s+$/.test(all.slice(0, at))) ? w[0].toUpperCase() + w.slice(1) : w; });
 }
 
 /* ---------- post */
@@ -70,6 +73,7 @@ function post(id, item){
   return true;
 }
 function stageUp(id, before){
+  if (inDrawing(id)){ bella.nameCheck(); return; }   // her stages show as the name she uses, with their own notes and things
   const after = stage(id);
   for (let k = before + 1; k <= after; k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); if (k >= 2 && byId(id).news) group.announce('stage', id, k); }
 }
@@ -94,7 +98,7 @@ function deckChecks(id){
   [[.1, 'L26'], [.25, 'L27'], [.5, 'L28'], [.75, 'L29'], [1, 'L30']].forEach(([f, l]) => { if (mast >= f - 1e-9) post(id, l); });
   if (g.complete) post(id, 'K10');
   /* every stage reached so far has its letter and its gift (posting is once only, so this is safe to repeat) */
-  for (let k = 1; k <= stage(id); k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); }
+  if (!inDrawing(id)) for (let k = 1; k <= stage(id); k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); }
 }
 
 /* ---------- requests: one at a time, from the second stage on, every five study days */
@@ -185,6 +189,7 @@ export function finishTea(id, tea, score, picks){
   if (n >= 1) post(id, 'L48'); if (n >= 10) post(id, 'L49'); if (n >= 20) post(id, 'L50');
   if (byFire(id)){ const gift = {5: 'K05', 10: 'K06', 15: 'K07', 20: 'K08'}[n]; if (gift) post(id, gift); }   // his gifts 5–8 come with the talks (he asks no favours)
   else if (n % 10 === 0 && n <= 100) post(id, 'K' + (10 + n / 10));
+  if (inDrawing(id)) bella.nameCheck();   // the twentieth talk is what her last name for the learner waits for
   store.save();
 }
 
@@ -249,10 +254,11 @@ export async function daily(){
   }
   greetings();
   wandLetter();
+  manor.daily();
+  bella.daily();   // before the spells: her name for the learner decides whether she will teach hers
   await spells.daily();
   await map.daily();
   fire.daily();
-  manor.daily();
   newsLetter();
   store.save();
 }
@@ -307,6 +313,7 @@ export function itemOf(id, key){
   if (key === 'NEED') return need.textOf(id, key);
   if (key === 'SIRIUS' || /^WN-\d+-/.test(key)) return fire.textOf(id, key, data.sirius);
   if (id === 'lucius') return manor.textOf(key, data.lucius);
+  if (id === 'bellatrix'){ const t = bella.textOf(key, data.bellatrix); if (t !== undefined) return t; }
   if (/^WD-[a-z]+$/.test(key)){
     const wood = key.slice(3), own = wand.OWNER[wood];
     const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;
@@ -401,6 +408,10 @@ export function init(a){
     const who = byId(id);
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl
     if (id === 'lucius' && /^C\d\d$/.test(key)) return;   // a card on the salver, beside the wages (manor.js)
+    if (who.place === 'drawing'){   // no owl: a scrap in a slanting hand (the first one waits in the glass cabinet)
+      if (key !== 'INTRO') toast(`<span class="q" lang="en">A scrap of paper, in a slanting hand.</span><span class="k">벨라트릭스의 ${/^K/.test(key) ? '물건이' : /^S\d/.test(key) ? '낙서가' : '쪽지가'} 놓여 있다.</span>`, 3200, true);
+      return;
+    }
     if (/^H-/.test(key) && howler.isHowler(id)) return;   // a Howler comes by owl (owl.js)
     toast(`<span class="q" lang="en">An owl arrives.</span><span class="k">${esc(who.ko)}에게서 ${/^K/.test(key) ? '선물이' : /^R\d\d-ask/.test(key) ? '부탁이' : /^G/.test(key) ? '카드가' : '편지가'} 왔습니다.</span>`, 3200, true);
   });

@@ -12,6 +12,7 @@ import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as doors from './doors.js';
 import * as wand from './wand.js';
+import * as bella from './bella.js';
 
 let DATA = null;
 export const load = () => DATA ? Promise.resolve(DATA) : fetch('spells/spells.json').then(r => r.ok ? r.json() : null).then(j => (DATA = j)).catch(() => null);
@@ -29,10 +30,12 @@ const LINES_FOR_FIRST = 10;
 const learnedLines = prof => Object.keys(store.deck(prof).cards || {}).length;
 /* what still stands between the learner and a spell, in words (the spellbook shows it on a locked page) */
 export function condition(sp){
+  if (sp.prof === 'bellatrix') return "'내 서기'라고 불리고 조카 이야기를 들으면";
   if (sp.n === 1) return `대사 ${LINES_FOR_FIRST}개 배우기`;
   return `관계 '${bond.STAGES[sp.n - 1]}'`;
 }
 export function ready(sp){
+  if (sp.prof === 'bellatrix') return !!wand.get() && bella.occluReady();   // not a door in the corridor: she decides (bella.js)
   if (!wand.get() || !doors.isOpen(sp.prof)) return false;
   if (sp.n > 1){ const prev = ofProf(sp.prof).find(x => x.n === sp.n - 1); if (!prev || !isSent(prev.id)) return false; }
   return sp.n === 1 ? learnedLines(sp.prof) >= LINES_FOR_FIRST : bond.stage(sp.prof) >= sp.n - 1;
@@ -57,7 +60,7 @@ export async function daily(){
 /* the letter's words, for the post (bond.itemOf) */
 export function textOf(prof, key){
   const sp = get(key.slice(2)); if (!sp || sp.prof !== prof) return null;
-  return {kind: '주문 수업', en: sp.letter.en, ko: sp.letter.ko, spell: sp.id};
+  return {kind: sp.prof === 'bellatrix' ? '쪽지' : '주문 수업', en: sp.letter.en, ko: sp.letter.ko, spell: sp.id, ...(sp.letter.keys ? {keys: sp.letter.keys} : {})};
 }
 
 /* ---------- learning and reviewing */

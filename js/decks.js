@@ -12,7 +12,9 @@ export const DECKS = [
   {id:'slughorn', file:'slughorn.json', practice:'slughorn.json', examples:'slughorn-examples.json', who:'Professor Slughorn', ko:'슬러그혼 교수', room:'Potions, with Professor Slughorn', where:'마법약 교실, 1996년', plateName:'Prof. H. Slughorn', plateSub:'마법약', tag:'H. Slughorn', wood:'#56375A', stone:'#2B2F2B', metal:'brass', glow:'#B98AD6', seed:79},
   /* not professors and not doors in the corridor (2026-10-12, docs/plan-newfaces.md): `place` says where the deck is studied */
   {id:'sirius', file:'sirius.json', practice:'sirius.json', examples:'sirius-examples.json', who:'Sirius Black', ko:'시리우스', room:'A word by the fire', where:'내 방 벽난로', tag:'Padfoot', glow:'#E58A3C', place:'fire', keys:true, bond:true, news:false},
-  {id:'lucius', file:'lucius.json', practice:'lucius.json', examples:'lucius-examples.json', who:'Lucius Malfoy', ko:'루시우스', room:'The Study', where:'말포이 저택 서재', tag:'L. Malfoy', glow:'#A9C2B0', place:'manor', keys:false, bond:false, news:false}
+  {id:'lucius', file:'lucius.json', practice:'lucius.json', examples:'lucius-examples.json', who:'Lucius Malfoy', ko:'루시우스', room:'The Study', where:'말포이 저택 서재', tag:'L. Malfoy', glow:'#A9C2B0', place:'manor', keys:false, bond:false, news:false},
+  /* the drawing room at the manor (bella.js): her lines from the films and the novels in one deck; a bond of her own, shown as the name she uses */
+  {id:'bellatrix', file:'bellatrix.json', practice:'bellatrix.json', examples:'bellatrix-examples.json', who:'Bellatrix Lestrange', ko:'벨라트릭스', room:'The Drawing Room', where:'말포이 저택 응접실', tag:'B. L.', glow:'#B23A32', place:'drawing', keys:false, bond:true, news:false}
 ];
 /* the seven professors: a door in the corridor, a share in the keys, a bond, and news for the friends */
 DECKS.forEach(d => { if (!d.place) Object.assign(d, {place: 'corridor', keys: true, bond: true, news: true}); });
@@ -21,7 +23,7 @@ export const BONDED = DECKS.filter(d => d.bond);                  // stages, let
 export const KEYED = DECKS.filter(d => d.keys);                   // lines learnt here count towards keys
 export const isProf = id => PROFS.some(d => d.id === id);
 /* where a lesson is entered from and left for: the corridor, the fireplace in the guest room, the study at the manor */
-export const homeOf = id => ({fire: '#/fire', manor: '#/manor/study'})[(DECKS.find(d => d.id === id) || {}).place] || '#/';
+export const homeOf = id => ({fire: '#/fire', manor: '#/manor/study', drawing: '#/manor/drawing'})[(DECKS.find(d => d.id === id) || {}).place] || '#/';
 
 export const byId = id => DECKS.find(d => d.id === id);
 
@@ -187,6 +189,37 @@ export const EXTRA = {
     {min: 0, en: "Ah well, can't win them all, eh?", ko: "뭐, 늘 이길 순 없지, 응?"}
   ]
 };
+/* which film or book a line is from: "5편 · 불사조 기사단", or for a line from a novel its own label ("소설 5권 …") */
+export const filmLabel = c => c.medium === 'novel' ? c.film_ko : `${c.film}편 · ${c.film_ko}`;
+
+/* Bellatrix: written with her notes (docs/newfaces-work, BOND2.md), reviewed 2026-10-12 */
+Object.assign(REACT, {
+  bellatrix: {
+    good: [{en: "Word for word. How unnerving.", ko: "한 글자도 안 틀렸네. 소름 끼치게."}, {en: "Right. I shall find a fault later.", ko: "맞았어. 흠은 나중에 찾아 줄게."}, {en: "Ooh, it listens! Clever, clever pen.", ko: "어머, 듣고는 있었네? 똑똑하기도 하지, 요 펜은."}],
+    hard: [{en: "Almost. I did not say 'almost'.", ko: "거의 맞았네. 난 '거의'라고 말한 적 없는데."}, {en: "Close. Did it try its very best?", ko: "비슷해. 아이고, 그게 있는 힘껏 한 거야?"}, {en: "A word went astray. Fetch it back.", ko: "낱말 하나가 딴 데로 샜어. 도로 데려와."}],
+    again: [{en: "Wrong. I never said that. Never.", ko: "틀렸어. 난 그런 말 한 적 없어. 단 한 번도."}, {en: "No, no, no. Poor muddled little thing.", ko: "아니, 아니, 아니지. 가엾게도 뒤죽박죽이네."}, {en: "Tut, tut. That page gets torn up.", ko: "쯧쯧. 그 장은 찢어야겠네."}]
+  }
+});
+Object.assign(REMARKS, {
+  bellatrix: {
+    tiers: [
+      {min: 1, en: "Flawless. How dull for me; I had a cutting remark all ready.", ko: "흠잡을 데가 없네. 재미없게시리. 쏘아붙일 말을 다 준비해 놨는데."},
+      {min: 0.75, en: "Mostly right. Mostly. Do I say things mostly? I do not.", ko: "대체로 맞았어. 대체로. 내가 말을 '대체로' 하는 사람이야? 아니지."},
+      {min: 0.45, en: "Half right. Was the pen asleep, or was it you?", ko: "절반만 맞았네. 펜이 졸았어, 아니면 네가 졸았어?"},
+      {min: 0, en: "Tut. Were the words too long for it? Tomorrow, again. All of it.", ko: "쯧. 아이고, 낱말이 너무 길었어? 내일 다시 해. 처음부터 전부."}
+    ],
+    learned: {en: "All new today. Nothing to mark, so nothing to mock. How disappointing. Tomorrow, then.", ko: "오늘은 전부 새 말이네. 매길 게 없으니 놀릴 것도 없고. 김빠지게. 그럼 내일 보자고."},
+    empty: {en: "Nothing for you today. Go and dust something of Lucius's. Slowly.", ko: "오늘은 네가 할 게 없어. 가서 루시우스 물건에 먼지나 털어. 아주 느릿느릿."}
+  }
+});
+Object.assign(EXTRA, {
+  bellatrix: [
+    {min: 1, en: "All ten. Showing off, are we? Good. Do it again tomorrow.", ko: "열 개 다 맞혔네. 뽐내는 거야, 지금? 좋아. 내일도 그렇게 해 봐."},
+    {min: 0.6, en: "More right than wrong. That is how Lucius describes himself. Do better.", ko: "틀린 것보다 맞은 게 많네. 루시우스가 자기 자신을 딱 그렇게 말하지. 더 잘해."},
+    {min: 0, en: "You asked for more and made a mess of it. How brave. How silly.", ko: "더 하겠다고 나서더니 엉망으로 해 놨네. 용감하기도 하지. 어리석기도 하고."}
+  ]
+});
+
 /* Sirius and Lucius: written with their letters (docs/newfaces-work, BOND.md), reviewed 2026-10-11 */
 Object.assign(REACT, {
   sirius: {

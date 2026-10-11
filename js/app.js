@@ -129,7 +129,7 @@ let rt = 0;
 window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (current && screens[current].resize) screens[current].resize(); }, 160); });
 
 fetch('data/index.json').then(r => r.json()).then(j => { app.index = j; if (current === 'home') screens.home.refresh(); }).catch(() => {});
-Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (current === 'me') screens.me.refresh(); });
+Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (['me', 'fire', 'manor'].includes(current)) screens[current].refresh(); });
 
 app.fontsReady.then(() => { if (current === 'home') screens.home.refresh(); });
 route();

@@ -18,7 +18,7 @@ import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
 /* how each keepsake is earned (bond.js: stage letters, requests, half / all learnt, every tenth tea, every fifteenth letter) */
-const WHEN = (n, d) => d && d.place === 'fire' ? (n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `불 속 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
+const WHEN = (n, d) => d && d.place === 'drawing' ? (n === 1 ? '받아쓰기 첫날' : n <= 4 ? `호칭 ${n}번째` : n <= 8 ? `응접실 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : d && d.place === 'fire' ? (n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `불 속 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
   n === 10 ? '대사 전부 숙달' : n <= 20 ? `차 ${(n - 10) * 10}번째` : `편지 ${(n - 20) * 15}통째`;
 const img = (id, k) => new URL(`assets/keepsakes/${id}-${k}.webp`, location.href).href;
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -105,12 +105,13 @@ export function initMyRoom(app){
   /* ---------- the spellbook (#/me/spells): every professor's three spells — learnt ones open their page (spell.js),
      one whose letter has come waits for its lesson, the rest say what opens them */
   function drawSpells(){
-    const list = spells.all();
+    const teachers = [...PROFS, ...DECKS.filter(d => d.place !== 'corridor' && doors.available(d.id) && spells.ofProf(d.id).length)];
+    const list = spells.all().filter(sp => teachers.some(d => d.id === sp.prof));
     $('#splBody').innerHTML = `<header class="jnl-head"><div><h2 lang="en">The Spellbook</h2><p>주문서 · ${spells.learntList().length} / ${list.length || 21}</p></div></header>` +
-      PROFS.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
+      teachers.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
         if (spells.isLearnt(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="has"><b lang="en">${esc(sp.name)}</b><span>${esc(sp.ko)}</span>${spells.reviewDue(sp.id) ? '<em>복습할 때</em>' : ''}<i aria-hidden="true">→</i></button></li>`;
         if (spells.isSent(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="wait"><b lang="en">${esc(sp.name)}</b><span>편지가 왔습니다 · 수업 듣기</span><i aria-hidden="true">→</i></button></li>`;
-        return `<li class="lock"><b>주문 ${sp.n}</b><span>${doors.isOpen(d.id) ? esc(spells.condition(sp)) + '이 되면 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
+        return `<li class="lock"><b>주문 ${sp.n}</b><span>${d.place !== 'corridor' ? esc(spells.condition(sp)) + ' 쪽지가 옵니다' : doors.isOpen(d.id) ? esc(spells.condition(sp)) + '이 되면 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
       }).join('')}</ol></section>`).join('');
   }
 
@@ -150,16 +151,16 @@ export function initMyRoom(app){
     $('#jnlWho').innerHTML = friends().map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
       `${esc(d.ko.replace(/ 교수$/, ''))}<small>${drunk(d.id).length}</small>${bond.teaReady(d.id) ? '<i class="dot" aria-label="초대">✉</i>' : ''}</button>`).join('');
     showTab($('#jnlWho'));
-    const byFire = deck.place === 'fire';
+    const byFire = deck.place !== 'corridor', inDraw = deck.place === 'drawing';
     if (page){ drawPage(); return; }
     /* a tea invitation not yet taken is clipped to the front of the journal (it is also tucked into the professor's door) */
     const inv = bond.teaReady(deck.id), invCard = inv ? `<button type="button" class="jnl-inv" data-teago="${deck.id}"><i class="clip" aria-hidden="true"></i><i class="seal s-${deck.id}"></i>` +
-      `<span><small>${byFire ? '불 속에서 부른다' : '아직 마시지 않은 차'}${bond.inviteSrc(deck.id) === 'owl' ? ' · 오늘 밤까지' : ''}</small><b lang="en">${esc(inv.title.en)}</b><em>${esc(inv.title.ko)}</em></span><i class="go" aria-hidden="true">→</i></button>` : '';
-    $('#jnlBody').innerHTML = `<header class="jnl-head"><i class="seal s-${deck.id}"></i><div><h2 lang="en">${byFire ? 'By the fire with' : 'Tea with'} ${esc(deck.who)}</h2><p>${byFire ? `${esc(deck.ko)}와 불가에서 나눈 이야기 · ${list.length} / ${all}번` : `${esc(deck.ko)}와 나눈 차 · ${list.length} / ${all}잔`}</p></div></header>` + invCard +
+      `<span><small>${inDraw ? '그녀가 펜을 내려놓으라고 한다' : byFire ? '불 속에서 부른다' : '아직 마시지 않은 차'}${bond.inviteSrc(deck.id) === 'owl' ? ' · 오늘 밤까지' : ''}</small><b lang="en">${esc(inv.title.en)}</b><em>${esc(inv.title.ko)}</em></span><i class="go" aria-hidden="true">→</i></button>` : '';
+    $('#jnlBody').innerHTML = `<header class="jnl-head"><i class="seal s-${deck.id}"></i><div><h2 lang="en">${inDraw ? 'In the drawing room with' : byFire ? 'By the fire with' : 'Tea with'} ${esc(deck.who)}</h2><p>${inDraw ? `${esc(deck.ko)}와 응접실에서 나눈 이야기 · ${list.length} / ${all}번` : byFire ? `${esc(deck.ko)}와 불가에서 나눈 이야기 · ${list.length} / ${all}번` : `${esc(deck.ko)}와 나눈 차 · ${list.length} / ${all}잔`}</p></div></header>` + invCard +
       (list.length ? `<ol class="jnl-toc">${list.map(t => { const lg = (b.teaLog || {})[t.id];
         return `<li><button type="button" data-tea="${t.id}"><span class="no">${+t.id.slice(1)}</span>` +
           `<span class="tt"><b lang="en">${esc(t.title.en)}</b><small>${esc(t.title.ko)}</small></span><span class="dt">${lg ? fmt(lg.d) : ''}</span></button></li>`; }).join('')}</ol>`
-        : `<p class="jnl-empty">아직 빈 일지입니다. ${esc(deck.ko)}와 ${byFire ? '불가에서 이야기를 나누면' : '차를 마시면'} 그날의 대화가 여기 한 쪽씩 적힙니다.</p>`) +
+        : `<p class="jnl-empty">아직 빈 일지입니다. ${esc(deck.ko)}와 ${inDraw ? '응접실에서 이야기를 나누면' : byFire ? '불가에서 이야기를 나누면' : '차를 마시면'} 그날의 대화가 여기 한 쪽씩 적힙니다.</p>`) +
       '';
   }
 
@@ -213,7 +214,7 @@ export function initMyRoom(app){
   });
   $('#jnlWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id){ page = null; app.go('#/me/journal/' + b.dataset.who, true); } });
   $('#jnlBody').addEventListener('click', e => {
-    const g = e.target.closest('[data-teago]'); if (g){ app.go(byId(g.dataset.teago).place === 'fire' ? '#/fire' : `#/letters/${g.dataset.teago}/tea`); return; }
+    const g = e.target.closest('[data-teago]'); if (g){ app.go(({fire: '#/fire', drawing: '#/manor/drawing'})[byId(g.dataset.teago).place] || `#/letters/${g.dataset.teago}/tea`); return; }
     const t = e.target.closest('[data-tea]'); if (t){ page = t.dataset.tea; drawPage(); return; }
     if (e.target.closest('[data-toc]')){ page = null; drawJournal(); $('#jnl').scrollTop = 0; }
   });

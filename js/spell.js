@@ -24,7 +24,8 @@ const CLIP = {expelliarmus: 'expelliarmus', protego: 'protego', 'finite-incantat
   riddikulus: 'riddikulus', 'lumos-maxima': 'lumos', 'expecto-patronum': 'patronum', stupefy: 'stupefy', imperio: 'imperio', crucio: 'crucio',
   aguamenti: 'aguamenti', 'arresto-momentum': 'arresto', confundo: 'confundo', 'specialis-revelio': 'revelio', descendo: 'descendo',
   silencio: 'silencio', impedimenta: 'impedimenta', 'petrificus-totalus': 'petrificus'};
-const FX = {...Object.fromEntries(Object.entries(CLIP).map(([k, v]) => [k, `assets/spells/${v}.mp4`])), 'prior-incantato': 'assets/prior/smoke.mp4'};
+const FX = {...Object.fromEntries(Object.entries(CLIP).map(([k, v]) => [k, `assets/spells/${v}.mp4`])), 'prior-incantato': 'assets/prior/smoke.mp4', occlumency: 'assets/spells/occlumency.mp4'};
+const hashOf = s => { let h = 2166136261; for (const ch of s) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return h >>> 0; };
 /* the answers in a fixed shuffled order per question, so the right one is not always first */
 const order = (key, n) => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--){ h = Math.imul(h ^ i, 16777619); const j = (h >>> 0) % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -45,7 +46,7 @@ export function initSpell(app){
   const say = (line, cls = '') => `<div class="ol-say ${cls}"><p class="en" lang="en">${f(line.en)}</p><p class="ko">${f(line.ko)}</p></div>`;
   const btn = (act, en, ko, cls = '') => `<button type="button" class="ol-go ${cls}" data-act="${act}"><span lang="en">${en}</span><small>${ko}</small></button>`;
   const head = () => { const d = byId(sp.prof);
-    return `<header class="sp-head"><i class="seal s-${sp.prof}"></i><div><small>${esc(d.ko)} · 주문 ${sp.n} / 3</small><h2 lang="en">${esc(sp.name)}</h2><p>${esc(sp.ko)}</p></div></header>`; };
+    return `<header class="sp-head"><i class="seal s-${sp.prof}"></i><div><small>${esc(d.ko)} · ${d.place === 'corridor' ? `주문 ${sp.n} / 3` : d.where}</small><h2 lang="en">${esc(sp.name)}</h2><p>${esc(sp.ko)}</p></div></header>`; };
   function put(html, line){
     heard = line || '';
     body.innerHTML = html;
@@ -75,8 +76,8 @@ export function initSpell(app){
     const lines = sp.lines.map(lineHtml).filter(Boolean).join('');
     put(head() + `<ul class="sp-words">${sp.words.map(w => `<li><p class="w"><b lang="en">${esc(w.w)}</b>${w.pos ? ` <i>${esc(w.pos)}</i>` : ''}<span>${md(w.ko)}</span></p>` +
         `<button type="button" class="sp-ex" data-say="${esc(w.en)}"><span lang="en">${esc(w.en)}</span><small>${esc(w.eko)}</small></button></li>`).join('')}</ul>` +
-      `<div class="sp-lines"><h3>교수 대사에서</h3>${lines ? `<ul>${lines}</ul>` : `<p class="sp-none">${md(sp.lineNote || '이 단어들이 나오는 대사는 아직 없습니다.')}</p>`}</div>` +
-      (next === 'practise' ? btn('practise', 'Let us practise', '연습 5문제') : ''));
+      `<div class="sp-lines"><h3>${sp.prof === 'bellatrix' ? '그녀가 한 말에서' : '교수 대사에서'}</h3>${lines ? `<ul>${lines}</ul>` : `<p class="sp-none">${md(sp.lineNote || '이 단어들이 나오는 대사는 아직 없습니다.')}</p>`}</div>` +
+      (next === 'practise' ? btn('practise', 'Let us practise', `연습 ${sp.qs.length}문제`) : ''));
   }
   /* ---------- questions (lesson: the spell's five; review: three first-letter ones) */
   function startQs(list){ qs = list.slice(); qi = 0; missed = []; retry = false; right = 0; ask(); }
@@ -117,7 +118,9 @@ export function initSpell(app){
   /* ---------- casting */
   function castStep(){
     step = 'cast';
-    put(head() + who() + (sp.resist
+    put(head() + who() + (sp.id === 'occlumency'
+      ? `<p class="sp-cast">지팡이도 주문도 없습니다. 그녀가 들여다보는 동안, 받아 적은 그녀의 말을 한 낱말씩 이어 가며 문을 닫습니다.</p>` + btn('resist', 'Ready', '벽을 세운다')
+      : sp.resist
       ? `<p class="sp-cast">이 저주는 거는 법을 배우지 않습니다. 걸렸을 때 버티는 법을 익힙니다.</p>` + btn('resist', 'Ready', '버텨 보기')
       : `<p class="sp-cast">지팡이를 들고, 화면의 금빛 점선을 처음부터 끝까지 따라 그리세요.</p>` + btn('cast', 'Raise your wand', '지팡이 들기')));
   }
@@ -168,6 +171,7 @@ export function initSpell(app){
   /* Moody: the Imperius whispers three commands; each is broken by refusing it (the inviting answer starts it over) */
   function resist(){
     if (step !== 'cast' && step !== 'again') return; const was = step; step = 'resisting';
+    if (sp.id === 'occlumency') return occlude(was);
     return new Promise(res => {
       sec.classList.add('casting');
       const L = document.createElement('div'); L.className = 'rs-layer ' + sp.id;
@@ -206,13 +210,120 @@ export function initSpell(app){
       }
     });
   }
+  /* Bellatrix's lesson: Occlumency. No wand and no word. A door stands ajar in the dark with her looking in through it,
+     and the learner holds her off with "something dull in front": one of her own lines they have learnt, a word at a
+     time. Each right word swings the door a little further shut (the film is scrubbed back and forth), a slip or a
+     pause lets it open again. Things she says drift across the light meanwhile. Shut: the bolt goes home and she
+     speaks. Open: she reads out what she saw. Without the film (offline, motion turned down) four stills stand in. */
+  function occlude(was){
+    return new Promise(res => {
+      const o = (bond.loaded('bellatrix') || {}).occlumency || {probe: [], held: [], broke: []};
+      const STEPS = 10, START = 3, HOLD = 3.7, lv = store.get().settings.level, LIMIT = lv === 'low' ? 8000 : lv === 'high' ? 4200 : 5600;
+      sec.classList.add('casting'); fxl.classList.add('dark');
+      const L = document.createElement('div'); L.className = 'rs-layer occlumency';
+      L.innerHTML = '<div class="oc-stage"><img class="oc-still" alt="" src="assets/spells/occlu-0.webp"><video class="oc-vid" muted playsinline preload="auto"></video><p class="oc-probe" lang="en"></p></div><div class="oc-box"></div>';
+      fxl.appendChild(L);
+      const v = L.querySelector('.oc-vid'), still = L.querySelector('.oc-still'), box = L.querySelector('.oc-box'), probe = L.querySelector('.oc-probe');
+      let film = !reduced(), raf = 0, timer = 0, at = START, n = 0, alive = true;
+      const noFilm = () => { film = false; L.classList.remove('film'); };
+      if (film){ v.addEventListener('error', noFilm, {once: true}); v.addEventListener('loadeddata', () => { try { v.currentTime = HOLD * at / STEPS; } catch (e){} if (film) L.classList.add('film'); }, {once: true}); v.src = FX.occlumency; }
+      const door = (ms = 620) => {
+        const k = Math.max(0, Math.min(1, at / STEPS));
+        still.src = `assets/spells/occlu-${k >= 1 ? 3 : k > .62 ? 2 : k > .28 ? 1 : 0}.webp`;
+        if (!film || !v.duration) return;
+        cancelAnimationFrame(raf); const from = v.currentTime, to = HOLD * k, t0 = performance.now();
+        const step = now => { const q = ms ? Math.min(1, (now - t0) / ms) : 1, e = q < .5 ? 2 * q * q : 1 - Math.pow(-2 * q + 2, 2) / 2; try { v.currentTime = from + (to - from) * e; } catch (e2){} if (q < 1 && alive) raf = requestAnimationFrame(step); };
+        raf = requestAnimationFrame(step);
+      };
+      /* her lines the learner knows, at an easy length (any of her lines if too few are learnt yet) */
+      const wordsOf = c => c.line.replace(/--|—/g, ' ').split(/\s+/).filter(w => /[A-Za-z]/.test(w));
+      const bare = w => w.replace(/^[^A-Za-z']+|[^A-Za-z']+$/g, '');
+      /* a wrong word must not give itself away by a capital it only wore at the start of its own sentence */
+      const starts = (ws, i) => i === 0 || /[.!?]["')\]]*$/.test(ws[i - 1]);
+      const cap = w => /^[A-Z]/.test(w), I = w => /^I('|$)/.test(w);
+      const proper = new Set(); (app.data.bellatrix || []).forEach(c => { const ws = wordsOf(c); ws.forEach((w, i) => { const b = bare(w); if (cap(b) && !starts(ws, i)) proper.add(b); }); });
+      /* wrong words are of the answer's own kind (2026-10-12, harder): a small word against small words of its set, any other
+         word against words from her lines with the same ending and about the same length — grammar alone no longer answers it */
+      const SETS = ['to for of at in on with from by into', 'the a an this that these those', 'my your his her our their its', 'is was are were be been am',
+        'will would shall should can could must may might', 'I you he she we they it', 'me him us them', 'not never now here there then ever',
+        'and but or so if when while because', 'have has had do does did', 'what where who why how which'].map(g => g.split(' '));
+      const small = new Set(SETS.flat().map(w => w.toLowerCase())), ending = w => (w.toLowerCase().match(/(ing|ed|ly|s)$/) || [''])[0];
+      const plainOf = ws => ws.map((w, i) => { const b = bare(w); return cap(b) && starts(ws, i) && !proper.has(b) && !I(b) ? b.toLowerCase() : b; });
+      const fit = (app.data.bellatrix || []).filter(c => c.card !== false && wordsOf(c).length >= 5 && wordsOf(c).length <= 15), ds = store.deck('bellatrix').cards || {};
+      let pool = fit.filter(c => ds[c.id]); if (pool.length < 4) pool = fit;
+      /* only words she uses more than once: her one-off baby talk ("twoo", "bitty") would look like a misprint among the choices */
+      const seen = {}; (app.data.bellatrix || []).forEach(c => plainOf(wordsOf(c)).forEach(w => { const k = w.toLowerCase(); seen[k] = (seen[k] || 0) + 1; }));
+      const vocab = [...new Set(fit.flatMap(c => plainOf(wordsOf(c))).filter(w => w.length > 1 && !small.has(w.toLowerCase()) && seen[w.toLowerCase()] > 1))];
+      const seed = sp.id + '|' + Date.now();
+      pool = pool.map((c, i) => [hashOf(seed + i), c]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+      let li = 0, wi = 2, ws = pool.length ? wordsOf(pool[0]) : [];
+      const leave = async after => { alive = false; clearTimeout(timer); cancelAnimationFrame(raf); L.classList.add('clear'); await wait(reduced() ? 0 : 700); L.remove(); fxl.classList.remove('dark'); sec.classList.remove('casting'); res(); after(); };
+      const line = l => `<p class="rs-en" lang="en">${f(l.en)}</p><p class="rs-ko">${f(l.ko)}</p>`;
+      function whisper(){
+        if (!o.probe.length) return;
+        const l = o.probe[Math.min(o.probe.length - 1, Math.floor(at / STEPS * 14) + n % 6)];
+        probe.textContent = bond.fill(l.en); probe.classList.remove('on'); void probe.offsetWidth; probe.classList.add('on');
+      }
+      function ask(){
+        if (!alive) return;
+        if (wi >= ws.length){ li = (li + 1) % pool.length; ws = wordsOf(pool[li]); wi = 2; }
+        const ans = bare(ws[wi]);
+        /* the three wear the same case: all capitals when the answer has one, and no names beside a small-letter answer */
+        const up = cap(ans);
+        const low = ans.toLowerCase(), set = SETS.find(g => g.some(w => w.toLowerCase() === low)), name = proper.has(ans);
+        const near = w => w.toLowerCase() !== low && proper.has(w) === name;
+        let others = set ? set.filter(w => w.toLowerCase() !== low) : vocab.filter(w => near(w) && ending(w) === ending(ans) && Math.abs(w.length - ans.length) <= 2);
+        if (others.length < 3) others = [...new Set([...others, ...vocab.filter(near)])];
+        if (others.length < 3) others = [...new Set([...others, ...vocab.filter(w => w.toLowerCase() !== low)])];
+        const wrong = others.map((w, i) => [hashOf(seed + n + '|' + i), w]).sort((a, b) => a[0] - b[0]).slice(0, 3).map(x => up ? x[1][0].toUpperCase() + x[1].slice(1) : x[1]);
+        const opts = [ans, ...wrong].map((w, i) => [hashOf(seed + 'o' + n + i), w]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+        box.innerHTML = (lv === 'high' ? '' : `<p class="oc-ko">${esc(pool[li].ko)}</p>`) + `<p class="oc-line" lang="en">${esc(ws.slice(0, wi).join(' '))} <u></u></p><div class="oc-opts">${opts.map(w => `<button type="button" data-oc="${esc(w)}" lang="en">${esc(w)}</button>`).join('')}</div><i class="oc-time" style="animation-duration:${LIMIT}ms"></i>`;
+        box.dataset.ans = ans;
+        clearTimeout(timer); timer = setTimeout(() => answer(null), LIMIT);
+      }
+      function answer(w){
+        if (!alive || !box.dataset.ans) return;
+        clearTimeout(timer); const ans = box.dataset.ans; box.dataset.ans = ''; n++;
+        const ok = w !== null && w.toLowerCase() === ans.toLowerCase();
+        box.querySelectorAll('[data-oc]').forEach(b => { b.disabled = true; if (b.dataset.oc === ans) b.classList.add('right'); else if (b.dataset.oc === w) b.classList.add('wrong'); });
+        const bar = box.querySelector('.oc-time'); if (bar) bar.style.animationPlayState = 'paused';
+        if (ok){ at++; wi++; } else at -= 2;
+        door();
+        if (at >= STEPS){ setTimeout(shut, 500); return; }
+        if (at < 0){ setTimeout(open, 500); return; }
+        if (ok && n % 2 === 0) whisper();
+        setTimeout(ask, ok ? 380 : 950);
+      }
+      async function shut(){
+        if (!alive) return; box.innerHTML = ''; probe.classList.remove('on');
+        if (film && v.duration){ cancelAnimationFrame(raf); try { await v.play(); await new Promise(r => { v.onended = r; setTimeout(r, 2600); }); } catch (e){} } else await wait(reduced() ? 200 : 700);
+        if (!alive) return;
+        const l = o.held.length ? o.held[hashOf(seed + 'h') % o.held.length] : {en: 'Shut.', ko: '닫혔다.'};
+        box.innerHTML = line(l) + '<button type="button" class="rs-why" data-ocdone><span lang="en">The door holds</span><small>문이 버텼다</small></button>';
+      }
+      function open(){
+        if (!alive) return; at = 0; door(480); probe.classList.remove('on');
+        const l = o.broke.length ? o.broke[hashOf(seed + 'b' + n) % o.broke.length] : {en: 'Open.', ko: '열렸다.'};
+        box.innerHTML = line(l) + '<button type="button" class="rs-why" data-ocagain><span lang="en">Build it again</span><small>다시 쌓는다</small></button>' +
+          '<button type="button" class="rs-why quiet" data-ocstop><span lang="en">Enough for today</span><small>오늘은 그만</small></button>';
+      }
+      L.addEventListener('click', e => {
+        const b = e.target.closest('[data-oc]'); if (b && !b.disabled){ answer(b.dataset.oc); return; }
+        if (e.target.closest('[data-ocdone]')){ leave(() => { if (was === 'again') page(); else finish(); }); return; }
+        if (e.target.closest('[data-ocagain]')){ at = START; n = 0; wi = 2; box.innerHTML = ''; door(700); setTimeout(ask, 800); return; }
+        if (e.target.closest('[data-ocstop]')) leave(() => { if (was === 'again') page(); else castStep(); });
+      });
+      if (!pool.length){ leave(() => finish()); return; }
+      door(0); setTimeout(ask, reduced() ? 200 : 1200);
+    });
+  }
   function finish(){
     const first = !spells.isLearnt(sp.id);
     spells.learn(sp.id);
     step = 'done';
     put(head() + `<p class="sp-done">${first ? '주문서에 적었습니다.' : '주문서에 이미 있는 주문입니다.'}</p>` +
       (SR && !sp.resist ? `<button type="button" class="ol-mic sp-mic" data-act="shout"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg><span>주문 외쳐 보기 (선택)</span></button><p class="ol-heard" id="spHeard" hidden></p>` : '') +
-      btn('book', 'To the spellbook', '주문서 보기') + btn('room', 'Back to my room', '내 방으로', 'quiet'));
+      btn('book', 'To the spellbook', '주문서 보기') + (sp.prof === 'bellatrix' ? btn('room', 'Back to the drawing room', '응접실로', 'quiet') : btn('room', 'Back to my room', '내 방으로', 'quiet')));
     app.refresh();
   }
   function shout(){
@@ -231,9 +342,10 @@ export function initSpell(app){
     const due = spells.reviewDue(sp.id), l = (store.get().spells || {}).learnt[sp.id];
     words('');
     body.querySelector('.sp-head').insertAdjacentHTML('afterend', who() + say(sp.intro) + `<div class="sp-root"><b>뿌리</b><p>${md(sp.root)}</p>${(sp.notes || []).map(n => `<p class="sp-note">${md(n)}</p>`).join('')}</div>`);
-    body.insertAdjacentHTML('beforeend', (due ? `<p class="sp-due">복습할 때가 되었습니다</p>` : l ? `<p class="sp-next">다음 복습 · ${l.due.slice(5).replace('-', '월 ')}일</p>` : '') +
+    const back = due && ((bond.loaded(sp.prof) || {}).occlumency || {}).review, call = back && sp.id === 'occlumency' ? back[hashOf(sp.id + (l ? l.due : '')) % back.length] : null;
+    body.insertAdjacentHTML('beforeend', (call ? say(call) : '') + (due ? `<p class="sp-due">복습할 때가 되었습니다</p>` : l ? `<p class="sp-next">다음 복습 · ${l.due.slice(5).replace('-', '월 ')}일</p>` : '') +
       btn('review', 'Review', due ? '복습하기 · 첫 글자 3문제' : '미리 복습하기', due ? '' : 'quiet') +
-      btn('again', sp.resist ? 'Resist it again' : 'Cast it again', sp.resist ? '다시 버텨 보기' : '다시 시전하기', 'quiet') +
+      btn('again', sp.id === 'occlumency' ? 'Shut the door again' : sp.resist ? 'Resist it again' : 'Cast it again', sp.id === 'occlumency' ? '다시 벽 세우기' : sp.resist ? '다시 버텨 보기' : '다시 시전하기', 'quiet') +
       btn('relearn', 'Take the lesson again', '수업 다시 듣기', 'quiet'));
     heard = sp.intro.en;
   }
@@ -255,7 +367,7 @@ export function initSpell(app){
     const b = e.target.closest('[data-act]'); if (!b) return;
     ({words: () => words(), practise: () => { mode = 'lesson'; startQs(sp.qs); }, next, cast: doCast, resist,
       again: () => { step = 'again'; sp.resist ? resist() : doCast(); }, shout, review: reviewStart, page, relearn: () => { mode = 'lesson'; intro(); },
-      book: () => app.go('#/me/spells'), room: () => app.go('#/me')})[b.dataset.act]?.();
+      book: () => app.go('#/me/spells'), room: () => app.go(sp.prof === 'bellatrix' ? '#/manor/drawing' : '#/me')})[b.dataset.act]?.();
   });
   body.addEventListener('submit', e => {
     if (!e.target.closest('[data-write]') || step !== 'q') return; e.preventDefault();
@@ -273,7 +385,7 @@ export function initSpell(app){
     await bond.load(sp.prof);
     if (!app.data[sp.prof]) await app.loadDeck(sp.prof).catch(() => {});
     fitPaper(card);
-    sec.classList.remove('casting'); fxl.innerHTML = '';
+    sec.classList.remove('casting'); fxl.innerHTML = ''; fxl.classList.remove('dark');
     sec.style.setProperty('--p', `url("${new URL(`assets/rooms/${sp.prof}-portrait.webp`, location.href).href}")`);
     sec.style.setProperty('--w', `url("${new URL(`assets/rooms/${sp.prof}-wide.webp`, location.href).href}")`);
     $('#spTtl').textContent = sp.name;
@@ -282,6 +394,6 @@ export function initSpell(app){
     if (spells.isLearnt(sp.id)) page();
     else { mode = 'lesson'; intro(); }
   }
-  return {show, hide: () => { speech.stop(); if (rec){ try { rec.abort(); } catch (e){} rec = null; } fxl.innerHTML = ''; $$tr(sec); }};
+  return {show, hide: () => { speech.stop(); if (rec){ try { rec.abort(); } catch (e){} rec = null; } fxl.innerHTML = ''; fxl.classList.remove('dark'); $$tr(sec); }};
 }
 const $$tr = sec => sec.querySelectorAll('.tr-layer').forEach(l => l.remove());
