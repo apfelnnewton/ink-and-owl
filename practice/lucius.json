@@ -1,0 +1,515 @@
+{
+ "lucius-2-001-p1": {
+  "blank": "Forgive me",
+  "options": [
+   "Excuse me",
+   "Pardon me",
+   "I'm sorry"
+  ],
+  "why": "Forgive me는 무례한 말을 꺼내기 직전에 붙이는 격식 있는 겉치레 사과다."
+ },
+ "lucius-2-001-p2": {
+  "blank": "is the wizard",
+  "options": [
+   "does the wizard",
+   "was the wizard",
+   "has the wizard"
+  ],
+  "why": "앞 문장의 is legend를 받아 'As + is + 주어'로 도치한 격식 구문이다."
+ },
+ "lucius-2-002": {
+  "blank": "must be",
+  "options": [
+   "have to be",
+   "should be",
+   "ought to be"
+  ],
+  "why": "must be는 '~인 모양이군' 하는 추측으로, 칭찬하는 척 비꼰다."
+ },
+ "lucius-2-003-p1": {
+  "blank": "aren't they",
+  "options": [
+   "isn't it",
+   "don't they",
+   "right"
+  ],
+  "why": "이미 아는 사실을 aren't they?로 확인하는 척하며 깎아내린다."
+ },
+ "lucius-2-003-p2": {
+  "blank": "tatty",
+  "options": [
+   "shabby",
+   "beat-up",
+   "tacky"
+  ],
+  "why": "tatty는 '낡고 너덜너덜한'이라는 영국 구어 형용사다."
+ },
+ "lucius-2-004": {
+  "blank": "Senior",
+  "options": [
+   "Elder",
+   "Older",
+   "Father"
+  ],
+  "why": "성 뒤에 Senior를 붙여 '아버지 쪽'을 사무적으로 가리키며 비꼰다."
+ },
+ "lucius-2-005-p1": {
+  "blank": "Busy time",
+  "options": [
+   "Keeping busy",
+   "Busy days",
+   "Hard time"
+  ],
+  "why": "주어와 동사를 뺀 Busy time ...?으로 안부를 묻는 척 떠본다."
+ },
+ "lucius-2-005-p2": {
+  "blank": "judging by",
+  "options": [
+   "looking at",
+   "judged by",
+   "judging on"
+  ],
+  "why": "judging by ~는 '~로 미루어 보건대'라고 돌려서 추론하는 표현이다."
+ },
+ "lucius-2-005-p3": {
+  "blank": "a disgrace to",
+  "options": [
+   "a shame to",
+   "a disgrace of",
+   "a disgrace for"
+  ],
+  "why": "a disgrace to ~는 '~의 수치'라는 격식 모욕으로, 전치사는 to다."
+ },
+ "lucius-2-006": {
+  "blank": "could sink no lower",
+  "options": [
+   "couldn't get any lower",
+   "could fall no further",
+   "couldn't sink any more"
+  ],
+  "why": "couldn't ... any lower 대신 no lower를 써서 격식 있게 모욕한다."
+ },
+ "lucius-2-007": {
+  "blank": "Already here",
+  "options": [
+   "Here already",
+   "Still here",
+   "Yet here"
+  ],
+  "why": "You're를 뺀 생략 문장으로, 장관에게 짧게 툭 던지는 말투다."
+ },
+ "lucius-2-008-p1": {
+  "blank": "take absolutely no pleasure",
+  "options": [
+   "have absolutely no fun",
+   "feel absolutely no pleasure",
+   "get absolutely no enjoyment"
+  ],
+  "why": "take no pleasure는 don't enjoy의 격식형으로, 동사는 take를 쓴다."
+ },
+ "lucius-2-008-p2": {
+  "blank": "called at",
+  "options": [
+   "stopped by",
+   "called on",
+   "dropped by"
+  ],
+  "why": "call at + 장소는 '~에 들르다'라는 영국식 표현이다."
+ },
+ "lucius-2-009-p1": {
+  "blank": "step aside",
+  "options": [
+   "step down",
+   "step away",
+   "move aside"
+  ],
+  "why": "step aside는 해임을 '비켜서다'라고 돌려 말하는 완곡 표현이다."
+ },
+ "lucius-2-009-p2": {
+  "blank": "lost your touch",
+  "options": [
+   "lost your edge",
+   "lost your hand",
+   "missed your touch"
+  ],
+  "why": "lose one's touch는 '예전 솜씨를 잃다'라는 관용구다."
+ },
+ "lucius-2-009-p3": {
+  "blank": "what with",
+  "options": [
+   "because of",
+   "what about",
+   "along with"
+  ],
+  "why": "what with ~는 '~이다 보니' 하고 이유를 드는 영국 구어 표현이다."
+ },
+ "lucius-2-009-p4": {
+  "blank": "can only imagine",
+  "options": [
+   "can just picture",
+   "can only image",
+   "can hardly imagine"
+  ],
+  "why": "I can only imagine은 공감의 말이지만 여기서는 속내를 감춘 반어다."
+ },
+ "lucius-2-011": {
+  "blank": "Admirable sentiments",
+  "options": [
+   "Admiring sentiments",
+   "Admirable sentences",
+   "Nice speech"
+  ],
+  "why": "sentiments는 '생각, 견해'의 격식어로, 칭찬 같지만 무시하는 말이다."
+ },
+ "lucius-2-012": {
+  "blank": "deal with you",
+  "options": [
+   "take care of you",
+   "handle with you",
+   "sort you out"
+  ],
+  "why": "deal with에 사람이 오면 '손봐 주다'라는 위협이 된다."
+ },
+ "lucius-2-014": {
+  "blank": "dare",
+  "options": [
+   "could",
+   "dares",
+   "can"
+  ],
+  "why": "How dare you?에서 dare는 조동사처럼 쓰여 늘 원형 그대로다."
+ },
+ "lucius-2-015-p1": {
+  "blank": "sole concern",
+  "options": [
+   "only concern",
+   "soul concern",
+   "single care"
+  ],
+  "why": "sole은 only의 격식어로, 공적인 책임감을 내세울 때 쓴다."
+ },
+ "lucius-2-015-p2": {
+  "blank": "I presume",
+  "options": [
+   "I guess",
+   "I suppose",
+   "I reckon"
+  ],
+  "why": "문장 끝 I presume?은 '~했겠지요?' 하고 확인하는 격식 표현이다."
+ },
+ "lucius-2-018": {
+  "blank": "save the day",
+  "options": [
+   "save the date",
+   "save the world",
+   "win the day"
+  ],
+  "why": "save the day는 '위기에서 구해 내다'라는 관용구로, 여기서는 비아냥이다."
+ },
+ "lucius-2-019": {
+  "blank": "Come",
+  "options": [
+   "Come on",
+   "Hurry",
+   "Follow"
+  ],
+  "why": "Come on이 아닌 Come 한마디는 하인을 부르는 권위적인 명령이다."
+ },
+ "lucius-2-020": {
+  "blank": "talking about",
+  "options": [
+   "speaking about",
+   "saying about",
+   "telling about"
+  ],
+  "why": "I don't know what you're talking about은 시치미 떼는 상투 문장이다."
+ },
+ "lucius-2-021": {
+  "blank": "do you",
+  "options": [
+   "don't you",
+   "are you",
+   "right"
+  ],
+  "why": "긍정문에 긍정 꼬리 do you?를 붙여 '아, 그러셔?' 하고 빈정댄다."
+ },
+ "lucius-2-024": {
+  "blank": "lost me",
+  "options": [
+   "cost me",
+   "taken me",
+   "lost for me"
+  ],
+  "why": "lose + 사람 + 물건은 '~에게 …을 잃게 하다'로 cost와 뜻이 비슷하다."
+ },
+ "lucius-2-025-p1": {
+  "blank": "Mark my words",
+  "options": [
+   "Mind my words",
+   "Mark my word",
+   "Remember my words"
+  ],
+  "why": "Mark my words는 '내 말 새겨 둬라'는 옛스러운 경고의 관용구다."
+ },
+ "lucius-2-025-p2": {
+  "blank": "sticky end",
+  "options": [
+   "sticky ending",
+   "bad end",
+   "sticky finish"
+  ],
+  "why": "sticky end는 '비참한 최후'를 가볍게 돌려 말하는 영국식 표현이다."
+ },
+ "lucius-4-001": {
+  "blank": "put it this way",
+  "options": [
+   "say it this way",
+   "put it that way",
+   "take it this way"
+  ],
+  "why": "put it this way는 바로 답하지 않고 돌려 말할 때 꺼내는 말머리다."
+ },
+ "lucius-4-002": {
+  "blank": "won't you",
+  "options": [
+   "don't you",
+   "aren't you",
+   "all right"
+  ],
+  "why": "명령문 뒤 won't you?는 영국식의 공손한 권유인데 여기서는 위협이다."
+ },
+ "lucius-4-003": {
+  "blank": "had I detected",
+  "options": [
+   "if I detected",
+   "have I detected",
+   "would I detect"
+  ],
+  "why": "if I had detected에서 if를 빼고 had를 앞세운 격식 가정법이다."
+ },
+ "lucius-4-004-p1": {
+  "blank": "renounced",
+  "options": [
+   "denounced",
+   "announced",
+   "abandoned"
+  ],
+  "why": "renounce는 신념이나 충성을 '공식적으로 버리다'라는 격식 동사다."
+ },
+ "lucius-4-004-p2": {
+  "blank": "been obliged to",
+  "options": [
+   "had to",
+   "been obligated to",
+   "been obliging to"
+  ],
+  "why": "be obliged to는 had to의 격식형이고, obligated는 주로 미국에서 쓴다."
+ },
+ "lucius-5-001-p1": {
+  "blank": "if it isn't",
+  "options": [
+   "if it wasn't",
+   "isn't that",
+   "so here's"
+  ],
+  "why": "Well, well, if it isn't ~는 '이게 누구신가' 하고 놀란 척 비꼬는 말이다."
+ },
+ "lucius-5-001-p2": {
+  "blank": "Quite astonishing",
+  "options": [
+   "Pretty amazing",
+   "Quite astonished",
+   "Very astonishing"
+  ],
+  "why": "영국 영어의 quite는 astonishing 같은 말 앞에서 '참으로'라는 강한 뜻이다."
+ },
+ "lucius-5-002": {
+  "blank": "any concern of yours",
+  "options": [
+   "any of your business",
+   "any concern of you",
+   "any concern for yours"
+  ],
+  "why": "none of your business를 점잖게 포장한 격식 표현이다."
+ },
+ "lucius-5-003": {
+  "blank": "concern yourself about",
+  "options": [
+   "worry about",
+   "concern you about",
+   "care yourself about"
+  ],
+  "why": "concern yourself about은 worry about의 격식형으로 재귀대명사를 쓴다."
+ },
+ "lucius-5-004": {
+  "blank": "Shall we",
+  "options": [
+   "Will we",
+   "Should we",
+   "Do we"
+  ],
+  "why": "Shall we ~?는 영국식 제안으로, 정중하지만 사실상 결정을 내리는 말이다."
+ },
+ "lucius-5-005": {
+  "blank": "come to",
+  "options": [
+   "go to",
+   "get into",
+   "arrive at"
+  ],
+  "why": "come to a sticky end는 '비참한 최후를 맞다'라는 영국식 관용구다."
+ },
+ "lucius-5-006": {
+  "blank": "what you mean",
+  "options": [
+   "what you're asking",
+   "what you say",
+   "how you mean"
+  ],
+  "why": "if that's what you mean은 상대의 속뜻을 짚으며 덧붙이는 말이다."
+ },
+ "lucius-5-007": {
+  "blank": "weakness for",
+  "options": [
+   "weakness to",
+   "weakness in",
+   "weakness at"
+  ],
+  "why": "a weakness for ~는 '~을 못 참는 약점'으로, 전치사는 for다."
+ },
+ "lucius-5-008": {
+  "blank": "give me",
+  "options": [
+   "hand me",
+   "pass me",
+   "bring me"
+  ],
+  "why": "돌려 말하지 않는 직접 명령 give me이고, 앞의 Now가 재촉한다."
+ },
+ "lucius-5-009": {
+  "blank": "hand it over",
+  "options": [
+   "hand over it",
+   "hand it out",
+   "hand it in"
+  ],
+  "why": "hand over는 '넘겨주다'이고, 대명사 it은 hand와 over 사이에 온다."
+ },
+ "lucius-5-010": {
+  "blank": "brave of you",
+  "options": [
+   "brave for you",
+   "brave to you",
+   "brave from you"
+  ],
+  "why": "'형용사 + of you'는 상대의 행동을 평가하는 틀로, 여기서는 비꼼이다."
+ },
+ "lucius-5-011-p1": {
+  "blank": "Really",
+  "options": [
+   "Seriously",
+   "Truly",
+   "Actually"
+  ],
+  "why": "내리는 억양의 Really,는 '정말이지' 하고 한심해하는 영국식 핀잔이다."
+ },
+ "lucius-5-011-p2": {
+  "blank": "won't have to",
+  "options": [
+   "don't have to",
+   "mustn't",
+   "shouldn't"
+  ],
+  "why": "'그러면 ~하지 않아도 된다'는 약속의 형식을 빌린 협박이다."
+ },
+ "lucius-5-012": {
+  "blank": "smashed",
+  "options": [
+   "broken",
+   "crashed",
+   "mashed"
+  ],
+  "why": "smash는 '산산조각 내다'로, break보다 세게 부서지는 느낌이다."
+ },
+ "lucius-5-013": {
+  "blank": "dare to",
+  "options": [
+   "bother to",
+   "mean to",
+   "care to"
+  ],
+  "why": "You dare to ~?는 '감히 ~하다니'라는 분노를 담은 격식 표현이다."
+ },
+ "lucius-5-014": {
+  "blank": "Control yourself",
+  "options": [
+   "Calm yourself",
+   "Hold yourself",
+   "Control you"
+  ],
+  "why": "Control yourself는 흥분한 사람을 차갑게 제지하는 격식 명령이다."
+ },
+ "lucius-5-015": {
+  "blank": "bear that scar",
+  "options": [
+   "have that scar",
+   "wear that scar",
+   "bare that scar"
+  ],
+  "why": "bear는 흉터나 표식을 '지니다'라는 격식 동사로, have보다 무겁다."
+ },
+ "lucius-5-016": {
+  "blank": "wondered",
+  "options": [
+   "wandered",
+   "doubted",
+   "guessed"
+  ],
+  "why": "단순과거 We wondered.를 툭 붙여 '궁금했는데' 하고 느긋하게 비꼰다."
+ },
+ "lucius-5-017": {
+  "blank": "for whom",
+  "options": [
+   "for who",
+   "for which",
+   "of whom"
+  ],
+  "why": "'전치사 + whom' 관계절은 문어체·격식체의 표식이다."
+ },
+ "lucius-5-018": {
+  "blank": "Precisely",
+  "options": [
+   "Exactly",
+   "Precise",
+   "Correctly"
+  ],
+  "why": "Precisely는 Exactly보다 격식 있고 차갑게 들리는 동의의 말이다."
+ },
+ "lucius-5-020": {
+  "blank": "race is run",
+  "options": [
+   "race is ran",
+   "time is up",
+   "race is over"
+  ],
+  "why": "Your race is run은 '더는 달아날 곳이 없다'는 문학적 표현이다."
+ },
+ "lucius-5-021": {
+  "blank": "in a position to",
+  "options": [
+   "in a place to",
+   "at a position to",
+   "in a condition to"
+  ],
+  "why": "not in a position to ~는 '~할 처지가 아니다'라는 격식 표현이다."
+ },
+ "lucius-5-023": {
+  "blank": "may have lost",
+  "options": [
+   "must have lost",
+   "should have lost",
+   "might lose"
+  ],
+  "why": "may have + 과거분사 뒤에 but이 오면 '~했을지 몰라도'라는 양보다."
+ }
+}

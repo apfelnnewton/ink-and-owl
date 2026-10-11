@@ -878,5 +878,16 @@
    "en": "May you both be very happy together.",
    "ko": "두 분이 함께 무척 행복하시기를 빕니다."
   }
+ },
+ {
+  "id": "as-inversion",
+  "name": "as + 조동사 + 주어 (~도 마찬가지다)",
+  "en": "Inversion after as",
+  "pattern": "긍정문, as + 조동사(be) + 주어 / 긍정문. As + 조동사(be) + 주어",
+  "explain": "앞 문장의 내용이 다른 주어에도 똑같이 해당한다고 덧붙일 때, as 뒤에 조동사(또는 be동사)를 주어 앞으로 보내고 나머지 동사구는 되풀이하지 않는다(She works hard, as does her sister = and her sister works hard too). 일반동사는 do/does/did가 대신한다. 도치는 선택이어서 as her sister does라고 해도 되지만, 도치하면 주어가 맨 뒤로 가므로 길거나 새로운 주어가 문장 끝에서 강조된다. 대화에서는 같은 뜻을 so로 말하는 것이 보통이고(So does her sister), as는 글이나 격식 있는 말투에 주로 쓴다. 부정문 뒤에는 as가 아니라 nor나 neither를 쓴다.",
+  "ex": {
+   "en": "My flat is small, as are most flats in this part of town.",
+   "ko": "우리 집은 작은데, 이 동네 집들이 대부분 그렇다."
+  }
  }
 ]

@@ -103,7 +103,7 @@
 
 <!-- ============ ROOM: the classroom ============ -->
 <section id="room" class="screen" hidden aria-label="교실">
-  <div class="bg" aria-hidden="true"><svg class="wall" id="roomWall"></svg><div class="photo" id="roomPhoto"></div><div class="motes" id="roomMotes"></div><div class="warm"></div><div class="shade"></div></div>
+  <div class="bg" aria-hidden="true"><svg class="wall" id="roomWall"></svg><div class="photo" id="roomPhoto"></div><video class="fire-vid" id="roomIdle" data-src="assets/fire/sirius-idle.mp4" muted loop playsinline preload="none"></video><video class="fire-vid talk" id="roomTalk" data-src="assets/fire/sirius-talk.mp4" muted loop playsinline preload="none"></video><div class="motes" id="roomMotes"></div><div class="warm"></div><div class="shade"></div></div>
   <div class="r-top">
     <button type="button" class="back" id="backBtn" aria-label="복도로 나가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="ttl" id="rTitle"></div>
@@ -350,6 +350,65 @@
         <div class="cab-front"><span class="cab-label"><span class="cab-card" id="cabName" lang="en"></span></span></div>
         <div class="cab-grid" id="cabGrid"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE FIREPLACE in the guest room (fire.js): Sirius in the coals, and the Floo ============ -->
+<section id="fire" class="screen" hidden aria-label="벽난로">
+  <div class="bg" aria-hidden="true">
+    <div class="fire-back"></div>
+    <div class="fire-stage">
+      <div class="fire-pic"></div>
+      <div class="fire-face"><div class="fire-pic sirius"></div><video class="fire-vid" id="fireIdle" data-src="assets/fire/sirius-idle.mp4" muted loop playsinline preload="none"></video><video class="fire-vid talk" id="fireTalk" data-src="assets/fire/sirius-talk.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="fire-pic green"></div>
+      <video class="floo-vid" id="flooTurn" data-src="assets/fire/floo-turn.mp4" muted playsinline preload="none"></video><video class="floo-vid" id="flooLoop" data-src="assets/fire/floo-loop.mp4" muted loop playsinline preload="none"></video><video class="floo-vid" id="flooRush" data-src="assets/fire/floo-rush.mp4" muted playsinline preload="none"></video>
+    </div>
+    <div class="shade"></div>
+  </div>
+  <!-- the same box as the picture, for the things in it that can be pressed -->
+  <div class="fire-stage over">
+    <button type="button" class="fire-jar" id="fireJar" hidden aria-label="플루 가루 단지"><img src="assets/fire/floo-jar.webp" alt=""><b>플루 가루</b></button>
+    <div class="fire-dest" id="fireDest" hidden></div>
+  </div>
+  <div class="r-top">
+    <button type="button" class="back" id="fireBack" aria-label="내 방으로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">The Fireplace</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="me-card place-card" id="fireCard" aria-live="polite">
+    <div class="cwho" id="fireWho" lang="en"></div>
+    <div class="chr"></div>
+    <div class="cstats" id="fireStats"></div>
+    <div class="cline" id="fireLine"></div>
+    <div id="fireGo"></div>
+  </div>
+  <div class="floo-bar" id="flooBar" hidden aria-live="polite"></div>
+</section>
+
+<!-- ============ MALFOY MANOR (manor.js): the entrance hall, the study and its glass cabinet ============ -->
+<section id="manor" class="screen" hidden aria-label="말포이 저택">
+  <div class="bg" aria-hidden="true"><div class="photo" id="mnPhoto"></div><div class="shade"></div><div class="me-dim"></div></div>
+  <div class="me-spots" id="mnSpots"></div>
+  <div class="r-top">
+    <button type="button" class="back" id="mnBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="mnTtl">Malfoy Manor</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="me-card place-card" id="mnCard" aria-live="polite">
+    <div class="cwho" id="mnWho" lang="en"></div>
+    <div class="chr"></div>
+    <div class="cstats" id="mnStats"></div>
+    <div class="cline" id="mnLine"></div>
+    <div id="mnGo"></div>
+  </div>
+  <div class="cab-scroll" id="mnCab" hidden>
+    <div class="cab-wrap">
+      <div class="mn-case">
+        <div class="mn-case-head"><span lang="en">The Glass Cabinet</span><small>서재의 유리장 · 주인의 물건 일곱 점</small></div>
+        <ol class="mn-grid" id="mnGrid"></ol>
+      </div>
+      <p class="cab-tip">닦을수록 물건이 들은 말이 새어 나온다. 한 물건의 말을 모두 익히면 검수를 받고 내력표를 붙인다.</p>
     </div>
   </div>
 </section>

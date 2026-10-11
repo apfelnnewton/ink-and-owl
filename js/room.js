@@ -8,7 +8,9 @@
    missed most often). */
 import {shelf, tray} from './art.js';
 import {cauldron, bell, eraser} from './art-plus.js';
-import {byId, SPEAKERS, voiceOf} from './decks.js';
+import {byId, SPEAKERS, voiceOf, homeOf, isProf} from './decks.js';
+import * as doors from './doors.js';
+import * as manor from './manor.js';
 import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as store from './store.js';
@@ -26,7 +28,7 @@ import * as need from './need.js';
 const ROOMS = {snape: {wallSeed: 31, wallBase: '#1F2823', light: '#3FA66B'}};
 const roomOf = id => ({...(ROOMS[id] || {wallSeed: 31, wallBase: '#1F2823', light: (byId(id) || {}).glow || '#3FA66B'}),
   photo: {portrait: `assets/rooms/${id}-portrait.webp`, wide: `assets/rooms/${id}-wide.webp`}});
-const ROUND = {extra: '더 도전', wrong: '틀린 대사', req: '교수의 부탁', need: '필요의 방'};
+const ROUND = {extra: '더 도전', wrong: '틀린 대사', req: '교수의 부탁', need: '필요의 방', insp: '검수'};
 /* the Room of Requirement (need.js): its own pictures, one per form of the day */
 const NEED_ROOM = {hidden: 1, catch: 2, expr: 3, shelf: 4, reply: 7};
 
@@ -221,6 +223,7 @@ export function initRoom(app){
     const lv = srs.level(), ks = lv === 'high' ? ['hint'] : ['hint', 'pick'];
     if (lv !== 'low' && canHear()) ks.push('dict');
     if (exprRanges(c.line, c.bre).length) ks.push('expr');
+    if (extra === 'insp' && ks.length > 1){ const k = ks.indexOf('pick'); if (k >= 0) ks.splice(k, 1); }
     /* high bits of a differently-built key: the low bits of hash(today + id) already decide the example swap */
     return ks[(hash((extra ? 'x' : 'r') + c.id + '|' + srs.today()) >>> 7) % ks.length];
   }
@@ -636,6 +639,15 @@ export function initRoom(app){
       slate.animate([{opacity: 0, transform: 'translateY(18px) rotate(.5deg)'}, {opacity: 1, transform: 'none'}], {duration: 520, easing: 'cubic-bezier(.2,.8,.3,1)'});
     }));
   }
+  let fireWatch = 0;
+  function fireFilm(on){
+    const vs = [$('#roomIdle'), $('#roomTalk')];
+    room.classList.toggle('at-fire', on);
+    clearInterval(fireWatch);
+    vs.forEach(v => { if (on && !reduced()){ if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else v.pause(); });
+    if (on) fireWatch = setInterval(() => vs[1].classList.toggle('on', !!(window.speechSynthesis && speechSynthesis.speaking)), 240);
+    else vs[1].classList.remove('on');
+  }
   async function advance(){
     speech.stop();
     await wipe();
@@ -708,7 +720,7 @@ export function initRoom(app){
   $('#sParts').addEventListener('click', partsSheet);
   $('#sGram').addEventListener('click', () => grammar.cardSheet(deck.id, card));
   bellBtn.addEventListener('click', say);
-  $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = extra === 'need' ? 'need' : deck && deck.id; app.go('#/'); });
+  $('#backBtn').addEventListener('click', () => { speech.stop(); app.leftRoom = extra === 'need' ? 'need' : deck && deck.id; app.go(extra === 'need' || !deck ? '#/' : homeOf(deck.id)); });
   document.addEventListener('keydown', e => {
     if (room.hidden || prior.running() || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else $('#backBtn').click(); return; }
@@ -728,7 +740,8 @@ export function initRoom(app){
     const r = need.round();
     if (!r || r.pos >= r.queue.length){ app.go('#/need', true); return; }
     extra = 'need'; day = r;
-    const ids = [...new Set(r.queue.map(q => q.split('/')[0]))];
+    fireFilm(false);
+    const ids =[...new Set(r.queue.map(q => q.split('/')[0]))];
     try { await Promise.all(ids.map(id => Promise.all([app.loadDeck(id), app.loadPractice(id), app.loadExamples(id), grammar.load(id)]))); }
     catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go('#/need', true); return; }
     useDeck(r.queue[r.pos].split('/')[0]);
@@ -745,23 +758,35 @@ export function initRoom(app){
     if (id === 'need') return showNeed();
     const d = byId(id);
     if (!d || !d.file){ toast('아직 준비 중인 교실입니다.'); app.go('#/', true); return; }
+    /* the fire and the manor are not doors in the corridor: nothing to enter until they have opened */
+    if (!isProf(d.id) && !doors.available(d.id)){ app.go('#/', true); return; }
+    const out = homeOf(d.id);
     deck = d;
     showQuiet();
     $('#rTitle').textContent = d.room;
-    room.setAttribute('aria-label', `${d.ko}의 교실`);
+    room.setAttribute('aria-label', d.place === 'corridor' ? `${d.ko}의 교실` : d.where);
+    $('#backBtn').setAttribute('aria-label', ({fire: '벽난로 앞으로 돌아가기', manor: '서재로 돌아가기'})[d.place] || '복도로 나가기');
     wall();
+    fireFilm(d.place === 'fire');
     try { [cards, practice, examples] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id), grammar.load(d.id)]); }
-    catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go('#/', true); return; }
+    catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go(out, true); return; }
     map = Object.fromEntries(cards.map(c => [c.id, c]));
     day = srs.session(d.id, cards);
     extra = ROUND[sub] ? sub : '';
     if (extra){
-      if (extra === 'extra' && !srs.learnedCount(d.id, cards)){ toast('아직 배운 대사가 없습니다.'); app.go('#/', true); return; }
-      if (extra === 'wrong' && !srs.wrongLines(d.id, cards).length){ toast('다시 볼 대사가 없습니다. 틀린 적이 없군요.'); app.go('#/', true); return; }
+      if (extra === 'insp' && d.place !== 'manor') extra = 'extra';
+      if (extra === 'extra' && !srs.learnedCount(d.id, cards)){ toast('아직 배운 대사가 없습니다.'); app.go(out, true); return; }
+      if (extra === 'wrong' && !srs.wrongLines(d.id, cards).length){ toast('다시 볼 대사가 없습니다. 틀린 적이 없군요.'); app.go(out, true); return; }
       if (extra === 'req'){
         const a = bond.activeRequest(d.id);
         if (!a || !a.cards.length){ toast('지금 맡은 부탁이 없습니다.'); app.go('#/', true); return; }
         srs.roundSession(d.id, cards, 'req', 10, a.cards);
+      }
+      else if (extra === 'insp'){
+        await bond.load(d.id);
+        const ids = manor.inspectIds(cards);
+        if (!ids || !ids.length){ toast('지금 검수받을 물건이 없습니다.'); app.go(out, true); return; }
+        srs.roundSession(d.id, cards, 'insp', ids.length, ids);
       }
       else srs.roundSession(d.id, cards, extra);
       day = store.deck(d.id).day;
@@ -784,5 +809,5 @@ export function initRoom(app){
     if (slate.classList.contains('back') && !slate.classList.contains('noline'))
       writeLine(card.line, findRanges(card.line, card.bre), false, mode === 'learn' ? diffRanges(card.line, card.plain) : [], missRanges);
   }
-  return {show, resize, hide: () => { speech.stop(); resetRecall(); prior.dismiss(); }};
+  return {show, resize, hide: () => { speech.stop(); resetRecall(); prior.dismiss(); fireFilm(false); }};
 }

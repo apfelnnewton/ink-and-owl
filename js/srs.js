@@ -32,12 +32,15 @@ export function whenLabel(days){ return days <= 1 ? '내일' : `${days}일 뒤`;
 /* ---------- daily session */
 const usable = cards => cards.filter(c => c.card !== false);
 
+/* a place that sets its own pace: at the manor the day's new lines are fewer (the deck is small) — {deck: {low, mid, high}} */
+const NEW_AT = {lucius: {low: 2, mid: 3, high: 5}};
+const newPerDay = (deckId, st) => NEW_AT[deckId] ? NEW_AT[deckId][st.level] || NEW_AT[deckId].mid : st.newPerDay | 0;
 function plan(deckId, cards, date){
   const st = store.get().settings, ds = store.deck(deckId).cards;
   const due = usable(cards).filter(c => ds[c.id] && ds[c.id].d <= date)
     .sort((a, b) => (ds[a.id].d < ds[b.id].d ? -1 : ds[a.id].d > ds[b.id].d ? 1 : a.order - b.order))
     .slice(0, Math.max(0, st.reviewCap | 0));
-  const fresh = usable(cards).filter(c => !ds[c.id]).sort((a, b) => a.order - b.order).slice(0, Math.max(0, st.newPerDay | 0));
+  const fresh = usable(cards).filter(c => !ds[c.id]).sort((a, b) => a.order - b.order).slice(0, Math.max(0, newPerDay(deckId, st)));
   return {queue: due.map(c => c.id).concat(fresh.map(c => c.id)), kinds: due.map(() => 'r').concat(fresh.map(() => 'n'))};
 }
 

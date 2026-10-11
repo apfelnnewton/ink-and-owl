@@ -1,6 +1,7 @@
 /* End of lesson: the professor's remark and the day's tally on parchment, laid in the classroom. */
 import {tally} from './art-plus.js';
-import {byId, voiceOf} from './decks.js';
+import {byId, voiceOf, homeOf} from './decks.js';
+import * as manor from './manor.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as bond from './bond.js';
@@ -9,11 +10,11 @@ import {$, esc, fitPaper, reduced} from './ui.js';
 export function initReport(app){
   const paper = $('#repPaper');
   fitPaper(paper, 27, {nails: true, bottom: true, id: 'rep'});
-  $('#rpBack').addEventListener('click', () => { app.leftRoom = null; app.go('#/'); });
   let shown = '';
+  $('#rpBack').addEventListener('click', () => { app.leftRoom = null; app.go(shown ? homeOf(shown) : '#/'); });
   $('#rpMore').addEventListener('click', () => app.go(`#/room/${shown}/extra`));
   $('#rpWrongGo').addEventListener('click', () => app.go(`#/room/${shown}/wrong`));
-  $('#repScroll').addEventListener('click', e => { if (e.target.closest('.rp-teago')) app.go(`#/letters/${shown}/tea`); });
+  $('#repScroll').addEventListener('click', e => { const b = e.target.closest('.rp-teago'); if (b) app.go(b.dataset.go || `#/letters/${shown}/tea`); });
 
   const tier = (list, ratio) => list.find(r => ratio >= r.min) || list[list.length - 1];
   function remark(id, ratio, n, learned){
@@ -38,7 +39,10 @@ export function initReport(app){
     const cnt = {good: res.filter(g => g === 'good').length, hard: res.filter(g => g === 'hard').length, again: res.filter(g => g === 'again').length};
     const r = remark(id, n ? cnt.good / n : 0, n, learned);
 
-    $('#rpTitle').textContent = 'End of Lesson';
+    const place = d.place;
+    await bond.load(id);
+    $('#rpTitle').textContent = place === 'manor' ? "The Day's Work" : place === 'fire' ? 'By the Fire' : 'End of Lesson';
+    $('#rpBack').textContent = (({fire: '벽난로 앞으로', manor: '서재로'})[place] || '복도로') + ' 돌아가기';
     $('#rpSub').textContent = `${d.room} · ${srs.dayLabel(srs.today())}${day.pos < day.queue.length ? ` · ${day.pos} / ${day.queue.length}장에서 멈춤` : ''}`;
     $('#rpEn').textContent = r.en;
     $('#rpKo').textContent = r.ko;
@@ -63,13 +67,16 @@ export function initReport(app){
 
     shown = id;
     /* side rounds played today (더 도전, 틀린 대사), each with its own tally and the professor's word on it */
-    const exBox = $('#rpExtra'), rounds = [['extra', '더 도전'], ['wrong', '틀린 대사 연습'], ['req', '교수의 부탁']].filter(([k]) => day[k] && day[k].pos);
+    const exBox = $('#rpExtra'), rounds = [['insp', '검수'], ['extra', '더 도전'], ['wrong', '틀린 대사 연습'], ['req', '교수의 부탁']].filter(([k]) => day[k] && day[k].pos);
     exBox.hidden = !rounds.length;
     exBox.innerHTML = rounds.map(([k, title]) => {
       const ex = day[k], er = Object.values(ex.results), ok = er.filter(x => x === 'good').length, near = er.filter(x => x === 'hard').length;
       const missed = ex.queue.filter(cid => ex.results[cid] === 'again').map(cid => map[cid]).filter(Boolean);
-      return `<div class="rx-round"><h2>${title}</h2><div class="rx">${ok} / ${er.length} 정확 · 거의 ${near}</div>` +
-        `<div class="rx-say">${said(tier(voiceOf(id).extra, er.length ? ok / er.length : 0))}</div>` +
+      /* an inspection at the manor: his verdict on the object, once every line asked for has been written */
+      const v = k === 'insp' && ex.pos >= ex.queue.length ? manor.verdict() : null;
+      if (k === 'insp' && !v) return '';
+      return `<div class="rx-round"><h2>${v ? `검수 · ${esc(v.name.ko)} · ${v.ok ? '통과' : '내일 다시'}` : title}</h2><div class="rx">${ok} / ${er.length} 정확 · 거의 ${near}</div>` +
+        `<div class="rx-say">${said(v || tier(voiceOf(id).extra, er.length ? ok / er.length : 0))}</div>` +
         (missed.length ? `<ol>${missed.map(c => `<li><div class="en" lang="en">${esc(c.line)}</div><div class="kr">${esc(c.ko)}</div></li>`).join('')}</ol>` : '') + '</div>';
     }).join('');
     $('#rpMore').hidden = !srs.learnedCount(id, cards);
@@ -82,13 +89,15 @@ export function initReport(app){
       `<div>배운 카드 ${g.seen} / ${g.total}장 · 내일 복습 ${g.dueTomorrow}장</div>` +
       (g.complete ? '<div><b>덱 완료.</b> 모든 대사의 복습 간격이 30일을 넘었습니다.</div>' : '');
 
-    /* every thirty answers with this professor earn a tea invitation, offered here at the end of the lesson */
-    await bond.load(id);
+    /* every thirty answers with this professor earn a tea invitation, offered here at the end of the lesson
+       (by the fire it is a talk; at the manor there is no tea, only the day's wages) */
     let tea = $('#rpTea');
     if (!tea){ tea = document.createElement('div'); tea.id = 'rpTea'; tea.className = 'rx-round rp-tea'; $('#rpProg').before(tea); }
     const tv = bond.inviteSrc(id) === 'study' && bond.inviteText(id);
     tea.hidden = !tv;
-    if (tv) tea.innerHTML = `<h2>차 한 잔 초대</h2><div class="rx-say">${said({en: bond.fill(tv.en), ko: bond.fill(tv.ko)})}</div><button type="button" class="rp-teago"><span lang="en">I'd be delighted.</span> 기꺼이 가겠습니다 →</button>`;
+    if (place === 'manor'){ const wg = manor.reportBlock(); tea.hidden = !wg; tea.innerHTML = wg; }
+    else if (tv && place === 'fire') tea.innerHTML = `<h2>불 속 대화</h2><div class="rx-say">${said({en: bond.fill(tv.en), ko: bond.fill(tv.ko)})}</div><button type="button" class="rp-teago" data-go="#/fire">불가에 더 앉아 있는다 →</button>`;
+    else if (tv) tea.innerHTML = `<h2>차 한 잔 초대</h2><div class="rx-say">${said({en: bond.fill(tv.en), ko: bond.fill(tv.ko)})}</div><button type="button" class="rp-teago"><span lang="en">I'd be delighted.</span> 기꺼이 가겠습니다 →</button>`;
 
     if (!reduced()){ paper.classList.remove('drop'); void paper.offsetWidth; paper.classList.add('drop'); }
     $('#repScroll').scrollTop = 0;

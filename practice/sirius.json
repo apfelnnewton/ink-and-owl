@@ -1,0 +1,1181 @@
+{
+ "sirius-3-001": {
+  "blank": "will die",
+  "options": [
+   "is gonna die",
+   "shall die",
+   "must die"
+  ],
+  "why": "gonna 없이 will로 짧게 단언해 선고처럼 들린다."
+ },
+ "sirius-3-002": {
+  "blank": "Going to",
+  "options": [
+   "You gonna",
+   "Want to",
+   "Trying to"
+  ],
+  "why": "Are you를 떼고 Going to로 시작하는 구어 의문문이다."
+ },
+ "sirius-3-003": {
+  "blank": "You'd know all about",
+  "options": [
+   "You know everything about",
+   "You must know about",
+   "You'd understand all about"
+  ],
+  "why": "You'd know all about는 '그건 네가 전문이지' 하고 비꼬는 틀이다."
+ },
+ "sirius-3-004-p1": {
+  "blank": "Enough talk",
+  "options": [
+   "Enough talking",
+   "Stop talking",
+   "No more words"
+  ],
+  "why": "Enough + 명사 talk로 '말은 그만'을 짧고 단호하게 끊는다."
+ },
+ "sirius-3-004-p2": {
+  "blank": "If you won't",
+  "options": [
+   "If you don't",
+   "If you can't",
+   "If you wouldn't"
+  ],
+  "why": "조건절의 won't는 '안 하겠다고 버틴다면'이라는 거부의 뜻이다."
+ },
+ "sirius-3-005": {
+  "blank": "did my waiting",
+  "options": [
+   "already waited",
+   "waited enough",
+   "did the waiting"
+  ],
+  "why": "do one's + -ing는 '내 몫은 다 했다', 곧 기다릴 만큼 기다렸다는 말이다."
+ },
+ "sirius-3-006": {
+  "blank": "never would've",
+  "options": [
+   "wouldn't have",
+   "never could've",
+   "never should've"
+  ],
+  "why": "never를 would 앞에 세워 '절대 그럴 리 없다'를 힘주어 말한다."
+ },
+ "sirius-3-007": {
+  "blank": "regret it",
+  "options": [
+   "be sorry",
+   "feel bad",
+   "resent it"
+  ],
+  "why": "regret은 '후회하다'이고, resent는 '분하게 여기다'라 뜻이 다르다."
+ },
+ "sirius-3-008": {
+  "blank": "as good as",
+  "options": [
+   "as well as",
+   "as much as",
+   "as near as"
+  ],
+  "why": "as good as + 형용사는 '~나 다름없다'는 관용 표현이다."
+ },
+ "sirius-3-009": {
+  "blank": "yes there is",
+  "options": [
+   "yes it is",
+   "yes there are",
+   "no there isn't"
+  ],
+  "why": "상대의 부정문을 Oh yes there is로 그대로 뒤집어 반박한다."
+ },
+ "sirius-3-010": {
+  "blank": "and play",
+  "options": [
+   "to play",
+   "and talk",
+   "and fight"
+  ],
+  "why": "아이를 부르는 come out and play를 비틀어 섬뜩하게 쓴다."
+ },
+ "sirius-3-011-p1": {
+  "blank": "dead wrong",
+  "options": [
+   "totally wrong",
+   "deadly wrong",
+   "plain wrong"
+  ],
+  "why": "dead는 '완전히'라는 강조 부사로, dead wrong은 '완전히 틀린'이다."
+ },
+ "sirius-3-011-p2": {
+  "blank": "tend to",
+  "options": [
+   "deal with",
+   "see about",
+   "take care of"
+  ],
+  "why": "tend to는 '처리하다'로, take care of보다 점잖은 말이다."
+ },
+ "sirius-3-012": {
+  "blank": "can't help it",
+  "options": [
+   "can't help himself",
+   "can't stop it",
+   "can't change it"
+  ],
+  "why": "can't help it은 '어쩔 수 없다, 못 고친다'는 관용구다."
+ },
+ "sirius-3-013": {
+  "blank": "Piss off",
+  "options": [
+   "Get lost",
+   "Go away",
+   "Back off"
+  ],
+  "why": "Piss off는 '꺼져'라는 거친 영국 구어라 공적인 자리에선 못 쓴다."
+ },
+ "sirius-3-014": {
+  "blank": "never lies",
+  "options": [
+   "never fails",
+   "doesn't lie",
+   "is never wrong"
+  ],
+  "why": "사물을 주어로 never lies라 하면 '틀리는 법이 없다'는 단언이 된다."
+ },
+ "sirius-3-015": {
+  "blank": "you idiot",
+  "options": [
+   "you dummy",
+   "you fool",
+   "you moron"
+  ],
+  "why": "you + 명사로 상대를 바로 겨냥해 핀잔을 주는 구어 틀이다."
+ },
+ "sirius-3-016": {
+  "blank": "common garden",
+  "options": [
+   "garden-variety",
+   "common house",
+   "plain brown"
+  ],
+  "why": "영국식 common-or-garden(흔해 빠진)을 떠올리게 하는 말이다."
+ },
+ "sirius-3-017": {
+  "blank": "Dirty coward",
+  "options": [
+   "Sneaky coward",
+   "Dirty liar",
+   "Little coward"
+  ],
+  "why": "관사 The를 떼고 Dirty coward로 시작해 경멸을 내뱉는 구어다."
+ },
+ "sirius-3-020": {
+  "blank": "rather than betray",
+  "options": [
+   "before I betrayed",
+   "instead of betraying",
+   "sooner than betray"
+  ],
+  "why": "rather than + 동사원형은 '~하느니 차라리'라는 단호한 거부다."
+ },
+ "sirius-3-021-p1": {
+  "blank": "isn't it",
+  "options": [
+   "is it",
+   "wasn't it",
+   "doesn't it"
+  ],
+  "why": "It's를 뺀 형용사 뒤에 isn't it?을 붙여 동의를 청하는 감탄이다."
+ },
+ "sirius-3-021-p2": {
+  "blank": "a noble thing",
+  "options": [
+   "a decent thing",
+   "a nice thing",
+   "a brave thing"
+  ],
+  "why": "noble은 '고결한'으로, nice나 decent보다 무게 있는 칭찬이다."
+ },
+ "sirius-3-022": {
+  "blank": "I don't know if",
+  "options": [
+   "I'm not sure if",
+   "I can't tell if",
+   "I don't think that"
+  ],
+  "why": "'네가 아는지 모르겠지만' 하고 조심스럽게 운을 떼는 도입구다."
+ },
+ "sirius-3-023": {
+  "blank": "I'll understand if",
+  "options": [
+   "I'd get it if",
+   "I won't mind if",
+   "I'll understand when"
+  ],
+  "why": "I'll understand if는 거절할 여지를 미리 열어 주는 배려 표현이다."
+ },
+ "sirius-3-024": {
+  "blank": "my name's cleared",
+  "options": [
+   "my name's cleaned",
+   "my name's clear",
+   "I'm proven innocent"
+  ],
+  "why": "clear one's name은 '누명을 벗다'이고, 여기서는 수동형으로 썼다."
+ },
+ "sirius-3-025": {
+  "blank": "old friend",
+  "options": [
+   "old buddy",
+   "dear pal",
+   "good friend"
+  ],
+  "why": "old friend를 호칭으로 쓰면 '이 친구야' 같은 다정한 부름이 된다."
+ },
+ "sirius-3-026": {
+  "blank": "All of you",
+  "options": [
+   "Both of you",
+   "All you guys",
+   "Each of you"
+  ],
+  "why": "명령 뒤에 All of you를 따로 끊어 '한 명도 빠짐없이'를 못 박는다."
+ },
+ "sirius-3-027": {
+  "blank": "truly",
+  "options": [
+   "really",
+   "actually",
+   "honestly"
+  ],
+  "why": "truly는 really보다 격식 있고 진지한 강조 부사다."
+ },
+ "sirius-3-028": {
+  "blank": "might try",
+  "options": [
+   "should try",
+   "must try",
+   "could try"
+  ],
+  "why": "might로 강도를 낮춰 명령이 아닌 조심스러운 권유로 만든다."
+ },
+ "sirius-3-029": {
+  "blank": "That'll do",
+  "options": [
+   "That works",
+   "That's enough",
+   "That'll go"
+  ],
+  "why": "That'll do는 '그 정도면 됐다'는 뜻의 짧은 관용구다."
+ },
+ "sirius-3-030": {
+  "blank": "your father's son",
+  "options": [
+   "like your father",
+   "your father's child",
+   "your dad's kid"
+  ],
+  "why": "be one's father's son은 기질과 용기가 아버지를 빼닮았다는 칭찬이다."
+ },
+ "sirius-3-031": {
+  "blank": "forever grateful",
+  "options": [
+   "always thankful",
+   "forever thankful",
+   "really grateful"
+  ],
+  "why": "forever grateful은 큰 은혜를 입었을 때 쓰는 정중한 감사 표현이다."
+ },
+ "sirius-3-032": {
+  "blank": "meant to be",
+  "options": [
+   "supposed to be",
+   "made to be",
+   "meaning to be"
+  ],
+  "why": "be meant to는 영국 구어에서 be supposed to처럼 '~해야 하는'으로 쓴다."
+ },
+ "sirius-3-033": {
+  "blank": "promise me",
+  "options": [
+   "assure me",
+   "tell me",
+   "grant me"
+  ],
+  "why": "promise me something은 '한 가지만 약속해 줘' 하고 다짐을 청하는 말이다."
+ },
+ "sirius-3-034-p1": {
+  "blank": "Trust",
+  "options": [
+   "Believe",
+   "Know",
+   "Be"
+  ],
+  "why": "trust는 목적어를 바로 받고, believe는 in이 있어야 같은 뜻이 된다."
+ },
+ "sirius-3-034-p2": {
+  "blank": "I fear",
+  "options": [
+   "I'm afraid",
+   "I guess",
+   "I suspect"
+  ],
+  "why": "I fear는 나쁜 예측을 부드럽게 꺼내는 격식·문어 표현이다."
+ },
+ "sirius-3-035": {
+  "blank": "Make a wish",
+  "options": [
+   "Do a wish",
+   "Take a wish",
+   "Say a wish"
+  ],
+  "why": "'소원을 빌다'는 동사 make를 쓰는 고정 연어 make a wish다."
+ },
+ "sirius-4-001-p1": {
+  "blank": "risk sending",
+  "options": [
+   "risk to send",
+   "afford to send",
+   "chance sending"
+  ],
+  "why": "risk 뒤에는 to부정사가 아니라 동명사(-ing)가 온다."
+ },
+ "sirius-4-001-p2": {
+  "blank": "recognised",
+  "options": [
+   "recognized",
+   "recognisable",
+   "realised"
+  ],
+  "why": "영국식 철자는 -ise를 써서 recognised이고, 미국식은 recognized다."
+ },
+ "sirius-4-001-p3": {
+  "blank": "face to face",
+  "options": [
+   "in person",
+   "eye to eye",
+   "head to head"
+  ],
+  "why": "face to face는 '직접 만나서'이고, eye to eye는 '의견이 같다'는 뜻이다."
+ },
+ "sirius-4-001-p4": {
+  "blank": "make sure",
+  "options": [
+   "be sure",
+   "make certain",
+   "take care"
+  ],
+  "why": "make sure (that) ~는 '반드시 ~하도록 해라'는 당부의 기본 표현이다."
+ },
+ "sirius-4-002": {
+  "blank": "bites",
+  "options": [
+   "is biting",
+   "will bite",
+   "pecks"
+  ],
+  "why": "단순 현재 bites는 '무는 버릇이 있다'는 습성을 짧게 경고한다."
+ },
+ "sirius-4-003-p1": {
+  "blank": "get straight to it",
+  "options": [
+   "get right to it",
+   "cut to the chase",
+   "go straight at it"
+  ],
+  "why": "get straight to it은 '바로 본론으로 들어가다'라는 뜻이다."
+ },
+ "sirius-4-003-p2": {
+  "blank": "or did you not",
+  "options": [
+   "or didn't you",
+   "or did you never",
+   "or have you not"
+  ],
+  "why": "did you not을 줄이지 않고 양자택일로 몰아붙이는 추궁 어투다."
+ },
+ "sirius-4-004-p1": {
+  "blank": "this dream of yours",
+  "options": [
+   "this dream of you",
+   "this your dream",
+   "that dream you had"
+  ],
+  "why": "this + 명사 + of yours는 '네가 말한 그 ~' 하고 화제를 짚는 이중 소유격이다."
+ },
+ "sirius-4-004-p2": {
+  "blank": "mentioned",
+  "options": [
+   "talked about",
+   "mentioned about",
+   "spoke of"
+  ],
+  "why": "mention은 타동사라 about 없이 목적어를 바로 받는다."
+ },
+ "sirius-4-005": {
+  "blank": "hear a name",
+  "options": [
+   "catch a name",
+   "get a name",
+   "hear the name"
+  ],
+  "why": "구어 catch 대신 hear를 써서 '이름은 못 들었고?' 하고 담백하게 확인한다."
+ },
+ "sirius-4-006": {
+  "blank": "What was that",
+  "options": [
+   "What was it",
+   "What is that",
+   "Which was that"
+  ],
+  "why": "that으로 상대가 방금 한 말을 받아 '그게 뭐였는데?' 하고 되묻는다."
+ },
+ "sirius-4-007-p1": {
+  "blank": "just a dream",
+  "options": [
+   "only a dream",
+   "merely a dream",
+   "just the dream"
+  ],
+  "why": "just a ~는 '그냥 ~일 뿐'이라며 대수롭지 않게 눅이는 말이다."
+ },
+ "sirius-4-007-p2": {
+  "blank": "are not just",
+  "options": [
+   "aren't just",
+   "are not only",
+   "are no mere"
+  ],
+  "why": "aren't로 줄이지 않고 are not을 풀어 써서 경고에 힘을 싣는다."
+ },
+ "sirius-4-007-p3": {
+  "blank": "any more",
+  "options": [
+   "any longer",
+   "at all",
+   "yet"
+  ],
+  "why": "not ~ any more는 '이제 더는 ~않다'이고, 미국식은 anymore로 붙여 쓴다."
+ },
+ "sirius-4-008-p1": {
+  "blank": "inside the walls",
+  "options": [
+   "inside the gates",
+   "behind the walls",
+   "between the walls"
+  ],
+  "why": "'적이 이미 성벽 안에 있다'는 문학적 은유로 내부의 위험을 경고한다."
+ },
+ "sirius-4-008-p2": {
+  "blank": "stops being",
+  "options": [
+   "stops to be",
+   "quits being",
+   "ends being"
+  ],
+  "why": "stop + -ing는 '~하기를 그만두다'이고, stop to be는 뜻이 달라진다."
+ },
+ "sirius-4-008-p3": {
+  "blank": "heart of stone",
+  "options": [
+   "heart of ice",
+   "heart of rock",
+   "cold as ice"
+  ],
+  "why": "heart of stone은 냉혹하고 인정 없는 사람을 가리키는 관용구다."
+ },
+ "sirius-4-009-p1": {
+  "blank": "haven't a clue",
+  "options": [
+   "have no idea",
+   "don't have a clue",
+   "haven't any clues"
+  ],
+  "why": "have를 바로 부정한 haven't a clue는 '전혀 모른다'는 영국식 말투다."
+ },
+ "sirius-4-009-p2": {
+  "blank": "People die",
+  "options": [
+   "People died",
+   "People are dying",
+   "People get killed"
+  ],
+  "why": "단순 현재 die로 '늘 그래 왔다'는 사실처럼 담담히 경고한다."
+ },
+ "sirius-4-010": {
+  "blank": "have a choice",
+  "options": [
+   "have a chance",
+   "have an option",
+   "get a choice"
+  ],
+  "why": "not have a choice는 '선택의 여지가 없다'는 뜻이다."
+ },
+ "sirius-4-011": {
+  "blank": "close",
+  "options": [
+   "closely",
+   "nearby",
+   "closed"
+  ],
+  "why": "격언 Keep your friends close의 앞부분으로, close는 형용사 보어다."
+ },
+ "sirius-5-001": {
+  "blank": "miserable old hag",
+  "options": [
+   "nasty old witch",
+   "grumpy old woman",
+   "wretched old crone"
+  ],
+  "why": "miserable은 영국 구어에서 '성질 고약한'이고, hag는 '마귀할멈'이다."
+ },
+ "sirius-5-002": {
+  "blank": "do shut up",
+  "options": [
+   "just shut up",
+   "please shut up",
+   "now shut up"
+  ],
+  "why": "명령문 앞의 do는 '제발 좀'이라는 영국식 강조다."
+ },
+ "sirius-5-003": {
+  "blank": "Dear old mum",
+  "options": [
+   "Good old mom",
+   "Dear old mom",
+   "Poor old mum"
+  ],
+  "why": "dear old는 여기서 반어로 비꼬는 말이고, mum은 mom의 영국식이다."
+ },
+ "sirius-5-004-p1": {
+  "blank": "the last of",
+  "options": [
+   "the latest of",
+   "the end of",
+   "the least of"
+  ],
+  "why": "the last of the + 가문 이름은 '그 가문의 마지막 사람'이라는 격식 표현이다."
+ },
+ "sirius-5-004-p2": {
+  "blank": "offered it up",
+  "options": [
+   "offered it out",
+   "gave it away",
+   "put it up"
+  ],
+  "why": "offer up은 그냥 offer보다 '기꺼이 내놓다'는 헌신의 느낌이 실린다."
+ },
+ "sirius-5-004-p3": {
+  "blank": "about the most",
+  "options": [
+   "almost the most",
+   "nearly the most",
+   "by far the most"
+  ],
+  "why": "about the + 최상급은 '거의 ~라 할 만한'으로 최상급을 살짝 눅인다."
+ },
+ "sirius-5-006": {
+  "blank": "furious with",
+  "options": [
+   "really mad at",
+   "furious to",
+   "furious on"
+  ],
+  "why": "furious는 angry보다 강하고, 화난 상대는 전치사 with로 잇는다."
+ },
+ "sirius-5-007": {
+  "blank": "in front of",
+  "options": [
+   "in the front of",
+   "in face of",
+   "ahead of"
+  ],
+  "why": "in front of는 '~이 보는 앞에서'라는 뜻으로도 쓴다."
+ },
+ "sirius-5-008": {
+  "blank": "You surprise me",
+  "options": [
+   "I'm surprised",
+   "You surprised me",
+   "You amaze me"
+  ],
+  "why": "상대를 주어로 세운 You surprise me는 '너답지 않은데'라는 느낌이다."
+ },
+ "sirius-5-009": {
+  "blank": "has a right to",
+  "options": [
+   "deserves to",
+   "is allowed to",
+   "has a need to"
+  ],
+  "why": "have a right to know는 '알 권리가 있다'고 단호하게 맞서는 표현이다."
+ },
+ "sirius-5-010": {
+  "blank": "know something",
+  "options": [
+   "know everything",
+   "know anything",
+   "hear it all"
+  ],
+  "why": "여기서 something은 '전부는 아니어도 뭐라도'라는 뜻으로 힘주어 말한다."
+ },
+ "sirius-5-011": {
+  "blank": "a child",
+  "options": [
+   "a kid",
+   "a baby",
+   "a minor"
+  ],
+  "why": "구어 kid 대신 child를 써서 조금 더 정색한 어조가 된다."
+ },
+ "sirius-5-012": {
+  "blank": "fully aware of",
+  "options": [
+   "well aware of",
+   "fully aware about",
+   "fully conscious of"
+  ],
+  "why": "fully aware of는 I know보다 격식 있게 '나도 충분히 안다'고 맞받는다."
+ },
+ "sirius-5-013": {
+  "blank": "your son",
+  "options": [
+   "your kid",
+   "your child",
+   "your boy"
+  ],
+  "why": "kid가 아닌 son으로 '네 아들이 아니다' 하고 선을 딱 긋는다."
+ },
+ "sirius-5-014": {
+  "blank": "He's got",
+  "options": [
+   "He has",
+   "He gets",
+   "He's had"
+  ],
+  "why": "소유의 have got은 영국 구어에서 have보다 훨씬 흔하다."
+ },
+ "sirius-5-015": {
+  "blank": "want to know",
+  "options": [
+   "wanna know",
+   "wish to know",
+   "need to know"
+  ],
+  "why": "돌려 말하지 않고 want to know로 궁금한 것을 바로 묻게 한다."
+ },
+ "sirius-5-016": {
+  "blank": "for the moment",
+  "options": [
+   "for a moment",
+   "at the moment",
+   "for the meantime"
+  ],
+  "why": "for the moment는 '당분간은'이고, for a moment는 '잠깐'이다."
+ },
+ "sirius-5-017": {
+  "blank": "The last person",
+  "options": [
+   "The last guy",
+   "The latest person",
+   "The final person"
+  ],
+  "why": "the last person은 순서가 아니라 '가장 ~하고 싶지 않은 사람'이다."
+ },
+ "sirius-5-018": {
+  "blank": "building up",
+  "options": [
+   "building on",
+   "setting up",
+   "making up"
+  ],
+  "why": "build up은 '조금씩 키워 가다'라는 뜻의 구동사다."
+ },
+ "sirius-5-019": {
+  "blank": "You see",
+  "options": [
+   "You know",
+   "Thing is",
+   "Look here"
+  ],
+  "why": "You see는 상대가 모르는 사정을 설명하려고 꺼내는 말이다."
+ },
+ "sirius-5-020": {
+  "blank": "lose their jobs",
+  "options": [
+   "lose their work",
+   "miss their jobs",
+   "quit their jobs"
+  ],
+  "why": "lose one's job은 '일자리를 잃다, 잘리다'의 기본 연어다."
+ },
+ "sirius-5-021": {
+  "blank": "last time",
+  "options": [
+   "at last",
+   "back then",
+   "before now"
+  ],
+  "why": "last time은 관사 없이 '지난번에'라는 뜻이고, at last는 '마침내'다."
+ },
+ "sirius-5-024": {
+  "blank": "You all right",
+  "options": [
+   "You okay",
+   "You good",
+   "You fine"
+  ],
+  "why": "Are를 뺀 You all right?는 걱정하며 묻는 말로, 영국에선 인사로도 쓴다."
+ },
+ "sirius-5-025": {
+  "blank": "might interest you",
+  "options": [
+   "you might like",
+   "could interest you",
+   "might amuse you"
+  ],
+  "why": "might interest you는 단정을 피해 '관심 있을지도' 하며 권하는 완곡 표현이다."
+ },
+ "sirius-5-026": {
+  "blank": "Found it",
+  "options": [
+   "I found it",
+   "Founded it",
+   "Dug it up"
+  ],
+  "why": "주어 I를 떼고 동사 Found부터 말하는 편한 구어체다."
+ },
+ "sirius-5-027": {
+  "blank": "was taken",
+  "options": [
+   "was made",
+   "was shot",
+   "was pictured"
+  ],
+  "why": "사진을 '찍다'는 take를 쓰므로 수동형은 was taken이다."
+ },
+ "sirius-5-028": {
+  "blank": "miss them",
+  "options": [
+   "lost them",
+   "need them",
+   "missed them"
+  ],
+  "why": "miss + 사람은 '~가 그립다'는 뜻이고, 현재형이라 지금도 그립다는 말이다."
+ },
+ "sirius-5-029": {
+  "blank": "got to spend",
+  "options": [
+   "had to spend",
+   "used to spend",
+   "was able to spend"
+  ],
+  "why": "get to + 동사는 '~할 기회를 누리다'로, 의무의 have got to와 다르다."
+ },
+ "sirius-5-030": {
+  "blank": "I wish I did",
+  "options": [
+   "I wish I do",
+   "I wish I had",
+   "I wish I would"
+  ],
+  "why": "did가 know를 대신 받아 '알았으면 좋겠는데'라는 아쉬움을 전한다."
+ },
+ "sirius-5-031": {
+  "blank": "can help it",
+  "options": [
+   "can manage it",
+   "can make it",
+   "can stand it"
+  ],
+  "why": "if I can help it은 '내 힘으로 어찌할 수 있는 한'이라는 뜻이다."
+ },
+ "sirius-5-032": {
+  "blank": "get out of",
+  "options": [
+   "get away from",
+   "go out from",
+   "keep out of"
+  ],
+  "why": "get out of here는 '여기서 나가'라는 직설적인 명령이다."
+ },
+ "sirius-5-033": {
+  "blank": "gone a bit funny",
+  "options": [
+   "gotten a bit weird",
+   "gone a bit fun",
+   "grown a bit odd"
+  ],
+  "why": "go funny는 '이상해지다'라는 영국 구어로, funny는 '웃긴'이 아니다."
+ },
+ "sirius-5-034": {
+  "blank": "Watch it",
+  "options": [
+   "Watch out",
+   "Look out",
+   "Take care"
+  ],
+  "why": "Watch it은 '조심 좀 해' 하고 짧게 던지는 경고다."
+ },
+ "sirius-5-035": {
+  "blank": "Right you are",
+  "options": [
+   "That's right",
+   "You are right",
+   "Right it is"
+  ],
+  "why": "Right you are는 '그렇고말고' 하는 영국식 맞장구다."
+ },
+ "sirius-5-036": {
+  "blank": "What was that",
+  "options": [
+   "What is this",
+   "Who was that",
+   "What was it for"
+  ],
+  "why": "방금 지나간 일을 과거형 was로 '그건 뭐였어?' 하고 묻는다."
+ },
+ "sirius-5-037": {
+  "blank": "out",
+  "options": [
+   "gone",
+   "away",
+   "off"
+  ],
+  "why": "want + 사람 + out은 '자리에서 몰아내고 싶다'는 뜻이다."
+ },
+ "sirius-5-038": {
+  "blank": "turn the students against",
+  "options": [
+   "set the students against",
+   "turn the students towards",
+   "make the students against"
+  ],
+  "why": "turn A against B는 'A가 B에게 등을 돌리게 만들다'라는 뜻이다."
+ },
+ "sirius-5-039": {
+  "blank": "want you trained",
+  "options": [
+   "want you to train",
+   "want you training",
+   "like you trained"
+  ],
+  "why": "want + 목적어 + 과거분사는 '~가 ~되기를 원하다'는 구조다."
+ },
+ "sirius-5-040": {
+  "blank": "paranoid",
+  "options": [
+   "nervous",
+   "anxious",
+   "suspicious"
+  ],
+  "why": "paranoid는 근거 없이 의심하고 불안해하는 상태로, worried보다 훨씬 세다."
+ },
+ "sirius-5-041": {
+  "blank": "nasty piece of work",
+  "options": [
+   "real piece of work",
+   "nasty piece of job",
+   "nasty sort of work"
+  ],
+  "why": "a nasty piece of work는 '악질적인 인간'이라는 영국 구어다."
+ },
+ "sirius-5-042": {
+  "blank": "no picnic",
+  "options": [
+   "no party",
+   "no holiday",
+   "no angel"
+  ],
+  "why": "be no picnic은 '만만치 않다'로, 사람에게 쓰면 상대하기 피곤하다는 뜻이다."
+ },
+ "sirius-5-043": {
+  "blank": "split into",
+  "options": [
+   "split to",
+   "split by",
+   "split with"
+  ],
+  "why": "be split into는 '~로 딱 갈리다'로, 나뉜 결과는 into로 잇는다."
+ },
+ "sirius-5-044-p1": {
+  "blank": "As to",
+  "options": [
+   "As for",
+   "As of",
+   "As with"
+  ],
+  "why": "As to는 '~에 관해서는' 하고 화제를 짚는, as for보다 격식 있는 말이다."
+ },
+ "sirius-5-044-p2": {
+  "blank": "was supposed to",
+  "options": [
+   "was meant to",
+   "was about to",
+   "was used to"
+  ],
+  "why": "was supposed to는 '그랬어야 했는데 그러지 않았다'는 어긋남을 담는다."
+ },
+ "sirius-5-045": {
+  "blank": "be all right",
+  "options": [
+   "be fine",
+   "be okay",
+   "do well"
+  ],
+  "why": "all right는 '괜찮은'이라는 안심의 말로, 영국에서 미국보다 훨씬 자주 쓴다."
+ },
+ "sirius-5-046": {
+  "blank": "more obvious",
+  "options": [
+   "more obviously",
+   "more visible",
+   "more clear"
+  ],
+  "why": "make it + 형용사 구조라 부사 obviously가 아닌 obvious가 온다."
+ },
+ "sirius-5-047": {
+  "blank": "Get out of",
+  "options": [
+   "Get away from",
+   "Run out from",
+   "Clear out of"
+  ],
+  "why": "여기서 Get out of here는 화가 아니라 '어서 피해'라는 다급한 경고다."
+ },
+ "sirius-5-048": {
+  "blank": "There you are",
+  "options": [
+   "Here you are",
+   "There you go",
+   "There are you"
+  ],
+  "why": "There you are는 기다리던 사람이 나타났을 때 '왔구나' 하는 말이다."
+ },
+ "sirius-5-049": {
+  "blank": "No, you can't",
+  "options": [
+   "No, you won't",
+   "No, you mustn't",
+   "No, you don't"
+  ],
+  "why": "can't로 '가면 안 된다'는 불허를 짧게 잘라 말한다."
+ },
+ "sirius-5-050-p1": {
+  "blank": "go yet",
+  "options": [
+   "go still",
+   "go already",
+   "leave now"
+  ],
+  "why": "부정문 끝의 yet은 '아직은'이라는 뜻이다."
+ },
+ "sirius-5-050-p2": {
+  "blank": "you lot",
+  "options": [
+   "you guys",
+   "you all",
+   "you lots"
+  ],
+  "why": "you lot은 '너희들'을 뭉뚱그려 부르는 영국 구어다."
+ },
+ "sirius-5-051": {
+  "blank": "let you leave",
+  "options": [
+   "let you to leave",
+   "let you go",
+   "make you leave"
+  ],
+  "why": "let + 사람 + 동사원형으로, to 없이 쓴다."
+ },
+ "sirius-5-052": {
+  "blank": "lost",
+  "options": [
+   "sold",
+   "left",
+   "gave up"
+  ],
+  "why": "lose A to B는 'B 때문에 A를 잃다'로, 죽음을 완곡하게 말한다."
+ },
+ "sirius-5-053-p1": {
+  "blank": "all I have left",
+  "options": [
+   "all I have kept",
+   "all that I left",
+   "the last I have"
+  ],
+  "why": "all I have left of ~는 '~가 내게 남긴 전부'라는 뜻이다."
+ },
+ "sirius-5-053-p2": {
+  "blank": "worth dying for",
+  "options": [
+   "worth to die for",
+   "worth dying",
+   "worthy to die for"
+  ],
+  "why": "worth + -ing 뒤에 전치사 for가 남아 '목숨 걸 만한'이 된다."
+ },
+ "sirius-5-054": {
+  "blank": "tell me",
+  "options": [
+   "say me",
+   "talk to me",
+   "speak to me"
+  ],
+  "why": "tell은 듣는 사람을 바로 목적어로 받고, say는 그럴 수 없다."
+ },
+ "sirius-5-056": {
+  "blank": "Nonsense",
+  "options": [
+   "Rubbish",
+   "Ridiculous",
+   "Senseless"
+  ],
+  "why": "Nonsense는 상대의 걱정을 '말도 안 돼' 하고 단번에 일축하는 한마디다."
+ },
+ "sirius-5-057": {
+  "blank": "You've told",
+  "options": [
+   "You told",
+   "You've said",
+   "You'd told"
+  ],
+  "why": "이미 한 일이 지금 상황과 이어질 때 현재완료 You've told를 쓴다."
+ },
+ "sirius-5-058": {
+  "blank": "for days now",
+  "options": [
+   "in days now",
+   "since days now",
+   "for days ago"
+  ],
+  "why": "for days now는 '벌써 며칠째'로, now가 답답함을 더한다."
+ },
+ "sirius-5-059": {
+  "blank": "get my hopes up",
+  "options": [
+   "get my hope up",
+   "put my hopes up",
+   "lift my hopes up"
+  ],
+  "why": "get one's hopes up은 '기대를 품다'로, 여기선 주어 I도 빠졌다."
+ },
+ "sirius-5-060": {
+  "blank": "giving orders",
+  "options": [
+   "making orders",
+   "taking orders",
+   "giving commands"
+  ],
+  "why": "give orders는 '명령하다'이고, take orders는 '명령을 받다'다."
+ },
+ "sirius-5-061": {
+  "blank": "I think I'll",
+  "options": [
+   "I guess I'll",
+   "I know I'll",
+   "I think I'd"
+  ],
+  "why": "I think I'll ~로 부드럽게 말해 오히려 더 태연한 거절이 된다."
+ },
+ "sirius-5-062": {
+  "blank": "I know better",
+  "options": [
+   "I know more",
+   "I know best",
+   "I know well"
+  ],
+  "why": "I know better는 '남들은 몰라도 나는 안 속는다'는 뜻이다."
+ },
+ "sirius-5-063": {
+  "blank": "Put that away",
+  "options": [
+   "Put that off",
+   "Put that out",
+   "Put that down"
+  ],
+  "why": "put away는 꺼내 놓은 것을 '치우다, 집어넣다'라는 구동사다."
+ },
+ "sirius-5-064": {
+  "blank": "Wish it was",
+  "options": [
+   "Wish it were",
+   "Wish it is",
+   "Hope it was"
+  ],
+  "why": "주어 I를 떼고, 가정법 were 대신 구어형 was를 쓴 편한 말투다."
+ },
+ "sirius-5-067": {
+  "blank": "great greasy",
+  "options": [
+   "big oily",
+   "huge greasy",
+   "greatly greasy"
+  ],
+  "why": "여기서 great는 '훌륭한'이 아니라 크기를 과장하는 '커다란'이다."
+ },
+ "sirius-5-069": {
+  "blank": "would rather",
+  "options": [
+   "would better",
+   "had better",
+   "would sooner"
+  ],
+  "why": "would rather + 동사원형은 '차라리 ~하겠다'이고, 줄이지 않아 더 단호하다."
+ },
+ "sirius-5-070": {
+  "blank": "you two",
+  "options": [
+   "you guys",
+   "you both",
+   "both of you"
+  ],
+  "why": "명령 끝에 you two를 붙여 '너희 둘'을 콕 집어 부른다."
+ },
+ "sirius-5-071": {
+  "blank": "take you back",
+  "options": [
+   "bring you back",
+   "send you back",
+   "carry you back"
+  ],
+  "why": "길이나 문이 주어일 때 take you는 '~로 데려다준다'는 뜻이다."
+ },
+ "sirius-5-072": {
+  "blank": "the important one",
+  "options": [
+   "the important",
+   "the main one",
+   "the big one"
+  ],
+  "why": "the + 형용사 + one으로 여럿 가운데 '중요한 사람'을 가리킨다."
+ },
+ "sirius-5-073": {
+  "blank": "be here for you",
+  "options": [
+   "be here to you",
+   "be here by you",
+   "be here with you"
+  ],
+  "why": "be here for you는 곁에서 힘이 되어 주겠다는 약속이다."
+ },
+ "sirius-5-074": {
+  "blank": "cousin",
+  "options": [
+   "relative",
+   "sister",
+   "niece"
+  ],
+  "why": "이름 대신 혈연 호칭 cousin으로 부르는 고풍스러운 비꼼이다."
+ },
+ "sirius-5-075": {
+  "blank": "the best you've got",
+  "options": [
+   "the best you can do",
+   "the most you've got",
+   "the best you've had"
+  ],
+  "why": "Is that the best you've got?는 '고작 그게 다야?' 하는 도발이다."
+ }
+}

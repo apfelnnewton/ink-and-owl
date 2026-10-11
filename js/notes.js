@@ -4,6 +4,7 @@
    practised there (choose the right expression for the gap). Practice here does not touch the review schedule.
    It opens on the professor whose door you were standing at; the row of names at the top switches to any other. */
 import {DECKS, LOCKED, byId} from './decks.js';
+import {available} from './doors.js';   // availableDecks: the fire and the manor join the row once they have opened
 import * as store from './store.js';
 import * as grammar from './grammar.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
@@ -167,7 +168,7 @@ export function initNotes(app){
 
   async function show({id}){
     deck = byId(id) && byId(id).file ? byId(id) : byId('snape');
-    $('#notesWho').innerHTML = DECKS.map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}${d.file ? '' : ' shut'}" aria-pressed="${d.id === deck.id}">${esc(d.ko.replace(/ 교수$/, ''))}${d.file ? '' : '<span class="sr"> (잠김)</span>'}</button>`).join('');
+    $('#notesWho').innerHTML = DECKS.filter(d => d.place === 'corridor' || available(d.id)).map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}${d.file ? '' : ' shut'}" aria-pressed="${d.id === deck.id}">${esc(d.ko.replace(/ 교수$/, ''))}${d.file ? '' : '<span class="sr"> (잠김)</span>'}</button>`).join('');
     const ph = $('#notesPhoto');
     ph.style.backgroundImage = `url("${new URL(`assets/rooms/${deck.id}-portrait.webp`, location.href).href}")`;
     let cards, examples;

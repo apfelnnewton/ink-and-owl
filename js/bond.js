@@ -9,7 +9,7 @@
                        posts, openRoll, studyRoll}
    state.bond[deck].inv = {src: 'owl'|'study', t} — a tea invitation in hand; .q = answers since the last one
    state.bondDay = {date, posts, owl} — today's everyday letters so far, and today's owl invitation {id, at} */
-import {DECKS, byId} from './decks.js';
+import {DECKS, PROFS, BONDED, byId, isProf} from './decks.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as group from './post.js';
@@ -19,11 +19,14 @@ import * as howler from './howler.js';
 import * as spells from './spells.js';
 import * as map from './map.js';
 import * as need from './need.js';
+import * as fire from './fire.js';
+import * as manor from './manor.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
 const AT = [0, 80, 250, 600, 1200];
-const POST_OPEN = .22, POST_STUDY = .5, POST_CAP = 2, Q_PER_TEA = 30;
+const POST_OPEN = .22, POST_STUDY = .5, POST_CAP = 2, Q_PER_TEA = 30, Q_PER_TALK = 20;
+const byFire = id => (byId(id) || {}).place === 'fire';
 /* a fixed roll for (day, professor, purpose): the same answer however often the app is opened that day */
 const roll = key => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return ((h >>> 0) % 10000) / 10000; };
 const pad3 = n => String(n).padStart(3, '0');
@@ -60,6 +63,7 @@ export const onPost = f => listeners.add(f);
 function post(id, item){
   const b = bondOf(id);
   if (b.sent[item]) return false;
+  if (!isProf(id) && !itemOf(id, item)) return false;
   b.sent[item] = srs.today();
   b.mail.push({id: item, t: srs.today(), read: false});
   listeners.forEach(f => f(id, item));
@@ -67,7 +71,7 @@ function post(id, item){
 }
 function stageUp(id, before){
   const after = stage(id);
-  for (let k = before + 1; k <= after; k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); if (k >= 2) group.announce('stage', id, k); }
+  for (let k = before + 1; k <= after; k++){ post(id, 'L' + (30 + k)); post(id, 'K0' + k); if (k >= 2 && byId(id).news) group.announce('stage', id, k); }
 }
 const addPts = (id, n) => { const b = bondOf(id), before = stage(id); b.pts += n; stageUp(id, before); };
 /* the bond can fall a little (a disliked answer at tea, a cold pot, a failed request) but never below the stage
@@ -84,7 +88,7 @@ function deckChecks(id){
   [[1, 'L01'], [2, 'L02'], [3, 'L03'], [7, 'L04'], [14, 'L05'], [21, 'L06'], [30, 'L07'], [45, 'L08'], [60, 'L09'], [90, 'L10'], [120, 'L11'], [180, 'L12'], [270, 'L13'], [365, 'L14']]
     .forEach(([n, l]) => { if (b.days >= n) post(id, l); });
   for (let k = 1; k <= 10; k++) if (learnt >= k / 10 - 1e-9) post(id, 'L' + (14 + k));
-  if (learnt >= 1 - 1e-9) group.announce('learnt', id);   // the friends hear of it from this professor
+  if (learnt >= 1 - 1e-9 && byId(id).news) group.announce('learnt', id);   // the friends hear of it from this professor
   if (learnt >= .5) post(id, 'K09');
   if (g.mastered >= 1) post(id, 'L25');
   [[.1, 'L26'], [.25, 'L27'], [.5, 'L28'], [.75, 'L29'], [1, 'L30']].forEach(([f, l]) => { if (mast >= f - 1e-9) post(id, l); });
@@ -97,6 +101,7 @@ function deckChecks(id){
 function offerRequest(id){
   const d = data[id], b = bondOf(id), r = b.req;
   if (!d || r.active || stage(id) < 1 || (r.lastDay && b.days - r.lastDay < 5)) return;
+  if (!d.requests) return;
   const k = r.done + r.failed; if (k >= d.requests.length) return;
   const q = d.requests[k], cards = app.data[id] || [], ds = store.deck(id).cards;
   let pick = [];
@@ -145,7 +150,7 @@ function everyday(id, why){
    every Q_PER_TEA answers with a professor earn that professor's invitation at the end of the lesson. An owl invitation
    left unanswered goes cold at midnight and leaves a short note in the post (C-<date>). */
 const inviteOf = (id, tea) => tea.invite || ((data[id] || {}).invites || {})[tea.id] || {en: 'Will you take a cup of tea with me?', ko: '차 한 잔 하겠나?'};
-const nextTea = id => { const d = data[id], b = bondOf(id); if (!d || stage(id) < 1) return null; const k = Object.keys(b.teas).length; return k < d.teas.length ? d.teas[k] : null; };
+const nextTea = id => { const d = data[id], b = bondOf(id); if (!d || !d.teas) return null; const k = Object.keys(b.teas).length; if (stage(id) < 1 && !(byFire(id) && !k)) return null; return k < d.teas.length ? d.teas[k] : null; };
 export function teaReady(id){ return bondOf(id).inv ? nextTea(id) : null; }
 export const inviteSrc = id => (bondOf(id).inv || {}).src || '';
 export const inviteText = id => { const t = teaReady(id); return t ? inviteOf(id, t) : null; };
@@ -156,7 +161,7 @@ export function owlDue(){
   const day = today(), now = new Date(), t = srs.today(), q = new URLSearchParams(location.search), test = q.has('owl');
   if (test ? owlTested : day.owl) return null;
   if (!test && now.getHours() * 60 + now.getMinutes() < owlAt(t)) return null;
-  const ready = DECKS.map(x => x.id).filter(id => (test || !bondOf(id).inv) && nextTea(id));
+  const ready = PROFS.map(x => x.id).filter(id => (test || !bondOf(id).inv) && nextTea(id));
   if (!ready.length) return null;
   const id = ready.includes(q.get('owl')) ? q.get('owl') : ready[Math.floor(roll(`${t}|who`) * ready.length)], tea = nextTea(id);
   day.owl = {id, at: now.toISOString()}; if (test) owlTested = true;
@@ -178,7 +183,8 @@ export function finishTea(id, tea, score, picks){
   } else addPts(id, score * 2);
   const n = Object.keys(b.teas).length;
   if (n >= 1) post(id, 'L48'); if (n >= 10) post(id, 'L49'); if (n >= 20) post(id, 'L50');
-  if (n % 10 === 0 && n <= 100) post(id, 'K' + (10 + n / 10));
+  if (byFire(id)){ const gift = {5: 'K05', 10: 'K06', 15: 'K07', 20: 'K08'}[n]; if (gift) post(id, gift); }   // his gifts 5–8 come with the talks (he asks no favours)
+  else if (n % 10 === 0 && n <= 100) post(id, 'K' + (10 + n / 10));
   store.save();
 }
 
@@ -187,7 +193,7 @@ function greetings(){
   const t = srs.today(), y = t.slice(0, 4), md = t.slice(5), bday = store.get().settings.birthday || '';
   const near = mmdd => { if (!mmdd) return false; for (let k = 0; k <= 3; k++) if (srs.addDays(`${y}-${mmdd}`, k) === t) return true; return false; };
   if (bday && md === bday) group.announce('bday', '', y);   // on the day itself, the friends' professors pass it on
-  for (const d of DECKS){
+  for (const d of PROFS){
     const b = bondOf(d.id); if (!b.days || !data[d.id]) continue;
     for (const [g, when] of Object.entries(GREET)){
       const mmdd = when === 'easter' ? EASTER[y] : when === 'birthday' ? bday : when;
@@ -200,6 +206,7 @@ function greetings(){
 /* ---------- every answer */
 srs.hooks.push(ev => {
   if (ev.kind === 'need') return;   // the Room of Requirement: no bond with the professors (2026-10-09 user decision)
+  if (!(byId(ev.deckId) || {}).bond) return;   // Lucius pays wages; he does not make friends (manor.js)
   const id = ev.deckId, b = bondOf(id), t = srs.today(), before = stage(id);
   if (b.lastDay !== t){
     const gap = b.lastDay ? Math.round((new Date(t) - new Date(b.lastDay)) / 864e5) : 0;
@@ -223,7 +230,7 @@ srs.hooks.push(ev => {
     if ((a.kind === 'lines' && a.hit.length >= a.n) || (a.kind === 'days' && a.days.length >= a.n) || ((a.kind === 'extra' || a.kind === 'wrong') && a.hit.length)) settleRequest(id, true);
   }
   b.q = (b.q || 0) + 1;
-  if (b.q >= Q_PER_TEA && !b.inv && nextTea(id)){ b.inv = {src: 'study', t}; b.q = 0; }
+  if (b.q >= (byFire(id) ? Q_PER_TALK : Q_PER_TEA) && !b.inv && nextTea(id)){ b.inv = {src: 'study', t}; b.q = 0; }
   stageUp(id, before);
   deckChecks(id);
   offerRequest(id);
@@ -234,7 +241,7 @@ srs.hooks.push(ev => {
 export async function daily(){
   await Promise.all(DECKS.map(d => load(d.id)));
   const t = srs.today();
-  for (const d of DECKS){
+  for (const d of BONDED){
     const b = bondOf(d.id), a = b.req.active;
     if (a && t > a.until) settleRequest(d.id, false);
     if (b.inv && b.inv.src === 'owl' && b.inv.t < t){ post(d.id, 'C-' + b.inv.t); b.inv = null; losePts(d.id, 3); }
@@ -244,6 +251,8 @@ export async function daily(){
   wandLetter();
   await spells.daily();
   await map.daily();
+  fire.daily();
+  manor.daily();
   newsLetter();
   store.save();
 }
@@ -296,6 +305,8 @@ export function itemOf(id, key){
   if (/^S-/.test(key)) return spells.textOf(id, key);
   if (key === 'MAP') return map.textOf(id, key);
   if (key === 'NEED') return need.textOf(id, key);
+  if (key === 'SIRIUS' || /^WN-\d+-/.test(key)) return fire.textOf(id, key, data.sirius);
+  if (id === 'lucius') return manor.textOf(key, data.lucius);
   if (/^WD-[a-z]+$/.test(key)){
     const wood = key.slice(3), own = wand.OWNER[wood];
     const t = own === id ? wand.LETTERS.own[wood] : id === 'dumbledore' ? (own ? wand.LETTERS.relay[wood] : wand.LETTERS.wood[wood]) : null;
@@ -307,12 +318,12 @@ export function itemOf(id, key){
   const d = data[id]; if (!d) return null;
   const who = byId(id);
   let m;
-  if (/^L\d\d$/.test(key)) return {kind: '편지', ...d.letters[key]};
+  if (/^L\d\d$/.test(key)) return d.letters && d.letters[key] ? {kind: '편지', ...d.letters[key]} : null;
   if (/^P\d{3}$/.test(key)) return d.posts && d.posts[key] && {kind: '편지', ...d.posts[key]};
-  if ((m = key.match(/^(G\d\d)-(\d{4})$/))){ const g = d.greetings[m[1]]; return g && {kind: '카드', ...(stage(id) >= 2 ? g.warm : g.cool)}; }
-  if ((m = key.match(/^(R\d\d)-(ask|done|fail)$/))){ const r = d.requests.find(x => x.id === m[1]); return r && {kind: m[2] === 'ask' ? '부탁' : '답장', ...r[m[2]]}; }
+  if ((m = key.match(/^(G\d\d)-(\d{4})$/))){ const g = (d.greetings || {})[m[1]]; return g && {kind: '카드', ...(stage(id) >= 2 ? g.warm : g.cool)}; }
+  if ((m = key.match(/^(R\d\d)-(ask|done|fail)$/))){ const r = (d.requests || []).find(x => x.id === m[1]); return r && {kind: m[2] === 'ask' ? '부탁' : '답장', ...r[m[2]]}; }
   if (/^C-\d{4}-\d\d-\d\d$/.test(key)) return COLD[id] && {kind: '식어 버린 차', ...COLD[id]};
-  if (/^K\d\d$/.test(key)){ const k = d.keepsakes.find(x => x.id === key); return k && {kind: '선물', gift: k, en: k.note.en, ko: k.note.ko}; }
+  if (/^K\d\d$/.test(key)){ const k = (d.keepsakes || []).find(x => x.id === key); return k && {kind: '선물', gift: k, en: k.note.en, ko: k.note.ko}; }
   void who;
   return null;
 }
@@ -378,7 +389,9 @@ export const welcomeDue = () => store.get().settings.named && !bondOf('dumbledor
 export const postWelcome = () => { const r = post('dumbledore', 'W00'); store.save(); return r; };
 
 export const teasOf = id => (data[id] || {}).teas || [];
-export const keepsakes = id => { const d = data[id], b = bondOf(id); return d ? d.keepsakes.filter(k => b.keep[k.id] || b.sent[k.id]) : []; };
+export const keepsakes = id => { const d = data[id], b = bondOf(id); return d && d.keepsakes ? d.keepsakes.filter(k => b.keep[k.id] || b.sent[k.id]) : []; };
+/* how many gifts this one has to give at all (30 from a professor, 10 from Sirius) */
+export const keepsakeCount = id => ((data[id] || {}).keepsakes || []).length;
 
 export function init(a){
   app = a;
@@ -387,6 +400,7 @@ export function init(a){
   onPost((id, key) => {
     const who = byId(id);
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl
+    if (id === 'lucius' && /^C\d\d$/.test(key)) return;   // a card on the salver, beside the wages (manor.js)
     if (/^H-/.test(key) && howler.isHowler(id)) return;   // a Howler comes by owl (owl.js)
     toast(`<span class="q" lang="en">An owl arrives.</span><span class="k">${esc(who.ko)}에게서 ${/^K/.test(key) ? '선물이' : /^R\d\d-ask/.test(key) ? '부탁이' : /^G/.test(key) ? '카드가' : '편지가'} 왔습니다.</span>`, 3200, true);
   });

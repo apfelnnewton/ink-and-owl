@@ -5,13 +5,13 @@
    learnt lines, so they never add to it.
    state.doors = {open: ['snape', …], first: 'snape'}.
    A new character's door appears as soon as its deck exists in decks.js (DECKS) with a data file — it starts locked. */
-import {DECKS} from './decks.js';
+import {DECKS, PROFS, KEYED, isProf} from './decks.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as group from './post.js';
 
 export const PER_KEY = 20;
-const decks = () => DECKS.filter(d => d.file);
+const decks = () => PROFS.filter(d => d.file);   // the doors of the corridor
 
 function state(){
   const s = store.get();
@@ -26,11 +26,19 @@ function state(){
 export const needsFirst = () => !state().open.length;
 export const first = () => state().first || state().open[0] || '';
 export const isOpen = id => state().open.includes(id);
-export const learnt = () => decks().reduce((n, d) => n + Object.keys(store.deck(d.id).cards || {}).length, 0);
+export const learnt = () => KEYED.reduce((n, d) => n + Object.keys(store.deck(d.id).cards || {}).length, 0);   // Sirius's lines count too; Lucius's do not
 export const keysEarned = () => Math.floor(learnt() / PER_KEY);
 export const keysLeft = () => Math.max(0, keysEarned() - Math.max(0, state().open.length - 1));
 export const toNextKey = () => PER_KEY - (learnt() % PER_KEY);
 export const lockedCount = () => decks().filter(d => !isOpen(d.id)).length;
+
+/* is this deck within reach? a professor's door is open; the fireplace is lit (fire.js); the manor has sent for you (manor.js) */
+export function available(id){
+  if (isProf(id)) return isOpen(id);
+  const s = store.get();
+  return id === 'sirius' ? !!(s.fire && s.fire.open) : id === 'lucius' ? !!(s.manor && s.manor.open) : false;
+}
+export const availableDecks = () => DECKS.filter(d => d.file && available(d.id));
 
 export function chooseFirst(id){
   const st = state(); if (st.open.length) return false;

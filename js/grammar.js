@@ -5,6 +5,7 @@
    Expressions notebook opens the whole catalogue ("문법 노트"). Written for the decks that have a file so far;
    a deck without one simply shows no button. The source lines (data/) are never touched. */
 import {DECKS} from './decks.js';
+import {available} from './doors.js';
 import * as store from './store.js';
 import {$, esc, openSheet} from './ui.js';
 
@@ -19,6 +20,8 @@ export function load(id){
     fetch(`grammar/${id}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}))]).then(([, n]) => (notes[id] = n)));
 }
 const loadAll = () => Promise.all(DECKS.filter(d => d.file).map(d => load(d.id)));
+/* whose lines the notes may quote: the professors', and those of the fire and the manor once they have opened */
+const shown = () => DECKS.filter(d => d.place === 'corridor' || available(d.id));
 export const has = (deckId, cardId) => !!(notes[deckId] && notes[deckId][cardId]);
 const pointOf = id => (points || []).find(p => p.id === id);
 /* "[how to ① bottle …]" — brackets and circled numbers set off in colour */
@@ -38,7 +41,7 @@ export async function pointSheet(id){
   await loadAll();
   const p = pointOf(id); if (!p) return;
   const uses = [];
-  for (const d of DECKS) for (const [cid, g] of Object.entries(notes[d.id] || {})){
+  for (const d of shown()) for (const [cid, g] of Object.entries(notes[d.id] || {})){
     const n = g.notes.find(x => x.pt === id); if (n) uses.push({d, cid, n});
   }
   /* lines already learnt are shown in full; the rest stay locked, like the expressions notebook (2026-10-04 user
@@ -64,7 +67,7 @@ export async function catalogue(deckId){
   await loadAll();
   /* for each point: lines that use it (all professors written so far) and how many of those are learnt */
   const tally = id => { let n = 0, k = 0, h = 0;
-    for (const d of DECKS) for (const [cid, g] of Object.entries(notes[d.id] || {})) if (g.notes.some(x => x.pt === id)){ n++; if (learnt(d.id, cid)) k++; if (d.id === deckId) h++; }
+    for (const d of shown()) for (const [cid, g] of Object.entries(notes[d.id] || {})) if (g.notes.some(x => x.pt === id)){ n++; if (learnt(d.id, cid)) k++; if (d.id === deckId) h++; }
     return {n, k, h}; };
   const list = (points || []).map(p => ({p, ...tally(p.id)})).filter(x => x.n).sort((a, b) => b.k - a.k || b.h - a.h || b.n - a.n);
   openSheet(`<div class="sh-kind"><span>문법 노트</span></div><h2 class="sh-expr" id="shTitle">대사 속 문법</h2>` +

@@ -2,6 +2,7 @@
 import {rng, r1} from './art.js';
 import {keyring} from './art-plus.js';
 import {DECKS} from './decks.js';
+import {available} from './doors.js';
 import * as store from './store.js';
 import * as speech from './speech.js';
 import * as srs from './srs.js';
@@ -53,7 +54,7 @@ export function initSettings(app){
     $('#fSur').value = s.surname || ''; $('#fFirst').value = s.firstName || ''; $('#fTitle').value = s.title ?? ''; $('#fBday').value = s.birthday || '';
     namePreview();
     $('#fGroup').innerHTML = groupBox();
-    const open = DECKS.filter(d => d.file);
+    const open = DECKS.filter(d => d.file && (d.place === 'corridor' || available(d.id)));
     $('#fDeck').innerHTML = open.map(d => `<option value="${d.id}">${esc(d.ko)}</option>`).join('');
     $('#fVer').textContent = `앱 ${APP_VERSION} · 데이터 ${app.index ? app.index.version : '—'}`;
     voices(speech.gbVoices());

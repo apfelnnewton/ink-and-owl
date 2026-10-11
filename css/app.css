@@ -1847,3 +1847,158 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 #room[data-reply="1"] .cz-line{font-family:var(--f-display);font-style:italic;font-size:calc(18px * var(--k));line-height:1.45;color:#3E3222}
 #noteFilm .seal{width:18px;height:18px;vertical-align:-4px;margin-right:5px}
 @media (prefers-reduced-motion: reduce){ .nd-obj{transition:none} }
+
+/* ---------- the fireplace (fire.js) and Malfoy Manor (manor.js), 2026-10-12 */
+.seal.s-sirius{background-image:url(../assets/ui/seal-sirius.webp)}
+.seal.s-lucius{background-image:url(../assets/ui/seal-lucius.webp)}
+/* a place's title card: the corridor's card, standing in a room */
+.place-card .cwho{font:italic 400 calc(40px * var(--k))/1.04 'Cormorant Garamond','Gowun Batang',serif;letter-spacing:0;color:#F2EADB;margin-top:0}
+.place-card .cline .q{font-size:calc(17px * var(--k));line-height:1.36}
+.place-card .cline .k{font-size:12.5px;line-height:1.6;color:#B5AA92}
+.place-card .cline .q + .k{margin-bottom:8px}
+.place-card .cgo{margin-top:20px}
+.place-card .cgo.me-second{margin-top:0;border-top:0}
+.place-card .cgo em{font-style:normal;font-size:13px;letter-spacing:.02em;color:#C9BFA6;margin-left:6px}
+.place-card .cgo span[lang="en"]{font:italic 17px 'Cormorant Garamond','Gowun Batang',serif}
+.place-card .cgo.locked em{color:#8E8676}
+
+/* the fire (fire.js). The stage is a box the shape of the painting, laid to cover the screen (on a wide screen: a
+   column in the middle, the blurred painting behind it); everything in it is placed in fractions of the painting.
+   From the bottom: the hearth with nobody in it · Sirius (his painting and the two loops: he listens / he talks) ·
+   the hearth burning green · the three Floo films. */
+#fire{--fh:max(100%, 176.95vw)}
+@media (min-aspect-ratio:1/1){ #fire{--fh:100%} }
+.fire-stage{position:absolute;left:50%;top:calc((100% - var(--fh)) * .5);height:var(--fh);aspect-ratio:720/1274;transform:translateX(-50%)}
+.fire-stage.over{z-index:4;pointer-events:none}
+.fire-stage.over > *{pointer-events:auto}
+.fire-back{position:absolute;inset:-48px;background:#050403 url(../assets/rooms/hearth-portrait.webp) center/cover no-repeat;filter:blur(30px) brightness(.34);transition:filter 2.4s ease}
+#fire[data-floo] .fire-back{filter:blur(30px) brightness(.4) hue-rotate(88deg) saturate(1.3)}
+.fire-pic{position:absolute;inset:0;background:url(../assets/rooms/hearth-portrait.webp) center/100% 100% no-repeat}
+.fire-pic.sirius{background-image:url(../assets/rooms/sirius-portrait.webp)}
+.fire-pic.green{background-image:url(../assets/rooms/hearth-green-portrait.webp);opacity:0;transition:opacity 1.1s ease}
+#fire[data-floo] .fire-pic.green{opacity:1;transition:opacity 2.2s ease 2.2s}
+.fire-face{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease}
+#fire.here .fire-face{opacity:1}
+.fire-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:none;pointer-events:none}
+.fire-vid.talk{opacity:0;transition:opacity .45s ease}
+.fire-vid.talk.on{opacity:1}
+#fire .fire-vid,#room.at-fire .fire-vid{display:block}
+#fire .fire-vid{object-fit:fill}
+@media (min-aspect-ratio:1/1){ #room.at-fire .fire-vid{display:none} }
+@media (prefers-reduced-motion: reduce){ #fire .fire-vid,#room.at-fire .fire-vid{display:none} }
+.floo-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;opacity:0;transition:opacity .4s ease;pointer-events:none}
+.floo-vid.live{opacity:1}
+#fire .bg .shade{background:linear-gradient(rgba(4,3,2,.5),rgba(4,3,2,0) 16%,rgba(4,3,2,0) 46%,rgba(4,3,2,.72) 66%,rgba(4,3,2,.94))}
+@media (min-aspect-ratio:1/1){
+  #fire .bg .fire-stage{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+  #fire .bg .shade{background:linear-gradient(rgba(4,3,2,.5),rgba(4,3,2,0) 16%,rgba(4,3,2,0) 60%,rgba(4,3,2,.7))}
+  /* the card stands beside the column */
+  #fire .place-card{left:calc(4vw + var(--sl));right:auto;width:min(340px, 26vw);transform:none}
+}
+/* the fire did not catch the name: it gutters once */
+#fire.sputter .bg .fire-stage{animation:sputter .9s ease}
+@keyframes sputter{0%{filter:none}22%{filter:brightness(.3) saturate(.5)}48%{filter:brightness(1.25)}70%{filter:brightness(.7)}100%{filter:none}}
+/* the jar of Floo powder on the hearth-stone */
+.fire-jar{position:absolute;left:72.5%;top:59%;width:15.5%;aspect-ratio:1;padding:0;border:0;background:none;cursor:pointer}
+.fire-jar img{width:100%;height:100%;display:block;filter:drop-shadow(0 8px 6px rgba(0,0,0,.85)) drop-shadow(0 0 10px rgba(255,214,140,.18));animation:jarGlow 3.4s ease-in-out infinite}
+.fire-jar b{position:absolute;left:50%;bottom:calc(100% + 2px);transform:translateX(-50%);white-space:nowrap;font:400 calc(15px * var(--k))/1 var(--f-ko);letter-spacing:.08em;color:#F7ECD4;padding:6px 2px;
+  text-shadow:0 0 2px #000,0 0 4px rgba(0,0,0,.95),0 0 10px rgba(0,0,0,.9),0 0 22px rgba(0,0,0,.6),0 0 18px rgba(255,196,110,.3)}
+.fire-jar:hover b,.fire-jar:focus-visible b{color:#FFE4A8}
+.fire-jar:focus-visible{outline:0}
+@keyframes jarGlow{0%,100%{filter:drop-shadow(0 8px 6px rgba(0,0,0,.85)) drop-shadow(0 0 8px rgba(255,214,140,.12))}50%{filter:drop-shadow(0 8px 6px rgba(0,0,0,.85)) drop-shadow(0 0 16px rgba(255,220,150,.42))}}
+@media (prefers-reduced-motion: reduce){ .fire-jar img{animation:none} }
+/* the places one may go, standing in the green flames */
+.fire-dest{position:absolute;left:0;right:0;top:25%;display:flex;flex-direction:column;align-items:center;gap:8px}
+.fire-dest button{min-height:56px;padding:4px 18px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:9px;animation:destIn 1.2s ease both}
+.fire-dest b{font:italic 500 clamp(27px, 8.2vw, 40px)/1.05 'Cormorant Garamond','Gowun Batang',serif;color:#F2FFEA;letter-spacing:.02em;
+  text-shadow:0 0 3px rgba(0,20,6,.95),0 0 14px rgba(110,255,150,.95),0 0 34px rgba(60,220,110,.7),0 2px 3px rgba(0,0,0,.9)}
+.fire-dest small{font:400 13px/1 var(--f-ko);letter-spacing:.1em;color:#DDF7DC;text-shadow:0 0 3px #000,0 0 10px rgba(0,30,10,.9)}
+.fire-dest button:hover b,.fire-dest button:focus-visible b{color:#fff}
+.fire-dest button:focus-visible{outline:0}
+@keyframes destIn{from{opacity:0;transform:translateY(10px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+#fire[data-floo="rush"] .fire-dest{opacity:0;transition:opacity .4s}
+/* swallowed: nothing but the fire — the dark foot of the picture and the bar at the top go */
+#fire .bg .shade,#fire .r-top{transition:opacity .9s ease}
+#fire[data-floo="rush"] .bg .shade,#fire[data-floo="rush"] .r-top{opacity:0}   /* the whole screen is fire */
+/* what the rite asks, where the card was */
+.floo-bar{position:absolute;z-index:5;left:calc(30px + var(--sl));right:calc(30px + var(--sr));bottom:calc(var(--sb) + 44px);text-align:center}
+@media (min-width:700px){ .floo-bar{left:50%;right:auto;width:min(460px, 80vw);transform:translateX(-50%)} }
+.floo-bar .q{margin:0;font:italic 400 calc(21px * var(--k))/1.3 'Cormorant Garamond','Gowun Batang',serif;color:#EAF7E4;text-shadow:0 0 12px rgba(0,0,0,.9)}
+.floo-bar .k{margin:5px 0 0;font-size:12.5px;line-height:1.6;color:#B9CDB6}
+.floo-bar.tease .q{color:#F4E7B8}
+.floo-do{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.floo-mic{min-height:48px;padding:0 26px;background:none;border:0;border-top:1px solid rgba(214,240,214,.34);border-bottom:1px solid rgba(214,240,214,.34);font:15px var(--f-ko);letter-spacing:.06em;color:#EAF7E4;cursor:pointer}
+.floo-mic span{font:italic 18px 'Cormorant Garamond','Gowun Batang',serif;margin-right:8px}
+.floo-mic.on{border-color:#9DFFB0;color:#fff;box-shadow:0 0 22px rgba(90,255,140,.28)}
+.floo-bar .clink{color:#9FB19C}
+/* the last of the green fire over everything while the place changes behind it */
+.floo{position:fixed;inset:0;z-index:90;pointer-events:none;background:#0d5a2a url(../assets/fire/floo-end.webp) center/cover no-repeat;opacity:0;transition:opacity .5s ease}
+.floo.on{opacity:1}
+.floo.now{transition:none}
+.floo.off{opacity:0;filter:brightness(1.5) blur(10px);transform:scale(1.12);transition:opacity 1.5s ease, filter 1.5s ease, transform 1.5s ease}
+
+/* by the fire the lesson sits lower and the grate is drawn nearer, so his face stays in sight above the paper */
+#room.at-fire .bg .shade{background:linear-gradient(rgba(3,3,2,.5),rgba(3,3,2,0) 12%,rgba(3,3,2,0) 30%,rgba(3,3,2,.62) 46%,rgba(3,3,2,.86))}
+@media (max-aspect-ratio:62/100){
+  #room.at-fire .bg .photo{background-size:auto 130%;background-position:center bottom}
+  #room.at-fire .fire-vid{inset:auto;left:50%;bottom:0;width:auto;height:130%;aspect-ratio:720/1274;max-width:none;transform:translateX(-50%);object-fit:fill}
+  #room.at-fire.has-photo .room-grid{padding-top:calc(var(--st) + 35vh)}
+}
+
+/* the manor */
+#manor .bg .photo{display:block}
+#manor .bg .shade{background:linear-gradient(rgba(3,5,4,.5),rgba(3,5,4,0) 18%,rgba(3,5,4,0) 46%,rgba(3,5,4,.7) 68%,rgba(3,5,4,.94))}
+#manor.cabinet .me-dim{opacity:1}
+/* in the study the desk and its salver fill the lower right of the picture: on any screen squarer than a phone (where the
+   picture is cropped top and bottom and the salver comes down to the card) the card keeps to the left */
+@media (min-aspect-ratio:62/100){ #manor[data-view="study"] .place-card{left:calc(30px + var(--sl));right:auto;width:min(380px, 46vw);transform:none} }
+/* the glass cabinet: dark green baize behind glass, a thin silver rule; each thing with how far its cleaning has come */
+.mn-case{padding:14px 12px 12px;border-radius:4px;background:linear-gradient(rgba(10,18,14,.94),rgba(6,11,9,.97));box-shadow:inset 0 0 0 1px rgba(196,206,198,.3),inset 0 0 0 5px rgba(8,14,11,.9),inset 0 0 0 6px rgba(196,206,198,.14),0 14px 34px rgba(0,0,0,.6)}
+.mn-case-head{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0 14px}
+.mn-case-head span{font:italic 400 calc(24px * var(--k))/1.1 'Cormorant Garamond','Gowun Batang',serif;color:#E4E9E2;letter-spacing:.02em}
+.mn-case-head small{font-size:12px;color:#8F9A91;letter-spacing:.04em}
+.mn-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:6px}
+@media (min-width:620px){ .mn-grid{grid-template-columns:1fr 1fr} }
+.mn-obj{width:100%;min-height:96px;display:flex;align-items:center;gap:14px;padding:8px 12px 8px 8px;border:0;border-radius:3px;cursor:pointer;text-align:left;color:#DDE3DB;
+  background:radial-gradient(120% 140% at 18% 50%,rgba(40,62,50,.55),rgba(12,20,16,.6) 60%);box-shadow:inset 0 0 0 1px rgba(196,206,198,.1)}
+.mn-obj:hover,.mn-obj:focus-visible{box-shadow:inset 0 0 0 1px rgba(196,206,198,.4);outline:0}
+.mn-obj .pic{flex:none;width:84px;height:84px;position:relative}
+.mn-obj .pic img{width:100%;height:100%;display:block;filter:drop-shadow(0 6px 5px rgba(0,0,0,.8));transition:filter .4s, transform .35s}
+.mn-obj:hover .pic img{transform:scale(1.05)}
+.mn-obj.new .pic img{filter:grayscale(.85) brightness(.34) drop-shadow(0 6px 5px rgba(0,0,0,.8))}
+.mn-obj.work .pic img{filter:grayscale(.35) brightness(.7) drop-shadow(0 6px 5px rgba(0,0,0,.8))}
+.mn-obj.done .pic img{filter:drop-shadow(0 0 9px rgba(214,232,220,.55)) drop-shadow(0 6px 5px rgba(0,0,0,.8))}
+.mn-obj .tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mn-obj .tx b{font:italic 400 calc(20px * var(--k))/1.15 'Cormorant Garamond','Gowun Batang',serif;color:#EEF1EA}
+.mn-obj .tx em{font-style:normal;font-size:13px;color:#A9B3A6}
+.mn-obj .tx small{margin-top:4px;font-size:12px;letter-spacing:.03em;color:#8F9A91}
+.mn-obj.new .tx b,.mn-obj.new .tx em{color:#7C877F}
+.mn-obj.ready .tx small{color:#E8C877}
+.mn-obj.done .tx small{color:#BFD3C6}
+/* in the sheet: the object, its label or his question */
+.mn-fig.new img,.mn-fig.work img{filter:grayscale(.5) brightness(.8) drop-shadow(0 10px 9px rgba(50,32,12,.45))}
+.mn-tag{margin:14px auto 0;max-width:420px;padding:14px 18px 12px;background:rgba(255,252,240,.5);box-shadow:0 0 0 1px rgba(42,33,24,.28),0 0 0 4px rgba(255,252,240,.35),0 0 0 5px rgba(42,33,24,.18)}
+.mn-tag small{display:block;text-align:center;font-size:11.5px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:8px}
+.mn-tag p{margin:0;font:italic 400 calc(17px * var(--k))/1.5 var(--f-display);color:var(--ink)}
+.mn-tag p.ko{margin-top:8px;font:400 13px/1.7 var(--f-ko);color:var(--ink-soft)}
+.mn-how{margin:12px 0 0;font-size:13.5px;line-height:1.7;color:var(--ink-soft)}
+.mn-cards{list-style:none;margin:14px 0 0;padding:10px 0 0;border-top:1px dashed rgba(42,33,24,.3)}
+.mn-cards button{width:100%;min-height:44px;display:flex;align-items:center;gap:10px;padding:0 2px;background:none;border:0;cursor:pointer;font:14px var(--f-ko);color:var(--ink);text-align:left}
+.mn-cards .seal{flex:none;width:24px;height:24px}
+.mn-cards em{margin-left:auto;font-style:normal;font-size:12px;color:#7A1A12}
+/* wages on the day's sheet */
+.mn-paid{display:flex;align-items:center;gap:10px;margin:10px 0 0}
+.mn-paid img{width:34px;height:34px;filter:drop-shadow(0 2px 2px rgba(40,25,10,.4))}
+.mn-paid b{font:400 calc(20px * var(--k)) var(--f-ko)}
+.mn-paid span{margin-left:auto;font-size:12.5px;color:var(--ink-soft)}
+/* the purse */
+.purse-fig{margin:0 auto 4px;width:min(46vw, 170px)}
+.purse-fig img{width:100%;display:block;filter:drop-shadow(0 10px 9px rgba(50,32,12,.45))}
+.purse-coins{list-style:none;margin:14px 0 0;padding:0;display:flex;justify-content:center;gap:22px}
+.purse-coins li{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:64px}
+.purse-coins img{width:46px;height:46px;filter:drop-shadow(0 3px 3px rgba(40,25,10,.45))}
+.purse-coins b{margin-top:4px;font:400 calc(26px * var(--k))/1 'Cormorant Garamond','Gowun Batang',serif;color:var(--ink)}
+.purse-coins span{font:italic 14px var(--f-display);color:var(--ink)}
+.purse-coins small{font-size:11.5px;color:var(--ink-soft)}
+.purse-coins li.none{opacity:.38}
+.purse-note{margin:12px 0 0;text-align:center;font-size:12.5px;color:var(--ink-soft)}

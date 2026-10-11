@@ -9,8 +9,19 @@ export const DECKS = [
   {id:'moody', file:'moody.json', practice:'moody.json', examples:'moody-examples.json', who:'Alastor Moody', ko:'무디 교수', room:'Defence, with Professor Moody', where:'어둠의 마법 방어술, 1994년', plateName:'A. Moody', plateSub:'방어술', tag:'A. Moody', wood:'#3A3C3B', stone:'#2A2F2B', metal:'iron', glow:'#8FB4C9', seed:41, noStraps:true, noKeyhole:true, noRing:true},
   {id:'umbridge', file:'umbridge.json', practice:'umbridge.json', examples:'umbridge-examples.json', who:'Professor Umbridge', ko:'엄브리지 교수', room:'Defence, with Professor Umbridge', where:'어둠의 마법 방어술, 1995년', plateName:'D. J. Umbridge', plateSub:'고등 조사관', tag:'D. J. Umbridge', wood:'#D592A9', stone:'#2E302D', metal:'brass', plate:'enamel', trim:'#FBEFF2', glow:'#F3A9C0', seed:53},
   {id:'dumbledore', file:'dumbledore.json', practice:'dumbledore.json', examples:'dumbledore-examples.json', who:'Professor Dumbledore', ko:'덤블도어 교수', room:'The Headmaster’s Study', where:'교장실', plateName:'The Headmaster', plateSub:'교장실', tag:'A. Dumbledore', wood:'#80602E', stone:'#30322B', metal:'brass', curl:true, glow:'#F2C45A', seed:67},
-  {id:'slughorn', file:'slughorn.json', practice:'slughorn.json', examples:'slughorn-examples.json', who:'Professor Slughorn', ko:'슬러그혼 교수', room:'Potions, with Professor Slughorn', where:'마법약 교실, 1996년', plateName:'Prof. H. Slughorn', plateSub:'마법약', tag:'H. Slughorn', wood:'#56375A', stone:'#2B2F2B', metal:'brass', glow:'#B98AD6', seed:79}
+  {id:'slughorn', file:'slughorn.json', practice:'slughorn.json', examples:'slughorn-examples.json', who:'Professor Slughorn', ko:'슬러그혼 교수', room:'Potions, with Professor Slughorn', where:'마법약 교실, 1996년', plateName:'Prof. H. Slughorn', plateSub:'마법약', tag:'H. Slughorn', wood:'#56375A', stone:'#2B2F2B', metal:'brass', glow:'#B98AD6', seed:79},
+  /* not professors and not doors in the corridor (2026-10-12, docs/plan-newfaces.md): `place` says where the deck is studied */
+  {id:'sirius', file:'sirius.json', practice:'sirius.json', examples:'sirius-examples.json', who:'Sirius Black', ko:'시리우스', room:'A word by the fire', where:'내 방 벽난로', tag:'Padfoot', glow:'#E58A3C', place:'fire', keys:true, bond:true, news:false},
+  {id:'lucius', file:'lucius.json', practice:'lucius.json', examples:'lucius-examples.json', who:'Lucius Malfoy', ko:'루시우스', room:'The Study', where:'말포이 저택 서재', tag:'L. Malfoy', glow:'#A9C2B0', place:'manor', keys:false, bond:false, news:false}
 ];
+/* the seven professors: a door in the corridor, a share in the keys, a bond, and news for the friends */
+DECKS.forEach(d => { if (!d.place) Object.assign(d, {place: 'corridor', keys: true, bond: true, news: true}); });
+export const PROFS = DECKS.filter(d => d.place === 'corridor');   // the doors of the corridor
+export const BONDED = DECKS.filter(d => d.bond);                  // stages, letters, talks over tea or by the fire, gifts
+export const KEYED = DECKS.filter(d => d.keys);                   // lines learnt here count towards keys
+export const isProf = id => PROFS.some(d => d.id === id);
+/* where a lesson is entered from and left for: the corridor, the fireplace in the guest room, the study at the manor */
+export const homeOf = id => ({fire: '#/fire', manor: '#/manor/study'})[(DECKS.find(d => d.id === id) || {}).place] || '#/';
 
 export const byId = id => DECKS.find(d => d.id === id);
 
@@ -176,6 +187,53 @@ export const EXTRA = {
     {min: 0, en: "Ah well, can't win them all, eh?", ko: "뭐, 늘 이길 순 없지, 응?"}
   ]
 };
+/* Sirius and Lucius: written with their letters (docs/newfaces-work, BOND.md), reviewed 2026-10-11 */
+Object.assign(REACT, {
+  sirius: {
+    good: [{en: "That's it. Brilliant.", ko: "바로 그거야. 끝내준다."}, {en: "Spot on. Quicker than I was.", ko: "딱 맞았어. 나보다 빠르네."}, {en: "Ha! Couldn't have barked it better.", ko: "하! 나도 그보다 잘 짖진 못해."}],
+    hard: [{en: "Near enough to smell it.", ko: "코앞이야. 냄새까지 맡았잖아."}, {en: "Close. One word slipped the lead.", ko: "아깝다. 낱말 하나가 목줄을 풀고 달아났어."}, {en: "Almost. I'd have bluffed that one.", ko: "거의 됐어. 나라면 그건 우겨서 넘어갔을 거야."}],
+    again: [{en: "Wrong. So what? Again tomorrow.", ko: "틀렸어. 그게 뭐 어때서? 내일 다시 해."}, {en: "Not even close. I've done worse.", ko: "근처에도 못 갔네. 뭐, 난 더 심했지."}, {en: "Rubbish. Never mind, the night's young.", ko: "엉망이네. 신경 쓰지 마, 밤은 아직 길어."}]
+  },
+  lucius: {
+    good: [{en: "Correct. You begin to justify the expense.", ko: "맞네. 들인 돈값을 하기 시작하는군."}, {en: "Quite. One expects no less of staff.", ko: "그렇지. 내가 부리는 사람이면 그쯤은 해야지."}, {en: "To the letter. How very unlike the Ministry.", ko: "한 자도 틀리지 않았군. 마법부와는 퍽 다르게."}],
+    hard: [{en: "Nearly. Nearly is what one pays clerks for.", ko: "거의 맞았군. '거의'는 서기들에게 돈 주고 시키는 일일세."}, {en: "Approximately right. So is a forgery.", ko: "얼추 맞네. 위조품도 얼추는 맞지."}, {en: "Close. I do not pay by the attempt.", ko: "비슷하군. 애쓴 것에는 삯을 치르지 않네."}],
+    again: [{en: "No. And I had such modest hopes.", ko: "아닐세. 바란 것도 그리 많지 않았건만."}, {en: "Wrong. Put it down before you try again.", ko: "틀렸네. 다시 해 보기 전에 그것부터 내려놓게."}, {en: "Mistaken. Happily, the object cannot be embarrassed.", ko: "틀렸군. 다행히 물건은 창피를 모르지."}]
+  }
+});
+Object.assign(REMARKS, {
+  sirius: {
+    tiers: [
+      {min: 1, en: "Every one. If I had a tail just now, it'd be wagging.", ko: "하나도 안 틀렸네. 지금 나한테 꼬리가 있었으면 흔들고 있을 거야."},
+      {min: 0.75, en: "Good night's work. James and I got by on far less.", ko: "오늘 밤 잘했어. 제임스랑 나는 이보다 훨씬 못하고도 잘만 버텼지."},
+      {min: 0.45, en: "Half right. The other half we'll hunt down tomorrow.", ko: "반은 맞았어. 나머지 반은 내일 같이 쫓아가서 잡자."},
+      {min: 0, en: "Rough night. I've had rougher and I'm still here. Tomorrow, then.", ko: "험한 밤이었네. 난 더 험한 밤도 겪었는데 아직 멀쩡해. 그럼 내일 보자."}
+    ],
+    learned: {en: "New lines only tonight. That's how it starts. Come back and we'll see what stuck.", ko: "오늘 밤은 새 대사뿐이었네. 원래 그렇게 시작하는 거야. 또 와, 뭐가 남았는지 보자."},
+    empty: {en: "Nothing to go over tonight. Pull up a chair anyway.", ko: "오늘 밤은 복습할 게 없네. 그래도 의자나 끌고 와."}
+  },
+  lucius: {
+    tiers: [
+      {min: 1, en: "Not a single error. I looked. One always looks.", ko: "틀린 데가 하나도 없군. 찾아보았네. 나는 늘 찾아보네."},
+      {min: 0.75, en: "Tolerable. The cabinet has seen worse, though not from anyone I kept.", ko: "봐줄 만하네. 이 유리장은 더한 꼴도 봤지. 내가 계속 두고 쓴 사람한테서는 아니네만."},
+      {min: 0.45, en: "Half of it right. I engaged, as I recall, the whole of you.", ko: "절반이 맞았군. 내 기억에 나는 자네를 통째로 고용했네만."},
+      {min: 0, en: "A poor day. You will find the Sickles unaffected and my opinion less so.", ko: "변변찮은 하루였네. 시클은 그대로일세. 내 평가는 그렇지 못하고."}
+    ],
+    learned: {en: "New pieces only today. We shall see tomorrow what you have retained.", ko: "오늘은 새 물건뿐이었네. 자네 머리에 무엇이 남았는지는 내일 보세."},
+    empty: {en: "Nothing requires your attention today. You may go.", ko: "오늘은 자네가 손댈 것이 없네. 가도 좋네."}
+  }
+});
+Object.assign(EXTRA, {
+  sirius: [
+    {min: 1, en: "The whole lot. Remus will swear I helped. I didn't.", ko: "전부 다 맞혔네. 리무스는 내가 도와줬다고 우길 거야. 난 안 도왔어."},
+    {min: 0.6, en: "Most of them, and in extra time too. I'll take that.", ko: "대부분 맞혔네. 그것도 연장전에서. 그 정도면 됐어."},
+    {min: 0, en: "You went back for more and got bitten. That's nerve. I like it.", ko: "더 하겠다고 돌아갔다가 물렸네. 그게 배짱이야. 마음에 들어."}
+  ],
+  lucius: [
+    {min: 1, en: "All ten. Do not expect me to look impressed; I was not brought up to.", ko: "열 가지 전부로군. 감탄하는 얼굴은 기대하지 말게. 그렇게 자라지 않았네."},
+    {min: 0.6, en: "Most of it. A phrase I associate with Ministry accounts.", ko: "'대부분'이라. 마법부 회계 장부에서나 보던 말이군."},
+    {min: 0, en: "Remarkable. You polish these objects daily and have overheard nothing at all.", ko: "놀랍군. 날마다 닦으면서도 들은 것이 하나도 없다니."}
+  ]
+});
 /* a line for this deck's professor: decks without their own lines borrow Snape's */
 export const voiceOf = id => ({react: REACT[id] || REACT.snape, remarks: REMARKS[id] || REMARKS.snape, extra: EXTRA[id] || EXTRA.snape});
 

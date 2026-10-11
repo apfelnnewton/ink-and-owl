@@ -7,6 +7,7 @@ import * as srs from './srs.js';
 import * as store from './store.js';
 import * as bond from './bond.js';
 import * as need from './need.js';
+import * as doors from './doors.js';
 import {$, esc, fitPaper, toast} from './ui.js';
 
 const pad = n => String(n).padStart(2, '0');
@@ -17,6 +18,8 @@ const term = m => m >= 8 ? 'Autumn Term' : m <= 2 ? 'Spring Term' : m <= 6 ? 'Su
 const missScore = c => (c ? (c.m || 0) * 2 + (c.h || 0) + (c.g === 'again' ? 2 : c.g === 'hard' ? 1 : 0) : 0);
 
 export function initRecords(app){
+  /* the professors, and the fire and the manor once they have opened */
+  const shown = () => DECKS.filter(d => d.place === 'corridor' || doors.available(d.id));
   const sec = $('#records');
   ['#recCal', '#recProf', '#recMiss', '#recWeeks'].forEach((s, i) => fitPaper($(s), 50 + i));
   let y = 0, m = 0;
@@ -54,7 +57,7 @@ export function initRecords(app){
       `<button type="button" data-mo="1" aria-label="다음 달">›</button></div>` +
       `<div class="rc-grid">${['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map(w => `<span class="rc-w">${w}</span>`).join('')}${cells}</div>` +
       `<p class="rc-sum">이달 출석 ${seen}일 · 연속 ${srs.streak()}일</p>` +
-      `<p class="rc-key">${DECKS.map(d => `<span><i class="seal s-${d.id}" style="--c:${d.glow}"></i>${esc(d.ko.replace(/ 교수$/, ''))}</span>`).join('')}${need.isOpen() ? '<span><i class="seal s-need"></i>필요의 방</span>' : ''}<span><em class="snitch" aria-hidden="true"></em>모두 맞은 날</span></p>`;
+      `<p class="rc-key">${shown().map(d => `<span><i class="seal s-${d.id}" style="--c:${d.glow}"></i>${esc(d.ko.replace(/ 교수$/, ''))}</span>`).join('')}${need.isOpen() ? '<span><i class="seal s-need"></i>필요의 방</span>' : ''}<span><em class="snitch" aria-hidden="true"></em>모두 맞은 날</span></p>`;
   }
   $('#recCalBody').addEventListener('click', e => {
     /* a day: every place studied, in order */
@@ -68,11 +71,11 @@ export function initRecords(app){
 
   /* ---------- each professor's progress, and the lines missed most */
   async function drawDecks(){
-    const all = await Promise.all(DECKS.map(d => app.loadDeck(d.id).then(c => [d, c]).catch(() => [d, null])));
+    const all = await Promise.all(shown().map(d => app.loadDeck(d.id).then(c => [d, c]).catch(() => [d, null])));
     $('#recProfBody').innerHTML = all.map(([d, cards]) => {
       if (!cards) return '';
       const g = srs.progress(d.id, cards), pl = g.seen / g.total * 100, pm = g.mastered / g.total * 100;
-      return `<li><div class="rp-name"><span lang="en">${esc(d.who)}</span><em class="rp-stage">${bond.STAGES[bond.stage(d.id)]}</em><small>${g.seen} / ${g.total} · 숙달 ${g.mastered}</small></div>` +
+      return `<li><div class="rp-name"><span lang="en">${esc(d.who)}</span>${d.bond ? `<em class="rp-stage">${bond.STAGES[bond.stage(d.id)]}</em>` : ''}<small>${g.seen} / ${g.total} · 숙달 ${g.mastered}</small></div>` +
         `<div class="rp-bar" role="img" aria-label="배운 ${g.seen}장, 숙달 ${g.mastered}장, 전체 ${g.total}장"><i class="seen" style="width:${pl}%;--c:${d.glow}"></i><i class="mast" style="width:${pm}%;--c:${d.glow}"></i></div></li>`;
     }).join('');
     const rows = [];

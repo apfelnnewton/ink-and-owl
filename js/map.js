@@ -85,7 +85,7 @@ export function textOf(prof, key){
 }
 
 /* ---------- today's rooms: mine from the register (the order lessons were first opened in), friends' from their seals */
-export const myRooms = () => Object.keys((store.get().log || {})[srs.today()] || {}).filter(id => byId(id));
+export const myRooms = () => Object.keys((store.get().log || {})[srs.today()] || {}).filter(id => CASTLE[id]);   // rooms of the castle only: the fire and the manor are not on this map
 /* told to the group whenever today's list changes (post.js keeps it on my seal) */
 let told = '';
 export function share(){ const r = srs.today() + myRooms().join(); if (r === told) return; told = r; post.shareDay(myRooms()); }

@@ -1,0 +1,3059 @@
+[
+ {
+  "id": "lucius-2-001-p1",
+  "speech": "lucius-2-001",
+  "part": 1,
+  "of": 2,
+  "order": 1,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "플러리시 앤 블러츠 서점. 드레이코를 말리며 해리에게 처음 인사하는 루시우스",
+  "cue_speaker": "Draco",
+  "cue": "Look. Potter, you've got yourself a girlfriend.",
+  "prev_line": "",
+  "line": "Now, Draco, play nicely. Mr. Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
+  "ko": "자, 드레이코, 얌전히 굴거라. 포터 군. 루시우스 말포이라네. 드디어 만나는군. 실례지만, 자네 흉터는 전설이지.",
+  "plain": "Okay, Draco, be nice. Mr. Potter. I'm Lucius Malfoy. Finally, we meet. Sorry, but that scar of yours is famous.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Mr. Potter",
+    "kind": "호칭",
+    "note": "열두 살 소년을 성(姓)에 Mr.를 붙여 부르는 격식 호칭입니다. 겉으로는 예의를 차리면서 거리를 두고 상대를 평가하는 느낌을 줍니다. 호칭 자체는 영미 공통이며, 호그와트처럼 교사가 학생을 Mr/Miss + 성으로 부르는 관행은 영국 사립학교 전통에서 두드러집니다.",
+    "examples": [
+     {
+      "en": "Mr. Davies, would you care to explain why your essay is late?",
+      "ko": "데이비스 군, 에세이가 늦은 이유를 설명해 보겠나?"
+     },
+     {
+      "en": "Right, Miss Hughes, your turn to read.",
+      "ko": "자, 휴즈 양, 네가 읽을 차례다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Forgive me",
+    "kind": "완곡어법",
+    "note": "Sorry 대신 쓰는 격식체 사과로, 무례할 수 있는 말을 꺼내기 직전에 붙입니다. 실제로는 사과가 아니라 '이런 말을 해도 되겠지'라는 겉치레 예의입니다. 영미 공통이지만 영국 격식체에서 더 자주 들립니다.",
+    "examples": [
+     {
+      "en": "Forgive me, but I don't think that figure is right.",
+      "ko": "실례지만, 그 수치는 틀린 것 같습니다."
+     },
+     {
+      "en": "Forgive me, have we met before?",
+      "ko": "실례지만, 전에 뵌 적이 있나요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-001-p2",
+  "speech": "lucius-2-001",
+  "part": 2,
+  "of": 2,
+  "order": 2,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "플러리시 앤 블러츠 서점. 드레이코를 말리며 해리에게 처음 인사하는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Now, Draco, play nicely. Mr. Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
+  "line": "As, of course, is the wizard who gave it to you.",
+  "ko": "물론, 그 흉터를 남긴 마법사도 전설이지만 말일세.",
+  "plain": "And so is the wizard who gave it to you, of course.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "As, of course, is the wizard",
+    "kind": "도치",
+    "note": "앞 문장(your scar is legend)에 이어 'as + 동사 + 주어' 순으로 도치하여 '…도 마찬가지로 그렇다'를 격식 있게 표현합니다. 구어에서는 And so is the wizard가 보통입니다. 쉼표로 끼워 넣은 of course가 '당연한 말이지만'이라는 거만한 여유를 더합니다.",
+    "examples": [
+     {
+      "en": "The budget was approved, as, of course, was the timeline.",
+      "ko": "예산은 승인되었고, 물론 일정도 마찬가지였습니다."
+     },
+     {
+      "en": "Her sister is a doctor, as is her father.",
+      "ko": "그녀의 언니는 의사이고, 아버지도 그렇습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-002",
+  "speech": "lucius-2-002",
+  "part": 1,
+  "of": 1,
+  "order": 3,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 볼드모트 이름을 입에 올린 해리를 비웃으며 떠보는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "Voldemort killed my parents. He was nothing more than a murderer.",
+  "prev_line": "",
+  "line": "Hmm, you must be very brave to mention his name. Or very foolish.",
+  "ko": "흠, 그자의 이름을 입에 올리다니 아주 용감한 모양이군. 아니면 아주 어리석거나.",
+  "plain": "Huh, you've got guts saying his name out loud. Or you're just dumb.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "you must be very brave",
+    "kind": "비꼬기",
+    "note": "must be(~인 모양이군)로 추측하는 척하며 칭찬을 던진 뒤 Or very foolish로 뒤집는 전형적인 영국식 냉소입니다. 직접 욕하지 않고 정중한 문장 구조로 모욕하는 방식으로, 영어권 어디서나 통하지만 이런 절제된 비꼼은 영국적 특색이 강합니다.",
+    "examples": [
+     {
+      "en": "You must be very confident to hand that in without checking. Or very careless.",
+      "ko": "확인도 안 하고 제출하다니 아주 자신만만한 모양이군. 아니면 아주 덤벙대거나."
+     },
+     {
+      "en": "He must be very keen, turning up an hour early.",
+      "ko": "한 시간이나 일찍 오다니 어지간히 열의가 있는 모양이네."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-003-p1",
+  "speech": "lucius-2-003",
+  "part": 1,
+  "of": 2,
+  "order": 4,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 헤르미온느와 위즐리 가족을 한 명씩 훑어보며 깔보는 루시우스",
+  "cue_speaker": "Hermione",
+  "cue": "Fear of a name only increases fear of the thing itself",
+  "prev_line": "",
+  "line": "And you must be Miss Granger. Yes, Draco has told me all about you. And your parents. Muggles, aren't they?",
+  "ko": "그리고 자네가 그레인저 양이겠군. 그래, 드레이코한테 자네 얘기는 다 들었네. 자네 부모 얘기도. 머글이라지, 그렇지?",
+  "plain": "And you've got to be Miss Granger. Yeah, Draco's told me all about you. And your parents. They're Muggles, right?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Miss Granger",
+    "kind": "호칭",
+    "note": "학생을 Mr/Miss + 성으로 부르는 격식 호칭입니다. 예의를 갖춘 듯하지만 상대를 품평하는 거리감이 담겨 있습니다. 호칭 자체는 영미 공통이며, 호그와트의 교사·어른들이 학생을 성으로 부르는 관행은 영국 사립학교 전통의 색채가 강합니다.",
+    "examples": [
+     {
+      "en": "Miss Patel, could you hand these out, please?",
+      "ko": "파텔 양, 이것 좀 나눠 주겠니?"
+     },
+     {
+      "en": "Well done, Miss Okafor. Top of the class again.",
+      "ko": "잘했다, 오카포 양. 또 반 1등이구나."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Muggles, aren't they?",
+    "kind": "부가의문문",
+    "note": "이미 아는 사실을 부가의문문으로 확인하는 척하며 상대를 깎아내립니다. 부가의문문은 영미 공통이지만 영국 영어에서 더 자주 쓰이며, 특히 이렇게 '너도 인정하지?'라는 압박이나 빈정거림의 도구로 즐겨 씁니다.",
+    "examples": [
+     {
+      "en": "Your brother works at the garage, doesn't he?",
+      "ko": "네 형은 정비소에서 일하지, 안 그래?"
+     },
+     {
+      "en": "You're new here, aren't you?",
+      "ko": "여기 처음이지, 그렇지?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-003-p2",
+  "speech": "lucius-2-003",
+  "part": 2,
+  "of": 2,
+  "order": 5,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 헤르미온느와 위즐리 가족을 한 명씩 훑어보며 깔보는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "And you must be Miss Granger. Yes, Draco has told me all about you. And your parents. Muggles, aren't they?",
+  "line": "Let me see. Red hair, vacant expressions, tatty second-hand book. You must be the Weasleys.",
+  "ko": "어디 보자. 빨간 머리, 멍한 표정, 다 해진 중고 책. 위즐리네 집안이 틀림없군.",
+  "plain": "Let's see. Red hair, blank looks, a beat-up used book. You guys have got to be the Weasleys.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "tatty",
+    "kind": "BrE 어휘",
+    "note": "'낡고 해진, 너덜너덜한'이라는 뜻의 영국 구어 형용사입니다. 미국 영어에서는 거의 쓰지 않고 shabby, beat-up, ratty 등으로 말합니다. 물건뿐 아니라 옷차림이나 장소에도 씁니다.",
+    "examples": [
+     {
+      "en": "He turned up to the interview in a tatty old jumper.",
+      "ko": "그는 다 해진 낡은 스웨터를 입고 면접에 나타났다."
+     },
+     {
+      "en": "The hotel was a bit tatty, but the staff were lovely.",
+      "ko": "호텔은 좀 허름했지만 직원들은 참 친절했다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "second-hand",
+    "kind": "어휘",
+    "note": "'중고의'를 뜻하는 형용사로, 영국에서는 하이픈을 넣어 second-hand로, 미국에서는 붙여서 secondhand로 쓰는 경우가 많습니다. 영미 공통 어휘이며 미국 구어에서는 used, pre-owned도 흔합니다. second-hand shop(중고 가게), second-hand car(중고차)처럼 일상에서 자주 씁니다.",
+    "examples": [
+     {
+      "en": "I got most of my textbooks second-hand online.",
+      "ko": "교과서는 대부분 온라인에서 중고로 샀어."
+     },
+     {
+      "en": "There's a lovely second-hand bookshop on the high street.",
+      "ko": "번화가에 근사한 중고 서점이 하나 있어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-004",
+  "speech": "lucius-2-004",
+  "part": 1,
+  "of": 1,
+  "order": 6,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 아이들을 데리고 나가려는 아서 위즐리를 비웃으며 붙잡는 루시우스",
+  "cue_speaker": "Mr. Weasley",
+  "cue": "Children, It's mad in here, let's go outside.",
+  "prev_line": "",
+  "line": "Well, well, well, Weasley Senior.",
+  "ko": "이런, 이런, 이런. 위즐리 집안 어르신이시군.",
+  "plain": "Well, look who it is. Daddy Weasley.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Weasley Senior",
+    "kind": "호칭",
+    "note": "성 뒤에 Senior를 붙여 '아버지 쪽 위즐리'를 가리키는 격식 호칭입니다. 원래 부자가 같은 이름일 때 구분하는 용법인데, 여기서는 일부러 사무적으로 불러 아버지로서의 아서를 비꼽니다. 영미 공통 표현이지만 이런 식의 냉소적 활용은 영국 격식체 느낌이 강합니다.",
+    "examples": [
+     {
+      "en": "I spoke to Mr. Clarke Senior; his son wasn't in.",
+      "ko": "클라크 씨 아버님과 얘기했어요. 아드님은 안 계셨고요."
+     },
+     {
+      "en": "Ah, Thompson Senior. I wondered when you'd turn up.",
+      "ko": "아, 톰슨 어르신. 언제 나타나시나 했습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-005-p1",
+  "speech": "lucius-2-005",
+  "part": 1,
+  "of": 3,
+  "order": 7,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 아서 위즐리의 박봉과 머글 애호를 정중한 말투로 모욕하는 루시우스",
+  "cue_speaker": "Mr. Weasley",
+  "cue": "Lucius.",
+  "prev_line": "",
+  "line": "Busy time at the Ministry, Arthur, all those raids?",
+  "ko": "요즘 마법부가 바쁘겠군, 아서. 그 압수수색들 말일세.",
+  "plain": "Keeping busy at the Ministry, Arthur? With all those raids going on?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Busy time at the Ministry",
+    "kind": "생략 구문",
+    "note": "주어와 동사를 생략한 명사구에 물음표만 붙여 가볍게 떠보는 스몰토크 형식입니다. 겉으로는 안부를 묻지만, 아서가 하는 머글 물건 압수수색을 하찮은 일로 깔보는 의도가 숨어 있습니다. 영미 공통의 구어 생략 형태입니다.",
+    "examples": [
+     {
+      "en": "Busy week at the office, then?",
+      "ko": "그래, 이번 주 사무실 바빴어?"
+     },
+     {
+      "en": "Long day at school, love?",
+      "ko": "얘야, 오늘 학교에서 힘들었니?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-005-p2",
+  "speech": "lucius-2-005",
+  "part": 2,
+  "of": 3,
+  "order": 8,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 아서 위즐리의 박봉과 머글 애호를 정중한 말투로 모욕하는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Busy time at the Ministry, Arthur, all those raids?",
+  "line": "I do hope they're paying you overtime, but judging by the state of this, I'd say not.",
+  "ko": "초과근무 수당은 꼭 받길 바라네만, 이 꼴을 보아하니 아닌 모양이군.",
+  "plain": "I sure hope they're paying you extra for it, but looking at this thing, I'm guessing they're not.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I do hope",
+    "kind": "강조 do",
+    "note": "I hope 앞에 do를 넣어 '정말로 바란다'고 힘을 주는 강조 do입니다. 영국 격식체에서 흔하며, 겉으로는 상냥한 바람을 말하면서 실제로는 비꼬는 데 자주 씁니다. 미국 구어에서는 I really hope나 I sure hope가 더 자연스럽습니다.",
+    "examples": [
+     {
+      "en": "I do hope you'll be able to join us on Friday.",
+      "ko": "금요일에 꼭 함께하실 수 있기를 바랍니다."
+     },
+     {
+      "en": "I do hope that's not your final answer.",
+      "ko": "설마 그게 최종 답변은 아니겠지요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "judging by the state of this",
+    "kind": "완곡어법",
+    "note": "'이것의 상태로 판단하건대'라는 완곡한 추론 표현입니다. 대상을 직접 '낡았다'고 하지 않고 the state of this(이것의 꼴)라고 돌려 말해 더 모욕적입니다. 영미 공통이지만 the state of + 명사로 형편없음을 암시하는 용법은 영국 구어에서 특히 자주 들립니다.",
+    "examples": [
+     {
+      "en": "Judging by the state of the kitchen, nobody's washed up all week.",
+      "ko": "부엌 꼴을 보니 일주일 내내 아무도 설거지를 안 했군."
+     },
+     {
+      "en": "Judging by the state of his shoes, he walked the whole way.",
+      "ko": "신발 상태를 보니 그 먼 길을 걸어온 모양이다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "I'd say not",
+    "kind": "완곡어법",
+    "note": "'아니라고 봐야겠군'이라는 뜻으로, 단정 대신 I'd say(내 생각엔)로 한 발 물러서는 완곡 표현입니다. 부정적 판단을 부드럽게, 그러나 확실히 전할 때 쓰며 영미 공통입니다. 구어에서는 I'm guessing not이나 Probably not도 같은 뜻으로 씁니다.",
+    "examples": [
+     {
+      "en": "Is he coming? Judging by the silence, I'd say not.",
+      "ko": "걔 오는 거야? 아무 답이 없는 걸 보니 안 올 것 같은데."
+     },
+     {
+      "en": "Has it been checked? I'd say not, looking at these errors.",
+      "ko": "검토는 됐나요? 오류를 보니 안 된 것 같습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-005-p3",
+  "speech": "lucius-2-005",
+  "part": 3,
+  "of": 3,
+  "order": 9,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 아서 위즐리의 박봉과 머글 애호를 정중한 말투로 모욕하는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I do hope they're paying you overtime, but judging by the state of this, I'd say not.",
+  "line": "What's the use in being a disgrace to the name of wizard if they don't even pay you well for it?",
+  "ko": "마법사라는 이름에 먹칠을 하면서 돈도 제대로 못 받는다면, 그게 다 무슨 소용인가?",
+  "plain": "What's the point of embarrassing every wizard out there if they're not even paying you decent money for it?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "What's the use in",
+    "kind": "관용구",
+    "note": "'~해 봐야 무슨 소용인가'라는 수사의문문입니다. What's the use of / What's the point of와 같은 뜻이며, 전치사 in을 쓰는 형태도 영미 공통으로 쓰입니다. 뒤에 동명사가 옵니다.",
+    "examples": [
+     {
+      "en": "What's the use in complaining? Nothing ever changes.",
+      "ko": "불평해 봐야 무슨 소용이야? 바뀌는 건 하나도 없는데."
+     },
+     {
+      "en": "What's the use in revising the night before the exam?",
+      "ko": "시험 전날 밤에 복습해 봐야 뭐 하겠니?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a disgrace to the name of wizard",
+    "kind": "격식 어휘",
+    "note": "a disgrace to + 집단/이름은 '~의 수치, ~의 이름에 먹칠하는 존재'라는 격식 모욕 표현입니다. the name of wizard처럼 관사 없이 명사를 쓰면 '마법사라는 칭호 자체'를 가리키는 고풍스러운 어감이 납니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "That referee is a disgrace to the game.",
+      "ko": "저 심판은 이 스포츠의 수치다."
+     },
+     {
+      "en": "Leaving early like that was a disgrace to the whole department.",
+      "ko": "그렇게 일찍 가 버린 건 부서 전체의 망신이었다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-006",
+  "speech": "lucius-2-006",
+  "part": 1,
+  "of": 1,
+  "order": 10,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "서점. 머글 가족과 어울리는 아서를 보고 경멸을 던지고 떠나는 루시우스",
+  "cue_speaker": "Mr. Weasley",
+  "cue": "We have a very different idea about what disgraces the name of wizard, Malfoy .",
+  "prev_line": "",
+  "line": "Clearly, associating with Muggles. And I thought your family could sink no lower. I'll see you at work.",
+  "ko": "그런 모양이군. 머글들과 어울리는 것 말일세. 자네 집안이 더 떨어질 데도 없는 줄 알았건만. 직장에서 보세.",
+  "plain": "Obviously. Hanging out with Muggles. And here I figured your family couldn't get any lower. See you at the office.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "associating with Muggles",
+    "kind": "격식 어휘",
+    "note": "associate with는 '~와 어울리다, 교제하다'의 격식 표현으로, 흔히 바람직하지 않은 상대와 어울린다는 뉘앙스로 씁니다. 구어라면 hang around with, mix with가 보통입니다. 영미 공통의 격식 어휘입니다.",
+    "examples": [
+     {
+      "en": "I'd rather you didn't associate with that crowd.",
+      "ko": "그 무리와는 어울리지 않았으면 좋겠구나."
+     },
+     {
+      "en": "He's been associating with some rather dubious people lately.",
+      "ko": "그는 요즘 좀 수상쩍은 사람들과 어울리고 있다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "could sink no lower",
+    "kind": "격식·축약 회피",
+    "note": "couldn't sink any lower 대신 could sink no lower로 부정어를 명사구 쪽에 두는 격식 구조입니다. 축약형을 피하고 no를 쓰면 문어체·귀족적 어감이 납니다. sink low는 '품위가 떨어지다, 타락하다'의 관용 표현입니다.",
+    "examples": [
+     {
+      "en": "I thought the tabloids could sink no lower, and then they printed that.",
+      "ko": "타블로이드가 더 추락할 데도 없는 줄 알았는데, 그런 기사를 내더군."
+     },
+     {
+      "en": "After that remark, his reputation could sink no lower.",
+      "ko": "그 발언 이후 그의 평판은 더 떨어질 데가 없었다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-007",
+  "speech": "lucius-2-007",
+  "part": 1,
+  "of": 1,
+  "order": 11,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 퍼지가 먼저 와 있는 것을 보고 들어서는 루시우스",
+  "cue_speaker": "Fudge",
+  "cue": "I am afraid we have no choice, Hagrid.",
+  "prev_line": "",
+  "line": "Already here, Fudge. Good.",
+  "ko": "벌써 와 있었군, 퍼지. 잘됐네.",
+  "plain": "Oh, you're here already, Fudge. Great.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Already here, Fudge.",
+    "kind": "생략 구문",
+    "note": "You're already here를 주어 없이 Already here로 줄여 말하는 생략 구문입니다. 상대 이름을 붙여 상황을 확인하는 이 짧은 말투는 영미 공통이지만, 장관을 성(姓)만으로 부르는 것은 루시우스의 오만한 지위를 드러냅니다.",
+    "examples": [
+     {
+      "en": "Already here, Sarah? You're keen.",
+      "ko": "벌써 와 있어, 사라? 열의가 대단하네."
+     },
+     {
+      "en": "Already done? That was quick.",
+      "ko": "벌써 끝났어? 빠르네."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-008-p1",
+  "speech": "lucius-2-008",
+  "part": 1,
+  "of": 2,
+  "order": 12,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 나가라는 해그리드에게 집을 깔보며 덤블도어를 찾아왔다고 하는 루시우스",
+  "cue_speaker": "Hagrid",
+  "cue": "what are you doing here? Get out of my house!",
+  "prev_line": "",
+  "line": "Believe me, I take absolutely no pleasure being inside your... you call this a house? No.",
+  "ko": "믿어 주게, 나도 자네의 이런… 이걸 집이라고 부르나? 아니지. 여기 들어와 있는 게 조금도 즐겁지 않네.",
+  "plain": "Trust me, I'm not enjoying being inside your... wait, this is supposed to be a house? Nope.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I take absolutely no pleasure",
+    "kind": "격식·축약 회피",
+    "note": "I don't enjoy 대신 take no pleasure in(~에서 조금도 기쁨을 얻지 않는다)이라는 격식 표현을 쓰고, absolutely로 강조했습니다. 축약형 don't를 피하고 부정어 no를 명사에 붙이는 방식이 문어체·귀족적 어감을 줍니다. 영미 공통의 격식 어법입니다.",
+    "examples": [
+     {
+      "en": "I take no pleasure in saying this, but your work isn't up to standard.",
+      "ko": "이런 말을 하는 게 기쁘지는 않습니다만, 작업 수준이 기준에 못 미칩니다."
+     },
+     {
+      "en": "She takes absolutely no pleasure in firing people.",
+      "ko": "그녀는 사람을 해고하는 일을 조금도 즐기지 않는다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "you call this a house?",
+    "kind": "비꼬기",
+    "note": "You call this a ~?는 '이걸 ~라고 부르나?'라며 대상의 수준을 깎아내리는 수사의문문입니다. 뒤에 스스로 No라고 답해 더 모욕적입니다. 영미 공통의 흔한 비꼼 패턴입니다.",
+    "examples": [
+     {
+      "en": "You call this a report? It's two paragraphs.",
+      "ko": "이걸 보고서라고 썼어? 두 문단밖에 없잖아."
+     },
+     {
+      "en": "You call this clean? Look at the floor.",
+      "ko": "이게 청소한 거야? 바닥 좀 봐."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-008-p2",
+  "speech": "lucius-2-008",
+  "part": 2,
+  "of": 2,
+  "order": 13,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 나가라는 해그리드에게 집을 깔보며 덤블도어를 찾아왔다고 하는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Believe me, I take absolutely no pleasure being inside your... you call this a house? No.",
+  "line": "I simply called at the school and was told the Headmaster was here.",
+  "ko": "학교에 잠깐 들렀더니 교장이 여기 있다고 하더군, 그뿐이네.",
+  "plain": "I just stopped by the school and they told me the principal was over here.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "called at the school",
+    "kind": "BrE 어휘",
+    "note": "call at + 장소는 '~에 들르다, 방문하다'라는 뜻의 영국식 표현입니다. 미국 구어에서 call은 거의 '전화하다'로만 쓰여 stop by, drop by, come by라고 말합니다. 격식 있는 영국 영어에서 특히 자주 보입니다.",
+    "examples": [
+     {
+      "en": "I'll call at the chemist's on the way home.",
+      "ko": "집에 가는 길에 약국에 들를게."
+     },
+     {
+      "en": "A man called at the house this morning asking for you.",
+      "ko": "오늘 아침 어떤 남자가 집에 찾아와서 너를 찾더라."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Headmaster",
+    "kind": "BrE 어휘",
+    "note": "영국 학교의 교장을 가리키는 전통적 호칭입니다. 여교장은 Headmistress, 최근에는 성별 중립적인 Head teacher나 the Head를 많이 씁니다. 미국에서는 principal이라고 합니다.",
+    "examples": [
+     {
+      "en": "You'll have to take that up with the Headmaster.",
+      "ko": "그 문제는 교장 선생님께 말씀드려야 할 겁니다."
+     },
+     {
+      "en": "The Head wants to see you in her office.",
+      "ko": "교장 선생님이 교장실로 오라셔."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-009-p1",
+  "speech": "lucius-2-009",
+  "part": 1,
+  "of": 4,
+  "order": 14,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 덤블도어에게 이사회의 직무정지 명령서를 내미는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Well, what exactly is it that you want with me?",
+  "prev_line": "",
+  "line": "The other governors and I have decided it's time for you to step aside. This is an Order of Suspension.",
+  "ko": "나와 다른 이사들은 당신이 물러날 때가 되었다고 결정했소. 이건 직무정지 명령서요.",
+  "plain": "Me and the rest of the board have decided you need to step down. This is a suspension order.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "The other governors and I",
+    "kind": "BrE 어휘",
+    "note": "'다른 이사들과 나는'을 격식에 맞게 다른 사람을 먼저 쓰고 I를 뒤에 둔 표현입니다. 영국 공립·사립학교의 운영 이사회는 board of governors라고 하며, 미국의 school board에 해당합니다. governor가 '학교 이사'를 뜻하는 것은 영국식 용법입니다.",
+    "examples": [
+     {
+      "en": "The governors have agreed to fund a new science block.",
+      "ko": "학교 이사회가 새 과학관 건립 예산을 승인했습니다."
+     },
+     {
+      "en": "My colleagues and I would like to raise a concern.",
+      "ko": "저와 동료들은 우려 사항을 하나 제기하고자 합니다."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "step aside",
+    "kind": "완곡어법",
+    "note": "resign이나 be removed 대신 '옆으로 비켜서다'라고 돌려 말하는 완곡어법입니다. 해임을 통보하면서도 상대가 스스로 물러나는 듯한 체면을 남깁니다. 영미 공통 표현입니다.",
+    "examples": [
+     {
+      "en": "The chairman has agreed to step aside while the inquiry takes place.",
+      "ko": "회장은 조사가 진행되는 동안 물러나 있기로 했습니다."
+     },
+     {
+      "en": "It might be time for you to step aside and let someone younger take over.",
+      "ko": "이제 물러나서 더 젊은 사람에게 맡길 때가 된 것 같습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-009-p2",
+  "speech": "lucius-2-009",
+  "part": 2,
+  "of": 4,
+  "order": 15,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 덤블도어에게 이사회의 직무정지 명령서를 내미는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "The other governors and I have decided it's time for you to step aside. This is an Order of Suspension.",
+  "line": "You'll find all twelve signatures on it. I'm afraid we feel you've rather lost your touch.",
+  "ko": "열두 명의 서명이 모두 있을 거요. 유감이지만, 우리가 보기에 당신은 예전 같지 않소.",
+  "plain": "All twelve signatures are on there. Sorry, but we think you're not as sharp as you used to be.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I'm afraid",
+    "kind": "완곡어법",
+    "note": "나쁜 소식이나 반대 의견을 꺼낼 때 앞에 붙이는 완곡 표현으로, '유감이지만'에 해당합니다. 영미 공통으로 매우 흔하며, 정중함을 유지하면서 단호하게 거절하거나 통보할 때 씁니다. 여기서처럼 전혀 미안하지 않으면서 쓰는 냉소적 용법에 주목하세요.",
+    "examples": [
+     {
+      "en": "I'm afraid we're fully booked that evening.",
+      "ko": "죄송하지만 그날 저녁은 예약이 꽉 찼습니다."
+     },
+     {
+      "en": "I'm afraid that's not quite good enough.",
+      "ko": "유감이지만 그 정도로는 좀 부족합니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "rather lost your touch",
+    "kind": "완곡어법",
+    "note": "rather는 '다소, 좀'이라며 강도를 낮추는 척하는 영국식 완곡 부사입니다. 실제로는 완전히 감을 잃었다는 뜻을 더 매섭게 전합니다. lose one's touch는 '예전의 솜씨·감각을 잃다'라는 관용구로 영미 공통이지만, rather를 붙여 톤을 낮추는 방식은 영국 특유입니다.",
+    "examples": [
+     {
+      "en": "I think the old chef has rather lost his touch.",
+      "ko": "그 나이 든 셰프는 좀 예전 같지 않은 것 같아."
+     },
+     {
+      "en": "That was rather a disappointing result, wasn't it?",
+      "ko": "다소 실망스러운 결과였지, 안 그래?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-009-p3",
+  "speech": "lucius-2-009",
+  "part": 3,
+  "of": 4,
+  "order": 16,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 덤블도어에게 이사회의 직무정지 명령서를 내미는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "You'll find all twelve signatures on it. I'm afraid we feel you've rather lost your touch.",
+  "line": "Well, what with all these attacks, there'll be no Muggle-borns left at Hogwarts.",
+  "ko": "뭐, 이런 습격이 계속되다 보면 호그와트에 머글 태생은 한 명도 남지 않을 거요.",
+  "plain": "I mean, with all these attacks going on, there won't be any Muggle-borns left at Hogwarts.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "what with all these attacks",
+    "kind": "관용구",
+    "note": "what with + 명사는 '~이다 보니, ~ 등의 이유로'라며 여러 사정을 이유로 들 때 쓰는 구어 표현입니다. 영국 영어에서 특히 흔하고, 미국에서는 알아듣기는 하지만 덜 쓰며 보통 with all ~, between A and B, because of ~로 말합니다. 보통 불만스럽거나 번거로운 원인을 나열할 때 씁니다.",
+    "examples": [
+     {
+      "en": "I haven't had a minute to myself, what with work and the kids.",
+      "ko": "일에 애들에, 나 혼자 있을 시간이 잠시도 없었어."
+     },
+     {
+      "en": "What with the strike and the weather, the trains were hopeless.",
+      "ko": "파업에 날씨까지 겹쳐서 기차는 완전히 엉망이었어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-009-p4",
+  "speech": "lucius-2-009",
+  "part": 4,
+  "of": 4,
+  "order": 17,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 덤블도어에게 이사회의 직무정지 명령서를 내미는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Well, what with all these attacks, there'll be no Muggle-borns left at Hogwarts.",
+  "line": "I can only imagine what an awful loss that would be to the school.",
+  "ko": "그것이 학교에 얼마나 끔찍한 손실일지, 나로서는 짐작만 할 따름이오.",
+  "plain": "I can just picture how terrible a loss that'd be for the school.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I can only imagine",
+    "kind": "비꼬기",
+    "note": "원래는 '얼마나 ~할지 상상만 할 뿐이다'라며 공감을 표하는 말이지만, 여기서는 머글 태생이 사라지면 기쁘겠다는 속내를 정중한 문장으로 감춘 반어입니다. 영미 공통 표현이며, 공감과 냉소 양쪽으로 쓰입니다.",
+    "examples": [
+     {
+      "en": "I can only imagine how hard this year has been for you.",
+      "ko": "올해 얼마나 힘드셨을지 짐작만 할 뿐입니다."
+     },
+     {
+      "en": "Oh, I can only imagine what a loss his resignation will be.",
+      "ko": "아, 그가 사임하면 얼마나 큰 손실일지 상상이 가는군요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-010",
+  "speech": "lucius-2-010",
+  "part": 1,
+  "of": 1,
+  "order": 18,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 살인이 일어날 거라는 해그리드의 경고를 비웃는 루시우스",
+  "cue_speaker": "Hagrid",
+  "cue": "You can't take professor Dumbledore away. Take him away and the muggle-borns won't stand a chance. You mark my words, there'll be killing next!",
+  "prev_line": "",
+  "line": "You think so?",
+  "ko": "그렇게 생각하나?",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": false,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-011",
+  "speech": "lucius-2-011",
+  "part": 1,
+  "of": 1,
+  "order": 19,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "해그리드의 오두막. 덤블도어의 말을 비꼬아 치하하고 퍼지를 재촉해 나가는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Calm yourself, Hagrid. If the governors desire my removal, I will of course, step aside. However you will find that help will always be given at Hogwarts to those who ask for it.",
+  "prev_line": "",
+  "line": "Admirable sentiments. Shall we? Fudge!",
+  "ko": "훌륭한 말씀이오. 그럼 가 볼까? 퍼지!",
+  "plain": "Nice speech. Let's go. Fudge!",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Admirable sentiments",
+    "kind": "격식 어휘",
+    "note": "sentiments는 '생각, 심정, 견해'를 뜻하는 격식 어휘로, 상대의 말을 추상적으로 요약해 '훌륭한 생각이군' 하고 던지면 칭찬 같지만 실은 무시하는 뉘앙스가 됩니다. 두 단어만으로 완결된 문장처럼 쓰는 것도 영국 격식체의 특징입니다. 어휘 자체는 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Admirable sentiments, but who's going to pay for it?",
+      "ko": "훌륭한 생각입니다만, 비용은 누가 대죠?"
+     },
+     {
+      "en": "I share your sentiments entirely.",
+      "ko": "저도 전적으로 같은 생각입니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Shall we?",
+    "kind": "법조동사 완화",
+    "note": "Shall we go?를 줄인 말로 '그럼 가 볼까요?'라며 자리를 뜨자고 정중하게 제안하는 표현입니다. shall로 제안하는 것은 영국 영어의 특징으로, 미국 구어에서는 보통 Let's go나 Ready?라고 말합니다(다만 굳은 표현 Shall we? 한마디는 미국에서도 격식을 차리거나 장난스럽게 씁니다). 여기서는 정중한 형식 뒤에 '볼일 끝났으니 가자'는 오만함이 숨어 있습니다.",
+    "examples": [
+     {
+      "en": "Right, everyone's here. Shall we?",
+      "ko": "자, 다 모였네요. 시작할까요?"
+     },
+     {
+      "en": "The taxi's outside. Shall we?",
+      "ko": "택시가 밖에 와 있어. 갈까?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-012",
+  "speech": "lucius-2-012",
+  "part": 1,
+  "of": 1,
+  "order": 20,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 복직한 덤블도어를 보고 들이닥치며 해리와 도비를 밀어내는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "Dobby. So, this is your master. Your family you serve is the Malfoy's.",
+  "prev_line": "",
+  "line": "I will deal with you later. Out of my way, Potter. So, it's true. You have returned.",
+  "ko": "너는 나중에 손봐 주마. 비키게, 포터. 그래, 사실이었군. 돌아오셨소.",
+  "plain": "I'll take care of you later. Move, Potter. So it's true. You're back.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I will deal with you later",
+    "kind": "위협 표현",
+    "note": "deal with는 '처리하다'라는 중립적 동사지만 사람을 목적어로 쓰면 '손봐 주다, 혼내다'라는 위협이 됩니다. I'll 대신 I will로 축약을 피해 말하면 더 차갑고 단호하게 들립니다. 영미 공통 표현입니다.",
+    "examples": [
+     {
+      "en": "Go to your room. I'll deal with you later.",
+      "ko": "방에 들어가. 너는 이따가 혼내 줄 테니."
+     },
+     {
+      "en": "Leave him to me. I'll deal with him.",
+      "ko": "그 사람은 나한테 맡겨. 내가 처리할게."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "You have returned",
+    "kind": "격식·축약 회피",
+    "note": "You're back 대신 축약 없이 You have returned이라고 말하면 격식과 거리감이 생기고, 반갑지 않은 복귀라는 냉랭함이 드러납니다. return은 come back의 격식 어휘입니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "So you have returned. I trust the trip was worthwhile.",
+      "ko": "돌아오셨군요. 출장은 보람이 있었기를 바랍니다."
+     },
+     {
+      "en": "The director has returned from leave and wishes to see you.",
+      "ko": "이사님이 휴가에서 복귀하셨고 당신을 보고 싶어 하십니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-013",
+  "speech": "lucius-2-013",
+  "part": 1,
+  "of": 1,
+  "order": 21,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 이사들이 자신을 다시 불렀다는 덤블도어의 말을 일축하는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "When the governors learned that Arthur Weasley's daughter was taken into Chamber, they saw fit to summon me back.",
+  "prev_line": "",
+  "line": "Ridiculous.",
+  "ko": "말도 안 되는 소리.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-014",
+  "speech": "lucius-2-014",
+  "part": 1,
+  "of": 1,
+  "order": 22,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 이사들을 협박했다는 덤블도어의 지적에 발끈하는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Curiously, Lucius. Several of them were under the impression that you would curse their family. If they didn't agree to suspend me in the first place.",
+  "prev_line": "",
+  "line": "How dare you?",
+  "ko": "감히 그런 말을?",
+  "plain": "You've got some nerve saying that!",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "How dare you?",
+    "kind": "관용구",
+    "note": "'감히 어떻게'라는 분노의 표현으로, dare가 조동사처럼 쓰여 do 없이 How dare you 형태가 됩니다. 영미 공통이지만 격식·연극적 어감이 있어 영국 드라마에서 특히 자주 들립니다. 이렇게 단독으로도 쓰고, 뒤에 동사를 붙여 How dare you speak to me like that?처럼도 씁니다.",
+    "examples": [
+     {
+      "en": "How dare you go through my things?",
+      "ko": "감히 내 물건을 뒤져?"
+     },
+     {
+      "en": "How dare he take credit for her work?",
+      "ko": "감히 그녀가 한 일을 자기 공으로 돌리다니?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-015-p1",
+  "speech": "lucius-2-015",
+  "part": 1,
+  "of": 2,
+  "order": 23,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 학교를 위할 뿐이라며 변명하고 범인을 캐묻는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Beg your pardon?",
+  "prev_line": "",
+  "line": "My sole concern has always been, and will always be, the welfare of this school and, of course, its students.",
+  "ko": "내 유일한 관심사는 언제나 이 학교의 안녕이었고, 앞으로도 그럴 것이오. 물론 학생들의 안녕도 말이오.",
+  "plain": "All I've ever cared about, and all I'll ever care about, is what's good for this school. And the kids, obviously.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "My sole concern",
+    "kind": "격식 어휘",
+    "note": "sole은 only의 격식 어휘로, '유일한'이라는 뜻을 더 무겁고 공식적으로 전합니다. concern은 '관심사, 걱정거리'입니다. 공직자나 기관이 공적인 책임감을 강조할 때 쓰는 전형적인 표현으로, 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Our sole concern is the safety of the passengers.",
+      "ko": "저희의 유일한 관심사는 승객의 안전입니다."
+     },
+     {
+      "en": "She was the sole survivor of the crash.",
+      "ko": "그녀는 그 사고의 유일한 생존자였다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "the welfare of this school",
+    "kind": "격식 어휘",
+    "note": "welfare는 '안녕, 복리, 행복'을 뜻하는 격식 어휘로, 학교·아동·동물 맥락에서 자주 씁니다(child welfare, animal welfare). 영미 공통이며, 일상 구어에서는 well-being도 같은 뜻으로 씁니다.",
+    "examples": [
+     {
+      "en": "The school has a duty to safeguard the welfare of every pupil.",
+      "ko": "학교는 모든 학생의 안녕을 보호할 의무가 있습니다."
+     },
+     {
+      "en": "We're concerned about the welfare of the animals on that farm.",
+      "ko": "우리는 그 농장 동물들의 복지가 걱정됩니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-015-p2",
+  "speech": "lucius-2-015",
+  "part": 2,
+  "of": 2,
+  "order": 24,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 학교를 위할 뿐이라며 변명하고 범인을 캐묻는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "My sole concern has always been, and will always be, the welfare of this school and, of course, its students.",
+  "line": "The culprit has been identified, I presume?",
+  "ko": "범인은 밝혀졌으리라 짐작하오만?",
+  "plain": "So I'm guessing you figured out who did it?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "The culprit has been identified",
+    "kind": "격식 어휘",
+    "note": "culprit(범인)과 identify(신원을 밝히다)는 모두 경찰·행정 문서에서 쓰는 격식 어휘이고, 수동태로 행위자를 지워 더욱 사무적입니다. 구어라면 you've found out who did it 정도입니다. 영미 공통의 격식체입니다.",
+    "examples": [
+     {
+      "en": "The culprit was identified from CCTV footage.",
+      "ko": "범인은 CCTV 영상으로 신원이 확인되었습니다."
+     },
+     {
+      "en": "We still haven't found the culprit who keeps leaving the fridge open.",
+      "ko": "냉장고를 자꾸 열어 두는 범인을 아직도 못 찾았어."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "I presume?",
+    "kind": "완곡어법",
+    "note": "문장 끝에 I presume?을 붙여 '~라고 짐작해도 되겠지요?'라고 확인하는 격식 표현입니다. presume은 assume의 격식어이며, 문미에 붙이는 이 용법은 영미 공통의 격식체입니다. 일상 구어라면 I'm guessing…? 또는 …, right?로 풀어 말합니다.",
+    "examples": [
+     {
+      "en": "You've read the report, I presume?",
+      "ko": "보고서는 읽어 보셨겠지요?"
+     },
+     {
+      "en": "Dr. Walsh, I presume?",
+      "ko": "월시 박사님이시지요?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-016",
+  "speech": "lucius-2-016",
+  "part": 1,
+  "of": 1,
+  "order": 25,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 범인이 밝혀졌다는 덤블도어를 다그치는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Oh, yes.",
+  "prev_line": "",
+  "line": "And? Who was it?",
+  "ko": "그래서? 누구였소?",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": false,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-017",
+  "speech": "lucius-2-017",
+  "part": 1,
+  "of": 1,
+  "order": 26,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 덤블도어가 내민 일기장을 보고 짧게 반응하는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Voldemort. Only this time he chose to act through somebody else by means of this.",
+  "prev_line": "",
+  "line": "I see.",
+  "ko": "그렇구려.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-018",
+  "speech": "lucius-2-018",
+  "part": 1,
+  "of": 1,
+  "order": 27,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 덤블도어의 경고를 흘려듣고 해리를 비꼬는 루시우스",
+  "cue_speaker": "Dumbledore",
+  "cue": "Fortunately, our young Mr. Potter discovered it. One hopes that no more of Lord Voldemort's old school things should find their way into innocent hands. The consequences for the one responsible would be severe.",
+  "prev_line": "",
+  "line": "Well, let's just hope that Mr. Potter will always be around to save the day.",
+  "ko": "뭐, 포터 군이 언제까지나 곁에 있다가 위기에서 구해 주기만을 바랍시다.",
+  "plain": "Well, let's hope Potter's always gonna be there to come to the rescue.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "let's just hope",
+    "kind": "비꼬기",
+    "note": "'그저 바라는 수밖에'라는 뜻의 let's just hope는 겉으로는 희망을 말하지만, 여기서는 해리가 늘 있지는 못할 것이라는 은근한 협박입니다. just가 체념이나 빈정거림을 더합니다. 영미 공통 표현입니다.",
+    "examples": [
+     {
+      "en": "Let's just hope the weather holds for the weekend.",
+      "ko": "주말까지 날씨가 버텨 주길 바라야지."
+     },
+     {
+      "en": "Well, let's just hope he's learned his lesson this time.",
+      "ko": "뭐, 이번엔 그가 교훈을 얻었기를 바라야지."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "save the day",
+    "kind": "관용구",
+    "note": "'위기에서 구하다, 상황을 수습하다'라는 뜻의 관용구입니다. 영미 공통으로 매우 흔하며, 여기서는 해리를 '늘 나타나 사태를 해결하는 영웅'으로 비꼬아 부르는 데 쓰였습니다.",
+    "examples": [
+     {
+      "en": "The printer died, but Priya saved the day with her laptop.",
+      "ko": "프린터가 고장 났는데 프리야가 노트북으로 상황을 구했어."
+     },
+     {
+      "en": "Thanks for stepping in. You really saved the day.",
+      "ko": "나서 줘서 고마워. 네가 정말 큰일을 막았어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-019",
+  "speech": "lucius-2-019",
+  "part": 1,
+  "of": 1,
+  "order": 28,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "교장실. 덤블도어에게 냉랭히 인사하고 도비를 데리고 나가는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "Don't worry. I will be.",
+  "prev_line": "",
+  "line": "Dumbledore. Come, Dobby. We're leaving.",
+  "ko": "덤블도어. 가자, 도비. 돌아간다.",
+  "plain": "Dumbledore. Come on, Dobby. We're out of here.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Come, Dobby",
+    "kind": "격식 명령",
+    "note": "Come on 대신 Come만 쓰면 하인이나 개를 부르듯 짧고 권위적인 명령이 됩니다. 영미 공통이지만 다소 옛스럽고 격식 있는 어감이 있어 아랫사람을 부를 때의 상류층 말투처럼 들립니다. 떠날 때 상대의 이름만 던지는 Dumbledore.도 인사를 생략한 차가운 작별입니다.",
+    "examples": [
+     {
+      "en": "Come, children. We mustn't keep your grandmother waiting.",
+      "ko": "가자, 얘들아. 할머니를 기다리시게 하면 안 돼."
+     },
+     {
+      "en": "Come, Max. Heel.",
+      "ko": "이리 와, 맥스. 따라와."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-020",
+  "speech": "lucius-2-020",
+  "part": 1,
+  "of": 1,
+  "order": 29,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 일기장을 들고 쫓아온 해리에게 모르는 척 시치미 떼는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "Mr. Malfoy! Mr. Malfoy! I have something of yours.",
+  "prev_line": "",
+  "line": "Mine? I don't know what you're talking about.",
+  "ko": "내 것이라니? 무슨 소린지 모르겠군.",
+  "plain": "Mine? No idea what you mean.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I don't know what you're talking about",
+    "kind": "관용구",
+    "note": "'무슨 말인지 모르겠다'는 뜻이지만, 실제로는 알면서 부인할 때 쓰는 정형화된 시치미 표현입니다. 영미 공통으로 매우 흔하며, 루시우스처럼 차갑게 말하면 '더 말하지 마라'는 경고가 됩니다.",
+    "examples": [
+     {
+      "en": "A missing file? I don't know what you're talking about.",
+      "ko": "파일이 없어졌다고? 무슨 얘기인지 모르겠는데."
+     },
+     {
+      "en": "Honestly, I've no idea what you're talking about.",
+      "ko": "솔직히 무슨 말씀을 하시는지 전혀 모르겠어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-021",
+  "speech": "lucius-2-021",
+  "part": 1,
+  "of": 1,
+  "order": 30,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 일기장을 넣은 게 당신이라는 해리의 추궁을 비웃는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "I think you do, sir. I think you slipped the diary into Ginny Weasley's cauldron, that day in Diagon Alley.",
+  "prev_line": "",
+  "line": "You do, do you? Why don't you prove it? Come, Dobby.",
+  "ko": "그렇게 생각한다, 이건가? 그럼 어디 증명해 보게. 가자, 도비.",
+  "plain": "Oh, you think so? Then go ahead and prove it. Let's go, Dobby.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "You do, do you?",
+    "kind": "부가의문문",
+    "note": "긍정문 뒤에 긍정 부가의문문을 붙이는 형태로, '아, 그러셔?'라며 상대의 말을 받아 비꼬거나 도전하는 영국식 어법입니다. 보통의 부가의문문(긍정문 + 부정 꼬리)과 달리 긍정+긍정은 상대의 말을 되받는 것이어서, 관심이나 놀람을 나타내기도 하지만 여기처럼 차갑게 말하면 빈정거림이 됩니다. 미국 구어라면 Oh, you think so?가 보통입니다.",
+    "examples": [
+     {
+      "en": "You're leaving early, are you? We'll see about that.",
+      "ko": "일찍 간다 이거지? 어디 두고 보자."
+     },
+     {
+      "en": "Oh, he knows better than the doctor, does he?",
+      "ko": "아, 그 사람이 의사보다 더 잘 안다 이거야?"
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "Why don't you prove it?",
+    "kind": "위협 표현",
+    "note": "Why don't you ~?는 제안 형식이지만 여기서는 '어디 한번 증명해 보시지'라는 도발입니다. 증거가 없다는 것을 알고 던지는 냉소로, 영미 공통 표현입니다.",
+    "examples": [
+     {
+      "en": "You think I'm wrong? Why don't you prove it?",
+      "ko": "내가 틀렸다고? 그럼 증명해 보든가."
+     },
+     {
+      "en": "Why don't you ask her yourself, if you're so sure?",
+      "ko": "그렇게 확신하면 직접 물어보지 그래?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-022",
+  "speech": "lucius-2-022",
+  "part": 1,
+  "of": 1,
+  "order": 31,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 일기장을 받은 도비를 다그치며 부르는 루시우스",
+  "cue_speaker": "Harry",
+  "cue": "Open it.",
+  "prev_line": "",
+  "line": "Dobby!",
+  "ko": "도비!",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-023",
+  "speech": "lucius-2-023",
+  "part": 1,
+  "of": 1,
+  "order": 32,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 양말을 받았다는 도비의 말에 당황하는 루시우스",
+  "cue_speaker": "Dobby",
+  "cue": "Master has given Dobby a sock!",
+  "prev_line": "",
+  "line": "What? I didn't give--",
+  "ko": "뭐라고? 난 준 적이--",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": false,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "lucius-2-024",
+  "speech": "lucius-2-024",
+  "part": 1,
+  "of": 1,
+  "order": 33,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 도비가 자유의 몸이 되자 해리에게 격분하는 루시우스",
+  "cue_speaker": "Dobby",
+  "cue": "Master has presented Dobby with clothes. Dobby is free.",
+  "prev_line": "",
+  "line": "You've lost me my servant!",
+  "ko": "자네 때문에 내 하인을 잃지 않았나!",
+  "plain": "You just cost me my servant!",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "lost me my servant",
+    "kind": "구문",
+    "note": "lose + 사람 + 사물은 '~에게 …을 잃게 하다'라는 뜻의 4형식 구조로, cost me my servant와 거의 같은 뜻입니다. 'That mistake lost us the contract', 'It lost him his job'처럼 영미 공통으로 널리 쓰이며, 상대에게 책임을 돌리는 어감이 강합니다. 여기서는 servant라는 구시대적 어휘와 합쳐져 귀족적 오만이 드러납니다.",
+    "examples": [
+     {
+      "en": "That mistake lost us the contract.",
+      "ko": "그 실수 때문에 우리는 계약을 놓쳤어."
+     },
+     {
+      "en": "His comments nearly lost him his job.",
+      "ko": "그 발언 때문에 그는 하마터면 직장을 잃을 뻔했다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-025-p1",
+  "speech": "lucius-2-025",
+  "part": 1,
+  "of": 2,
+  "order": 34,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 도비에게 내동댕이쳐진 뒤 해리에게 저주 섞인 경고를 남기는 루시우스",
+  "cue_speaker": "Dobby",
+  "cue": "You shall not harm Harry Potter!",
+  "prev_line": "",
+  "line": "Your parents were meddlesome fools, too. Mark my words, Potter.",
+  "ko": "자네 부모도 쓸데없이 참견하는 멍청이들이었지. 내 말 똑똑히 새겨 두게, 포터.",
+  "plain": "Your parents were nosy idiots too. Remember what I'm telling you, Potter.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "meddlesome fools",
+    "kind": "격식 어휘",
+    "note": "meddlesome은 '남의 일에 참견하기 좋아하는'이라는 다소 고풍스러운 격식 형용사입니다. 구어에서는 nosy나 interfering이 보통입니다. fool과 함께 쓰여 경멸을 품위 있게 포장하는 루시우스식 어법으로, 영미 공통 어휘입니다.",
+    "examples": [
+     {
+      "en": "She's a kind woman, but a bit meddlesome where her grandchildren are concerned.",
+      "ko": "그녀는 친절한 분이지만 손주 일에는 좀 참견이 많다."
+     },
+     {
+      "en": "Local shopkeepers complained about meddlesome council officials.",
+      "ko": "동네 가게 주인들은 사사건건 참견하는 지방 의회 공무원들에 대해 불만을 터뜨렸다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Mark my words",
+    "kind": "위협 표현",
+    "note": "'내 말을 새겨 들어라'라는 뜻의 오래된 관용구로, 경고나 예언을 할 때 앞뒤에 붙입니다. 영미 공통이지만 다소 옛스러운 격식 어감이 있어 영국 드라마에서 특히 자주 들립니다. 앞서 해그리드의 오두막 장면에서 해그리드도 같은 표현을 썼습니다(You mark my words).",
+    "examples": [
+     {
+      "en": "Mark my words, that bridge will be closed again by winter.",
+      "ko": "내 말 잘 들어, 저 다리는 겨울이면 또 폐쇄될 거야."
+     },
+     {
+      "en": "He'll regret it, mark my words.",
+      "ko": "그는 후회하게 될 거야, 두고 보라고."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-2-025-p2",
+  "speech": "lucius-2-025",
+  "part": 2,
+  "of": 2,
+  "order": 35,
+  "character": "Lucius",
+  "film": 2,
+  "film_ko": "비밀의 방",
+  "source": "transcript",
+  "scene_ko": "복도. 도비에게 내동댕이쳐진 뒤 해리에게 저주 섞인 경고를 남기는 루시우스",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Your parents were meddlesome fools, too. Mark my words, Potter.",
+  "line": "One day soon, you are going to meet the same sticky end.",
+  "ko": "머지않아 자네도 부모와 똑같이 비참한 최후를 맞게 될 걸세.",
+  "plain": "Pretty soon you're gonna end up just like them.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "meet the same sticky end",
+    "kind": "BrE 관용구",
+    "note": "come to / meet a sticky end는 '비참한 최후를 맞다, 험하게 죽다'라는 영국식 관용구입니다. 미국 구어에서는 거의 쓰지 않고 come to a bad end, end up dead 정도로 말합니다. 섬뜩한 내용을 가볍게 돌려 말하는 영국식 완곡어법의 한 예입니다.",
+    "examples": [
+     {
+      "en": "Villains in these stories always come to a sticky end.",
+      "ko": "이런 이야기 속 악당들은 늘 비참한 최후를 맞는다."
+     },
+     {
+      "en": "Keep driving like that and you'll meet a sticky end.",
+      "ko": "계속 그렇게 운전하면 험한 꼴 당할 거야."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "you are going to",
+    "kind": "격식·축약 회피",
+    "note": "you're going to를 축약 없이 또박또박 말해 경고의 무게를 더합니다. 위협이나 엄중한 통보를 할 때 축약형을 피하는 것은 영미 공통의 격식 장치입니다.",
+    "examples": [
+     {
+      "en": "If you carry on like this, you are going to fail the year.",
+      "ko": "계속 이런 식이면 너는 이번 학년을 낙제하게 될 거다."
+     },
+     {
+      "en": "You are going to apologise to her, and you are going to mean it.",
+      "ko": "너는 그 애에게 사과할 거고, 진심으로 할 거다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-4-001",
+  "speech": "lucius-4-001",
+  "part": 1,
+  "of": 1,
+  "order": 36,
+  "character": "Lucius",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "퀴디치 월드컵 경기장. 꼭대기 좌석의 위즐리 가족을 보고 비꼬는 루시우스",
+  "cue_speaker": "Ron",
+  "cue": "Blimey Dad, how far up ARE we?",
+  "prev_line": "",
+  "line": "Well, put it this way: if it rains, you'll be the first to know.",
+  "ko": "글쎄, 이렇게 말해 두지. 비가 오면 자네들이 제일 먼저 알게 될 걸세.",
+  "plain": "Let me put it like this: if it starts raining, you guys will find out first.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "put it this way",
+    "kind": "관용구",
+    "note": "'이렇게 말해 두지'라며 직접 답하는 대신 돌려 말할 때 앞에 붙이는 관용구입니다. 영미 공통으로 흔하지만, 질문에 정면으로 답하지 않고 빈정거림으로 대신하는 영국식 유머의 전형적 도입부입니다.",
+    "examples": [
+     {
+      "en": "Was the meeting useful? Put it this way: I could have stayed in bed.",
+      "ko": "회의가 유익했냐고? 이렇게 말해 두지. 그냥 침대에 있을 걸 그랬어."
+     },
+     {
+      "en": "Let's put it this way: he won't be invited back.",
+      "ko": "이렇게 말해 두죠. 그 사람은 다시 초대받지 못할 겁니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "you'll be the first to know",
+    "kind": "비꼬기",
+    "note": "원래는 '소식이 있으면 제일 먼저 알려 주겠다'는 친절한 약속 표현인데, 여기서는 지붕도 없는 꼭대기 자리라 비를 제일 먼저 맞는다는 뜻으로 뒤집어 썼습니다. 흔한 표현을 비꼼으로 재활용하는 영국식 드라이 유머의 좋은 예이며, 표현 자체는 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "If anything changes, you'll be the first to know.",
+      "ko": "뭔가 바뀌면 제일 먼저 알려 드릴게요."
+     },
+     {
+      "en": "Is the boiler fixed? Put it this way: if it isn't, you'll be the first to know.",
+      "ko": "보일러 고쳤어? 이렇게 말해 두지. 안 고쳐졌으면 네가 제일 먼저 알게 될 거야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-4-002",
+  "speech": "lucius-4-002",
+  "part": 1,
+  "of": 1,
+  "order": 37,
+  "character": "Lucius",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "퀴디치 월드컵 경기장. 자랑하는 드레이코를 제지하고 해리 일행에게 비꼬아 인사하는 상황",
+  "cue_speaker": "Draco",
+  "cue": "Father and I are in the minister's box, by personal invitation of Cornelius Fudge himself.",
+  "prev_line": "",
+  "line": "Don't boast, Draco. There's no need with these people. Do enjoy yourself, won't you? While you can.",
+  "ko": "자랑하지 마라, 드레이코. 이런 사람들 앞에선 그럴 필요 없다. 부디 즐기도록 하게. 즐길 수 있을 때 말일세.",
+  "plain": "Don't brag, Draco. You don't need to with these people. Have a good time, okay? While you still can.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "Do enjoy yourself, won't you?",
+    "kind": "강조 do + 부가의문문",
+    "note": "명령문 앞에 do를 붙이고 뒤에 won't you?를 더하는 것은 영국식 정중한 권유의 전형입니다. 겉으로는 공손하지만 상황에 따라 비꼬거나 위협하는 장치로 쓰입니다. 미국 구어에서는 'Have fun, okay?' 정도로 말하며, 이런 형태는 거의 쓰지 않습니다.",
+    "examples": [
+     {
+      "en": "Do come in, won't you? The kettle's just boiled.",
+      "ko": "어서 들어오세요. 주전자 물이 막 끓었어요."
+     },
+     {
+      "en": "Do let me know if anything changes, won't you?",
+      "ko": "뭔가 달라지면 꼭 알려 주세요."
+     }
+    ],
+    "shared": false
+   },
+   {
+    "expr": "While you can.",
+    "kind": "위협 표현",
+    "note": "정중한 권유 뒤에 짧게 덧붙여, 곧 좋은 시절이 끝난다는 뜻을 담은 은근한 위협입니다. 말 자체는 영미 공통이지만, 공손한 문장 뒤에 툭 붙이는 방식이 효과를 냅니다.",
+    "examples": [
+     {
+      "en": "Enjoy the quiet while you can. The builders start on Monday.",
+      "ko": "조용할 때 실컷 즐겨. 월요일부터 공사 시작이야."
+     },
+     {
+      "en": "Get some sleep while you can. The baby won't let you later.",
+      "ko": "잘 수 있을 때 자 둬. 나중엔 아기가 안 재워 줄 테니까."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-4-003",
+  "speech": "lucius-4-003",
+  "part": 1,
+  "of": 1,
+  "order": 38,
+  "character": "Lucius",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "묘지. 부활한 볼드모트에게 왜 찾지 않았느냐고 질책받고 변명하는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "Not even you, Lucius.",
+  "prev_line": "",
+  "line": "My Lord, had I detected any sign or even a whisper of your whereabouts--",
+  "ko": "주인님, 주인님의 행방에 관해 어떤 징후라도, 아니 속삭임 하나라도 감지했더라면--",
+  "plain": "My Lord, if I'd picked up any sign, or even a rumor, about where you were--",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "had I detected",
+    "kind": "도치",
+    "note": "'If I had detected'에서 if를 빼고 had를 앞으로 내는 가정법 도치입니다. 격식체·문어체에서 쓰이며 말하는 사람을 공손하고 교양 있게 보이게 합니다. 영미 공통이지만 일상 대화에서는 if 절이 훨씬 흔합니다.",
+    "examples": [
+     {
+      "en": "Had I known you were coming, I'd have baked something.",
+      "ko": "오시는 줄 알았더라면 뭐라도 구워 뒀을 텐데요."
+     },
+     {
+      "en": "Had the train been on time, we'd have made the meeting.",
+      "ko": "기차가 제시간에 왔더라면 회의에 맞춰 갔을 겁니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "whereabouts",
+    "kind": "격식 어휘",
+    "note": "'있는 곳, 행방'을 뜻하는 격식 명사입니다. 일상에서는 'where you were'라고 하지만, 보고서·경찰 발표·공식 대화에서는 whereabouts가 자연스럽습니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Police are appealing for information about his whereabouts.",
+      "ko": "경찰이 그의 행방에 관한 제보를 요청하고 있습니다."
+     },
+     {
+      "en": "Her whereabouts on Friday night are still unclear.",
+      "ko": "금요일 밤 그녀의 행적은 아직 불분명합니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-4-004-p1",
+  "speech": "lucius-4-004",
+  "part": 1,
+  "of": 2,
+  "order": 39,
+  "character": "Lucius",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "묘지. 부활한 볼드모트 앞에서 자신의 충성이 변치 않았다고 변명하는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "There were signs my friend, and more than whispers.",
+  "prev_line": "",
+  "line": "I assure you, I never renounced the old ways.",
+  "ko": "분명히 말씀드리건대, 저는 옛 방식을 저버린 적이 없습니다.",
+  "plain": "I swear, I never gave up the old ways.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I assure you",
+    "kind": "격식·확언",
+    "note": "'장담합니다, 분명히 말씀드립니다'라는 격식 있는 확언입니다. 일상 구어에서는 'I promise' 또는 'Trust me'가 더 흔합니다. 영미 공통이며, 격식 자리에서 쓰면 신뢰를 주는 표현입니다.",
+    "examples": [
+     {
+      "en": "I assure you, the parcel was sent first thing this morning.",
+      "ko": "분명히 말씀드리지만, 소포는 오늘 아침 일찍 발송됐습니다."
+     },
+     {
+      "en": "It won't happen again, I assure you.",
+      "ko": "다시는 이런 일 없을 겁니다. 장담합니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "renounced",
+    "kind": "격식 어휘",
+    "note": "renounce는 '(신념·권리·관계를) 공식적으로 버리다, 포기하다'라는 격식 동사입니다. 일상어로는 give up, turn my back on 정도입니다. 영미 공통으로 법률·종교·정치 문맥에서 자주 보입니다.",
+    "examples": [
+     {
+      "en": "He renounced his British citizenship when he moved abroad.",
+      "ko": "그는 해외로 이주하면서 영국 시민권을 포기했습니다."
+     },
+     {
+      "en": "She publicly renounced the party's new policy.",
+      "ko": "그녀는 당의 새 정책을 공개적으로 거부했습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-4-004-p2",
+  "speech": "lucius-4-004",
+  "part": 2,
+  "of": 2,
+  "order": 40,
+  "character": "Lucius",
+  "film": 4,
+  "film_ko": "불의 잔",
+  "source": "transcript",
+  "scene_ko": "묘지. 부활한 볼드모트 앞에서 자신의 충성이 변치 않았다고 변명하는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "I assure you, I never renounced the old ways.",
+  "line": "The face I have been obliged to present each day since your absence, that was my true mask.",
+  "ko": "주인님께서 안 계신 동안 제가 날마다 억지로 내보여야 했던 그 얼굴, 그것이야말로 저의 진짜 가면이었습니다.",
+  "plain": "The face I've had to put on every day since you've been gone, that was the real mask.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "I have been obliged to",
+    "kind": "격식·축약 회피",
+    "note": "'어쩔 수 없이 ~해야 했다'를 be obliged to로 말하는 격식 표현입니다. 일상 구어라면 had to, 미국 영어에서는 obligated도 함께 쓰이지만 obliged 역시 영미 공통의 격식체입니다. 여기서는 축약 없이 I have been으로 말해 공손함과 거리감을 더합니다.",
+    "examples": [
+     {
+      "en": "We were obliged to cancel the trip because of the strike.",
+      "ko": "파업 때문에 어쩔 수 없이 여행을 취소해야 했습니다."
+     },
+     {
+      "en": "I'm afraid I'm obliged to report this to the head.",
+      "ko": "죄송하지만 이 일은 교장께 보고할 수밖에 없습니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "since your absence",
+    "kind": "격식 어휘",
+    "note": "'당신이 떠난 뒤로'를 동사 대신 명사 absence로 표현한 격식 어법입니다. 일상에서는 since you left, since you've been gone이라고 합니다. 영미 공통의 문어체 명사화입니다.",
+    "examples": [
+     {
+      "en": "The office has been chaos in your absence.",
+      "ko": "당신이 없는 동안 사무실이 엉망이었어요."
+     },
+     {
+      "en": "Please note any decisions taken during my absence.",
+      "ko": "제가 부재중일 때 내려진 결정은 기록해 두세요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-001-p1",
+  "speech": "lucius-5-001",
+  "part": 1,
+  "of": 2,
+  "order": 41,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 복도. 청문회에서 풀려난 해리가 퍼지와 함께 있던 루시우스와 마주친 상황",
+  "cue_speaker": "Mr. Weasley",
+  "cue": "Ah...yes...I'm afraid we had a bit of a row. He, well, he sided with Fudge and the rest of us sided with Dumbledore, so Percy left.",
+  "prev_line": "",
+  "line": "Well, well, if it isn't Patronus Potter.",
+  "ko": "이런, 이런, 이게 누구신가. 패트로누스 포터 아니신가.",
+  "plain": "Well, look who it is. Patronus Potter.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Well, well, if it isn't",
+    "kind": "비꼬기",
+    "note": "누군가를 마주쳤을 때 '이게 누구야'라고 짐짓 놀란 척하며 비꼬는 관용 표현입니다. 뒤에 상대의 이름이나 별명을 붙입니다. 영미 공통이지만 느릿하게 말하면 영국 귀족풍의 조롱이 됩니다.",
+    "examples": [
+     {
+      "en": "Well, well, if it isn't the man who said he'd never come back.",
+      "ko": "이런, 이게 누구야. 다신 안 온다던 그분 아니신가."
+     },
+     {
+      "en": "Well, well, if it isn't our star player. Late again.",
+      "ko": "어이구, 우리 스타 선수 납셨네. 또 지각이야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-001-p2",
+  "speech": "lucius-5-001",
+  "part": 2,
+  "of": 2,
+  "order": 42,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 복도. 청문회에서 풀려난 해리가 퍼지와 함께 있던 루시우스와 마주친 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Well, well, if it isn't Patronus Potter.",
+  "line": "The Minister here was just telling me how very lucky an escape you just had. Quite astonishing... snakelike, in fact.",
+  "ko": "여기 장관님께서 자네가 얼마나 운 좋게 빠져나갔는지 말씀해 주시던 참이었네. 참으로 놀랍더군... 뱀 같다고나 할까.",
+  "plain": "The Minister was just telling me how lucky you got. Pretty amazing... like a snake, actually.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "how very lucky an escape you just had",
+    "kind": "격식 구문",
+    "note": "'how + 형용사 + a(n) + 명사' 어순은 격식체·문어체 감탄 구문입니다. 일상 구어라면 'how lucky you were to get away'라고 풀어 말합니다. very를 끼워 넣어 과장되게 감탄하는 척하며 비꼬고 있습니다. 영미 공통 구문입니다.",
+    "examples": [
+     {
+      "en": "You've no idea how difficult a decision that was.",
+      "ko": "그게 얼마나 어려운 결정이었는지 넌 모를 거야."
+     },
+     {
+      "en": "I realised how narrow an escape we'd had.",
+      "ko": "우리가 얼마나 아슬아슬하게 빠져나왔는지 깨달았어요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "Quite astonishing",
+    "kind": "AmE 대비",
+    "note": "영국 영어에서 quite는 astonishing처럼 정도를 나눌 수 없는 형용사 앞에서 '완전히, 참으로'라는 강한 뜻입니다. 미국 영어의 quite는 주로 '꽤, 상당히'로 약하게 들립니다. 영국인이 'quite astonishing'이라고 하면 '정말 놀랍다'는 의미입니다.",
+    "examples": [
+     {
+      "en": "The view from the top was quite extraordinary.",
+      "ko": "꼭대기에서 본 경치는 참으로 굉장했어요."
+     },
+     {
+      "en": "You're quite right, we should have booked earlier.",
+      "ko": "네 말이 전적으로 맞아. 더 일찍 예약했어야 했어."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-002",
+  "speech": "lucius-5-002",
+  "part": 1,
+  "of": 1,
+  "order": 43,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 복도. 왜 여기 있느냐고 따지는 해리를 루시우스가 점잖게 깔아뭉개는 상황",
+  "cue_speaker": "Harry",
+  "cue": "What are you doing here?",
+  "prev_line": "",
+  "line": "Come now, Potter, I really don't think that private matters between the Minister and myself are any concern of yours.",
+  "ko": "이보게, 포터. 장관과 나 사이의 사적인 일은 자네가 상관할 바가 아니라고 보네만.",
+  "plain": "Come on, Potter. What's going on between me and the Minister is honestly none of your business.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Come now",
+    "kind": "완곡어법",
+    "note": "상대를 점잖게 타이르거나 나무랄 때 쓰는 다소 격식 있고 옛스러운 말머리입니다. '자, 자' 또는 '이보게' 정도의 뉘앙스로, 어른이 아이를 달래듯 상대를 아래로 보는 느낌이 있습니다. 영미 공통이며 일상 구어에서는 'Come on (now)'가 더 흔합니다.",
+    "examples": [
+     {
+      "en": "Come now, it's not as bad as all that.",
+      "ko": "자, 자. 그렇게까지 나쁜 건 아니잖아."
+     },
+     {
+      "en": "Come now, you don't really believe that, do you?",
+      "ko": "이봐, 설마 그걸 진짜로 믿는 건 아니지?"
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "any concern of yours",
+    "kind": "격식·완곡어법",
+    "note": "'네가 상관할 일'을 concern of yours라고 하는 격식 표현입니다. 'none of your business'와 뜻은 같지만 훨씬 정중한 겉모습을 하고 있어, 무례한 말을 점잖게 포장할 때 쓰입니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "What I do at the weekend is no concern of yours.",
+      "ko": "주말에 내가 뭘 하든 네가 상관할 바 아니야."
+     },
+     {
+      "en": "I don't see how my salary is any concern of his.",
+      "ko": "내 급여가 왜 그 사람 관심사인지 모르겠네요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "the Minister and myself",
+    "kind": "격식·완곡어법",
+    "note": "원래는 'the Minister and me'가 문법적으로 정확하지만, 격식을 차리거나 거리를 두고 싶을 때 me 대신 myself를 쓰는 경우가 많습니다. 영미 공통으로 비즈니스 이메일에서도 자주 보이는 용법입니다.",
+    "examples": [
+     {
+      "en": "Please send the report to Sarah and myself by Friday.",
+      "ko": "보고서는 금요일까지 사라와 저에게 보내 주세요."
+     },
+     {
+      "en": "This is a matter for the committee and myself to decide.",
+      "ko": "이건 위원회와 제가 결정할 사안입니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-003",
+  "speech": "lucius-5-003",
+  "part": 1,
+  "of": 1,
+  "order": 44,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 복도. 해리에게 네 꿈이나 신경 쓰라며 은근히 협박하는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "All you need to concern yourself about are... your dreams, Potter.",
+  "ko": "자네가 신경 써야 할 건 오직... 자네 꿈뿐이네, 포터.",
+  "plain": "The only thing you need to worry about is... your dreams, Potter.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "concern yourself about",
+    "kind": "격식 어휘",
+    "note": "'~에 신경 쓰다, 마음 쓰다'를 worry about 대신 concern yourself about/with로 말하는 격식 표현입니다. 주로 부정문이나 '~만 신경 쓰면 된다'는 문맥에서 쓰이며 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Don't concern yourself with the paperwork; I'll handle it.",
+      "ko": "서류 일은 신경 쓰지 마세요. 제가 처리할게요."
+     },
+     {
+      "en": "All you need to concern yourself with is passing the exam.",
+      "ko": "넌 시험 통과하는 것만 신경 쓰면 돼."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-004",
+  "speech": "lucius-5-004",
+  "part": 1,
+  "of": 1,
+  "order": 45,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 복도. 해리를 뒤로하고 퍼지 장관을 집무실로 데려가려는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Shall we continue this in your office, Fudge?",
+  "ko": "퍼지, 이 얘기는 자네 집무실에서 계속하는 게 어떻겠나?",
+  "plain": "Want to finish this in your office, Fudge?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Shall we",
+    "kind": "법조동사 완화",
+    "note": "'~할까요?'라고 제안할 때 Shall we를 쓰는 것은 영국 영어의 특징입니다. 미국 구어에서는 shall을 거의 쓰지 않고 'Should we', 'Want to', 'Let's'로 말합니다. 정중하지만 사실상 주도권을 쥔 사람이 결정을 내리는 말투이기도 합니다.",
+    "examples": [
+     {
+      "en": "Shall we make a start, then? Everyone's here.",
+      "ko": "그럼 시작할까요? 다들 오셨으니."
+     },
+     {
+      "en": "It's getting late. Shall we call it a day?",
+      "ko": "늦었네요. 오늘은 여기까지 할까요?"
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-005",
+  "speech": "lucius-5-005",
+  "part": 1,
+  "of": 1,
+  "order": 46,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 예언을 집어 든 해리 앞에 죽음을 먹는 자들과 함께 나타난 상황",
+  "cue_speaker": "Harry",
+  "cue": "It's got my name on it.",
+  "prev_line": "",
+  "line": "I warned you before that one day you would come to a sticky end, Potter.",
+  "ko": "언젠가 비참한 최후를 맞게 될 거라고 전에 경고했을 텐데, 포터.",
+  "plain": "I told you before that one day you'd come to a bad end, Potter.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "come to a sticky end",
+    "kind": "BrE 관용구",
+    "note": "'비참한 최후를 맞다, 불행하게 끝나다'라는 영국식 관용구입니다. 특히 나쁜 짓을 하다가 벌을 받듯 끝나는 경우에 씁니다. 미국 영어에서는 거의 쓰지 않으며 'come to a bad end', 'end up badly'라고 합니다.",
+    "examples": [
+     {
+      "en": "He was a gambler and a cheat, and everyone knew he'd come to a sticky end.",
+      "ko": "그는 노름꾼에 사기꾼이었고, 끝이 좋지 않으리라는 건 누구나 알고 있었다."
+     },
+     {
+      "en": "The last manager who tried to hide the losses came to a sticky end.",
+      "ko": "손실을 숨기려 했던 지난번 부장은 끝이 좋지 않았다."
+     }
+    ],
+    "shared": false
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-006",
+  "speech": "lucius-5-006",
+  "part": 1,
+  "of": 1,
+  "order": 47,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 시리우스가 어디 있느냐는 해리에게 속았음을 알려 주는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Where's Sirius?",
+  "prev_line": "",
+  "line": "We don't have him, if that's what you mean.",
+  "ko": "우리한테는 없네. 그걸 묻는 거라면 말일세.",
+  "plain": "He's not with us, if that's what you're asking.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "if that's what you mean",
+    "kind": "완곡어법",
+    "note": "상대의 질문 뒤에 숨은 의도를 짚으며 '그걸 묻는 거라면'이라고 덧붙이는 표현입니다. 직접 대답을 피하거나 상대가 틀렸음을 넌지시 알릴 때 씁니다. 영미 공통의 일상 표현입니다.",
+    "examples": [
+     {
+      "en": "I'm not leaving the company, if that's what you mean.",
+      "ko": "회사 그만두는 건 아니야. 그걸 묻는 거라면."
+     },
+     {
+      "en": "We haven't fallen out, if that's what you mean.",
+      "ko": "우리 사이 틀어진 건 아니에요. 그게 궁금한 거라면요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-007",
+  "speech": "lucius-5-007",
+  "part": 1,
+  "of": 1,
+  "order": 48,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 시리우스 환영은 미끼였다고 해리를 조롱하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "You never did, did you? It was all just a trick.",
+  "prev_line": "",
+  "line": "The Dark Lord knows your weakness for heroics, Potter. All it took was a little nudge to get you here.",
+  "ko": "어둠의 왕께서는 자네가 영웅 행세에 약하다는 걸 알고 계시지, 포터. 자네를 여기로 끌어들이는 데는 살짝 찔러 주는 걸로 충분했네.",
+  "plain": "The Dark Lord knows you can't resist playing the hero, Potter. It only took a little push to get you here.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "your weakness for heroics",
+    "kind": "비꼬기",
+    "note": "'a weakness for ~'는 '~에 약하다, ~을 못 참는다'라는 뜻으로, 보통 단것이나 좋아하는 것에 씁니다. 여기에 heroics(영웅 흉내, 무모한 행동)를 붙여 해리의 용기를 어리석은 습관처럼 깎아내립니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "I've always had a weakness for a good cup of tea.",
+      "ko": "난 늘 맛있는 차 한 잔에 약했어."
+     },
+     {
+      "en": "No heroics, please. Just wait for the fire brigade.",
+      "ko": "영웅 노릇은 하지 마세요. 소방대를 기다리세요."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "a little nudge",
+    "kind": "완곡어법",
+    "note": "nudge는 팔꿈치로 살짝 밀치는 동작에서 나온 말로, '살짝 부추기기'라는 완곡한 뜻으로 씁니다. 사실은 계획적인 유인이었음을 가볍게 표현해 조롱의 효과를 냅니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "He just needed a little nudge to apply for the job.",
+      "ko": "그 사람은 지원하도록 살짝만 밀어 주면 됐어요."
+     },
+     {
+      "en": "Give me a nudge if I start to nod off in the meeting.",
+      "ko": "회의 중에 졸기 시작하면 툭 쳐서 깨워 줘."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-008",
+  "speech": "lucius-5-008",
+  "part": 1,
+  "of": 1,
+  "order": 49,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 해리에게 손에 든 예언을 내놓으라고 요구하는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Now give me that prophecy.",
+  "ko": "자, 이제 그 예언을 내놓게.",
+  "plain": "Okay, hand me that prophecy.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "lucius-5-009",
+  "speech": "lucius-5-009",
+  "part": 1,
+  "of": 1,
+  "order": 50,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 시치미 떼는 해리를 지팡이로 위협하며 예언을 요구하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "What prophecy?",
+  "prev_line": "",
+  "line": "That prophecy. Now hand it over or we'll have to use wands on you.",
+  "ko": "그 예언 말일세. 당장 넘기게. 아니면 자네에게 지팡이를 쓸 수밖에 없네.",
+  "plain": "That one. Give it to me now, or we're gonna have to use our wands on you.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "hand it over",
+    "kind": "구동사",
+    "note": "hand over는 '넘겨주다, 내놓다'라는 구동사입니다. 보통 요구나 압력을 받아 마지못해 내주는 상황에서 쓰이며, 명령문 'Hand it over'는 '내놔'라는 위협조가 됩니다. 영미 공통의 일상 표현입니다.",
+    "examples": [
+     {
+      "en": "That's the third time I've seen that phone, Jamie. Hand it over.",
+      "ko": "그 휴대폰 보는 게 벌써 세 번째다, 제이미. 이리 내놔."
+     },
+     {
+      "en": "Just hand over the keys and nobody gets hurt.",
+      "ko": "열쇠만 넘기면 아무도 안 다쳐."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-010",
+  "speech": "lucius-5-010",
+  "part": 1,
+  "of": 1,
+  "order": 51,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 해 볼 테면 해 보라는 해리를 비웃는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Go ahead.",
+  "prev_line": "",
+  "line": "Very brave of you, Potter. Or are you foolish?",
+  "ko": "참으로 용감하군, 포터. 아니면 그저 어리석은 건가?",
+  "plain": "You've got guts, Potter. Or are you just dumb?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Very brave of you",
+    "kind": "비꼬기",
+    "note": "'형용사 + of you'는 상대의 행동을 평가하는 구문입니다('How kind of you'). 칭찬 형식을 빌려 '참 용감하기도 하지'라고 비꼬는 것이 핵심이며, 뒤에 'Or are you foolish?'를 붙여 조롱을 완성합니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Very generous of you to pay for everyone. Again.",
+      "ko": "다 사 주다니 참 통도 크네. 또."
+     },
+     {
+      "en": "How thoughtful of you to remember my birthday.",
+      "ko": "내 생일을 기억해 주다니 정말 고마워."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-011-p1",
+  "speech": "lucius-5-011",
+  "part": 1,
+  "of": 2,
+  "order": 52,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 맞서겠다는 해리와 친구들을 어린애 취급하며 비웃는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Come and find out.",
+  "prev_line": "",
+  "line": "Really, Potter. You expect to defeat all of us with your little school friends?",
+  "ko": "정말이지, 포터. 그 꼬마 학교 친구들을 데리고 우리 전부를 이길 수 있다고 보나?",
+  "plain": "Seriously, Potter. You think you can beat all of us with your little school buddies?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Really, Potter.",
+    "kind": "비꼬기",
+    "note": "Really를 물음표 없이 내리는 억양으로 말하면 '정말이지, 한심하군'이라는 꾸짖음이 됩니다. 영국 영어에서 특히 자주 들리는 점잖은 질책의 말머리입니다. 미국 구어에서는 'Seriously?' 또는 'Come on'이 비슷한 역할을 합니다.",
+    "examples": [
+     {
+      "en": "Really, Tom. Leaving the gate open again?",
+      "ko": "정말이지, 톰. 대문을 또 열어 놨어?"
+     },
+     {
+      "en": "Really, you might have phoned to say you'd be late.",
+      "ko": "정말이지, 늦는다고 전화라도 하지 그랬어."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "your little school friends",
+    "kind": "비꼬기",
+    "note": "little을 붙여 상대와 그 주변을 하찮게 깎아내리는 용법입니다. 겉으로는 귀엽다는 투지만 실제로는 '별것 아닌'이라는 멸시가 담깁니다. 영미 공통이며 영국식 느릿한 어조와 잘 어울립니다.",
+    "examples": [
+     {
+      "en": "How's your little project coming along, then?",
+      "ko": "그래, 그 조그만 프로젝트는 잘돼 가?"
+     },
+     {
+      "en": "I'm sure your little club has lots of important things to discuss.",
+      "ko": "너희 그 동아리에서 논의할 중요한 일이 참 많겠지."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-011-p2",
+  "speech": "lucius-5-011",
+  "part": 2,
+  "of": 2,
+  "order": 53,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 맞서겠다는 해리와 친구들을 어린애 취급하며 비웃는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "Really, Potter. You expect to defeat all of us with your little school friends?",
+  "line": "Now hand it over, and they won't have to die here.",
+  "ko": "자, 넘기게. 그러면 저 아이들이 여기서 죽을 일은 없을 테니.",
+  "plain": "Now give it to me, and your friends don't have to die here.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "they won't have to die here",
+    "kind": "위협 표현",
+    "note": "'그러면 ~하지 않아도 된다'는 조건부 약속의 형식을 빌린 협박입니다. 직접 '죽이겠다'고 하지 않고, 거절하면 어떻게 될지를 뒤집어 암시합니다. 영미 공통의 완곡한 위협 구조입니다.",
+    "examples": [
+     {
+      "en": "Pay by Friday and we won't have to involve the solicitors.",
+      "ko": "금요일까지 내시면 변호사까지 부를 일은 없을 겁니다."
+     },
+     {
+      "en": "Apologise now, and this won't have to go any further.",
+      "ko": "지금 사과하면 이 일을 더 키울 필요는 없어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-012",
+  "speech": "lucius-5-012",
+  "part": 1,
+  "of": 1,
+  "order": 54,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 당장 공격하려는 벨라트릭스를 예언이 깨질까 봐 말리는 상황",
+  "cue_speaker": "Bellatrix",
+  "cue": "I haven't escaped from Azkaban for this.",
+  "prev_line": "",
+  "line": "No. If the prophecy is smashed--",
+  "ko": "안 돼. 예언이 깨지기라도 하면--",
+  "plain": "Don't. If that prophecy breaks--",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "lucius-5-013",
+  "speech": "lucius-5-013",
+  "part": 1,
+  "of": 1,
+  "order": 55,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 볼드모트의 이름을 입에 올린 해리에게 분노하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Not really. How come Voldemort wants it?",
+  "prev_line": "",
+  "line": "You dare to speak the Dark Lord's name?",
+  "ko": "감히 어둠의 왕의 이름을 입에 올리는 건가?",
+  "plain": "You've got the nerve to say the Dark Lord's name?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "You dare to",
+    "kind": "격식·위협 표현",
+    "note": "'감히 ~하다니'라는 분노와 위협을 담은 격식 표현입니다. 일상에서는 'How dare you ~'가 더 흔하며, 'You dare to ~?'는 문어체·극적 어조입니다. 미국 구어라면 'You've got the nerve to', 'You have the guts to'라고 합니다. 영미 공통의 격식체입니다.",
+    "examples": [
+     {
+      "en": "You dare to show your face here after what you did?",
+      "ko": "그런 짓을 하고도 감히 여기 얼굴을 내밀어?"
+     },
+     {
+      "en": "You dare to question my decision in front of the whole team?",
+      "ko": "감히 팀원 전부 앞에서 내 결정에 토를 달아?"
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-014",
+  "speech": "lucius-5-014",
+  "part": 1,
+  "of": 1,
+  "order": 56,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 해리의 도발에 폭발하려는 벨라트릭스를 제지하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Hey, did you know Voldemort's a half-blood too?",
+  "prev_line": "",
+  "line": "Control yourself, Bellatrix.",
+  "ko": "자제해, 벨라트릭스.",
+  "plain": "Get a hold of yourself, Bellatrix.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Control yourself",
+    "kind": "격식 명령",
+    "note": "흥분한 사람을 차갑게 제지하는 격식 표현입니다. 'Calm down'보다 거리감이 있고 명령조이며, 상대가 품위를 잃고 있다는 질책이 담깁니다. 일상 구어에서는 'Get a grip', 'Get a hold of yourself'가 더 흔합니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Control yourself. This is a staff meeting, not a playground.",
+      "ko": "자제하세요. 여긴 교무회의지 놀이터가 아닙니다."
+     },
+     {
+      "en": "I had to control myself not to laugh out loud.",
+      "ko": "소리 내 웃지 않으려고 참느라 혼났어."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-015",
+  "speech": "lucius-5-015",
+  "part": 1,
+  "of": 1,
+  "order": 57,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 예언의 정체를 모르는 해리를 보며 덤블도어를 비꼬는 상황",
+  "cue_speaker": "Harry",
+  "cue": "What's so special about this prophecy anyway?",
+  "prev_line": "",
+  "line": "You mean Dumbledore never told you the reason you bear that scar was hidden here?",
+  "ko": "설마 덤블도어가 자네가 그 흉터를 지니게 된 이유가 여기 숨겨져 있다는 걸 말해 주지 않았단 말인가?",
+  "plain": "You're telling me Dumbledore never told you that the reason you've got that scar was hidden here?",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "bear that scar",
+    "kind": "격식 어휘",
+    "note": "'흉터·표식·이름 등을 지니고 있다'를 bear로 말하는 격식 어법입니다. 일상에서는 have a scar라고 하며, bear는 문어체·공식 문서에서 쓰입니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "The document bears the signature of the headteacher.",
+      "ko": "그 문서에는 교장의 서명이 들어 있습니다."
+     },
+     {
+      "en": "He still bears the marks of that accident.",
+      "ko": "그는 아직도 그 사고의 흔적을 지니고 있어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-016",
+  "speech": "lucius-5-016",
+  "part": 1,
+  "of": 1,
+  "order": 58,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 해리가 왜 오래 걸렸는지 알겠다며 느긋하게 비꼬는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "So that's what took you so long. We wondered.",
+  "ko": "그래서 그렇게 오래 걸린 거로군. 우리도 궁금해하던 참이었네.",
+  "plain": "Oh, so that's why you were so slow getting here. We were curious.",
+  "tag": "일반",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "We wondered.",
+    "kind": "비꼬기",
+    "note": "'I wondered.' / 'We wondered.'처럼 단순과거 한마디를 뒤에 툭 붙이면 '궁금했는데, 이제야 알겠군'이라는 건조하고 느긋한 비꼼이 됩니다. 풀어 말하면 'We were wondering'이지만, 짧게 끊는 쪽이 더 차갑게 들립니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "Ah, so you did get my message. I wondered.",
+      "ko": "아, 내 메시지는 받았구나. 궁금했거든."
+     },
+     {
+      "en": "That's where the spare key went. We wondered.",
+      "ko": "여분 열쇠가 거기 있었군. 다들 궁금해했는데."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-017",
+  "speech": "lucius-5-017",
+  "part": 1,
+  "of": 1,
+  "order": 59,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 왜 해리가 직접 예언을 꺼내야 했는지 설명하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "But why did he need me to take it?",
+  "prev_line": "",
+  "line": "Only a person for whom the prophecy was made can remove it from its shelf, Potter, and the Dark Lord certainly couldn't get it himself.",
+  "ko": "예언은 그 예언의 당사자만이 선반에서 꺼낼 수 있지, 포터. 그리고 어둠의 왕께서 직접 가지러 오실 수는 당연히 없었으니 말일세.",
+  "plain": "Only the person the prophecy's about can take it off the shelf, Potter, and obviously the Dark Lord couldn't come get it himself.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "a person for whom the prophecy was made",
+    "kind": "격식 구문",
+    "note": "'전치사 + whom' 관계절은 문어체·격식체의 표식입니다. 구어라면 'the person the prophecy was made for'처럼 전치사를 뒤로 보내고 whom을 생략합니다. 영미 공통이며, 말로 하면 교양 있고 거만한 인상을 줍니다.",
+    "examples": [
+     {
+      "en": "The colleague to whom I sent the file has since left.",
+      "ko": "제가 파일을 보냈던 동료는 그 뒤로 퇴사했습니다."
+     },
+     {
+      "en": "This is the client for whom we prepared the proposal.",
+      "ko": "이분이 저희가 제안서를 준비해 드린 고객입니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "certainly couldn't",
+    "kind": "격식·강조",
+    "note": "certainly는 '당연히, 분명히'라는 격식 있는 강조 부사입니다. 일상 구어에서는 obviously, definitely, 'no way'가 더 흔합니다. 영미 공통이며 차분하고 단정적인 인상을 줍니다.",
+    "examples": [
+     {
+      "en": "I certainly won't be paying for that.",
+      "ko": "그 비용은 절대로 제가 내지 않을 겁니다."
+     },
+     {
+      "en": "She certainly knows how to run a meeting.",
+      "ko": "그녀는 회의 진행법을 확실히 알고 있어요."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-018",
+  "speech": "lucius-5-018",
+  "part": 1,
+  "of": 1,
+  "order": 60,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 자신이 이용당했음을 깨달은 해리에게 맞장구치는 상황",
+  "cue_speaker": "Harry",
+  "cue": "So he used me to do his dirty work, did he?",
+  "prev_line": "",
+  "line": "Precisely, Potter.",
+  "ko": "바로 그렇지, 포터.",
+  "plain": "Exactly, Potter.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Precisely",
+    "kind": "격식·동의",
+    "note": "'바로 그렇다'는 동의를 한 단어로 격식 있게 표현한 말입니다. 일상 구어에서는 'Exactly', 'Right', 'That's right'가 훨씬 흔하고, Precisely는 격식체에서 쓰이며 차갑고 단정적인 인상을 줍니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "So you want it done by Friday? Precisely.",
+      "ko": "그러니까 금요일까지 해 달라는 거죠? 바로 그겁니다."
+     },
+     {
+      "en": "That's precisely why I didn't tell him.",
+      "ko": "바로 그래서 그 사람한테 말 안 한 거야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-019",
+  "speech": "lucius-5-019",
+  "part": 1,
+  "of": 1,
+  "order": 61,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 예언의 방. 선반을 무너뜨리고 달아나는 해리 일행을 쫓으라고 외치는 상황",
+  "cue_speaker": "Hermione",
+  "cue": "Stupefy.",
+  "prev_line": "",
+  "line": "Stop them.",
+  "ko": "막아라.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": false,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-5-020",
+  "speech": "lucius-5-020",
+  "part": 1,
+  "of": 1,
+  "order": 62,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 베일의 방. 추격 끝에 해리 일행을 포위하고 예언을 요구하는 상황",
+  "cue_speaker": "Bellatrix",
+  "cue": "There they are.",
+  "prev_line": "",
+  "line": "Your race is run, Potter. Hand it over.",
+  "ko": "자네는 여기까지네, 포터. 넘기게.",
+  "plain": "It's over, Potter. Give it to me.",
+  "tag": "문학",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "Your race is run",
+    "kind": "문학적 관용구",
+    "note": "'네 경주는 끝났다', 즉 '더는 도망칠 곳이 없다'는 뜻의 문학적 표현입니다. 'run one's race'는 성경과 고전 문학에서 온 말로, 현실 대화에서 그대로 쓰면 연극조로 들립니다. 실생활에서는 'It's over', 'You've nowhere left to run'이라고 합니다.",
+    "examples": [
+     {
+      "en": "The old chairman's race is run; the board wants fresh blood.",
+      "ko": "옛 회장의 시대는 끝났어. 이사회는 새 피를 원해."
+     },
+     {
+      "en": "Face it, his race is run. He'll never lead the party again.",
+      "ko": "인정해. 그 사람은 이제 끝났어. 다시는 당을 이끌지 못할 거야."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-021",
+  "speech": "lucius-5-021",
+  "part": 1,
+  "of": 1,
+  "order": 63,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 베일의 방. 친구들을 풀어 주면 넘기겠다는 해리의 조건을 일축하는 상황",
+  "cue_speaker": "Harry",
+  "cue": "Let my friends go and I will.",
+  "prev_line": "",
+  "line": "You are not in a position to negotiate.",
+  "ko": "자네는 협상할 처지가 아니네.",
+  "plain": "You're not the one who gets to make deals here.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": false,
+  "bre": [
+   {
+    "expr": "not in a position to",
+    "kind": "격식·완곡어법",
+    "note": "'~할 처지·입장이 아니다'라는 격식 표현입니다. 거절이나 권한 없음을 직접 말하지 않고 '입장'으로 돌려 말하는 완곡어법으로, 비즈니스 이메일과 관공서 답변에서 매우 흔합니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "I'm afraid I'm not in a position to comment on that yet.",
+      "ko": "죄송하지만 그 건에 대해서는 아직 말씀드릴 입장이 아닙니다."
+     },
+     {
+      "en": "We're not in a position to offer a refund at this stage.",
+      "ko": "현 단계에서는 환불을 해 드릴 수 있는 상황이 아닙니다."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "You are not",
+    "kind": "격식·축약 회피",
+    "note": "구어라면 You're not 또는 You aren't로 줄여 말하지만, 축약하지 않고 또박또박 You are not이라고 하면 권위와 거리감이 생깁니다. 차갑게 단정할 때 쓰는 장치로 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "You are not leaving this room until it's tidy.",
+      "ko": "방 정리 끝날 때까지 못 나간다."
+     },
+     {
+      "en": "I am not prepared to discuss this any further.",
+      "ko": "이 문제는 더 이상 논의할 생각이 없습니다."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-022",
+  "speech": "lucius-5-022",
+  "part": 1,
+  "of": 1,
+  "order": 64,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 베일의 방. 기사단이 나타나 혼전이 벌어진 가운데 해리를 다시 노리는 상황",
+  "cue_speaker": "Sirius",
+  "cue": "Hello, cousin.",
+  "prev_line": "",
+  "line": "Potter.",
+  "ko": "포터.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-5-023",
+  "speech": "lucius-5-023",
+  "part": 1,
+  "of": 1,
+  "order": 65,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 베일의 방. 예언은 깨졌지만 해리라도 볼드모트에게 바치겠다고 위협하는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "We may have lost the prophecy, but I can still deliver you to the Dark Lord.",
+  "ko": "예언은 잃었을지 몰라도, 자네를 어둠의 왕께 데려다 바칠 수는 아직 있지.",
+  "plain": "Okay, so the prophecy's gone, but I can still hand you over to the Dark Lord.",
+  "tag": "격식",
+  "card": true,
+  "minimal": false,
+  "corrected": true,
+  "bre": [
+   {
+    "expr": "We may have lost",
+    "kind": "격식·양보",
+    "note": "'~했을지는 몰라도'라는 양보의 may have + 과거분사입니다. 뒤에 but이 와서 반전을 줍니다. 일상 구어에서는 might have나 'Sure, we lost ~, but'처럼 풀어 말하기도 합니다. 영미 공통의 격식체입니다.",
+    "examples": [
+     {
+      "en": "We may have lost the match, but the team played well.",
+      "ko": "경기는 졌을지 몰라도 팀은 잘 싸웠어."
+     },
+     {
+      "en": "I may have been wrong about the date, but the plan still stands.",
+      "ko": "날짜는 내가 틀렸을지 몰라도 계획은 그대로야."
+     }
+    ],
+    "shared": true
+   },
+   {
+    "expr": "deliver you to",
+    "kind": "격식 어휘",
+    "note": "사람을 '넘기다, 인도하다'를 deliver로 표현하는 격식 어법입니다. 물건을 배달하듯 사람을 다루는 말이라 차갑고 위협적으로 들립니다. 일상에서는 hand you over, take you to라고 합니다. 영미 공통입니다.",
+    "examples": [
+     {
+      "en": "The suspect was delivered to the police the next morning.",
+      "ko": "용의자는 다음 날 아침 경찰에 인도됐습니다."
+     },
+     {
+      "en": "I'll deliver the kids to your mum's by six.",
+      "ko": "애들은 여섯 시까지 장모님 댁에 데려다 놓을게."
+     }
+    ],
+    "shared": true
+   }
+  ]
+ },
+ {
+  "id": "lucius-5-024",
+  "speech": "lucius-5-024",
+  "part": 1,
+  "of": 1,
+  "order": 66,
+  "character": "Lucius",
+  "film": 5,
+  "film_ko": "불사조 기사단",
+  "source": "fan_script",
+  "scene_ko": "마법부 베일의 방. 해리에게 기절 주문을 날리는 상황",
+  "cue_speaker": "",
+  "cue": "",
+  "prev_line": "",
+  "line": "Stupefy.",
+  "ko": "스투페파이.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": true,
+  "corrected": true,
+  "bre": []
+ },
+ {
+  "id": "lucius-7-001",
+  "speech": "lucius-7-001",
+  "part": 1,
+  "of": 1,
+  "order": 67,
+  "character": "Lucius",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "말포이 저택 응접실. 식탁에서 볼드모트가 루시우스를 몰아세우는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "You know our hosts, of course, Severus. Narcissa in particular has been most hospitable. Lucius, on the other hand, is, I fear, burdened by my presence. Are you, Lucius?",
+  "prev_line": "",
+  "line": "My lord?",
+  "ko": "주인님?",
+  "plain": "",
+  "tag": "격식",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-7-002",
+  "speech": "lucius-7-002",
+  "part": 1,
+  "of": 1,
+  "order": 68,
+  "character": "Lucius",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "말포이 저택 응접실. 볼드모트가 루시우스의 지팡이를 요구하며 심문하는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "Do I detect elm?",
+  "prev_line": "",
+  "line": "Yes, my lord.",
+  "ko": "예, 주인님.",
+  "plain": "",
+  "tag": "격식",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-7-003",
+  "speech": "lucius-7-003",
+  "part": 1,
+  "of": 1,
+  "order": 69,
+  "character": "Lucius",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "말포이 저택 응접실. 볼드모트가 루시우스의 지팡이를 요구하며 심문하는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "And the core?",
+  "prev_line": "",
+  "line": "Dragon -- dragon heartstring.",
+  "ko": "용... 용의 심금입니다.",
+  "plain": "",
+  "tag": "일반",
+  "card": false,
+  "minimal": false,
+  "corrected": false,
+  "bre": []
+ },
+ {
+  "id": "lucius-7-004",
+  "speech": "lucius-7-004",
+  "part": 1,
+  "of": 1,
+  "order": 70,
+  "character": "Lucius",
+  "film": 7,
+  "film_ko": "죽음의 성물 1부",
+  "source": "shooting_script",
+  "scene_ko": "말포이 저택 응접실. 볼드모트가 루시우스의 지팡이를 요구하며 심문하는 상황",
+  "cue_speaker": "Voldemort",
+  "cue": "My wand? You can't possibly think I would give you my wand.",
+  "prev_line": "",
+  "line": "No, my lord.",
+  "ko": "아닙니다, 주인님.",
+  "plain": "",
+  "tag": "격식",
+  "card": false,
+  "minimal": true,
+  "corrected": false,
+  "bre": []
+ }
+]

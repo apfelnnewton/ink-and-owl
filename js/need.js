@@ -112,7 +112,7 @@ const hash = s => { let h = 7; for (const ch of s) h = (h * 31 + ch.charCodeAt(0
 const objOf = key => hash(key) % OBJECTS.length;
 export const hiddenCount = () => Object.keys(st().hidden || {}).length;
 export const foundKinds = () => Object.keys(st().found || {}).length;
-const openDecks = () => DECKS.filter(d => d.file && doors.isOpen(d.id));
+const openDecks = () => DECKS.filter(d => d.file && doors.available(d.id));   // the classrooms, the fire and the manor
 
 /* opens the day after the second classroom door: Lupin's letter, and the first pile from the lines missed so far.
    Someone who already studied in two classrooms before today (e.g. doors opened before the room existed) need not

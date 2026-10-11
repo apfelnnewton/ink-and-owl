@@ -29,6 +29,9 @@ function normalise(s){
   if (s.map && typeof s.map === 'object') out.map = s.map;
   if (s.prophet && typeof s.prophet === 'object') out.prophet = s.prophet;
   if (s.need && typeof s.need === 'object') out.need = s.need;
+  if (s.fire && typeof s.fire === 'object') out.fire = s.fire;       // the fireplace in my room: Sirius (fire.js)
+  if (s.manor && typeof s.manor === 'object') out.manor = s.manor;   // work at Malfoy Manor (manor.js)
+  if (Number.isFinite(+s.purse) && +s.purse > 0) out.purse = Math.floor(+s.purse);   // money, in Knuts (manor.js)
   if (s.wrote && typeof s.wrote === 'object') out.wrote = s.wrote;   // expressions used in letters to friends (friends.js): {<cardId#n>: times}
   if (s.decks && typeof s.decks === 'object'){
     for (const [id, d] of Object.entries(s.decks)){
@@ -119,6 +122,9 @@ export function mergeData(text){
   }
   /* doors opened on either device stay open; friends' letters from either device are all kept (the group stays this device's) */
   if (obj.hints) state.hints = {...obj.hints, ...(state.hints || {})};
+  if (obj.fire) state.fire = {...obj.fire, ...(state.fire || {})};
+  if (obj.manor){ const a = state.manor || {}, b = obj.manor; state.manor = (b.days || 0) > (a.days || 0) ? {...a, ...b, seen: {...a.seen, ...b.seen}} : {...b, ...a, seen: {...b.seen, ...a.seen}}; }
+  if (obj.purse) state.purse = Math.max(state.purse || 0, obj.purse);
   /* the wand made more recently wins; Ollivander's note counts as arrived if either device had it */
   if (obj.wand){ const a = state.wand || {}, b = obj.wand; state.wand = (b.d || '') > (a.d || '') ? {...b, note: a.note || b.note} : {...a, note: a.note || b.note}; }
   if (obj.doors){ const d = state.doors || (state.doors = {open: [], first: obj.doors.first || ''}); d.open = [...new Set([...d.open, ...obj.doors.open])]; }

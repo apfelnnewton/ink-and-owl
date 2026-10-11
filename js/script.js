@@ -2,6 +2,7 @@
    spoken just before. Key expressions are underlined; tapping a line reads it aloud (en-GB). Reading only — nothing
    here touches the review schedule. */
 import {DECKS, SPEAKERS, LOCKED, byId} from './decks.js';
+import {available} from './doors.js';
 import * as store from './store.js';
 import * as speech from './speech.js';
 import {findRanges} from './room.js';
@@ -62,7 +63,7 @@ export function initScript(app){
     const d = byId(id) && byId(id).file ? byId(id) : byId('snape');
     if (!deck || deck.id !== d.id) film = 0;
     deck = d;
-    $('#scWho').innerHTML = DECKS.map(x => `<button type="button" data-who="${x.id}" class="${x.id === d.id ? 'on' : ''}${x.file ? '' : ' shut'}" aria-pressed="${x.id === d.id}">${esc(x.ko.replace(/ 교수$/, ''))}</button>`).join('');
+    $('#scWho').innerHTML = DECKS.filter(x => x.place === 'corridor' || available(x.id)).map(x => `<button type="button" data-who="${x.id}" class="${x.id === d.id ? 'on' : ''}${x.file ? '' : ' shut'}" aria-pressed="${x.id === d.id}">${esc(x.ko.replace(/ 교수$/, ''))}</button>`).join('');
     $('#scPhoto').style.backgroundImage = `url("${new URL(`assets/rooms/${d.id}-portrait.webp`, location.href).href}")`;
     try { cards = (await app.loadDeck(d.id)).filter(c => c.card !== false); }
     catch (e){ toast('대본을 불러오지 못했습니다.'); app.go('#/', true); return; }

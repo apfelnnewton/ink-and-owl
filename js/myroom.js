@@ -3,7 +3,9 @@
    (#/me/cabinet/<deck>): one drawer per professor, thirty velvet compartments each. A gift that has arrived sits in
    its compartment, its black ground melting into the velvet; an empty one says how it is earned. The wand box and
    the spellbook (#/me/wand, #/me/spells) come with Ollivander's note and the wand. */
-import {DECKS, byId} from './decks.js';
+import {DECKS, PROFS, BONDED, byId} from './decks.js';
+import * as fire from './fire.js';
+import * as manor from './manor.js';
 import * as bond from './bond.js';
 import * as post from './post.js';
 import * as wand from './wand.js';
@@ -13,10 +15,10 @@ import * as map from './map.js';
 import * as prophet from './prophet.js';
 import * as need from './need.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
-import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper} from './ui.js';
+import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
 /* how each keepsake is earned (bond.js: stage letters, requests, half / all learnt, every tenth tea, every fifteenth letter) */
-const WHEN = n => n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
+const WHEN = (n, d) => d && d.place === 'fire' ? (n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `불 속 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
   n === 10 ? '대사 전부 숙달' : n <= 20 ? `차 ${(n - 10) * 10}번째` : `편지 ${(n - 20) * 15}통째`;
 const img = (id, k) => new URL(`assets/keepsakes/${id}-${k}.webp`, location.href).href;
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -27,7 +29,8 @@ export function initMyRoom(app){
   let deck = null, cabinet = false, view = 'room';
 
   const gifts = id => bond.keepsakes(id);
-  const total = () => DECKS.reduce((s, d) => s + gifts(d.id).length, 0);
+  /* who has a drawer and a side of the journal: the professors, and Sirius once he has come */
+  const friends = () => BONDED.filter(d => d.place === 'corridor' || doors.available(d.id));
 
   /* ---------- the room itself (2026-10-09 user decision): the things in the picture open what they keep — a small
      candle-light on each and its name floating beside it, no boxes; only the post and the Daily Prophet stay as lines
@@ -39,6 +42,8 @@ export function initMyRoom(app){
     {id: 'spells', ko: '주문서', go: '#/me/spells', p: [.64, .536, 't'], w: [.556, .545, 't']},
     {id: 'map', ko: '지도', go: '#/map', p: [.43, .566, 'b'], w: [.445, .598, 'b']},
     {id: 'wand', ko: '지팡이', go: '#/me/wand', p: [.168, .468, 'b'], w: [.224, .405, 'l']},
+    {id: 'fire', ko: '벽난로', go: '#/fire', p: [.128, .625, 'l'], w: [.178, .70, 'l']},
+    {id: 'purse', ko: '동전 주머니', go: '', p: [.875, .56, 'r'], w: [.765, .575, 'r']},
     {id: 'shelf', ko: '선반', go: '#/need/shelf', p: [.875, .36, 'r'], w: [.80, .33, 'r']},
     {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']}
   ];
@@ -47,6 +52,9 @@ export function initMyRoom(app){
     const w = wand.get(), due = spells.dueCount(), kinds = need.foundKinds();
     return {
       journal: '', cabinet: '',
+      /* the grate: Sirius once he has come, and the Floo once the manor has sent its card */
+      fire: fire.isOpen() ? (bond.teaReady('sirius') || !fire.met() ? '누군가 부른다' : '') : manor.isOpen() ? '플루 가루' : null,
+      purse: manor.isOpen() ? '' : null,
       spells: w ? (due ? `복습 ${due}` : '') : null,
       map: map.have() ? '' : null,
       wand: w ? '' : wand.noteArrived() ? '쪽지' : null,
@@ -74,7 +82,8 @@ export function initMyRoom(app){
     $('#meSpots').querySelectorAll('[data-spot]').forEach(b => {
       const t = SPOTS.find(x => x.id === b.dataset.spot), [fx, fy, side] = wide ? t.w : t.p;
       b.className = 'me-spot ' + side;
-      b.style.left = (ox + fx * dw) + 'px'; b.style.top = (oy + fy * dh) + 'px';
+      /* a narrow phone crops the sides of the picture: a thing at its edge keeps its light on the screen */
+      b.style.left = Math.max(26, Math.min(r.width - 26, ox + fx * dw)) + 'px'; b.style.top = (oy + fy * dh) + 'px';
     });
   }
 
@@ -98,7 +107,7 @@ export function initMyRoom(app){
   function drawSpells(){
     const list = spells.all();
     $('#splBody').innerHTML = `<header class="jnl-head"><div><h2 lang="en">The Spellbook</h2><p>주문서 · ${spells.learntList().length} / ${list.length || 21}</p></div></header>` +
-      DECKS.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
+      PROFS.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
         if (spells.isLearnt(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="has"><b lang="en">${esc(sp.name)}</b><span>${esc(sp.ko)}</span>${spells.reviewDue(sp.id) ? '<em>복습할 때</em>' : ''}<i aria-hidden="true">→</i></button></li>`;
         if (spells.isSent(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="wait"><b lang="en">${esc(sp.name)}</b><span>편지가 왔습니다 · 수업 듣기</span><i aria-hidden="true">→</i></button></li>`;
         return `<li class="lock"><b>주문 ${sp.n}</b><span>${doors.isOpen(d.id) ? esc(spells.condition(sp)) + '이 되면 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
@@ -107,20 +116,21 @@ export function initMyRoom(app){
 
   function drawCabinet(){
     const have = new Map(gifts(deck.id).map(k => [k.id, k]));
-    $('#cabWho').innerHTML = DECKS.map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
+    $('#cabWho').innerHTML = friends().map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
       `${esc(d.ko.replace(/ 교수$/, ''))}<small>${gifts(d.id).length}</small></button>`).join('');
+    showTab($('#cabWho'));
     $('#cabName').textContent = deck.tag || deck.who;
-    $('#cabGrid').innerHTML = Array.from({length: 30}, (_, i) => {
+    $('#cabGrid').innerHTML = Array.from({length: bond.keepsakeCount(deck.id) || 30}, (_, i) => {
       const n = i + 1, k = have.get(ID(n)), pos = `${(n * 37) % 100}% ${(n * 61) % 100}%`;
       return k
         ? `<button type="button" class="cab-cell has" data-k="${ID(n)}" style="background-position:${pos}" aria-label="${esc(k.name.ko)}"><img src="${img(deck.id, k.id)}" alt="" loading="lazy" onerror="this.remove()"></button>`
-        : `<button type="button" class="cab-cell" data-k="${ID(n)}" style="background-position:${pos}" aria-label="빈 칸 · ${WHEN(n)}"><span>${WHEN(n)}</span></button>`;
+        : `<button type="button" class="cab-cell" data-k="${ID(n)}" style="background-position:${pos}" aria-label="빈 칸 · ${WHEN(n, deck)}"><span>${WHEN(n, deck)}</span></button>`;
     }).join('');
   }
 
   function openGift(key){
     const k = gifts(deck.id).find(x => x.id === key);
-    if (!k){ const n = +key.slice(1); toast(`아직 빈 칸 · ${deck.ko}에게서 <b>${WHEN(n)}</b>에 받습니다`, 2600, true); return; }
+    if (!k){ const n = +key.slice(1); toast(`아직 빈 칸 · ${deck.ko}에게서 <b>${WHEN(n, deck)}</b>에 받습니다`, 2600, true); return; }
     const b = bond.bondOf(deck.id), m = b.mail.find(x => x.id === key), t = b.keep[key] || (m && m.t);
     openSheet(`<div class="sh-kind"><span>${esc(deck.ko)}의 선물${t ? ' · ' + fmt(t) : ''}</span></div>` +
       `<figure class="lt-gift"><img src="${img(deck.id, key)}" alt=""><figcaption><b lang="en">${esc(k.name.en)}</b><span>${esc(k.name.ko)}</span></figcaption></figure>` +
@@ -131,22 +141,25 @@ export function initMyRoom(app){
   const drunk = id => bond.teasOf(id).filter(t => bond.bondOf(id).teas[t.id] !== undefined);
   const stain = (id, key) => { const n = +key.slice(1), x = (n * 37) % 3, r = (n * 53) % 50 - 25;
     const pos = [['-16px', 'auto', '-12px', 'auto'], ['auto', '-16px', '-8px', 'auto'], ['auto', '-18px', 'auto', '38%']][x];
+    if (byId(id).place !== 'corridor') return '';   // by the fire there is no cup to leave a ring
     return `<img class="jnl-stain" src="assets/journal/stain-${id}.webp" alt="" style="left:${pos[0]};right:${pos[1]};bottom:${pos[2]};top:${pos[3]};transform:rotate(${r}deg)">`; };
   let page = null;
 
   function drawJournal(){
     const list = drunk(deck.id), all = bond.teasOf(deck.id).length || 100, b = bond.bondOf(deck.id);
-    $('#jnlWho').innerHTML = DECKS.map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
-      `${esc(d.ko.replace(/ 교수$/, ''))}<small>${drunk(d.id).length}</small>${bond.teaReady(d.id) ? '<i class="dot" aria-label="차 초대장">✉</i>' : ''}</button>`).join('');
+    $('#jnlWho').innerHTML = friends().map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
+      `${esc(d.ko.replace(/ 교수$/, ''))}<small>${drunk(d.id).length}</small>${bond.teaReady(d.id) ? '<i class="dot" aria-label="초대">✉</i>' : ''}</button>`).join('');
+    showTab($('#jnlWho'));
+    const byFire = deck.place === 'fire';
     if (page){ drawPage(); return; }
     /* a tea invitation not yet taken is clipped to the front of the journal (it is also tucked into the professor's door) */
     const inv = bond.teaReady(deck.id), invCard = inv ? `<button type="button" class="jnl-inv" data-teago="${deck.id}"><i class="clip" aria-hidden="true"></i><i class="seal s-${deck.id}"></i>` +
-      `<span><small>아직 마시지 않은 차${bond.inviteSrc(deck.id) === 'owl' ? ' · 오늘 밤까지' : ''}</small><b lang="en">${esc(inv.title.en)}</b><em>${esc(inv.title.ko)}</em></span><i class="go" aria-hidden="true">→</i></button>` : '';
-    $('#jnlBody').innerHTML = `<header class="jnl-head"><i class="seal s-${deck.id}"></i><div><h2 lang="en">Tea with ${esc(deck.who)}</h2><p>${esc(deck.ko)}와 나눈 차 · ${list.length} / ${all}잔</p></div></header>` + invCard +
+      `<span><small>${byFire ? '불 속에서 부른다' : '아직 마시지 않은 차'}${bond.inviteSrc(deck.id) === 'owl' ? ' · 오늘 밤까지' : ''}</small><b lang="en">${esc(inv.title.en)}</b><em>${esc(inv.title.ko)}</em></span><i class="go" aria-hidden="true">→</i></button>` : '';
+    $('#jnlBody').innerHTML = `<header class="jnl-head"><i class="seal s-${deck.id}"></i><div><h2 lang="en">${byFire ? 'By the fire with' : 'Tea with'} ${esc(deck.who)}</h2><p>${byFire ? `${esc(deck.ko)}와 불가에서 나눈 이야기 · ${list.length} / ${all}번` : `${esc(deck.ko)}와 나눈 차 · ${list.length} / ${all}잔`}</p></div></header>` + invCard +
       (list.length ? `<ol class="jnl-toc">${list.map(t => { const lg = (b.teaLog || {})[t.id];
         return `<li><button type="button" data-tea="${t.id}"><span class="no">${+t.id.slice(1)}</span>` +
           `<span class="tt"><b lang="en">${esc(t.title.en)}</b><small>${esc(t.title.ko)}</small></span><span class="dt">${lg ? fmt(lg.d) : ''}</span></button></li>`; }).join('')}</ol>`
-        : `<p class="jnl-empty">아직 빈 일지입니다. ${esc(deck.ko)}와 차를 마시면 그날의 대화가 여기 한 쪽씩 적힙니다.</p>`) +
+        : `<p class="jnl-empty">아직 빈 일지입니다. ${esc(deck.ko)}와 ${byFire ? '불가에서 이야기를 나누면' : '차를 마시면'} 그날의 대화가 여기 한 쪽씩 적힙니다.</p>`) +
       '';
   }
 
@@ -164,7 +177,7 @@ export function initMyRoom(app){
       `<div class="jnl-bar"><button type="button" data-toc>← 목차</button><span>${i + 1} / ${list.length}</span></div>` +
       `<header class="jnl-phead"><i class="seal s-${deck.id}"></i><div><small>${lg ? fmt(lg.d) : '날짜 기록 없음'}</small><h2 lang="en" id="jnlTtl">${esc(t.title.en)}</h2><p>${esc(t.title.ko)}</p></div></header>` +
       `<p class="jnl-scene">${esc(t.scene.ko)}</p>` +
-      (lg ? '' : '<p class="jnl-note">이 차는 일지를 쓰기 전에 마셔서, 내가 고른 답은 남아 있지 않습니다.</p>') + turns +
+      (lg ? '' : '<p class="jnl-note">이 대화는 일지를 쓰기 전에 나눠서, 내가 고른 답은 남아 있지 않습니다.</p>') + turns +
       `<div class="jnl-turn close"><p class="pf" lang="en">${f(t.close.en)}</p><p class="pk">${f(t.close.ko)}</p></div>` +
       `<nav class="jnl-nav">${prev ? `<button type="button" data-tea="${prev.id}">← ${esc(prev.title.en)}</button>` : '<span></span>'}${next ? `<button type="button" data-tea="${next.id}">${esc(next.title.en)} →</button>` : '<span></span>'}</nav>`;
     $('#jnl').scrollTop = 0;
@@ -187,7 +200,11 @@ export function initMyRoom(app){
   $('#cabWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id) app.go('#/me/cabinet/' + b.dataset.who, true); });
   $('#cabGrid').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) openGift(b.dataset.k); });
   $('#meNews').addEventListener('click', () => app.go('#/prophet'));
-  $('#meSpots').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) app.go(b.dataset.go); });
+  $('#meSpots').addEventListener('click', e => {
+    const b = e.target.closest('[data-go]'); if (!b) return;
+    if (b.dataset.spot === 'purse'){ openSheet(manor.purseSheet()); return; }
+    app.go(b.dataset.go);
+  });
   $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });
   $('#wndBody').addEventListener('click', e => {
     const x = e.target.closest('[data-gl]'); if (x){ gloss(x.dataset.gl); return; }
@@ -196,7 +213,7 @@ export function initMyRoom(app){
   });
   $('#jnlWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id){ page = null; app.go('#/me/journal/' + b.dataset.who, true); } });
   $('#jnlBody').addEventListener('click', e => {
-    const g = e.target.closest('[data-teago]'); if (g){ app.go(`#/letters/${g.dataset.teago}/tea`); return; }
+    const g = e.target.closest('[data-teago]'); if (g){ app.go(byId(g.dataset.teago).place === 'fire' ? '#/fire' : `#/letters/${g.dataset.teago}/tea`); return; }
     const t = e.target.closest('[data-tea]'); if (t){ page = t.dataset.tea; drawPage(); return; }
     if (e.target.closest('[data-toc]')){ page = null; drawJournal(); $('#jnl').scrollTop = 0; }
   });
@@ -207,7 +224,7 @@ export function initMyRoom(app){
   async function show({id, sub}){
     await Promise.all([...DECKS.map(d => bond.load(d.id)), spells.load()]).catch(() => {});
     if (id === 'cabinet'){
-      deck = byId(sub) || DECKS.find(d => gifts(d.id).length) || DECKS[0];
+      deck = friends().find(d => d.id === sub) || friends().find(d => gifts(d.id).length) || DECKS[0];
       mode('cabinet');
       drawCabinet();
       $('#cab').scrollTop = 0;
@@ -222,7 +239,7 @@ export function initMyRoom(app){
       drawSpells();
       $('#spl').scrollTop = 0;
     } else if (id === 'journal'){
-      deck = byId(sub) || DECKS.find(d => drunk(d.id).length) || DECKS[0];
+      deck = friends().find(d => d.id === sub) || friends().find(d => drunk(d.id).length) || DECKS[0];
       page = null;
       mode('journal');
       fitPaper($('#jnlBook'));

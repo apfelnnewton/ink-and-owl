@@ -4,7 +4,7 @@
    A title card underneath names the professor and today's work. */
 import {shade} from './art.js';
 import {keyring} from './art-plus.js';
-import {DECKS, LOCKED, FIRST} from './decks.js';
+import {PROFS, BONDED, LOCKED, FIRST} from './decks.js';
 import {RITUAL_FULL} from './need.js';
 import * as doors from './doors.js';
 import {dismissOwl} from './owl.js';
@@ -22,7 +22,7 @@ const ME = {id: 'me', me: true, who: 'The Guest Room', ko: '내 방', where: '�
 /* the last section: a blank stretch of wall, there once the Room of Requirement has opened (need.js). Walk past it
    three times and a door comes out of the stone. */
 const NEED = {id: 'need', need: true, who: 'A Stretch of Blank Wall', ko: '아무것도 없는 벽', glow: '#C9A86A'};
-const DOORS = [ME, ...DECKS, NEED];
+const DOORS = [ME, ...PROFS, NEED];
 const lastIdx = () => need.isOpen() ? DOORS.length - 1 : DOORS.length - 2;
 const START = 1;                           // the corridor opens on the first professor's door
 
@@ -108,8 +108,8 @@ export function initHome(app){
       }
       else if (st.me){
         /* your own door: what the owls have left and how full the drawers are */
-        const n = bond.unread() + post.unread(), g =DECKS.reduce((s, x) => s + bond.keepsakes(x.id).length, 0), t = DECKS.find(x => bond.teaReady(x.id));
-        stats = `<div><b>${n}</b>새 편지</div><div><b>${g}</b>선물 / ${DECKS.length * 30}</div>`;
+        const n = bond.unread() + post.unread(), g = BONDED.reduce((s, x) => s + bond.keepsakes(x.id).length, 0), t = PROFS.find(x => bond.teaReady(x.id)), all = BONDED.reduce((s, x) => s + (doors.available(x.id) ? bond.keepsakeCount(x.id) || 30 : 0), 0) || PROFS.length * 30;
+        stats = `<div><b>${n}</b>새 편지</div><div><b>${g}</b>선물 / ${Math.max(all, PROFS.length * 30)}</div>`;
         line = [n && '부엉이가 책상 위에 편지를 두고 갔다', t && `<span class="bond tea">${esc(t.ko)}의 차 초대장이 연구실 문틈에 꽂혀 있다</span>`].filter(Boolean).join('<br>');
         label = '방으로 들어가기';
       }

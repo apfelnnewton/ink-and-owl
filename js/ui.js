@@ -66,4 +66,9 @@ export function closeSheet(){
   if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll: true});
 }
 export const isSheetOpen = () => sheetOpen;
+/* a row of names that scrolls sideways: bring the chosen one into view (the row grew past the screen with Sirius and Lucius) */
+export function showTab(nav){
+  const on = nav && nav.querySelector('.on'); if (!on) return;
+  nav.scrollLeft += on.getBoundingClientRect().left - nav.getBoundingClientRect().left - (nav.clientWidth - on.offsetWidth) / 2;
+}
 document.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeSheet(); });
