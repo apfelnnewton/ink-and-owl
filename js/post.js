@@ -111,6 +111,7 @@ function connect(){
   })().catch(e => { connecting = null; throw e; });
   return connecting;
 }
+export const server = () => connect();   // the same connection, for the caretaker's ledger (census.js): {F, db, uid}
 const g = (code, ...p) => fb.F.doc(fb.db, 'groups', code, ...p);
 const col = (code, name) => fb.F.collection(fb.db, 'groups', code, name);
 const OFFLINE = '부엉이 우체국에 닿지 못했습니다. 인터넷 연결을 확인해 주세요.';

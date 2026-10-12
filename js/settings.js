@@ -8,6 +8,7 @@ import * as speech from './speech.js';
 import * as srs from './srs.js';
 import {groupBox} from './friends.js';
 import * as post from './post.js';
+import * as census from './census.js';
 import {$, $$, esc, toast, fitPaper, reduced, openSheet} from './ui.js';
 
 export const APP_VERSION = '1.0.0';
@@ -57,6 +58,7 @@ export function initSettings(app){
     const open = DECKS.filter(d => d.file && (d.place === 'corridor' || available(d.id)));
     $('#fDeck').innerHTML = open.map(d => `<option value="${d.id}">${esc(d.ko)}</option>`).join('');
     $('#fVer').textContent = `앱 ${APP_VERSION} · 데이터 ${app.index ? app.index.version : '—'}`;
+    $('#fLedger').hidden = !census.isMaster();   // the caretaker's ledger: only on a device enrolled for it
     voices(speech.gbVoices());
   }
   function voices(list){

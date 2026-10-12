@@ -2156,3 +2156,28 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ow-pen textarea.paper-p2{background-image:url(../assets/shop/sheet-swamp.webp)}
 .ow-pen textarea.paper-p3{background-image:url(../assets/shop/sheet-howler.webp)}
 @media (prefers-reduced-motion: reduce){ .ink-i1,.ink-i3{animation:none} .ink-i2{animation:none;color:#C2456B !important} }
+
+/* ---------- the caretaker's ledger (census.js), 2026-10-12: one line for each device that has come in — the maker's devices only */
+.led-link{display:block;margin:10px 0 0 auto;min-height:44px;padding:0 2px;background:none;border:0;cursor:pointer;font:italic 15px var(--f-display);color:#7A1A12}
+.led-book{min-height:70vh}
+.led-head h2{margin:0;font:italic 400 calc(26px * var(--k, 1))/1.15 var(--f-display)}
+.led-head p{margin:8px 0 0;font-size:14px;line-height:1.6}
+.led-head .led-sub{margin-top:2px;font-size:12px;color:var(--ink-soft)}
+.led-h{display:flex;align-items:baseline;gap:10px;margin:22px 0 0;padding-bottom:6px;border-bottom:1px solid rgba(60,40,20,.28);font:500 15px var(--f-ko);letter-spacing:.06em;color:#7A1A12}
+.led-h small{font-size:11.5px;letter-spacing:0;color:var(--ink-soft)}
+.led-list{list-style:none;margin:0;padding:0}
+.led-row{padding:12px 0 10px;border-bottom:1px solid rgba(60,40,20,.16)}
+.led-top{display:flex;align-items:baseline;gap:8px}
+.led-top b{font:400 calc(19px * var(--k, 1))/1.2 var(--f-display);min-width:0;overflow-wrap:anywhere}
+.led-top b:not([lang]){font:400 15px var(--f-ko);color:var(--ink-soft)}
+.led-top i{flex:none;font-style:normal;font-size:11px;letter-spacing:.04em;color:#7A1A12}
+.led-top span{flex:none;margin-left:auto;font-size:13px;color:var(--ink-soft);white-space:nowrap}
+.led-row p{margin:4px 0 0;font-size:12.5px;line-height:1.6;color:#4A3B28;word-break:keep-all;overflow-wrap:anywhere}
+.led-row p b{font-weight:500;color:var(--ink)}
+.led-meta .old{color:#9A3A1E}
+.led-has em{font-style:normal;color:var(--ink-soft)}
+.led-strike,.led-again{min-height:44px;margin:0;padding:0 2px;background:none;border:0;cursor:pointer;font-size:12px;color:#8A7A5E;text-decoration:underline;text-decoration-color:rgba(138,122,94,.45);text-underline-offset:3px}
+.led-again{font-size:14px;color:#7A1A12}
+.led-note{margin:18px 0 0;font-size:14px;line-height:1.7;color:#4A3B28}
+.led-word{display:block;width:100%;min-height:48px;margin:6px 0 14px;padding:8px 12px;background:rgba(255,255,255,.4);border:1px solid rgba(60,40,20,.38);border-radius:2px;font:18px var(--f-display);color:var(--ink)}
+#fVer{padding:12px 0 4px;-webkit-user-select:none;user-select:none}

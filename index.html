@@ -438,6 +438,21 @@
   </div>
 </section>
 
+<!-- ============ THE CARETAKER'S LEDGER (census.js): the devices that have come in — for the maker's own devices only ============ -->
+<section id="ledger" class="screen" hidden aria-label="관리인 장부">
+  <div class="bg" aria-hidden="true"><div class="nphoto rec-photo"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="ledBack" aria-label="설정으로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl">The Ledger</div>
+    <div class="cnt"></div>
+  </div>
+  <div class="cab-scroll">
+    <div class="cab-wrap">
+      <article class="jnl-book led-book" id="ledBook"><div class="paperbox"></div><div class="jnl-in" id="ledBody"></div></article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ THE MARAUDER'S MAP (map.js): a blank parchment until it is sworn to ============ -->
 <section id="map" class="screen" hidden aria-label="호그와트 지도">
   <div class="r-top">
@@ -591,6 +606,7 @@
           <div class="row btns"><button type="button" class="wax" id="fWipe">모든 기록 지우고 처음부터</button></div>
         </fieldset>
         <p class="ver" id="fVer"></p>
+        <button type="button" class="led-link" id="fLedger" hidden>관리인 장부 →</button>
       </form>
     </div>
   </div>

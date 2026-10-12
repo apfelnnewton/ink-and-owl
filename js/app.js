@@ -22,6 +22,7 @@ import {initMap} from './map.js';
 import {initFire} from './fire.js';
 import {initManor} from './manor.js';
 import {initTown} from './shops.js';
+import * as census from './census.js';
 import * as shops from './shops.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
@@ -108,7 +109,7 @@ const app = {
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */
@@ -146,7 +147,9 @@ setInterval(() => app.owlCheck(), 30000);
 /* the friends' post office (Firebase) opens only for a phone in a group; a letter landing brings the owl */
 post.onChange(() => { bond.newsLetter().then(() => app.refreshMail()); app.refreshMail(); app.owlCheck(); });
 setTimeout(() => post.start(), 1500);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) app.owlCheck(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden){ app.owlCheck(); census.checkIn(); } });
+/* the caretaker's ledger (census.js): once the day's first screen has settled, this device says it has been here */
+setTimeout(() => census.checkIn(), 9000);
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:'){
   let reg = null;
