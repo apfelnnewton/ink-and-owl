@@ -23,6 +23,7 @@ import {initFire} from './fire.js';
 import {initManor} from './manor.js';
 import {initTown} from './shops.js';
 import * as census from './census.js';
+import * as sync from './sync.js';
 import * as shops from './shops.js';
 import * as wand from './wand.js';
 import * as bond from './bond.js';
@@ -85,6 +86,9 @@ const app = {
     else location.hash = hash;
   },
   refresh(){ screens.home.refresh(); },
+  /* a moment when the page may be reloaded under the reader: the corridor or your room, nothing open, no owl in flight */
+  screen(){ return current; },
+  calm(){ return ['home', 'me'].includes(current) && !isSheetOpen() && !owlBusy() && !app.entering && !!store.get().settings.named; },
   /* the daily owl with a tea invitation: only on calm screens (not mid-lesson), never over an open sheet */
   owlCheck(){
     if (app.entering || howler.playing() || !store.get().settings.named || !['home', 'me', 'letters', 'records'].includes(current) || owlBusy() || isSheetOpen() || document.hidden) return;
@@ -150,6 +154,9 @@ setTimeout(() => post.start(), 1500);
 document.addEventListener('visibilitychange', () => { if (!document.hidden){ app.owlCheck(); census.checkIn(); } });
 /* the caretaker's ledger (census.js): once the day's first screen has settled, this device says it has been here */
 setTimeout(() => census.checkIn(), 9000);
+/* the caretaker's own devices keep one progress between them (sync.js); nothing happens on anyone else's */
+census.useSync(sync);
+sync.init(app);
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:'){
   let reg = null;

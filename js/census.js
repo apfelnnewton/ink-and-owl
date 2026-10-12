@@ -22,9 +22,12 @@ const ago = (a, b = day()) => Math.round((new Date(b) - new Date(a)) / 864e5);
 
 /* the copy of the app this device runs: the name of the service worker's cache (sw.js VERSION) */
 async function version(){ try { return (await caches.keys()).filter(k => /^he-[0-9a-z-]+$/.test(k)).sort().pop() || ''; } catch (e){ return ''; } }
-function device(){
+export function device(){
   const u = navigator.userAgent, touch = navigator.maxTouchPoints > 1;
-  const kind = /iPhone|iPod/.test(u) ? 'iPhone' : /iPad/.test(u) || (/Macintosh/.test(u) && touch) ? 'iPad' : /Android/.test(u) ? 'Android' : /Windows/.test(u) ? 'Windows' : /Macintosh/.test(u) ? 'Mac' : /Linux/.test(u) ? 'Linux' : 'other';
+  /* an iPhone asked for "desktop websites" calls itself a Macintosh, as an iPad does: the two are told apart by the size of the
+     screen (2026-10-12 — the maker's phone stood in the ledger as an iPad) */
+  let small = false; try { small = Math.min(screen.width, screen.height) < 600; } catch (e){}
+  const kind = /iPhone|iPod/.test(u) ? 'iPhone' : /iPad/.test(u) ? 'iPad' : /Macintosh/.test(u) && touch ? (small ? 'iPhone' : 'iPad') : /Android/.test(u) ? 'Android' : /Windows/.test(u) ? 'Windows' : /Macintosh/.test(u) ? 'Mac' : /Linux/.test(u) ? 'Linux' : 'other';
   let home = false; try { home = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e){}
   return kind + (home ? ' app' : '');
 }
@@ -91,6 +94,9 @@ const LV = {low: '하', mid: '중', high: '상'};
 const when = d => { if (!/^\d{4}-\d\d-\d\d$/.test(d || '')) return '—'; const n = ago(d); return n <= 0 ? '오늘' : n === 1 ? '어제' : n < 31 ? `${n}일 전` : `${+d.slice(5, 7)}월 ${+d.slice(8)}일`; };
 const date = d => /^\d{4}-\d\d-\d\d$/.test(d || '') ? `${+d.slice(5, 7)}월 ${+d.slice(8)}일` : '—';
 
+let syncApi = null;
+export const useSync = s => { syncApi = s; };   // sync.js, for the box at the head of the ledger and the first match after enrolling
+
 export function initLedger(app){
   const sec = $('#ledger'), body = $('#ledBody');
   fitPaper($('#ledBook'));
@@ -105,6 +111,15 @@ export function initLedger(app){
       `<p class="led-has">${doors.length ? `문 ${doors.length} <em>${esc(doors.join(' · '))}</em>` : '문을 아직 열지 않음'}${has.length ? ` · ${esc(has.join(' · '))}` : ''}</p>` +
       (r.uid === me ? '' : `<button type="button" class="led-strike" data-strike="${esc(r.uid)}">이 줄 지우기</button>`) + '</li>';
   };
+  /* the caretaker's own devices keep one progress between them (sync.js): where this device stands */
+  const syncBox = () => {
+    if (!syncApi) return '';
+    const s = syncApi.status();
+    return `<section class="led-sync"><h3 class="led-h">내 기기 동기화<small>관리 기기끼리 진도를 저절로 맞춥니다</small></h3>` +
+      `<p>${!s.on ? '연습용 주소에서는 쉽니다.' : s.when ? `마지막으로 맞춘 때 <b>${esc(s.when)}</b>` : '아직 한 번도 맞추지 않았습니다.'}${s.size ? ` · 서버의 사본 ${esc(s.size)}${s.by ? ` · 올린 기기 ${esc(s.by)}` : ''}` : ''}</p>` +
+      (s.note ? `<p class="led-warn">${esc(s.note)}</p>` : '') +
+      (s.on ? `<button type="button" class="led-again" data-sync>지금 맞추기</button>` : '') + '</section>';
+  };
   function draw(){
     if (!data){ body.innerHTML = '<p class="led-note">장부를 펼치는 중…</p>'; return; }
     if (data.error){ body.innerHTML = `<p class="led-note">${esc(data.error)}</p><button type="button" class="led-again" data-again>다시 펼치기</button>`; return; }
@@ -113,7 +128,7 @@ export function initLedger(app){
     const fresh = list.filter(isNew), rest = list.filter(r => !isNew(r)), behind = list.filter(r => r.v && r.v !== latest).length;
     const part = (title, sub, rs) => rs.length ? `<h3 class="led-h">${title}<small>${sub}</small></h3><ol class="led-list">${rs.map(r => row(r, data.uid, latest)).join('')}</ol>` : '';
     body.innerHTML = `<header class="led-head"><h2 lang="en">The Caretaker's Ledger</h2><p>성에 들어온 기기 <b>${list.length}</b>대 · 오늘 연 기기 <b>${list.filter(r => r.last === day()).length}</b>대${behind ? ` · 옛 판 <b>${behind}</b>대` : ''}</p>` +
-      `<p class="led-sub">한 줄이 한 기기입니다. 같은 사람이 폰과 태블릿을 쓰면 두 줄로 보입니다. 최신 판 ${esc(latest || '—')}</p></header>` +
+      `<p class="led-sub">한 줄이 한 기기입니다. 같은 사람이 폰과 태블릿을 쓰면 두 줄로 보입니다. 최신 판 ${esc(latest || '—')}</p></header>` + syncBox() +
       part('새 얼굴', '처음 온 지 이레가 안 된 기기', fresh) + part('드나드는 기기', '마지막으로 연 날 순서', rest) +
       (list.length ? '' : '<p class="led-note">아직 아무도 적히지 않았습니다. 새 판을 받은 기기가 앱을 열면 한 줄씩 생깁니다.</p>');
   }
@@ -129,6 +144,8 @@ export function initLedger(app){
   }
   body.addEventListener('click', async e => {
     if (e.target.closest('[data-again]')){ load(); return; }
+    const sy = e.target.closest('[data-sync]');
+    if (sy){ if (sy.disabled || !syncApi) return; sy.disabled = true; sy.textContent = '맞추는 중…'; await syncApi.run(); if (!sec.hidden) draw(); return; }
     const b = e.target.closest('[data-strike]'); if (!b || !data || !data.list) return;
     const r = data.list.find(x => x.uid === b.dataset.strike); if (!r) return;
     if (!confirm(`${r.name || '이름 없는 기기'} (${r.dev || '기기'})의 줄을 장부에서 지웁니다. 그 기기가 앱을 다시 열면 새 줄이 생깁니다. 지울까요?`)) return;
@@ -154,7 +171,7 @@ export function initLedger(app){
     const b = e.target.closest('[data-led-enroll]'); if (!b || b.disabled) return;
     const w = ($('#ledWord') || {}).value || ''; if (!w.trim()) return;
     b.disabled = true; b.textContent = '확인하는 중…';
-    try { await enroll(w); closeSheet(); line(); app.go('#/ledger'); }
+    try { await enroll(w); closeSheet(); line(); if (syncApi) syncApi.run(); app.go('#/ledger'); }
     catch (err){
       b.disabled = false; b.textContent = '등록';
       toast(/permission|insufficient/i.test(String(err && err.code || '') + String(err && err.message || '')) ? '암호가 맞지 않거나, 보안 규칙이 아직 게시되지 않았습니다.' : '서버에 닿지 못했습니다. 인터넷 연결을 확인해 주세요.', 3200);

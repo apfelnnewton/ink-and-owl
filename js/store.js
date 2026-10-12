@@ -3,7 +3,7 @@
     decks:{<id>:{cards:{<cardId>:{i, d, g, st, t, m, h}}, day:{date, queue, kinds, pos, results, extra, wrong}}}}
    i = interval in days, d = next review date (YYYY-MM-DD), g = last grade (again | hard | good | learn), st = ladder rung,
    t = last date it was answered, m / h = how many times it was missed / nearly right. log feeds the register (records.js).
-   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js), howl (howler.js), spells (spells.js), map (map.js), prophet (prophet.js), need (need.js), wrote (friends.js), census (census.js). A key not copied in normalise() is lost on reload. */
+   Also: bond / bondDay (bond.js), doors (doors.js), friends (post.js), hints (hints.js), wand (wand.js), howl (howler.js), spells (spells.js), map (map.js), prophet (prophet.js), need (need.js), wrote (friends.js), census (census.js), sync / stamp / cleared (sync.js and mergeData below). A key not copied in normalise() is lost on reload. */
 const KEY = 'hogwarts-english:v1';
 
 export const DEFAULT_SETTINGS = {newPerDay: 5, reviewCap: 30, koFront: false, autoRead: false, prior: true, howler: true, voice: '', surname: '', firstName: '', title: '', named: false, birthday: '', level: 'mid', quiet: false, door: false, doorWord: ''};
@@ -33,7 +33,10 @@ function normalise(s){
   if (s.manor && typeof s.manor === 'object') out.manor = s.manor;   // work at Malfoy Manor (manor.js)
   if (Number.isFinite(+s.purse) && +s.purse > 0) out.purse = Math.floor(+s.purse);   // money, in Knuts (manor.js)
   if (s.shop && typeof s.shop === 'object') out.shop = s.shop;   // the paper bag and the presents sent (shops.js)
-  if (s.census && typeof s.census === 'object') out.census = s.census;   // what this device last told the caretaker's ledger (census.js)
+  if (s.census && typeof s.census === 'object') out.census = s.census;
+  if (s.sync && typeof s.sync === 'object') out.sync = s.sync;         // where this device stands with the caretaker's other devices (sync.js)
+  if (s.stamp && typeof s.stamp === 'object') out.stamp = s.stamp;     // when the stars, the purse, the bag, the hidden room last changed here
+  if (s.cleared && typeof s.cleared === 'object') out.cleared = s.cleared;   // decks wiped on purpose, and the day: {<deckId>: date}   // what this device last told the caretaker's ledger (census.js)
   if (s.wrote && typeof s.wrote === 'object') out.wrote = s.wrote;   // expressions used in letters to friends (friends.js): {<cardId#n>: times}
   if (s.decks && typeof s.decks === 'object'){
     for (const [id, d] of Object.entries(s.decks)){
@@ -79,7 +82,14 @@ export function importData(text){
   return '';
 }
 
-export function resetDeck(id){ delete state.decks[id]; save(); }
+/* a deck wiped on purpose is remembered with its day, so that another of the caretaker's devices does not hand the old cards back */
+const dayNow = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+export function resetDeck(id){ delete state.decks[id]; (state.cleared || (state.cleared = {}))[id] = dayNow(); save(); }
+/* the progress as another of the caretaker's devices should receive it: not this device's settings, its place in a friends' group,
+   or its own book-keeping with the server */
+export function syncable(){ const {settings, friends, census, sync, ...rest} = state; return rest; }
+let joinedAny = false;
+export const mergedByJoining = () => joinedAny;   // the last merge had to join two copies of something stamped: the result is news to the other device too
 /* everything gone: progress, letters, teas, gifts, doors, friends' letters, the name (settings.js asks first) */
 export function wipe(){ state = fresh(); try { localStorage.removeItem(KEY); } catch (e){} }
 
@@ -92,13 +102,28 @@ export function mergeData(text){
   if (!Object.keys(obj.decks).length && !Object.keys(obj.log).length) return '이 앱에서 보낸 진도 파일이 아닙니다.';
   const newer = (a, b) => (a.t || '') !== (b.t || '') ? (a.t || '') > (b.t || '') : (a.d || '') > (b.d || '');
   let cards = 0;
+  /* Stamps (sync.js sets them when the thing changes on a device): where both copies carry one, the more recently changed copy is
+     taken whole — so that money spent, a thing given or found, a star removed stays so. Where either has none, the joining rules
+     below, as for a file carried by hand. */
+  const ms = state.stamp || (state.stamp = {}), os = obj.stamp || {};
+  joinedAny = false;
+  const whole = k => { if (!(os[k] && ms[k])) return 0; if (os[k] > ms[k]){ ms[k] = os[k]; return 1; } return -1; };   // 1 theirs · -1 mine · 0 join
+  const joined = k => { if (os[k]){ ms[k] = Date.now(); joinedAny = true; } };
+  /* a deck wiped on purpose on either device stays wiped: cards from before that day are dropped, on whichever side they are */
+  const mcl = state.cleared || (state.cleared = {}), ocl = obj.cleared || {}, cut = {};
+  for (const id of new Set([...Object.keys(mcl), ...Object.keys(ocl)])){
+    const a = mcl[id] || '', b = ocl[id] || '';
+    if (b > a){ mcl[id] = b; const md = state.decks[id]; if (md){ for (const [cid, c] of Object.entries(md.cards)) if ((c.t || '') <= b) delete md.cards[cid]; if (md.day && md.day.date <= b) md.day = null; } }
+    else if (a > b) cut[id] = a;
+  }
   for (const [id, od] of Object.entries(obj.decks)){
     const md = deck(id);
     for (const [cid, oc] of Object.entries(od.cards)){
+      if (cut[id] && (oc.t || '') <= cut[id]) continue;
       const mc = md.cards[cid];
       if (!mc || newer(oc, mc)){ md.cards[cid] = oc; cards++; }
     }
-    const a = md.day, b = od.day;
+    const a = md.day, b = cut[id] && od.day && od.day.date <= cut[id] ? null : od.day;
     if (b && (!a || b.date > a.date || (b.date === a.date && (b.pos || 0) > (a.pos || 0)))) md.day = b;
   }
   for (const [date, decks] of Object.entries(obj.log)){
@@ -108,7 +133,7 @@ export function mergeData(text){
       for (const [k, v] of Object.entries(o)) m[k] = Math.max(m[k] || 0, +v || 0);
     }
   }
-  Object.assign(state.stars, obj.stars);
+  { const w = whole('stars'); if (w === 1) state.stars = obj.stars || {}; else if (w === 0){ Object.assign(state.stars, obj.stars); joined('stars'); } }
   for (const [k, v] of Object.entries(obj.wrote || {})){ const w = state.wrote || (state.wrote = {}); w[k] = Math.max(w[k] || 0, +v || 0); }
   /* the professors: keep the closer relationship, and every piece of post either device received */
   for (const [id, ob] of Object.entries(obj.bond || {})){
@@ -126,15 +151,49 @@ export function mergeData(text){
   if (obj.hints) state.hints = {...obj.hints, ...(state.hints || {})};
   if (obj.fire) state.fire = {...obj.fire, ...(state.fire || {})};
   if (obj.manor){ const a = state.manor || {}, b = obj.manor; state.manor = (b.days || 0) > (a.days || 0) ? {...a, ...b, seen: {...a.seen, ...b.seen}} : {...b, ...a, seen: {...b.seen, ...a.seen}}; }
-  if (obj.purse) state.purse = Math.max(state.purse || 0, obj.purse);
+  { const w = whole('purse'); if (w === 1){ if (obj.purse) state.purse = obj.purse; else delete state.purse; } else if (w === 0){ if (obj.purse) state.purse = Math.max(state.purse || 0, obj.purse); joined('purse'); } }
   /* the shops: whichever device has sent more presents keeps its bag and its tallies (adding two bags would double what was bought once) */
-  if (obj.shop){ const tot = x => Object.values((x || {}).n || {}).reduce((a, n) => a + n, 0); if (!state.shop || tot(obj.shop) > tot(state.shop)) state.shop = {...obj.shop, open: (state.shop || {}).open || obj.shop.open}; }
+  { const w = whole('shop');
+    if (w === 1){ if (obj.shop) state.shop = obj.shop; }
+    else if (w === 0){ if (obj.shop){ const tot = x => Object.values((x || {}).n || {}).reduce((a, n) => a + n, 0); if (!state.shop || tot(obj.shop) > tot(state.shop)) state.shop = {...obj.shop, open: (state.shop || {}).open || obj.shop.open}; } joined('shop'); } }
   /* the wand made more recently wins; Ollivander's note counts as arrived if either device had it */
   if (obj.wand){ const a = state.wand || {}, b = obj.wand; state.wand = (b.d || '') > (a.d || '') ? {...b, note: a.note || b.note} : {...a, note: a.note || b.note}; }
   if (obj.doors){ const d = state.doors || (state.doors = {open: [], first: obj.doors.first || ''}); d.open = [...new Set([...d.open, ...obj.doors.open])]; }
   if (obj.friends){
     const fr = state.friends || (state.friends = {...obj.friends, mail: []}), have = new Set(fr.mail.map(m => m.id));
     fr.mail.push(...obj.friends.mail.filter(m => !have.has(m.id)));
+  }
+  /* what came after this function was first written, and so was left behind on the other device (2026-10-12): the spells
+     learnt, the map, the issues of the Prophet, the Room of Requirement, the Howlers already sent */
+  if (obj.spells){
+    const a = state.spells || (state.spells = {sent: {}, learnt: {}}), b = obj.spells;
+    a.sent = a.sent || {}; a.learnt = a.learnt || {};
+    for (const [id, d] of Object.entries(b.sent || {})) if (!a.sent[id] || d < a.sent[id]) a.sent[id] = d;
+    for (const [id, r] of Object.entries(b.learnt || {})){ const m = a.learnt[id]; if (!m || (+r.i || 0) > (+m.i || 0) || ((+r.i || 0) === (+m.i || 0) && (r.due || '') > (m.due || ''))) a.learnt[id] = r; }   // the further along of the two
+    if ((b.day || '') > (a.day || '')) a.day = b.day;
+  }
+  if (obj.map && obj.map.got && !(state.map || {}).got) state.map = {...obj.map};
+  if (obj.prophet && Array.isArray(obj.prophet.got)){
+    const p = state.prophet || (state.prophet = {got: []}); if (!Array.isArray(p.got)) p.got = [];
+    for (const it of obj.prophet.got){
+      const m = p.got.find(x => x.n === it.n);
+      if (!m) p.got.push(it); else { m.read = m.read || it.read; if (m.puz === undefined && it.puz !== undefined) m.puz = it.puz; }   // an issue is kept as this device received it
+    }
+    p.got.sort((x, y) => x.n - y.n);
+  }
+  const wn = whole('need');
+  if (wn === 1){ if (obj.need) state.need = obj.need; }
+  else if (wn === 0 && obj.need){
+    const a = state.need || (state.need = {hidden: {}, found: {}}), b = obj.need;
+    a.hidden = a.hidden || {}; a.found = a.found || {};
+    for (const k of ['ready', 'open', 'round']) if (!a[k] && b[k]) a[k] = b[k];
+    for (const [k, n] of Object.entries(b.found || {})) a.found[k] = Math.max(+a.found[k] || 0, +n || 0);
+    for (const [k, h] of Object.entries(b.hidden || {})) if (!a.hidden[k]) a.hidden[k] = h;   // a thing found on one device only may have to be found once more
+    joined('need');
+  }
+  if (obj.howl && (obj.howl.last || '') > ((state.howl || {}).last || '')){
+    const n = {...((state.howl || {}).n || {})}; for (const [k, v] of Object.entries(obj.howl.n || {})) n[k] = Math.max(+n[k] || 0, +v || 0);
+    state.howl = {...obj.howl, n};
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = obj.streak;
   save();
