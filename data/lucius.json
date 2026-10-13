@@ -13,7 +13,7 @@
   "cue_speaker": "Draco",
   "cue": "Look. Potter, you've got yourself a girlfriend.",
   "prev_line": "",
-  "line": "Now, Draco, play nicely. Mr. Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
+  "line": "Now, Draco, play nicely. Mr Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
   "ko": "자, 드레이코, 얌전히 굴거라. 포터 군. 루시우스 말포이라네. 드디어 만나는군. 실례지만, 자네 흉터는 전설이지.",
   "plain": "Okay, Draco, be nice. Mr. Potter. I'm Lucius Malfoy. Finally, we meet. Sorry, but that scar of yours is famous.",
   "tag": "격식",
@@ -22,12 +22,12 @@
   "corrected": true,
   "bre": [
    {
-    "expr": "Mr. Potter",
+    "expr": "Mr Potter",
     "kind": "호칭",
-    "note": "열두 살 소년을 성(姓)에 Mr.를 붙여 부르는 격식 호칭입니다. 겉으로는 예의를 차리면서 거리를 두고 상대를 평가하는 느낌을 줍니다. 호칭 자체는 영미 공통이며, 호그와트처럼 교사가 학생을 Mr/Miss + 성으로 부르는 관행은 영국 사립학교 전통에서 두드러집니다.",
+    "note": "열두 살 소년을 성(姓)에 Mr를 붙여 부르는 격식 호칭입니다. 겉으로는 예의를 차리면서 거리를 두고 상대를 평가하는 느낌을 줍니다. 호칭 자체는 영미 공통이며, 호그와트처럼 교사가 학생을 Mr/Miss + 성으로 부르는 관행은 영국 사립학교 전통에서 두드러집니다. 표기는 영국식이 마침표 없는 Mr, 미국식이 Mr.이다.",
     "examples": [
      {
-      "en": "Mr. Davies, would you care to explain why your essay is late?",
+      "en": "Mr Davies, would you care to explain why your essay is late?",
       "ko": "데이비스 군, 에세이가 늦은 이유를 설명해 보겠나?"
      },
      {
@@ -68,7 +68,7 @@
   "scene_ko": "플러리시 앤 블러츠 서점. 드레이코를 말리며 해리에게 처음 인사하는 루시우스",
   "cue_speaker": "",
   "cue": "",
-  "prev_line": "Now, Draco, play nicely. Mr. Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
+  "prev_line": "Now, Draco, play nicely. Mr Potter. Lucius Malfoy. We meet at last. Forgive me, your scar is legend.",
   "line": "As, of course, is the wizard who gave it to you.",
   "ko": "물론, 그 흉터를 남긴 마법사도 전설이지만 말일세.",
   "plain": "And so is the wizard who gave it to you, of course.",
@@ -258,7 +258,7 @@
   "film_ko": "비밀의 방",
   "source": "transcript",
   "scene_ko": "서점. 아이들을 데리고 나가려는 아서 위즐리를 비웃으며 붙잡는 루시우스",
-  "cue_speaker": "Mr. Weasley",
+  "cue_speaker": "Mr Weasley",
   "cue": "Children, It's mad in here, let's go outside.",
   "prev_line": "",
   "line": "Well, well, well, Weasley Senior.",
@@ -275,7 +275,7 @@
     "note": "성 뒤에 Senior를 붙여 '아버지 쪽 위즐리'를 가리키는 격식 호칭입니다. 원래 부자가 같은 이름일 때 구분하는 용법인데, 여기서는 일부러 사무적으로 불러 아버지로서의 아서를 비꼽니다. 영미 공통 표현이지만 이런 식의 냉소적 활용은 영국 격식체 느낌이 강합니다.",
     "examples": [
      {
-      "en": "I spoke to Mr. Clarke Senior; his son wasn't in.",
+      "en": "I spoke to Mr Clarke Senior; his son wasn't in.",
       "ko": "클라크 씨 아버님과 얘기했어요. 아드님은 안 계셨고요."
      },
      {
@@ -298,7 +298,7 @@
   "film_ko": "비밀의 방",
   "source": "transcript",
   "scene_ko": "서점. 아서 위즐리의 박봉과 머글 애호를 정중한 말투로 모욕하는 루시우스",
-  "cue_speaker": "Mr. Weasley",
+  "cue_speaker": "Mr Weasley",
   "cue": "Lucius.",
   "prev_line": "",
   "line": "Busy time at the Ministry, Arthur, all those raids?",
@@ -466,7 +466,7 @@
   "film_ko": "비밀의 방",
   "source": "transcript",
   "scene_ko": "서점. 머글 가족과 어울리는 아서를 보고 경멸을 던지고 떠나는 루시우스",
-  "cue_speaker": "Mr. Weasley",
+  "cue_speaker": "Mr Weasley",
   "cue": "We have a very different idea about what disgraces the name of wizard, Malfoy .",
   "prev_line": "",
   "line": "Clearly, associating with Muggles. And I thought your family could sink no lower. I'll see you at work.",
@@ -1157,7 +1157,7 @@
       "ko": "보고서는 읽어 보셨겠지요?"
      },
      {
-      "en": "Dr. Walsh, I presume?",
+      "en": "Dr Walsh, I presume?",
       "ko": "월시 박사님이시지요?"
      }
     ],
@@ -1223,9 +1223,9 @@
   "source": "transcript",
   "scene_ko": "교장실. 덤블도어의 경고를 흘려듣고 해리를 비꼬는 루시우스",
   "cue_speaker": "Dumbledore",
-  "cue": "Fortunately, our young Mr. Potter discovered it. One hopes that no more of Lord Voldemort's old school things should find their way into innocent hands. The consequences for the one responsible would be severe.",
+  "cue": "Fortunately, our young Mr Potter discovered it. One hopes that no more of Lord Voldemort's old school things should find their way into innocent hands. The consequences for the one responsible would be severe.",
   "prev_line": "",
-  "line": "Well, let's just hope that Mr. Potter will always be around to save the day.",
+  "line": "Well, let's just hope that Mr Potter will always be around to save the day.",
   "ko": "뭐, 포터 군이 언제까지나 곁에 있다가 위기에서 구해 주기만을 바랍시다.",
   "plain": "Well, let's hope Potter's always gonna be there to come to the rescue.",
   "tag": "격식",
@@ -1319,7 +1319,7 @@
   "source": "transcript",
   "scene_ko": "복도. 일기장을 들고 쫓아온 해리에게 모르는 척 시치미 떼는 루시우스",
   "cue_speaker": "Harry",
-  "cue": "Mr. Malfoy! Mr. Malfoy! I have something of yours.",
+  "cue": "Mr Malfoy! Mr Malfoy! I have something of yours.",
   "prev_line": "",
   "line": "Mine? I don't know what you're talking about.",
   "ko": "내 것이라니? 무슨 소린지 모르겠군.",
@@ -1892,7 +1892,7 @@
   "film_ko": "불사조 기사단",
   "source": "fan_script",
   "scene_ko": "마법부 복도. 청문회에서 풀려난 해리가 퍼지와 함께 있던 루시우스와 마주친 상황",
-  "cue_speaker": "Mr. Weasley",
+  "cue_speaker": "Mr Weasley",
   "cue": "Ah...yes...I'm afraid we had a bit of a row. He, well, he sided with Fudge and the rest of us sided with Dumbledore, so Percy left.",
   "prev_line": "",
   "line": "Well, well, if it isn't Patronus Potter.",

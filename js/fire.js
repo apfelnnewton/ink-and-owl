@@ -175,7 +175,7 @@ export function initFire(app){
       line = `<span class="pick">시리우스가 이야기를 청한다</span><span class="q" lang="en">${esc(bond.fill(iv.en))}</span><span class="k">${esc(bond.fill(iv.ko))}</span>`; stats = '';
       main = go(`이야기를 나눈다 · <span lang="en">${esc(t.title.en)}</span>`, 'data-talk') + main.replace('class="cgo "', 'class="cgo me-second"');
     }
-    put(who, stats, line, main + flooLine() + link);
+    put(who, stats, line, main + flooLine() + link + (L && L.g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : ''));
   }
   /* nobody in the fire: he can be called (once he has come to this fire at all); the jar stands on the hearth */
   function drawQuiet(){

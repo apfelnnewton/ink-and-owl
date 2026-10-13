@@ -67,16 +67,22 @@ srs.hooks.push(ev => {
 });
 
 /* ---------- each day: the scrap that opens the room; scribbles in the study; taunts when the chair stays empty */
+/* Her scrap, tucked into the cabinet: the door opens. Asked when the app starts (daily) and at the moment the second day's work in
+   the study is finished (manor.js) — until 2026-10-13 only at the start, so a guest who had done the work saw nothing until the
+   app happened to be opened afresh. → true if the door opened just now. */
+export function arrive(){
+  const m = st(), s = store.get(), mm = s.manor || {};
+  if (m.open) return false;
+  const force = new URLSearchParams(location.search).has('bella');
+  if (!s.settings.named || !mm.open || !(force || (mm.days || 0) >= 2)) return false;
+  if (!bond.loaded(ID) || !bond.postItem(ID, 'INTRO')) return false;
+  m.open = srs.today(); m.from = mm.days || 0;
+  store.save();
+  return true;
+}
 export function daily(){
-  const m = st(), s = store.get(), t = srs.today(), mm = s.manor || {};
-  if (!m.open){
-    const force = new URLSearchParams(location.search).has('bella');
-    if (!s.settings.named || !mm.open || !(force || (mm.days || 0) >= 2)) return;
-    if (!bond.postItem(ID, 'INTRO')) return;
-    m.open = t; m.from = mm.days || 0;
-    store.save();
-    return;
-  }
+  const m = st(), t = srs.today(), mm = store.get().manor || {};
+  if (!m.open){ arrive(); return; }
   nameCheck();
   const b = bond.bondOf(ID); if (!bond.loaded(ID)) return;
   if (b.days) bond.postItem(ID, 'K01');   // the ink comes with the first day's note

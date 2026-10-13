@@ -197,9 +197,9 @@
   "corrected": false,
   "bre": [
    {
-    "expr": "Mr. Finnigan",
+    "expr": "Mr Finnigan",
     "kind": "호칭",
-    "note": "교사가 학생을 Mr/Miss + 성으로 부르는 격식 호칭이다. 거리를 두면서도 학생을 어른처럼 대우하는 느낌을 준다. 영국식 표기에서는 Mr 뒤에 마침표를 찍지 않는다(이 대본은 미국식 표기).",
+    "note": "교사가 학생을 Mr/Miss + 성으로 부르는 격식 호칭이다. 거리를 두면서도 학생을 어른처럼 대우하는 느낌을 준다. 영국식 표기에서는 Mr 뒤에 마침표를 찍지 않는다.",
     "examples": [
      {
       "en": "Thank you, Mr Clarke, that will do.",

@@ -7,7 +7,7 @@
    lies on the salver beside them (C01–C12, kept in the post under his name). No bond: he does not make friends.
    He sends for the guest once they have a wand and three professors' doors open (a card by owl, CARD).
    The drawing room (Bellatrix) stays shut until its own work is written.
-   state.manor = {open: date, days, pay: {d, s, v}, insp: {<object>: {d, ok}}, cur: <object under inspection>}
+   state.manor = {open: date, days, pay: {d, s, v}, insp: {<object>: {d, ok}}, cur: <object under inspection>, shown: <the last object he brought out with a word>}
    state.purse = money in Knuts (1 Galleon = 17 Sickles = 493 Knuts)      ?manor in the address sends the card at once */
 import {byId, PROFS} from './decks.js';
 import * as store from './store.js';
@@ -70,8 +70,9 @@ export const inspecting = () => { const d = bond.loaded(ID), o = d && d.objects.
 /* his verdict on the last inspection, for the end of the day's work (report.js) */
 export function verdict(){
   const m = st(), d = bond.loaded(ID), r = (m.insp || {})[m.cur]; if (!d || !r) return null;
-  const set = d.inspect[r.ok ? 'pass' : 'fail'];
-  return {ok: r.ok, name: (inspecting() || {}).name, ...set[hash(r.d + m.cur) % set.length]};
+  const set = d.inspect[r.ok ? 'pass' : 'fail'], o = inspecting() || {};
+  /* a thing that passes has his word on that thing (2026-10-13); the three general verdicts serve where there is none */
+  return {ok: r.ok, name: o.name, ...(r.ok && o.done ? o.done : set[hash(r.d + m.cur) % set.length])};
 }
 /* today's wages, in his words */
 export function wages(){
@@ -101,6 +102,7 @@ srs.hooks.push(ev => {
     earn(s * SICKLE);
     m.pay = {d: t, s, v: m.days};
     if (m.days % CARD_EVERY === 0){ const k = 'C' + pad2(m.days / CARD_EVERY); if (bond.postItem(ID, k)) m.pay.card = k; }
+    bella.arrive();   // the day's work that makes it two: her scrap is in the cabinet by the time the guest is back in the study
   }
 });
 
@@ -189,8 +191,24 @@ export function initManor(app){
       scrap() && '<span class="bond">유리장 문틈에 쪽지 한 장이 꽂혀 있다</span>'].filter(Boolean).join('');
     $('#mnLine').innerHTML = line; $('#mnLine').hidden = !line;
     $('#mnGo').innerHTML = (done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('일 시작하기', `data-to="#/room/${ID}"`)) +
-      (w ? `<button type="button" class="clink" data-to="#/report/${ID}">오늘 한 일 보기</button>` : '');
+      (w ? `<button type="button" class="clink" data-to="#/report/${ID}">오늘 한 일 보기</button>` : '') +
+      (g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : '');
     spots({cabinet: scrap() ? '쪽지' : ready.length ? '검수' : '', salver: w ? `${w.s}시클` : ''});
+    bringOut(objs);
+  }
+  /* A thing is brought out of the cabinet: the first time the study is entered with a new thing on the desk, he says his word on it
+     — the thing and its name are seen here for the first time (the cabinet does not show what is still to come). Once for each
+     thing (state.manor.shown = the number of the last one shown); his word stays on the thing's slip in the cabinet. Not put on the
+     card of the study: that card must stay short, clear of the salver (tried there, 2026-10-13 — it ran over the desk). */
+  function bringOut(objs){
+    const m = st(), o = objs.find(x => x.state === 'new' || x.state === 'work');
+    if (!o || o.state !== 'new' || !o.out || !o.name || (m.shown || 0) >= o.id || view !== 'study' || sec.hidden || isSheetOpen()) return;
+    m.shown = o.id; store.save();
+    openSheet(`<div class="sh-kind"><span>유리장 · ${o.id}번째 물건</span><span>루시우스가 꺼내 놓는다</span></div>` +
+      `<figure class="lt-gift mn-fig new"><img src="${art(o.id)}" alt=""><figcaption><b lang="en">${esc(o.name.en)}</b><span>${esc(o.name.ko)}</span></figcaption></figure>` +
+      `<div class="tea-say"><p class="en" lang="en" id="shTitle">${esc(o.out.en)}</p><p class="ko">${esc(o.out.ko)}</p></div>` +
+      `<p class="mn-how">이 물건이 들은 말은 ${o.total}줄.</p>` +
+      `<button type="button" class="sh-drill" data-go="#/room/${ID}">일 시작하기</button>`);
   }
 
   /* the drawing room: Bellatrix dictates. Her first words in beats; then the day's dictation, a talk when she starts one,
@@ -223,23 +241,28 @@ export function initManor(app){
     /* Occlumency is taught in this room: once her note about it has come, the way in is here too */
     const sps = store.get().spells || {};
     const oc = (sps.sent || {}).occlumency ? `<button type="button" class="clink" data-to="#/spell/occlumency">${(sps.learnt || {}).occlumency ? '마음 닫기 · 문을 다시 닫아 본다' : '마음 닫기 · 그녀에게 배운다'}</button>` : '';
-    put(stats, line, main + link + oc);
+    put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : ''));
   }
 
   /* the glass cabinet: the seven objects, each with how far its cleaning has come */
+  const NUM = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'];
   const STATE = o => ({new: '아직 손대지 않았다', work: `닦는 중 · ${o.seen} / ${o.total}`, ready: '검수를 기다린다', wait: '내일 다시 검수', done: '내력표를 붙였다'})[o.state];
   function drawCabinet(){
     photo(ID);
     $('#mnTtl').textContent = 'The Glass Cabinet';
     const objs = objects(cardsOf());
+    /* what is still to come is not shown — neither the thing nor its name (user, 2026-10-13): the cabinet holds what has been cleaned
+       and the one thing now on the desk; of the rest, only how many */
+    const now = objs.find(o => o.state === 'new' || o.state === 'work'), shown = objs.filter(o => !(o.state === 'new' && now && o.id > now.id)), later = objs.length - shown.length;
     $('#mnGrid').innerHTML = (scrap() ? '<li><button type="button" class="mn-obj mn-scrap" data-to-note><span class="tx"><b lang="en">A scrap of paper</b><em>유리장 문틈에 꽂힌 쪽지</em><small>루시우스의 글씨가 아니다</small></span></button></li>' : '') +
-      objs.map(o => `<li><button type="button" class="mn-obj ${o.state}" data-obj="${o.id}">` +
+      shown.map(o => `<li><button type="button" class="mn-obj ${o.state}" data-obj="${o.id}">` +
       `<span class="pic"><img src="${art(o.id)}" alt="" loading="lazy"></span>` +
-      `<span class="tx"><b lang="en">${esc((o.name || {}).en || '')}</b><em>${esc((o.name || {}).ko || '')}</em><small>${esc(STATE(o))}</small></span></button></li>`).join('');
+      `<span class="tx"><b lang="en">${esc((o.name || {}).en || '')}</b><em>${esc((o.name || {}).ko || '')}</em><small>${esc(STATE(o))}</small></span></button></li>`).join('') +
+      (later ? `<li class="mn-rest"><span lang="en">${later === 1 ? 'One more thing, not yet brought out.' : `${NUM[later] || later} more things, not yet brought out.`}</span><span>아직 꺼내 오지 않은 물건이 ${later}점 더 있다.</span></li>` : '');
   }
   function openObject(id){
     const o = objects(cardsOf()).find(x => x.id === id); if (!o || !o.name) return;
-    const head = `<div class="sh-kind"><span>유리장 · ${o.id} / ${SIZES.length}</span></div>` +
+    const head = `<div class="sh-kind"><span>유리장 · ${o.id}번째 물건</span></div>` +
       `<figure class="lt-gift mn-fig ${o.state}"><img src="${art(o.id)}" alt=""><figcaption><b lang="en">${esc(o.name.en)}</b><span>${esc(o.name.ko)}</span></figcaption></figure>`;
     const d = bond.loaded(ID);
     let body;
@@ -252,7 +275,7 @@ export function initManor(app){
       `<button type="button" class="sh-drill" data-insp="${o.id}">검수를 받는다</button>`;
     else if (o.state === 'wait'){ const f = d.inspect.fail[hash(o.date + o.id) % d.inspect.fail.length];
       body = `<div class="tea-say"><p class="en" lang="en" id="shTitle">${esc(f.en)}</p><p class="ko">${esc(f.ko)}</p></div><p class="mn-how">내력표는 아직 비어 있다. 내일 다시 검수를 받을 수 있다.</p>`; }
-    else body = `<p class="mn-how" id="shTitle">${o.state === 'work' ? `닦는 중이다. 이 물건이 들은 말 ${o.total}줄 가운데 ${o.seen}줄이 새어 나왔다.` : `아직 손대지 않은 물건이다. 앞의 물건을 다 닦으면 차례가 온다. 들은 말은 ${o.total}줄.`}</p>`;
+    else body = (o.out ? `<div class="tea-say"><p class="en" lang="en">${esc(o.out.en)}</p><p class="ko">${esc(o.out.ko)}</p></div>` : '') + `<p class="mn-how" id="shTitle">${o.state === 'work' ? `닦는 중이다. 이 물건이 들은 말 ${o.total}줄 가운데 ${o.seen}줄이 새어 나왔다.` : `아직 손대지 않은 물건이다. 들은 말은 ${o.total}줄.`}</p>`;
     openSheet(head + body);
   }
   function salver(){

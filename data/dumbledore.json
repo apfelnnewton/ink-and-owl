@@ -4111,7 +4111,7 @@
   "corrected": true,
   "bre": [
    {
-    "expr": "our young Mr. Potter",
+    "expr": "our young Mr Potter",
     "kind": "호칭",
     "note": "어린 학생을 'Mr'와 성(姓)으로 부르는 것은 전통적·사립학교식의 격식 있는 호칭이며, 'our young'을 덧붙여 애정과 소속감을 표현한다. 현대에는 영국 교사도 미국 교사처럼 대개 학생을 이름으로 부르므로, 영국식이라기보다 옛 학교풍의 어조로 보면 된다. 표기는 영국이 마침표 없는 'Mr', 미국이 'Mr.'다.",
     "examples": [
@@ -4863,7 +4863,7 @@
   "corrected": false,
   "bre": [
    {
-    "expr": "Mr. Filch",
+    "expr": "Mr Filch",
     "kind": "호칭",
     "note": "학생들 앞이나 공식 석상에서 교직원끼리 Mr/Mrs + 성으로 부르는 것은 영국만이 아니라 영미 학교 공통의 관행이다. 지시 앞에 호칭을 세우면 공손하면서도 권위가 실린다. 표기는 영국이 마침표 없는 Mr, 미국이 Mr.이다.",
     "examples": [
@@ -11482,7 +11482,7 @@
   "source": "fan_script",
   "scene_ko": "교장실. 에버라드에 이어 딜리스도 초상화로 돌아와 위즐리 씨가 병원에 도착했다고 보고하고, 덤블도어가 맥고나걸을 돌아본다.",
   "cue_speaker": "Dilys",
-  "cue": "Dumbledore, I've just seen them arrive at St. Mungo's. Apparated there moments ago. He looks really bad.",
+  "cue": "Dumbledore, I've just seen them arrive at St Mungo's. Apparated there moments ago. He looks really bad.",
   "prev_line": "",
   "line": "Good. Minerva, the rest of the Weasleys will need to be awoken.",
   "ko": "좋네. 미네르바, 나머지 위즐리 가족을 깨워야겠네.",
@@ -11701,7 +11701,7 @@
   "cue_speaker": "",
   "cue": "",
   "prev_line": "Your father has been injured in the course of his work for the Order.",
-  "line": "He is alive and arrived at St. Mungo's Hospital for Magical Maladies and Injuries only moments ago.",
+  "line": "He is alive and arrived at St Mungo's Hospital for Magical Maladies and Injuries only moments ago.",
   "ko": "아버지는 목숨에는 지장이 없고, 조금 전 성 뭉고 마법 질병 상해 병원에 도착했네.",
   "plain": "He's alive, and he just got to St. Mungo's a few minutes ago.",
   "tag": "격식",
@@ -19919,7 +19919,7 @@
   "film_ko": "혼혈 왕자",
   "source": "shooting_script",
   "scene_ko": "펜시브 속 기억, 런던 울 고아원의 침침한 복도. 젊은 덤블도어가 원장 콜 부인의 안내를 받아 톰 리들의 방으로 가고 있다.",
-  "cue_speaker": "Mrs. Cole",
+  "cue_speaker": "Mrs Cole",
   "cue": "In all the years Tom's been here, he's never once had a family visitor. Frankly, I was stunned to find that someone knew of his existence.",
   "prev_line": "",
   "line": "I am not family. But his name has been known to me since birth.",
@@ -19974,7 +19974,7 @@
   "film_ko": "혼혈 왕자",
   "source": "shooting_script",
   "scene_ko": "펜시브 속 고아원 복도. 톰의 방으로 가던 콜 부인이 걸음을 멈추고 얼굴을 찌푸리며, 그 아이에 대해 미리 알려 둘 것이 있다고 말한다.",
-  "cue_speaker": "Mrs. Cole",
+  "cue_speaker": "Mrs Cole",
   "cue": "He's a funny boy -- Tom. Odd. There have been incidents with the other children. Nasty things.",
   "prev_line": "",
   "line": "Perhaps you could give me an example.",
@@ -20013,7 +20013,7 @@
   "film_ko": "혼혈 왕자",
   "source": "shooting_script",
   "scene_ko": "펜시브 속 고아원, 톰 리들의 방. 빗물 그림자가 벽을 타고 흐르는 어두운 방에서 열한 살 톰이 침대에 앉아 있고, 덤블도어가 다가가 손을 내민다.",
-  "cue_speaker": "Mrs. Cole",
+  "cue_speaker": "Mrs Cole",
   "cue": "You've got a visitor, Tom.",
   "prev_line": "",
   "line": "How do you do, Tom.",
@@ -21771,7 +21771,7 @@
     "shared": false
    },
    {
-    "expr": "Mr. Weasley is well tended",
+    "expr": "Mr Weasley is well tended",
     "kind": "호칭·격식 어휘",
     "note": "교장이 학생을 성에 Mr를 붙여 부르는 것은 영국 학교의 전통적 호칭이다. tend(돌보다)는 look after의 문어적 표현으로, 'well tended'는 '보살핌이 충분하다'를 점잖게 말한 것이다. 사실은 '우리는 빠져 주자'는 뜻의 완곡한 농담이다.",
     "examples": [

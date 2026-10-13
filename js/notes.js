@@ -3,7 +3,7 @@
    An expression opens as a slip with its note, the line it came from and its ten example sentences, and can be
    practised there (choose the right expression for the gap). Practice here does not touch the review schedule.
    It opens on the professor whose door you were standing at; the row of names at the top switches to any other. */
-import {DECKS, LOCKED, byId} from './decks.js';
+import {DECKS, LOCKED, byId, homeOf} from './decks.js';
 import {available} from './doors.js';   // availableDecks: the fire and the manor join the row once they have opened
 import * as store from './store.js';
 import * as grammar from './grammar.js';
@@ -125,7 +125,9 @@ export function initNotes(app){
   drill.addEventListener('click', () => { const st = stars(); lastKeys = entries.filter(e => st[e.key] && e.open).map(e => e.key); startDrill(pool(lastKeys)); });
   q.addEventListener('input', draw);
   starBtn.addEventListener('click', () => { onlyStars = !onlyStars; starBtn.setAttribute('aria-pressed', onlyStars); starBtn.classList.toggle('on', onlyStars); draw(); });
-  $('#notesBack').addEventListener('click', () => app.go('#/'));
+  /* back: to the corridor — or to the fire or the manor room the notebook was opened from (#/notes/<deck>/here) */
+  let ret = '#/', inside = false;
+  $('#notesBack').addEventListener('click', () => app.go(ret));
   $('#notesScript').addEventListener('click', () => app.go('#/script/' + deck.id));
   $('#notesPrint').addEventListener('click', printSheet);
   $('#notesGram').addEventListener('click', () => grammar.catalogue(deck.id));
@@ -156,18 +158,20 @@ export function initNotes(app){
   $('#notesWho').addEventListener('click', e => {
     const b = e.target.closest('[data-who]'); if (!b) return;
     const d = byId(b.dataset.who);
-    if (d.file){ if (d.id !== deck.id) app.go('#/notes/' + d.id); return; }
+    if (d.file){ if (d.id !== deck.id){ inside = true; app.go('#/notes/' + d.id); } return; }
     const l = (LOCKED[d.id] || [{en: 'Not yet.', ko: '아직이다.'}])[0];
     toast(`<span class="q" lang="en">“${esc(l.en)}”</span><span class="k">${esc(l.ko)} — ${esc(d.ko)}</span>`, 3600, true);
   });
   document.addEventListener('keydown', e => {
     if (sec.hidden) return;
-    if (e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else app.go('#/'); }
+    if (e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else app.go(ret); }
     else if (isSheetOpen() && ['1', '2', '3', '4'].includes(e.key) && !e.target.closest('input')){ const b = $('#sheetBody').querySelectorAll('.dr-opts button')[+e.key - 1]; if (b) pick(b.dataset.pick); }
   });
 
-  async function show({id}){
+  async function show({id, sub}){
     deck = byId(id) && byId(id).file ? byId(id) : byId('snape');
+    if (sub === 'here') ret = homeOf(deck.id); else if (!inside) ret = '#/';   // changing the name at the top of the notebook keeps the way back
+    inside = false;
     $('#notesWho').innerHTML = DECKS.filter(d => d.place === 'corridor' || available(d.id)).map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}${d.file ? '' : ' shut'}" aria-pressed="${d.id === deck.id}">${esc(d.ko.replace(/ 교수$/, ''))}${d.file ? '' : '<span class="sr"> (잠김)</span>'}</button>`).join('');
     const ph = $('#notesPhoto');
     ph.style.backgroundImage = `url("${new URL(`assets/rooms/${deck.id}-portrait.webp`, location.href).href}")`;
