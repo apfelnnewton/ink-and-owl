@@ -131,7 +131,7 @@ export function initProphet(app){
       `<section class="dp-ads" aria-label="광고">${iss.ads.map(i => { const [en, ko] = data.ads[i]; return `<div class="dp-ad dp-p"><p class="en" lang="en">${inl(en.replace(/^(\*\*.+?\*\*)\s*·\s*/, '$1'))}</p><p class="ko" hidden>${esc(ko)}</p></div>`; }).join('')}</section>` +
       `<section class="dp-puz"><h2><span lang="en">Puzzle Corner</span><small>퍼즐 코너 · 이번 주 표현</small></h2>` +
         view.puz.map((p, i) => { const got = done[i]; const [b, a] = p.q.split('____');
-          return `<div class="dp-q${got ? ' ok' : ''}" data-q="${i}"><p class="en" lang="en"><span class="no">${i + 1}.</span> ${esc(b)}<span class="blank">${got ? esc(p.a) : '______'}</span>${esc(a)}</p>` +
+          return `<div class="dp-q${got ? ' ok' : ''}" data-q="${i}"><p class="en" lang="en"><span class="no">${i + 1}.</span> ${esc(b)}<span class="blank">${got ? esc(p.a) : '\u00a0'}</span>${esc(a)}</p>` +
             `<p class="ko"${got ? '' : ' hidden'}>${esc(p.ko)}</p>` +
             `<div class="dp-opts">${p.opts.map(o => `<button type="button" data-o="${esc(o)}"${got ? ' disabled' : ''} class="${got && o === p.a ? 'right' : ''}" lang="en">${esc(o)}</button>`).join('')}</div></div>`; }).join('') +
       `</section>` +

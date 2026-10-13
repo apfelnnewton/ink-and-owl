@@ -31,8 +31,8 @@ const learnedLines = prof => Object.keys(store.deck(prof).cards || {}).length;
 /* what still stands between the learner and a spell, in words (the spellbook shows it on a locked page) */
 export function condition(sp){
   if (sp.prof === 'bellatrix') return "'내 서기'라고 불리고 조카 이야기를 들으면";
-  if (sp.n === 1) return `대사 ${LINES_FOR_FIRST}개 배우기`;
-  return `관계 '${bond.STAGES[sp.n - 1]}'`;
+  if (sp.n === 1) return `대사 ${LINES_FOR_FIRST}개를 배우면`;
+  return `관계 '${bond.STAGES[sp.n - 1]}'이 되면`;
 }
 export function ready(sp){
   if (sp.prof === 'bellatrix') return !!wand.get() && bella.occluReady();   // not a door in the corridor: she decides (bella.js)

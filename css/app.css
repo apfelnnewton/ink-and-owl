@@ -704,7 +704,7 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ask .cue{font-family:var(--f-display);font-size:calc(22px * var(--k));line-height:1.55;color:var(--ink)}
 .ask .cue.skel{letter-spacing:.01em;word-spacing:.12em}
 .ask .cue.skel i{font-style:normal;color:rgba(42,33,24,.38);letter-spacing:.06em}
-.ask .cue.skel .sk{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;border-radius:0;padding:5px 0;margin:0;cursor:pointer;text-decoration:underline dotted rgba(42,33,24,.32);text-underline-offset:6px;-webkit-tap-highlight-color:transparent}
+.ask .cue.skel .sk{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;border-radius:0;padding:5px 0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .ask .cue.skel .sk.done{cursor:default;text-decoration:none}
 .ask .cue.skel .sk:focus-visible{outline:2px solid #1F5E8C;outline-offset:2px}
 .ask .cue.skel b.more{font-weight:inherit;color:#1F5E8C}

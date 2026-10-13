@@ -114,7 +114,7 @@ export function initMyRoom(app){
       teachers.map(d => `<section class="spl-prof"><h3><i class="seal s-${d.id}"></i>${esc(d.ko)}</h3><ol>${spells.ofProf(d.id).map(sp => {
         if (spells.isLearnt(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="has"><b lang="en">${esc(sp.name)}</b><span>${esc(sp.ko)}</span>${spells.reviewDue(sp.id) ? '<em>복습할 때</em>' : ''}<i aria-hidden="true">→</i></button></li>`;
         if (spells.isSent(sp.id)) return `<li><button type="button" data-spell="${sp.id}" class="wait"><b lang="en">${esc(sp.name)}</b><span>편지가 왔습니다 · 수업 듣기</span><i aria-hidden="true">→</i></button></li>`;
-        return `<li class="lock"><b>주문 ${sp.n}</b><span>${d.place !== 'corridor' ? esc(spells.condition(sp)) + ' 쪽지가 옵니다' : doors.isOpen(d.id) ? esc(spells.condition(sp)) + '이 되면 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
+        return `<li class="lock"><b>주문 ${sp.n}</b><span>${d.place !== 'corridor' ? esc(spells.condition(sp)) + ' 쪽지가 옵니다' : doors.isOpen(d.id) ? esc(spells.condition(sp)) + ' 편지가 옵니다' : '이 교수의 문을 열면'}</span></li>`;
       }).join('')}</ol></section>`).join('');
   }
 
