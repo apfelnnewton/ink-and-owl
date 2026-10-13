@@ -9,7 +9,7 @@
 import * as store from './store.js';
 import * as post from './post.js';
 import {device} from './census.js';
-import {makeSync} from './sync-core.js';
+import {makeSync, mendRegister} from './sync-core.js';
 
 const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /\.(localhost|test)$/.test(location.hostname);
 export const on = () => !!(store.get().census || {}).master && !post.practiceMode() && (!LOCAL || new URLSearchParams(location.search).has('census'));
@@ -21,6 +21,11 @@ const swap = () => { if (stale && app && app.calm()){ stale = false; location.re
    folding ever went wrong, it could be put back by hand */
 const KEEP = 'hogwarts-english:before-sync';
 function setAside(){ try { if (!localStorage.getItem(KEEP)) localStorage.setItem(KEEP, JSON.stringify({kept: new Date().toISOString(), state: store.get()})); } catch (e){} }
+/* The maker's register, put right once on each of the maker's devices (2026-10-13, at the maker's word: no day was missed). The register
+   read 4–10 October, nothing on the 11th, then the 12th: the lesson of the 11th ran past midnight during a night of work on this app and
+   was entered under the 12th, and seven days in a row became one. The day is put back as a day; the count follows from the register. */
+const LOST = ['2026-10-11'];
+function putBack(){ const c = core.state(); if (c.mend) return false; const did = mendRegister(store, LOST, new Date().toISOString().slice(0, 10)); c.mend = 1; store.save(); return did; }
 const LESSON = ['room', 'spell', 'ollivander'];   // a lesson is not disturbed: the day's session must not change under it
 
 export async function run(){
@@ -28,8 +33,10 @@ export async function run(){
   if (app && LESSON.includes(app.screen())) return null;
   if (core.busy()){ again = true; return null; }
   if (!core.state().k) setAside();
+  if (putBack()) stale = true;   // the screens still show the old count
   const r = await core.run();
-  if (r.changed){ stale = true; swap(); }
+  if (r.changed) stale = true;
+  swap();
   listeners.forEach(fn => { try { fn(r); } catch (e){} });
   if (again){ again = false; setTimeout(run, 1500); }
   return r;

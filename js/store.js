@@ -53,8 +53,26 @@ let storageOk = true;
 export function load(){
   try { state = normalise(JSON.parse(localStorage.getItem(KEY) || 'null')); }
   catch (e){ storageOk = false; state = fresh(); }
+  mendStreak();
   return state;
 }
+/* The days in a row are what the register says they are: counted back from the last day studied through every day that has an
+   entry. Two devices each keep their own count, and until 2026-10-13 a merge simply took the count of the device that had studied
+   last — a laptop used for the first time today handed its "2" to a phone that had many days (the maker lost a streak that way).
+   The register of both devices is joined before this is called, so the count comes out right whichever device studied when.
+   It only ever raises the number: a count the register cannot account for (older than the register) is left alone.
+   There is no setting the number by hand, on purpose (the maker: a count that can be typed in is a count that lies) — the register
+   is the only source, and a wrong register is put right in the register (sync-core.js mendRegister). */
+const dayBefore = d => { const t = new Date(d + 'T12:00:00'); t.setDate(t.getDate() - 1); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; };
+export function mendStreak(){
+  const s = state.streak, log = state.log || {};
+  if (!s || !/^\d{4}-\d\d-\d\d$/.test(s.last || '')) return false;
+  let n = 0, d = s.last;
+  while (n < 5000 && log[d] && typeof log[d] === 'object' && Object.keys(log[d]).length){ n++; d = dayBefore(d); }
+  if (n > (+s.n || 0)){ s.n = n; return true; }
+  return false;
+}
+
 export function save(){
   try { localStorage.setItem(KEY, JSON.stringify(state)); storageOk = true; }
   catch (e){ storageOk = false; }
@@ -195,7 +213,8 @@ export function mergeData(text){
     const n = {...((state.howl || {}).n || {})}; for (const [k, v] of Object.entries(obj.howl.n || {})) n[k] = Math.max(+n[k] || 0, +v || 0);
     state.howl = {...obj.howl, n};
   }
-  if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = obj.streak;
+  if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
+  mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it
   save();
   return '';
 }

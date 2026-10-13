@@ -30,6 +30,23 @@ export async function unpack(z, body){
   return await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
 }
 
+/* A day the register lost, put back: the day stands between two days that were studied and has no entry of its own (a lesson that ran
+   past midnight is entered under the next day). It gets a mark and nothing else — no answers are invented for it, so the weekly figures
+   stay what they were — and the days in a row are counted again. `at` = where most was studied the day before, for the seal in the
+   register (records.js). → true if anything was put back. store: {get, mendStreak} */
+const shift = (d, n) => { const t = new Date(d + 'T12:00:00'); t.setDate(t.getDate() + n); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; };
+const has = e => !!e && typeof e === 'object' && Object.keys(e).length > 0;
+export function mendRegister(store, days, on){
+  const s = store.get(), log = s.log || (s.log = {}); let did = false;
+  for (const day of days){
+    if (has(log[day]) || !has(log[shift(day, -1)]) || !has(log[shift(day, 1)])) continue;
+    const top = Object.entries(log[shift(day, -1)]).filter(([k, v]) => k !== 'need' && v && typeof v.n === 'number').sort((a, b) => b[1].n - a[1].n)[0];
+    log[day] = {mend: {d: on || '', at: top ? top[0] : ''}}; did = true;
+  }
+  if (did) store.mendStreak();
+  return did;
+}
+
 /* store: {get, syncable, mergeData, mergedByJoining, save} · server: async () => {F, db, uid} · device: () => a short name of this device */
 export function makeSync({store, server, device = () => '', part = 800000, plain = 250000}){
   const st = () => { const s = store.get(); return s.sync || (s.sync = {}); };

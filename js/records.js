@@ -30,6 +30,7 @@ export function initRecords(app){
   function dayInfo(date){
     const e = store.get().log[date]; if (!e) return null;
     if (e.snack && Object.keys(e).length === 1) return {n: 0, perfect: false, places: [], snack: true};   // nothing learnt, but excused (shops.js)
+    if (e.mend && Object.keys(e).length === 1) return {n: 0, perfect: false, places: byId(e.mend.at) ? [{id: e.mend.at, k: 0}] : [], mend: true};   // a day put back in the register (sync-core.js): studied, its answers entered under the next day
     let n = 0, wrong = 0; const places = [];
     for (const [id, o] of Object.entries(e)){
       const k = (o.good || 0) + (o.hard || 0) + (o.again || 0) + (o.learn || 0);
@@ -51,7 +52,7 @@ export function initRecords(app){
     for (let d = 1; d <= days; d++){
       const date = ymd(y, m, d), info = dayInfo(date);
       if (info) seen++;
-      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}"${info ? ` data-day="${date}"` : ''} title="${info ? (info.snack ? '땡땡이 과자 상자' : `${info.places.map(p => placeKo(p.id)).join(' · ')} · ${info.n}문제`) : ''}">` +
+      cells += `<span class="rc-d${date === today ? ' today' : ''}${date > today ? ' future' : ''}"${info ? ` data-day="${date}"` : ''} title="${info ? (info.snack ? '땡땡이 과자 상자' : info.mend ? '공부한 날 · 문제 수는 다음 날에 적혀 있음' : `${info.places.map(p => placeKo(p.id)).join(' · ')} · ${info.n}문제`) : ''}">` +
         `<b>${d}</b>${info ? (info.snack ? '<i class="rc-snack" role="img" aria-label="땡땡이 과자 상자"></i>' : seals(info.places)) + (info.perfect ? '<em class="snitch" role="img" aria-label="모두 맞음"></em>' : '') : ''}</span>`;
     }
     $('#recCalBody').innerHTML = `<div class="rc-head"><button type="button" data-mo="-1" aria-label="이전 달">‹</button>` +
@@ -65,6 +66,7 @@ export function initRecords(app){
     /* a day: every place studied, in order */
     const dd = e.target.closest('[data-day]');
     if (dd){ const info = dayInfo(dd.dataset.day), [, mm, ddn] = dd.dataset.day.split('-').map(Number);
+      if (info.mend){ toast(`<span class="q">${mm}월 ${ddn}일</span><span class="k">공부한 날. 자정을 넘겨서, 문제 수는 다음 날에 적혀 있다.</span>`, 3200, true); return; }
       toast(`<span class="q">${mm}월 ${ddn}일 · ${info.n}문제</span><span class="k">${info.places.map(p => `${esc(placeKo(p.id))} ${p.k}`).join(' · ')}</span>`, 3200, true); return; }
     const b = e.target.closest('[data-mo]'); if (!b) return;
     m += +b.dataset.mo; if (m < 0){ m = 11; y--; } if (m > 11){ m = 0; y++; }
