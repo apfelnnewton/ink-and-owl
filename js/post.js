@@ -24,7 +24,8 @@ import * as wand from './wand.js';
 
 export const SEALS = [
   {id: 'lion', en: 'Lion', ko: '사자'}, {id: 'serpent', en: 'Serpent', ko: '뱀'}, {id: 'eagle', en: 'Eagle', ko: '독수리'},
-  {id: 'badger', en: 'Badger', ko: '오소리'}, {id: 'thestral', en: 'Thestral', ko: '세스트랄'}, {id: 'spider', en: 'Spider', ko: '거미'}
+  {id: 'badger', en: 'Badger', ko: '오소리'}, {id: 'thestral', en: 'Thestral', ko: '세스트랄'}, {id: 'spider', en: 'Spider', ko: '거미'},
+  {id: 'fox', en: 'Fox', ko: '여우'}, {id: 'swan', en: 'Swan', ko: '백조'}
 ];
 export const MAX_MEMBERS = 8, LIMIT = 600;
 export const sealOf = id => SEALS.find(s => s.id === id) || null;
