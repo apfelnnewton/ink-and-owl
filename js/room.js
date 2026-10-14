@@ -675,7 +675,7 @@ export function initRoom(app){
       `<ul class="sh-ex">${(b.examples || []).map(e => `<li><span class="en" lang="en">${esc(e.en)}</span><span class="kr">${esc(e.ko)}</span></li>`).join('')}</ul>`);
   }
   /* the hard words of this line (words/<deck>.json), each with its place in the card's list. The row shows the English word
-     alone — no label, no meaning (the owner, 2026-10-15); the slip gives the rest. A word whose meaning one of the
+     alone — no label, no meaning (the owner, 2026-10-14); the slip gives the rest. A word whose meaning one of the
      line's expression notes already gives (`noted`) is left out here: its expression's row is just above */
   const cardWords = () => (words[card.id] || []).map((w, i) => [w, i]).filter(([w]) => !w.noted);
   function wordSheet(i){

@@ -15,7 +15,7 @@ function group(kind){
   if (/호칭/.test(kind)) return '호칭';
   if (/AmE|BrE|철자/.test(kind)) return '영국식 어휘';
   if (/부가의문|의문|되묻|반문|확인 질문/.test(kind)) return '의문문·되묻기';
-  if (/완곡|반어|절제|비유|수사|비꼬|완화|위협|꾸지람|마지못/.test(kind)) return '완곡어법·반어';   // 비꼬기 · 완화 · 위협: the book lines' kinds (2026-10-15) — they were all landing in 기타
+  if (/완곡|반어|절제|비유|수사|비꼬|완화|위협|꾸지람|마지못/.test(kind)) return '완곡어법·반어';   // 비꼬기 · 완화 · 위협: the book lines' kinds (2026-10-14) — they were all landing in 기타
   if (/가정|도치|법조동사|구문|관계|분사|명사화|생략|명령|어순|전위|강조|총칭|현재완료|감탄|담화|삽입|분열|접속|수동|진행|연쇄|소유격|then|should|지시문|전치사|부사|조건|문법/.test(kind)) return '문장 구조';
   if (/관용|구동사|고정구|속담|고정 표현|정형|구어 표현|연어/.test(kind)) return '관용구';
   if (/격식|어휘|어투|정중|교사|고어|문학|문어|용어|다의어|구어|규율|시간 표현|부가 표현/.test(kind)) return '격식 어휘·어투';

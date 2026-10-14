@@ -21,7 +21,7 @@ export function initScript(app){
   }
   function draw(){
     /* a tab for each film — and, in a deck that also has the novels, for each book — in the deck's own order: Bellatrix's
-       goes 4권 5권 5편 …, Snape's all the films and then the books (the order the lines are learnt in) */
+       goes 4권 5권 5편 …, Snape's 1편 1권 2편 2권 … (the order the lines are learnt in) */
     const films = [...new Set(cards.slice().sort((a, b) => a.order - b.order).map(part))];
     if (!films.includes(film)) film = films[0];
     $('#scFilms').innerHTML = films.map(f => {
