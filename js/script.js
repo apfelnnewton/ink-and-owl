@@ -20,8 +20,9 @@ export function initScript(app){
     return html + esc(line.slice(at));
   }
   function draw(){
-    /* a tab for each film — and, in a deck that also has the novels, for each book: 4권 5권 5편 … in the deck's own order */
-    const films = [...new Set(cards.map(part))].sort((a, b) => parseInt(a) - parseInt(b) || (a < b ? 1 : -1));
+    /* a tab for each film — and, in a deck that also has the novels, for each book — in the deck's own order: Bellatrix's
+       goes 4권 5권 5편 …, Snape's all the films and then the books (the order the lines are learnt in) */
+    const films = [...new Set(cards.slice().sort((a, b) => a.order - b.order).map(part))];
     if (!films.includes(film)) film = films[0];
     $('#scFilms').innerHTML = films.map(f => {
       const c = cards.find(x => part(x) === f);

@@ -80,6 +80,16 @@ const app = {
     catch (e){ return {}; }
     return app.examples[id];
   },
+  /* the hard words of a deck's lines (words/<deck>.json: card id → entries) — only the decks that have the file ask for it */
+  words: {},
+  async loadWords(id){
+    if (app.words[id]) return app.words[id];
+    const d = byId(id);
+    if (!d.words) return (app.words[id] = {});
+    try { const r = await fetch('words/' + d.words); app.words[id] = r.ok ? await r.json() : {}; }
+    catch (e){ return {}; }
+    return app.words[id];
+  },
   go(hash, replace){
     if (replace){ history.replaceState(null, '', hash); route(); }
     else if (location.hash === hash) route();

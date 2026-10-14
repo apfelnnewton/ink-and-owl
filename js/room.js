@@ -144,7 +144,7 @@ export function initRoom(app){
   const room = $('#room'), slate = $('#slate'), note = $('#note'), scroll = $('#roomScroll');
   const lineEl = $('#sLine'), bellBtn = $('#bell'), nextBtn = $('#nextBtn');
   let gapOf = null;
-  let deck = null, cards = [], map = {}, practice = {}, examples = {}, day = null, card = null, mode = 'recall', stage = 'recall', answered = false, done = false, busy = false, writeAnim = null;
+  let deck = null, cards = [], map = {}, practice = {}, examples = {}, words = {}, day = null, card = null, mode = 'recall', stage = 'recall', answered = false, done = false, busy = false, writeAnim = null;
   let extra = '', quiz = null, missRanges = [], rec = null, kind = '', target = null;
   const sess = () => extra === 'need' ? day : extra ? day[extra] : day;
   /* grading goes to the ladder, or — in a side round — only misses touch the schedule; the Room of Requirement keeps
@@ -156,7 +156,7 @@ export function initRoom(app){
   /* a round in the Room of Requirement draws on every classroom: switch to the deck of the card in hand */
   const maps = {};
   function useDeck(id){
-    deck = byId(id); cards = app.data[id] || []; practice = app.practice[id] || {}; examples = app.examples[id] || {};
+    deck = byId(id); cards = app.data[id] || []; practice = app.practice[id] || {}; examples = app.examples[id] || {}; words = app.words[id] || {};
     map = maps[id] || (maps[id] = Object.fromEntries(cards.map(c => [c.id, c])));
   }
   let placed = [], tiles = [];
@@ -362,7 +362,8 @@ export function initRoom(app){
     slate.classList.add('back');
     $('#sLineLab').textContent = mode === 'learn' ? `${deck.ko}는 이렇게 말한다` : (mode === 'recall' || mode === 'pick') ? '실제 대사' : '';
     $('#sKo').textContent = card.ko;
-    $('#sBre').innerHTML = card.bre.map((b, i) => `<button type="button" data-bre="${i}"><b>${esc(b.expr)}</b><span class="k">${esc(b.kind)}</span><span class="go" aria-hidden="true">›</span></button>`).join('');
+    $('#sBre').innerHTML = card.bre.map((b, i) => `<button type="button" data-bre="${i}"><b>${esc(b.expr)}</b><span class="k">${esc(b.kind)}</span><span class="go" aria-hidden="true">›</span></button>`).join('') +
+      cardWords().map(([w, i]) => `<button type="button" data-word="${i}"><b>${esc(w.w)}</b><span class="go" aria-hidden="true">›</span></button>`).join('');
     $('#sGram').hidden = !grammar.has(deck.id, card.id);
     const parts = $('#sParts');
     parts.hidden = !(card.of > 1);
@@ -673,10 +674,24 @@ export function initRoom(app){
       `<h2 class="sh-expr" id="shTitle" lang="en">${esc(b.expr)}</h2><p class="sh-note">${esc(b.note)}</p>` +
       `<ul class="sh-ex">${(b.examples || []).map(e => `<li><span class="en" lang="en">${esc(e.en)}</span><span class="kr">${esc(e.ko)}</span></li>`).join('')}</ul>`);
   }
+  /* the hard words of this line (words/<deck>.json), each with its place in the card's list. The row shows the English word
+     alone — no label, no meaning (the owner, 2026-10-15); the slip gives the rest. A word whose meaning one of the
+     line's expression notes already gives (`noted`) is left out here: its expression's row is just above */
+  const cardWords = () => (words[card.id] || []).map((w, i) => [w, i]).filter(([w]) => !w.noted);
+  function wordSheet(i){
+    const w = (words[card.id] || [])[i]; if (!w) return;
+    openSheet(`<div class="sh-kind"><span>${esc(w.pos)}</span></div>` +
+      `<h2 class="sh-expr" id="shTitle" lang="en">${esc(w.w)}</h2><p class="sh-note">${esc(w.ko)}</p>` +
+      `<p class="sh-word"><span>쉬운 말</span> <span lang="en">${esc(w.plain)}</span></p>` +
+      (w.fam && w.fam.length ? `<p class="sh-word"><span>같은 뿌리</span> <span lang="en">${esc(w.fam.join(' · '))}</span></p>` : '') +
+      `<ul class="sh-ex"><li><span class="en" lang="en">${esc(w.ex.en)}</span><span class="kr">${esc(w.ex.ko)}</span></li></ul>`);
+  }
+  /* a speech of the novels may have lost parts to the film deck (the same words are a film card): the gap is shown, not hidden */
   function partsSheet(){
     const all = cards.filter(c => c.speech === card.speech).sort((a, b) => a.part - b.part);
-    openSheet(`<div class="sh-kind"><span>${esc(filmLabel(card))}</span></div><h2 class="sh-expr" id="shTitle">발화 전체 (${card.of}조각)</h2>` +
-      `<ol class="sh-parts">${all.map(c => `<li class="${c.id === card.id ? 'now' : ''}"><span class="no">${c.part}</span><div><div class="en" lang="en">${esc(c.line)}</div><div class="kr">${esc(c.ko)}</div></div></li>`).join('')}</ol>`);
+    const gap = (c, k) => c.part > (k ? all[k - 1].part : 0) + 1 ? '<li class="gap" aria-label="빠진 조각">⋯</li>' : '';
+    openSheet(`<div class="sh-kind"><span>${esc(filmLabel(card))}</span></div><h2 class="sh-expr" id="shTitle">발화 전체 (${card.of}조각${all.length < card.of ? ` 중 ${all.length}` : ''})</h2>` +
+      `<ol class="sh-parts">${all.map((c, k) => `${gap(c, k)}<li class="${c.id === card.id ? 'now' : ''}"><span class="no">${c.part}</span><div><div class="en" lang="en">${esc(c.line)}</div><div class="kr">${esc(c.ko)}</div></div></li>`).join('')}${all.length && all[all.length - 1].part < card.of ? '<li class="gap" aria-label="빠진 조각">⋯</li>' : ''}</ol>`);
   }
 
   /* ---------- events */
@@ -716,7 +731,7 @@ export function initRoom(app){
   $('#arrPool').addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (b) pick(+b.dataset.t); });
   $('#arrLine').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) unpick(+b.dataset.p); });
   $('#arrGive').addEventListener('click', () => { if (mode === 'arrange' && !answered && !busy) checkArrange(true); });
-  $('#sBre').addEventListener('click', e => { const b = e.target.closest('[data-bre]'); if (b) breSheet(+b.dataset.bre); });
+  $('#sBre').addEventListener('click', e => { const b = e.target.closest('[data-bre]'); if (b) return breSheet(+b.dataset.bre); const w = e.target.closest('[data-word]'); if (w) wordSheet(+w.dataset.word); });
   $('#sParts').addEventListener('click', partsSheet);
   $('#sGram').addEventListener('click', () => grammar.cardSheet(deck.id, card));
   bellBtn.addEventListener('click', say);
@@ -742,7 +757,7 @@ export function initRoom(app){
     extra = 'need'; day = r;
     fireFilm(false);
     const ids =[...new Set(r.queue.map(q => q.split('/')[0]))];
-    try { await Promise.all(ids.map(id => Promise.all([app.loadDeck(id), app.loadPractice(id), app.loadExamples(id), grammar.load(id)]))); }
+    try { await Promise.all(ids.map(id => Promise.all([app.loadDeck(id), app.loadPractice(id), app.loadExamples(id), grammar.load(id), app.loadWords(id)]))); }
     catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go('#/need', true); return; }
     useDeck(r.queue[r.pos].split('/')[0]);
     showQuiet();
@@ -768,7 +783,7 @@ export function initRoom(app){
     $('#backBtn').setAttribute('aria-label', ({fire: '벽난로 앞으로 돌아가기', manor: '서재로 돌아가기', drawing: '응접실로 돌아가기'})[d.place] || '복도로 나가기');
     wall();
     fireFilm(d.place === 'fire');
-    try { [cards, practice, examples] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id), grammar.load(d.id)]); }
+    try { [cards, practice, examples, , words] = await Promise.all([app.loadDeck(d.id), app.loadPractice(d.id), app.loadExamples(d.id), grammar.load(d.id), app.loadWords(d.id)]); }
     catch (e){ toast('대본을 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); app.go(out, true); return; }
     map = Object.fromEntries(cards.map(c => [c.id, c]));
     day = srs.session(d.id, cards);

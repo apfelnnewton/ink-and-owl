@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12x';
+const VERSION = 'he-2026-10-12y';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -103,6 +103,7 @@ const CORE = [
   'data/bellatrix.json',
   'practice/bellatrix.json',
   'practice/bellatrix-examples.json',
+  'words/bellatrix.json',
   'grammar/bellatrix.json',
   'bond/bellatrix.json',
   'assets/rooms/bellatrix-portrait.webp',
@@ -129,6 +130,7 @@ const CORE = [
   'practice/sirius-examples.json',
   'practice/lucius.json',
   'practice/lucius-examples.json',
+  'words/lucius.json',
   'grammar/sirius.json',
   'grammar/lucius.json',
   'bond/sirius.json',
@@ -250,18 +252,25 @@ const CORE = [
   'data/slughorn.json',
   'practice/snape.json',
   'practice/snape-examples.json',
+  'words/snape.json',
   'practice/mcgonagall.json',
   'practice/mcgonagall-examples.json',
+  'words/mcgonagall.json',
   'practice/lupin.json',
   'practice/lupin-examples.json',
+  'words/lupin.json',
   'practice/moody.json',
   'practice/moody-examples.json',
+  'words/moody.json',
   'practice/umbridge.json',
   'practice/umbridge-examples.json',
+  'words/umbridge.json',
   'practice/dumbledore.json',
   'practice/dumbledore-examples.json',
+  'words/dumbledore.json',
   'practice/slughorn.json',
   'practice/slughorn-examples.json',
+  'words/slughorn.json',
   'assets/corridor/snape.webp',
   'assets/corridor/mcgonagall.webp',
   'assets/corridor/lupin.webp',

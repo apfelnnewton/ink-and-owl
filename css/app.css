@@ -180,6 +180,8 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .ans .bre button .k{color:#CFC5A0;opacity:.85;flex:1 1 auto;word-break:keep-all}   /* never one letter wide: beside a long expression it takes the next line */
 .ans .bre button .go{font-family:var(--f-ko);font-size:13px;opacity:.7}
 .ans .bre button:hover{background:rgba(232,217,138,.05)}
+.ans .bre button[data-word]{position:relative;padding-right:22px}   /* a word's meaning is long: the arrow keeps its place at the right instead of dropping to a line of its own */
+.ans .bre button[data-word] .go{position:absolute;right:4px;top:50%;transform:translateY(-50%)}
 .ans .parts{align-self:flex-start;min-height:44px;padding:0 14px;margin-top:4px;background:none;border:1.5px dashed rgba(237,235,221,.45);border-radius:2px;font-family:var(--f-hand);font-size:calc(20px * var(--k) * var(--hs));color:var(--chalk);cursor:pointer}
 .slate.back .ask{display:none}
 .slate.back .ans{display:flex}
@@ -374,6 +376,10 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .sh-parts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .sh-parts li{display:grid;grid-template-columns:26px 1fr;gap:6px;opacity:.55}
 .sh-parts li.now{opacity:1}
+.sh-parts li.gap{display:block;padding-left:32px;font-size:15px;line-height:1;color:var(--ink-soft)}   /* a part that is not in this deck */
+.sh-word{margin:0;font-size:calc(15px * var(--k));line-height:1.6}
+.sh-word span:first-child{font-size:12.5px;color:var(--ink-soft);margin-right:6px}
+.sh-word [lang=en]{font-family:var(--f-display);font-style:italic;font-size:calc(17px * var(--k))}
 .sh-parts .no{font-family:var(--f-display);font-size:15px;color:var(--ink-soft);padding-top:2px}
 .sh-parts li.now .no{color:var(--ink-red)}
 .sh-parts .en{font-family:var(--f-display);font-style:italic;font-size:calc(17px * var(--k));line-height:1.38}
