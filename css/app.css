@@ -2199,3 +2199,125 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .mn-rest{display:flex;flex-direction:column;gap:3px;padding:16px 8px 6px;text-align:center}
 .mn-rest span[lang="en"]{font:italic 400 calc(16px * var(--k, 1))/1.3 'Cormorant Garamond','Gowun Batang',serif;color:#8F9A91}
 .mn-rest span + span{font-size:12px;color:#7C877F}
+
+/* ================================================================ potions lesson (potion.js, 2026-10-14) */
+#potion{background:#07090A}
+#potion .bg .photo{display:block;--p:url(../assets/rooms/snape-portrait.webp);--w:url(../assets/rooms/snape-wide.webp);filter:brightness(.42) saturate(.8)}
+.po-wrap{position:absolute;inset:0;display:flex;flex-direction:column;max-width:560px;margin:0 auto;padding:calc(var(--st) + 52px) calc(12px + var(--sr)) calc(8px + var(--sb)) calc(12px + var(--sl));gap:4px}
+.po-board{position:relative;flex:none;color:var(--ink);padding:14px 16px 8px}
+.po-board > *:not(.paperbox){position:relative}
+.po-board .paperbox.parch{border-width:24px;border-image-width:24px}
+.po-lines{margin:0;padding:0 0 0 20px;font:400 calc(13px * var(--k))/1.3 var(--f-display)}
+.po-lines li{padding:1px 4px;border-radius:2px;cursor:default}
+.po-lines li small{display:block;font:400 12px/1.4 var(--f-ko);color:var(--ink-soft)}
+.po-lines li.now{color:#7A1A12;background:rgba(142,27,27,.08)}
+.po-lines li.done{color:var(--ink-soft)}
+.po-words{display:flex;flex-wrap:wrap;gap:4px 10px;margin:6px 0 0 22px}
+.po-words button{background:none;border:0;padding:4px 0;font:italic 400 13px/1 var(--f-display);color:var(--ink-soft);cursor:pointer}
+.po-words button::before{content:'· '}
+.po-peek{display:none;margin:0 auto;background:none;border:1px solid rgba(42,33,24,.4);border-radius:2px;padding:6px 14px;font:400 13px/1 var(--f-ko);color:var(--ink);cursor:pointer}
+#potion.folded .po-lines,#potion.folded .po-words{display:none}
+#potion.folded .po-peek{display:block}
+.po-stage{position:relative;flex:1;min-height:180px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 82%, transparent);mask-image:linear-gradient(#000 82%, transparent)}
+#potion[data-view="bench"] .po-stage{background:url(../assets/potions/bench-portrait.webp) center/cover;border-radius:3px;box-shadow:inset 0 0 40px 18px rgba(0,0,0,.75)}
+@media (min-aspect-ratio:1/1){ #potion[data-view="bench"] .po-stage{background-image:url(../assets/potions/bench-wide.webp)} }
+#potion[data-view="bench"] .po-pot,#potion[data-view="bench"] .po-steam,#potion[data-view="pot"] .po-work{display:none}
+.po-pot{--pw:260px;position:absolute;left:50%;top:var(--pt,0px);width:var(--pw);height:calc(var(--pw) * 1.213);transform:translateX(-50%);transition:left .9s cubic-bezier(.5,0,.3,1)}
+.po-trivet{position:absolute;left:-12.5%;top:calc(var(--pw) * .707);width:125%;pointer-events:none;user-select:none}
+.po-flame{position:absolute;left:12.5%;width:75%;bottom:calc(var(--pw) * -0.19);mix-blend-mode:screen;opacity:0;pointer-events:none;transform-origin:50% 100%;transition:opacity .8s ease;
+  -webkit-mask-image:linear-gradient(to top, transparent 0, #000 22%);mask-image:linear-gradient(to top, transparent 0, #000 22%)}
+#potion[data-heat="low"] .po-flame.lo{opacity:.95;animation:po-flick 1.7s ease-in-out infinite}
+#potion[data-heat="high"] .po-flame.hi{opacity:1;animation:po-flick 1.1s ease-in-out infinite}
+@keyframes po-flick{0%,100%{transform:scale(1,1)}30%{transform:scale(1.03,.94)}60%{transform:scale(.97,1.06)}}
+.po-cauldron{position:absolute;inset:0;transition:transform .9s cubic-bezier(.5,0,.3,1);filter:drop-shadow(0 14px 14px rgba(0,0,0,.6))}
+.po-cauldron img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;user-select:none}
+.po-cauldron canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+#potion.off-fire .po-pot{left:64%}
+#potion.off-fire .po-cauldron{transform:translate(-62%, 16%)}
+.po-steam{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.po-work{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:none}
+.po-say{flex:none;min-height:40px;margin:0;text-align:center;color:var(--chalk);opacity:0;transition:opacity .5s ease;padding:0 8px}
+.po-say.on{opacity:1}
+.po-say span{display:block;font:italic 400 calc(15px * var(--k))/1.3 var(--f-display);text-shadow:0 1px 3px #000}
+.po-say small{display:block;font:400 12px/1.4 var(--f-ko);color:var(--chalk-dim)}
+.po-tray{flex:none;display:flex;align-items:flex-end;gap:6px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 2px;scrollbar-width:none;min-height:122px}
+.po-tray::-webkit-scrollbar{display:none}
+.po-jar,.po-token{position:relative;flex:none;height:118px;background:none;border:0;padding:0;cursor:grab;touch-action:none}
+.po-jar,.po-token{display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.po-jar img{height:82px;width:auto;display:block;pointer-events:none;user-select:none;filter:drop-shadow(0 6px 6px rgba(0,0,0,.6))}
+.po-jar .glass{position:relative;display:block}
+.po-token .glass{display:flex;align-items:center;justify-content:center;width:84px;height:82px}
+.po-token .glass img{max-width:84px;max-height:82px;object-fit:contain;filter:drop-shadow(0 6px 6px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(242,178,76,.25));pointer-events:none}
+.po-token .cap{display:flex;flex-direction:column;align-items:center;width:84px;min-height:30px;margin-top:3px;pointer-events:none}
+.po-token .cap b{font:400 12px/1.2 var(--f-ko);color:var(--flame-core);text-align:center;text-shadow:0 1px 2px #000}
+.po-jar .cap{display:flex;flex-direction:column;align-items:center;width:76px;min-height:30px;margin-top:3px;pointer-events:none}
+.po-jar .cap b{font:400 11.5px/1.05 var(--f-display);word-break:keep-all;overflow-wrap:normal;color:var(--chalk);text-align:center;text-shadow:0 1px 2px #000}
+.po-jar .cap small{font:400 10px/1.2 var(--f-ko);color:var(--chalk-dim)}
+.po-jar .lbl{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;color:#3a2a18;overflow:hidden}
+.po-jar .lbl b{font:400 10px/1.02 var(--f-display);opacity:.8;word-break:keep-all;overflow-wrap:normal;hyphens:none}
+.po-jar .lbl small{font:400 7.5px/1.1 var(--f-ko);color:#5b4a33;margin-top:1px}
+.po-ctl{flex:none;display:flex;flex-direction:column;gap:5px}
+.po-views,.po-acts{display:flex;gap:5px}
+.po-ctl button{flex:1;min-height:40px;padding:6px 4px;background:rgba(8,10,9,.62);border:1px solid rgba(237,235,221,.28);border-radius:2px;color:var(--chalk);font:400 13px/1.15 var(--f-ko);cursor:pointer}
+.po-ctl button.on{border-color:rgba(242,178,76,.85);color:var(--flame-core);box-shadow:inset 0 0 12px rgba(242,178,76,.18)}
+.po-ctl button:disabled{opacity:.35;cursor:default}
+.po-ctl .bottle{border-color:rgba(231,163,182,.55)}
+.po-ghost.pour{--tilt:-42deg}
+.po-ghost{transition:--tilt .3s;position:fixed;left:0;top:0;width:86px;height:86px;object-fit:contain;pointer-events:none;z-index:60;filter:drop-shadow(0 12px 12px rgba(0,0,0,.65))}
+.po-end{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(3,4,4,.62)}
+.po-end-in{position:relative;max-width:400px;width:100%;padding:44px 40px 36px;color:var(--ink);text-align:center}
+.po-end-in > *:not(.paperbox){position:relative}
+.po-end-in .t{margin:0;font:italic 400 calc(18px * var(--k))/1.4 var(--f-display)}
+.po-end-in .k{margin:6px 0 0;font:400 13px/1.55 var(--f-ko);color:var(--ink-soft)}
+.po-end-btns{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.po-end-btns button,.po-again{min-height:44px;padding:8px 16px;background:rgba(42,33,24,.04);border:1.5px solid rgba(42,33,24,.4);border-radius:2px;color:var(--ink);font:400 14px/1.2 var(--f-ko);cursor:pointer;margin-top:14px}
+.po-end-btns button{margin-top:0}
+.po-vial{margin:0 auto 6px;width:120px}
+.po-vial img{width:100%;display:block;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
+.po-label{margin:0 0 12px;font:italic 400 16px/1.3 var(--f-display);color:#4a2a1a}
+.po-label span{font-size:14px;color:var(--ink-soft)}
+.po-cabinet{position:relative;margin:0 auto 10px;width:min(300px, 80vw)}
+.po-cabinet img{width:100%;display:block}
+.po-cabinet .po-in{position:absolute;width:11%;padding:0;border:0;background:none;cursor:pointer}
+.po-cabinet .po-in img{width:100%;display:block;filter:drop-shadow(0 3px 3px rgba(0,0,0,.6))}
+.po-cabinet .po-in.new img{animation:po-set 1.1s ease-out both}
+@keyframes po-set{from{transform:translateY(-14%);opacity:0}to{transform:none;opacity:1}}
+.po-cab-list{list-style:none;margin:6px 0 0;padding:0;text-align:left}
+.po-cab-list li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;color:rgba(42,33,24,.5)}
+.po-cab-list li.has{color:var(--ink)}
+.po-cab-list b{font:400 15px/1.3 var(--f-display)}
+.po-cab-list span{font:400 12px/1.5 var(--f-ko);text-align:right}
+.po-end:has(.po-cab){overflow-y:auto;align-items:flex-start}
+.po-end .po-cab{margin:auto}
+/* the potion cabinet on the guest room wall (myroom.js) */
+.me-potcab{position:absolute;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(0,0,0,.6)) brightness(.62) saturate(.85)}
+/* laptop and tablet across: the board on the left, the cauldron and the jars on the right */
+@media (min-aspect-ratio:1/1){
+  .po-wrap{max-width:1100px;display:grid;grid-template-columns:minmax(300px, 400px) 1fr;grid-template-rows:1fr auto auto auto;column-gap:22px;row-gap:4px}
+  .po-board{grid-column:1;grid-row:1 / span 4;align-self:center}
+  .po-stage,.po-say,.po-tray,.po-ctl{grid-column:2}
+  .po-lines{font-size:calc(15px * var(--k))}
+}
+@media (prefers-reduced-motion:reduce){ #potion .po-flame{animation:none !important} .po-pot,.po-cauldron{transition:none} }
+/* Snape's marked board at the end of a potions lesson: his red ink — ticks, underlines, a remark in the margin */
+.po-end:has(.po-report){align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(var(--st) + 20px) 14px calc(var(--sb) + 24px)}
+.po-report{max-width:460px;margin:auto;text-align:center;padding:40px 30px 30px}
+.po-report .po-vial{width:96px}
+.po-vanished{margin:0 0 4px;font:italic 400 26px/1.2 var(--f-display);color:#8E1B1B;transform:rotate(-2deg)}
+.po-grade{margin:12px 0 0;font:italic 400 19px/1.2 var(--f-display);color:#8E1B1B;transform:rotate(-2deg)}
+.po-gen{margin:6px 0 0;text-align:left}
+.po-marked{list-style:none;margin:14px 0 6px;padding:0;text-align:left}
+.po-marked li{display:grid;grid-template-columns:24px 1fr;column-gap:6px;padding:6px 0}
+.po-marked .mk{grid-row:1 / span 9;font:400 21px/1 var(--f-display);color:#9B1C1C;transform:rotate(-10deg);text-align:center;padding-top:1px}
+.po-marked .ln{grid-column:2;font:400 calc(15px * var(--k))/1.35 var(--f-display);color:var(--ink)}
+.po-marked .ln u{text-decoration:underline;text-decoration-color:rgba(155,28,28,.9);text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-skip-ink:none}
+.po-marked li.none .ln{color:rgba(42,33,24,.42)}
+.po-report .red{grid-column:2;display:block;margin-top:3px;font:italic 400 calc(15.5px * var(--k))/1.3 var(--f-display);color:#9B1C1C;transform:rotate(-1deg);transform-origin:left}
+.po-report .why{grid-column:2;display:block;margin-top:2px;font:400 12.5px/1.55 var(--f-ko);color:var(--ink-soft)}
+.po-gen .why{display:inline}
+/* the potions lessons, years 2–7: envelopes with a hair, the Prince's margin notes, a dropper held tilted */
+.po-env .glass{display:flex;align-items:flex-end;justify-content:center;height:82px}
+.po-env .envp{display:flex;align-items:center;justify-content:center;width:70px;height:46px;padding:4px;background:linear-gradient(160deg,#e9dcb8,#cbb88a);box-shadow:0 6px 8px rgba(0,0,0,.55), inset 0 0 0 1px rgba(90,70,40,.35);transform:rotate(-4deg);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.po-env .envp b{font:italic 400 10.5px/1.1 var(--f-display);color:#3a2a18;text-align:center}
+.po-lines .po-note{display:block;margin:1px 0 3px 10px;font:italic 400 calc(13.5px * var(--k))/1.25 var(--f-display);color:#4a2a52;transform:rotate(-1.5deg);transform-origin:left}
+.po-ghost.drip.pour{--tilt:-28deg}

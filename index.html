@@ -519,6 +519,37 @@
   <div class="sp-fxl" id="spFx" aria-hidden="true"></div>
 </section>
 
+<!-- ============ POTIONS: a lesson at a cauldron in Snape's dungeon, done by hand (potion.js) ============ -->
+<section id="potion" class="screen" hidden aria-label="조제 수업" data-view="pot">
+  <div class="bg" aria-hidden="true"><div class="photo"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="poBack" aria-label="뒤로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" id="poTtl" lang="en"></div>
+    <div class="cnt"></div>
+  </div>
+  <div class="po-wrap">
+    <div class="po-board" id="poBoardPaper"><div class="paperbox"></div>
+      <button type="button" class="po-peek" id="poPeek">칠판 보기</button>
+      <ol class="po-lines" id="poLines"></ol>
+      <div class="po-words" id="poWords"></div>
+    </div>
+    <div class="po-stage" id="poStage">
+      <div class="po-pot" id="poPot">
+        <img class="po-trivet" src="assets/potions/trivet.webp" alt="" draggable="false">
+        <img class="po-flame lo" src="assets/potions/flame-low.webp" alt="" draggable="false">
+        <img class="po-flame hi" src="assets/potions/flame-high.webp" alt="" draggable="false">
+        <div class="po-cauldron"><img src="assets/potions/cauldron.webp" alt="" draggable="false"><canvas id="poLiquid"></canvas></div>
+      </div>
+      <canvas class="po-steam" id="poSteam"></canvas>
+      <canvas class="po-work" id="poWork"></canvas>
+    </div>
+    <p class="po-say" id="poSay" aria-live="polite"></p>
+    <div class="po-tray" id="poTray"></div>
+    <div class="po-ctl" id="poCtl"></div>
+  </div>
+  <div class="po-end" id="poEnd" hidden></div>
+</section>
+
 <!-- ============ OLLIVANDERS: the wand shop, reached from his note or the wand box (not a corridor door) ============ -->
 <section id="ollivander" class="screen" hidden aria-label="올리밴더 지팡이 가게">
   <div class="bg" aria-hidden="true"><div class="photo"></div><div class="photo near"></div><div class="shade"></div><div class="ol-glow"></div></div>

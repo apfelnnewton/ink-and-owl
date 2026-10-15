@@ -76,3 +76,30 @@ export function fire(sec = 4.5){
     at += (.02 + Math.random() * .12) / Math.max(.25, k);
   }
 }
+
+/* ---------- the potions lesson (potion.js, 2026-10-14): small sounds of the bench and the cauldron */
+/* a short shaped burst of noise through a band-pass: the building block of the bench sounds */
+function burst(c, out, {at = 0, sec = .08, f = 1200, q = 1, gain = .5, brown = false}){
+  const t = c.currentTime + at, n = noise(c, sec, brown), bp = c.createBiquadFilter(), g = c.createGain();
+  bp.type = 'bandpass'; bp.frequency.value = f; bp.Q.value = q;
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(gain, t + .004); g.gain.exponentialRampToValueAtTime(.001, t + sec);
+  n.connect(bp).connect(g).connect(out); n.start(t); n.stop(t + sec + .02);
+}
+const bus = (c, v) => { const o = c.createGain(); o.gain.value = v; o.connect(c.destination); return o; };
+/* the knife through something dry, onto wood */
+export function chop(){ const c = ac(); if (!c) return; const o = bus(c, .6); burst(c, o, {sec: .05, f: 3200, q: .8, gain: .5}); burst(c, o, {at: .012, sec: .09, f: 260, q: 1.4, gain: .9}); }
+/* stone on stone, gritty, a little each time the pestle moves */
+export function grit(){ const c = ac(); if (!c) return; const o = bus(c, .22); burst(c, o, {sec: .13, f: 2400 + Math.random() * 1600, q: .6, gain: .5}); }
+/* something dropped into stone */
+export function clink(){ const c = ac(); if (!c) return; const o = bus(c, .35); burst(c, o, {sec: .06, f: 1800, q: 3, gain: .7}); }
+/* something dropped into the water */
+export function plop(){
+  const c = ac(); if (!c) return; const t = c.currentTime, o = bus(c, .5), s = c.createOscillator(), g = c.createGain();
+  s.type = 'sine'; s.frequency.setValueAtTime(260, t); s.frequency.exponentialRampToValueAtTime(820, t + .09);
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.5, t + .01); g.gain.exponentialRampToValueAtTime(.001, t + .16);
+  s.connect(g).connect(o); s.start(t); s.stop(t + .2); burst(c, o, {sec: .25, f: 900, q: .7, gain: .25});
+}
+/* one turn of the rod through the water */
+export function slosh(){ const c = ac(); if (!c) return; const o = bus(c, .3); burst(c, o, {sec: .35, f: 520, q: .5, gain: .5, brown: true}); }
+/* a slip: the cauldron hisses (bigger when the potion is ruined) */
+export function hiss(big){ const c = ac(); if (!c) return; const o = bus(c, big ? .45 : .25); burst(c, o, {sec: big ? 1.4 : .5, f: 5200, q: .4, gain: .6}); if (big) burst(c, o, {sec: 1.2, f: 140, q: .8, gain: .8, brown: true}); }

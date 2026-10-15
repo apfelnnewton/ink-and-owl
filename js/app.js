@@ -1,7 +1,7 @@
 /* Start-up and routing. #/ corridor · #/room/<deck>[/extra|/wrong] classroom · #/report/<deck> end of lesson ·
    #/notes/<deck> expression notebook · #/script/<deck> the script · #/records the register · #/me your own room ·
    #/me/cabinet/<deck> the gift drawers · #/me/journal/<deck> the tea journal · #/me/wand the wand box ·
-   #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/me/spells the spellbook · #/map the Marauder's Map · #/prophet[/<n>] the Daily Prophet · #/need[/end|/shelf] the Room of Requirement ·
+   #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/potion/<n> a potions lesson · #/me/spells the spellbook · #/map the Marauder's Map · #/prophet[/<n>] the Daily Prophet · #/need[/end|/shelf] the Room of Requirement ·
    #/fire the fireplace in your room (Sirius, Floo powder) · #/manor[/study|/cabinet|/drawing] Malfoy Manor ·
    #/town/<diagon|hogsmeade|honeydukes|apothecary|broomsticks> the two streets and their shops (shops.js) ·
    #/letters/<deck|friends> owl post (on the desk in your room; friends' letters in the first tab) · #/settings */
@@ -18,6 +18,7 @@ import {initLetters} from './letters.js';
 import {initMyRoom} from './myroom.js';
 import {initOllivander} from './ollivander.js';
 import {initSpell} from './spell.js';
+import {initPotion} from './potion.js';
 import {initMap} from './map.js';
 import {initFire} from './fire.js';
 import {initManor} from './manor.js';
@@ -123,7 +124,7 @@ const app = {
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), potion: initPotion(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */

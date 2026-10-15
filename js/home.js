@@ -13,6 +13,7 @@ import * as post from './post.js';
 import {hint, hintSeen} from './hints.js';
 import * as srs from './srs.js';
 import * as need from './need.js';
+import * as potions from './potions.js';
 import {$, esc, toast, reduced} from './ui.js';
 
 const OVERLAP = .09;                       // each section shares its outer 9% of wall with the next
@@ -141,8 +142,9 @@ export function initHome(app){
       }
       $('#cstats').innerHTML = stats;
       if (st.open && !st.loading && !st.me){
-        const t = bond.teaReady(d.id), rq = bond.requestText(d.id);
-        const extra = [rq && `<span class="bond">${esc(rq)}</span>`, t && `<button type="button" class="bond tea inv-go" data-teago="${d.id}">문틈에 초대장이 꽂혀 있다 · <span lang="en">${esc(t.title.en)}</span> →</button>`].filter(Boolean).join('');
+        const t = bond.teaReady(d.id), rq = bond.requestText(d.id), po = d.id === 'snape' ? potions.waiting() : null;
+        const extra = [rq && `<span class="bond">${esc(rq)}</span>`, t && `<button type="button" class="bond tea inv-go" data-teago="${d.id}">문틈에 초대장이 꽂혀 있다 · <span lang="en">${esc(t.title.en)}</span> →</button>`,
+          po && `<button type="button" class="bond tea inv-go" data-potgo="${po.n}">${potions.stewOf(po.n) ? '솥을 보러 간다' : '솥이 기다린다'} · <span lang="en">${esc(po.en)}</span> →</button>`].filter(Boolean).join('');
         if (extra) line = line + extra;   // the bond lines are blocks of their own
       }
       mailCount(); invites();
@@ -224,7 +226,7 @@ export function initHome(app){
   function mailCount(){ ticks.children[0].classList.toggle('new', !!(bond.unread() || post.unread())); }
   /* a pending tea invitation shows as an envelope in that professor's door */
   function invites(){ DOORS.forEach((d, i) => { const e = secs[i].querySelector('.door-inv'); if (e) e.hidden = !(d.file && bond.teaReady(d.id)); }); }
-  $('#cline').addEventListener('click', e => { const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); });
+  $('#cline').addEventListener('click', e => { const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); const p = e.target.closest('[data-potgo]'); if (p) app.go('#/potion/' + p.dataset.potgo); });
   bond.onPost(() => { mailCount(); if (DOORS[cur] && DOORS[cur].me) describe(false); });
 
   /* ---------- entering: the door's opening clip if there is one, otherwise we walk into its light */

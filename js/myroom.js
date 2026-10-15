@@ -15,6 +15,7 @@ import * as doors from './doors.js';
 import * as map from './map.js';
 import * as prophet from './prophet.js';
 import * as need from './need.js';
+import * as potions from './potions.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
@@ -47,7 +48,10 @@ export function initMyRoom(app){
     {id: 'purse', ko: '동전 주머니', go: '', p: [.875, .56, 'r'], w: [.765, .575, 'r']},
     {id: 'bag', ko: '종이 봉지', go: '', p: [.505, .606, 'b'], w: [.479, .655, 'b']},   // left on the chair at the desk (shops.js)
     {id: 'shelf', ko: '선반', go: '#/need/shelf', p: [.875, .36, 'r'], w: [.80, .33, 'r']},
-    {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']}
+    {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']},
+    /* the potion cabinet (potions.js): hung on the bare wall right of the window once the first potion is made — the
+       picture of it is laid over the photograph (box: centre x, top, width, as fractions of the photograph) */
+    {id: 'potions', ko: '약장', go: '#/potion/shelf', p: [.69, .345, 't'], w: [.64, .255, 't'], box: {p: [.69, .275, .17], w: [.64, .15, .1]}}
   ];
   const PHOTO = {p: [1080, 1910], w: [1920, 1086]};   // assets/rooms/me-portrait|wide.webp
   function spotsOn(){
@@ -61,7 +65,8 @@ export function initMyRoom(app){
       spells: w ? (due ? `복습 ${due}` : '') : null,
       map: map.have() ? '' : null,
       wand: w ? '' : wand.noteArrived() ? '쪽지' : null,
-      shelf: need.isOpen() ? (kinds ? `${kinds}종` : '') : null
+      shelf: need.isOpen() ? (kinds ? `${kinds}종` : '') : null,
+      potions: potions.all().some(q => potions.best(q.n)) ? '' : null
     };
   }
   function drawRoom(){
@@ -71,7 +76,7 @@ export function initMyRoom(app){
     $('#meNews').hidden = !prophet.have();
     { const u = prophet.unread(), k = prophet.issues().length; $('#meNewsN').textContent = `· ${k}호까지${u ? ' · 새 호' : ''}`; }
     const on = spotsOn();
-    $('#meSpots').innerHTML = SPOTS.filter(t => on[t.id] !== null).map(t =>
+    $('#meSpots').innerHTML = (on.potions !== null ? '<img class="me-potcab" src="assets/potions/cabinet.webp" alt="">' : '') + SPOTS.filter(t => on[t.id] !== null).map(t =>
       `<button type="button" class="me-spot" data-go="${t.go}" data-spot="${t.id}" aria-label="${esc(t.ko)}"><i aria-hidden="true"></i><b>${esc(t.ko)}${on[t.id] ? `<small>${esc(on[t.id])}</small>` : ''}</b></button>`).join('');
     placeSpots();
   }
@@ -88,6 +93,9 @@ export function initMyRoom(app){
       /* a narrow phone crops the sides of the picture: a thing at its edge keeps its light on the screen */
       b.style.left = Math.max(26, Math.min(r.width - 26, ox + fx * dw)) + 'px'; b.style.top = (oy + fy * dh) + 'px';
     });
+    const cab = $('#meSpots .me-potcab');
+    if (cab){ const [cx, top, w] = SPOTS.find(x => x.id === 'potions').box[wide ? 'w' : 'p'];
+      Object.assign(cab.style, {left: (ox + (cx - w / 2) * dw) + 'px', top: (oy + top * dh) + 'px', width: (w * dw) + 'px'}); }
   }
 
   /* ---------- the wand box (#/me/wand): the wand in its box and Ollivander's card; earlier wands below */

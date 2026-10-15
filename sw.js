@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-12z';
+const VERSION = 'he-2026-10-15a';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -28,6 +28,30 @@ const CORE = [
   'js/spells.js',
   'js/spell.js',
   'js/trace.js',
+  /* Snape's potions lessons (2026-10-14): the lesson, its rules, the recipes and the pictures of the bench */
+  'js/potion.js',
+  'js/potions.js',
+  'potions/potions.json',
+  'assets/potions/bench-portrait.webp',
+  'assets/potions/bench-wide.webp',
+  'assets/potions/board.webp',
+  'assets/potions/cabinet.webp',
+  'assets/potions/cauldron.webp',
+  'assets/potions/flame-high.webp',
+  'assets/potions/flame-low.webp',
+  'assets/potions/flobberworm.webp',
+  'assets/potions/horned-slug.webp',
+  'assets/potions/jar-bottle.webp',
+  'assets/potions/jar-squat.webp',
+  'assets/potions/jar-tall.webp',
+  'assets/potions/knife.webp',
+  'assets/potions/mortar.webp',
+  'assets/potions/pestle.webp',
+  'assets/potions/rat-tails.webp',
+  'assets/potions/rod.webp',
+  'assets/potions/snake-fang.webp',
+  'assets/potions/trivet.webp',
+  'assets/potions/vial-boils.webp',
   'js/map.js',
   'js/door.js',
   'js/census.js',

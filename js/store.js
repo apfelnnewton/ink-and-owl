@@ -26,6 +26,7 @@ function normalise(s){
   if (s.wand && typeof s.wand === 'object') out.wand = s.wand;
   if (s.howl && typeof s.howl === 'object') out.howl = s.howl;
   if (s.spells && typeof s.spells === 'object') out.spells = s.spells;
+  if (s.potions && typeof s.potions === 'object') out.potions = s.potions;   // Snape's potions lessons: letters sent, best results (potions.js)
   if (s.map && typeof s.map === 'object') out.map = s.map;
   if (s.prophet && typeof s.prophet === 'object') out.prophet = s.prophet;
   if (s.need && typeof s.need === 'object') out.need = s.need;
@@ -189,6 +190,9 @@ export function mergeData(text){
     for (const [id, d] of Object.entries(b.sent || {})) if (!a.sent[id] || d < a.sent[id]) a.sent[id] = d;
     for (const [id, r] of Object.entries(b.learnt || {})){ const m = a.learnt[id]; if (!m || (+r.i || 0) > (+m.i || 0) || ((+r.i || 0) === (+m.i || 0) && (r.due || '') > (m.due || ''))) a.learnt[id] = r; }   // the further along of the two
     if ((b.day || '') > (a.day || '')) a.day = b.day;
+    /* a cauldron left to stew: the one further on (a potion already made has none) */
+    for (const [n, v] of Object.entries(b.stew || {})){ a.stew = a.stew || {}; const h = a.stew[n]; if (!a.best[n] && (!h || v.i > h.i || (v.i === h.i && v.d < h.d))) a.stew[n] = v; }
+    for (const n of Object.keys(a.stew || {})) if (a.best[n] && b.best && b.best[n] && !(b.stew || {})[n]) delete a.stew[n];
   }
   if (obj.map && obj.map.got && !(state.map || {}).got) state.map = {...obj.map};
   if (obj.prophet && Array.isArray(obj.prophet.got)){
@@ -212,6 +216,15 @@ export function mergeData(text){
   if (obj.howl && (obj.howl.last || '') > ((state.howl || {}).last || '')){
     const n = {...((state.howl || {}).n || {})}; for (const [k, v] of Object.entries(obj.howl.n || {})) n[k] = Math.max(+n[k] || 0, +v || 0);
     state.howl = {...obj.howl, n};
+  }
+  /* the potions lessons (2026-10-14): letters sent and borrowing are the earlier of the two; the best result the better */
+  if (obj.potions){
+    const a = state.potions || (state.potions = {}), b = obj.potions, RANK = {fair: 1, perfect: 2};
+    a.sent = a.sent || {}; a.best = a.best || {};
+    for (const [n, d] of Object.entries(b.sent || {})) if (!a.sent[n] || d < a.sent[n]) a.sent[n] = d;
+    for (const [n, r] of Object.entries(b.best || {})) if (!a.best[n] || (RANK[r] || 0) > (RANK[a.best[n]] || 0)) a.best[n] = r;
+    for (const k of ['lent', 'dd']) if (b[k] && (!a[k] || b[k] < a[k])) a[k] = b[k];
+    if ((b.day || '') > (a.day || '')) a.day = b.day;
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
   mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it
