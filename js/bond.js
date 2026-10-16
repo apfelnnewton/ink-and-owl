@@ -24,6 +24,7 @@ import * as manor from './manor.js';
 import * as bella from './bella.js';
 import * as shops from './shops.js';
 import * as potions from './potions.js';
+import * as exams from './exams.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -262,6 +263,7 @@ export async function daily(){
   bella.daily();   // before the spells: her name for the learner decides whether she will teach hers
   await spells.daily();
   await potions.daily();   // a year of Snape's lines learnt: his potions lesson (potions.js)
+  if (app) await exams.daily(app);   // twelve new words: a professor's O.W.L. paper (exams.js)
   await map.daily();
   fire.daily();
   await shops.daily();   // yesterday's presents are answered; the shops open after a first day's wages
@@ -317,6 +319,8 @@ export function itemOf(id, key){
   if (/^(G[FM]|BG)~/.test(key)) return shops.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
   if (/^PO-\d+$/.test(key) || key === 'PD') return potions.textOf(id, key);
+  if (/^OW-\d+$/.test(key)) return exams.textOf(id, key);
+  if (/^OR-\d+$/.test(key)) return exams.resultText(id, key);
   if (key === 'MAP') return map.textOf(id, key);
   if (key === 'NEED') return need.textOf(id, key);
   if (key === 'SIRIUS' || /^WN-\d+-/.test(key)) return fire.textOf(id, key, data.sirius);

@@ -27,6 +27,7 @@ function normalise(s){
   if (s.howl && typeof s.howl === 'object') out.howl = s.howl;
   if (s.spells && typeof s.spells === 'object') out.spells = s.spells;
   if (s.potions && typeof s.potions === 'object') out.potions = s.potions;   // Snape's potions lessons: letters sent, best results (potions.js)
+  if (s.exams && typeof s.exams === 'object') out.exams = s.exams;   // the word tests: sittings and notices (exams.js)
   if (s.map && typeof s.map === 'object') out.map = s.map;
   if (s.prophet && typeof s.prophet === 'object') out.prophet = s.prophet;
   if (s.need && typeof s.need === 'object') out.need = s.need;
@@ -228,6 +229,15 @@ export function mergeData(text){
     for (const [n, k] of Object.entries(b.key || {})){ a.key = a.key || {}; if (!a.key[n]) a.key[n] = k; }
     for (const [n, v] of Object.entries(b.stew || {})){ a.stew = a.stew || {}; const h = a.stew[n]; if (!h || v.i > h.i || (v.i === h.i && v.d < h.d)) a.stew[n] = v; }
     for (const n of Object.keys(a.stew || {})){ const v = a.stew[n], done = (a.done || {})[n]; if (done && (v.t || 0) < done){ delete a.stew[n]; if (a.key) delete a.key[n]; } }
+  }
+  /* the word tests (2026-10-16): every sitting of either device (one sitting = its moment, t), the more notices sent */
+  for (const [id, b] of Object.entries(obj.exams || {})){
+    if (!b || typeof b !== 'object') continue;
+    const all = state.exams || (state.exams = {}), a = all[id] || (all[id] = {s: [], sent: 0, kinds: {}});
+    a.s = a.s || []; const have = new Set(a.s.map(x => x.t));
+    for (const x of b.s || []) if (x && !have.has(x.t)){ a.s.push(x); have.add(x.t); }
+    a.s.sort((x, y) => x.t - y.t);
+    a.sent = Math.max(+a.sent || 0, +b.sent || 0); a.kinds = {...(b.kinds || {}), ...(a.kinds || {})};
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
   mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it

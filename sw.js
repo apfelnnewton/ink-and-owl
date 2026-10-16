@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-16a';
+const VERSION = 'he-2026-10-16b';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -32,6 +32,10 @@ const CORE = [
   'js/potion.js',
   'js/potions.js',
   'potions/potions.json',
+  'js/exams.js',
+  'js/exam.js',
+  'owl/texts.json',
+  'owl/blank.json',
   'assets/potions/asphodel-roots.webp',
   'assets/potions/bench-portrait.webp',
   'assets/potions/bench-wide.webp',

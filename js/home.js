@@ -14,6 +14,7 @@ import {hint, hintSeen} from './hints.js';
 import * as srs from './srs.js';
 import * as need from './need.js';
 import * as potions from './potions.js';
+import * as exams from './exams.js';
 import {$, esc, toast, reduced} from './ui.js';
 
 const OVERLAP = .09;                       // each section shares its outer 9% of wall with the next
@@ -147,7 +148,9 @@ export function initHome(app){
         const extra = [rq && `<span class="bond">${esc(rq)}</span>`, t && `<button type="button" class="bond tea inv-go" data-teago="${d.id}">문틈에 초대장이 꽂혀 있다 · <span lang="en">${esc(t.title.en)}</span> →</button>`,
           /* a cauldron whose three days are up: in the same form as the tea invitation's line (user, 2026-10-16), and like it a
              way in, besides the phial on the door */
-          ripe && `<button type="button" class="bond tea inv-go" data-potgo="${ripe.n}">${esc(ripe.ripe_ko || '사흘이 지났다')} · 마저 끓일 때다 · <span lang="en">${esc(ripe.en)}</span> →</button>`].filter(Boolean).join('');
+          ripe && `<button type="button" class="bond tea inv-go" data-potgo="${ripe.n}">${esc(ripe.ripe_ko || '사흘이 지났다')} · 마저 끓일 때다 · <span lang="en">${esc(ripe.en)}</span> →</button>`,
+          /* an O.W.L. paper due (exams.js): sat once the day's lesson is done, so until then the line only says it is there */
+          examLine(d.id, st.p)].filter(Boolean).join('');
         if (extra) line = line + extra;   // the bond lines are blocks of their own
       }
       mailCount(); invites();
@@ -243,7 +246,16 @@ export function initHome(app){
     const src = 'assets/potions/vial-empty.webp'; if (b.dataset.n !== String(P.n)){ b.dataset.n = P.n; b.innerHTML = potions.phial(src, P.en); }   /* one empty phial for every year; its tag names this one */
   }
   wall.addEventListener('click', e => { const b = e.target.closest('.door-pot'); if (b){ dismissOwl(); app.go('#/potion/' + b.dataset.potgo); } });
-  $('#cline').addEventListener('click', e => { const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); const p = e.target.closest('[data-potgo]'); if (p){ dismissOwl(); app.go('#/potion/' + p.dataset.potgo); } });   /* into a lesson, as through a door: an owl on its way waits */
+  function examLine(id, p){
+    if (!exams.SUBJECT[id]) return '';
+    const words = app.words[id];
+    if (!words){ app.loadWords(id).then(w => { if (w && Object.keys(w).length && DOORS[cur] && DOORS[cur].id === id) describe(false); }); return ''; }
+    const k = exams.due(id, words); if (!k) return '';
+    const what = 'O.W.L. 시험지';   // no "재시험": a paper of missed words is just the next paper (2026-10-16, user)
+    return p && (p.done || p.empty) ? `<button type="button" class="bond tea inv-go" data-examgo="${id}">${what}가 와 있다 · <span lang="en">${esc(exams.SUBJECT[id])}</span> →</button>`
+      : `<span class="bond">${what}가 와 있다 · 오늘 수업을 마친 뒤에 받는다</span>`;
+  }
+  $('#cline').addEventListener('click', e => { const x = e.target.closest('[data-examgo]'); if (x){ dismissOwl(); app.go('#/exam/' + x.dataset.examgo); return; } const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); const p = e.target.closest('[data-potgo]'); if (p){ dismissOwl(); app.go('#/potion/' + p.dataset.potgo); } });   /* into a lesson, as through a door: an owl on its way waits */
   bond.onPost(() => { mailCount(); if (DOORS[cur] && DOORS[cur].me) describe(false); });
 
   /* ---------- entering: the door's opening clip if there is one, otherwise we walk into its light */

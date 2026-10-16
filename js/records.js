@@ -9,7 +9,8 @@ import * as bond from './bond.js';
 import * as need from './need.js';
 import * as doors from './doors.js';
 import * as bella from './bella.js';
-import {$, esc, fitPaper, toast} from './ui.js';
+import * as exams from './exams.js';
+import {$, esc, fitPaper, toast, openSheet} from './ui.js';
 
 const pad = n => String(n).padStart(2, '0');
 const ymd = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
@@ -22,7 +23,7 @@ export function initRecords(app){
   /* the professors, and the fire and the manor once they have opened */
   const shown = () => DECKS.filter(d => d.place === 'corridor' || doors.available(d.id));
   const sec = $('#records');
-  ['#recCal', '#recProf', '#recMiss', '#recWeeks'].forEach((s, i) => fitPaper($(s), 50 + i));
+  ['#recCal', '#recProf', '#recOwl', '#recMiss', '#recWeeks'].forEach((s, i) => fitPaper($(s), 50 + i));
   let y = 0, m = 0;
 
   /* ---------- attendance */
@@ -132,6 +133,29 @@ export function initRecords(app){
       : '<p class="rm-none" lang="en">No marks recorded yet.</p>';
   }
 
+  /* ---------- the O.W.L. papers (exams.js, 2026-10-16). The user's design (after a first try with grade cells and wax,
+     "존나 구림"): a plain table — subject and professor — and under it what the grades mean, highest first. A row opens
+     that subject's whole record (every paper: number, day, score, grade); a line of it opens the marked paper. */
+  function drawOwl(){
+    const rows = exams.results().filter(r => r.n);
+    $('#recOwl').hidden = !rows.length; if (!rows.length) return;
+    $('#recOwlBody').innerHTML = `<table class="ro-table"><thead><tr><th>과목</th><th>교수</th></tr></thead><tbody>` +
+      rows.map(r => `<tr data-subj="${r.id}" tabindex="0" role="button"><td lang="en">${esc(r.subject)}</td><td>${esc(byId(r.id).ko)}</td></tr>`).join('') + '</tbody></table>' +
+      `<dl class="ro-key">${exams.GRADES.map(g => `<div><dt lang="en">${g[0]}</dt><dd><span lang="en">${esc(g[1])}</span> · ${esc(GRADE_KO[g[0]])}</dd></div>`).join('')}</dl>`;
+  }
+  const GRADE_KO = {O: '탁월', E: '기대 이상', A: '합격', P: '미흡', D: '형편없음', T: '트롤'};
+  function owlRecord(id){
+    const ss = exams.sittings(id);
+    openSheet(`<div class="sh-kind"><span lang="en">${esc(exams.examiner(id))}</span><span>${ss.length}회</span></div><h2 class="sh-expr" id="shTitle" lang="en">${esc(exams.SUBJECT[id])}</h2>` +
+      `<table class="ro-full"><thead><tr><th>회차</th><th>날짜</th><th>맞은 수</th><th>등급</th></tr></thead><tbody>` +
+      ss.map((s, i) => { const g = exams.gradeAt(s)[0], [, mo, dd] = s.d.split('-');
+        return `<tr${s.p ? ` data-paper="#/exam/${id}/paper/${s.t}" tabindex="0" role="button"` : ''}><td lang="en">${i + 1}</td><td>${+mo}월 ${+dd}일</td><td lang="en">${s.ok ?? (s.w.length - s.miss.length)} / ${s.n ?? s.w.length}</td><td class="g${exams.PASS.has(g) ? '' : ' fail'}" lang="en">${g}</td></tr>`; }).reverse().join('') +
+      '</tbody></table><p class="sh-note">줄을 누르면 그 회차의 채점된 시험지</p>');
+  }
+  $('#recOwlBody').addEventListener('click', e => { const r = e.target.closest('[data-subj]'); if (r) owlRecord(r.dataset.subj); });
+  $('#recOwlBody').addEventListener('keydown', e => { const r = e.target.closest('[data-subj]'); if (r && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); owlRecord(r.dataset.subj); } });
+  document.addEventListener('click', e => { const b = e.target.closest('.ro-full [data-paper]'); if (b && !sec.hidden) app.go(b.dataset.paper); });
+
   $('#recBack').addEventListener('click', () => app.go('#/'));
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape') app.go('#/'); });
 
@@ -139,7 +163,7 @@ export function initRecords(app){
     const [ty, tm] = srs.today().split('-').map(Number);
     y = ty; m = tm - 1;
     $('#recStreak').textContent = `연속 ${srs.streak()}일`;
-    drawCal(); drawWeeks(); drawDecks();
+    drawCal(); drawWeeks(); drawDecks(); drawOwl();
     $('#recScroll').scrollTop = 0;
   }
   return {show};

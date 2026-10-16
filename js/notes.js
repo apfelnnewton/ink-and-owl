@@ -7,6 +7,7 @@ import {DECKS, LOCKED, byId, homeOf} from './decks.js';
 import {available} from './doors.js';   // availableDecks: the fire and the manor join the row once they have opened
 import * as store from './store.js';
 import * as grammar from './grammar.js';
+import * as exams from './exams.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
 /* the data's kinds are fine-grained (about ninety); the notebook groups them into a handful */
@@ -131,6 +132,25 @@ export function initNotes(app){
   $('#notesScript').addEventListener('click', () => app.go('#/script/' + deck.id));
   $('#notesPrint').addEventListener('click', printSheet);
   $('#notesGram').addEventListener('click', () => grammar.catalogue(deck.id));
+  /* the word book (2026-10-16, docs/plan-owl.md 5): every hard word of the lines learnt, A to Z; a red dot on a word missed
+     the last time an O.W.L. paper asked it. A tap opens the word as on the card */
+  let wordList = [];
+  $('#notesWords').addEventListener('click', async () => {
+    const words = await app.loadWords(deck.id), w = exams.standing(deck.id, words), missed = new Set(w.missed.map(e => e.key));
+    wordList = [...w.all].sort((a, b) => a.w.localeCompare(b.w));
+    if (!wordList.length){ toast('아직 배운 낱말이 없다'); return; }
+    openSheet(`<div class="sh-kind"><span>${esc(deck.ko)}</span></div><h2 class="sh-expr" id="shTitle">낱말장 · ${wordList.length}개</h2>` +
+      (missed.size ? `<p class="sh-note">붉은 점: 지난 O.W.L.에서 틀린 낱말 ${missed.size}개</p>` : '') +
+      `<ul class="wb-list">${wordList.map((e, i) => `<li><button type="button" data-wb="${i}"${missed.has(e.key) ? ' class="miss"' : ''}><b lang="en">${esc(e.w)}</b><span>${esc(e.ko)}</span></button></li>`).join('')}</ul>`);
+  });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-wb]'); if (!b || sec.hidden) return;
+    const w = wordList[+b.dataset.wb]; if (!w) return;
+    openSheet(`<div class="sh-kind"><span>${esc(w.pos)}</span></div><h2 class="sh-expr" id="shTitle" lang="en">${esc(w.w)}</h2><p class="sh-note">${esc(w.ko)}</p>` +
+      `<p class="sh-word"><span>쉬운 말</span> <span lang="en">${esc(w.plain)}</span></p>` +
+      (w.fam && w.fam.length ? `<p class="sh-word"><span>같은 뿌리</span> <span lang="en">${esc(w.fam.join(' · '))}</span></p>` : '') +
+      `<ul class="sh-ex"><li><span class="en" lang="en">${esc(w.ex.en)}</span><span class="kr">${esc(w.ex.ko)}</span></li></ul>`);
+  });
 
   /* ---------- a worksheet for paper: the starred expressions (or, with none starred, every learnt one), each with its
      note, then two gap-fill sentences per expression with four choices, and an answer key at the end */

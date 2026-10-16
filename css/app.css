@@ -2376,3 +2376,111 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 @keyframes po-cloth-long{0%{opacity:0;transform:translateY(-30%) rotate(-6deg)}10%,86%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(-40%) rotate(5deg)}}
 @keyframes po-stain-long{0%,22%{opacity:0}50%,100%{opacity:1}}
 @keyframes po-cloth{0%{opacity:0;transform:translateY(-30%) rotate(-6deg)}25%,70%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(-40%) rotate(5deg)}}
+
+/* ============ the word tests: an O.W.L. paper (exam.js, 2026-10-16 — the look agreed in docs/owl-paper-mock.html) ============ */
+#exam{background:#07090A;--pen:#1F2A44;--red:#9B1C1C}
+#exam .bg .photo{display:block;filter:brightness(.42) saturate(.85)}
+.ex-scroll{position:absolute;inset:0;top:calc(var(--st) + 52px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 0 calc(28px + var(--sb))}
+.ex-paper{position:relative;width:min(calc(100% - 20px), 520px);margin:0 auto;color:var(--ink);padding:38px 36px 34px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.6))}
+.ex-paper > .ex-body{position:relative}
+.ex-auth{font:400 12px/1.2 var(--f-caps);letter-spacing:.14em;text-align:center;color:var(--ink-soft)}
+.ex-title{font:400 21px/1.15 var(--f-caps);letter-spacing:.05em;text-align:center;margin:6px 0 2px}
+.ex-subj{font:italic 400 26px/1.1 var(--f-display);text-align:center;margin:4px 0 2px}
+.ex-exr{font:italic 400 14px/1.3 var(--f-display);text-align:center;color:var(--ink-soft)}
+.ex-rule{height:0;border-top:1px solid rgba(42,33,24,.55);margin:12px 0}
+.ex-rule.dbl{border-top:3px double rgba(42,33,24,.6)}
+.ex-meta{font:400 13px/1.3 var(--f-display)}
+.ex-instr{font:italic 400 14px/1.4 var(--f-display);text-align:center;margin:2px 0 4px}
+.ex-instr .ko,.ex-instr.ko-only{display:block;font:400 12px/1.5 var(--f-ko);font-style:normal;color:var(--ink-soft);margin-top:2px}
+.ex-wait{text-align:center;color:var(--ink-soft);font-size:14px}
+ol.ex-q{list-style:none;margin:6px 0 0;padding:0}
+ol.ex-q > li{position:relative;padding:12px 0 12px 30px}
+ol.ex-q > li + li{border-top:1px dotted rgba(42,33,24,.35)}
+ol.ex-q .num{position:absolute;left:0;top:12px;font:400 18px/1.2 var(--f-display)}
+.ex-qk{font:400 11.5px/1 var(--f-ko);color:var(--ink-soft);margin-bottom:5px;letter-spacing:.02em}
+.ex-qw{font:400 21px/1.2 var(--f-display)}
+.ex-qw .pos{font:italic 400 14px var(--f-display);color:var(--ink-soft);margin-left:5px}
+.ex-qs{font:400 calc(16.5px * var(--k, 1))/1.45 var(--f-display)}
+.ex-qs .gloss{display:block;font:400 12.5px/1.4 var(--f-ko);color:var(--ink-soft);margin-top:3px}
+.ex-gap{display:inline-block;min-width:72px;height:1em;border-bottom:1.3px solid rgba(42,33,24,.55);vertical-align:-2px}
+.ex-opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;margin-top:6px}
+.ex-opts button{display:flex;gap:7px;align-items:baseline;text-align:left;background:none;border:0;padding:8px 4px;min-height:44px;cursor:pointer;color:var(--ink);font:400 14px/1.35 var(--f-ko)}
+.ex-opts.en button{font:400 16px/1.3 var(--f-display)}
+.ex-opts button b{position:relative;font:italic 400 15px var(--f-display);color:var(--ink-soft);flex:none}
+.ex-opts button.on{color:var(--pen)}
+.ex-opts button.on b{color:var(--pen)}
+.ex-opts button.on b::after{content:'';position:absolute;left:-5px;top:-3px;right:-5px;bottom:-4px;border:1.6px solid var(--pen);border-radius:50% 46% 52% 48%;transform:rotate(-8deg)}
+.ex-write{display:flex;align-items:baseline;margin-top:8px;font:400 20px/1.2 var(--f-display);cursor:text}
+.ex-write .first{color:var(--ink)}
+.ex-write input{flex:1;min-width:0;min-height:40px;border:0;border-bottom:1.3px solid rgba(42,33,24,.55);background:none;padding:0 2px;font:italic 400 20px/1.2 var(--f-display);color:var(--pen);border-radius:0;outline:none}
+.ex-write input:focus{border-bottom-color:var(--pen)}
+.ex-foot{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.ex-btn{display:block;width:100%;min-height:48px;background:none;border:1.2px solid rgba(42,33,24,.6);border-radius:2px;font:400 15px/1.2 var(--f-ko);color:var(--ink);cursor:pointer}
+.ex-btn span{font:italic 400 16px var(--f-display);margin-right:6px}
+.ex-btn.quiet{border-color:rgba(42,33,24,.3);color:var(--ink-soft)}
+.ex-say{font:italic 400 21px/1.35 var(--f-display);text-align:center;margin:18px 0 6px}
+.ex-say-ko{font-size:13.5px;color:var(--ink-soft);text-align:center;line-height:1.6}
+/* marked */
+.ex-grade{position:absolute;right:-6px;top:150px;width:62px;height:62px;display:grid;place-items:center;color:var(--red);transform:rotate(-9deg);z-index:1}
+.ex-grade::before{content:'';position:absolute;inset:0;border:2.2px solid var(--red);border-radius:52% 47% 50% 49%;opacity:.9}
+.ex-grade b{font:400 38px/1 var(--f-display)}
+.ex-grade small{position:absolute;top:100%;margin-top:3px;left:50%;transform:translateX(-50%);white-space:nowrap;font:italic 400 12px var(--f-display)}
+ol.ex-q.marked .mk{position:absolute;left:-24px;top:14px;font:400 22px/1 var(--f-display);color:var(--red);transform:rotate(-10deg)}
+ol.ex-q.marked .num{font-size:15px;color:var(--ink-soft);top:14px}
+.ex-ans{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.ex-pen{color:var(--pen);font:italic 400 18px var(--f-display)}
+.ex-pen:not([lang]){font:400 14.5px/1.4 var(--f-ko)}
+.ex-pen.struck{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.ex-pen.none{color:rgba(42,33,24,.4)}
+.ex-fix{color:var(--red);font:italic 400 18px var(--f-display)}
+.ex-fix:not([lang]){font:400 14.5px/1.4 var(--f-ko)}
+.ex-margin{margin:14px 0 2px;color:var(--red);transform:rotate(-1.2deg)}
+.ex-margin p{margin:0}
+.ex-margin [lang=en]{font:italic 400 17px/1.4 var(--f-display)}
+.ex-margin .ko{font-size:12.5px;margin-top:4px;opacity:.85;line-height:1.55}
+.ex-margin .sig{text-align:right;font-size:15px;margin-top:2px}
+.marking ol.ex-q.marked .mk,.marking .ex-fix,.marking .ex-grade,.marking .ex-margin{opacity:0}
+ol.ex-q.marked .mk,.ex-fix{transition:opacity .35s ease calc(var(--i, 0) * 90ms + 200ms)}
+.ex-grade,.ex-margin{transition:opacity .5s ease 1.2s}
+/* the results notice */
+.ex-keys{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font:400 13.5px/1.4 var(--f-display)}
+.ex-keys h4{margin:0 0 3px;font:400 12px var(--f-caps);letter-spacing:.1em;color:var(--ink-soft)}
+.ex-name{font:italic 400 17px/1.3 var(--f-display);text-align:center;margin:8px 0 4px}
+table.ex-res{width:100%;border-collapse:collapse;font:400 15px/1.3 var(--f-display)}
+table.ex-res td{padding:9px 4px;border-top:1px dotted rgba(42,33,24,.4)}
+table.ex-res td.g{text-align:right;font-size:24px;width:40px}
+table.ex-res td.g.fail{color:var(--red)}
+table.ex-res .who{display:block;font:italic 400 12.5px var(--f-display);color:var(--ink-soft)}
+table.ex-res tr.wait td{color:rgba(42,33,24,.4)}
+.ex-sign{font:italic 400 14px/1.3 var(--f-display);text-align:center;color:var(--ink-soft);margin:14px 0 4px}
+.ex-note{font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.6;margin:4px 0 0}
+@media (prefers-reduced-motion: reduce){ ol.ex-q.marked .mk,.ex-fix,.ex-grade,.ex-margin{transition:none} }
+ol.ex-q.marked > li:first-child{padding-right:64px}
+
+/* the O.W.L. record in the register (records.js drawOwl): subject · professor, then the grades' meanings */
+table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
+.ro-table th,.ro-full th{font:400 11px/1.2 var(--f-ko);color:var(--ink-soft);text-align:left;padding:4px 6px 6px;border-bottom:3px double rgba(42,33,24,.55)}
+.ro-table td,.ro-full td{padding:8px 6px;border-bottom:1px solid rgba(42,33,24,.25);vertical-align:baseline}
+.ro-table tr[data-subj],.ro-full tr[data-paper]{cursor:pointer}
+.ro-table td:first-child{font:italic 400 14.5px/1.25 var(--f-display);color:var(--ink)}
+.ro-table td:last-child{font-size:12.5px;color:var(--ink);white-space:nowrap}
+.ro-table tr[data-subj]:active td,.ro-full tr[data-paper]:active td{background:rgba(42,33,24,.06)}
+.ro-key{margin:12px 0 0;display:grid;grid-template-columns:1fr;gap:2px}
+.ro-key div{display:flex;align-items:baseline;gap:10px}
+.ro-key dt{font:400 15px/1.2 var(--f-display);width:16px;text-align:center;color:var(--ink)}
+.ro-key div:nth-child(n+4) dt{color:#9B1C1C}
+.ro-key dd{margin:0;font-size:11.5px;color:var(--ink-soft)}
+.ro-key dd span{font:italic 400 13px var(--f-display);color:var(--ink)}
+.ro-full td{font:400 13.5px var(--f-display);color:var(--ink)}
+.ro-full td:nth-child(2){font:400 12.5px var(--f-ko)}
+.ro-full td.g{font-size:18px;text-align:center;width:44px}
+.ro-full th:last-child{text-align:center}
+.ro-full td.g.fail{color:#9B1C1C}
+/* the word book (notes.js) */
+.wb-list{list-style:none;margin:10px 0 0;padding:0}
+.wb-list li + li{border-top:1px dotted rgba(42,33,24,.3)}
+.wb-list button{display:flex;align-items:baseline;gap:10px;width:100%;min-height:44px;padding:8px 2px 8px 16px;background:none;border:0;text-align:left;cursor:pointer;color:var(--ink);position:relative}
+.wb-list b{font:400 17px/1.2 var(--f-display);flex:none}
+.wb-list span{font-size:13px;color:var(--ink-soft);line-height:1.4}
+.wb-list button.miss::before{content:'';position:absolute;left:2px;top:50%;width:7px;height:7px;margin-top:-4px;border-radius:50%;background:#9B1C1C}
+

@@ -249,7 +249,7 @@
   <div class="notes-scroll" id="notesScroll">
     <div class="notes-wrap">
       <nav class="n-who" id="notesWho" aria-label="교수 고르기"></nav>
-      <div class="n-links"><button type="button" id="notesScript">대본 읽기 <i>→</i></button><button type="button" id="notesGram">문법 노트 <i>→</i></button><button type="button" id="notesPrint">인쇄용 활동지 <i>→</i></button></div>
+      <div class="n-links"><button type="button" id="notesScript">대본 읽기 <i>→</i></button><button type="button" id="notesGram">문법 노트 <i>→</i></button><button type="button" id="notesWords">낱말장 <i>→</i></button><button type="button" id="notesPrint">인쇄용 활동지 <i>→</i></button></div>
       <div class="n-tools">
         <input type="search" id="notesQ" placeholder="표현이나 뜻으로 찾기" aria-label="표현 검색">
         <button type="button" class="n-filter" id="notesStar" aria-pressed="false">★ 별표만</button>
@@ -272,6 +272,7 @@
     <div class="notes-wrap rec-wrap">
       <article class="rec-paper" id="recCal"><div class="paperbox"></div><div id="recCalBody"></div></article>
       <article class="rec-paper" id="recProf"><div class="paperbox"></div><h2 class="rec-h">교수별 진도</h2><p class="rec-sub">옅은 칸 배움 · 짙은 칸 숙달</p><ul class="rec-prof" id="recProfBody"></ul></article>
+      <article class="rec-paper" id="recOwl" hidden><div class="paperbox"></div><h2 class="rec-h">O.W.L. 성적부</h2><p class="rec-sub">과목을 누르면 그 과목의 전체 성적표</p><div class="rec-owl" id="recOwlBody"></div></article>
       <article class="rec-paper" id="recMiss"><div class="paperbox"></div><h2 class="rec-h">자주 틀리는 표현</h2><div class="rec-miss" id="recMissBody"></div></article>
       <article class="rec-paper" id="recWeeks"><div class="paperbox"></div><h2 class="rec-h">최근 8주</h2><div class="rec-weeks" id="recWeeksBody"></div></article>
     </div>
@@ -520,6 +521,16 @@
 </section>
 
 <!-- ============ POTIONS: a lesson at a cauldron in Snape's dungeon, done by hand (potion.js) ============ -->
+<section id="exam" class="screen" hidden aria-label="낱말 시험">
+  <div class="bg" aria-hidden="true"><div class="photo" id="exPhoto"></div><div class="shade"></div></div>
+  <div class="r-top">
+    <button type="button" class="back" id="exBack" aria-label="복도로 돌아가기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EDEBDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="ttl" lang="en">O.W.L.</div>
+    <div class="cnt" id="exCnt"></div>
+  </div>
+  <div class="ex-scroll" id="exScroll"><article class="ex-paper" id="exPaper"><div class="paperbox"></div><div class="ex-body" id="exBody"></div></article></div>
+</section>
+
 <section id="potion" class="screen" hidden aria-label="조제 수업" data-view="pot">
   <div class="bg" aria-hidden="true"><div class="photo"></div><div class="shade"></div></div>
   <div class="r-top">
