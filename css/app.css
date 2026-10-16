@@ -2149,6 +2149,10 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .tw-shelf{position:absolute;z-index:4;left:0;right:0;top:calc(58px + var(--st));bottom:0;display:flex;flex-direction:column;gap:8px;padding:4px 14px calc(var(--sb) + 16px)}
 .tw-shelfwrap{flex:1;min-height:0;container-type:size;display:flex;justify-content:center;align-items:center}
 .tw-shelfpic{position:relative;width:min(100cqw, 100cqh * 1200 / 1608);aspect-ratio:1200 / 1608;background:url(../assets/shop/borgin-shelf.webp) center/100% 100% no-repeat;box-shadow:0 14px 34px rgba(0,0,0,.65)}
+.tw-shelfpic{container-type:inline-size}
+/* the guest's name on a compartment's brass plate, in Mr Borgin's sloping hand: small, dark ink, a little light under it */
+.tw-plate{position:absolute;z-index:1;transform:translate(-50%, -50%);max-width:7.2cqw;overflow:hidden;white-space:nowrap;pointer-events:none;
+  font:italic 400 calc(1.45cqw * 11 / var(--n, 11))/1.1 var(--f-display);color:#24190A;text-shadow:0 .08cqw 0 rgba(255,236,170,.4)}
 .tw-on{position:absolute;aspect-ratio:1;padding:0;border:0;background:none;cursor:pointer;transform:translate(-50%, var(--drop));filter:drop-shadow(0 5px 5px rgba(0,0,0,.75))}
 .tw-on img{width:100%;height:100%;display:block}
 .tw-on:hover img,.tw-on:focus-visible img{filter:drop-shadow(0 0 8px rgba(214,232,190,.6))}

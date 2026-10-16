@@ -350,6 +350,9 @@ const PLACES = {
 };
 /* the twelve compartments of the shelf (assets/shop/borgin-shelf.webp, 1200 × 1608): centre of each column, floor of each row, as fractions */
 const COL = [.21, .50, .79], FLOOR = [.249, .463, .657, .858], NICHE = 15;   // NICHE: the side of a thing's picture, % of the shelf's height
+/* the brass plate under each compartment (centre, as fractions): once a thing stands there it bears the guest's name in
+   Mr Borgin's sloping hand, as the shelf's own line and the former owners' letters say */
+const PLATE_X = [.212, .5, .79], PLATE_Y = [.267, .481, .677, .891];
 export function initTown(app){
   const sec = $('#town'), ph = $('#twPhoto');
   let view = 'diagon', visit = null;
@@ -393,8 +396,10 @@ export function initTown(app){
   }
   function drawShelf(P){
     const mine = DARK.filter(g => owns(g.id)), cap = TEXT ? TEXT.borgin.shelf[mine.length % 2] : null;
+    const set = store.get().settings, who = set.firstName || set.surname ? bond.fill('{name}') : '';   // a long name is written smaller, to stay on the plate
     $('#twShelfIn').innerHTML = DARK.map(g => ({g, i: owns(g.id) ? placeOf(g) : null})).map(({g, i}) => i == null ? '' :
-      `<button type="button" class="tw-on" data-good="${g.id}" aria-label="${esc(g.ko)}" style="left:${COL[i % 3] * 100}%;bottom:${((1 - FLOOR[Math.floor(i / 3)]) * 100).toFixed(1)}%;height:${NICHE}%;--drop:${g.drop || 0}%"><img src="${art(g.id)}" alt=""></button>`).join('');
+      `<button type="button" class="tw-on" data-good="${g.id}" aria-label="${esc(g.ko)}" style="left:${COL[i % 3] * 100}%;bottom:${((1 - FLOOR[Math.floor(i / 3)]) * 100).toFixed(1)}%;height:${NICHE}%;--drop:${g.drop || 0}%"><img src="${art(g.id)}" alt=""></button>` + (who &&
+      `<span class="tw-plate" lang="en" aria-hidden="true" style="left:${PLATE_X[i % 3] * 100}%;top:${PLATE_Y[Math.floor(i / 3)] * 100}%;--n:${Math.max(11, who.length)}">${esc(who)}</span>`)).join('');
     $('#twShelfCap').innerHTML = mine.length ? (cap ? say(cap) : '') + `<small>맡아 둔 물건 ${mine.length}점</small>` : `<span class="k">선반은 아직 비어 있다. 칸마다 빈 놋쇠 이름표만 붙어 있다.</span>`;
   }
   function draw(){
