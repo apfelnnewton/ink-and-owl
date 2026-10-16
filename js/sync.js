@@ -26,7 +26,7 @@ function setAside(){ try { if (!localStorage.getItem(KEEP)) localStorage.setItem
    was entered under the 12th, and seven days in a row became one. The day is put back as a day; the count follows from the register. */
 const LOST = ['2026-10-11'];
 function putBack(){ const c = core.state(); if (c.mend) return false; const did = mendRegister(store, LOST, new Date().toISOString().slice(0, 10)); c.mend = 1; store.save(); return did; }
-const LESSON = ['room', 'spell', 'ollivander'];   // a lesson is not disturbed: the day's session must not change under it
+const LESSON = ['room', 'spell', 'ollivander', 'potion'];   // a lesson is not disturbed: the day's session must not change under it
 
 export async function run(){
   if (!on() || navigator.onLine === false) return null;

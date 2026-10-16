@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-15a';
+const VERSION = 'he-2026-10-16a';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -32,26 +32,57 @@ const CORE = [
   'js/potion.js',
   'js/potions.js',
   'potions/potions.json',
+  'assets/potions/asphodel-roots.webp',
   'assets/potions/bench-portrait.webp',
   'assets/potions/bench-wide.webp',
+  'assets/potions/bicorn-horn.webp',
   'assets/potions/board.webp',
   'assets/potions/cabinet.webp',
   'assets/potions/cauldron.webp',
+  'assets/potions/cloth.webp',
+  'assets/potions/cloth-clean.webp',
+  'assets/potions/vial-empty.webp',
+  'assets/potions/dagger.webp',
+  'assets/potions/daisy-roots.webp',
+  'assets/potions/dried-dittany.webp',
+  'assets/potions/dropper.webp',
+  'assets/potions/envelope.webp',
   'assets/potions/flame-high.webp',
   'assets/potions/flame-low.webp',
   'assets/potions/flobberworm.webp',
+  'assets/potions/fluxweed.webp',
+  'assets/potions/fwooper-feather.webp',
+  'assets/potions/hedgehog-spines.webp',
   'assets/potions/horned-slug.webp',
   'assets/potions/jar-bottle.webp',
   'assets/potions/jar-squat.webp',
   'assets/potions/jar-tall.webp',
+  'assets/potions/jobberknoll-feather.webp',
   'assets/potions/knife.webp',
+  'assets/potions/knotgrass.webp',
+  'assets/potions/knotweed.webp',
+  'assets/potions/leeches.webp',
+  'assets/potions/leopards-bane.webp',
   'assets/potions/mortar.webp',
+  'assets/potions/murtlap-tentacles.webp',
   'assets/potions/pestle.webp',
+  'assets/potions/powdered-sunstone.webp',
   'assets/potions/rat-tails.webp',
   'assets/potions/rod.webp',
+  'assets/potions/scarab-beetle.webp',
   'assets/potions/snake-fang.webp',
+  'assets/potions/sopophorous-bean.webp',
+  'assets/potions/sugar.webp',
   'assets/potions/trivet.webp',
+  'assets/potions/valerian-leaves.webp',
+  'assets/potions/valerian-roots.webp',
   'assets/potions/vial-boils.webp',
+  'assets/potions/vial-dittany.webp',
+  'assets/potions/vial-living-death.webp',
+  'assets/potions/vial-peace.webp',
+  'assets/potions/vial-polyjuice.webp',
+  'assets/potions/vial-veritaserum.webp',
+  'assets/potions/vial-wolfsbane.webp',
   'js/map.js',
   'js/door.js',
   'js/census.js',
@@ -121,6 +152,9 @@ const CORE = [
   'assets/shop/aconite.webp',
   'assets/shop/bezoar.webp',
   'assets/shop/boomslang-skin.webp',
+  'assets/shop/jobberknoll-feather.webp',
+  'assets/shop/sopophorous-bean.webp',
+  'assets/shop/dried-dittany.webp',
   'assets/shop/butterbeer.webp',
   'assets/shop/bag.webp',
   'js/talk.js',
@@ -365,7 +399,12 @@ self.addEventListener('fetch', e => {
   const fonts = url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
   if (url.origin !== location.origin && !fonts) return;
   if (/.mp4$/i.test(url.pathname)) return;   // videos stream from the network (range requests cannot be cached); the still shows offline
-  const key = req.mode === 'navigate' ? 'index.html' : req;
+  /* opening the app itself (…/ or …/index.html) is answered with the app's page; any other page opened in a tab (a picture,
+     a file) goes to the network untouched — before 2026-10-16 every page opened was stored as the app's page, so the next
+     start showed that page instead of the app */
+  const app = req.mode === 'navigate' && /\/(index\.html)?$/.test(url.pathname);
+  if (req.mode === 'navigate' && !app) return;
+  const key = app ? 'index.html' : req;
   e.respondWith(caches.open(VERSION).then(async cache => {
     const hit = await cache.match(key, {ignoreSearch: req.mode === 'navigate'});
     const net = fetch(req).then(res => { if (res && res.status !== 206 && (res.ok || res.type === 'opaque')) cache.put(key, res.clone()); return res; }).catch(() => null);

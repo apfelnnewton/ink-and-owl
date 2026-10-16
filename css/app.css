@@ -522,6 +522,8 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .cstats:empty{display:none}
 .cstats b{display:block;font:400 26px/1 'Cormorant Garamond','Gowun Batang',serif;color:#EDE3C8;margin-bottom:5px}
 .cline{margin-top:12px;font-size:13.5px;color:#C9BFA6}
+/* the lines that are ways in (a tea invitation, a cauldron): the card lets taps through to the door, these must take them (2026-10-15) */
+.cline button{pointer-events:auto;cursor:pointer}
 .cgo{pointer-events:auto;margin-top:22px;width:100%;min-height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 4px;background:none;border:0;border-top:1px solid rgba(237,227,200,.28);border-bottom:1px solid rgba(237,227,200,.28);font-family:var(--f-ko);font-size:15px;letter-spacing:.08em;color:#F2EADB;cursor:pointer;transition:border-color .3s, color .3s}
 .cgo i{font:normal 20px 'Cormorant Garamond','Gowun Batang',serif;transition:transform .3s}
 .cgo:hover{border-color:rgba(237,227,200,.6)}
@@ -1162,15 +1164,27 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 #hint:empty{display:none}
 
 /* a pending tea invitation tucked into the professor's door (corridor) */
-.csec .door-inv{position:absolute;z-index:2;left:57%;top:51%;width:15%;transform:rotate(-9deg);filter:drop-shadow(0 4px 5px rgba(0,0,0,.75));pointer-events:none;
+/* tucked into the gap at the door's right edge (2026-10-15): the box ends at the gap, the envelope runs on into it */
+.csec .door-inv{position:absolute;z-index:2;left:61.2%;top:41%;width:10.1%;height:13%;overflow:hidden;filter:drop-shadow(0 4px 5px rgba(0,0,0,.75));pointer-events:none;
   animation:invGlow 3s ease-in-out infinite}
 .csec .door-inv[hidden]{display:none}
+.csec .door-inv .env{position:absolute;left:6%;top:16%;width:150%;transform:rotate(-14deg);transform-origin:0 50%}
+.csec .door-inv::after{content:'';position:absolute;top:0;bottom:0;right:0;width:5px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.85))}   /* the dark of the gap */
 .csec .door-inv img{display:block;width:100%;height:auto}
 .csec .door-inv .seal{position:absolute;left:50%;top:60.6%;width:24%;height:auto;aspect-ratio:1;transform:translate(-50%, -50%)}
 @keyframes invGlow{50%{filter:drop-shadow(0 4px 5px rgba(0,0,0,.75)) drop-shadow(0 0 7px rgba(232,200,119,.55))}}
 .cline .inv-go{display:block;margin-top:6px;padding:0;min-height:44px;background:none;border:0;text-align:left;cursor:pointer;font:inherit;font-size:13px;color:#E8C877;text-decoration:underline;text-decoration-color:rgba(232,200,119,.4);text-underline-offset:3px}
 .cline .inv-go span{font:italic 15px 'Cormorant Garamond','Gowun Batang',serif}
-@media (prefers-reduced-motion: reduce){ .csec .door-inv{animation:none} }
+/* the phial of a potions lesson, hung by a string from the handle of Snape's door (home.js phial) */
+.csec .door-pot{position:absolute;z-index:3;left:56.6%;top:calc(55% + 14px);width:7%;padding:0;background:none;border:0;cursor:pointer;pointer-events:auto;transform-origin:50% -18px;animation:potSwing 3.4s ease-in-out infinite;filter:drop-shadow(0 4px 5px rgba(0,0,0,.75)) drop-shadow(0 0 6px rgba(150,220,170,.35))}
+.csec .door-pot[hidden]{display:none}
+.csec .door-pot .po-ph{width:100%}
+.csec .door-pot::before{content:'';position:absolute;left:50%;bottom:100%;width:1.5px;height:14px;margin-left:-.75px;background:linear-gradient(#5a4a36,#8a7458)}
+.csec .door-pot::after{content:'';position:absolute;inset:-14px -16px}   /* a finger-sized place to tap */
+.csec .door-pot.still{animation:none}
+.csec .door-pot.dull{filter:drop-shadow(0 4px 5px rgba(0,0,0,.75)) saturate(.35) brightness(.7)}
+@keyframes potSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion: reduce){ .csec .door-inv,.csec .door-pot{animation:none} }
 /* the invitation clipped to the front of the tea journal */
 .jnl-inv{position:relative;display:flex;align-items:center;gap:10px;width:100%;margin:0 0 14px;padding:12px 30px 12px 12px;min-height:64px;text-align:left;cursor:pointer;color:var(--ink);font:inherit;
   background:linear-gradient(#fbf5e6, #f1e6cc);border:1px solid rgba(122,90,34,.35);border-radius:2px;box-shadow:0 3px 8px rgba(60,40,15,.25);transform:rotate(-.6deg)}
@@ -2218,6 +2232,9 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .po-peek{display:none;margin:0 auto;background:none;border:1px solid rgba(42,33,24,.4);border-radius:2px;padding:6px 14px;font:400 13px/1 var(--f-ko);color:var(--ink);cursor:pointer}
 #potion.folded .po-lines,#potion.folded .po-words{display:none}
 #potion.folded .po-peek{display:block}
+/* a short screen: the board shows a few lines and scrolls inside itself (potion.js fitBoard) */
+#potion.strip .po-lines{position:relative;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#potion.strip .po-words{display:none}
 .po-stage{position:relative;flex:1;min-height:180px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 82%, transparent);mask-image:linear-gradient(#000 82%, transparent)}
 #potion[data-view="bench"] .po-stage{background:url(../assets/potions/bench-portrait.webp) center/cover;border-radius:3px;box-shadow:inset 0 0 40px 18px rgba(0,0,0,.75)}
 @media (min-aspect-ratio:1/1){ #potion[data-view="bench"] .po-stage{background-image:url(../assets/potions/bench-wide.webp)} }
@@ -2232,6 +2249,21 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .po-cauldron{position:absolute;inset:0;transition:transform .9s cubic-bezier(.5,0,.3,1);filter:drop-shadow(0 14px 14px rgba(0,0,0,.6))}
 .po-cauldron img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;user-select:none}
 .po-cauldron canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+/* the turns being stirred, as tally marks over the cauldron (potion.js tally) */
+.po-tally{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;color:#f1e7cf;opacity:0;transition:opacity .35s;pointer-events:none;filter:drop-shadow(0 1px 3px rgba(0,0,0,.9))}
+.po-tally.on{opacity:1}
+/* the colour the board waits for (potion.js target): a tag on the cauldron's rim */
+.po-tag{position:absolute;width:38px;height:50px;opacity:0;transform:rotate(-7deg);transform-origin:50% -14px;transition:opacity .5s;pointer-events:none;z-index:2;
+  background:linear-gradient(160deg,#e9dcbc,#cdb98f);border-radius:3px 3px 4px 4px;filter:drop-shadow(0 3px 4px rgba(0,0,0,.6))}
+.po-tag::before{content:'';position:absolute;left:50%;top:5px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#3a2c1c}
+.po-tag::after{content:'';position:absolute;left:50%;bottom:100%;width:1px;height:16px;background:#2a2015}
+.po-tag.on{opacity:1}
+.po-tag-c{position:absolute;left:6px;right:6px;top:16px;bottom:6px;border-radius:46% 54% 50% 50% / 52% 48% 56% 44%;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.3), transparent 50%), var(--c);box-shadow:inset 0 0 0 1px rgba(40,25,10,.35)}
+.po-tag-c.smoke{background:radial-gradient(circle, var(--c) 25%, transparent 75%);box-shadow:none}.po-tally .dr{fill:currentColor;stroke:none}
+/* a dropper standing over the cauldron: press it for a drop (potion.js park) */
+.po-parked{position:fixed;width:72px;height:72px;object-fit:contain;z-index:55;cursor:pointer;touch-action:none;transform:translate(-50%, -60%) rotate(-28deg);transition:transform .12s;filter:drop-shadow(0 12px 12px rgba(0,0,0,.65))}
+.po-parked.press{transform:translate(-50%, -54%) rotate(-28deg) scale(.95)}.po-tally.done{color:#f3d58e}
+.po-tally svg{overflow:visible}.po-tally line,.po-tally .way path{stroke:currentColor;stroke-width:2.6;stroke-linecap:round;fill:none}.po-tally .way path{stroke-width:2.2;stroke-linejoin:round}
 #potion.off-fire .po-pot{left:64%}
 #potion.off-fire .po-cauldron{transform:translate(-62%, 16%)}
 .po-steam{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -2274,13 +2306,29 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .po-end-btns button{margin-top:0}
 .po-vial{margin:0 auto 6px;width:120px}
 .po-vial img{width:100%;display:block;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
+/* a phial with its name written on its tag (potions.js phial); the writing scales with the phial */
+.po-ph{position:relative;display:block;width:100%;container-type:inline-size}   /* a width of its own: the cabinet's niches are flex boxes, and a size container would shrink to nothing */
+.po-ph > img{display:block;width:100%;height:auto}
+.po-lbl{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6cqw;padding:1cqw;text-align:center;overflow:hidden;color:#3b2615;font-family:'IM Fell English','Cormorant Garamond',Georgia,serif;line-height:1.02;pointer-events:none}
+.po-lbl b{font-weight:400;font-size:4.6cqw;overflow-wrap:normal;word-break:keep-all}   /* a word is not split across lines (Polyjuice broke as Polyju-ice) */
+.po-lbl i{font-size:3.9cqw;opacity:.85}
+.po-lbl.own{background:linear-gradient(160deg,#e6d8b6,#cbb68b);border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.45)}
+/* a Usable potion: under-done colour laid over the potion only (potions.js UNDER, BOWLS) */
+.po-ph.usable{isolation:isolate}
+.po-tint{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .po-label{margin:0 0 12px;font:italic 400 16px/1.3 var(--f-display);color:#4a2a1a}
 .po-label span{font-size:14px;color:var(--ink-soft)}
 .po-cabinet{position:relative;margin:0 auto 10px;width:min(300px, 80vw)}
 .po-cabinet img{width:100%;display:block}
-.po-cabinet .po-in{position:absolute;width:11%;padding:0;border:0;background:none;cursor:pointer}
+.po-cabinet .po-in{position:absolute;width:11%;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:flex-end}
 .po-cabinet .po-in img{width:100%;display:block;filter:drop-shadow(0 3px 3px rgba(0,0,0,.6))}
 .po-cabinet .po-in.new img{animation:po-set 1.1s ease-out both}
+/* a phial held up close (potion.js closeUp): over the cabinet, on the same paper */
+.po-end-in > .po-close{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;padding:36px 16px 20px;background:rgba(24,18,12,.82);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.po-close-ph{width:min(220px, 56vw, 32vh);margin:0}
+.po-close-ph img{filter:drop-shadow(0 10px 14px rgba(0,0,0,.6))}
+.po-close .t{color:#F2EADB;margin:6px 0 0}.po-close .k{color:#C9BFA6;margin:0}
+.po-close .po-end-btns button{color:#F2EADB;border-color:rgba(242,234,219,.5);background:rgba(0,0,0,.25)}
 @keyframes po-set{from{transform:translateY(-14%);opacity:0}to{transform:none;opacity:1}}
 .po-cab-list{list-style:none;margin:6px 0 0;padding:0;text-align:left}
 .po-cab-list li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;color:rgba(42,33,24,.5)}
@@ -2298,7 +2346,7 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
   .po-stage,.po-say,.po-tray,.po-ctl{grid-column:2}
   .po-lines{font-size:calc(15px * var(--k))}
 }
-@media (prefers-reduced-motion:reduce){ #potion .po-flame{animation:none !important} .po-pot,.po-cauldron{transition:none} }
+@media (prefers-reduced-motion:reduce){ #potion .po-flame{animation:none !important} .po-pot,.po-cauldron{transition:none} .po-tally{transition:none} }
 /* Snape's marked board at the end of a potions lesson: his red ink — ticks, underlines, a remark in the margin */
 .po-end:has(.po-report){align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(var(--st) + 20px) 14px calc(var(--sb) + 24px)}
 .po-report{max-width:460px;margin:auto;text-align:center;padding:40px 30px 30px}
@@ -2321,3 +2369,10 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .po-env .envp b{font:italic 400 10.5px/1.1 var(--f-display);color:#3a2a18;text-align:center}
 .po-lines .po-note{display:block;margin:1px 0 3px 10px;font:italic 400 calc(13.5px * var(--k))/1.25 var(--f-display);color:#4a2a52;transform:rotate(-1.5deg);transform-origin:left}
 .po-ghost.drip.pour{--tilt:-28deg}
+.po-cloth{position:absolute;left:8%;top:-4%;width:84%;pointer-events:none;animation:po-cloth 1.7s ease-in-out both;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5))}
+.po-cloth img{position:static;display:block;width:100%;height:auto}   /* not the cauldron's own picture rule (absolute, full size) */
+.po-cloth .used{position:absolute;inset:0;opacity:0;animation:po-stain 1.7s ease-in both}
+.po-cloth.stains{animation:po-cloth-long 4.6s ease-in-out both}.po-cloth.stains .used{animation:po-stain-long 4.6s ease-in-out both}
+@keyframes po-cloth-long{0%{opacity:0;transform:translateY(-30%) rotate(-6deg)}10%,86%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(-40%) rotate(5deg)}}
+@keyframes po-stain-long{0%,22%{opacity:0}50%,100%{opacity:1}}
+@keyframes po-cloth{0%{opacity:0;transform:translateY(-30%) rotate(-6deg)}25%,70%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(-40%) rotate(5deg)}}

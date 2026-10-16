@@ -49,7 +49,8 @@ export function initHome(app){
     s.className = 'csec';
     s.style.backgroundImage = `url(${ART(d.id)}.webp)`;
     s.innerHTML = `<video muted loop playsinline preload="none" aria-hidden="true"></video>` +
-      (d.me || d.need ? '' : `<i class="door-inv" hidden aria-hidden="true"><img src="assets/owl/envelope.webp" alt=""><i class="seal s-${d.id}"></i></i>`);
+      (d.me || d.need ? '' : `<i class="door-inv" hidden aria-hidden="true"><i class="env"><img src="assets/owl/envelope.webp" alt=""><i class="seal s-${d.id}"></i></i></i>`) +
+      (d.id === 'snape' ? `<button type="button" class="door-pot" hidden></button>` : '');
     wall.appendChild(s);
     return s;
   });
@@ -142,9 +143,11 @@ export function initHome(app){
       }
       $('#cstats').innerHTML = stats;
       if (st.open && !st.loading && !st.me){
-        const t = bond.teaReady(d.id), rq = bond.requestText(d.id), po = d.id === 'snape' ? potions.waiting() : null;
+        const t = bond.teaReady(d.id), rq = bond.requestText(d.id), po = d.id === 'snape' ? potions.waiting() : null, ripe = po && potions.stewOf(po.n) ? po : null;
         const extra = [rq && `<span class="bond">${esc(rq)}</span>`, t && `<button type="button" class="bond tea inv-go" data-teago="${d.id}">문틈에 초대장이 꽂혀 있다 · <span lang="en">${esc(t.title.en)}</span> →</button>`,
-          po && `<button type="button" class="bond tea inv-go" data-potgo="${po.n}">${potions.stewOf(po.n) ? '솥을 보러 간다' : '솥이 기다린다'} · <span lang="en">${esc(po.en)}</span> →</button>`].filter(Boolean).join('');
+          /* a cauldron whose three days are up: in the same form as the tea invitation's line (user, 2026-10-16), and like it a
+             way in, besides the phial on the door */
+          ripe && `<button type="button" class="bond tea inv-go" data-potgo="${ripe.n}">${esc(ripe.ripe_ko || '사흘이 지났다')} · 마저 끓일 때다 · <span lang="en">${esc(ripe.en)}</span> →</button>`].filter(Boolean).join('');
         if (extra) line = line + extra;   // the bond lines are blocks of their own
       }
       mailCount(); invites();
@@ -191,6 +194,9 @@ export function initHome(app){
   const goTo = i => { target = Math.max(0, Math.min(lastIdx(), i)); glide(); };
   stage.addEventListener('pointerdown', e => {
     if (busy) return;
+    /* a button on the title card (a tea invitation, a cauldron waiting) is its own way in: a tap on it is not a tap on the
+       door behind it (2026-10-15, user: those lines kept taking them into the classroom) */
+    if (e.target.closest('button, a, [data-teago], [data-potgo]')) return;
     cancelAnimationFrame(raf);
     drag = {x: e.clientX, p: pos, t: performance.now(), lx: e.clientX}; vel = 0; moved = false;
   });
@@ -225,8 +231,19 @@ export function initHome(app){
   /* unread post: the little diamond for your own door turns gold; a tea invitation or a request shows on the professor's title card */
   function mailCount(){ ticks.children[0].classList.toggle('new', !!(bond.unread() || post.unread())); }
   /* a pending tea invitation shows as an envelope in that professor's door */
-  function invites(){ DOORS.forEach((d, i) => { const e = secs[i].querySelector('.door-inv'); if (e) e.hidden = !(d.file && bond.teaReady(d.id)); }); }
-  $('#cline').addEventListener('click', e => { const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); const p = e.target.closest('[data-potgo]'); if (p) app.go('#/potion/' + p.dataset.potgo); });
+  function invites(){ DOORS.forEach((d, i) => { const e = secs[i].querySelector('.door-inv'); if (e) e.hidden = !(d.file && bond.teaReady(d.id)); }); phial(); }
+  /* a potions lesson waiting (2026-10-15, user chose this way in over a line on the title card): the empty phial of that
+     year hangs by a string from the handle of Snape's door, as a tea invitation is tucked into a door; a tap on it goes to
+     the dungeon. A cauldron still stewing hangs its phial dull (a tap tells how many days are left). */
+  function phial(){
+    const i = DOORS.findIndex(d => d.id === 'snape'), b = i >= 0 && secs[i].querySelector('.door-pot'); if (!b) return;
+    const open = doors.isOpen('snape'), po = open && potions.waiting(), sw = open && !po && potions.stewing(), P = po || sw;
+    b.hidden = !P; if (!P) return;
+    b.dataset.potgo = P.n; b.classList.toggle('dull', !po); b.classList.toggle('still', !!(po && potions.stewOf(po.n)));   /* ready to finish: it hangs still */ b.setAttribute('aria-label', `${P.en} · ${po ? '조제 수업' : '사흘이 아직 안 지남'}`);
+    const src = 'assets/potions/vial-empty.webp'; if (b.dataset.n !== String(P.n)){ b.dataset.n = P.n; b.innerHTML = potions.phial(src, P.en); }   /* one empty phial for every year; its tag names this one */
+  }
+  wall.addEventListener('click', e => { const b = e.target.closest('.door-pot'); if (b){ dismissOwl(); app.go('#/potion/' + b.dataset.potgo); } });
+  $('#cline').addEventListener('click', e => { const b = e.target.closest('[data-teago]'); if (b) app.go(`#/letters/${b.dataset.teago}/tea`); const p = e.target.closest('[data-potgo]'); if (p){ dismissOwl(); app.go('#/potion/' + p.dataset.potgo); } });   /* into a lesson, as through a door: an owl on its way waits */
   bond.onPost(() => { mailCount(); if (DOORS[cur] && DOORS[cur].me) describe(false); });
 
   /* ---------- entering: the door's opening clip if there is one, otherwise we walk into its light */

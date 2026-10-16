@@ -28,7 +28,7 @@
    "img": "assets/shop/porcupine-quills.webp",
    "jar": "squat",
    "board": true,
-   "unit": "개"
+   "unit": "묶음"
   },
   "flobberworm": {
    "en": "Flobberworms",
@@ -47,8 +47,9 @@
    "en": "Lacewing Flies",
    "ko": "풀잠자리",
    "jar": "tall",
-   "unit": "마리",
-   "img": "assets/shop/lacewing-flies.webp"
+   "unit": "병",
+   "img": "assets/shop/lacewing-flies.webp",
+   "pour": "flakes"
   },
   "leeches": {
    "en": "Leeches",
@@ -66,17 +67,17 @@
   },
   "fluxweed-new-moon": {
    "en": "Fluxweed, picked at the new moon",
-   "ko": "그믐에 딴 플럭스위드",
+   "ko": "그믐달에 딴 플럭스위드",
    "jar": "squat",
    "board": true,
-   "img": "assets/potions/fluxweed-new-moon.webp",
+   "img": "assets/potions/fluxweed.webp",
    "made_up": true
   },
   "knotgrass": {
    "en": "Knotgrass",
    "ko": "마디풀",
    "jar": "tall",
-   "unit": "줄기",
+   "unit": "묶음",
    "img": "assets/potions/knotgrass.webp"
   },
   "knotweed": {
@@ -106,14 +107,14 @@
    "ko": "봉투: G. 고일",
    "jar": "squat",
    "envelope": true,
-   "img": "assets/potions/hair-goyle.webp"
+   "img": "assets/potions/envelope.webp"
   },
   "hair-crabbe": {
    "en": "Envelope: V. Crabbe",
    "ko": "봉투: V. 크래브",
    "jar": "squat",
    "envelope": true,
-   "img": "assets/potions/hair-crabbe.webp"
+   "img": "assets/potions/envelope.webp"
   },
   "hair-cat": {
    "en": "Envelope: M. Bulstrode",
@@ -121,7 +122,7 @@
    "jar": "squat",
    "envelope": true,
    "cat": true,
-   "img": "assets/potions/hair-cat.webp"
+   "img": "assets/potions/envelope.webp"
   },
   "aconite": {
    "en": "Aconite",
@@ -143,7 +144,7 @@
    "ko": "달맞이꽃 원액",
    "jar": "bottle",
    "unit": "방울",
-   "img": "assets/potions/evening-primrose.webp",
+   "img": "assets/potions/dropper.webp",
    "made_up": true
   },
   "sugar": {
@@ -157,14 +158,14 @@
    "ko": "앵초 원액",
    "jar": "bottle",
    "unit": "방울",
-   "img": "assets/potions/primrose-essence.webp",
+   "img": "assets/potions/dropper.webp",
    "made_up": true
   },
   "asphodel-roots": {
    "en": "Asphodel Roots",
    "ko": "아스포델 뿌리",
    "jar": "squat",
-   "unit": "개",
+   "unit": "쌍",
    "img": "assets/potions/asphodel-roots.webp"
   },
   "valerian-roots": {
@@ -179,7 +180,9 @@
    "ko": "졸음콩",
    "jar": "squat",
    "unit": "알",
-   "img": "assets/potions/sopophorous-bean.webp"
+   "img": "assets/potions/sopophorous-bean.webp",
+   "size": 0.17,
+   "slippery": true
   },
   "daisy-roots": {
    "en": "Daisy Roots",
@@ -206,13 +209,13 @@
    "en": "Murtlap Essence",
    "ko": "머틀랩 진액",
    "jar": "bottle",
-   "img": "assets/potions/murtlap-essence.webp"
+   "img": "assets/potions/dropper.webp"
   },
   "murtlap-tentacles": {
    "en": "Murtlap Tentacles, pickled",
    "ko": "절인 머틀랩 촉수",
    "jar": "tall",
-   "unit": "개",
+   "unit": "병",
    "img": "assets/potions/murtlap-tentacles.webp"
   },
   "jobberknoll-feather": {
@@ -220,7 +223,7 @@
    "ko": "조버놀 깃털",
    "jar": "tall",
    "unit": "개",
-   "board": true,
+   "board": -1.571,
    "img": "assets/potions/jobberknoll-feather.webp"
   },
   "fwooper-feather": {
@@ -228,7 +231,7 @@
    "ko": "퓨퍼 깃털",
    "jar": "tall",
    "unit": "개",
-   "board": true,
+   "board": -1.571,
    "img": "assets/potions/fwooper-feather.webp"
   },
   "scarab-beetle": {
@@ -242,28 +245,29 @@
    "en": "Full-Moon Dew",
    "ko": "보름달 이슬",
    "jar": "bottle",
-   "img": "assets/potions/full-moon-dew.webp",
+   "img": "assets/potions/dropper.webp",
    "made_up": true
   },
   "new-moon-dew": {
    "en": "New-Moon Dew",
    "ko": "그믐달 이슬",
    "jar": "bottle",
-   "img": "assets/potions/new-moon-dew.webp",
+   "img": "assets/potions/dropper.webp",
    "made_up": true
   },
   "powdered-moonstone": {
    "en": "Powdered Moonstone",
    "ko": "월장석 가루",
    "jar": "squat",
-   "unit": "숟가락",
-   "img": "assets/shop/powdered-moonstone.webp"
+   "unit": "병",
+   "img": "assets/shop/powdered-moonstone.webp",
+   "pour": "powder"
   },
   "powdered-sunstone": {
    "en": "Powdered Sunstone",
    "ko": "일장석 가루",
    "jar": "squat",
-   "unit": "숟가락",
+   "unit": "병",
    "img": "assets/potions/powdered-sunstone.webp",
    "made_up": true
   },
@@ -271,7 +275,7 @@
    "en": "Hedgehog Spines",
    "ko": "고슴도치 가시",
    "jar": "squat",
-   "unit": "개",
+   "unit": "묶음",
    "img": "assets/potions/hedgehog-spines.webp",
    "made_up": true
   },
@@ -279,13 +283,13 @@
    "en": "Syrup of Hellebore",
    "ko": "헬레보어 시럽",
    "jar": "bottle",
-   "img": "assets/potions/hellebore-syrup.webp"
+   "img": "assets/potions/dropper.webp"
   },
   "hellebore-tincture": {
    "en": "Tincture of Hellebore",
    "ko": "헬레보어 팅크",
    "jar": "bottle",
-   "img": "assets/potions/hellebore-tincture.webp",
+   "img": "assets/potions/dropper.webp",
    "made_up": true
   }
  },
@@ -530,8 +534,8 @@
     }
    },
    "fatal": {
-    "en": "Off the fire first. That is the one thing every first-year is told.",
-    "ko": "불에서 먼저 내리라고 했다. 다른 건 몰라도 1학년이면 누구나 듣는 말이다."
+    "en": "Off the fire first. That is the one thing anyone at this bench is told.",
+    "ko": "불에서 먼저 내리라고 했다. 다른 건 몰라도 이 작업대에 서는 사람이면 누구나 듣는 말이다."
    },
    "words": [
     {
@@ -604,9 +608,9 @@
     "stew": "#3a3022",
     "bicorn-horn": "#4d4232",
     "boomslang-skin": "#4a5236",
-    "turn": "#6a6639",
-    "done": "#8b8445",
-    "over": "#55482a",
+    "turn": "#3f4430",
+    "done": "#9b9150",
+    "over": "#5a4422",
     "wrong": "#3a2f2f"
    },
    "turn": {
@@ -617,15 +621,15 @@
    },
    "board": [
     {
-     "en": "Add six lacewing flies to the cold water, then bring it to the boil.",
-     "ko": "찬물에 풀잠자리 여섯 마리를 넣고 끓여라.",
+     "en": "Tip two jars of lacewing flies into the cold water, then bring it to the boil.",
+     "ko": "풀잠자리 두 병을 찬물에 쏟고 끓여라.",
      "key": [
       [
        "then bring it to the boil",
        "heat"
       ],
       [
-       "six",
+       "two jars",
        "count"
       ],
       [
@@ -671,11 +675,11 @@
      ]
     },
     {
-     "en": "Add two sprigs of knotgrass, then stir four times clockwise.",
-     "ko": "마디풀 두 줄기를 넣고 시계 방향으로 네 번 저어라.",
+     "en": "Add three bundles of knotgrass, then stir four times clockwise.",
+     "ko": "마디풀 세 묶음을 넣고 시계 방향으로 네 번 저어라.",
      "key": [
       [
-       "two sprigs",
+       "three bundles",
        "count"
       ],
       [
@@ -694,14 +698,14 @@
     },
     {
      "en": "Take the cauldron off the fire and leave it to stew for three days.",
-     "ko": "솥을 불에서 내리고 사흘 동안 묵혀라.",
+     "ko": "솥을 불에서 내리고 사흘 동안 그대로 둬라.",
      "key": [
       "off the fire"
      ]
     },
     {
      "en": "Return it to a low flame and add one bicorn horn, ground to a fine powder.",
-     "ko": "다시 약한 불에 올리고, 바이콘 뿔 하나를 고운 가루로 빻아 넣어라.",
+     "ko": "다시 약한 불에 올리고, 바이콘 뿔 한 개를 고운 가루로 빻아 넣어라.",
      "key": [
       [
        "a low flame",
@@ -723,7 +727,7 @@
     },
     {
      "en": "Shred the boomslang skin lengthwise into long, thin strips and add them.",
-     "ko": "붐슬랭 껍질을 결을 따라 길고 가늘게 썰어 넣어라.",
+     "ko": "붐슬랭 껍질을 길이 방향으로 길고 가늘게 채 썰어 넣어라.",
      "key": [
       "lengthwise",
       "long, thin strips"
@@ -772,7 +776,7 @@
       0
      ],
      "add": "lacewing-flies",
-     "n": 6
+     "n": 2
     },
     {
      "line": [
@@ -806,7 +810,7 @@
       3
      ],
      "add": "knotgrass",
-     "n": 2
+     "n": 3
     },
     {
      "line": [
@@ -900,12 +904,16 @@
      "ko": "붐슬랭 껍질, 그것도 네 것이군. 어디서 났는지는 묻지 않겠다. 어디서 난 게 아닌지는 아니까."
     },
     "none": {
-     "en": "Where is your boomslang skin? Slug & Jiggers sells it for seventeen Sickles. My stores are not open to you.",
-     "ko": "붐슬랭 껍질은 어디 있지? 슬러그 앤 지거스에서 17시클에 판다. 내 약장은 너에게 열려 있지 않다."
+     "en": "Where is your boomslang skin? Slug & Jiggers sells it for a Galleon. My stores are not open to you.",
+     "ko": "붐슬랭 껍질은 어디 있지? 슬러그 앤 지거스에서 1갈레온에 판다. 내 약장은 너에게 열려 있지 않다."
     },
     "again": {
-     "en": "Again? Then buy another skin. Seventeen Sickles at Slug & Jiggers. Do not so much as look at my cupboard.",
-     "ko": "다시? 그럼 껍질을 하나 더 사라. 슬러그 앤 지거스에서 17시클이다. 내 약장은 쳐다보지도 마라."
+     "en": "Again? Then buy another skin. A Galleon at Slug & Jiggers. Do not so much as look at my cupboard.",
+     "ko": "다시? 그럼 껍질을 하나 더 사라. 슬러그 앤 지거스에서 1갈레온이다. 내 약장은 쳐다보지도 마라."
+    },
+    "back": {
+     "en": "Three days, and it has not spoilt. Nor, it seems, have you lost your nerve. The bicorn horn is waiting.",
+     "ko": "사흘이 지났는데 약은 상하지 않았군. 보아하니 너도 겁먹고 달아나지는 않았고. 바이콘 뿔이 기다린다."
     }
    },
    "result": {
@@ -930,9 +938,9 @@
    },
    "words": [
     {
-     "w": "sprig",
-     "pos": "명사",
-     "ko": "(풀·허브의) 잔가지, 한 줄기"
+     "w": "lengthwise",
+     "pos": "부사",
+     "ko": "세로로, 길이 방향으로"
     },
     {
      "w": "stew",
@@ -947,7 +955,7 @@
     {
      "w": "shred",
      "pos": "동사",
-     "ko": "가늘고 길게 찢다, 채 썰다"
+     "ko": "가늘고 길게 썰다, 채 썰다"
     },
     {
      "w": "once",
@@ -961,7 +969,7 @@
     }
    ],
    "canon": "원작(2권): 폴리주스 마법약은 두 단계로 나뉘어 한 달쯤 걸린다. 재료는 스물하루 동안 달인 풀잠자리, 거머리, 보름달에 딴 플럭스위드, 마디풀(knotgrass), 바이콘 뿔 가루, 잘게 썬(shredded) 붐슬랭 껍질, 그리고 변하려는 사람의 몸 한 조각(머리카락). 걸쭉한 진흙 같은 약이고, 고일의 머리카락을 넣자 카키색이 되었다(크래브 것은 탁한 갈색). 헤르미온느가 밀리센트 벌스트로드의 옷에서 집어 온 털은 고양이 털이었다. 헤르미온느가 스네이프의 개인 약장에서 붐슬랭 껍질을 훔쳤고, 4편 영화에서 스네이프는 붐슬랭 껍질과 풀잠자리가 없어졌다며 해리를 몰아세운다(이 앱의 스네이프 대사 snape-4-005.1). 2권에서 헤르미온느는 스네이프의 약장에서 바이콘 뿔과 붐슬랭 껍질을 훔쳤다. 약효는 한 시간. 스네이프가 2학년 때 한 말(하늘을 나는 자동차, 결투 클럽)은 편지에서 가볍게만.",
-   "invented": "분량과 순서(풀잠자리 여섯 마리, 거머리 네 마리, 마디풀 두 줄기, 젓는 횟수와 방향, 불 조절), 스물하루와 한 달 대신 '사흘 묵히기'(앱의 두 번 나누는 규칙), 불에서 내린 뒤에야 머리카락을 넣는다는 것(불 위에서 넣으면 망침), 봉투 셋(G. 고일 = 정답, V. 크래브, M. 벌스트로드 = 사실은 고양이 털). 헷갈리게 하는 항아리 둘: 그믐에 딴 플럭스위드(보름달과 짝), 호장근(knotweed, knotgrass와 비슷한 이름의 실제 식물, 원작에 없음). 고일로 통하겠다는 완벽 판정, 한 시간도 못 간다는 쓸 만함 판정. 원작에서는 약을 잔 셋에 나눠 담은 뒤 잔마다 머리카락을 넣는다. 솥에 넣는 것, 불 위에서 넣으면 엉긴다는 것은 지어낸 것.",
+   "invented": "분량과 순서(풀잠자리 두 병, 거머리 네 마리, 마디풀 세 묶음, 젓는 횟수와 방향, 불 조절), 스물하루와 한 달 대신 '사흘 그대로 두기'(앱의 두 번 나누는 규칙), 불에서 내린 뒤에야 머리카락을 넣는다는 것(불 위에서 넣으면 망침), 봉투 셋(G. 고일 = 정답, V. 크래브, M. 벌스트로드 = 사실은 고양이 털). 헷갈리게 하는 항아리 둘: 그믐에 딴 플럭스위드(보름달과 짝), 호장근(knotweed, knotgrass와 비슷한 이름의 실제 식물, 원작에 없음). 고일로 통하겠다는 완벽 판정, 한 시간도 못 간다는 쓸 만함 판정. 원작에서는 약을 잔 셋에 나눠 담은 뒤 잔마다 머리카락을 넣는다. 솥에 넣는 것, 불 위에서 넣으면 엉긴다는 것은 지어낸 것.",
    "slips": {
     "early": {
      "en": "It is not khaki. It is still mud.",
@@ -981,10 +989,11 @@
     },
     "shred": {
      "en": "Strips. Long and thin, along its length. Not crumbs.",
-     "ko": "가닥이다. 결을 따라 길고 가늘게. 부스러기가 아니라."
+     "ko": "가닥이다. 길이 방향으로 길고 가늘게. 부스러기가 아니라."
     }
    },
-   "ready": false
+   "ripe_ko": "사흘이 지났다",
+   "ready": true
   },
   {
    "n": 3,
@@ -1102,7 +1111,7 @@
     },
     {
      "en": "Add five drops of essence of evening primrose.",
-     "ko": "달맞이꽃 원액 다섯 방울을 떨어뜨려라.",
+     "ko": "달맞이꽃 원액 다섯 방울을 넣어라.",
      "key": [
       [
        "five drops",
@@ -1245,6 +1254,10 @@
     "again": {
      "en": "Again? With what? Fourteen Sickles at Slug & Jiggers. My own aconite is spoken for.",
      "ko": "다시? 무엇으로? 슬러그 앤 지거스에서 14시클이다. 내 투구꽃은 쓸 데가 정해져 있다."
+    },
+    "back": {
+     "en": "Three days in the dark have done it no harm. Light the flame. Low.",
+     "ko": "사흘 동안 어둠 속에 둔 게 해가 되진 않았군. 불을 붙여라. 약하게."
     }
    },
    "result": {
@@ -1271,7 +1284,7 @@
     {
      "w": "steep",
      "pos": "동사",
-     "ko": "(액체에 담가) 우리다, 우러나게 두다"
+     "ko": "(물에 담가) 우리다, 우러나게 두다"
     },
     {
      "w": "thicken",
@@ -1312,16 +1325,17 @@
     },
     "drops": {
      "en": "Count the drops. A dropper is not a jug.",
-     "ko": "방울을 세라. 쏟아부으라는 게 아니다."
+     "ko": "방울을 세라. 스포이트는 주전자가 아니다."
     }
    },
-   "ready": false
+   "ripe_ko": "약이 다 우러났다",
+   "ready": true
   },
   {
    "n": 4,
    "id": "veritaserum",
    "en": "Veritaserum",
-   "ko": "진실의 약",
+   "ko": "베리타세럼",
    "buy": "jobberknoll-feather",
    "price": 15,
    "vial": "assets/potions/vial-veritaserum.webp",
@@ -1352,7 +1366,7 @@
    "board": [
     {
      "en": "Shred one jobberknoll feather along its length.",
-     "ko": "조버놀 깃털 하나를 길이 방향으로 가늘게 채 썰어라.",
+     "ko": "조버놀 깃털 한 개를 길이 방향으로 채 썰어라.",
      "key": [
       [
        "jobberknoll",
@@ -1377,7 +1391,7 @@
     },
     {
      "en": "Bring the water to the boil over a high flame.",
-     "ko": "센 불에 올려 물을 끓여라.",
+     "ko": "강 불에 올려 물을 끓여라.",
      "key": [
       "a high flame"
      ]
@@ -1594,13 +1608,13 @@
     }
    ],
    "letter": {
-    "en": "{name},\n\nIn the fourth year you heard me speak of a certain clear potion, and of what three drops of it can do. Today you will brew it. It has no colour and no smell, and it forgives nothing: a careless hand leaves it cloudy, and a cloudy truth is no truth at all. Properly made, it matures through a full cycle of the moon; you will have three days, and we shall see how much truth you can manage in that time.\n\n— S. Snape",
-    "ko": "{name},\n\n4학년 동안 너는 내가 어떤 맑은 약을 두고, 그 약 세 방울이면 무슨 일이 생기는지 말하는 걸 들었다. 오늘은 그 약을 직접 달인다. 빛깔도 냄새도 없고, 실수 하나 봐주지 않는 약이다. 손이 엉성하면 흐려지고, 흐린 진실은 진실이 아니다. 제대로라면 달이 한 번 차고 기울 동안 익혀야 하지만 너에게는 사흘을 주지. 그동안 진실을 얼마나 만들어 내는지 보겠다.\n\n— S. 스네이프"
+    "en": "{name},\n\nIn the fourth year you heard me speak of a certain clear potion, and of what three drops of it can do. Today you will brew it. It has no colour and no smell, and it forgives nothing: a careless hand leaves it cloudy, and a cloudy truth is no truth at all. Properly made, it matures through a full cycle of the moon; you will have three days, and we shall see how much truth you can manage in that time. Bring your own jobberknoll feather.\n\n— S. Snape",
+    "ko": "{name},\n\n4학년 동안 너는 내가 어떤 맑은 약을 두고, 그 약 세 방울이면 무슨 일이 생기는지 말하는 걸 들었다. 오늘은 그 약을 직접 달인다. 빛깔도 냄새도 없고, 실수 하나 봐주지 않는 약이다. 손이 엉성하면 흐려지고, 흐린 진실은 진실이 아니다. 제대로라면 달이 한 번 차고 기울 동안 익혀야 하지만 너에게는 사흘을 주지. 그동안 진실을 얼마나 만들어 내는지 보겠다. 조버놀 깃털은 네 것을 가져와라.\n\n— S. 스네이프"
    },
    "intro": {
     "lend": {
-     "en": "A jobberknoll feather. You have none. My stores were open to you once, in the first year, and they are closed now. Earn your own Sickles first.",
-     "ko": "조버놀 깃털. 없겠지. 내 약장이 열린 건 1학년 때 한 번뿐이고, 이제는 닫혔다. 시클부터 네 손으로 벌어 와라."
+     "en": "A jobberknoll feather. You have none. My stores were open to you once, the first time, and they are closed now. Come back when you can buy your own.",
+     "ko": "조버놀 깃털. 없겠지. 내 약장이 열린 건 처음 한 번뿐이고, 이제는 닫혔다. 네 손으로 살 수 있게 되면 다시 와라."
     },
     "own": {
      "en": "A jobberknoll feather, and an unbroken one. Then nothing stands between you and the truth but your own hands.",
@@ -1613,6 +1627,10 @@
     "again": {
      "en": "Again? Then you will need another feather. Slug & Jiggers, fifteen Sickles. Feathers do not grow in my stores.",
      "ko": "다시? 그럼 깃털이 또 필요하겠군. 슬러그 앤 지거스, 15시클. 내 약장에서 깃털이 자라지는 않는다."
+    },
+    "back": {
+     "en": "Three days. The truth keeps; only carelessness spoils it. Low flame first, then four drops. Count them.",
+     "ko": "사흘이다. 진실은 상하지 않는다. 상하게 하는 건 엉성한 손뿐이지. 약한 불부터, 그다음 네 방울. 세어라."
     }
    },
    "result": {
@@ -1639,12 +1657,12 @@
     {
      "w": "shred",
      "pos": "동사",
-     "ko": "가늘고 길게 썰다, 채 치다"
+     "ko": "가늘고 길게 썰다, 채 썰다"
     },
     {
      "w": "along its length",
      "pos": "표현",
-     "ko": "길이 방향으로, 세로로 죽"
+     "ko": "길이 방향으로, 세로로"
     },
     {
      "w": "mature",
@@ -1664,11 +1682,12 @@
     {
      "w": "as clear as water",
      "pos": "표현",
-     "ko": "물처럼 맑은"
+     "ko": "물처럼 맑은, 투명한"
     }
    ],
-   "canon": "진실의 약(Veritaserum): 4권에서 스네이프가 해리에게 '세 방울이면 가장 깊은 비밀까지 털어놓게 된다'며 겁을 주고, 4권 끝에서 덤블도어가 가짜 무디(크라우치 2세)에게 먹여 자백을 받는다. 스네이프가 가져온 것은 완전히 맑은 액체가 든 작은 유리병(4권). 6권 슬러그혼의 첫 수업에서 헤르미온느가 '빛깔도 냄새도 없는' 약이라고 알아본다. 달 한 주기 숙성은 소설 본문에는 없고 소설 밖 설정이다(작업 지침에 따름). 조버놀 깃털이 진실의 약과 기억의 약에 쓰인다는 것은 『신비한 동물 사전』. 퓨퍼(Fwooper)도 같은 책에 나오는 새(깃털은 고급 깃펜용). 쇠똥구리(scarab beetle)는 원작에 나오는 마법약 재료.",
+   "canon": "베리타세럼(Veritaserum): 4권에서 스네이프가 해리에게 '세 방울이면 가장 깊은 비밀까지 털어놓게 된다'며 겁을 주고, 4권 끝에서 덤블도어가 가짜 무디(크라우치 2세)에게 먹여 자백을 받는다. 스네이프가 가져온 것은 완전히 맑은 액체가 든 작은 유리병(4권). 6권 슬러그혼의 첫 수업에서 헤르미온느가 '빛깔도 냄새도 없는' 약이라고 알아본다. 달 한 주기 숙성은 소설 본문에는 없고 소설 밖 설정이다(작업 지침에 따름). 조버놀 깃털이 베리타세럼과 기억의 약에 쓰인다는 것은 『신비한 동물 사전』. 퓨퍼(Fwooper)도 같은 책에 나오는 새(깃털은 고급 깃펜용). 쇠똥구리(scarab beetle)는 원작에 나오는 마법약 재료.",
    "invented": "조리법 전체: 깃털을 길이 방향으로 채 썰어 불 붙이기 전 찬물에 넣기(뜨거운 물에 넣으면 망침), 센 불로 끓이기, 쇠똥구리 세 마리 가루, 시계 방향 두 번 + 반대 방향 세 번, 덮어서 사흘(원작의 '달 한 주기'를 수업용으로 줄였고 편지에서 스네이프가 그렇게 말함), 둘째 날 약한 불 + 보름달 이슬 네 방울(지어낸 재료), 아마포로 거르기, 맑아질 때까지 기다리기, 너무 오래 두면 다시 흐려진다는 것. 미끼: 퓨퍼 깃털(조버놀 옆의 다른 깃털), 그믐달 이슬(지어냄, 보름달 이슬 옆). 결과 라벨 'Clear.' / 'Faintly cloudy.'",
+   "ripe_ko": "약이 다 익었다",
    "slips": {
     "shred": {
      "en": "Along its length. You are cutting it across.",
@@ -1691,7 +1710,7 @@
      "ko": "너무 오래 세워 뒀다. 다시 흐려지고 있다."
     }
    },
-   "ready": false
+   "ready": true
   },
   {
    "n": 5,
@@ -1734,11 +1753,11 @@
      ]
     },
     {
-     "en": "Grind two porcupine quills to a fine powder and add the powder.",
-     "ko": "호저 가시 두 개를 고운 가루로 빻아 넣어라.",
+     "en": "Grind two bundles of porcupine quills to a fine powder and add the powder.",
+     "ko": "호저 가시 두 묶음을 고운 가루로 빻아 넣어라.",
      "key": [
       [
-       "two",
+       "two bundles",
        "count"
       ],
       [
@@ -1752,8 +1771,8 @@
      ]
     },
     {
-     "en": "Lower the flame, then add three spoonfuls of powdered moonstone.",
-     "ko": "불을 줄인 다음, 월장석 가루 세 숟가락을 넣어라.",
+     "en": "Lower the flame, then tip in two phials of powdered moonstone.",
+     "ko": "불을 줄인 다음, 월장석 가루 두 병을 털어 넣어라.",
      "key": [
       [
        "Lower the flame",
@@ -1764,7 +1783,7 @@
        "order"
       ],
       [
-       "three spoonfuls",
+       "two phials",
        "count"
       ],
       [
@@ -1788,8 +1807,8 @@
      ]
     },
     {
-     "en": "Add six drops of syrup of hellebore, and not one more.",
-     "ko": "헬레보어 시럽 여섯 방울을 넣어라. 한 방울도 더 넣지 마라.",
+     "en": "Add six drops of syrup of hellebore, never the tincture, and not one more.",
+     "ko": "헬레보어 시럽 여섯 방울을 넣어라. 팅크는 절대 안 된다. 한 방울도 더 넣지 마라.",
      "key": [
       [
        "six drops",
@@ -1802,6 +1821,10 @@
       [
        "syrup",
        "wrong"
+      ],
+      [
+       "never the tincture",
+       "fatal"
       ]
      ]
     },
@@ -1863,7 +1886,7 @@
       2
      ],
      "add": "powdered-moonstone",
-     "n": 3
+     "n": 2
     },
     {
      "line": [
@@ -1906,13 +1929,13 @@
     }
    ],
    "letter": {
-    "en": "{name},\n\nIn the fifth year you heard me speak of examinations, and of minds that will not be still. Today's potion is for the second complaint. The Draught of Peace quiets a mind that will not settle. Brewed with a careless hand, it quiets the drinker for a great deal longer than anyone intended. Read every line before you touch a jar.\n\n— S. Snape",
-    "ko": "{name},\n\n5학년 동안 너는 내가 시험 이야기를 하고, 가만히 있지 못하는 머리 이야기를 하는 걸 들었다. 오늘 달일 것은 그 둘 가운데 뒤의 것에 듣는 약이다. 평화의 물약은 가라앉지 않는 머리를 잠잠하게 한다. 손이 엉성하면, 마신 사람을 누구도 바라지 않은 만큼 오래 잠잠하게 만든다. 항아리에 손대기 전에 모든 줄을 읽어라.\n\n— S. 스네이프"
+    "en": "{name},\n\nIn the fifth year you heard me speak of examinations, and of minds that will not be still. Today's potion is for the second complaint. The Draught of Peace quiets a mind that will not settle. Brewed with a careless hand, it quiets the drinker for a great deal longer than anyone intended. Read every line before you touch a jar. Bring your own powdered moonstone.\n\n— S. Snape",
+    "ko": "{name},\n\n5학년 동안 너는 내가 시험 이야기를 하고, 가만히 있지 못하는 머리 이야기를 하는 걸 들었다. 오늘 달일 것은 그 둘 가운데 뒤의 것에 듣는 약이다. 평화의 물약은 가라앉지 않는 머리를 잠잠하게 한다. 손이 엉성하면, 마신 사람을 누구도 바라지 않은 만큼 오래 잠잠하게 만든다. 항아리에 손대기 전에 모든 줄을 읽어라. 월장석 가루는 네 것을 가져와라.\n\n— S. 스네이프"
    },
    "intro": {
     "lend": {
-     "en": "Powdered moonstone. You have none, and you will not have mine. I lent once, in the first year, and once was enough. Earn your own Sickles.",
-     "ko": "월장석 가루. 없겠지. 내 것을 줄 생각은 없다. 빌려준 건 1학년 때 한 번이면 충분했다. 네 시클은 네가 벌어라."
+     "en": "Powdered moonstone. You have none, and you will not have mine. I lent once, the first time, and once was enough. Come back when you can buy your own.",
+     "ko": "월장석 가루. 없겠지. 내 것을 줄 생각은 없다. 빌려준 건 처음 한 번이면 충분했다. 네 손으로 살 수 있게 되면 다시 와라."
     },
     "own": {
      "en": "Powdered moonstone, and finely ground. Slug & Jiggers has done half your work for you. Do not waste the other half.",
@@ -1924,7 +1947,7 @@
     },
     "again": {
      "en": "Again? With what? Slug & Jiggers, twelve Sickles. Peace is not free.",
-     "ko": "다시? 무엇으로? 슬러그 앤 지거스, 12시클. 평온은 공짜가 아니다."
+     "ko": "다시? 무엇으로? 슬러그 앤 지거스, 12시클. 평화는 공짜가 아니다."
     }
    },
    "result": {
@@ -1934,8 +1957,8 @@
      "label": "Correct."
     },
     "fair": {
-     "en": "The vapour is greyer than it should be. It would calm a mouse.",
-     "ko": "김이 제 빛보다 잿빛을 띤다. 생쥐 한 마리쯤은 가라앉히겠지.",
+     "en": "The vapour has a yellow cast to it. It would calm a mouse.",
+     "ko": "김에 누런 기가 돈다. 생쥐 한 마리쯤은 가라앉히겠지.",
      "label": "Acceptable."
     },
     "ruined": {
@@ -1954,9 +1977,9 @@
      "ko": "펄펄 끓는 상태"
     },
     {
-     "w": "spoonful",
-     "pos": "명사",
-     "ko": "한 숟가락(의 양), 복수는 spoonfuls"
+     "w": "tip in",
+     "pos": "구동사",
+     "ko": "(그릇을 기울여) 털어 넣다, 쏟아 넣다"
     },
     {
      "w": "syrup",
@@ -1980,7 +2003,10 @@
     }
    ],
    "canon": "평화의 물약(Draught of Peace): 5권, O.W.L. 학년의 첫 마법약 수업. 스네이프가 불안과 초조를 가라앉히는 약이며 너무 세게 만들면 마신 사람이 아주 깊은 잠에 빠진다고 설명하고, 칠판에 조제법을 써 놓고 한 시간 반 안에 만들게 한다. 재료로 월장석 가루와 헬레보어 시럽, 횟수를 센 젓기와 뭉근히 끓이기가 나오고, 제대로 되면 옅은 은빛 김이 오른다(헤르미온느의 솥). 헬레보어를 빠뜨린 해리의 솥에서는 짙은 잿빛 김이 나서 스네이프가 약을 없애 버린다. 칠판의 원래 문장과 횟수는 옮기지 않았다.",
-   "invented": "칠판 여덟 줄의 문장과 횟수는 모두 새로 씀(시계 방향 네 번, 시럽 여섯 방울, 반대 방향 두 번 등 책의 숫자와 겹치지 않게). 호저 가시 두 개를 가루로(팬 자료·게임에는 평화의 물약 재료로 나오지만 책에는 없음), 펄펄 끓는 물에서 시작, 은빛 김이 오르면 곧바로 불에서 내려 병에 담기, 너무 오래 두면 김이 잿빛으로 변한다는 것(원작의 '헬레보어를 빠뜨리면 잿빛 김'에서 빌림). 미끼: 일장석 가루(지어냄, 월장석 옆), 고슴도치 가시(지어냄, 호저 가시 옆). 치명적인 병: 헬레보어 팅크(지어냄, 시럽보다 훨씬 센 것이라 넣으면 약이 너무 세진다는 설정, 원작의 '너무 세면 깊은 잠'에서 빌림). 결과 라벨은 O.W.L. 등급 이름 'Outstanding.' / 'Acceptable.'",
+   "invented": "칠판 여덟 줄의 문장과 횟수는 모두 새로 씀(시계 방향 네 번, 시럽 여섯 방울, 반대 방향 두 번 등 책의 숫자와 겹치지 않게). 호저 가시 두 묶음를 가루로(팬 자료·게임에는 평화의 물약 재료로 나오지만 책에는 없음), 펄펄 끓는 물에서 시작, 은빛 김이 오르면 곧바로 불에서 내려 병에 담기, 너무 오래 두면 김이 잿빛으로 변한다는 것(원작의 '헬레보어를 빠뜨리면 잿빛 김'에서 빌림). 미끼: 일장석 가루(지어냄, 월장석 옆), 고슴도치 가시(지어냄, 호저 가시 옆). 치명적인 병: 헬레보어 팅크(지어냄, 시럽보다 훨씬 센 것이라 넣으면 약이 너무 세진다는 설정, 원작의 '너무 세면 깊은 잠'에서 빌림). 결과 라벨은 O.W.L. 등급 이름 'Correct.' / 'Acceptable.'",
+   "fatal_jar": [
+    "hellebore-tincture"
+   ],
    "slips": {
     "drops": {
      "en": "Drops are counted. They are not poured.",
@@ -1995,7 +2021,7 @@
      "ko": "잿빛이 됐다. 딴 데를 보고 있었군."
     }
    },
-   "ready": false
+   "ready": true
   },
   {
    "n": 6,
@@ -2017,9 +2043,9 @@
     "asphodel-roots": "#66624c",
     "valerian-roots": "#4f4559",
     "sopophorous-bean": "#b7a0d2",
-    "turn": "#ead3dc",
-    "done": "#dde8ec",
-    "over": "#9fa6a8",
+    "turn": "#d39ab2",
+    "done": "#2c4446",
+    "over": "#8f979a",
     "wrong": "#5a3f72"
    },
    "turn": {
@@ -2030,18 +2056,18 @@
    },
    "board": [
     {
-     "en": "Bring the infusion of wormwood in your cauldron to the boil.",
-     "ko": "솥에 든 약쑥 우린 물을 끓여라.",
+     "en": "Your cauldron already holds an infusion of wormwood. Bring it to the boil.",
+     "ko": "솥에는 약쑥 우린 물이 이미 담겨 있다. 그것을 끓여라.",
      "key": [
       "to the boil"
      ]
     },
     {
-     "en": "Grind two asphodel roots to a fine powder and add it.",
-     "ko": "아스포델 뿌리 두 개를 고운 가루로 빻아 넣어라.",
+     "en": "Grind two pairs of asphodel roots to a fine powder and add it.",
+     "ko": "아스포델 뿌리 두 쌍을 고운 가루로 빻아 넣어라.",
      "key": [
       [
-       "two",
+       "two pairs",
        "count"
       ],
       [
@@ -2094,21 +2120,25 @@
      ]
     },
     {
-     "en": "Cut the sopophorous bean and add it.",
-     "ko": "졸음콩을 썰어 넣어라.",
+     "en": "Cut five sopophorous beans and add them.",
+     "ko": "졸음콩 다섯 알을 썰어 넣어라.",
      "key": [
       [
        "Cut",
        "book"
       ],
       [
-       "sopophorous bean",
+       "five",
+       "count"
+      ],
+      [
+       "sopophorous beans",
        "wrong"
       ]
      ],
      "note": {
-      "en": "Cutting wastes it. Crush with the flat of a silver dagger: far more juice.",
-      "ko": "썰면 버린다. 은 단검 납작한 면으로 짓누를 것. 즙이 훨씬 많이 나옴."
+      "en": "Cutting wastes them. Crush each with the flat of a silver dagger: far more juice.",
+      "ko": "썰면 즙을 버림. 하나씩 은 단검 납작한 면으로 짓누를 것. 즙이 훨씬 많이 나옴."
      }
     },
     {
@@ -2134,8 +2164,8 @@
      }
     },
     {
-     "en": "Leave it until it turns as clear as water.",
-     "ko": "물처럼 맑아질 때까지 둬라.",
+     "en": "Leave it until it turns as clear as water, then bottle it.",
+     "ko": "물처럼 맑아질 때까지 두었다가 병에 담아라.",
      "key": [
       "clear as water"
      ]
@@ -2193,7 +2223,8 @@
      "alt": {
       "prep": "chop",
       "min": 3
-     }
+     },
+     "n": 5
     },
     {
      "line": [
@@ -2218,28 +2249,34 @@
       7
      ],
      "wait": "clear"
+    },
+    {
+     "line": [
+      7
+     ],
+     "bottle": true
     }
    ],
    "letter": {
-    "en": "{name},\n\nThis year I teach another subject, and the dungeon belongs to someone else. I have borrowed it for one hour. You will brew the Draught of Living Death from the old textbook on the bench, exactly as you find it. Read the whole page.\n\n— S. Snape",
-    "ko": "{name},\n\n올해 나는 다른 과목을 가르치고, 지하 교실은 다른 사람의 것이다. 한 시간만 빌렸다. 작업대 위에 낡은 교과서가 있다. 있는 그대로의 그 책으로 살아 있는 죽음의 약을 끓여라. 펼친 쪽을 빠짐없이 읽어라.\n\n— S. 스네이프"
+    "en": "{name},\n\nThis year I teach another subject, and the dungeon belongs to someone else. I have borrowed it for one hour. You will brew the Draught of Living Death from the old textbook on the bench, exactly as you find it. Read the whole page. Bring your own sopophorous beans.\n\n— S. Snape",
+    "ko": "{name},\n\n올해 나는 다른 과목을 가르치고, 지하 교실은 다른 사람의 것이다. 한 시간만 빌렸다. 작업대 위에 낡은 교과서가 있다. 있는 그대로의 그 책으로 살아 있는 죽음의 약을 끓여라. 펼친 쪽을 빠짐없이 읽어라. 졸음콩은 네 것을 가져와라.\n\n— S. 스네이프"
    },
    "intro": {
     "lend": {
-     "en": "Nothing to bring, and nowhere to buy it? I lent once. I do not lend twice. Go.",
-     "ko": "가져올 것도, 살 곳도 없다? 빌려준 건 한 번이다. 두 번은 없다. 가라."
+     "en": "Nothing to bring, and nowhere to buy it? I lent once. I do not lend twice. Come back when you can buy your own.",
+     "ko": "가져올 것도, 살 곳도 없다고? 빌려준 건 한 번이다. 두 번은 없다. 네 손으로 살 수 있게 되면 다시 와라."
     },
     "own": {
-     "en": "A sopophorous bean, and your own. Then sit down and read.",
+     "en": "Sopophorous beans, and your own. Then sit down and read.",
      "ko": "네 졸음콩을 가져왔군. 그럼 앉아서 읽어라."
     },
     "none": {
-     "en": "Where is your sopophorous bean? Slug & Jiggers sells them for eighteen Sickles. Do not come back without one.",
-     "ko": "졸음콩은 어디 있지? 슬러그 앤 지거스에서 18시클에 판다. 콩 없이는 다시 오지 마라."
+     "en": "Where are your sopophorous beans? Slug & Jiggers sells them for a Galleon and a Sickle. Do not come back without them.",
+     "ko": "졸음콩은 어디 있지? 슬러그 앤 지거스에서 1갈레온 1시클에 판다. 콩 없이는 다시 오지 마라."
     },
     "again": {
-     "en": "Again? Your last bean went into your last cauldron. Slug & Jiggers will sell you another for eighteen Sickles.",
-     "ko": "다시? 지난번 콩은 지난번 솥에 들어갔다. 슬러그 앤 지거스에서 18시클이면 또 판다."
+     "en": "Again? Your last beans went into your last cauldron. Slug & Jiggers will sell you more for a Galleon and a Sickle.",
+     "ko": "다시? 지난번 콩은 지난번 솥에 다 들어갔다. 슬러그 앤 지거스에서 1갈레온 1시클이면 또 판다."
     }
    },
    "result": {
@@ -2290,19 +2327,31 @@
     },
     {
      "w": "as clear as water",
-     "pos": "숙어",
-     "ko": "물처럼 맑은 (투명한)"
+     "pos": "표현",
+     "ko": "물처럼 맑은, 투명한"
     }
    ],
    "canon": "6권: 슬러그혼의 첫 수업에서 펠릭스 펠리시스를 걸고 끓이는 약. 약쑥 우린 물, 아스포델 뿌리 가루(1권 스네이프의 첫 질문에도 나옴), 쥐오줌풀 뿌리, 졸음콩, 시계 반대 방향 젓기. 혼혈 왕자의 여백 메모 둘: 졸음콩은 썰지 말고 은 단검 납작한 면으로 눌러 즙을 낸다(써는 것보다 즙이 많다), 시계 반대 방향으로 일곱 번 저을 때마다 시계 방향으로 한 번. 콩즙을 넣으면 곧 연보라가 되고, 제대로 되면 물처럼 맑아진다(해리의 약은 아주 연한 분홍까지 갔고, 헤르미온느의 약은 보라에 머물렀다). 6학년에 스네이프는 어둠의 마법 방어술을 가르치고 마법약 교실(지하)은 슬러그혼이 쓴다. 미끼 데이지 뿌리는 3권 축소약의 재료. 약쑥 우린 물과 아스포델 뿌리 가루가 살아 있는 죽음의 약이 된다는 것은 1권 스네이프의 첫 질문.",
-   "invented": "칠판 문장은 모두 새로 썼다(책의 문구를 옮기지 않음). 여백 메모의 문장도 새로 썼다. 솥은 약쑥 우린 물이 담긴 채로 시작한다(colours.water가 그 빛). 아스포델 뿌리 두 개를 빻는 것, 쥐오줌풀 뿌리를 써는 것, 불을 줄이고 시계 방향 세 번, 콩은 불에서 내린 뒤 넣고 불 위에서 넣으면 망친다(치명), 인쇄된 줄의 '여덟 번 반대 방향'과 메모의 '일곱 번 반대 + 한 번 시계 방향'(원작의 '일곱 번째마다'를 한 번만 쓰게 줄임), 끝을 기다리는 시간과 빛깔 값. 미끼 쥐오줌풀 잎은 지어냄(made_up). 편지와 대사는 모두 새로 씀.",
+   "invented": "칠판 문장은 모두 새로 썼다(책의 문구를 옮기지 않음). 여백 메모의 문장도 새로 썼다. 솥은 약쑥 우린 물이 담긴 채로 시작한다(colours.water가 그 빛). 아스포델 뿌리 두 쌍를 빻는 것, 쥐오줌풀 뿌리를 써는 것, 불을 줄이고 시계 방향 세 번, 콩은 불에서 내린 뒤 넣고 불 위에서 넣으면 망친다(치명), 인쇄된 줄의 '여덟 번 반대 방향'과 메모의 '일곱 번 반대 + 한 번 시계 방향'(원작의 '일곱 번째마다'를 한 번만 쓰게 줄임), 끝을 기다리는 시간과 빛깔 값. 미끼 쥐오줌풀 잎은 지어냄(made_up). 편지와 대사는 모두 새로 씀.",
    "slips": {
     "book": {
      "en": "You did what the print says. The print is not the whole page.",
      "ko": "인쇄된 대로 했군. 펼친 쪽에 적힌 게 인쇄된 글만은 아니다."
+    },
+    "press": {
+     "en": "Each one, the note says. Not some.",
+     "ko": "하나씩이라고 적혀 있다. 몇 개만이 아니라."
+    },
+    "early_clear": {
+     "en": "Still lilac. As clear as water, it says.",
+     "ko": "아직 연보라다. 물처럼 맑게라고 했다."
+    },
+    "late_clear": {
+     "en": "You let it stand too long. It has clouded over.",
+     "ko": "너무 오래 뒀다. 다시 뿌옇게 흐려졌다."
     }
    },
-   "ready": false
+   "ready": true
   },
   {
    "n": 7,
@@ -2321,9 +2370,9 @@
    "colours": {
     "water": "#26332f",
     "dried-dittany": "#3d5532",
-    "turn": "#2e6a3f",
-    "done": "#1d6e44",
-    "over": "#3f4a2c",
+    "turn": "#7f9a46",
+    "done": "#0b6b38",
+    "over": "#4a4326",
     "murtlap-essence": "#5f9455",
     "wrong": "#5b5640"
    },
@@ -2493,25 +2542,25 @@
     }
    ],
    "letter": {
-    "en": "{name},\n\nI am headmaster this year, and I have very little time for guests. You may have one hour of it. The potion is Essence of Dittany: a few drops of it have mended more than most spells ever will. Make it properly.\n\n— S. Snape",
-    "ko": "{name},\n\n올해 나는 교장이고, 손님에게 내줄 시간은 거의 없다. 그중 한 시간을 주지. 오늘의 약은 디터니 원액이다. 몇 방울로 웬만한 주문보다 많은 것을 낫게 해 온 약이다. 제대로 만들어라.\n\n— S. 스네이프"
+    "en": "{name},\n\nI am headmaster this year, and I have very little time for guests. You may have one hour of it. The potion is Essence of Dittany: a few drops of it have mended more than most spells ever will. Make it properly. Bring your own dried dittany.\n\n— S. Snape",
+    "ko": "{name},\n\n올해 나는 교장이고, 손님에게 내줄 시간은 거의 없다. 그중 한 시간을 주지. 오늘의 약은 디터니 원액이다. 몇 방울로 웬만한 주문보다 많은 것을 낫게 해 온 약이다. 제대로 만들어라. 말린 디터니는 네 것을 가져와라.\n\n— S. 스네이프"
    },
    "intro": {
     "lend": {
-     "en": "Still nowhere to buy your own? Then you are not ready for this cauldron. I lend nothing now. Leave.",
-     "ko": "아직도 살 곳이 없나? 그럼 이 솥 앞에 설 준비가 안 된 거다. 이제 빌려주는 건 없다. 나가라."
+     "en": "Still nowhere to buy your own? Then you are not ready for this cauldron. I lend nothing now. Come back when you can buy your own.",
+     "ko": "아직도 살 곳이 없나? 그럼 이 솥 앞에 설 준비가 안 된 거다. 이제 빌려주는 건 없다. 네 손으로 살 수 있게 되면 다시 와라."
     },
     "own": {
      "en": "Dried dittany, and your own. Then we need not waste each other's time.",
      "ko": "네 디터니를 가져왔군. 그럼 서로 시간 낭비할 일은 없겠지."
     },
     "none": {
-     "en": "Where is your dittany? Slug & Jiggers sells it for twenty Sickles. I am the headmaster, not a shopkeeper.",
-     "ko": "디터니는 어디 있지? 슬러그 앤 지거스에서 20시클에 판다. 나는 교장이지 가게 주인이 아니다."
+     "en": "Where is your dittany? Slug & Jiggers sells it for a Galleon and three Sickles. I am the headmaster, not a shopkeeper.",
+     "ko": "디터니는 어디 있지? 슬러그 앤 지거스에서 1갈레온 3시클에 판다. 나는 교장이지 가게 주인이 아니다."
     },
     "again": {
-     "en": "Again? With what? Your dittany is in the last phial. Slug & Jiggers sells more for twenty Sickles.",
-     "ko": "다시? 무엇으로? 네 디터니는 지난번 약병에 들어갔다. 슬러그 앤 지거스에서 20시클에 더 판다."
+     "en": "Again? With what? Your dittany is in the last phial. Slug & Jiggers sells more for a Galleon and three Sickles.",
+     "ko": "다시? 무엇으로? 네 디터니는 지난번 약병에 들어갔다. 슬러그 앤 지거스에서 1갈레온 3시클에 더 판다."
     }
    },
    "result": {
@@ -2538,12 +2587,12 @@
     {
      "w": "steep",
      "pos": "동사",
-     "ko": "(물에 담가) 우리다"
+     "ko": "(물에 담가) 우리다, 우러나게 두다"
     },
     {
      "w": "strain",
      "pos": "동사",
-     "ko": "(천·체에) 거르다"
+     "ko": "(천이나 체에) 거르다"
     },
     {
      "w": "cloth",
@@ -2558,7 +2607,7 @@
     {
      "w": "phial",
      "pos": "명사",
-     "ko": "작은 약병 (영국에서 흔히 쓰는 말, 미국: vial)"
+     "ko": "작은 약병 (미국: vial)"
     },
     {
      "w": "essence",
@@ -2568,6 +2617,7 @@
    ],
    "canon": "7권: 디터니 원액은 작은 갈색 병에 든 약으로, 헤르미온느가 몇 방울 떨어뜨리면 초록빛 연기가 피어오르며 상처가 낫는다. 디터니가 낫게 하는 약초라는 것, 몇 방울만 쓴다는 것이 원작. 머틀랩 진액(거르고 절인 머틀랩 촉수 용액)은 5권에서 헤르미온느가 해리에게 준 진정용 약. 7학년에 스네이프는 호그와트 교장. 미끼 말린 쐐기풀은 1학년 항아리를 다시 씀. 6권에서 스네이프 자신도 말포이를 치료한 뒤 디터니를 바로 쓰면 흉터를 피할 수 있다고 말한다.",
    "invented": "원액을 만드는 법은 모두 지어냄: 물을 끓인 뒤 불에서 내리고 말린 디터니를 썰어 넣어 차처럼 우린다(불 위에서 넣으면 망침, 치명), 시계 방향 다섯 번, 짙은 초록이 될 때까지 우리기, 천에 거르기, 머틀랩 진액 세 방울, 시계 반대 방향 한 번, 약병에 붓기. 머틀랩 진액을 디터니에 섞는 것도 지어냄. 기다리는 시간과 빛깔 값, 편지와 대사는 모두 새로 씀.",
+   "stains": true,
    "slips": {
     "strain": {
      "en": "Leaves and all? Through the cloth. That is what a cloth is for.",
@@ -2575,10 +2625,18 @@
     },
     "drops": {
      "en": "Count the drops as they fall. A dropper is not a jug.",
-     "ko": "떨어지는 방울을 세라. 방울병은 주전자가 아니다."
+     "ko": "떨어지는 방울을 세라. 스포이트는 주전자가 아니다."
+    },
+    "early": {
+     "en": "That is not a deep green yet.",
+     "ko": "아직 짙은 초록이 아니다."
+    },
+    "late": {
+     "en": "You left it too long. It has gone muddy.",
+     "ko": "너무 오래 뒀다. 흙빛으로 탁해졌다."
     }
    },
-   "ready": false
+   "ready": true
   }
  ],
  "slips": {
@@ -2628,11 +2686,11 @@
   },
   "peek": {
    "en": "You read it once. That should have been enough.",
-   "ko": "한 번 읽었으면 됐어야 했다."
+   "ko": "한 번 읽었으면 충분했어야 한다."
   }
  },
  "dumbledore": {
-  "en": "{name},\n\nSeverus tells me, rather as a man reports a small theft, that you brewed your first potion with porcupine quills from his own stores. I should not count on his lending them twice. Ingredients are sold at Slug & Jiggers in Diagon Alley, and they are sold for coin. Coin, as it happens, can be earned: there is a house beyond these walls that pays for careful work, and it sends for help once you carry a wand and three doors of this castle stand open to you.",
-  "ko": "{name},\n\n세베루스가 좀도둑이라도 맞은 사람처럼 알려 주더군. 자네가 그의 약장에서 나온 호저 가시로 첫 약을 끓였다고 말일세. 두 번 빌려주리라고는 기대하지 않는 게 좋겠네. 약재는 다이애건 앨리의 슬러그 앤 지거스에서 팔고, 값은 동전으로 치르네. 마침 동전은 벌 수 있는 것이지. 이 성 밖에 꼼꼼한 일에 삯을 치르는 집이 하나 있는데, 자네가 지팡이를 지니고 교실 문 셋이 자네에게 열리면 그 집에서 자네를 부를 걸세."
+  "en": "Dear {name},\n\nSeverus tells me, rather as a man reports a small theft, that you brewed your first potion with porcupine quills from his own stores. I should not count on his lending them twice. Ingredients are sold at Slug & Jiggers in Diagon Alley, and they are sold for coin. Coin, as it happens, can be earned: there is a house beyond these walls that pays for careful work, and it sends for help once you carry a wand and three doors of this castle stand open to you.\n\n— A. Dumbledore",
+  "ko": "{name}에게.\n\n세베루스가 좀도둑이라도 맞은 사람처럼 알려 주더군. 자네가 그의 약장에서 나온 호저 가시로 첫 약을 끓였다고 말일세. 두 번 빌려주리라고는 기대하지 않는 게 좋겠네. 약재는 다이애건 앨리의 슬러그 앤 지거스에서 팔고, 값은 동전으로 치르네. 마침 동전은 벌 수 있는 것이지. 이 성 밖에 꼼꼼한 일에 삯을 치르는 집이 하나 있는데, 자네가 지팡이를 지니고 교실 문 셋이 자네에게 열리면 그 집에서 자네를 부를 걸세.\n\n— A. 덤블도어"
  }
 }

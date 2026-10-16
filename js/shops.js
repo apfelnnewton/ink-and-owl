@@ -46,12 +46,15 @@ export const GOODS = [
   ['best-chocolate', 'honeydukes', 'sweet', "Honeydukes' Best Chocolate", '허니듀크스 최고급 초콜릿', 10, 'The largest slab in the shop, and the best.', '가게에서 가장 크고 가장 좋은 판 초콜릿.', 'best-choc'],
   ['crystallised-pineapple', 'honeydukes', 'sweet', 'Crystallised Pineapple', '설탕 절임 파인애플', 12, "A box of pineapple in sugar. Somebody's favourite.", '설탕에 절인 파인애플 한 상자. 누군가는 이걸 가장 좋아한다.', 'pineapple'],
   ['dried-nettles', 'apothecary', 'ingredient', 'Dried Nettles', '말린 쐐기풀', 6, 'The first thing a first-year is asked to weigh.', '1학년이 맨 처음 저울에 올리는 재료.'],
-  ['porcupine-quills', 'apothecary', 'ingredient', 'Porcupine Quills', '호저 가시', 8, 'Added after the cauldron comes off the fire. Not before.', '솥을 불에서 내린 뒤에 넣는다. 그 전이 아니라.'],
+  ['porcupine-quills', 'apothecary', 'ingredient', 'Porcupine Quills', '호저 가시', 8, 'In a cure for boils, added after the cauldron comes off the fire. Not before.', '종기 치료약에서는 솥을 불에서 내린 뒤에 넣는다. 그 전이 아니라.'],
   ['lacewing-flies', 'apothecary', 'ingredient', 'Lacewing Flies', '풀잠자리', 10, 'To be stewed for twenty-one days.', '스물하루 동안 뭉근히 달여야 한다.'],
   ['powdered-moonstone', 'apothecary', 'ingredient', 'Powdered Moonstone', '월장석 가루', 12, 'For a hand that does not shake when it measures.', '분량을 잴 때 떨리지 않는 손을 위한 재료.'],
   ['aconite', 'apothecary', 'ingredient', 'Aconite', '투구꽃', 14, 'Also called monkshood; also called wolfsbane.', '몽크스후드라고도, 울프스베인이라고도 부른다.'],
   ['bezoar', 'apothecary', 'ingredient', 'A Bezoar', '베조아르', 15, 'A stone from the stomach of a goat. It will save you from most poisons.', '염소 위에서 꺼낸 돌. 웬만한 독은 막아 준다.'],
+  ['jobberknoll-feather', 'apothecary', 'ingredient', 'Jobberknoll Feathers', '조버놀 깃털', 15, 'From a bird that never makes a sound. Its feather makes other people talk.', '평생 소리를 내지 않는 새의 깃털. 이 깃털은 남의 입을 연다.'],
   ['boomslang-skin', 'apothecary', 'ingredient', 'Boomslang Skin', '붐슬랭 껍질', 17, 'Scarce. The apothecary asks no questions and answers none.', '귀한 물건. 약재상은 묻지도 않고 대답하지도 않는다.'],
+  ['sopophorous-bean', 'apothecary', 'ingredient', 'Sopophorous Beans', '졸음콩', 18, 'Shrivelled, slippery and hard to cut. Some say a blade is the wrong tool.', '쭈글쭈글하고 미끄러워 잘 썰리지 않는다. 칼이 맞는 연장이 아니라는 사람도 있다.'],
+  ['dried-dittany', 'apothecary', 'ingredient', 'Dried Dittany', '말린 디터니', 20, 'A few drops of its essence, and a fresh wound closes.', '이것으로 만든 원액 몇 방울이면 갓 난 상처가 아문다.'],
   ['butterbeer', 'broomsticks', 'drink', 'Butterbeer', '버터맥주', 3, 'A bottle to send with a letter. The owls carry it under protest.', '편지와 함께 보내는 한 병. 부엉이는 투덜대면서도 나른다.', 'butterbeer']
 ].map(([id, shop, kind, en, ko, s, tag, tagKo, wire]) => ({id, shop, kind, en, ko, s, tag, tagKo, wire: wire || ''}));
 /* the second set (phase 3-나): the joke shop and Borgin and Burkes. Their tickets are in bond/shops.json (TEXT), under `key`.
@@ -290,7 +293,7 @@ const PLACES = {
   hogsmeade: {photo: 'hogsmeade', ttl: 'Hogsmeade', line: '눈 덮인 큰길. 과자 가게 창만 분홍빛으로 환하다.',
     spots: [{id: 'honeydukes', ko: '허니듀크스', p: [.25, .53, 'l'], w: [.195, .64, 'l']}, {id: 'broomsticks', ko: '스리 브룸스틱스', p: [.87, .50, 'r'], w: [.85, .62, 'r']}]},
   honeydukes: {shop: true, street: 'hogsmeade', photo: 'honeydukes', ttl: 'Honeydukes', head: 'Honeydukes', sub: '호그스미드의 과자 가게 · 과자 열 가지', tip: '과자는 선물로 보낼 수 있다. 누가 무엇을 좋아하는지는 보내 봐야 안다.'},
-  apothecary: {shop: true, street: 'diagon', photo: 'apothecary', ttl: 'Slug & Jiggers', head: 'Slug & Jiggers Apothecary', sub: '다이애건 앨리의 약재상 · 약재 일곱 가지', tip: '약재도 선물이 된다. 반길 사람은 많지 않지만, 반기는 사람은 진심으로 반긴다.'},
+  apothecary: {shop: true, street: 'diagon', photo: 'apothecary', ttl: 'Slug & Jiggers', head: 'Slug & Jiggers Apothecary', sub: '다이애건 앨리의 약재상 · 약재 열 가지', tip: '약재도 선물이 된다. 반길 사람은 많지 않지만, 반기는 사람은 진심으로 반긴다.'},
   broomsticks: {shop: true, street: 'hogsmeade', photo: 'broomsticks', ttl: 'The Three Broomsticks', head: 'The Three Broomsticks', sub: '호그스미드의 주점 · 병에 든 버터맥주', tip: '버터맥주는 친구에게 쓰는 편지에 붙여 보낸다.'},
   weasleys: {shop: true, street: 'diagon', photo: 'weasleys', ttl: "Weasleys' Wizard Wheezes", head: "Weasleys' Wizard Wheezes", sub: '다이애건 앨리의 장난감 가게 · 과자 상자, 잉크, 편지지', tip: '잉크와 편지지는 친구에게 편지를 쓸 때 고른다.'},
   borgin: {shop: true, street: 'diagon', photo: 'borgin', ttl: 'Borgin and Burkes', head: 'Borgin and Burkes', sub: '녹턴 앨리 · 물건마다 하나뿐', tip: '산 물건은 가게 밖으로 들고 나갈 수 없다. 보긴 씨가 뒷방 선반에 맡아 둔다.'},

@@ -190,9 +190,6 @@ export function mergeData(text){
     for (const [id, d] of Object.entries(b.sent || {})) if (!a.sent[id] || d < a.sent[id]) a.sent[id] = d;
     for (const [id, r] of Object.entries(b.learnt || {})){ const m = a.learnt[id]; if (!m || (+r.i || 0) > (+m.i || 0) || ((+r.i || 0) === (+m.i || 0) && (r.due || '') > (m.due || ''))) a.learnt[id] = r; }   // the further along of the two
     if ((b.day || '') > (a.day || '')) a.day = b.day;
-    /* a cauldron left to stew: the one further on (a potion already made has none) */
-    for (const [n, v] of Object.entries(b.stew || {})){ a.stew = a.stew || {}; const h = a.stew[n]; if (!a.best[n] && (!h || v.i > h.i || (v.i === h.i && v.d < h.d))) a.stew[n] = v; }
-    for (const n of Object.keys(a.stew || {})) if (a.best[n] && b.best && b.best[n] && !(b.stew || {})[n]) delete a.stew[n];
   }
   if (obj.map && obj.map.got && !(state.map || {}).got) state.map = {...obj.map};
   if (obj.prophet && Array.isArray(obj.prophet.got)){
@@ -225,6 +222,12 @@ export function mergeData(text){
     for (const [n, r] of Object.entries(b.best || {})) if (!a.best[n] || (RANK[r] || 0) > (RANK[a.best[n]] || 0)) a.best[n] = r;
     for (const k of ['lent', 'dd']) if (b[k] && (!a[k] || b[k] < a[k])) a[k] = b[k];
     if ((b.day || '') > (a.day || '')) a.day = b.day;
+    /* when each was last made (the later), the ingredient already in a cauldron (either), the cauldron left to stew (the one
+       further on) — and a cauldron from before the potion was last made is gone (2026-10-16: this sat in the spells block) */
+    for (const [n, t] of Object.entries(b.done || {})){ a.done = a.done || {}; if (!a.done[n] || t > a.done[n]) a.done[n] = t; }
+    for (const [n, k] of Object.entries(b.key || {})){ a.key = a.key || {}; if (!a.key[n]) a.key[n] = k; }
+    for (const [n, v] of Object.entries(b.stew || {})){ a.stew = a.stew || {}; const h = a.stew[n]; if (!h || v.i > h.i || (v.i === h.i && v.d < h.d)) a.stew[n] = v; }
+    for (const n of Object.keys(a.stew || {})){ const v = a.stew[n], done = (a.done || {})[n]; if (done && (v.t || 0) < done){ delete a.stew[n]; if (a.key) delete a.key[n]; } }
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
   mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it
