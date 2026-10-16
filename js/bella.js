@@ -94,7 +94,7 @@ export function daily(){
     for (let k = 1; k <= more && !key; k++) if (!b.sent['S' + pad2(7 + k)]) key = 'S' + pad2(7 + k);
     if (key && bond.postItem(ID, key)) m.scDay = t;
   }
-  if (b.lastDay && s.settings.howler !== false){
+  if (b.lastDay && store.get().settings.howler !== false){   // was "s.settings" — s undefined: from 2026-10-12 this threw for anyone who had taken her dictation, and bond.daily stopped here (fixed 2026-10-16)
     const gap = between(b.lastDay, t), lv = AWAY.filter(x => gap >= x).pop();
     if (lv) bond.postItem(ID, `TN-${lv}-${hash(b.lastDay + lv) % 2}-${b.lastDay}`);
   }

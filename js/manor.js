@@ -18,6 +18,7 @@ import * as wand from './wand.js';
 import {floo} from './fire.js';
 import * as bella from './bella.js';
 import {makeTalk} from './talk.js';
+import * as exams from './exams.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
 const ID = 'lucius';
@@ -192,7 +193,7 @@ export function initManor(app){
     $('#mnLine').innerHTML = line; $('#mnLine').hidden = !line;
     $('#mnGo').innerHTML = (done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('일 시작하기', `data-to="#/room/${ID}"`)) +
       (w ? `<button type="button" class="clink" data-to="#/report/${ID}">오늘 한 일 보기</button>` : '') +
-      (g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : '');
+      (g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : '') + testLine(ID, done);
     spots({cabinet: scrap() ? '쪽지' : ready.length ? '검수' : '', salver: w ? `${w.s}시클` : ''});
     bringOut(objs);
   }
@@ -211,6 +212,14 @@ export function initManor(app){
       `<button type="button" class="sh-drill" data-go="#/room/${ID}">일 시작하기</button>`);
   }
 
+  /* the manor's word tests (exams.js, manortest.js): once due, a line on the card — after the day's work, as a lesson's paper is */
+  function testLine(id, done){
+    const words = app.words[id];
+    if (!words){ app.loadWords(id).then(w => { if (w && Object.keys(w).length && !sec.hidden) (view === 'study' ? drawStudy : view === 'drawing' ? drawDrawing : () => {})(); }); return ''; }
+    if (!exams.manorDue(id, words, app.data[id])) return '';
+    const name = id === ID ? '장부 감사 · <span lang="en">The Audit</span>' : '되읽기 · <span lang="en">Word for Word</span>';
+    return done ? `<button type="button" class="clink" data-to="#/exam/${id}">${name} →</button>` : `<span class="clink off">${name} · 오늘 ${id === ID ? '일' : '받아쓰기'}를 마친 뒤</span>`;
+  }
   /* the drawing room: Bellatrix dictates. Her first words in beats; then the day's dictation, a talk when she starts one,
      and what crossed the floor today */
   function drawDrawing(){
@@ -241,7 +250,7 @@ export function initManor(app){
     /* Occlumency is taught in this room: once her note about it has come, the way in is here too */
     const sps = store.get().spells || {};
     const oc = (sps.sent || {}).occlumency ? `<button type="button" class="clink" data-to="#/spell/occlumency">${(sps.learnt || {}).occlumency ? '마음 닫기 · 문을 다시 닫아 본다' : '마음 닫기 · 그녀에게 배운다'}</button>` : '';
-    put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : ''));
+    put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : '') + testLine(BID, done));
   }
 
   /* the glass cabinet: the seven objects, each with how far its cleaning has come */

@@ -8,6 +8,7 @@ import * as exams from './exams.js';
 import * as srs from './srs.js';
 import * as bond from './bond.js';
 import {$, esc, fitPaper, toast, reduced} from './ui.js';
+import {showManor} from './manortest.js';
 
 const KIND = {mean: '뜻 고르기', plain: '쉬운 말을 보고 낱말을', blank: '새 문장의 빈칸'};
 const POS = {'n.': '명사', 'v.': '동사', 'adj.': '형용사', 'adv.': '부사', 'phr. v.': '구동사', 'prep.': '전치사', 'conj.': '접속사', 'interj.': '감탄사'};
@@ -15,7 +16,7 @@ const POS = {'n.': '명사', 'v.': '동사', 'adj.': '형용사', 'adv.': '부�
 export function initExam(app){
   const body = $('#exBody'), scroll = $('#exScroll');
   fitPaper($('#exPaper'));
-  let id = null, qs = null, answers = [], sit = null, warned = false;
+  let id = null, qs = null, answers = [], sit = null, warned = false, manor = null;   // manor: the Audit or Word for Word is on (manortest.js)
 
   $('#exBack').addEventListener('click', () => {
     if (qs && !sit && answers.some(a => a)){ if (!warned){ warned = true; toast('지금 나가면 이 시험지는 버려진다 · 한 번 더 누르면 나간다', 3200); return; } }
@@ -30,7 +31,16 @@ export function initExam(app){
 
   async function show({id: deck}){
     id = deck; qs = null; answers = []; sit = null; warned = false; handWarned = false;
+    if (manor && manor.cancel) manor.cancel(); manor = null; body.onclick = body.oninput = body.onkeydown = null; $('#exTtl').textContent = 'O.W.L.';
     const d = byId(id);
+    if (d && exams.MANOR[id]){
+      const pic = f => `url("${new URL(`assets/rooms/${id}-${f}.webp`, location.href).href}")`;
+      $('#exPhoto').style.setProperty('--p', pic('portrait')); $('#exPhoto').style.setProperty('--w', pic('wide'));
+      $('#exCnt').textContent = ''; body.innerHTML = '<p class="ex-wait">종이를 펼치는 중…</p>';
+      await exams.load(); await bond.load(id);
+      manor = {app, id, body, scroll, setTitle: t => { $('#exTtl').textContent = t; }, setCount: t => { $('#exCnt').textContent = t; }};
+      showManor(manor); return;
+    }
     if (!d || !exams.SUBJECT[id]){ app.go('#/', true); return; }
     const pic = f => `url("${new URL(`assets/rooms/${id}-${f}.webp`, location.href).href}")`;
     $('#exPhoto').style.setProperty('--p', pic('portrait')); $('#exPhoto').style.setProperty('--w', pic('wide'));
@@ -88,6 +98,7 @@ export function initExam(app){
 
   body.addEventListener('click', e => {
     const go = e.target.closest('[data-go]'); if (go){ app.go(go.dataset.go); return; }
+    if (manor) return;   // the manor's tests answer on their own (manortest.js)
     const b = e.target.closest('.ex-opts button');
     if (b && !sit){
       const i = +b.dataset.q; answers[i] = qs[i].opts[+b.dataset.o];
@@ -97,7 +108,7 @@ export function initExam(app){
     if (e.target.closest('#exNotice')) notice(sit.t);
   });
   body.addEventListener('input', e => {
-    const inp = e.target.closest('input[data-q]'); if (!inp || sit) return;
+    const inp = e.target.closest('input[data-q]'); if (!inp || sit || manor) return;
     const i = +inp.dataset.q, q = qs[i], v = inp.value.trim();
     answers[i] = v ? (v.toLowerCase().startsWith(q.first.toLowerCase()) ? v : q.first + v) : null;   /* the first letter is given: typed or not, it counts */
     count();
@@ -155,5 +166,5 @@ export function initExam(app){
   const MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const dateEn = d => { const [, m, dd] = d.split('-'); return `${+dd} ${MON[+m - 1]}`; };
 
-  return {show, hide(){ qs = null; sit = null; }};
+  return {show, hide(){ qs = null; sit = null; if (manor && manor.cancel) manor.cancel(); manor = null; }};
 }

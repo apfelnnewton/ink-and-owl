@@ -209,6 +209,68 @@ export function resultText(id, key){
     ko: `O.W.L. 성적 통지서. ${SUBJECT_KO[id]}(${byId(id).ko}): ${g[0]}.`, go: `#/exam/${id}/results/${t}`, btn: sit.p ? '성적 통지서 · 채점된 시험지' : '성적 통지서 보기'};
 }
 
+/* ---------- the manor's two tests (2026-10-16, docs/plan-owl.md 1 · 2 · 4): no grade letters, no notices by owl —
+   a line on the room's card once the day's work is done.
+   The Audit (Lucius): his house ledger, one entry for each word wanting it; due at each object passed at inspection and
+   every tenth day of work. Stamped by the lines that do not balance; paid 5 Sickles, 2, or nothing (never a deduction).
+   Word for Word (Bellatrix): she gives a word's meaning in plain words, the guest gives her word back, against a clock;
+   three misses and she tears the page. Due every fifth day of dictation. A clean page brings coins on the floor.
+   Their sittings are kept as the professors' are, with k: 'audit' | 'wfw' (and torn: true for a torn page). */
+export const MANOR = {lucius: 'audit', bellatrix: 'wfw'};
+const LEAST_M = 6;
+const ofKind = (id, k) => sittings(id).filter(s => s.k === k);
+export function manorDue(id, words, cards){
+  const k = MANOR[id]; if (!k) return false;
+  const w = standing(id, words); if (w.all.length < LEAST_M) return false;
+  const past = ofKind(id, k); if (forced(id)) return true;   // ?exam=<id>: testing
+  if (past.length && past[past.length - 1].d === srs.today()) return false;
+  let owed = 0;
+  if (k === 'audit'){ const m = store.get().manor || {}; owed = Object.values(m.insp || {}).filter(r => r && r.ok).length + Math.floor((m.days || 0) / 10); }
+  else owed = Math.floor((bond.bondOf(id).days || 0) / 5);
+  void cards;
+  return past.length < owed || forced(id);
+}
+/* the entries of a ledger / the meanings of a read-back: missed words first, then words not yet asked, then the rest */
+export function manorQuestions(id, words, allWords){
+  const k = MANOR[id], w = standing(id, words), r = rnd(id + ':' + Date.now()), level = srs.level(), n = k === 'audit' ? 12 : 10;
+  const seen = new Set(), pick = [];
+  for (const e of [...w.missed, ...shuffle(w.fresh, r), ...shuffle(w.passed, r)]){
+    const lw = e.w.toLowerCase(); if (seen.has(lw)) continue;
+    if (k === 'audit' && !blankOf(e.key)) continue;   // an entry needs its sentence
+    seen.add(lw); pick.push(e); if (pick.length >= n) break;
+  }
+  return pick.map(e => {
+    const q = {key: e.key, w: e.w, pos: e.pos, ko: bare(e.ko), plain: e.plain};
+    if (k === 'audit'){
+      const b = blankOf(e.key); q.sentence = b.s; q.answer = b.a; q.accept = [b.a];
+      if (level === 'high' || !(b.o && b.o.length === 3)){ q.write = true; q.first = b.a[0]; } else q.opts = shuffle([b.a, ...b.o], r);
+    } else {
+      q.answer = e.w; q.accept = [e.w, e.as].filter(Boolean);
+      /* the high level writes it, with its first letter (the user, 2026-10-14); the others choose among four of her words */
+      if (level === 'high'){ q.write = true; q.first = e.w[0]; }
+      else {
+        const pool = allWords.filter(o => o.w.toLowerCase() !== e.w.toLowerCase() && !close(o, e)), same = shuffle(pool.filter(o => o.pos === e.pos), r), rest = shuffle(pool.filter(o => o.pos !== e.pos), r);
+        const wrong = []; for (const o of [...same, ...rest]){ if (wrong.length === 3) break; if (!wrong.includes(o.w)) wrong.push(o.w); }
+        q.opts = shuffle([e.w, ...wrong], r);
+      }
+    }
+    return q;
+  });
+}
+export const WFW_TIME = {low: 20, mid: 15, high: 20};
+/* a manor sitting kept; the money it brings (in Sickles) */
+export function recordManor(id, qs, answers, extra = {}){
+  const x = st(id), t = Date.now(), asked = qs.slice(0, answers.length), keys = asked.map(q => q.key);
+  const miss = asked.filter((q, i) => !right(q, answers[i])).map(q => q.key);
+  const sit = {t, d: srs.today(), k: MANOR[id], w: keys, miss, n: asked.length, ok: asked.length - miss.length, ...extra,
+    p: asked.map((q, i) => ({s: q.write ? 'w' : 'b', k: q.key, w: q.w, pos: q.pos, x: q.sentence || q.plain, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
+  x.s.push(sit); store.save();
+  return sit;
+}
+export const auditStamp = n => n === 0 ? ['The accounts balance.', '장부가 맞는다'] : n === 1 ? ['One discrepancy.', '어긋난 줄 하나'] : n === 2 ? ['Two discrepancies.', '어긋난 줄 둘'] : ['This will not do.', '이래서는 안 된다'];
+export const auditPay = n => n === 0 ? 5 : n <= 2 ? 2 : 0;
+export const manorPast = id => ofKind(id, MANOR[id]);
+
 /* called with the other daily letters (bond.daily): the notice of a paper newly due, one a day */
 export async function daily(app){
   await load(); if (!TEXT) return;
