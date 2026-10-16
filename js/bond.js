@@ -193,9 +193,26 @@ export function finishTea(id, tea, score, picks){
   const n = Object.keys(b.teas).length;
   if (n >= 1) post(id, 'L48'); if (n >= 10) post(id, 'L49'); if (n >= 20) post(id, 'L50');
   if (byFire(id)){ const gift = {5: 'K05', 10: 'K06', 15: 'K07', 20: 'K08'}[n]; if (gift) post(id, gift); }   // his gifts 5–8 come with the talks (he asks no favours)
+  else if (id === 'snape') snapeTeaGift(b, n);
   else if (n % 10 === 0 && n <= 100) post(id, 'K' + (10 + n / 10));
   if (inDrawing(id)) bella.nameCheck();   // the twentieth talk is what her last name for the learner waits for
   store.save();
+}
+
+/* Snape has 170 teas (T101–T170 added 2026-10-16), so his ten tea gifts (K11–K20) come every 17th cup instead of every
+   10th (user, 2026-10-16). One who already had some under the old rule gets the next 17 cups after the last one
+   (b.teaGiftAt: the cup it came with; for the gifts from before, the tenth cup of each). */
+const TEA_GIFT_EVERY = 17;
+const teaGiftsGot = b => Array.from({length: 10}, (_, i) => 'K' + (11 + i)).filter(k => b.sent[k]).length;
+/* the cup with which the k-th tea gift (1–10) comes, for this guest */
+export function teaGiftCup(id, k){
+  const b = bondOf(id); if (id !== 'snape') return k * 10;
+  const got = teaGiftsGot(b), last = b.teaGiftAt || got * 10;
+  return k <= got ? null : last + (k - got) * TEA_GIFT_EVERY;
+}
+function snapeTeaGift(b, n){
+  const got = teaGiftsGot(b); if (got >= 10) return;
+  if (n >= (b.teaGiftAt || got * 10) + TEA_GIFT_EVERY && post('snape', 'K' + (11 + got))) b.teaGiftAt = n;
 }
 
 /* ---------- seasonal greetings: on the day or up to three days after, once a year, if we have studied together */

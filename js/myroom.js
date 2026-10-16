@@ -21,7 +21,7 @@ import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} fr
 const ID = n => 'K' + String(n).padStart(2, '0');
 /* how each keepsake is earned (bond.js: stage letters, requests, half / all learnt, every tenth tea, every fifteenth letter) */
 const WHEN = (n, d) => d && d.place === 'drawing' ? (n === 1 ? '받아쓰기 첫날' : n <= 4 ? `호칭 ${n}번째` : n <= 8 ? `응접실 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : d && d.place === 'fire' ? (n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `불 속 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
-  n === 10 ? '대사 전부 숙달' : n <= 20 ? `차 ${(n - 10) * 10}번째` : `편지 ${(n - 20) * 15}통째`;
+  n === 10 ? '대사 전부 숙달' : n <= 20 ? `차 ${(d && d.id === 'snape' && bond.teaGiftCup('snape', n - 10)) || (n - 10) * 10}번째` : `편지 ${(n - 20) * 15}통째`;   /* Snape's tea gifts: every 17th cup (bond.teaGiftCup) */
 const img = (id, k) => new URL(`assets/keepsakes/${id}-${k}.webp`, location.href).href;
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
 const para = s => esc(bond.fill(s)).split(/\n+/).map(p => `<p>${p}</p>`).join('');

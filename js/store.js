@@ -165,6 +165,7 @@ export function mergeData(text){
     base.mail = [...(base.mail || []), ...(other.mail || []).filter(m => !have.has(m.id))].sort((a, b) => a.t < b.t ? -1 : 1);
     base.teas = {...other.teas, ...base.teas}; base.keep = {...other.keep, ...base.keep};
     if (base.teaLog || other.teaLog) base.teaLog = {...other.teaLog, ...base.teaLog};
+    if (base.teaGiftAt || other.teaGiftAt) base.teaGiftAt = Math.max(+base.teaGiftAt || 0, +other.teaGiftAt || 0);   // Snape's tea gifts: the cup of the last one (bond.js)
     state.bond[id] = base;
   }
   /* doors opened on either device stay open; friends' letters from either device are all kept (the group stays this device's) */
