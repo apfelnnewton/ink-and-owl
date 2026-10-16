@@ -247,27 +247,31 @@ srs.hooks.push(ev => {
   everyday(id, 'study');
 });
 
-/* ---------- on start-up and every return to the corridor: expired requests, greetings, milestones */
+/* ---------- on start-up and every return to the corridor: expired requests, greetings, milestones.
+   Each step runs on its own (2026-10-16, user: a safety catch): one that fails is noted in the console and the rest still
+   run. Until then a single slip stopped everything after it — from 2026-10-12 bella.daily threw for anyone who had taken
+   her dictation, and no spell letter, potions letter, notice, gift reply or friend's news came after it. */
+const step = async (name, f) => { try { await f(); } catch (e){ console.error('daily: ' + name, e); } };
 export async function daily(){
   await Promise.all(DECKS.map(d => load(d.id)));
   const t = srs.today();
-  for (const d of BONDED){
+  for (const d of BONDED) await step('deck ' + d.id, () => {
     const b = bondOf(d.id), a = b.req.active;
     if (a && t > a.until) settleRequest(d.id, false);
     if (b.inv && b.inv.src === 'owl' && b.inv.t < t){ post(d.id, 'C-' + b.inv.t); b.inv = null; losePts(d.id, 3); }
     if (b.days) { deckChecks(d.id); offerRequest(d.id); everyday(d.id, 'open'); }
-  }
-  greetings();
-  wandLetter();
-  manor.daily();
-  bella.daily();   // before the spells: her name for the learner decides whether she will teach hers
-  await spells.daily();
-  await potions.daily();   // a year of Snape's lines learnt: his potions lesson (potions.js)
-  if (app) await exams.daily(app);   // twelve new words: a professor's O.W.L. paper (exams.js)
-  await map.daily();
-  fire.daily();
-  await shops.daily();   // yesterday's presents are answered; the shops open after a first day's wages
-  newsLetter();
+  });
+  await step('greetings', greetings);
+  await step('wand', wandLetter);
+  await step('manor', () => manor.daily());
+  await step('bella', () => bella.daily());   // before the spells: her name for the learner decides whether she will teach hers
+  await step('spells', () => spells.daily());
+  await step('potions', () => potions.daily());   // a year of Snape's lines learnt: his potions lesson (potions.js)
+  if (app) await step('exams', () => exams.daily(app));   // twelve new words: a professor's O.W.L. paper (exams.js)
+  await step('map', () => map.daily());
+  await step('fire', () => fire.daily());
+  await step('shops', () => shops.daily());   // yesterday's presents are answered; the shops open after a first day's wages
+  await step('news', () => newsLetter());
   store.save();
 }
 
