@@ -12,6 +12,7 @@ import {sealTag, wandTag, readLetter, friendBar, wireFriends} from './friends.js
 import {hint} from './hints.js';
 import * as howler from './howler.js';
 import * as shops from './shops.js';
+import * as owners from './owners.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
 /* [[words]] in a Howler or note are its key expressions: in bold, explained under the letter */
@@ -20,7 +21,8 @@ const para = s => esc(bond.fill(s)).replace(/\[\[([^\]]+)\]\]/g, '<b class="kx">
 export const order = (key, n) => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--){ h = Math.imul(h ^ i, 16777619); const j = (h >>> 0) % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 /* whose post there is: the seven professors, then whoever else has written (Sirius by the fire, Lucius at the manor) */
-const writers = () => [...PROFS, ...DECKS.filter(d => d.place !== 'corridor' && doors.available(d.id))];
+const writers = () => [...PROFS, ...DECKS.filter(d => d.place !== 'corridor' && doors.available(d.id)), ...(bond.bondOf(owners.ID).mail.length ? [owners.DESK] : [])];   // the former owners of Borgin's things write under the shop's name (owners.js)
+const deckOf = id => id === owners.ID ? owners.DESK : byId(id);
 const giftImg = (id, k) => new URL(`assets/keepsakes/${id}-${k}.webp`, location.href).href;
 
 export function initLetters(app){
@@ -62,7 +64,7 @@ export function initLetters(app){
       /* an unopened Howler shows its red (or pink) envelope colour instead of the professor's wax */
       const mark = m.read ? '' : it.howler ? `<i class="seal hw-${it.pink ? 'pink' : 'red'}"></i>` : `<i class="seal s-${deck.id}"></i>`;
       return `<li class="${m.read ? '' : 'new'}${it.howler ? ' hw' : ''}"><button type="button" data-mail="${esc(m.id)}">${mark}` +
-        `<span class="lt-meta">${esc(it.kind)} · ${fmt(m.t)}</span><span class="lt-first" lang="en">${esc(first)}…</span></button></li>`;
+        `<span class="lt-meta">${it.from ? `<span lang="en">${esc(it.from.en)}</span> · ` : ''}${esc(it.kind)} · ${fmt(m.t)}</span><span class="lt-first" lang="en">${esc(first)}…</span></button></li>`;
     }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${deck.place === 'manor' ? '저택에서 일한 날이 쌓이면 은쟁반에 카드가 놓입니다.' : esc(deck.ko) + '와(과) 공부하면 ' + (deck.place === 'corridor' ? '부엉이가' : '쪽지가') + ' 옵니다.'}</p></li>`;
   }
 
@@ -75,14 +77,31 @@ export function initLetters(app){
     if (it.gift) bond.bondOf(deck.id).keep[it.gift.id] = bond.bondOf(deck.id).keep[it.gift.id] || m.t;
     openSheet(`<div class="sh-kind"><span>${esc(it.kind)}${m ? ' · ' + fmt(m.t) : ''}</span></div>` +
       (it.gift ? `<figure class="lt-gift"><img src="${giftImg(deck.id, it.gift.id)}" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()"><figcaption><b lang="en">${esc(it.gift.name.en)}</b><span>${esc(it.gift.name.ko)}</span></figcaption></figure>` : '') +
-      (it.thing ? `<figure class="lt-thing"><img src="${shops.art(it.thing.id)}" alt=""><figcaption><b lang="en">${esc(it.thing.en)}</b><span>${esc(it.thing.ko)}${it.thing.back ? ' · 봉지로 돌아왔다' : ''}</span></figcaption></figure>` : '') +
+      (it.thing && it.thing.id ? `<figure class="lt-thing"><img src="${shops.art(it.thing.id)}" alt=""><figcaption><b lang="en">${esc(it.thing.en)}</b><span>${esc(it.thing.ko)}${it.thing.back ? ' · 봉지로 돌아왔다' : ''}</span></figcaption></figure>` : '') +
+      (it.owner ? ownerHead(it) : '') +
       `<div class="lt-letter${it.howler ? ' lt-burnt' : ''}" lang="en" id="shTitle">${para(it.en)}</div>` +
       `<div class="lt-ko">${para(it.ko)}</div>` +
       (it.spell ? `<button type="button" class="sh-drill" data-spellgo="${it.spell}">${deck.place === 'drawing' ? '응접실로 간다 · 마음 닫기' : '연구실로 가기 · 주문 배우기'}</button>` : '') +
       (it.map ? '<button type="button" class="sh-drill" data-mapgo="1">양피지 펼치기</button>' : '') +
       (it.go ? `<button type="button" class="sh-drill" data-go="${esc(it.go)}">${esc(it.btn)}</button>` : '') +
-      (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key));
+      (it.keys ? `<ul class="lt-keys">${Object.entries(it.keys).map(([k, v]) => `<li><b lang="en">${esc(k)}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : '') + reqBlock(key) + (it.owner ? ownerReplies(it) : ''));
     draw();
+  }
+
+/* a former owner's letter (owners.js): the thing it is about and who writes, and under the letter the three replies — to
+     choose while it waits for an answer; once answered, the reply that was sent */
+  function ownerHead(it){
+    const g = shops.DARK.find(x => x.key === it.owner.key);
+    return (g ? `<figure class="lt-thing"><img src="${shops.art(g.id)}" alt=""><figcaption><b lang="en">${esc(g.en)}</b><span>${esc(g.ko)}</span></figcaption></figure>` : '') +
+      `<p class="lt-from" lang="en">${esc(it.from.en)} · <i>${esc(it.title.en)}</i></p>`;
+  }
+  function ownerReplies(it){
+    const r = owners.replies(it.owner.key, it.owner.step); if (!r) return '';
+    if (r.picked != null){ const o = r.options[r.picked]; return `<div class="lt-sent"><h3 class="gr-h">보낸 답장</h3><p lang="en">${esc(bond.fill(o.en))}</p><p class="ko">${esc(o.ko)}</p></div>`; }
+    if (!r.open) return '';
+    const last = it.owner.step === 2;
+    return `<h3 class="gr-h">${last ? '마지막 답장 · 이 답으로 끝이 정해진다' : '답장 고르기 · 다음 편지는 내일'}</h3><div class="tea-opts">` +
+      order(it.owner.key + '|' + it.owner.step, r.options.length).map(i => { const o = r.options[i]; return `<button type="button" data-owreply="${i}" data-owkey="${it.owner.key}" data-owstep="${it.owner.step}"><span lang="en">${esc(bond.fill(o.en))}</span><small>${esc(o.ko)}</small></button>`; }).join('') + '</div>';
   }
 
   /* a request still in hand: the lines it names, and a way to practise them now */
@@ -137,6 +156,12 @@ export function initLetters(app){
   $('#sheetBody').addEventListener('click', e => { if (!sec.hidden && e.target.closest('[data-mapgo]')){ closeSheet(); app.go('#/map'); } });
   $('#sheetBody').addEventListener('click', e => { const g = !sec.hidden && e.target.closest('[data-go]'); if (g){ closeSheet(); app.go(g.dataset.go); } });
   $('#sheetBody').addEventListener('click', e => { if (sec.hidden || !tea) return; const b = e.target.closest('[data-tea]'); if (b) teaPick(+b.dataset.tea); });
+  $('#sheetBody').addEventListener('click', e => {
+    const b = !sec.hidden && e.target.closest('[data-owreply]'); if (!b) return;
+    if (!owners.answer(b.dataset.owkey, +b.dataset.owstep, +b.dataset.owreply)) return;
+    toast(+b.dataset.owstep === 2 ? '<span class="q" lang="en">Sent.</span><span class="k">마지막 답장을 보냈다. 내일 끝을 알리는 쪽지가 온다.</span>' : '<span class="q" lang="en">Sent.</span><span class="k">답장을 보냈다. 다음 편지는 내일 온다.</span>', 3000, true);
+    closeSheet(); draw();
+  });
   $('#ltWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && !b.classList.contains('on')) app.go('#/letters/' + b.dataset.who); });
   wireFriends(app);
   /* the post lies on the desk in your own room: back goes there */
@@ -145,18 +170,19 @@ export function initLetters(app){
 
   async function show({id, sub}){
     /* no professor named: friends' unread letters first, then whichever professor has unread post */
-    friends = id === 'friends' || (!byId(id) && post.unread() > 0);
+    friends = id === 'friends' || (!deckOf(id) && post.unread() > 0);
     if (friends){
       deck = deck || DECKS[0];
       $('#ltPhoto').style.backgroundImage = `url("${new URL('assets/rooms/me-portrait.webp', location.href).href}")`;
       draw(); $('#ltScroll').scrollTop = 0; return;
     }
-    const want = byId(id) ? byId(id) : (writers().find(d => bond.unread(d.id)) || DECKS[0]);
+    const want = deckOf(id) ? deckOf(id) : (writers().find(d => bond.unread(d.id)) || DECKS[0]);
     deck = want;
     /* a letter about Sirius lies in Lupin's or Dumbledore's post, and its words are kept with his */
-    await Promise.all([bond.load(deck.id), bond.load('sirius')]);
+    if (deck.id === owners.ID) await Promise.all([owners.load(), shops.loadText()]);
+    else await Promise.all([bond.load(deck.id), bond.load('sirius')]);
     $('#ltPhoto').style.backgroundImage = `url("${new URL(`assets/rooms/${deck.id}-portrait.webp`, location.href).href}")`;
-    if (!bond.loaded(deck.id)) toast('편지를 불러오지 못했습니다.');
+    if (deck.id === owners.ID ? !owners.data() : !bond.loaded(deck.id)) toast('편지를 불러오지 못했습니다.');
     draw();
     $('#ltScroll').scrollTop = 0;
     /* arrived by accepting an invitation in the corridor: go straight in to tea */

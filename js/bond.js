@@ -25,6 +25,7 @@ import * as bella from './bella.js';
 import * as shops from './shops.js';
 import * as potions from './potions.js';
 import * as exams from './exams.js';
+import * as owners from './owners.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -54,7 +55,7 @@ export function bondOf(id){
   return s.bond[id];
 }
 export const stage = id => { const p = bondOf(id).pts; let k = 0; AT.forEach((a, i) => { if (p >= a) k = i; }); return k; };
-export const unread = id => (id ? [id] : DECKS.map(d => d.id)).reduce((n, d) => n + bondOf(d).mail.filter(m => !m.read).length, 0);
+export const unread = id => (id ? [id] : [...DECKS.map(d => d.id), owners.ID]).reduce((n, d) => n + bondOf(d).mail.filter(m => !m.read).length, 0);   // owners.ID: the former owners' letters (Borgin's tab)
 
 /* the learner's names, from settings: {name} formal, {first} first name */
 export function fill(text){
@@ -336,6 +337,7 @@ export const postItem = (id, key) => post(id, key);
 
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
+  if (id === owners.ID) return owners.textOf(key);
   if (/^H-/.test(key)) return howler.textOf(id, key);
   if (/^(G[FM]|BG)~/.test(key)) return shops.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);
@@ -458,8 +460,10 @@ export function init(a){
   loadNews();
   howler.load();
   onPost((id, key) => {
-    const who = byId(id);
+    const who = byId(id) || (id === owners.ID ? owners.DESK : null);
+    if (!who) return;
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl
+    if (id === owners.ID){ const t = owners.textOf(key); toast(`<span class="q" lang="en">An owl arrives.</span><span class="k">${esc(t && t.from ? t.from.ko : '낯선 사람')}에게서 ${/~end$/.test(key) ? '마지막 쪽지가' : '편지가'} 왔습니다.</span>`, 3200, true); return; }   // a stranger writing about a thing from Borgin's (owners.js)
     if (id === 'lucius' && /^C\d\d$/.test(key)) return;   // a card on the salver, beside the wages (manor.js)
     if (who.place === 'drawing'){   // no owl: a scrap in a slanting hand (the first one waits in the glass cabinet)
       if (key !== 'INTRO') toast(`<span class="q" lang="en">A scrap of paper, in a slanting hand.</span><span class="k">벨라트릭스의 ${/^K/.test(key) ? '물건이' : /^S\d/.test(key) ? '낙서가' : '쪽지가'} 놓여 있다.</span>`, 3200, true);

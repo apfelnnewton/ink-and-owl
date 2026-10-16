@@ -2538,3 +2538,13 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 /* the read-back's page leaving the hand (manortest.js outOfHand): copies of the paper, torn or folded */
 .ex-out{position:absolute;z-index:30;pointer-events:none}
 .ex-out > .ex-paper{position:absolute;inset:0;width:100%;margin:0;backface-visibility:visible}
+
+/* the former owners' letters (owners.js, letters.js): their tab's wax, who writes, the reply that was sent */
+.seal.s-borgin{background-image:url(../assets/ui/seal-need.webp)}
+.lt-from{margin:2px 0 10px;font:400 14px/1.4 var(--f-display);color:var(--ink-soft)}
+.lt-from i{font-style:italic}
+.lt-sent{margin:14px 0 0;padding:10px 12px;background:rgba(42,33,24,.06);border-radius:3px}
+.lt-sent p{margin:0}
+.lt-sent [lang=en]{font:400 15.5px/1.45 var(--f-display);color:var(--pen, #1F2A44)}
+.lt-sent .ko{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+.sp-paper{margin:10px 0 4px;padding:10px 12px;background:rgba(42,33,24,.06);border-radius:3px}

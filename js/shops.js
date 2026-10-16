@@ -29,6 +29,7 @@ import * as doors from './doors.js';
 import * as manor from './manor.js';
 import * as bella from './bella.js';
 import {floo} from './fire.js';
+import * as owners from './owners.js';
 import {byId, PROFS} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
@@ -78,9 +79,17 @@ GOODS.push(
   {id: 'borgin-09-mirror', shop: 'borgin', kind: 'dark', en: 'A Mirror for the Back of the Head', ko: '뒤통수만 비추는 거울', s: 59, key: 'mirror', drop: 4},
   {id: 'borgin-10-shadows', shop: 'borgin', kind: 'dark', en: 'A Jar of Borrowed Shadows', ko: '빌린 그림자 병', s: 68, key: 'shadows', drop: 4},
   {id: 'borgin-11-hand', shop: 'borgin', kind: 'dark', en: 'The Hand with the Candle', ko: '초를 쥔 손', s: 76, key: 'hand', drop: 4},
-  {id: 'borgin-12-opals', shop: 'borgin', kind: 'dark', en: 'The Opal Necklace', ko: '오팔 목걸이', s: 85, key: 'opals', drop: 4}
+  {id: 'borgin-12-opals', shop: 'borgin', kind: 'dark', en: 'The Opal Necklace', ko: '오팔 목걸이', s: 85, key: 'opals', drop: 4},
+  /* the six spare things (2026-10-16, owners.js): not on the counter until Mr Borgin brings one out for a place fallen empty */
+  {id: 'borgin-13-dice', shop: 'borgin', kind: 'dark', spare: true, en: 'A Pair of Bone Dice', ko: '뼈 주사위 한 쌍', s: 21, key: 'dice', drop: 4},
+  {id: 'borgin-14-key', shop: 'borgin', kind: 'dark', spare: true, en: 'A Key That Opens Nothing', ko: '아무것도 열지 못하는 열쇠', s: 34, key: 'key', drop: 4},
+  {id: 'borgin-15-inkwell', shop: 'borgin', kind: 'dark', spare: true, en: 'A Green Glass Inkwell', ko: '녹색 유리 잉크병', s: 42, key: 'inkwell', drop: 4},
+  {id: 'borgin-16-barometer', shop: 'borgin', kind: 'dark', spare: true, en: 'A Barometer for Tempers', ko: '방의 기분을 읽는 청우계', s: 51, key: 'barometer', drop: 4},
+  {id: 'borgin-17-bell', shop: 'borgin', kind: 'dark', spare: true, en: "A Visitor's Bell", ko: '손님을 미리 알리는 종', s: 59, key: 'bell', drop: 4},
+  {id: 'borgin-18-map', shop: 'borgin', kind: 'dark', spare: true, en: 'The Plan of a House That Is Not There', ko: '없는 집의 평면도', s: 68, key: 'map', drop: 4}
 );
 export const DARK = GOODS.filter(g => g.kind === 'dark');
+export const ORIGINAL = DARK.filter(g => !g.spare);   // the twelve on the counter from the first day; their order is their place on the shelf
 export const good = id => GOODS.find(g => g.id === id);
 export const byWire = w => GOODS.find(g => g.wire && g.wire === w) || null;
 export const art = id => `assets/shop/${id}.webp`;
@@ -103,7 +112,7 @@ export function buy(id){
   manor.earn(-cost);
   if (g.kind === 'ink') m.ink[id] = (m.ink[id] || 0) + USES;
   else if (g.kind === 'paper') m.paper[id] = (m.paper[id] || 0) + USES;
-  else if (g.kind === 'dark'){ m.dark[id] = srs.today(); (m.bg = m.bg || []).push({key: g.key, d: srs.today()}); }   // she will have something to say about it tomorrow
+  else if (g.kind === 'dark'){ m.dark[id] = srs.today(); (m.bg = m.bg || []).push({key: g.key, d: srs.today()}); placeOf(g); owners.bought(g.key); }   // she will have something to say about it tomorrow; its former owner, in two days
   else m.bag[id] = have(id) + 1;
   store.save();
   return '';
@@ -140,8 +149,33 @@ export function spend(ink, paper){
   if (paper){ const g = byPaper(paper); if (g && m.paper[g.id]){ m.paper[g.id]--; if (!m.paper[g.id]) delete m.paper[g.id]; } }
   store.save();
 }
-export const owns = id => !!st2().dark[id];
+/* a thing on the shelf: bought (or swapped in) and not sold or swapped away since (owners.js) */
+export const owns = id => { const g = good(id); return !!st2().dark[id] && !(g && owners.gone(g.key)); };
 export const darkCount = () => DARK.filter(g => owns(g.id)).length;
+/* on the counter: the twelve until bought; a spare once Mr Borgin has brought it out; nothing sold or swapped away */
+export const onCounter = g => g.kind !== 'dark' || (!st2().dark[g.id] && !owners.gone(g.key) && (!g.spare || owners.isOut(g.key)));
+/* its place on the shelf: one of the twelve keeps its own; a spare takes a place left by a thing gone (kept in shop.slot) */
+export function placeOf(g){
+  const m = st2(), i = ORIGINAL.indexOf(g); if (i >= 0) return i;
+  m.slot = m.slot || {};
+  if (m.slot[g.id] != null) return m.slot[g.id];
+  const taken = new Set(DARK.filter(x => x !== g && owns(x.id)).map(x => ORIGINAL.indexOf(x) >= 0 ? ORIGINAL.indexOf(x) : m.slot[x.id]));
+  const free = [...Array(ORIGINAL.length).keys()].filter(k => !taken.has(k) && (owners.gone(ORIGINAL[k].key) || Object.entries(m.slot).some(([id, s]) => s === k && !owns(id))));
+  m.slot[g.id] = free.length ? free[0] : null;
+  return m.slot[g.id];
+}
+/* places on the shelf that a spare could fill: left by a thing gone, not taken again, not already promised to a spare on the counter */
+function room(){
+  const held = new Set(DARK.filter(g => owns(g.id)).map(g => placeOf(g)));
+  const empty = ORIGINAL.filter((g, i) => owners.gone(g.key) && !held.has(i)).length;
+  return empty - DARK.filter(g => g.spare && onCounter(g)).length;
+}
+/* a thing that comes in by a swap: on the shelf at once, in the place of the one that went; its own former owner writes too */
+function arrive(key){
+  const g = DARK.find(x => x.key === key), m = st2(); if (!g || m.dark[g.id]) return;
+  m.dark[g.id] = srs.today(); placeOf(g); owners.bought(key);
+  (m.bg = m.bg || []).push({key, d: srs.today()});
+}
 
 /* the Skiving Snackbox: one missed day is counted as attended — the streak runs on and the Howlers reckon from a day later.
    Only for yesterday, only when the day before it was a day of study, and only when the guest says so (asked once). */
@@ -236,6 +270,9 @@ export async function daily(){
       return false;
     });
   }
+  /* the former owners' letters (owners.js): a letter moves on, a correspondence ends, a spare comes out */
+  if (DARK.some(g => m.dark[g.id])) await owners.daily({owned: () => DARK.filter(g => owns(g.id)).map(g => g.key), arrive, room,
+    earn: k => manor.earn(Math.max(-manor.purse(), k))});
   if (TEXT && TEXT.bella && (m.bg || []).some(x => x.d < t) && bella.met()){
     await bond.load('bellatrix');
     m.bg = m.bg.filter(x => { if (x.d >= t) return true; bond.postItem('bellatrix', 'BG~' + x.key); return false; });
@@ -283,6 +320,18 @@ document.addEventListener('click', async e => {
   closeSheet();
 });
 
+/* a thing on the shelf: where its former owner's letters stand (owners.js), and the paper, if one came of them */
+const END_KO = {kept: '지켰다', third: '세 번째 길로 끝났다'};
+function ownerLine(g){
+  const D = owners.data(), c = D && D[g.key], done = owners.ended(g.key), paper = owners.paperOf(g.key);
+  const go = '<button type="button" class="sh-drill" data-baggo="#/letters/borgin">편지함 · 보긴 앤 버크스 칸</button>';
+  if (owners.writing(g.key)) return `<p class="purse-note">옛 주인${c ? ` ${esc(c.from.ko)}` : ''}와(과) 편지가 오가는 중이다.</p>` + go;
+  if (owners.queued(g.key)) return '<p class="purse-note">이 물건의 옛 주인이 곧 편지를 보낼 것이다.</p>';
+  if (!done) return '';
+  return `<p class="purse-note">옛 주인${c ? ` ${esc(c.from.ko)}` : ''}와(과)의 편지 · ${END_KO[done.end] || ''}</p>` +
+    (paper && c ? `<div class="sp-paper"><h3 class="gr-h">받은 문서</h3><p class="sp-tag" lang="en">${marked(c.ends.third.note.en)}</p><p class="sp-tag ko">${esc(c.ends.third.note.ko)}</p></div>` : '') + go;
+}
+
 /* ---------- the screen: two streets, five shops, and the shelf in Borgin's back room */
 const PHOTO = {p: [1080, 1910], w: [1920, 1086]};
 const PLACES = {
@@ -303,7 +352,7 @@ const PLACES = {
 const COL = [.21, .50, .79], FLOOR = [.249, .463, .657, .858], NICHE = 15;   // NICHE: the side of a thing's picture, % of the shelf's height
 export function initTown(app){
   const sec = $('#town'), ph = $('#twPhoto');
-  let view = 'diagon';
+  let view = 'diagon', visit = null;
   const price = g => manor.money(g.s * SICKLE);
   function placeSpots(){
     const P = PLACES[view], r = ph.getBoundingClientRect(); if (!r.width || !P.spots) return;
@@ -324,7 +373,8 @@ export function initTown(app){
   /* what Mr Borgin says today: the first visit, a bare counter, a light purse, a shelf half full — or one of his ordinary greetings */
   function borginSays(){
     if (!TEXT) return null;
-    const g = TEXT.borgin.greet, m = st2(), n = darkCount(), left = DARK.filter(x => !owns(x.id));
+    if (visit) return visit;   // how a correspondence ended, or a spare brought out: taken once a visit (owners.borginWord)
+    const g = TEXT.borgin.greet, m = st2(), n = darkCount(), left = DARK.filter(x => onCounter(x));
     if (!m.borginSeen) return g.first;
     if (!left.length) return g.done;
     if (left.every(x => manor.purse() < x.s * SICKLE)) return g.empty;
@@ -336,16 +386,16 @@ export function initTown(app){
   function drawShop(P){
     const says = view === 'borgin' ? borginSays() : view === 'weasleys' && TEXT ? pick(TEXT.weasley.greet, 'w') : null;
     $('#twHead').innerHTML = `<span lang="en">${esc(P.head)}</span><small>${esc(P.sub)}</small>` + (says ? `<p class="sp-says">${say(says)}</p>` : '') + `<em>주머니 · ${esc(manor.money(manor.purse()))}</em>`;
-    const goods = GOODS.filter(g => g.shop === view && !(g.kind === 'dark' && owns(g.id)));
+    const goods = GOODS.filter(g => g.shop === view && onCounter(g));
     $('#twGrid').innerHTML = goods.map(g => row(g, price(g) + (g.kind === 'ink' ? (inkLeft(g.id) ? ` · 편지 ${inkLeft(g.id)}통분 남음` : ' · 편지 열 통분') : g.kind === 'paper' ? (paperLeft(g.id) ? ` · ${paperLeft(g.id)}장 남음` : ' · 열 장') : g.kind === 'dark' ? '' : have(g.id) ? ` · 봉지에 ${have(g.id)}개` : ''))).join('') +
-      (view === 'borgin' ? `<li><button type="button" class="mn-obj done sp-good sp-toshelf" data-spot="shelf"><span class="tx"><b lang="en">The Back Room</b><em>뒷방 · 맡아 둔 선반</em><small>${darkCount()} / ${DARK.length}</small></span></button></li>` : '');
-    $('#twTip').textContent = view === 'borgin' && !goods.length ? '계산대가 비었다. 열두 점 모두 뒷방 선반에 있다.' : P.tip;
+      (view === 'borgin' ? `<li><button type="button" class="mn-obj done sp-good sp-toshelf" data-spot="shelf"><span class="tx"><b lang="en">The Back Room</b><em>뒷방 · 맡아 둔 선반</em><small>맡아 둔 물건 ${darkCount()}점</small></span></button></li>` : '');
+    $('#twTip').textContent = view === 'borgin' && !goods.length ? '계산대가 비었다. 내놓을 물건이 생기면 보긴 씨가 꺼내 온다.' : P.tip;
   }
   function drawShelf(P){
     const mine = DARK.filter(g => owns(g.id)), cap = TEXT ? TEXT.borgin.shelf[mine.length % 2] : null;
-    $('#twShelfIn').innerHTML = DARK.map((g, i) => !owns(g.id) ? '' :
+    $('#twShelfIn').innerHTML = DARK.map(g => ({g, i: owns(g.id) ? placeOf(g) : null})).map(({g, i}) => i == null ? '' :
       `<button type="button" class="tw-on" data-good="${g.id}" aria-label="${esc(g.ko)}" style="left:${COL[i % 3] * 100}%;bottom:${((1 - FLOOR[Math.floor(i / 3)]) * 100).toFixed(1)}%;height:${NICHE}%;--drop:${g.drop || 0}%"><img src="${art(g.id)}" alt=""></button>`).join('');
-    $('#twShelfCap').innerHTML = mine.length ? (cap ? say(cap) : '') + `<small>맡아 둔 물건 ${mine.length} / ${DARK.length}</small>` : `<span class="k">선반은 아직 비어 있다. 칸마다 빈 놋쇠 이름표만 붙어 있다.</span>`;
+    $('#twShelfCap').innerHTML = mine.length ? (cap ? say(cap) : '') + `<small>맡아 둔 물건 ${mine.length}점</small>` : `<span class="k">선반은 아직 비어 있다. 칸마다 빈 놋쇠 이름표만 붙어 있다.</span>`;
   }
   function draw(){
     const P = PLACES[view], pic = f => `url("${new URL(`assets/rooms/${P.photo}-${f}.webp`, location.href).href}")`;
@@ -359,9 +409,9 @@ export function initTown(app){
     const g = good(id); if (!g) return;
     const t = tagOf(g), mine = g.kind === 'dark' && owns(id), short = manor.purse() < g.s * SICKLE, coin = g.s >= 17 ? 'galleon' : 'sickle';
     const label = g.kind === 'dark' ? '산다 · 뒷방 선반에 맡긴다' : g.kind === 'ink' || g.kind === 'paper' ? '산다' : '산다 · 종이 봉지에 담기';
-    openSheet(`<div class="sh-kind"><span>${esc(PLACES[g.shop].head)}</span><span>${mine ? `맡아 둠 · ${st2().dark[id].slice(5).replace('-', '월 ')}일` : g.kind === 'ink' && inkLeft(id) ? `편지 ${inkLeft(id)}통분` : g.kind === 'paper' && paperLeft(id) ? `${paperLeft(id)}장` : have(id) ? `봉지에 ${have(id)}개` : ''}</span></div>` + fig(g, true) +
+    openSheet(`<div class="sh-kind"><span>${esc(PLACES[g.shop].head)}</span><span>${mine ? `맡아 둠 · ${st2().dark[id].slice(5).replace(/^0/, '').replace('-0', '-').replace('-', '월 ')}일` : g.kind === 'ink' && inkLeft(id) ? `편지 ${inkLeft(id)}통분` : g.kind === 'paper' && paperLeft(id) ? `${paperLeft(id)}장` : have(id) ? `봉지에 ${have(id)}개` : ''}</span></div>` + fig(g, true) +
       `<p class="sp-tag" lang="en">${marked(t.en)}</p><p class="sp-tag ko">${esc(t.ko)}</p>` + keysOf(t) +
-      (mine ? '' : `<p class="mn-paid"><img src="assets/money/${coin}.webp" alt=""><b>${price(g)}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
+      (mine ? ownerLine(g) : `<p class="mn-paid"><img src="assets/money/${coin}.webp" alt=""><b>${price(g)}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
         `<button type="button" class="sh-drill" data-buy="${g.id}"${short ? ' disabled' : ''}>${short ? '주머니가 모자란다' : label}</button>`));
   }
   const enter = id => { if (id === 'ollivander') app.go('#/ollivander/again'); else app.go('#/town/' + id); };
@@ -384,9 +434,9 @@ export function initTown(app){
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
   async function show({id}){
     if (!isOpen()){ app.go('#/me', true); return; }
-    view = PLACES[id] ? id : 'diagon';
+    view = PLACES[id] ? id : 'diagon'; visit = null;
     draw();
-    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await loadText(); if (sec.hidden) return; draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
+    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await Promise.all([loadText(), owners.load()]); if (sec.hidden) return; if (view === 'borgin') visit = owners.borginWord(); draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
   }
   return {show, resize: placeSpots, refresh: () => { if (!sec.hidden) draw(); }};
 }
