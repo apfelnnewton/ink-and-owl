@@ -82,6 +82,7 @@ const practice = {
     const fr = f(); if (!fr.mail.length) arrive(HELLO, 8000);
     /* and a piece of news, so the professors have something to tell */
     queueNews({id: 'pn-' + rnd(6), from: 'p-clara', name: 'Clara', type: 'door', deck: 'lupin', at: Date.now()});
+    queueNews({id: 'pn-' + rnd(6), from: 'p-theo', name: 'Theo', type: 'owl', deck: 'snape', at: Date.now() + 1});
     setTimeout(() => notify(), 3000);
     return '';
   },
@@ -314,7 +315,7 @@ export async function send(to, text, x){
 /* ---------- news of friends (2026-10-04 user decision): a friend's milestone — a door opened, a professor grown close,
    a classroom fully learnt, a birthday — reaches the others, and a professor tells it in a letter (bond.js, max one a
    day). f().news = [{id, from, name, type, deck, at, told}] (kept to the last 60); f().said = {"type:deck": date}. */
-export const NEWS_TYPES = ['door', 'stage', 'learnt', 'bday'];
+export const NEWS_TYPES = ['door', 'stage', 'learnt', 'bday', 'owl'];   // owl: a first Outstanding on that professor's O.W.L. (2026-10-17)
 function queueNews(n){
   const fr = f(); if (!fr.news) fr.news = [];
   if (!NEWS_TYPES.includes(n.type) || fr.news.some(x => x.id === n.id) || Date.now() - n.at > 14 * 864e5) return false;

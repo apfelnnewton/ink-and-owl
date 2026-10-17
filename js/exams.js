@@ -14,6 +14,7 @@ import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as doors from './doors.js';
 import {byId, PROFS} from './decks.js';
+import * as post from './post.js';
 
 export const SUBJECT = {snape: 'Potions', slughorn: 'Potions', mcgonagall: 'Transfiguration', lupin: 'Defence Against the Dark Arts',
   moody: 'Defence Against the Dark Arts', umbridge: 'Defence Against the Dark Arts', dumbledore: "The Headmaster's Paper"};
@@ -182,6 +183,7 @@ export function record(id, qs, answers){
       x: q.shape === 'plain' ? q.plain : q.shape === 'mean' ? '' : q.sentence, h: q.hint || undefined, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
   x.s.push(sit); if (x.sent < x.s.length) x.sent = x.s.length;
   const g = gradeAt(sit)[0];
+  if (g === 'O') post.announce('owl', id);   // the friends hear of a first Outstanding in a subject (once: post.said)
   if (g === 'O') bond.gain(id, 20); else if (PASS.has(g)) bond.gain(id, 10);
   bond.postItem(id, 'OR-' + t);
   store.save();
@@ -287,6 +289,8 @@ export const manorPast = id => ofKind(id, MANOR[id]);
 
 /* called with the other daily letters (bond.daily): the notice of a paper newly due, one a day */
 export async function daily(app){
+  /* an Outstanding the group has not heard of yet (offline then, or the rule not yet published): told again, once */
+  for (const d of PROFS) if (sittings(d.id).some(s => gradeLetter(s) === 'O')) post.announce('owl', d.id);
   await load(); if (!TEXT) return;
   if (PROFS.some(d => st(d.id).on === srs.today())) return;
   for (const d of PROFS){
