@@ -79,10 +79,10 @@ export function initExam(app){
     let ask = '';
     if (q.shape === 'mean') ask = `<div class="ex-qw" lang="en">${esc(q.w)}<span class="pos">${esc(q.pos)}</span></div>`;
     else if (q.shape === 'plain') ask = `<div class="ex-qs" lang="en">${esc(q.plain)}<span class="gloss">${esc(q.ko)} · ${esc(POS[q.pos] || q.pos)}</span></div>`;
-    else ask = `<div class="ex-qs" lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}</div>`;
+    else ask = `<div class="ex-qs" lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}${q.hint ? `<span class="gloss en">${esc(q.hint)}</span>` : ''}</div>`;
     const ans = opts
       ? `<div class="ex-opts${q.shape === 'mean' ? '' : ' en'}">${q.opts.map((o, k) => `<button type="button" data-q="${i}" data-o="${k}"${q.shape === 'mean' ? '' : ' lang="en"'}><b>${'abcd'[k]}</b><span>${esc(o)}</span></button>`).join('')}</div>`
-      : `<label class="ex-write"><span class="first" lang="en">${esc(q.first)}</span><input type="text" data-q="${i}" lang="en" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" aria-label="${i + 1}번 답"></label>`;
+      : `<label class="ex-write"><span class="first" lang="en">${esc(q.first)}</span><input type="text" data-q="${i}" lang="en" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" aria-label="${i + 1}번 답">${exams.wordCount(q)}</label>`;
     return `<li data-i="${i}"><span class="num">${i + 1}.</span><div class="ex-qk">${KIND[q.shape]}</div>${ask}${ans}</li>`;
   }
   function paperView(kind){
@@ -133,7 +133,7 @@ export function initExam(app){
       const ok = q.ok !== undefined ? q.ok : exams.right(q, answers[i]), given = answers[i];
       let ask = q.shape === 'mean' ? `<div class="ex-qw" lang="en">${esc(q.w)}<span class="pos">${esc(q.pos)}</span></div>`
         : q.shape === 'plain' ? `<div class="ex-qs" lang="en">${esc(q.plain)}</div>`
-        : `<div class="ex-qs" lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}</div>`;
+        : `<div class="ex-qs" lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}${q.hint ? `<span class="gloss en">${esc(q.hint)}</span>` : ''}</div>`;
       const ko = q.shape === 'mean';
       const mine = given ? `<span class="ex-pen${ok ? '' : ' struck'}"${ko ? '' : ' lang="en"'}>${esc(given)}</span>` : '<span class="ex-pen none">—</span>';
       const fix = ok ? '' : `<span class="ex-fix"${ko ? '' : ' lang="en"'}>${esc(q.answer)}</span>`;

@@ -18,7 +18,7 @@ const MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Au
 const dateEn = d => { const [, m, dd] = d.split('-'); return `${+dd} ${MON[+m - 1]}`; };
 const say = (l, cls = '') => l ? `<div class="mt-say ${cls}"><p lang="en">${esc(bond.fill(l.en))}</p><p class="ko">${esc(bond.fill(l.ko))}</p></div>` : '';
 const pick = (set, seed) => set && set.length ? set[seed % set.length] : null;
-const writeBox = (q, i) => `<label class="ex-write"><span class="first" lang="en">${esc(q.first)}</span><input type="text" data-q="${i}" lang="en" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" aria-label="${i + 1}번 답"></label>`;
+const writeBox = (q, i) => `<label class="ex-write"><span class="first" lang="en">${esc(q.first)}</span><input type="text" data-q="${i}" lang="en" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" aria-label="${i + 1}번 답">${exams.wordCount(q)}</label>`;
 const typed = (q, v) => { v = String(v || '').trim(); return v ? (v.toLowerCase().startsWith(q.first.toLowerCase()) ? v : q.first + v) : null; };
 
 export async function showManor(ctx){
@@ -47,7 +47,7 @@ function audit({body, scroll, setCount}, T, qs, back){
     body.innerHTML = `<div class="mt-h" lang="en">The Accounts of the House</div><div class="mt-s" lang="en">Audit · ${esc(dateEn(srs.today()))}</div>` +
       say(pick(T.open, seed)) +
       `<table class="mt-led"><thead><tr><th lang="en">No.</th><th lang="en">Entry</th></tr></thead><tbody>` +
-      qs.map((q, i) => `<tr><td class="no" lang="en">${ROMAN[i]}</td><td class="ent"><div lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}</div>` +   /* no Korean meaning while the gap is open: the meaning alone would pick the word (user, 2026-10-16); it shows once marked */
+      qs.map((q, i) => `<tr><td class="no" lang="en">${ROMAN[i]}</td><td class="ent"><div lang="en">${esc(q.sentence).replace(/____/g, '<span class="ex-gap"></span>')}</div>${q.hint ? `<div class="mt-gloss" lang="en">${esc(q.hint)}</div>` : ''}` +   /* no Korean meaning while the gap is open: the meaning alone would pick the word (user, 2026-10-16); it shows once marked */
         (q.write ? writeBox(q, i) : `<div class="ex-opts en">${q.opts.map((o, j) => `<button type="button" data-q="${i}" data-o="${j}" lang="en"><b>${'abcd'[j]}</b><span>${esc(o)}</span></button>`).join('')}</div>`) + '</td></tr>').join('') +
       `</tbody></table><div class="ex-foot"><button type="button" class="ex-btn" data-hand><span lang="en">Hand back the ledger</span> 장부를 돌려준다</button>${back}</div>`;
     scroll.scrollTop = 0; count();

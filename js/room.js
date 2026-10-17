@@ -406,10 +406,13 @@ export function initRoom(app){
     }
     else if (kind === 'dict'){ $('#askPlay').hidden = false; target = card.line; }
     else if (kind === 'gap'){
-      const q = gapOf, at = q.text.indexOf(q.blank);
-      cue.hidden = false; cue.className = 'cue gaps';
-      cue.innerHTML = esc(q.text.slice(0, at)) + `<span class="blank skel-gap">${skeleton(q.blank)}</span>` + esc(q.text.slice(at + q.blank.length));
-      target = q.blank;
+      /* its first letters are buttons as in the first-letter task: a tap, one more letter, and the mark goes no higher
+         than 비슷 (2026-10-17 user, 3가 — they were drawn as buttons but did nothing) */
+      aid = {shown: [], letters: 0, heard: false};
+      cue.hidden = false; cue.className = 'cue gaps'; drawGap();
+      $('#askAids').hidden = false; $('#aidKo').hidden = true; $('#aidHear').hidden = true;
+      $('#askAids .aid-note').textContent = '단어를 누르면 한 글자 더 · 글자를 쓰면 ‘비슷’까지';
+      target = gapOf.blank;
       ti.rows = 1; ti.placeholder = '빈칸에 들어갈 말';
     }
     else if (kind === 'expr'){
@@ -430,10 +433,14 @@ export function initRoom(app){
   /* first-letter aids: which letters were added, and whether the line was heard */
   let aid = null;
   const aidUsed = () => aid && (aid.letters || aid.heard);
+  function drawGap(){
+    const q = gapOf, at = q.text.indexOf(q.blank);
+    $('#askCue').innerHTML = esc(q.text.slice(0, at)) + `<span class="blank skel-gap">${skeleton(q.blank, aid.shown)}</span>` + esc(q.text.slice(at + q.blank.length));
+  }
   function moreLetter(k){
-    if (mode !== 'recall' || answered || kind !== 'hint' || !aid) return;
+    if (mode !== 'recall' || answered || (kind !== 'hint' && kind !== 'gap') || !aid) return;
     aid.shown[k] = (aid.shown[k] || 1) + 1; aid.letters++;
-    $('#askCue').innerHTML = skeleton(card.line, aid.shown);
+    if (kind === 'gap') drawGap(); else $('#askCue').innerHTML = skeleton(card.line, aid.shown);
     const b = $(`#askCue [data-sk="${k}"]`); if (b) b.focus({preventScroll: true});
   }
   function hearOnce(){
@@ -513,7 +520,7 @@ export function initRoom(app){
     const c = compare(said, exprTask ? target.text : gapTask ? target : card.line);
     const L = srs.LEVELS[srs.level()];
     let g = !said ? 'again' : c.words <= 2 ? (c.ratio === 1 ? 'good' : 'again') : c.ratio >= L.good ? 'good' : c.ratio >= L.hard ? 'hard' : 'again';
-    const helped = kind === 'hint' && aidUsed();
+    const helped = (kind === 'hint' || gapTask) && aidUsed();
     if (helped && g === 'good' && srs.level() !== 'low') g = 'hard';   // the easy level: help does not cost the mark
     gradeAny(g, gapTask ? stage : 'recall');
     const v = $('#verdict');

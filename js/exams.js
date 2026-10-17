@@ -115,6 +115,7 @@ export function paper(id, words, allWords, kind){
     for (const s of order){
       if (s === 'plain' && tells(e)) continue;
       if (s === 'blank' && !gapFits(e.key, level)) continue;
+      if (s === 'blank' && level === 'high' && tells(e)) continue;   // its English gloss under the gap would give the word away
       return question(e, s, allWords, r, level);
     }
     return question(e, 'mean', allWords, r, level);
@@ -136,7 +137,7 @@ export function paper(id, words, allWords, kind){
 }
 const written = q => q.shape === 'plain' || (q.shape === 'blank' && q.write);
 /* the English a question puts on the paper */
-const shown = q => q.shape === 'mean' ? q.w : q.shape === 'plain' ? q.plain : [q.sentence, ...(q.write ? [] : q.opts || [])].join(' ');
+const shown = q => q.shape === 'mean' ? q.w : q.shape === 'plain' ? q.plain : [q.sentence, q.hint || '', ...(q.write ? [] : q.opts || [])].join(' ');
 /* a meaning as an option: without the note that tells it apart from the word's usual sense ("('뺨'이 아니라)",
    "(흔히는 '구금')") — only the right meaning would carry one */
 const bare = ko => String(ko).replace(/\s*\([^)]*(아니라|흔히)[^)]*\)/g, '').trim();
@@ -151,11 +152,16 @@ function question(e, shape, allWords, r, level){
     q.answer = e.w; q.accept = [e.w, e.as].filter(Boolean); q.first = e.w[0];
   } else {
     const b = blankOf(e.key); q.sentence = b.s; q.answer = b.a; q.accept = [b.a];
-    if (level === 'high'){ q.write = true; q.first = b.a[0]; }
+    /* the high level writes it; the word's plain English gloss stands under the gap, so that the sentence is not a
+       riddle (2026-10-17 user, 1가 — English, not Korean, which would turn it into a translation) */
+    if (level === 'high'){ q.write = true; q.first = b.a[0]; q.hint = e.plain; }
     else q.opts = shuffle([b.a, ...b.o], r);
   }
   return q;
 }
+/* an answer of more than one word says so beside the box (2026-10-17 user: "prior to" written as "prior") */
+const COUNT = ['', '', '두', '세', '네', '다섯'];
+export const wordCount = q => { const n = String(q.answer || '').trim().split(/\s+/).length; return n > 1 ? `<span class="ex-nw">${COUNT[n] || n} 단어</span>` : ''; };
 const norm = s => String(s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' -]/g, '').replace(/\s+/g, ' ').trim();
 export function right(q, given){
   if (given == null || given === '') return false;
@@ -173,7 +179,7 @@ export function record(id, qs, answers){
        (m meaning · p write from the gloss · b gap to choose · w gap to write), the word, the options, the answer given,
        the right answer and whether it was right — so that it reads the same later, whatever the word lists become */
     p: qs.map((q, i) => ({s: q.shape === 'mean' ? 'm' : q.shape === 'plain' ? 'p' : q.write ? 'w' : 'b', k: q.key, w: q.w, pos: q.pos,
-      x: q.shape === 'plain' ? q.plain : q.shape === 'mean' ? '' : q.sentence, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
+      x: q.shape === 'plain' ? q.plain : q.shape === 'mean' ? '' : q.sentence, h: q.hint || undefined, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
   x.s.push(sit); if (x.sent < x.s.length) x.sent = x.s.length;
   const g = gradeAt(sit)[0];
   if (g === 'O') bond.gain(id, 20); else if (PASS.has(g)) bond.gain(id, 10);
@@ -185,7 +191,7 @@ export function record(id, qs, answers){
 export function keptPaper(sit){
   if (!sit || !Array.isArray(sit.p)) return null;
   const qs = sit.p.map(p => ({key: p.k, shape: p.s === 'm' ? 'mean' : p.s === 'p' ? 'plain' : 'blank', write: p.s === 'w', w: p.w, pos: p.pos,
-    plain: p.s === 'p' ? p.x : '', sentence: p.s === 'b' || p.s === 'w' ? p.x : '', opts: p.o, answer: p.a, ok: !!p.r}));
+    plain: p.s === 'p' ? p.x : '', sentence: p.s === 'b' || p.s === 'w' ? p.x : '', hint: p.h || '', opts: p.o, answer: p.a, ok: !!p.r}));
   return {qs, answers: sit.p.map(p => p.g)};
 }
 /* the grade of a sitting: on its questions when it has the count, else on its words */
@@ -239,11 +245,13 @@ export function manorQuestions(id, words, allWords){
     if (k === 'audit' && !blankOf(e.key)) continue;   // an entry needs its sentence
     seen.add(lw); pick.push(e); if (pick.length >= n) break;
   }
-  return pick.map(e => {
+  const qs = pick.map(e => {
     const q = {key: e.key, w: e.w, pos: e.pos, ko: bare(e.ko), plain: e.plain};
     if (k === 'audit'){
       const b = blankOf(e.key); q.sentence = b.s; q.answer = b.a; q.accept = [b.a];
-      if (level === 'high' || !(b.o && b.o.length === 3)){ q.write = true; q.first = b.a[0]; } else q.opts = shuffle([b.a, ...b.o], r);
+      /* a gap to be written carries the word's plain English gloss, as on the O.W.L. paper (2026-10-17 user) — unless the
+         gloss gives the word away */
+      if (level === 'high' || !(b.o && b.o.length === 3)){ q.write = true; q.first = b.a[0]; if (!tells(e)) q.hint = e.plain; } else q.opts = shuffle([b.a, ...b.o], r);
     } else {
       q.answer = e.w; q.accept = [e.w, e.as].filter(Boolean);
       /* the high level writes it, with its first letter (the user, 2026-10-14); the others choose among four of her words */
@@ -256,6 +264,12 @@ export function manorQuestions(id, words, allWords){
     }
     return q;
   });
+  /* a gloss that names the answer of another entry would hand it over: that entry's gloss is left off */
+  for (const q of qs) if (q.hint){
+    const low = q.hint.toLowerCase();
+    if (qs.some(o => o !== q && [o.answer, ...(o.accept || [])].some(a => a && new RegExp(`(^|[^a-z])${a.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`).test(low)))) delete q.hint;
+  }
+  return qs;
 }
 export const WFW_TIME = {low: 20, mid: 15, high: 20};
 /* a manor sitting kept; the money it brings (in Sickles) */
@@ -263,7 +277,7 @@ export function recordManor(id, qs, answers, extra = {}){
   const x = st(id), t = Date.now(), asked = qs.slice(0, answers.length), keys = asked.map(q => q.key);
   const miss = asked.filter((q, i) => !right(q, answers[i])).map(q => q.key);
   const sit = {t, d: srs.today(), k: MANOR[id], w: keys, miss, n: asked.length, ok: asked.length - miss.length, ...extra,
-    p: asked.map((q, i) => ({s: q.write ? 'w' : 'b', k: q.key, w: q.w, pos: q.pos, x: q.sentence || q.plain, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
+    p: asked.map((q, i) => ({s: q.write ? 'w' : 'b', k: q.key, w: q.w, pos: q.pos, x: q.sentence || q.plain, h: q.hint || undefined, o: q.opts && !q.write ? q.opts : undefined, g: answers[i] || '', a: q.answer, r: right(q, answers[i]) ? 1 : 0}))};
   x.s.push(sit); store.save();
   return sit;
 }
