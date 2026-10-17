@@ -6,6 +6,7 @@ import * as bella from './bella.js';
 import * as srs from './srs.js';
 import * as store from './store.js';
 import * as bond from './bond.js';
+import * as speech from './speech.js';
 import {$, esc, fitPaper, reduced} from './ui.js';
 
 export function initReport(app){
@@ -15,6 +16,7 @@ export function initReport(app){
   $('#rpBack').addEventListener('click', () => { app.leftRoom = null; app.go(shown ? homeOf(shown) : '#/'); });
   $('#rpMore').addEventListener('click', () => app.go(`#/room/${shown}/extra`));
   $('#rpWrongGo').addEventListener('click', () => app.go(`#/room/${shown}/wrong`));
+  $('#rpExList').addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b && !store.get().settings.quiet) speech.speak(b.dataset.say, store.get().settings.voice, null, .92); });
   $('#repScroll').addEventListener('click', e => { const b = e.target.closest('.rp-teago'); if (b) app.go(b.dataset.go || `#/letters/${shown}/tea`); });
 
   const tier = (list, ratio) => list.find(r => ratio >= r.min) || list[list.length - 1];
@@ -67,6 +69,30 @@ export function initReport(app){
       : '<li class="none-li"><span class="none" lang="en">Not a single slip. Hm.</span></li>';
 
     shown = id;
+    /* the day's expressions in other sentences (2026-10-17 user): every expression of the lines learnt today, and one for
+       each line reviewed today that has had none yet (ten at most a day). Fixed for the day in day.recap, and recorded on
+       each line as seen — only these sentences come back later as a review in an example (room.js exampleFor) */
+    const exs = await app.loadExamples(id);
+    if (!day.recap) day.recap = [];
+    if (dk.day === day){
+      const have = new Set(day.recap.map(x => x.c + ' ' + x.t)), add = (c, e) => { if (!have.has(c.id + ' ' + e.tag)){ day.recap.push({c: c.id, t: e.tag}); have.add(c.id + ' ' + e.tag); srs.seeExample(id, c.id, e.tag); } };
+      let old = day.recap.filter(x => x.o).length;
+      day.queue.forEach((cid, i) => {
+        const c = map[cid], g = day.results[cid], rec = dk.cards[cid]; if (!c || !g || !rec) return;
+        const list = srs.exampleList(c, exs), seen = new Set(rec.x || []);
+        if (g === 'learn' && day.kinds && day.kinds[i] === 'n'){
+          /* one sentence for each expression: the first of it not yet seen — unless today's list already has one */
+          for (const k of new Set(list.map(e => e.k))){
+            if (day.recap.some(x => x.c === cid && +x.t.split('.')[0] === k)) continue;
+            const e = list.find(e => e.k === k && !seen.has(e.tag)) || list.find(e => e.k === k); if (e) add(c, e);
+          }
+        } else if (!seen.size && list.length && old < 10){ add(c, list[0]); day.recap[day.recap.length - 1].o = 1; old++; }
+      });
+      store.save();
+    }
+    const rows = day.recap.map(x => { const c = map[x.c], e = c && srs.exampleAt(c, exs, x.t); return e ? {c, e} : null; }).filter(Boolean);
+    $('#rpExs').hidden = !rows.length;
+    $('#rpExList').innerHTML = rows.map(({e}) => `<li><div><div class="ex-x" lang="en">${esc(e.expr)}</div><button type="button" class="en" lang="en" data-say="${esc(e.en)}">${esc(e.en)}</button><div class="kr">${esc(e.ko)}</div></div></li>`).join('');
     /* side rounds played today (더 도전, 틀린 대사), each with its own tally and the professor's word on it */
     const exBox = $('#rpExtra'), rounds = [['insp', '검수'], ['extra', '더 도전'], ['wrong', '틀린 대사 연습'], ['req', '교수의 부탁']].filter(([k]) => day[k] && day[k].pos);
     exBox.hidden = !rounds.length;

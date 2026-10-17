@@ -90,6 +90,20 @@ export function stageOf(deckId, card, practice){
   return STAGES[s];
 }
 
+/* ---------- example sentences (practice/<deck>-examples.json): ten for each expression of a line, tagged "<expression>.<item>".
+   A review in an example sentence asks only one already shown (2026-10-17 user): the end-of-lesson report shows them
+   (report.js) and records them on the line (`x`) */
+export function exampleList(c, examples){
+  const out = [], keys = (c.bre || []).map((b, k) => k).filter(k => examples[`${c.id}#${k}`] && (examples[`${c.id}#${k}`].items || []).length);
+  for (let i = 0; i < 10; i++) for (const k of keys){ const e = examples[`${c.id}#${k}`], it = e.items[i]; if (it) out.push({...it, expr: e.expr, k, tag: `${k}.${i}`}); }
+  return out;
+}
+export const exampleAt = (c, examples, tag) => exampleList(c, examples).find(e => e.tag === tag) || null;
+export function seeExample(deckId, cardId, tag){
+  const rec = store.deck(deckId).cards[cardId]; if (!rec) return;
+  rec.x = [...new Set([...(rec.x || []), tag])];
+}
+
 export function grade(deckId, cardId, g, stage = 'recall', minimal = false){
   const date = today(), dk = store.deck(deckId), prev = dk.cards[cardId];
   let i, st;
@@ -98,6 +112,9 @@ export function grade(deckId, cardId, g, stage = 'recall', minimal = false){
   else if (stage === 'recall'){ i = nextInterval(prev ? prev.i : 0, g); st = 3; }
   else { i = nextInterval(prev ? prev.i : 0, 'good'); st = Math.min(3, STAGES.indexOf(stage) + 1); }
   dk.cards[cardId] = {i, d: addDays(date, i), g, st, t: date, m: (prev && prev.m || 0) + (g === 'again' ? 1 : 0), h: (prev && prev.h || 0) + (g === 'hard' ? 1 : 0)};
+  /* the example sentences already shown with this line (x) and the one last missed (xm) stay with it (room.js) */
+  if (prev && prev.x) dk.cards[cardId].x = prev.x;
+  if (prev && prev.xm) dk.cards[cardId].xm = prev.xm;
   let dayDone = false, dayPerfect = false;
   if (dk.day && dk.day.date === date){
     dk.day.results[cardId] = g; dk.day.pos++;
