@@ -17,6 +17,7 @@ import * as prophet from './prophet.js';
 import * as need from './need.js';
 import * as potions from './potions.js';
 import * as noticed from './noticed.js';
+import * as frogs from './frogs.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
@@ -133,11 +134,17 @@ export function initMyRoom(app){
       }).join('')}</ol></section>`).join('');
   }
 
+  /* the Chocolate Frog cards (frogs.js): one more drawer, after the people's, once the shops are open */
+  const CARDS = {id: 'cards'};
+  const cardsOn = () => shops.isOpen() || frogs.kinds() > 0;
   function drawCabinet(){
-    const have = new Map(gifts(deck.id).map(k => [k.id, k]));
     $('#cabWho').innerHTML = friends().map(d => `<button type="button" data-who="${d.id}" class="${d.id === deck.id ? 'on' : ''}" aria-pressed="${d.id === deck.id}">` +
-      `${esc(d.ko.replace(/ 교수$/, ''))}<small>${gifts(d.id).length}</small></button>`).join('');
+      `${esc(d.ko.replace(/ 교수$/, ''))}<small>${gifts(d.id).length}</small></button>`).join('') +
+      (cardsOn() ? `<button type="button" data-who="cards" class="${deck === CARDS ? 'on' : ''}" aria-pressed="${deck === CARDS}">카드<small>${frogs.kinds()}</small></button>` : '');
     showTab($('#cabWho'));
+    $('#cabGrid').classList.toggle('fc', deck === CARDS);
+    if (deck === CARDS){ drawCards(); return; }
+    const have = new Map(gifts(deck.id).map(k => [k.id, k]));
     $('#cabName').textContent = deck.tag || deck.who;
     $('#cabGrid').innerHTML = Array.from({length: bond.keepsakeCount(deck.id) || 30}, (_, i) => {
       const n = i + 1, k = have.get(ID(n)), pos = `${(n * 37) % 100}% ${(n * 61) % 100}%`;
@@ -147,7 +154,22 @@ export function initMyRoom(app){
     }).join('');
   }
 
+  function drawCards(){
+    $('#cabName').textContent = 'Chocolate Frog Cards';
+    $('#cabGrid').innerHTML = frogs.IDS.map((id, i) => frogs.count(id)
+      ? `<button type="button" class="cab-cell has" data-k="${id}" aria-label="${esc((frogs.textOf(id) || {name: {ko: id}}).name.ko)}">${frogs.face(id, frogs.awayToday(id) ? 'out still' : '')}${frogs.count(id) > 1 ? `<em>×${frogs.count(id)}</em>` : ''}</button>`
+      : `<button type="button" class="cab-cell" data-k="${id}" style="background-position:${(i * 37) % 100}% ${(i * 61) % 100}%" aria-label="빈 칸"><span>?</span></button>`).join('');
+  }
+  function openCard(id){
+    if (!frogs.count(id)){ toast('아직 빈 칸 · 허니듀크스의 <b>개구리 초콜릿</b>에서 나온다. 어떤 카드가 나올지는 모른다.', 2800, true); return; }
+    const d = frogs.firstDay(id), away = frogs.awayToday(id);
+    openSheet(`<div class="sh-kind"><span>개구리 초콜릿 카드${d ? ' · ' + fmt(d) : ''}</span><span>${frogs.count(id)}장</span></div>` +
+      `<div class="fc-pop">${frogs.face(id, away ? 'out still' : '')}</div>` +
+      (away ? `<p class="purse-note fc-gone"><span lang="en">${esc(frogs.awayLine(id).en)}</span><br>${esc(frogs.awayLine(id).ko)}</p>` : '') + frogs.back(id));
+  }
+
   function openGift(key){
+    if (deck === CARDS){ openCard(key); return; }
     const k = gifts(deck.id).find(x => x.id === key);
     if (!k){ const n = +key.slice(1); toast(`아직 빈 칸 · ${deck.ko}에게서 <b>${WHEN(n, deck)}</b>에 받습니다`, 2600, true); return; }
     const b = bond.bondOf(deck.id), m = b.mail.find(x => x.id === key), t = b.keep[key] || (m && m.t);
@@ -277,7 +299,8 @@ export function initMyRoom(app){
   async function show({id, sub}){
     await Promise.all([...DECKS.map(d => bond.load(d.id)), spells.load()]).catch(() => {});
     if (id === 'cabinet'){
-      deck = friends().find(d => d.id === sub) || friends().find(d => gifts(d.id).length) || DECKS[0];
+      if (sub === 'cards' || frogs.kinds()) await frogs.load();
+      deck = sub === 'cards' && cardsOn() ? CARDS : friends().find(d => d.id === sub) || friends().find(d => gifts(d.id).length) || DECKS[0];
       mode('cabinet');
       drawCabinet();
       $('#cab').scrollTop = 0;

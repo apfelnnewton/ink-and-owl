@@ -65,7 +65,7 @@ const placesOf = f => f.id === 'castle' && galleryOpen() ? {...f.places, gallery
 const DIAGON = {ollivander: {x: .55, y: .085, en: 'Ollivanders', ko: '올리밴더 가게'}};
 /* the shops (shops.js), once the fire goes there: on the same two pictures, names only */
 const DIAGON_SHOPS = {apothecary: {x: .44, y: .47, en: 'Slug & Jiggers Apothecary', ko: '슬러그 앤 지거스 약재상'}, weasleys: {x: .60, y: .30, en: "Weasleys' Wizard Wheezes", ko: '위즐리 형제 장난감 가게'}, knockturn: {x: .30, y: .56, en: 'Knockturn Alley', ko: '녹턴 앨리 · 보긴 앤 버크스'}};
-const HOGSMEADE = {honeydukes: {x: .41, y: .36, en: 'Honeydukes', ko: '허니듀크스'}, broomsticks: {x: .66, y: .455, en: 'The Three Broomsticks', ko: '스리 브룸스틱스'}};
+const HOGSMEADE = {honeydukes: {x: .41, y: .36, en: 'Honeydukes', ko: '허니듀크스'}, broomsticks: {x: .66, y: .455, en: 'The Three Broomsticks', ko: '쓰리 브룸스틱스'}};
 const FOLDS = [{id: 'castle', en: 'Hogwarts', ko: '호그와트', img: 'assets/map/castle.webp', places: CASTLE},
   {id: 'diagon', en: 'Diagon Alley', ko: '다이애건 앨리', img: 'assets/map/diagon.webp', places: DIAGON, need: () => !!wand.get()},
   {id: 'hogsmeade', en: 'Hogsmeade', ko: '호그스미드', img: 'assets/map/hogsmeade.webp', places: HOGSMEADE, need: () => shops.isOpen()}];

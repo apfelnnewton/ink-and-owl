@@ -1,0 +1,232 @@
+[
+ {
+  "id": "dumbledore",
+  "name": {
+   "en": "Dumbledore",
+   "ko": "덤블도어"
+  },
+  "role": {
+   "en": "Headmaster of Hogwarts",
+   "ko": "호그와트 교장"
+  },
+  "back": {
+   "en": "Albus Dumbledore taught Transfiguration at Hogwarts for many years before he became its Headmaster. In 1945 he brought about the downfall of Grindelwald, a dark wizard of fearsome power, and he pursued studies in alchemy alongside Nicolas Flamel. He holds the Order of Merlin, First Class, [[to say nothing of]] the posts of Chief Warlock of the Wizengamot and Supreme Mugwump of the International Confederation of Wizards. Collectors report that the moons on his robes drift [[of their own accord]].",
+   "ko": "알버스 덤블도어는 오랫동안 호그와트에서 변신술을 가르치다가 교장이 되었다. 1945년에는 무시무시한 힘을 지닌 어둠의 마법사 그린델왈드를 무너뜨렸고, 니콜라스 플라멜과 함께 연금술을 연구했다. 위즌가모트의 수석 마법사와 국제 마법사 연맹의 의장이라는 두 직책은 말할 것도 없고, 멀린 훈장 1등급도 받았다. 수집가들에 따르면 그의 로브에 수놓인 달들은 저절로 떠다닌다.",
+   "keys": {
+    "to say nothing of": "~은 말할 것도 없고",
+    "of their own accord": "저절로, 제 스스로"
+   }
+  },
+  "away": {
+   "en": "Dumbledore has slipped out in search of a sherbet lemon and will return presently.",
+   "ko": "덤블도어는 셔벗 레몬을 찾아 슬그머니 나갔으며, 곧 돌아올 것이다."
+  }
+ },
+ {
+  "id": "merlin",
+  "name": {
+   "en": "Merlin",
+   "ko": "멀린"
+  },
+  "role": {
+   "en": "Wizard of the Middle Ages",
+   "ko": "중세의 마법사"
+  },
+  "back": {
+   "en": "Merlin was the most celebrated wizard of the Middle Ages, and his name [[lives on in]] the Order of Merlin, an honour still awarded today. He was educated at Hogwarts, where he was sorted into Slytherin house, and he [[threw his weight behind]] laws for the protection of Muggles. Tradition holds that he disliked sitting for portraits; this one, at any rate, regards its owner with a faintly impatient air.",
+   "ko": "멀린은 중세에서 가장 이름난 마법사였으며, 그의 이름은 오늘날에도 수여되는 멀린 훈장에 남아 있다. 호그와트에서 공부했고 슬리데린 기숙사에 배정되었으며, 머글을 보호하는 법을 힘껏 지지했다. 초상화의 모델이 되는 것을 싫어했다는 이야기가 전해 오는데, 적어도 이 그림 속의 그는 카드 주인을 어딘가 조급한 눈길로 바라본다.",
+   "keys": {
+    "lives on in": "~속에 (사라지지 않고) 남아 있다",
+    "threw his weight behind": "~을 힘껏 지지했다, ~에 힘을 실었다"
+   }
+  },
+  "away": {
+   "en": "Merlin is casting a critical eye over this year's recipients of the Order of Merlin.",
+   "ko": "멀린은 올해 멀린 훈장을 받는 사람들을 깐깐한 눈으로 훑어보고 있다."
+  }
+ },
+ {
+  "id": "morgana",
+  "name": {
+   "en": "Morgana",
+   "ko": "모르가나"
+  },
+  "role": {
+   "en": "Medieval sorceress and Animagus",
+   "ko": "중세의 마녀이자 애니마구스"
+  },
+  "back": {
+   "en": "Morgan le Fay, known in many of the old tales as Morgana, was a sorceress of great power and Merlin's most determined rival. She was an Animagus, able to take the form of a bird at will. She is [[variously described as]] a healer, an enchantress and a dark witch, and her reputation [[owes as much to]] legend as to history. The raven on her shoulder is said to have been the only creature she ever trusted.",
+   "ko": "옛이야기에서 흔히 모르가나라고 불리는 모건 르 페이는 강력한 마녀이자 멀린의 가장 끈질긴 맞수였다. 애니마구스로서 마음대로 새의 모습으로 변할 수 있었다. 이야기에 따라 치유자로, 사람을 홀리는 마법사로, 어둠의 마녀로 저마다 달리 그려지며, 그 명성은 역사만큼이나 전설에 기대고 있다. 어깨 위의 까마귀는 그녀가 평생 믿은 유일한 생명체였다고 한다.",
+   "keys": {
+    "variously described as": "(사람·글에 따라) 여러 가지로 ~라고 일컬어지는",
+    "owes as much to": "(B 못지않게) A에 힘입고 있다 (owe as much to A as to B)"
+   }
+  },
+  "away": {
+   "en": "Morgana has flown off across the lake, and the raven, naturally, has followed her.",
+   "ko": "모르가나는 호수 너머로 날아갔고, 까마귀도 당연하다는 듯 그 뒤를 따랐다."
+  }
+ },
+ {
+  "id": "circe",
+  "name": {
+   "en": "Circe",
+   "ko": "키르케"
+  },
+  "role": {
+   "en": "Enchantress of ancient Greece",
+   "ko": "고대 그리스의 마녀"
+  },
+  "back": {
+   "en": "Circe was an enchantress of ancient Greece who made her home on the island of Aeaea. She is remembered above all for her treatment of the lost sailors who [[came ashore]] there, a great many of whom she turned into pigs. Scholars have never agreed on whether this was cruelty or merely [[a sensible precaution]] against uninvited guests. According to one account, visitors who politely declined the golden cup left the island on two legs.",
+   "ko": "키르케는 아이아이에섬에 터를 잡고 살았던 고대 그리스의 마녀였다. 무엇보다 그 섬에 상륙한 길 잃은 선원들을 다룬 방식으로 기억되는데, 그녀는 그들 가운데 상당수를 돼지로 바꾸어 놓았다. 그것이 잔인함이었는지, 아니면 불청객을 막기 위한 현명한 예방책에 지나지 않았는지를 두고 학자들의 의견은 한 번도 일치한 적이 없다. 어떤 이야기에서는 황금 잔을 정중히 사양한 손님들이 두 발로 걸어서 섬을 떠났다고도 한다.",
+   "keys": {
+    "came ashore": "(배에서) 뭍에 올랐다",
+    "a sensible precaution": "현명한 예방책"
+   }
+  },
+  "away": {
+   "en": "Circe has strolled down to the shore to watch for sailors, purely out of curiosity.",
+   "ko": "키르케는 순전히 호기심에서 선원이 오는지 보려고 바닷가로 슬슬 걸어 내려갔다."
+  }
+ },
+ {
+  "id": "paracelsus",
+  "name": {
+   "en": "Paracelsus",
+   "ko": "파라켈수스"
+  },
+  "role": {
+   "en": "Renaissance alchemist and healer",
+   "ko": "르네상스의 연금술사이자 치유사"
+  },
+  "back": {
+   "en": "Paracelsus was among the foremost alchemists and healers of the Renaissance. Working in the sixteenth century, he [[did much to]] draw the arts of alchemy and healing closer together. He was seldom seen without the flask he holds here, and he never told anyone what was in it. A bust of him stands in a corridor at Hogwarts, where it has not always been treated [[with due respect]].",
+   "ko": "파라켈수스는 르네상스 시대에 손꼽히는 연금술사이자 치유사였다. 16세기에 활동하며 연금술과 치유술을 서로 가깝게 잇는 데 크게 이바지했다. 그림 속에서 들고 있는 플라스크 없이 그를 본 사람은 드물었고, 그는 그 안에 무엇이 들었는지 누구에게도 말하지 않았다. 호그와트의 한 복도에는 그의 흉상이 서 있는데, 그 흉상이 늘 마땅한 대접을 받아 온 것은 아니다.",
+   "keys": {
+    "did much to": "~하는 데 크게 이바지했다",
+    "with due respect": "마땅한 예우를 갖추어"
+   }
+  },
+  "away": {
+   "en": "Paracelsus is at Hogwarts, making sure his bust is still in one piece.",
+   "ko": "파라켈수스는 호그와트에 가서 자기 흉상이 아직 멀쩡한지 살피고 있다."
+  }
+ },
+ {
+  "id": "cliodna",
+  "name": {
+   "en": "Cliodna",
+   "ko": "클리오드나"
+  },
+  "role": {
+   "en": "Druidess of ancient Ireland",
+   "ko": "고대 아일랜드의 드루이드 여사제"
+  },
+  "back": {
+   "en": "Cliodna was a druidess of ancient Ireland and an Animagus who could become a seabird whenever she pleased. She is [[credited with]] discovering the properties of the moonstone, which potion-makers have [[held in high regard]] ever since. Fishermen on the western coast once made a point of greeting any seabird that circled their boats twice, in case it should prove to be Cliodna herself, come to see how they fared.",
+   "ko": "클리오드나는 고대 아일랜드의 드루이드 여사제였고, 내킬 때면 언제든 바닷새로 변할 수 있는 애니마구스였다. 월장석의 성질을 밝혀낸 사람으로 알려져 있으며, 마법약을 만드는 이들은 그때부터 지금까지 이 돌을 높이 쳐 왔다. 서쪽 바닷가의 어부들은 한때 배 위를 두 바퀴 도는 바닷새를 보면 꼭 인사를 건네곤 했다. 그 새가 어부들이 어찌 지내는지 보러 온 클리오드나 자신일지도 모르기 때문이었다.",
+   "keys": {
+    "credited with": "(업적이) ~의 것으로 인정되는, ~한 공로를 인정받는",
+    "held in high regard": "높이 평가해 온, 귀하게 여겨 온"
+   }
+  },
+  "away": {
+   "en": "Cliodna is out fishing with the gulls and does not care to be disturbed.",
+   "ko": "클리오드나는 갈매기들과 물고기를 잡으러 나가 있으며, 방해받고 싶어 하지 않는다."
+  }
+ },
+ {
+  "id": "agrippa",
+  "name": {
+   "en": "Agrippa",
+   "ko": "아그리파"
+  },
+  "role": {
+   "en": "Scholar of the Renaissance",
+   "ko": "르네상스의 학자"
+  },
+  "back": {
+   "en": "Cornelius Agrippa was a scholar and wizard of the early sixteenth century who wrote at length, and with considerable learning, on magic and on the hidden powers of things. Muggles who read his books [[took them to be]] wicked, and he was imprisoned [[on the strength of]] his writings alone. He worked by the light of a single candle, remarking that a second would only tempt him to write twice as much.",
+   "ko": "코르넬리우스 아그리파는 16세기 초의 학자이자 마법사로, 마법과 사물에 숨은 힘에 관해 깊은 학식을 담아 방대한 글을 남겼다. 그의 책을 읽은 머글들은 그것을 사악한 책으로 여겼고, 그는 오로지 그 글만을 근거로 감옥에 갇혔다. 그는 촛불 하나만 켜 놓고 일하며, 하나를 더 켜면 글을 두 배로 쓰고 싶어질 뿐이라고 말하곤 했다.",
+   "keys": {
+    "took them to be": "그것을 ~으로 여겼다 (take A to be B)",
+    "on the strength of": "~을 근거로"
+   }
+  },
+  "away": {
+   "en": "Agrippa has gone for fresh ink, having written rather more than he intended.",
+   "ko": "아그리파는 뜻했던 것보다 글을 꽤 많이 써 버린 탓에 잉크를 더 구하러 갔다."
+  }
+ },
+ {
+  "id": "ptolemy",
+  "name": {
+   "en": "Ptolemy",
+   "ko": "프톨레마이오스"
+  },
+  "role": {
+   "en": "Astronomer of Alexandria",
+   "ko": "알렉산드리아의 천문학자"
+  },
+  "back": {
+   "en": "Ptolemy was a scholar of Alexandria who devoted his life to the study of the night sky. He mapped and catalogued the stars with painstaking care, and his tables of the heavens [[remained in use]] for well over a thousand years. Few works of learning have [[stood the test of time]] so well. He favoured the coldest nights for his observations, when the air above the harbour was at its clearest.",
+   "ko": "프톨레마이오스는 평생을 밤하늘 연구에 바친 알렉산드리아의 학자였다. 공들여 별의 지도를 그리고 목록을 만들었으며, 그가 만든 천체 표는 천 년이 훨씬 넘도록 쓰였다. 학문의 업적 가운데 이만큼 세월의 시험을 잘 견뎌 낸 것은 드물다. 그는 항구 위의 공기가 가장 맑은, 가장 추운 밤을 골라 하늘을 관측했다.",
+   "keys": {
+    "remained in use": "계속 쓰였다",
+    "stood the test of time": "세월이 흘러도 가치를 잃지 않았다 (세월의 시험을 견뎠다)"
+   }
+  },
+  "away": {
+   "en": "Ptolemy is on the roof, counting the stars again in case one has strayed.",
+   "ko": "프톨레마이오스는 지붕에 올라가, 혹시 제자리를 벗어난 별이 있을까 봐 별을 다시 세고 있다."
+  }
+ },
+ {
+  "id": "hengist",
+  "name": {
+   "en": "Hengist of Woodcroft",
+   "ko": "우드크로프트의 헹기스트"
+  },
+  "role": {
+   "en": "Founder of Hogsmeade",
+   "ko": "호그스미드를 세운 사람"
+  },
+  "back": {
+   "en": "Hengist of Woodcroft was a medieval wizard who, having suffered persecution [[at the hands of]] Muggles, left his home in search of safety and founded the village of Hogsmeade. The Three Broomsticks is [[popularly believed]] to have been his own house. Through the winter months he kept a lamp burning in his window for any traveller caught out in the snow, a kindness the village still remembers.",
+   "ko": "우드크로프트의 헹기스트는 중세의 마법사로, 머글들에게 박해를 받은 끝에 안전한 곳을 찾아 고향을 떠나 호그스미드 마을을 세웠다. 주점 '쓰리 브룸스틱스'가 원래 그의 집이었다는 믿음이 널리 퍼져 있다. 그는 겨울 내내 눈길에 발이 묶인 나그네를 위해 창가에 등불을 켜 두었는데, 마을은 지금도 그 친절을 기억한다.",
+   "keys": {
+    "at the hands of": "~의 손에, ~에게 (당하여)",
+    "popularly believed": "널리 믿어지는, 흔히 ~라고들 하는"
+   }
+  },
+  "away": {
+   "en": "Hengist of Woodcroft has called at his old house, now a rather busy inn.",
+   "ko": "우드크로프트의 헹기스트는 지금은 꽤 북적이는 주점이 된 옛집에 들렀다."
+  }
+ },
+ {
+  "id": "grunnion",
+  "name": {
+   "en": "Alberic Grunnion",
+   "ko": "앨버릭 그러니언"
+  },
+  "role": {
+   "en": "Inventor of the Dungbomb",
+   "ko": "똥폭탄을 만든 사람"
+  },
+  "back": {
+   "en": "Alberic Grunnion is remembered as the inventor of the Dungbomb, a small device whose effect upon a crowded corridor [[needs no description]]. Of the rest of his life, [[remarkably little]] is recorded. It is said that he tested every batch himself, which may explain the shortage of witnesses: few of his contemporaries were willing to stand close enough to take notes. He appears, nonetheless, to have been an exceedingly cheerful man.",
+   "ko": "앨버릭 그러니언은 똥폭탄을 만든 사람으로 기억된다. 이 작은 물건이 사람으로 붐비는 복도에서 어떤 효과를 내는지는 굳이 설명할 필요가 없다. 그 밖의 생애에 관해서는 기록된 것이 놀라울 만큼 적다. 만든 것은 하나도 빠짐없이 몸소 시험했다고 하는데, 증언이 이토록 드문 것도 그 때문인지 모른다. 곁에서 기록을 남길 만큼 가까이 다가서려 한 사람이 거의 없었던 것이다. 그럼에도 그는 더없이 쾌활한 사람이었던 듯하다.",
+   "keys": {
+    "needs no description": "굳이 설명할 필요가 없다",
+    "remarkably little": "놀라울 만큼 적은 (것)"
+   }
+  },
+  "away": {
+   "en": "Alberic Grunnion has left in some haste, and the smoke suggests he had good reason.",
+   "ko": "앨버릭 그러니언은 서둘러 자리를 떴는데, 남은 연기를 보면 그럴 만한 까닭이 있었던 듯하다."
+  }
+ }
+]

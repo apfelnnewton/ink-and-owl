@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-19b';
+const VERSION = 'he-2026-10-19c';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -106,6 +106,29 @@ const CORE = [
   'js/owners.js',
   'bond/noticed.json',
   'js/noticed.js',
+  /* Chocolate Frog cards (2026-10-19) */
+  'js/frogs.js',
+  'bond/frogcards.json',
+  'assets/frogs/dumbledore.webp',
+  'assets/frogs/dumbledore-away.webp',
+  'assets/frogs/merlin.webp',
+  'assets/frogs/merlin-away.webp',
+  'assets/frogs/morgana.webp',
+  'assets/frogs/morgana-away.webp',
+  'assets/frogs/circe.webp',
+  'assets/frogs/circe-away.webp',
+  'assets/frogs/paracelsus.webp',
+  'assets/frogs/paracelsus-away.webp',
+  'assets/frogs/cliodna.webp',
+  'assets/frogs/cliodna-away.webp',
+  'assets/frogs/agrippa.webp',
+  'assets/frogs/agrippa-away.webp',
+  'assets/frogs/ptolemy.webp',
+  'assets/frogs/ptolemy-away.webp',
+  'assets/frogs/hengist.webp',
+  'assets/frogs/hengist-away.webp',
+  'assets/frogs/grunnion.webp',
+  'assets/frogs/grunnion-away.webp',
   'assets/map/hogsmeade.webp',
   'assets/shop/borgin-shelf.webp',
   'assets/shop/sheet-whizbang.webp',

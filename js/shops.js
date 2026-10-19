@@ -31,6 +31,7 @@ import * as bella from './bella.js';
 import {floo} from './fire.js';
 import * as owners from './owners.js';
 import * as noticed from './noticed.js';
+import * as frogs from './frogs.js';
 import {byId, PROFS} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
@@ -115,9 +116,11 @@ export function buy(id){
   else if (g.kind === 'paper') m.paper[id] = (m.paper[id] || 0) + USES;
   else if (g.kind === 'dark'){ m.dark[id] = srs.today(); (m.bg = m.bg || []).push({key: g.key, d: srs.today()}); placeOf(g); owners.bought(g.key); }   // she will have something to say about it tomorrow; its former owner, in two days
   else m.bag[id] = have(id) + 1;
+  drew = id === 'chocolate-frog' ? frogs.draw() : null;   // a card comes with every frog (frogs.js)
   store.save();
   return '';
 }
+let drew = null;
 
 /* ---------- the second set: ink and paper for friends' letters, the box of excuses, the dark things kept at Borgin's */
 const USES = 10;   // letters a bottle of ink writes, sheets in a bundle
@@ -357,7 +360,7 @@ const PLACES = {
     spots: [{id: 'apothecary', ko: '약재상', p: [.19, .40, 'l'], w: [.14, .40, 'l']}, {id: 'weasleys', ko: '장난감 가게', p: [.557, .50, 't'], w: [.40, .50, 't']},
       {id: 'borgin', ko: '녹턴 앨리', p: [.83, .455, 't'], w: [.835, .47, 't']}, {id: 'ollivander', ko: '올리밴더', p: [.915, .525, 'r'], w: [.94, .50, 'r']}]},   // the shops' English names do not fit under four doors on a phone (tried 2026-10-12: they run into each other)
   hogsmeade: {photo: 'hogsmeade', ttl: 'Hogsmeade', line: '눈 덮인 큰길. 과자 가게 창만 분홍빛으로 환하다.',
-    spots: [{id: 'honeydukes', ko: '허니듀크스', p: [.25, .53, 'l'], w: [.195, .64, 'l']}, {id: 'broomsticks', ko: '스리 브룸스틱스', p: [.87, .50, 'r'], w: [.85, .62, 'r']}]},
+    spots: [{id: 'honeydukes', ko: '허니듀크스', p: [.25, .53, 'l'], w: [.195, .64, 'l']}, {id: 'broomsticks', ko: '쓰리 브룸스틱스', p: [.87, .50, 'r'], w: [.85, .62, 'r']}]},
   honeydukes: {shop: true, street: 'hogsmeade', photo: 'honeydukes', ttl: 'Honeydukes', head: 'Honeydukes', sub: '호그스미드의 과자 가게 · 과자 열 가지', tip: '과자는 선물로 보낼 수 있다. 누가 무엇을 좋아하는지는 보내 봐야 안다.'},
   apothecary: {shop: true, street: 'diagon', photo: 'apothecary', ttl: 'Slug & Jiggers', head: 'Slug & Jiggers Apothecary', sub: '다이애건 앨리의 약재상 · 약재 열 가지', tip: '약재도 선물이 된다. 반길 사람은 많지 않지만, 반기는 사람은 진심으로 반긴다.'},
   broomsticks: {shop: true, street: 'hogsmeade', photo: 'broomsticks', ttl: 'The Three Broomsticks', head: 'The Three Broomsticks', sub: '호그스미드의 주점 · 병에 든 버터맥주', tip: '버터맥주는 친구에게 쓰는 편지에 붙여 보낸다.'},
@@ -457,10 +460,23 @@ export function initTown(app){
     if (err){ toast(esc(err)); return; }
     closeSheet(); draw();
     const eul = /[가-힣]$/.test(g.ko) && (g.ko.charCodeAt(g.ko.length - 1) - 0xAC00) % 28 ? '을' : '를';
+    if (drew){ cardSheet(drew); drew = null; return; }
     if (g.kind === 'dark'){ const l = TEXT && TEXT.borgin.sold[g.key]; toast(l ? say(l) : `<span class="k">${esc(g.ko)}${eul} 뒷방 선반에 맡겼다.</span>`, 4600, true); }
     else if (g.kind === 'ink' || g.kind === 'paper') toast(`<span class="q" lang="en">Yours.</span><span class="k">${esc(g.ko)}${eul} 샀다. 친구에게 편지를 쓸 때 고를 수 있다.</span>`, 3000, true);
     else toast(`<span class="q" lang="en">Into the paper bag.</span><span class="k">${esc(g.ko)}${eul} 종이 봉지에 담았다. 봉지는 내 방에 있다.</span>`, 2800, true);
   });
+  /* the frog hops once and is gone into the paper bag; the card turns over (2026-10-19) */
+  function cardSheet({id, n}){
+    openSheet(`<div class="fc-pop"><img class="fc-frog" src="${art('chocolate-frog')}" alt="">${frogs.face(id, 'turn')}</div>` +
+      `<p class="purse-note fc-new">${n === 1 ? `새 카드 · 진열장의 카드 칸에 넣었다 (${frogs.kinds()} / ${frogs.IDS.length})` : `이미 있는 카드 · ${n}장째`}</p>` +
+      `<p class="purse-note fc-gone" hidden></p>` + frogs.back(id) + '<p class="purse-note">개구리 초콜릿은 종이 봉지에 담았다.</p>');
+    /* now and then the person on it steps out of the picture a moment after it turns over (frogs.js AWAY) */
+    if (frogs.leavesNow(id)) setTimeout(() => {
+      const c = document.querySelector('#sheetBody .fc-pop .fc-card'), p = document.querySelector('#sheetBody .fc-gone'); if (!c || !p) return;
+      const l = frogs.awayLine(id); c.classList.add('out');
+      p.innerHTML = `<span lang="en">${esc(l.en)}</span><br>${esc(l.ko)}`; p.hidden = false;
+    }, 4200);
+  }
   const back = () => { const P = PLACES[view]; if (P.shop) app.go('#/town/' + P.street); else floo(app, '#/me'); };
   $('#twBack').addEventListener('click', back);
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
@@ -468,7 +484,7 @@ export function initTown(app){
     if (!isOpen()){ app.go('#/me', true); return; }
     view = PLACES[id] ? id : 'diagon'; visit = null;
     draw();
-    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await Promise.all([loadText(), owners.load(), noticed.load()]); if (sec.hidden) return; if (view === 'borgin') visit = owners.borginWord(); draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
+    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await Promise.all([loadText(), owners.load(), noticed.load(), frogs.load()]); if (sec.hidden) return; if (view === 'borgin') visit = owners.borginWord(); draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
   }
   return {show, resize: placeSpots, refresh: () => { if (!sec.hidden) draw(); }};
 }
