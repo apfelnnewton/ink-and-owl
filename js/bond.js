@@ -26,6 +26,7 @@ import * as shops from './shops.js';
 import * as potions from './potions.js';
 import * as exams from './exams.js';
 import * as owners from './owners.js';
+import * as noticed from './noticed.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -288,7 +289,10 @@ export async function daily(){
   if (app) await step('exams', () => exams.daily(app));   // twelve new words: a professor's O.W.L. paper (exams.js)
   await step('map', () => map.daily());
   await step('fire', () => fire.daily());
-  await step('shops', () => shops.daily());   // yesterday's presents are answered; the shops open after a first day's wages
+  await step('shops', () => shops.daily());
+  /* a thing of Borgin's carried home: after a night, its professor writes; a reply answered; things come back (noticed.js) */
+  await step('noticed', () => noticed.daily({earn: manor.earn, take: k => manor.earn(-k), purse: manor.purse,
+    gone: key => { const o = owners.state(); o.gone[key] = srs.today(); o.q = o.q.filter(x => x.id !== key); }}));   // yesterday's presents are answered; the shops open after a first day's wages
   await step('news', () => newsLetter());
   store.save();
 }
@@ -338,6 +342,8 @@ export const postItem = (id, key) => post(id, key);
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
   if (id === owners.ID) return owners.textOf(key);
+  /* a professor who noticed one of Borgin's things in the guest's bag (noticed.js): the letter shows the thing */
+  if (/^NC~/.test(key)){ const it = noticed.textOf(key); if (it){ const g = shops.DARK.find(x => x.key === it.thing.key); if (g) it.thing = {id: g.id, en: g.en, ko: g.ko, key: g.key}; } return it; }
   if (/^H-/.test(key)) return howler.textOf(id, key);
   if (/^(G[FM]|BG)~/.test(key)) return shops.textOf(id, key);
   if (/^S-/.test(key)) return spells.textOf(id, key);

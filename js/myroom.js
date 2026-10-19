@@ -16,6 +16,7 @@ import * as map from './map.js';
 import * as prophet from './prophet.js';
 import * as need from './need.js';
 import * as potions from './potions.js';
+import * as noticed from './noticed.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
@@ -51,6 +52,9 @@ export function initMyRoom(app){
     {id: 'cabinet', ko: '진열장', go: '#/me/cabinet', p: [.875, .62, 'r'], w: [.79, .72, 'r']},
     /* the potion cabinet (potions.js): hung on the bare wall right of the window once the first potion is made — the
        picture of it is laid over the photograph (box: centre x, top, width, as fractions of the photograph) */
+    /* the guest's bag (2026-10-19, "교수에게 들킨다"): on the rug in front of the chair while a thing of Borgin's is in it —
+       its picture laid over the photograph like the potion cabinet (box: centre x, top, width) */
+    {id: 'carry', ko: '가방', go: '', p: [.68, .7, 'l'], w: [.6, .765, 'l'], box: {p: [.6, .655, .15], w: [.56, .715, .07]}},
     {id: 'potions', ko: '약장', go: '#/potion/shelf', p: [.69, .345, 't'], w: [.64, .255, 't'], box: {p: [.69, .275, .17], w: [.64, .15, .1]}}
   ];
   const PHOTO = {p: [1080, 1910], w: [1920, 1086]};   // assets/rooms/me-portrait|wide.webp
@@ -66,7 +70,8 @@ export function initMyRoom(app){
       map: map.have() ? '' : null,
       wand: w ? '' : wand.noteArrived() ? '쪽지' : null,
       shelf: need.isOpen() ? (kinds ? `${kinds}종` : '') : null,
-      potions: potions.all().some(q => potions.best(q.n)) ? '' : null
+      potions: potions.all().some(q => potions.best(q.n)) ? '' : null,
+      carry: noticed.carrying() ? (noticed.waiting() ? '편지가 왔다' : '') : null
     };
   }
   function drawRoom(){
@@ -76,7 +81,7 @@ export function initMyRoom(app){
     $('#meNews').hidden = !prophet.have();
     { const u = prophet.unread(), k = prophet.issues().length; $('#meNewsN').textContent = `· ${k}호까지${u ? ' · 새 호' : ''}`; }
     const on = spotsOn();
-    $('#meSpots').innerHTML = (on.potions !== null ? '<img class="me-potcab" src="assets/potions/cabinet.webp" alt="">' : '') + SPOTS.filter(t => on[t.id] !== null).map(t =>
+    $('#meSpots').innerHTML = (on.potions !== null ? '<img class="me-potcab" src="assets/potions/cabinet.webp" alt="">' : '') + (on.carry !== null ? '<img class="me-bag" src="assets/me/bag.webp" alt="">' : '') + SPOTS.filter(t => on[t.id] !== null).map(t =>
       `<button type="button" class="me-spot" data-go="${t.go}" data-spot="${t.id}" aria-label="${esc(t.ko)}"><i aria-hidden="true"></i><b>${esc(t.ko)}${on[t.id] ? `<small>${esc(on[t.id])}</small>` : ''}</b></button>`).join('');
     placeSpots();
   }
@@ -93,9 +98,11 @@ export function initMyRoom(app){
       /* a narrow phone crops the sides of the picture: a thing at its edge keeps its light on the screen */
       b.style.left = Math.max(26, Math.min(r.width - 26, ox + fx * dw)) + 'px'; b.style.top = (oy + fy * dh) + 'px';
     });
-    const cab = $('#meSpots .me-potcab');
-    if (cab){ const [cx, top, w] = SPOTS.find(x => x.id === 'potions').box[wide ? 'w' : 'p'];
-      Object.assign(cab.style, {left: (ox + (cx - w / 2) * dw) + 'px', top: (oy + top * dh) + 'px', width: (w * dw) + 'px'}); }
+    for (const [sel, id] of [['.me-potcab', 'potions'], ['.me-bag', 'carry']]){
+      const pic = $('#meSpots ' + sel); if (!pic) continue;
+      const [cx, top, w] = SPOTS.find(x => x.id === id).box[wide ? 'w' : 'p'];
+      Object.assign(pic.style, {left: (ox + (cx - w / 2) * dw) + 'px', top: (oy + top * dh) + 'px', width: (w * dw) + 'px'});
+    }
   }
 
   /* ---------- the wand box (#/me/wand): the wand in its box and Ollivander's card; earlier wands below */
@@ -219,6 +226,26 @@ export function initMyRoom(app){
     $('#meTtl').textContent = {cabinet: 'The Specimen Drawers', journal: 'The Tea Journal', wand: 'The Wand Box', spells: 'The Spellbook'}[m] || 'The Guest Room';
   }
 
+  /* ---------- the guest's bag, open (noticed.js): the thing brought from Borgin's lies in its mouth. Back to the shelf
+     until someone has noticed it; after that the professor's letter decides */
+  /* each thing turned to lie with the bag (2026-10-19 user: the candle stood upright; then the watch, mask, dice, key and bell):
+     degrees clockwise — 62 lays a tall thing along the length of the mouth (drawn a little larger), −28 squares a flat one
+     with the bag; a thing not named sits as drawn */
+  const TURN = {candle: 62, hand: 62, barometer: 62, mirror: 62, eye: 62, shadows: 62, bell: 62, watch: -28, mask: -28, dice: -28, key: -40};
+  function bagSheet(){
+    const c = noticed.carrying(), g = c && shops.DARK.find(x => x.key === c.key); if (!g) return;
+    const w = noticed.waiting();
+    openSheet(`<div class="bag-in"><img class="bag-open" src="assets/me/bag-open.webp" alt=""><img class="bag-thing${g.key === 'candle' ? ' unlit' : ''}" src="${shops.art(g.id)}" alt="" style="--turn:${TURN[g.key] || 0}deg;${TURN[g.key] === 62 ? 'width:42%' : ''}"></div>` +
+      `<h2 class="sh-expr" id="shTitle" lang="en">${esc(g.en)}</h2><p class="sh-note">${esc(g.ko)} · 보긴 앤 버크스에서 가져온 물건</p>` +
+      (w ? `<p class="purse-note">누군가 알아챘다. 편지함에 편지가 와 있다.</p><button type="button" class="sh-drill" data-ncgo="#/letters/${w.prof}">편지함으로</button>`
+        : '<p class="purse-note">성 안에서 하룻밤을 지나면 이 물건을 알아볼 사람이 있을지도 모른다.</p><button type="button" class="sh-drill" data-ncback="1">보긴의 선반에 돌려놓는다</button>'));
+  }
+  $('#sheetBody').addEventListener('click', e => {
+    if ($('#me').hidden) return;
+    const go = e.target.closest('[data-ncgo]'); if (go){ closeSheet(); app.go(go.dataset.ncgo); return; }
+    if (e.target.closest('[data-ncback]') && noticed.putBack()){ closeSheet(); drawRoom(); toast('<span class="k">가방을 비웠다. 물건은 보긴의 뒷방 선반, 제 칸으로 돌아갔다.</span>', 3000, true); }
+  });
+
   /* ---------- events */
   $('#meMail').addEventListener('click', () => app.go('#/letters'));
   $('#cabWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id) app.go('#/me/cabinet/' + b.dataset.who, true); });
@@ -228,6 +255,7 @@ export function initMyRoom(app){
     const b = e.target.closest('[data-go]'); if (!b) return;
     if (b.dataset.spot === 'purse'){ openSheet(manor.purseSheet()); return; }
     if (b.dataset.spot === 'bag'){ shops.bagSheet(); return; }
+    if (b.dataset.spot === 'carry'){ bagSheet(); return; }
     app.go(b.dataset.go);
   });
   $('#splBody').addEventListener('click', e => { const b = e.target.closest('[data-spell]'); if (b) app.go('#/spell/' + b.dataset.spell); });

@@ -30,6 +30,7 @@ import * as manor from './manor.js';
 import * as bella from './bella.js';
 import {floo} from './fire.js';
 import * as owners from './owners.js';
+import * as noticed from './noticed.js';
 import {byId, PROFS} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
@@ -152,6 +153,8 @@ export function spend(ink, paper){
 /* a thing on the shelf: bought (or swapped in) and not sold or swapped away since (owners.js) */
 export const owns = id => { const g = good(id); return !!st2().dark[id] && !(g && owners.gone(g.key)); };
 export const darkCount = () => DARK.filter(g => owns(g.id)).length;
+/* standing on the shelf now: not in the guest's bag, not kept by a professor (noticed.js) — its place stays its own meanwhile */
+export const onShelf = id => { const g = good(id); return owns(id) && !(g && (noticed.inBag(g.key) || noticed.away(g.key))); };
 /* on the counter: the twelve until bought; a spare once Mr Borgin has brought it out; nothing sold or swapped away */
 export const onCounter = g => g.kind !== 'dark' || (!st2().dark[g.id] && !owners.gone(g.key) && (!g.spare || owners.isOut(g.key)));
 /* its place on the shelf: one of the twelve keeps its own; a spare takes a place left by a thing gone (kept in shop.slot) */
@@ -322,6 +325,20 @@ document.addEventListener('click', async e => {
 
 /* a thing on the shelf: where its former owner's letters stand (owners.js), and the paper, if one came of them */
 const END_KO = {kept: '지켰다', third: '세 번째 길로 끝났다'};
+/* the guest's bag (noticed.js): put the thing in it and carry it home — or where it is, if it is not on the shelf */
+/* the Korean particle after a name: 을/를, 은/는 by its last syllable */
+const jo = (w, a, b) => { const c = w.charCodeAt(w.length - 1) - 0xAC00; return w + (c >= 0 && c < 11172 && c % 28 ? a : b); };
+const NC_BY = {moody: '무디 교수', snape: '스네이프 교수', umbridge: '엄브리지 교수', mcgonagall: '맥고나걸 교수', slughorn: '슬러그혼 교수', lupin: '루핀 교수', dumbledore: '덤블도어 교수'};
+function bagLine(g){
+  const k = g.key, a = noticed.away(k), n = noticed.noticed(k), slip = noticed.paper(k);
+  const D = noticed.data(), slipText = slip && D && D[k] && D[k].paper;
+  const was = n ? `<p class="purse-note">${NC_BY[n.prof] || '교수'}가 알아본 물건</p>` : '';
+  const paperBox = slipText ? `<div class="sp-paper"><h3 class="gr-h">무디 교수의 감식 쪽지</h3><p class="sp-tag" lang="en">${esc(slipText.en)}</p><p class="sp-tag ko">${esc(slipText.ko)}</p></div>` : '';
+  if (noticed.inBag(k)) return `<p class="purse-note">내 방 카펫 위 가방 속에 있다.</p>`;
+  if (a) return `<p class="purse-note">${NC_BY[a.by] || '교수'}가 맡고 있다 · ${a.back ? `${+a.back.slice(5, 7)}월 ${+a.back.slice(8)}일에 돌아온다` : '답장을 기다린다'}</p>` + paperBox;
+  if (noticed.canCarry(k) && !owners.writing(k)) return was + paperBox + `<button type="button" class="sh-drill" data-nccarry="${k}">가방에 넣어 간다 · 내 방으로</button>`;
+  return was + paperBox + (!n && noticed.carrying() ? '<p class="purse-note">가방에는 한 번에 하나만 넣을 수 있다.</p>' : '');
+}
 function ownerLine(g){
   const D = owners.data(), c = D && D[g.key], done = owners.ended(g.key), paper = owners.paperOf(g.key);
   const go = '<button type="button" class="sh-drill" data-baggo="#/letters/borgin">편지함 · 보긴 앤 버크스 칸</button>';
@@ -398,9 +415,12 @@ export function initTown(app){
     const mine = DARK.filter(g => owns(g.id)), cap = TEXT ? TEXT.borgin.shelf[mine.length % 2] : null;
     const set = store.get().settings, who = set.firstName || set.surname ? bond.fill('{name}') : '';   // a long name is written smaller, to stay on the plate
     $('#twShelfIn').innerHTML = DARK.map(g => ({g, i: owns(g.id) ? placeOf(g) : null})).map(({g, i}) => i == null ? '' :
-      `<button type="button" class="tw-on" data-good="${g.id}" aria-label="${esc(g.ko)}" style="left:${COL[i % 3] * 100}%;bottom:${((1 - FLOOR[Math.floor(i / 3)]) * 100).toFixed(1)}%;height:${NICHE}%;--drop:${g.drop || 0}%"><img src="${art(g.id)}" alt=""></button>` + (who &&
+      (onShelf(g.id) ? `<button type="button" class="tw-on" data-good="${g.id}" aria-label="${esc(g.ko)}" style="left:${COL[i % 3] * 100}%;bottom:${((1 - FLOOR[Math.floor(i / 3)]) * 100).toFixed(1)}%;height:${NICHE}%;--drop:${g.drop || 0}%"><img src="${art(g.id)}" alt=""></button>` : '') + (who &&
       `<span class="tw-plate" lang="en" aria-hidden="true" style="left:${PLATE_X[i % 3] * 100}%;top:${PLATE_Y[Math.floor(i / 3)] * 100}%;--n:${Math.max(11, who.length)}">${esc(who)}</span>`)).join('');
-    $('#twShelfCap').innerHTML = mine.length ? (cap ? say(cap) : '') + `<small>맡아 둔 물건 ${mine.length}점</small>` : `<span class="k">선반은 아직 비어 있다. 칸마다 빈 놋쇠 이름표만 붙어 있다.</span>`;
+    /* things not on the shelf just now (noticed.js): in the guest's bag, or kept by a professor until a day */
+    const off = mine.filter(g => !onShelf(g.id)).map(g => { const a = noticed.away(g.key);
+      return a ? `${NC_BY[a.by] || '교수'}가 ${jo(g.ko, '을', '를')} 맡고 있다 · ${a.back ? `${+a.back.slice(5, 7)}월 ${+a.back.slice(8)}일에 돌아온다` : '편지에 답장을 기다린다'}` : `${jo(g.ko, '은', '는')} 내 방 가방 속에 있다`; });
+    $('#twShelfCap').innerHTML = mine.length ? (cap ? say(cap) : '') + `<small>맡아 둔 물건 ${mine.length}점</small>` + off.map(t => `<small class="tw-off">${esc(t)}</small>`).join('') : `<span class="k">선반은 아직 비어 있다. 칸마다 빈 놋쇠 이름표만 붙어 있다.</span>`;
   }
   function draw(){
     const P = PLACES[view], pic = f => `url("${new URL(`assets/rooms/${P.photo}-${f}.webp`, location.href).href}")`;
@@ -416,13 +436,20 @@ export function initTown(app){
     const label = g.kind === 'dark' ? '산다 · 뒷방 선반에 맡긴다' : g.kind === 'ink' || g.kind === 'paper' ? '산다' : '산다 · 종이 봉지에 담기';
     openSheet(`<div class="sh-kind"><span>${esc(PLACES[g.shop].head)}</span><span>${mine ? `맡아 둠 · ${st2().dark[id].slice(5).replace(/^0/, '').replace('-0', '-').replace('-', '월 ')}일` : g.kind === 'ink' && inkLeft(id) ? `편지 ${inkLeft(id)}통분` : g.kind === 'paper' && paperLeft(id) ? `${paperLeft(id)}장` : have(id) ? `봉지에 ${have(id)}개` : ''}</span></div>` + fig(g, true) +
       `<p class="sp-tag" lang="en">${marked(t.en)}</p><p class="sp-tag ko">${esc(t.ko)}</p>` + keysOf(t) +
-      (mine ? ownerLine(g) : `<p class="mn-paid"><img src="assets/money/${coin}.webp" alt=""><b>${price(g)}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
+      (mine ? ownerLine(g) + bagLine(g) : `<p class="mn-paid"><img src="assets/money/${coin}.webp" alt=""><b>${price(g)}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
         `<button type="button" class="sh-drill" data-buy="${g.id}"${short ? ' disabled' : ''}>${short ? '주머니가 모자란다' : label}</button>`));
   }
   const enter = id => { if (id === 'ollivander') app.go('#/ollivander/again'); else app.go('#/town/' + id); };
   $('#twSpots').addEventListener('click', e => { const b = e.target.closest('[data-spot]'); if (b) enter(b.dataset.spot); });
   $('#twGrid').addEventListener('click', e => { const s = e.target.closest('[data-spot]'); if (s){ enter(s.dataset.spot); return; } const b = e.target.closest('[data-good]'); if (b) goodSheet(b.dataset.good); });
   $('#twShelfIn').addEventListener('click', e => { const b = e.target.closest('[data-good]'); if (b) goodSheet(b.dataset.good); });
+  /* into the bag and home: the thing leaves the shelf (its place kept) and stands in the guest room tonight */
+  $('#sheetBody').addEventListener('click', e => {
+    const b = e.target.closest('[data-nccarry]'); if (!b || sec.hidden) return;
+    if (!noticed.carry(b.dataset.nccarry)) return;
+    closeSheet(); draw();
+    toast('<span class="q" lang="en">Into the bag.</span><span class="k">가방에 넣었다. 내 방 카펫 위에 둔다. 성 안에서 하룻밤을 지나면 누군가는 알아챌지도 모른다.</span>', 4200, true);
+  });
   $('#sheetBody').addEventListener('click', e => {
     const b = e.target.closest('[data-buy]'); if (!b || sec.hidden) return;
     const g = good(b.dataset.buy), err = buy(g.id);
@@ -441,7 +468,7 @@ export function initTown(app){
     if (!isOpen()){ app.go('#/me', true); return; }
     view = PLACES[id] ? id : 'diagon'; visit = null;
     draw();
-    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await Promise.all([loadText(), owners.load()]); if (sec.hidden) return; if (view === 'borgin') visit = owners.borginWord(); draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
+    if (PLACES[view].shop){ $('#twShop').scrollTop = 0; await Promise.all([loadText(), owners.load(), noticed.load()]); if (sec.hidden) return; if (view === 'borgin') visit = owners.borginWord(); draw(); if (view === 'borgin' && !st2().borginSeen){ st2().borginSeen = srs.today(); store.save(); } }
   }
   return {show, resize: placeSpots, refresh: () => { if (!sec.hidden) draw(); }};
 }

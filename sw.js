@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-19a';
+const VERSION = 'he-2026-10-19b';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -104,6 +104,8 @@ const CORE = [
   'bond/shops.json',
   'bond/owners.json',
   'js/owners.js',
+  'bond/noticed.json',
+  'js/noticed.js',
   'assets/map/hogsmeade.webp',
   'assets/shop/borgin-shelf.webp',
   'assets/shop/sheet-whizbang.webp',
@@ -138,6 +140,8 @@ const CORE = [
   'assets/shop/borgin-16-barometer.webp',
   'assets/shop/borgin-17-bell.webp',
   'assets/shop/borgin-18-map.webp',
+  'assets/me/bag.webp',
+  'assets/me/bag-open.webp',
   'assets/rooms/diagon-portrait.webp',
   'assets/rooms/diagon-wide.webp',
   'assets/rooms/hogsmeade-portrait.webp',
