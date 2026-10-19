@@ -2561,3 +2561,14 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .rp-exs li::before{content:none}
 .rp-exs .ex-x{font:400 12px/1.4 var(--f-display);font-style:italic;color:var(--ink-red);opacity:.85}
 .rp-exs button.en{display:block;width:100%;padding:2px 0;border:0;background:none;text-align:left;cursor:pointer;color:var(--ink);line-height:1.4}
+.rp-exs .rp-exgo{margin-top:12px;min-height:44px;width:100%;background:none;border:1px solid rgba(122,26,18,.4);color:#7A1A12;font:15px var(--f-ko);cursor:pointer}
+.rp-exs .rp-exgo i{font-style:normal;margin-left:4px}
+/* the notebook's example book (2026-10-19): days learnt, "다시 볼 예문", a group's expressions, the wrong answers after a round */
+.ex-book,.ex-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.ex-book .ex-g,.ex-list .ex-e{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 10px;width:100%;min-height:48px;padding:8px 2px;background:none;border:0;border-bottom:1px dashed rgba(42,33,24,.25);text-align:left;cursor:pointer;color:var(--ink)}
+.ex-book .ex-g b{font:700 15px/1.35 var(--f-ko)}
+.ex-book .ex-g span,.ex-list .ex-e span{font:400 12.5px/1.4 var(--f-ko);color:var(--ink-soft)}
+.ex-book .ex-g.miss b{color:var(--ink-red)}
+.ex-list .ex-e b{font:italic 400 17px/1.35 var(--f-display);color:var(--ink-red)}
+.ex-wh{margin:14px 0 4px;font:700 13.5px/1.4 var(--f-ko);color:var(--ink-red)}
+.sh-drill.ex-back{background:none;border-color:transparent;color:var(--ink-soft)}

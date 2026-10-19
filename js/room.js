@@ -205,27 +205,8 @@ export function initRoom(app){
       `<rect width="100%" height="100%" fill="url(#rw1)"/><rect width="100%" height="100%" fill="url(#rw2)"/><rect class="glow" width="100%" height="100%" fill="url(#rw4)"/><rect width="100%" height="100%" fill="url(#rw3)"/>`);
   }
 
-  /* about a third of reviews practise one of the line's expressions in an example sentence instead — only one the learner
-     has already been shown (2026-10-17 user: a sentence never seen made the review a guess). The sentences are shown at the
-     end of the lesson (report.js) and recorded on the line (`x`, srs.exampleList). The wrong-lines round brings back the
-     very example last missed (`xm`) */
-  function exampleFor(c){
-    if (!c.bre.length) return null;
-    const rec = store.deck(deck.id).cards[c.id], at = t => srs.exampleAt(c, examples, t);
-    if (extra === 'wrong') return rec && rec.xm ? at(rec.xm) : null;
-    if (extra) return null;
-    const seen = (rec && rec.x || []).map(at).filter(Boolean);
-    if (!seen.length) return null;
-    const h = hash(srs.today() + c.id);
-    if (h % 3) return null;
-    return seen[(h >> 2) % seen.length];
-  }
-  /* an example sentence missed is kept with the line, for the wrong-lines round; answered there, it is let go */
-  function exampleMarked(q, ok){
-    const rec = store.deck(deck.id).cards[card.id]; if (!q || !q.tag || !rec) return;
-    if (!ok) rec.xm = q.tag; else if (extra === 'wrong' && rec.xm === q.tag) delete rec.xm;
-    store.save();
-  }
+  /* reviews ask only the professor's lines (2026-10-19 user): the example sentences are read at the end of the lesson
+     (report.js) and practised in the notebook's example book (notes.js). Only the Room of Requirement still asks in examples */
 
   /* which recall task this card gets today: varied by day and card, limited to what the card allows */
   /* by level (2026-10-07): the easy one has no dictation, the hard one no choosing; "quiet" leaves dictation out */
@@ -259,7 +240,6 @@ export function initRoom(app){
       kind = kindFor(card);
       if (kind === 'pick'){ mode = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.ko}; }
     }
-    if ((!extra || extra === 'wrong') && stage !== 'learn'){ const ex = exampleFor(card); if (ex){ mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr, tag: ex.tag}; } }
     /* the Room of Requirement: an expression in a fresh sentence, or the professor's reply to the line before */
     if (nq && (S.form === 'expr' || S.form === 'shelf') && S.ex && S.ex[nq]){ const ex = S.ex[nq]; mode = 'example'; kind = ''; quiz = {blank: ex.blank, options: ex.options, text: ex.en, ko: ex.ko, expr: ex.expr}; }
     if (nq && S.form === 'reply'){ mode = 'pick'; kind = 'pick'; quiz = {blank: card.line, options: pickOptions(card), text: card.cue, reply: true}; }
@@ -288,11 +268,6 @@ export function initRoom(app){
     if (card.prev_line){ cue.hidden = false; $('#noteCueWho').textContent = `이어서 (${card.part} / ${card.of})`; $('#noteCueText').textContent = card.prev_line; }
     else if (card.cue){ cue.hidden = false; $('#noteCueWho').textContent = SPEAKERS[card.cue_speaker] || card.cue_speaker; $('#noteCueText').textContent = card.cue; }
     else cue.hidden = true;
-    /* a review asked in an example sentence: the line's scene would mislead — the paper says where the sentence comes from */
-    if (extra !== 'need' && (mode === 'example' || (kind === 'gap' && gapOf && gapOf.from === 'example'))){
-      $('#noteScene').textContent = `${deck.ko}의 대사에서 배운 표현이 들어가는 예문이다. 전에 이 대사를 배우거나 복습할 때 본 문장이다.`;
-      cue.hidden = true;
-    }
 
     /* the plain American line; on the learn page the words the professor drops are greyed */
     const gone = mode === 'learn' ? diffRanges(card.plain, card.line) : [];
@@ -539,7 +514,6 @@ export function initRoom(app){
     const helped = (kind === 'hint' || gapTask) && aidUsed();
     if (helped && g === 'good' && srs.level() !== 'low') g = 'hard';   // the easy level: help does not cost the mark
     gradeAny(g, gapTask ? stage : 'recall');
-    if (gapTask && gapOf.from === 'example') exampleMarked(gapOf, g !== 'again');
     const v = $('#verdict');
     v.hidden = false; v.className = 'verdict ' + g;
     const via = how && how.spoken ? (how.fixed > FIX_LIMIT ? ' · 쓰기로 기록' : how.fixed ? ` · 말하기 (${how.fixed}단어 고침)` : ' · 말하기') : '';
@@ -588,7 +562,6 @@ export function initRoom(app){
     const ok = opt === quiz.blank;
     $$('#czOpts button').forEach(b => { b.disabled = true; if (b.dataset.opt === quiz.blank) b.classList.add('right'); else if (b.dataset.opt === opt) b.classList.add('wrong'); });
     gradeAny(ok ? 'good' : 'again', stage);
-    if (mode === 'example') exampleMarked(quiz, ok);
     /* a right answer: a few sparks from the learner's wand, in the colour of its core (wand.js) */
     if (ok) wand.spark([...document.querySelectorAll('#czOpts [data-opt]')].find(b => b.dataset.opt === opt));
     const r = react(ok ? 'good' : 'again', ok ? '맞음' : '틀림');

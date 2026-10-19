@@ -137,7 +137,7 @@ let current = null;
 
 function route(){
   const parts = (location.hash || '#/').replace(/^#\/?/, '').split('/');
-  let name = parts[0] || 'home', params = {id: parts[1], sub: parts[2]};
+  let name = parts[0] || 'home', params = {id: parts[1], sub: parts[2], more: parts[3]};
   if (!screens[name]) name = 'home';
   closeSheet();
   if (current && current !== name && screens[current].hide) screens[current].hide();

@@ -28,6 +28,7 @@ function normalise(s){
   if (s.spells && typeof s.spells === 'object') out.spells = s.spells;
   if (s.potions && typeof s.potions === 'object') out.potions = s.potions;   // Snape's potions lessons: letters sent, best results (potions.js)
   if (s.exams && typeof s.exams === 'object') out.exams = s.exams;   // the word tests: sittings and notices (exams.js)
+  if (s.exs && typeof s.exs === 'object') out.exs = s.exs;   // the notebook's example practice: {deck: {done: {tag: n}, miss: {tag: date}}} (notes.js)
   if (s.map && typeof s.map === 'object') out.map = s.map;
   if (s.prophet && typeof s.prophet === 'object') out.prophet = s.prophet;
   if (s.need && typeof s.need === 'object') out.need = s.need;
@@ -239,6 +240,21 @@ export function mergeData(text){
     for (const x of b.s || []) if (x && !have.has(x.t)){ a.s.push(x); have.add(x.t); }
     a.s.sort((x, y) => x.t - y.t);
     a.sent = Math.max(+a.sent || 0, +b.sent || 0); a.kinds = {...(b.kinds || {}), ...(a.kinds || {})};
+  }
+  /* the example practice (2026-10-19): stamped (sync-core KEYS) — the more recently changed copy whole, so that a sentence
+     answered right and taken off "다시 볼 예문" stays off; without stamps, joined (times asked: the larger; misses: both) */
+  { const w = whole('exs');
+    if (w === 1) state.exs = obj.exs || {};
+    else if (w === 0 && obj.exs){
+      const all = state.exs || (state.exs = {});
+      for (const [id, b] of Object.entries(obj.exs)){
+        if (!b || typeof b !== 'object') continue;
+        const a = all[id] || (all[id] = {}); a.done = a.done || {}; a.miss = a.miss || {};
+        for (const [t, n] of Object.entries(b.done || {})) a.done[t] = Math.max(a.done[t] || 0, +n || 0);
+        for (const [t, d] of Object.entries(b.miss || {})) if (!a.miss[t] || d > a.miss[t]) a.miss[t] = d;
+      }
+      joined('exs');
+    }
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
   mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it
