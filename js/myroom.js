@@ -64,7 +64,7 @@ export function initMyRoom(app){
     return {
       journal: '', cabinet: '',
       /* the grate: Sirius once he has come, and the Floo once the manor has sent its card */
-      fire: fire.isOpen() ? (bond.teaReady('sirius') || !fire.met() ? '누군가 부른다' : '') : manor.isOpen() ? '플루 가루' : null,
+      fire: fire.isOpen() ? (bond.teaReady('sirius') || !fire.met() ? '누군가 부른다' : '') : manor.isOpen() ? '' : null,   // no "플루 가루" beside it (2026-10-19 user: the jar is there when it is pressed)
       purse: manor.isOpen() ? '' : null,
       bag: shops.isOpen() ? (shops.bagCount() ? `${shops.bagCount()}개` : '') : null,
       spells: w ? (due ? `복습 ${due}` : '') : null,
