@@ -11,6 +11,7 @@ import * as store from './store.js';
 import * as srs from './srs.js';
 import * as phrase from './phrase.js';
 import * as shops from './shops.js';
+import * as frogs from './frogs.js';
 import {DECKS, byId} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet} from './ui.js';
 
@@ -86,8 +87,19 @@ function gloss(i){
   box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
 }
 
-/* the sweet or the bottle a letter came with */
-export const withThing = (x, inbound = true) => { const g = x && x.x && shops.byWire(x.x.gift); return g ? `<figure class="lt-thing"><img src="${shops.art(g.id)}" alt=""><figcaption><b lang="en">${esc(g.en)}</b><span>${esc(g.ko)} · ${inbound ? '편지와 함께 왔다' : '편지와 함께 보냈다'}</span></figcaption></figure>` : ''; };
+/* the sweet or the bottle a letter came with, and a Chocolate Frog card (frogs.js): the one sent along, and the one that came
+   out of a frog the friend sent (post.js takeIn keeps both on the letter as fc) */
+export const withThing = (x, inbound = true) => {
+  const e = (x && x.x) || {}, g = shops.byWire(e.gift), out = [];
+  if (g) out.push(`<figure class="lt-thing"><img src="${shops.art(g.id)}" alt=""><figcaption><b lang="en">${esc(g.en)}</b><span>${esc(g.ko)} · ${inbound ? '편지와 함께 왔다' : '편지와 함께 보냈다'}</span></figcaption></figure>`);
+  const got = inbound ? (x.fc || []) : (e.card ? [{id: e.card}] : []);
+  if (got.length) frogs.load();   // the names on the plates, for the next time it is drawn
+  for (const c of got){
+    const how = !inbound ? '카드 · 편지와 함께 보냈다' : c.frog ? '개구리 초콜릿 안에서 나온 카드' : '카드 · 편지와 함께 왔다';
+    out.push(`<figure class="lt-thing fc-thing">${frogs.face(c.id)}<figcaption><b lang="en">${esc(frogs.nameOf(c.id).en)}</b><span>${esc(how)}${inbound ? ` · ${c.n === 1 ? '새 카드' : `${c.n}장째`}` : ''}</span></figcaption></figure>`);
+  }
+  return out.join('');
+};
 /* the classes that dress a letter in its ink and on its paper */
 export const dress = x => { const e = (x && x.x) || {}; return (shops.byInk(e.ink) ? ' ink-' + e.ink : '') + (shops.byPaper(e.paper) ? ' paper-' + e.paper : ''); };
 export function readLetter(id, app){
@@ -103,7 +115,7 @@ export function readLetter(id, app){
 }
 
 export function compose(uid, app){
-  const m = post.memberOf(uid), tries = toTry(app, uid), things = shops.sendable(); let withId = '', ink = '', paper = '';
+  const m = post.memberOf(uid), tries = toTry(app, uid), things = shops.sendable(), cards = frogs.spares(); let withId = '', cardId = '', ink = '', paper = '';
   const inkList = [...(shops.hasBlood() ? [shops.BLOOD] : []), ...shops.inks()], paperList = shops.papers();
   const chooser = (name, label, list, left) => list.length ? `<div class="ow-with" data-choose="${name}"><p>${label}</p><ul><li><button type="button" data-pick="" class="on">평소대로</button></li>${list.map(g => `<li><button type="button" data-pick="${g[name]}"><img src="${g.art || shops.art(g.id)}" alt="">${esc(g.ko)}${left(g) ? ` <small>${left(g)}</small>` : ''}</button></li>`).join('')}</ul></div>` : '';
   const tryBox = tries.length ? `<div class="ow-try" id="owTry"><p class="ow-try-h">써 볼 만한 표현 <small>편지에 쓰면 표시됩니다</small></p>` +
@@ -116,6 +128,7 @@ export function compose(uid, app){
     `<p class="ow-meta"><span id="owWarn"></span><span id="owCount">0 / ${post.LIMIT}</span></p>` +
     chooser('ink', '잉크', inkList, g => g.id === 'blood' ? '' : `${shops.inkLeft(g.id)}통분`) + chooser('paper', '편지지', paperList, g => `${shops.paperLeft(g.id)}장`) +
     (things.length ? `<div class="ow-with" id="owWith"><p>함께 보낼 것 <small>종이 봉지에서</small></p><ul><li><button type="button" data-with="" class="on">없음</button></li>${things.map(g => `<li><button type="button" data-with="${g.id}"><img src="${shops.art(g.id)}" alt="">${esc(g.ko)} <small>× ${shops.have(g.id)}</small></button></li>`).join('')}</ul></div>` : '') +
+    (cards.length ? `<div class="ow-with" id="owCard"><p>카드 <small>두 장 이상 가진 것 · 한 장은 남는다</small></p><ul><li><button type="button" data-card="" class="on">없음</button></li>${cards.map(id => `<li><button type="button" data-card="${id}">${frogs.face(id, 'mini')}<span lang="en">${esc(frogs.nameOf(id).en)}</span> <small>× ${frogs.count(id)}</small></button></li>`).join('')}</ul></div>` : '') +
     `<button type="submit" class="sh-drill" id="owSend" disabled>부엉이에게 맡기기</button></form>`);
   const ta = $('#owText'), go = $('#owSend');
   const check = () => {
@@ -137,6 +150,8 @@ export function compose(uid, app){
   });
   const wb = $('#owWith');
   if (wb) wb.addEventListener('click', e => { const b = e.target.closest('[data-with]'); if (!b) return; withId = b.dataset.with; wb.querySelectorAll('[data-with]').forEach(o => o.classList.toggle('on', o === b)); });
+  const cb = $('#owCard');
+  if (cb) cb.addEventListener('click', e => { const b = e.target.closest('[data-card]'); if (!b) return; cardId = b.dataset.card; cb.querySelectorAll('[data-card]').forEach(o => o.classList.toggle('on', o === b)); });
   /* the ink and the paper show as they are chosen: the page being written is dressed in them */
   const redress = () => { ta.className = (ink ? 'ink-' + ink : '') + (paper ? ' paper-' + paper : ''); };
   document.querySelectorAll('#sheetBody [data-choose]').forEach(box => box.addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if (!b) return; if (box.dataset.choose === 'ink') ink = b.dataset.pick; else paper = b.dataset.pick; box.querySelectorAll('[data-pick]').forEach(o => o.classList.toggle('on', o === b)); redress(); }));
@@ -145,16 +160,18 @@ export function compose(uid, app){
     e.preventDefault(); if (go.disabled) return;
     go.disabled = true;
     const thing = withId && shops.have(withId) ? shops.good(withId) : null;
-    const x = {...(thing ? {gift: thing.wire} : {}), ...(ink ? {ink} : {}), ...(paper ? {paper} : {})};
+    const card = cardId && frogs.count(cardId) >= 2 ? cardId : '';
+    const x = {...(thing ? {gift: thing.wire} : {}), ...(card ? {card} : {}), ...(ink ? {ink} : {}), ...(paper ? {paper} : {})};
     const err = await post.send(uid, ta.value, Object.keys(x).length ? x : null);
     if (err){ toast(err); go.disabled = false; return; }
     if (thing) shops.take(thing.id);
+    if (card) frogs.give(card);
     shops.spend(ink, paper);
     /* the expressions this letter used: kept as a tally (state.wrote), shown in the Expressions notebook */
     const ws = phrase.words(ta.value), hit = tries.filter(x => phrase.find(ws, x.pat));
     if (hit.length){ const w = store.get().wrote || (store.get().wrote = {}); hit.forEach(x => { w[x.key] = (w[x.key] || 0) + 1; }); store.save(); }
     closeSheet();
-    toast(`<span class="q" lang="en">The owl is off.</span><span class="k">${esc(m.name)}에게 편지가 날아갑니다.${thing ? ` ${esc(thing.ko)}도 함께.` : ''}${hit.length ? ` 배운 표현 ${hit.length}개를 써 보냈습니다.` : ''}</span>`, hit.length ? 3400 : 2600, true);
+    toast(`<span class="q" lang="en">The owl is off.</span><span class="k">${esc(m.name)}에게 편지가 날아갑니다.${thing ? ` ${esc(thing.ko)}도 함께.` : ''}${card ? ` 카드 한 장도 함께.` : ''}${hit.length ? ` 배운 표현 ${hit.length}개를 써 보냈습니다.` : ''}</span>`, hit.length ? 3400 : 2600, true);
     app.refreshMail && app.refreshMail();
     if (post.isPractice()) setTimeout(() => app.owlCheck(), 26000);
   });

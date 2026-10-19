@@ -21,6 +21,7 @@ import * as store from './store.js';
 import * as srs from './srs.js';
 import {firebaseConfig} from './firebase-config.js';
 import * as wand from './wand.js';
+import * as frogs from './frogs.js';
 
 export const SEALS = [
   {id: 'lion', en: 'Lion', ko: '사자'}, {id: 'serpent', en: 'Serpent', ko: '뱀'}, {id: 'eagle', en: 'Eagle', ko: '독수리'},
@@ -67,10 +68,19 @@ const REPLIES = {
 /* only what the rules allow is kept from a letter's extras */
 const GIFTS_OK = ['sherbet-lemons', 'pepper-imps', 'beans', 'sugar-quill', 'whizzbees', 'choc-frog', 'ginger-newts', 'coconut-ice', 'best-choc', 'pineapple', 'butterbeer'];
 const INKS_OK = ['blood', 'i1', 'i2', 'i3'], PAPERS_OK = ['p1', 'p2', 'p3'];
-const extras = x => { if (!x || typeof x !== 'object') return null; const o = {}; if (GIFTS_OK.includes(x.gift)) o.gift = x.gift; if (INKS_OK.includes(x.ink)) o.ink = x.ink; if (PAPERS_OK.includes(x.paper)) o.paper = x.paper; return Object.keys(o).length ? o : null; };
+const extras = x => { if (!x || typeof x !== 'object') return null; const o = {}; if (GIFTS_OK.includes(x.gift)) o.gift = x.gift; if (frogs.IDS.includes(x.card)) o.card = x.card; if (INKS_OK.includes(x.ink)) o.ink = x.ink; if (PAPERS_OK.includes(x.paper)) o.paper = x.paper; return Object.keys(o).length ? o : null; };
+/* what came with a letter goes where it belongs as the letter lands (frogs.js): a card into the drawer; a Chocolate Frog is
+   opened and its card kept — which card, and whether it was new, stays on the letter (fc) to be shown with it */
+function takeIn(m){
+  const x = m.x || {}, got = [];
+  if (x.card){ const r = frogs.receive(x.card); if (r) got.push(r); }
+  if (x.gift === 'choc-frog') got.push({...frogs.draw(), frog: true});
+  if (got.length) m.fc = got;
+  return m;
+}
 function arrive({from, text, x}, delay){
   const fr = f(), now = Date.now();
-  fr.mail.push({id: 'm' + now.toString(36) + rnd(3), from, to: fr.uid, t: srs.today(), at: now + delay, text, read: false, seen: false, ...(extras(x) ? {x: extras(x)} : {})});
+  fr.mail.push(takeIn({id: 'm' + now.toString(36) + rnd(3), from, to: fr.uid, t: srs.today(), at: now + delay, text, read: false, seen: false, ...(extras(x) ? {x: extras(x)} : {})}));
   store.save();
 }
 const practice = {
@@ -91,7 +101,7 @@ const practice = {
   async send(m){
     const fr = f(), to = PRACTICE.find(p => p.uid === m.to); if (!to) return '';
     const n = fr.mail.filter(x => x.to === to.uid).length, list = REPLIES[to.uid];   // how many I had sent them before this one (it is added after the owl has gone)
-    arrive({from: to.uid, text: list[n % list.length], x: m.x ? {...(m.x.gift ? {gift: 'butterbeer'} : {}), ...(m.x.ink ? {ink: m.x.ink} : {}), ...(m.x.paper ? {paper: m.x.paper} : {})} : null}, 25000);   // a made-up friend returns the favour, in the same ink
+    arrive({from: to.uid, text: list[n % list.length], x: m.x ? {...(m.x.gift ? {gift: m.x.gift === 'choc-frog' ? 'choc-frog' : 'butterbeer'} : {}), ...(m.x.card ? {card: frogs.IDS[(frogs.IDS.indexOf(m.x.card) + 3) % frogs.IDS.length]} : {}), ...(m.x.ink ? {ink: m.x.ink} : {}), ...(m.x.paper ? {paper: m.x.paper} : {})} : null}, 25000);   // a made-up friend returns the favour, in the same ink (a card for a card, a frog for a frog)
     return '';
   },
   listen(){}
@@ -173,7 +183,7 @@ const firebase = {
       snap.docs.forEach(d => {
         const x = d.data();
         if (!fr.mail.some(m => m.id === d.id)){
-          fr.mail.push({id: d.id, from: x.from, to: fb.uid, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false, ...(extras(x.x) ? {x: extras(x.x)} : {})});
+          fr.mail.push(takeIn({id: d.id, from: x.from, to: fb.uid, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false, ...(extras(x.x) ? {x: extras(x.x)} : {})}));
           got++;
         }
         F.deleteDoc(d.ref).catch(() => {});

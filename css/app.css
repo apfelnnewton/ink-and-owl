@@ -2619,3 +2619,10 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 /* in the drawer the cells lay their pictures flat (.cab-cell img): the two paintings of a card must still lie one on the other */
 .cab-grid.fc .cab-cell .fc-who{position:relative}
 .cab-grid.fc .cab-cell .fc-empty{position:absolute;left:0;top:0}
+/* a Chocolate Frog card with a friend's letter (friends.js withThing), and the small ones to choose from when writing */
+.lt-thing.fc-thing .fc-card{flex:0 0 64px;width:64px}
+.ow-with .fc-card.mini{flex:0 0 24px;width:24px}
+.ow-with .fc-card.mini .fc-name{display:none}
+.ow-with .fc-card.mini img{filter:none}
+.lt-thing .fc-card .fc-name{font:italic 600 7.2cqw/1.1 var(--f-display);color:#33240f}
+.lt-thing .fc-card .fc-name.long{font-size:5cqw}

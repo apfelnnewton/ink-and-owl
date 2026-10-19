@@ -10,7 +10,10 @@
    the room and the plate stay (assets/frogs/<id>-away.webp, the same painting with nobody in it). In the cabinet each card
    is out for the day about one day in five; a card just drawn empties itself a few seconds after it turns over, one time
    in three. The line under an empty card is the card's own (`away` in the text), or a plain one until it is written.
-   Test switches: ?frog=<id> draws that card, ?away empties every card that can be empty. */
+   Test switches: ?frog=<id> draws that card, ?away empties every card that can be empty.
+   TO A FRIEND (2026-10-19 user 가 가): a card held twice or more can go with a letter to a friend (friends.js, the letter's
+   x.card — firestore.rules okX); one stays. A Chocolate Frog sent as a sweet is opened by the friend who gets it, and a
+   card comes out of it then (post.js takeIn). */
 import * as store from './store.js';
 import * as srs from './srs.js';
 import {esc} from './ui.js';
@@ -23,6 +26,7 @@ let TEXT = null;
 export const load = () => TEXT ? Promise.resolve(TEXT) : fetch('bond/frogcards.json').then(r => r.ok ? r.json() : null)
   .then(j => (TEXT = j && Object.fromEntries(j.map(c => [c.id, c])))).catch(() => null);
 export const textOf = id => (TEXT && TEXT[id]) || null;
+export const nameOf = id => (textOf(id) || {name: {en: NAME[id] || id, ko: NAME[id] || id}}).name;
 export const art = id => `assets/frogs/${id}.webp`;
 /* the cards whose empty painting has been made */
 const EMPTY = IDS;
@@ -43,6 +47,15 @@ export const count = id => st().n[id] || 0;
 export const kinds = () => IDS.filter(id => count(id) > 0).length;
 export const firstDay = id => st().d[id] || '';
 
+/* the cards there are two or more of: the ones that can go to a friend */
+export const spares = () => IDS.filter(id => count(id) >= 2);
+export function give(id){ const f = st(); if ((f.n[id] || 0) < 2) return false; f.n[id]--; store.save(); return true; }
+/* a card that came with a friend's letter */
+export function receive(id){
+  if (!IDS.includes(id)) return null;
+  const f = st(); f.n[id] = (f.n[id] || 0) + 1; if (!f.d[id]) f.d[id] = srs.today(); store.save();
+  return {id, n: f.n[id]};
+}
 /* one card out of the box: any of the ten, the same chance each */
 export function draw(){
   const id = IDS.includes(q.get('frog')) ? q.get('frog') : IDS[Math.floor(Math.random() * IDS.length)], f = st();
