@@ -403,6 +403,9 @@ export function initRoom(app){
       cue.hidden = false; cue.className = 'cue gaps'; drawGap();
       $('#askAids').hidden = false; $('#aidKo').hidden = true; $('#aidHear').hidden = true;
       $('#askAids .aid-note').textContent = '단어를 누르면 한 글자 더 · 글자를 쓰면 ‘비슷’까지';
+      /* the Korean of the whole sentence under it (2026-10-19 user: too hard without): the line's, or the example's */
+      const ko = gapOf.from === 'example' ? gapOf.ko : card.ko;
+      if (ko){ $('#askKo').hidden = false; $('#askKo').textContent = ko; }
       target = gapOf.blank;
       ti.rows = 1; ti.placeholder = '빈칸에 들어갈 말';
     }
