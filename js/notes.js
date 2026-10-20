@@ -6,7 +6,7 @@
 import {DECKS, LOCKED, byId, homeOf} from './decks.js';
 import {available} from './doors.js';   // availableDecks: the fire and the manor join the row once they have opened
 import * as store from './store.js';
-import {askable, choices as pickChoices} from './exchoice.js';
+import {askable, choices as pickChoices, exprLine, toggleNote} from './exchoice.js';
 import * as grammar from './grammar.js';
 import * as exams from './exams.js';
 import * as srs from './srs.js';
@@ -112,9 +112,10 @@ export function initNotes(app){
     openSheet(`<div class="sh-kind"><span>예문 연습 ${run.k + 1} / ${run.items.length}</span><span>${run.right}개 맞음</span></div>` +
       `<p class="dr-line" lang="en">${esc(it.en.slice(0, at))}<span class="dr-blank">${' '.repeat(Math.max(6, it.blank.length))}</span>${esc(it.en.slice(at + it.blank.length))}</p>` +
       `<div class="dr-opts">${opts.map((o, i) => `<button type="button" data-pick="${esc(o)}"><i>${i + 1}</i>${esc(o)}</button>`).join('')}</div>` +
-      `<p class="dr-ko" hidden>${esc(it.ko)}</p><p class="dr-expr" hidden lang="en">${esc(it.expr)}</p>` +
+      `<p class="dr-ko" hidden>${esc(it.ko)}</p>` + exprLine(it.expr, '', noteOf(it)) +
       `<button type="button" class="sh-drill dr-next" hidden>${run.k + 1 < run.items.length ? '다음 →' : '결과 보기'}</button>`);
   }
+  const noteOf = it => { const key = it.tag ? it.tag.replace(/\.\d+$/, '') : '', e = entries.find(x => x.key === key); return e ? e.b.note : ''; };
   function pick(opt){
     const it = run.items[run.k], body = $('#sheetBody');
     if (body.querySelector('.dr-opts button:disabled')) return;
@@ -190,6 +191,7 @@ export function initNotes(app){
   $('#sheetBody').addEventListener('click', e => {
     if (sec.hidden) return;
     const p = e.target.closest('[data-pick]'); if (p){ pick(p.dataset.pick); return; }
+    const nb = e.target.closest('[data-drnote]'); if (nb){ toggleNote(nb); return; }
     if (e.target.closest('.dr-next')){ nextQ(); return; }
     if (e.target.closest('[data-again]')){ startDrill(pool(lastKeys)); return; }
     const r = e.target.closest('[data-exrun]'); if (r){ startDrill(groupPool(r.dataset.exrun), r.dataset.exrun); return; }

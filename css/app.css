@@ -639,6 +639,10 @@ body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opa
 .dr-opts button:disabled{cursor:default}
 .dr-ko{margin:0;font-size:14px;color:#3E3222;line-height:1.6}
 .dr-expr{margin:0;font-family:var(--f-display);font-style:italic;color:#7A1A12}
+/* the expression is a button since 2026-10-20: a tap unfolds its explanation below (.dr-note) */
+button.dr-expr{display:block;width:100%;min-height:44px;padding:6px 0;background:none;border:0;text-align:left;font-size:inherit;cursor:pointer;flex:none}
+button.dr-expr small{display:block;margin-top:2px;font-family:var(--f-hand);font-style:normal;font-size:12px;color:#7A5A3A}
+.dr-note{margin:0;font-size:14px;line-height:1.65;color:#3E3222;background:rgba(122,26,18,.06);padding:10px 12px;border-radius:2px;flex:none;word-break:keep-all}
 
 /* ================================================================ the bar under the parchment: a title-card line, not a blackboard */
 .grade-bar{height:54px}

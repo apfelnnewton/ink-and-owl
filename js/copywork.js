@@ -9,7 +9,7 @@
    Answers are kept with the example book's (state.exs[deck]: done, miss), so a sentence missed here is in "다시 볼 예문".
    state.manor's `copy` = {d: day, l: Lucius's rounds today, b: hers} */
 import * as store from './store.js';
-import {askable, choices as pickChoices} from './exchoice.js';
+import {askable, choices as pickChoices, exprLine, toggleNote} from './exchoice.js';
 import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as manor from './manor.js';
@@ -51,7 +51,7 @@ async function entries(app){
     for (const c of cards || []) if (learnt[c.id]) (c.bre || []).forEach((b, k) => {
       const key = `${c.id}#${k}`, slot = ex[key] && ex[key].slot;
       /* a form of address is not asked (exchoice.js askable, 2026-10-20) */
-      const items = ((ex[key] && ex[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`, expr: b.expr, deck: d.id, key, slot})).filter(it => askable(b.kind, it));
+      const items = ((ex[key] && ex[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`, expr: b.expr, note: b.note, deck: d.id, key, slot})).filter(it => askable(b.kind, it));
       if (items.length) out.push({key, deck: d.id, expr: b.expr.toLowerCase(), kind: b.kind, slot, items});
     });
   }
@@ -94,7 +94,7 @@ function ask(){
     `<div class="cw-top">${say(line)}</div>` +
     `<p class="dr-line" lang="en">${esc(it.en.slice(0, at))}<span class="dr-blank">${' '.repeat(Math.max(6, it.blank.length))}</span>${esc(it.en.slice(at + it.blank.length))}</p>` +
     `<div class="dr-opts">${opts.map((o, i) => `<button type="button" data-cwpick="${esc(o)}"><i>${i + 1}</i>${esc(o)}</button>`).join('')}</div>` +
-    `<p class="dr-ko" hidden>${esc(it.ko)}</p><p class="dr-expr" hidden><span lang="en">${esc(it.expr)}</span> · ${esc(byId(it.deck).ko)}의 표현</p>` +
+    `<p class="dr-ko" hidden>${esc(it.ko)}</p>` + exprLine(it.expr, `${byId(it.deck).ko}의 표현`, it.note) +
     `<button type="button" class="sh-drill dr-next" data-cwnext="1" hidden>${run.k + 1 < run.items.length ? '다음 →' : '끝내기'}</button>`);
 }
 function pick(opt){
@@ -133,6 +133,7 @@ export function initCopywork(app){
   $('#sheetBody').addEventListener('click', e => {
     if (!run && !e.target.closest('[data-cwagain]')) return;
     const p = e.target.closest('[data-cwpick]'); if (p && run && !run.done){ pick(p.dataset.cwpick); return; }
+    const nb = e.target.closest('[data-drnote]'); if (nb && run && !run.done){ toggleNote(nb); return; }
     if (e.target.closest('[data-cwnext]') && run && !run.done){ run.k++; if (run.k < run.items.length) ask(); else finish(); return; }
     const a = e.target.closest('[data-cwagain]'); if (a){ const cb = run && run.onDone; run = null; open(a.dataset.cwagain, app, cb); }
   });

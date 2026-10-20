@@ -119,3 +119,17 @@ export function choices(it, groups){
   for (const o of it.options || []) if (out.length < 4 && !taken.has(low(o))){ out.push(o); taken.add(low(o)); }
   return shuffle(out);
 }
+
+/* ---------- after the answer: the expression in red; a tap unfolds its explanation in place (2026-10-20 user) — the round stays
+   where it is (a new sheet would replace the question). Used by copywork.js and notes.js */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+export function exprLine(expr, by, note){
+  const label = `<span lang="en">${esc(expr)}</span>${by ? ` · ${esc(by)}` : ''}`;
+  if (!note) return `<p class="dr-expr" hidden>${label}</p>`;   // nothing to unfold: not a button
+  return `<button type="button" class="dr-expr" data-drnote="1" aria-expanded="false" hidden>${label} <small>설명 보기</small></button><p class="dr-note" hidden>${esc(note)}</p>`;
+}
+export function toggleNote(btn){
+  const n = btn.nextElementSibling; if (!n || !n.classList.contains('dr-note')) return;
+  n.hidden = !n.hidden; btn.setAttribute('aria-expanded', String(!n.hidden));
+  const sm = btn.querySelector('small'); if (sm) sm.textContent = n.hidden ? '설명 보기' : '접기';
+}
