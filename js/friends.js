@@ -46,6 +46,9 @@ export function openSeals(){
       return `<button type="button" class="ow-seal${who ? ' taken' : ''}" data-seal="${s.id}"${who ? ' disabled' : ''}>${sealTag(s.id)}<b lang="en">${s.en}</b><small>${who ? `${esc(who)}의 도장` : s.ko}</small></button>`; }).join('')}</div>`);
 }
 
+/* bought as a present in a shop (shops.js, 2026-10-20): choose the friend, and the letter opens with it already chosen */
+let present = null;   // {id, t}: good for a few minutes, so a picker closed without choosing does not colour a later letter
+export function giftTo(id){ present = {id, t: Date.now()}; pickFriend(); }
 export function pickFriend(){
   openSheet(`<div class="sh-kind"><span>부엉이 편지</span></div><h2 class="sh-expr" id="shTitle" lang="en">To whom?</h2>` +
     `<ul class="fr-to">${post.members().map(m => `<li><button type="button" data-write="${esc(m.uid)}">${sealTag(m.seal)}<b lang="en">${esc(m.name)}</b><i aria-hidden="true">→</i></button></li>`).join('')}</ul>`);
@@ -115,7 +118,8 @@ export function readLetter(id, app){
 }
 
 export function compose(uid, app){
-  const m = post.memberOf(uid), tries = toTry(app, uid), things = shops.sendable(), cards = frogs.spares(); let withId = '', cardId = '', ink = '', paper = '';
+  const m = post.memberOf(uid), tries = toTry(app, uid), things = shops.sendable(), cards = frogs.spares(); let cardId = '', ink = '', paper = '';
+  let withId = present && Date.now() - present.t < 600000 && things.some(g => g.id === present.id) ? present.id : ''; present = null;
   const inkList = [...(shops.hasBlood() ? [shops.BLOOD] : []), ...shops.inks()], paperList = shops.papers();
   const chooser = (name, label, list, left) => list.length ? `<div class="ow-with" data-choose="${name}"><p>${label}</p><ul><li><button type="button" data-pick="" class="on">평소대로</button></li>${list.map(g => `<li><button type="button" data-pick="${g[name]}"><img src="${g.art || shops.art(g.id)}" alt="">${esc(g.ko)}${left(g) ? ` <small>${left(g)}</small>` : ''}</button></li>`).join('')}</ul></div>` : '';
   const tryBox = tries.length ? `<div class="ow-try" id="owTry"><p class="ow-try-h">써 볼 만한 표현 <small>편지에 쓰면 표시됩니다</small></p>` +
@@ -127,7 +131,7 @@ export function compose(uid, app){
     `<form class="ow-pen" id="owPen" autocomplete="off"><textarea id="owText" lang="en" maxlength="${post.LIMIT}" rows="8" spellcheck="true" aria-label="편지 내용 (영어)" placeholder="Write in English…"></textarea>` +
     `<p class="ow-meta"><span id="owWarn"></span><span id="owCount">0 / ${post.LIMIT}</span></p>` +
     chooser('ink', '잉크', inkList, g => g.id === 'blood' ? '' : `${shops.inkLeft(g.id)}통분`) + chooser('paper', '편지지', paperList, g => `${shops.paperLeft(g.id)}장`) +
-    (things.length ? `<div class="ow-with" id="owWith"><p>함께 보낼 것 <small>종이 봉지에서</small></p><ul><li><button type="button" data-with="" class="on">없음</button></li>${things.map(g => `<li><button type="button" data-with="${g.id}"><img src="${shops.art(g.id)}" alt="">${esc(g.ko)} <small>× ${shops.have(g.id)}</small></button></li>`).join('')}</ul></div>` : '') +
+    (things.length ? `<div class="ow-with" id="owWith"><p>함께 보낼 것 <small>종이 봉지에서</small></p><ul><li><button type="button" data-with=""${withId ? '' : ' class="on"'}>없음</button></li>${things.map(g => `<li><button type="button" data-with="${g.id}"${g.id === withId ? ' class="on"' : ''}><img src="${shops.art(g.id)}" alt="">${esc(g.ko)} <small>× ${shops.have(g.id)}</small></button></li>`).join('')}</ul></div>` : '') +
     (cards.length ? `<div class="ow-with" id="owCard"><p>카드 <small>두 장 이상 가진 것 · 한 장은 남는다</small></p><ul><li><button type="button" data-card="" class="on">없음</button></li>${cards.map(id => `<li><button type="button" data-card="${id}">${frogs.face(id, 'mini')}<span lang="en">${esc(frogs.nameOf(id).en)}</span> <small>× ${frogs.count(id)}</small></button></li>`).join('')}</ul></div>` : '') +
     `<button type="submit" class="sh-drill" id="owSend" disabled>부엉이에게 맡기기</button></form>`);
   const ta = $('#owText'), go = $('#owSend');
@@ -164,7 +168,7 @@ export function compose(uid, app){
     const x = {...(thing ? {gift: thing.wire} : {}), ...(card ? {card} : {}), ...(ink ? {ink} : {}), ...(paper ? {paper} : {})};
     const err = await post.send(uid, ta.value, Object.keys(x).length ? x : null);
     if (err){ toast(err); go.disabled = false; return; }
-    if (thing) shops.take(thing.id);
+    if (thing) shops.take(thing.id, true);   // a frog goes sealed if there is a sealed one: the friend opens it
     if (card) frogs.give(card);
     shops.spend(ink, paper);
     /* the expressions this letter used: kept as a tally (state.wrote), shown in the Expressions notebook */

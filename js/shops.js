@@ -32,6 +32,8 @@ import {floo} from './fire.js';
 import * as owners from './owners.js';
 import * as noticed from './noticed.js';
 import * as frogs from './frogs.js';
+import * as post from './post.js';
+import * as friends from './friends.js';
 import {byId, PROFS} from './decks.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
@@ -103,9 +105,28 @@ export const bagCount = () => Object.values(st().bag).reduce((a, n) => a + n, 0)
 export const owned = () => GOODS.filter(g => have(g.id) > 0);
 /* what can go with a friend's letter: a sweet or a bottle */
 export const sendable = () => owned().filter(g => g.wire);
-export function take(id){ const b = st().bag; if (!b[id]) return false; b[id]--; if (!b[id]) delete b[id]; store.save(); return true; }
+/* a thing that can be bought as a present: one a letter can carry, by a guest with friends in a group */
+const giftable = g => !!g.wire && post.inGroup() && (post.members() || []).length > 0;
+/* UNOPENED FROGS (2026-10-20 user, "선물하기"): a Chocolate Frog bought as a present is not opened, so no card comes out for
+   the buyer — the friend who gets it opens it (post.js takeIn). Such frogs wait in the bag among the others: shop.uf of
+   the bag's frogs are still sealed. One going to a friend goes sealed first; one going to a professor goes opened first
+   (a professor draws no card); one can be opened in the bag at any time (openFrog). */
+export const unopened = () => Math.min(st().uf || 0, have('chocolate-frog'));
+export function take(id, sealedFirst = false){
+  const m = st(), b = m.bag; if (!b[id]) return false;
+  const sealed = id === 'chocolate-frog' ? unopened() : 0;
+  b[id]--; if (!b[id]) delete b[id];
+  if (id === 'chocolate-frog') m.uf = sealedFirst && sealed ? sealed - 1 : Math.min(sealed, b[id] || 0);
+  if (!m.uf) delete m.uf;
+  store.save(); return true;
+}
+export function openFrog(){
+  const m = st(); if (!unopened()) return null;
+  m.uf = unopened() - 1; if (!m.uf) delete m.uf;
+  const d = frogs.draw(); store.save(); return d;
+}
 
-export function buy(id){
+export function buy(id, asGift = false){
   const g = good(id); if (!g) return '없는 물건입니다.';
   const m = st2(), cost = g.s * SICKLE;
   if (g.kind === 'dark' && m.dark[id]) return '이미 맡겨 둔 물건입니다.';
@@ -116,7 +137,8 @@ export function buy(id){
   else if (g.kind === 'paper') m.paper[id] = (m.paper[id] || 0) + USES;
   else if (g.kind === 'dark'){ m.dark[id] = srs.today(); (m.bg = m.bg || []).push({key: g.key, d: srs.today()}); placeOf(g); owners.bought(g.key); }   // she will have something to say about it tomorrow; its former owner, in two days
   else m.bag[id] = have(id) + 1;
-  drew = id === 'chocolate-frog' ? frogs.draw() : null;   // a card comes with every frog (frogs.js)
+  if (asGift && id === 'chocolate-frog') m.uf = unopened() + 1;   // sealed: the friend opens it
+  drew = id === 'chocolate-frog' && !asGift ? frogs.draw() : null;   // a card comes with every frog (frogs.js) — unless it is a present
   store.save();
   return '';
 }
@@ -286,9 +308,23 @@ export async function daily(){
   store.save();
 }
 
+/* the frog hops once and is gone into the paper bag; the card turns over (2026-10-19). Also when a sealed frog is opened in
+   the bag (opened: the frog is eaten, not put back) */
+function cardSheet({id, n}, opened = false){
+  openSheet(`<div class="fc-pop"><img class="fc-frog" src="${art('chocolate-frog')}" alt="">${frogs.face(id, 'turn')}</div>` +
+    `<p class="purse-note fc-new">${n === 1 ? `새 카드 · 진열장의 카드 칸에 넣었다 (${frogs.kinds()} / ${frogs.IDS.length})` : `이미 있는 카드 · ${n}장째`}</p>` +
+    `<p class="purse-note fc-gone" hidden></p>` + frogs.back(id) + `<p class="purse-note">${opened ? '뜯은 개구리 초콜릿은 봉지에 그대로 있다.' : '개구리 초콜릿은 종이 봉지에 담았다.'}</p>`);
+  /* now and then the person on it steps out of the picture a moment after it turns over (frogs.js AWAY) */
+  if (frogs.leavesNow(id)) setTimeout(() => {
+    const c = document.querySelector('#sheetBody .fc-pop .fc-card'), p = document.querySelector('#sheetBody .fc-gone'); if (!c || !p) return;
+    const l = frogs.awayLine(id, true); c.classList.add('out');
+    p.innerHTML = `<span lang="en">${esc(l.en)}</span><br>${esc(l.ko)}`; p.hidden = false;
+  }, 4200);
+}
+
 /* ---------- the paper bag in the guest's room: what has been bought, and to whom it may go */
 const fig = (g, big) => `<figure class="sp-fig${big ? ' big' : ''}"><img src="${g.art || art(g.id)}" alt=""><figcaption><b lang="en">${esc(g.en)}</b><span>${esc(g.ko)}</span></figcaption></figure>`;
-const leftOf = g => g.kind === 'ink' ? `편지 ${inkLeft(g.id)}통분` : g.kind === 'paper' ? `${paperLeft(g.id)}장` : `× ${have(g.id)}`;
+const leftOf = g => g.kind === 'ink' ? `편지 ${inkLeft(g.id)}통분` : g.kind === 'paper' ? `${paperLeft(g.id)}장` : `× ${have(g.id)}` + (g.id === 'chocolate-frog' && unopened() ? ` · 뜯지 않은 것 ${unopened()}` : '');
 export function bagSheet(){
   const list = [...owned(), ...inks(), ...papers()], n = bagCount() + inks().length + papers().length;
   openSheet(`<div class="sh-kind"><span>종이 봉지</span><span>${list.length ? `${n}가지` : ''}</span></div>` +
@@ -312,12 +348,14 @@ function itemSheet(id){
       : `<h3 class="gr-h">${busy ? '오늘은 이미 하나 보냈다 · 다음은 내일' : '누구에게 보낼까'}</h3>` +
         `<ul class="sp-who">${who.map(d => { const n = ((st().sent[d.id] || {})[id]) || 0;
           return `<li><button type="button" data-give="${d.id}" data-item="${id}"${busy ? ' disabled' : ''}><i class="seal s-${d.id}"></i><span>${esc(d.ko)}</span><em>${n ? `${n}번 보냄` : ''}</em></button></li>`; }).join('')}</ul>` +
-        (g.wire ? `<p class="purse-note">과자는 친구에게 쓰는 편지에도 붙일 수 있다.</p>` : '')) +
+        (g.wire ? `<p class="purse-note">과자는 친구에게 쓰는 편지에도 붙일 수 있다.${g.id === 'chocolate-frog' && unopened() ? ' 친구에게는 뜯지 않은 것부터 간다.' : ''}</p>` : '') +
+        (g.id === 'chocolate-frog' && unopened() ? `<button type="button" class="sh-drill" data-openfrog>하나 뜯어 본다 · 뜯지 않은 것 ${unopened()}개</button>` : '')) +
     `<button type="button" class="clink sp-back" data-bagback>봉지로 돌아가기</button>`);
 }
 document.addEventListener('click', async e => {
-  const b = e.target.closest('#sheetBody [data-bagitem], #sheetBody [data-give], #sheetBody [data-bagback], #sheetBody [data-baggo]'); if (!b) return;
+  const b = e.target.closest('#sheetBody [data-bagitem], #sheetBody [data-give], #sheetBody [data-bagback], #sheetBody [data-baggo], #sheetBody [data-openfrog]'); if (!b) return;
   if (b.dataset.bagitem){ await Promise.all([load(), loadText()]); itemSheet(b.dataset.bagitem); return; }
+  if (b.hasAttribute('data-openfrog')){ await frogs.load(); const d = openFrog(); if (d) cardSheet(d, true); return; }
   if (b.hasAttribute('data-bagback')){ bagSheet(); return; }
   if (b.dataset.baggo){ closeSheet(); location.hash = b.dataset.baggo; return; }
   await Promise.all([load(), bond.load(b.dataset.give)]);
@@ -440,7 +478,9 @@ export function initTown(app){
     openSheet(`<div class="sh-kind"><span>${esc(PLACES[g.shop].head)}</span><span>${mine ? `맡아 둠 · ${st2().dark[id].slice(5).replace(/^0/, '').replace('-0', '-').replace('-', '월 ')}일` : g.kind === 'ink' && inkLeft(id) ? `편지 ${inkLeft(id)}통분` : g.kind === 'paper' && paperLeft(id) ? `${paperLeft(id)}장` : have(id) ? `봉지에 ${have(id)}개` : ''}</span></div>` + fig(g, true) +
       `<p class="sp-tag" lang="en">${marked(t.en)}</p><p class="sp-tag ko">${esc(t.ko)}</p>` + keysOf(t) +
       (mine ? ownerLine(g) + bagLine(g) : `<p class="mn-paid"><img src="assets/money/${coin}.webp" alt=""><b>${price(g)}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
-        `<button type="button" class="sh-drill" data-buy="${g.id}"${short ? ' disabled' : ''}>${short ? '주머니가 모자란다' : label}</button>`));
+        `<button type="button" class="sh-drill" data-buy="${g.id}"${short ? ' disabled' : ''}>${short ? '주머니가 모자란다' : label}</button>` +
+        (giftable(g) && !short ? `<button type="button" class="sh-drill" data-buygift="${g.id}">선물하기 · 친구에게 편지와 함께</button>` +
+          (g.id === 'chocolate-frog' ? '<p class="purse-note">선물로 사면 뜯지 않은 채로 간다. 카드는 받는 친구가 연다.</p>' : '') : '')));
   }
   const enter = id => { if (id === 'ollivander') app.go('#/ollivander/again'); else app.go('#/town/' + id); };
   $('#twSpots').addEventListener('click', e => { const b = e.target.closest('[data-spot]'); if (b) enter(b.dataset.spot); });
@@ -452,6 +492,14 @@ export function initTown(app){
     if (!noticed.carry(b.dataset.nccarry)) return;
     closeSheet(); draw();
     toast('<span class="q" lang="en">Into the bag.</span><span class="k">가방에 넣었다. 내 방 카펫 위에 둔다. 성 안에서 하룻밤을 지나면 누군가는 알아챌지도 모른다.</span>', 4200, true);
+  });
+  /* bought as a present (2026-10-20 user): straight on to the friend's letter with it already chosen; if the letter is
+     not sent, it simply stays in the paper bag (a frog, still sealed) */
+  $('#sheetBody').addEventListener('click', e => {
+    const b = e.target.closest('[data-buygift]'); if (!b || sec.hidden) return;
+    const g = good(b.dataset.buygift), err = buy(g.id, true);
+    if (err){ toast(esc(err)); return; }
+    draw(); friends.giftTo(g.id);
   });
   $('#sheetBody').addEventListener('click', e => {
     const b = e.target.closest('[data-buy]'); if (!b || sec.hidden) return;
@@ -465,18 +513,6 @@ export function initTown(app){
     else if (g.kind === 'ink' || g.kind === 'paper') toast(`<span class="q" lang="en">Yours.</span><span class="k">${esc(g.ko)}${eul} 샀다. 친구에게 편지를 쓸 때 고를 수 있다.</span>`, 3000, true);
     else toast(`<span class="q" lang="en">Into the paper bag.</span><span class="k">${esc(g.ko)}${eul} 종이 봉지에 담았다. 봉지는 내 방에 있다.</span>`, 2800, true);
   });
-  /* the frog hops once and is gone into the paper bag; the card turns over (2026-10-19) */
-  function cardSheet({id, n}){
-    openSheet(`<div class="fc-pop"><img class="fc-frog" src="${art('chocolate-frog')}" alt="">${frogs.face(id, 'turn')}</div>` +
-      `<p class="purse-note fc-new">${n === 1 ? `새 카드 · 진열장의 카드 칸에 넣었다 (${frogs.kinds()} / ${frogs.IDS.length})` : `이미 있는 카드 · ${n}장째`}</p>` +
-      `<p class="purse-note fc-gone" hidden></p>` + frogs.back(id) + '<p class="purse-note">개구리 초콜릿은 종이 봉지에 담았다.</p>');
-    /* now and then the person on it steps out of the picture a moment after it turns over (frogs.js AWAY) */
-    if (frogs.leavesNow(id)) setTimeout(() => {
-      const c = document.querySelector('#sheetBody .fc-pop .fc-card'), p = document.querySelector('#sheetBody .fc-gone'); if (!c || !p) return;
-      const l = frogs.awayLine(id, true); c.classList.add('out');
-      p.innerHTML = `<span lang="en">${esc(l.en)}</span><br>${esc(l.ko)}`; p.hidden = false;
-    }, 4200);
-  }
   const back = () => { const P = PLACES[view]; if (P.shop) app.go('#/town/' + P.street); else floo(app, '#/me'); };
   $('#twBack').addEventListener('click', back);
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
