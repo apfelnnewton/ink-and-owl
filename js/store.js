@@ -57,6 +57,7 @@ export function load(){
   try { state = normalise(JSON.parse(localStorage.getItem(KEY) || 'null')); }
   catch (e){ storageOk = false; state = fresh(); }
   mendStreak();
+  if (settleOnce()) save();
   return state;
 }
 /* The days in a row are what the register says they are: counted back from the last day studied through every day that has an
@@ -258,6 +259,36 @@ export function mergeData(text){
   }
   if ((obj.streak.last || '') >(state.streak.last || '') || (obj.streak.last === state.streak.last && obj.streak.n > state.streak.n)) state.streak = {...obj.streak};
   mendStreak();   // …and then counted from the joined register, so that a device new to the progress does not shorten it
+  settleOnce();
   save();
   return '';
+}
+
+/* A request settles once (2026-10-20). The maker finished Snape's R02 on the laptop on the 19th (letter R02-done); the phone,
+   opened on the 20th before it had heard of that, found the request past its day and wrote R02-fail and L47 ("a request
+   failed"); joined, the record held both. Whichever of the two letters came later goes — with the L47 written the same day,
+   if no other failed request is left — and the tallies are counted from the letters. Run on load and after every merge, so a
+   copy on another device cannot bring the letters back. (bond.daily now waits for a match first: sync.js fresh.) */
+export function settleOnce(){
+  let changed = false;
+  for (const b of Object.values(state.bond || {})){
+    if (!b || !Array.isArray(b.mail)) continue;
+    const by = {};
+    for (const m of b.mail){ const k = /^(R\d\d)-(done|fail)$/.exec(m && m.id || ''); if (k) (by[k[1]] = by[k[1]] || {})[k[2]] = m; }
+    const drop = new Set();
+    for (const two of Object.values(by)){
+      if (!two.done || !two.fail) continue;
+      const late = (two.fail.t || '') >= (two.done.t || '') ? two.fail : two.done;   // the same day: the request was done
+      drop.add(late.id);
+      if (late === two.fail && !Object.values(by).some(x => x.fail && x.fail !== two.fail && !drop.has(x.fail.id))){
+        const l47 = b.mail.find(m => m.id === 'L47' && m.t === late.t); if (l47) drop.add('L47');
+      }
+    }
+    if (!drop.size) continue;
+    b.mail = b.mail.filter(m => !drop.has(m.id));
+    if (b.sent) for (const id of drop) delete b.sent[id];
+    if (b.req){ b.req.done = b.mail.filter(m => /^R\d\d-done$/.test(m.id)).length; b.req.failed = b.mail.filter(m => /^R\d\d-fail$/.test(m.id)).length; }
+    changed = true;
+  }
+  return changed;
 }

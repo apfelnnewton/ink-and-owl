@@ -52,6 +52,15 @@ export async function run(){
   return r;
 }
 export const onRun = fn => { listeners.push(fn); };
+/* before the day's checks (bond.daily): a match first, so that what was done on another device is known before anything
+   is judged (2026-10-20: the phone, opened before it had heard that Snape's request was done on the laptop the day before,
+   judged it failed and wrote the letters for it — store.js settleOnce). A few seconds at most; offline, the checks go ahead. */
+export async function fresh(){
+  if (!on() || navigator.onLine === false) return;
+  const t0 = Date.now(); while (core.busy() && Date.now() - t0 < 6000) await new Promise(r => setTimeout(r, 150));
+  if (core.state().at && Date.now() - core.state().at < 20000) return;   // matched a moment ago
+  await Promise.race([run(), new Promise(r => setTimeout(r, 6000))]);
+}
 
 /* for the ledger: where this device stands */
 export function status(){

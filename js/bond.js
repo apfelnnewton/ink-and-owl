@@ -27,6 +27,7 @@ import * as potions from './potions.js';
 import * as exams from './exams.js';
 import * as owners from './owners.js';
 import * as noticed from './noticed.js';
+import * as sync from './sync.js';
 import {esc, toast} from './ui.js';
 
 export const STAGES = ['서먹함', '알아봄', '인정', '신뢰', '각별함'];
@@ -272,6 +273,7 @@ srs.hooks.push(ev => {
    her dictation, and no spell letter, potions letter, notice, gift reply or friend's news came after it. */
 const step = async (name, f) => { try { await f(); } catch (e){ console.error('daily: ' + name, e); } };
 export async function daily(){
+  await step('sync first', () => sync.fresh());   // the maker's devices: what another device did is known before anything is judged
   await Promise.all(DECKS.map(d => load(d.id)));
   const t = srs.today();
   for (const d of BONDED) await step('deck ' + d.id, () => {
