@@ -366,7 +366,7 @@
   "id": "bott",
   "name": {
    "en": "Bertie Bott",
-   "ko": "버티 보트"
+   "ko": "버티 봇"
   },
   "role": {
    "en": "Confectioner and inventor",
@@ -374,7 +374,7 @@
   },
   "back": {
    "en": "Few sweets honour the promise on the packet [[to the letter]]. Bertie Bott's Every Flavour Beans are a notable exception, their range running from the delightful to the frankly regrettable. [[As a matter of principle]], their inventor, a confectioner of unfailing good humour, enters every new flavour in a handwritten register before it reaches the shelves of Honeydukes. The less fortunate entries are marked, discreetly, with a small cross.",
-   "ko": "봉지에 적힌 약속을 글자 그대로 지키는 과자는 드물다. 버티 보트의 온갖 맛 젤리는 눈에 띄는 예외로, 그 맛은 감탄스러운 것부터 솔직히 유감스러운 것까지 두루 걸쳐 있다. 늘 유쾌함을 잃지 않는 과자 장인인 보트는 원칙에 따라, 새 맛이 허니듀크스의 진열대에 오르기 전에 하나도 빠짐없이 손으로 쓴 장부에 적어 둔다. 그다지 운이 좋지 못한 맛에는 작은 가위표가 슬며시 붙어 있다.",
+   "ko": "봉지에 적힌 약속을 글자 그대로 지키는 과자는 드물다. 버티 봇의 온갖 맛 젤리는 눈에 띄는 예외로, 그 맛은 감탄스러운 것부터 솔직히 유감스러운 것까지 두루 걸쳐 있다. 늘 유쾌함을 잃지 않는 과자 장인인 봇은 원칙에 따라, 새 맛이 허니듀크스의 진열대에 오르기 전에 하나도 빠짐없이 손으로 쓴 장부에 적어 둔다. 그다지 운이 좋지 못한 맛에는 작은 가위표가 슬며시 붙어 있다.",
    "keys": {
     "to the letter": "글자 그대로, 한 치도 어김없이",
     "As a matter of principle": "원칙상, 원칙에 따라"
@@ -383,15 +383,15 @@
   "away": [
    {
     "en": "Bertie Bott is seeking a flavour nobody has thought of, and expects to find several.",
-    "ko": "버티 보트는 아직 아무도 생각해 내지 못한 맛을 찾는 중인데, 몇 가지쯤은 찾아낼 것이라 자신한다."
+    "ko": "버티 봇은 아직 아무도 생각해 내지 못한 맛을 찾는 중인데, 몇 가지쯤은 찾아낼 것이라 자신한다."
    },
    {
     "en": "Bertie Bott has had to lie down after a flavour that will never reach the shelves.",
-    "ko": "버티 보트는 결코 진열대에 오르지 못할 맛을 하나 본 뒤라 잠시 누워 있다."
+    "ko": "버티 봇은 결코 진열대에 오르지 못할 맛을 하나 본 뒤라 잠시 누워 있다."
    },
    {
     "en": "Bertie Bott is delivering a batch to Honeydukes, where the staff have learnt not to ask.",
-    "ko": "버티 보트는 허니듀크스에 새로 만든 젤리를 배달하러 갔는데, 그 가게 점원들은 무슨 맛인지 묻지 않는 법을 익혔다."
+    "ko": "버티 봇은 허니듀크스에 새로 만든 젤리를 배달하러 갔는데, 그 가게 점원들은 무슨 맛인지 묻지 않는 법을 익혔다."
    }
   ]
  },
