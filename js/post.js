@@ -360,6 +360,16 @@ export function announce(type, deck = '', once = ''){
 }
 
 /* app start (and back online): open the post office if this phone is in a group */
+/* A Chocolate Frog that came with a letter while this phone still ran a version from before the frog cards (before
+   he-2026-10-19d) was kept as a plain sweet and never opened, so its card never came (2026-10-20: two friends of the maker,
+   on 17c and an older cached copy, got frogs and no card — and no card drawer). The frog is still on the letter: opened now,
+   once, as takeIn would have opened it. A card sent on its own to such a phone is lost (the old version dropped it). */
+export function openOldFrogs(){
+  const fr = f(); let n = 0;
+  for (const m of fr.mail || []) if (m.to === fr.uid && m.x && m.x.gift === 'choc-frog' && !m.fc){ m.fc = [{...frogs.draw(), frog: true}]; n++; }
+  if (n) store.save();
+  return n;
+}
 export function start(){
   const fr = f();
   if (!inGroup() || fr.practice) return;

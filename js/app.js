@@ -45,6 +45,7 @@ import * as grammar from './grammar.js';
 import {$$, wait, closeSheet, isSheetOpen} from './ui.js';
 
 store.load();
+try { post.openOldFrogs(); } catch (e){}   // a Chocolate Frog an older version left unopened in a friend's letter (post.js)
 
 /* plain ' and " in everything shown become proper curled marks (quotes.js) — the display face draws the plain ones as closing marks */
 smartQuotes();
