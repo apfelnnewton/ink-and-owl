@@ -9,6 +9,7 @@
    Answers are kept with the example book's (state.exs[deck]: done, miss), so a sentence missed here is in "다시 볼 예문".
    state.manor's `copy` = {d: day, l: Lucius's rounds today, b: hers} */
 import * as store from './store.js';
+import {askable, choices as pickChoices} from './exchoice.js';
 import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as manor from './manor.js';
@@ -48,8 +49,10 @@ async function entries(app){
     try { [cards, ex] = await Promise.all([app.loadDeck(d.id), app.loadExamples(d.id)]); } catch (e){ continue; }
     const learnt = store.deck(d.id).cards;
     for (const c of cards || []) if (learnt[c.id]) (c.bre || []).forEach((b, k) => {
-      const key = `${c.id}#${k}`, items = ((ex[key] && ex[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`, expr: b.expr, deck: d.id, key}));
-      if (items.length) out.push({key, deck: d.id, expr: b.expr.toLowerCase(), items});
+      const key = `${c.id}#${k}`, slot = ex[key] && ex[key].slot;
+      /* a form of address is not asked (exchoice.js askable, 2026-10-20) */
+      const items = ((ex[key] && ex[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`, expr: b.expr, deck: d.id, key, slot})).filter(it => askable(b.kind, it));
+      if (items.length) out.push({key, deck: d.id, expr: b.expr.toLowerCase(), kind: b.kind, slot, items});
     });
   }
   return out;
@@ -64,20 +67,9 @@ function pickTen(){
   for (const it of items){ const k = it.expr.toLowerCase(); if (seen.has(k)) continue; seen.add(k); out.push(it); if (out.length >= PER) break; }
   return shuffle(out);
 }
-/* the four choices: the answer, a near miss of its form, two other expressions learnt (any room), in the answer's case */
-function choices(it){
-  const low = s => s.toLowerCase().trim(), taken = new Set([low(it.blank)]);
-  const near = shuffle(it.options || []).find(o => !taken.has(low(o))); if (near) taken.add(low(near));
-  const out = [it.blank, ...(near ? [near] : [])];
-  const cap = /^[A-Z]/.test(it.blank), fit = b => cap ? b[0].toUpperCase() + b.slice(1) : /^[A-Z]/.test(b) ? '' : b;
-  for (const e of shuffle(ALL.filter(e => e.expr !== it.expr.toLowerCase()))){
-    if (out.length >= 4) break;
-    const f = shuffle(e.items).map(x => fit(x.blank)).find(b => b && !taken.has(low(b)));
-    if (f){ out.push(f); taken.add(low(f)); }
-  }
-  for (const o of it.options || []) if (out.length < 4 && !taken.has(low(o))){ out.push(o); taken.add(low(o)); }
-  return shuffle(out);
-}
+/* the four choices (exchoice.js): the answer, a near miss of its form, two other expressions learnt (any room) that fit the same
+   place in the sentence, in the answer's case */
+const choices = it => pickChoices(it, [ALL.filter(e => e.expr !== it.expr.toLowerCase())]);
 const HEAD = {lucius: ['편지 정서', '루시우스의 서재'], bella: ['불러 주는 문장', '응접실']};
 
 /* the way in, from the room's card (manor.js): a round, or — the day's rounds done — the word that says so */

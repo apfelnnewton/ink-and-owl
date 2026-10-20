@@ -18,6 +18,7 @@ import * as bond from './bond.js';
 import * as doors from './doors.js';
 import {DECKS, byId, SPEAKERS} from './decks.js';
 import {$, esc, toast, openSheet, reduced} from './ui.js';
+import {askable} from './exchoice.js';   // examples that may be asked (2026-10-20)
 
 /* ---------- the twenty hidden things */
 export const OBJECTS = [
@@ -168,7 +169,7 @@ async function survey(app){
       const x = cs[c.id]; if (!usable(c) || !x) continue;
       learnt++;
       if (x.d <= t) due.push({d, c, x});
-      if ((x.m || 0) >= 2 && c.bre.some((b, k) => ex[`${c.id}#${k}`] && ex[`${c.id}#${k}`].items && ex[`${c.id}#${k}`].items.length)) weak.push({d, c, x});
+      if ((x.m || 0) >= 2 && c.bre.some((b, k) => ex[`${c.id}#${k}`] && ex[`${c.id}#${k}`].items && ex[`${c.id}#${k}`].items.some(it => askable(b.kind, it, ex[`${c.id}#${k}`].slot)))) weak.push({d, c, x});
       if (x.i > srs.MASTERED) mastered.push({d, c, x});
       if (c.cue && c.cue_speaker && !c.prev_line && !c.minimal) cues.push({d, c, x});
     }
@@ -203,9 +204,10 @@ export function startRound(app, sv, form, only){
        own) instead of the line itself — can it still be used, not just recited. A miss sends the line back to be
        learnt, as before. */
     picked.forEach(({d, c}) => {
-      const exs = app.examples[d.id] || {}, ks = c.bre.map((b, k) => k).filter(k => { const e = exs[`${c.id}#${k}`]; return e && e.items && e.items.length; });
+      const exs = app.examples[d.id] || {}, asks = k => { const e = exs[`${c.id}#${k}`]; return e && e.items ? e.items.map((it, i) => ({it, i})).filter(x => askable(c.bre[k].kind, x.it, e.slot)) : []; };
+      const ks = c.bre.map((b, k) => k).filter(k => asks(k).length);
       if (!ks.length) return;
-      const k = ks[hash(t + c.id + 'k') % ks.length], e = exs[`${c.id}#${k}`], fresh = e.items.length > 2 ? e.items.slice(2) : e.items;
+      const k = ks[hash(t + c.id + 'k') % ks.length], e = exs[`${c.id}#${k}`], all = asks(k), later = all.filter(x => x.i >= 2), fresh = (later.length ? later : all).map(x => x.it);
       ex[`${d.id}/${c.id}`] = {...fresh[hash(t + c.id + n) % fresh.length], expr: e.expr};
     });
   }
@@ -215,7 +217,7 @@ export function startRound(app, sv, form, only){
     for (const {d, c} of weak){
       const exs = app.examples[d.id] || {};
       c.bre.forEach((b, k) => { const e = exs[`${c.id}#${k}`]; if (!e || !e.items) return;
-        shuffled(e.items, t + c.id + k).slice(0, 3).forEach((it, j) => { if (queue.length >= 10) return; const q = `${d.id}/${c.id}/${k}.${j}`; queue.push(q); ex[q] = {...it, expr: e.expr}; }); });
+        shuffled(e.items.filter(it => askable(b.kind, it, e.slot)), t + c.id + k).slice(0, 3).forEach((it, j) => { if (queue.length >= 10) return; const q = `${d.id}/${c.id}/${k}.${j}`; queue.push(q); ex[q] = {...it, expr: e.expr}; }); });
       if (queue.length >= 10) break;
     }
   }

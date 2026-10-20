@@ -6,6 +6,7 @@
 import {DECKS, LOCKED, byId, homeOf} from './decks.js';
 import {available} from './doors.js';   // availableDecks: the fire and the manor join the row once they have opened
 import * as store from './store.js';
+import {askable, choices as pickChoices} from './exchoice.js';
 import * as grammar from './grammar.js';
 import * as exams from './exams.js';
 import * as srs from './srs.js';
@@ -35,7 +36,9 @@ export function initNotes(app){
     entries = [];
     cards.forEach(c => c.bre.forEach((b, k) => {
       const key = `${c.id}#${k}`;
-      entries.push({key, b, card: c, open: !!learnt[c.id], group: group(b.kind), items: ((examples[key] && examples[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`}))});
+      const slot = examples[key] && examples[key].slot, items = ((examples[key] && examples[key].items) || []).map((it, i) => ({...it, tag: `${key}.${i}`, slot}));
+      /* items: every example, to read on the expression's slip; asks: the ones asked in practice (a form of address is not — exchoice.js) */
+      entries.push({key, b, card: c, open: !!learnt[c.id], group: group(b.kind), kind: b.kind, slot, items, asks: items.filter(it => askable(b.kind, it))});
     }));
   }
   function draw(){
@@ -44,7 +47,7 @@ export function initNotes(app){
       (!term || [e.b.expr, e.b.kind, e.b.note, e.card.line, e.card.ko].some(t => t && t.toLowerCase().includes(term))));
     const open = entries.filter(e => e.open).length;
     $('#notesCount').textContent = `${open} / ${entries.length}`;
-    const starred = entries.filter(e => st[e.key] && e.open && e.items.length);
+    const starred = entries.filter(e => st[e.key] && e.open && e.asks.length);
     drill.hidden = !starred.length;
     drill.textContent = `★ 별표 표현 섞어서 연습 (${Math.min(10, starred.length * 10)}문제)`;
     if (!shown.length){ list.innerHTML = `<p class="n-empty">${onlyStars ? '별표한 표현이 아직 없습니다.' : '찾는 표현이 없습니다.'}</p>`; return; }
@@ -90,30 +93,18 @@ export function initNotes(app){
     /* a day's group mixes in three sentences of expressions learnt on other days (2026-10-19 user, 다): the answer is then
        not always one of that day's expressions, and the older ones come round now and then */
     let others = [];
-    if (gid && gid !== 'miss') others = least(entries.filter(e => e.open && !same.has(e.key)).flatMap(e => e.items.map(it => ({...it, expr: e.b.expr})))).slice(0, 3);
+    if (gid && gid !== 'miss') others = least(entries.filter(e => e.open && !same.has(e.key)).flatMap(e => e.asks.map(it => ({...it, expr: e.b.expr})))).slice(0, 3);
     const items = [...least(pool).slice(0, 10 - others.length), ...others];
     run = {items: shuffle(items), k: 0, right: 0, wrong: [], gid, same};
     ask();
   }
   /* the four choices (2026-10-19 user, 가): the answer, one near miss of its form (written with the example), and two other
      expressions learnt — that day's first, then the professor's others — each in the form one of its own examples uses.
-     Every choice is then an expression the learner knows: the sentence has to be read to choose */
+     Every choice is then an expression the learner knows: the sentence has to be read to choose — and since 2026-10-20 it fits the
+     same place in the sentence, so that grammar alone does not choose (exchoice.js) */
   function choices(it){
-    const key = it.tag ? it.tag.replace(/\.\d+$/, '') : '', low = s => s.toLowerCase().trim(), taken = new Set([low(it.blank)]);
-    const near = shuffle(it.options || []).find(o => !taken.has(low(o))); if (near) taken.add(low(near));
-    const out = [it.blank, ...(near ? [near] : [])];
-    /* a choice borrowed from another expression takes the answer's first letter case — a gap at the start of a sentence
-       must not be given away by being the only capital (and a capitalised title such as "Mr" is not offered for a gap
-       in mid-sentence) */
-    const cap = /^[A-Z]/.test(it.blank), fit = b => cap ? b[0].toUpperCase() + b.slice(1) : /^[A-Z]/.test(b) ? '' : b;
-    const open = entries.filter(e => e.open && e.key !== key && e.items.length);
-    for (const e of [...shuffle(open.filter(e => run.same && run.same.has(e.key))), ...shuffle(open.filter(e => !(run.same && run.same.has(e.key))))]){
-      if (out.length >= 4) break;
-      const f = shuffle(e.items).map(x => fit(x.blank)).find(b => b && !taken.has(low(b)));
-      if (f){ out.push(f); taken.add(low(f)); }
-    }
-    for (const o of it.options || []) if (out.length < 4 && !taken.has(low(o))){ out.push(o); taken.add(low(o)); }   // a professor with few expressions learnt
-    return shuffle(out);
+    const key = it.tag ? it.tag.replace(/\.\d+$/, '') : '', open = entries.filter(e => e.open && e.key !== key && e.asks.length).map(e => ({...e, items: e.asks}));
+    return pickChoices(it, [open.filter(e => run.same && run.same.has(e.key)), open.filter(e => !(run.same && run.same.has(e.key)))]);
   }
   function ask(){
     const it = run.items[run.k], at = it.en.indexOf(it.blank);
@@ -145,7 +136,7 @@ export function initNotes(app){
         : `<button type="button" class="sh-drill" data-again="1">같은 범위로 다시</button>`));
   }
   const filled = it => { const at = it.en.indexOf(it.blank); return at < 0 ? esc(it.en) : esc(it.en.slice(0, at)) + `<b>${esc(it.blank)}</b>` + esc(it.en.slice(at + it.blank.length)); };
-  const pool = keys => entries.filter(e => keys.includes(e.key)).flatMap(e => e.items.map(it => ({...it, expr: e.b.expr})));
+  const pool = keys => entries.filter(e => keys.includes(e.key)).flatMap(e => e.asks.map(it => ({...it, expr: e.b.expr})));
   let lastKeys = [];
 
   /* ---------- the example book (2026-10-19 user): the examples of the expressions learnt, grouped by the day their line was
@@ -154,16 +145,16 @@ export function initNotes(app){
      ten examples) and a round of ten, then ten more */
   const learntOn = e => ((store.deck(deck.id).cards[e.card.id] || {}).ld) || '';
   function groups(){
-    const open = entries.filter(e => e.open && e.items.length), days = {};
+    const open = entries.filter(e => e.open && e.asks.length), days = {};
     for (const e of open){ const d = learntOn(e) || 'old'; (days[d] = days[d] || []).push(e); }
     return days;
   }
-  const missItems = () => { const m = X().miss; return entries.filter(e => e.open).flatMap(e => e.items.filter(it => m[it.tag]).map(it => ({...it, expr: e.b.expr}))); };
+  const missItems = () => { const m = X().miss; return entries.filter(e => e.open).flatMap(e => e.asks.filter(it => m[it.tag]).map(it => ({...it, expr: e.b.expr}))); };
   const groupName = gid => gid === 'miss' ? '다시 볼 예문' : gid === 'old' ? '그 전에 배운 표현' : `${srs.dayLabel(gid)}에 배운 표현`;
-  const groupPool = gid => gid === 'miss' ? missItems() : (groups()[gid] || []).flatMap(e => e.items.map(it => ({...it, expr: e.b.expr})));
+  const groupPool = gid => gid === 'miss' ? missItems() : (groups()[gid] || []).flatMap(e => e.asks.map(it => ({...it, expr: e.b.expr})));
   function book(){
     const days = groups(), keys = Object.keys(days).filter(d => d !== 'old').sort().reverse(), miss = missItems(), done = X().done;
-    const row = (gid, list) => { const n = list.reduce((s, e) => s + e.items.length, 0), seen = list.reduce((s, e) => s + e.items.filter(it => done[it.tag]).length, 0);
+    const row = (gid, list) => { const n = list.reduce((s, e) => s + e.asks.length, 0), seen = list.reduce((s, e) => s + e.asks.filter(it => done[it.tag]).length, 0);
       return `<li><button type="button" class="ex-g" data-exg="${gid}"><b>${esc(groupName(gid))}</b><span>표현 ${list.length}개 · 예문 ${n}개${seen ? ` · 푼 예문 ${seen}` : ''}</span></button></li>`; };
     if (!keys.length && !days.old){ toast('아직 배운 표현이 없습니다.'); return; }
     openSheet(`<div class="sh-kind"><span>${esc(deck.ko)}</span></div><h2 class="sh-expr" id="shTitle">예문 연습장</h2>` +
@@ -246,7 +237,7 @@ export function initNotes(app){
     if (!pick.length){ toast('아직 배운 표현이 없습니다.'); return; }
     pick = pick.slice(0, 40);
     const key = [];
-    const qs = pick.flatMap(e => e.items.slice(2, 4)).map((it, n) => {
+    const qs = pick.flatMap(e => e.asks.slice(2, 4)).map((it, n) => {
       const at = it.en.indexOf(it.blank), opts = shuffle([it.blank, ...it.options]);
       key.push(`${n + 1}. ${String.fromCharCode(97 + opts.indexOf(it.blank))}) ${esc(it.blank)}`);
       return `<li><p class="pq">${esc(it.en.slice(0, at))}<span class="gap"></span>${esc(it.en.slice(at + it.blank.length))}</p>` +

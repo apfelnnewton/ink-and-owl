@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-20g';
+const VERSION = 'he-2026-10-20h';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -243,6 +243,7 @@ const CORE = [
   'assets/keepsakes/bellatrix-K10.webp',
   'js/manor.js',
   'js/copywork.js',
+  'js/exchoice.js',
   'bond/copywork.json',
   'data/sirius.json',
   'data/lucius.json',
