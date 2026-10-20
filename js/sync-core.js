@@ -64,14 +64,21 @@ export function makeSync({store, server, device = () => '', part = 800000, plain
       const before = now();
       let dirty = before !== c.hash;
       const hs = await F.getDoc(F.doc(db, 'sync', 'head')); head = hs.exists() ? hs.data() : null;
+      const filled = o => Object.keys(o || {}).filter(k => o[k] != null);
+      if (!first && !c.parts) c.rev = '';   // not yet known which parts the copy holds (a device from before 2026-10-20j): read it once more
       if (head && head.rev !== c.rev){
         const parts = await Promise.all(Array.from({length: head.n}, (_, i) => F.getDoc(F.doc(db, 'sync', 'p' + i))));
         if (parts.some(p => !p.exists() || p.data().rev !== head.rev)) throw new Error('torn');   // read between another device's writes: next time
         const text = await unpack(head.z, parts.map(p => p.data().d).join(''));
         store.mergeData(text);   // an empty copy is refused there and changes nothing
         if (store.mergedByJoining()) dirty = true;   // two copies of something were joined: the other device has not seen the result
+        let got = null; try { got = JSON.parse(text); } catch (e){}
+        if (got) c.parts = filled(got);
         c.rev = head.rev; out.pulled = true; out.changed = now() !== before;
       }
+      /* the copy lacks a whole part this device holds (2026-10-20: a laptop still on the old code sent a copy without the friends'
+         group; the phone, with nothing new of its own, only received from then on, so the group never reached the server again) */
+      if (!dirty && head && c.parts && filled(store.syncable()).some(k => !c.parts.includes(k))) dirty = true;
       if (first){ const stamp = s.stamp || (s.stamp = {}); for (const k of KEYS) if (!stamp[k]) stamp[k] = 1; }   // from here on, changes are told apart by their stamps
       if (dirty || !head || first){
         const text = JSON.stringify(store.syncable()), p = await pack(text), size = p.z ? part : plain, n = Math.max(1, Math.ceil(p.body.length / size));
@@ -81,7 +88,7 @@ export function makeSync({store, server, device = () => '', part = 800000, plain
         const h = {rev, n, z: p.z, size: p.body.length, at: F.serverTimestamp(), by: uid, dev: String(device() || '').slice(0, 20)};
         batch.set(F.doc(db, 'sync', 'head'), h);
         await batch.commit();
-        c.rev = rev; c.size = p.body.length; head = {...h, at: null, mine: true}; out.pushed = true;
+        c.rev = rev; c.size = p.body.length; c.parts = filled(store.syncable()); head = {...h, at: null, mine: true}; out.pushed = true;
       }
       c.hash = now(); c.k = marks(); c.at = Date.now(); delete c.err;
       store.save();
