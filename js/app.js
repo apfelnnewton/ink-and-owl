@@ -23,6 +23,7 @@ import {initExam} from './exam.js';
 import {initMap} from './map.js';
 import {initFire} from './fire.js';
 import {initManor} from './manor.js';
+import {initCopywork} from './copywork.js';
 import {initTown} from './shops.js';
 import * as census from './census.js';
 import * as sync from './sync.js';
@@ -126,6 +127,7 @@ const app = {
 };
 
 const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), potion: initPotion(app), exam: initExam(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
+initCopywork(app);   // the manor's example work (copywork.js): its sheet's buttons
 bond.init(app);
 grammar.init(app);
 /* the first professor's letter and the first request: Dumbledore's note (after the lesson, if one is on) */

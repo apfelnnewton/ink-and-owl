@@ -17,6 +17,7 @@ import * as doors from './doors.js';
 import * as wand from './wand.js';
 import {floo} from './fire.js';
 import * as bella from './bella.js';
+import * as copy from './copywork.js';
 import {makeTalk} from './talk.js';
 import * as exams from './exams.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
@@ -193,7 +194,7 @@ export function initManor(app){
     $('#mnLine').innerHTML = line; $('#mnLine').hidden = !line;
     $('#mnGo').innerHTML = (done ? (g.seen ? go('더 도전 · 배운 대사 10문제', `data-to="#/room/${ID}/extra"`) : '') : go('일 시작하기', `data-to="#/room/${ID}"`)) +
       (w ? `<button type="button" class="clink" data-to="#/report/${ID}">오늘 한 일 보기</button>` : '') +
-      (g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : '') + testLine(ID, done);
+      (g.seen ? `<button type="button" class="clink" data-to="#/notes/${ID}/here">표현 노트</button>` : '') + copyLine('lucius') + testLine(ID, done);
     spots({cabinet: scrap() ? '쪽지' : ready.length ? '검수' : '', salver: w ? `${w.s}시클` : ''});
     bringOut(objs);
   }
@@ -212,6 +213,8 @@ export function initManor(app){
       `<button type="button" class="sh-drill" data-go="#/room/${ID}">일 시작하기</button>`);
   }
 
+  /* the example work (copywork.js, 2026-10-20): a line on each room's card once any expression has been learnt */
+  const copyLine = who => !copy.any() ? '' : `<button type="button" class="clink" data-copy="${who}">${who === 'lucius' ? '편지 정서' : '불러 주는 문장'} · 예문 10문제 <small>${copy.left(who) ? `오늘 ${copy.left(who)}번 남음` : '오늘은 끝'}</small></button>`;
   /* the manor's word tests (exams.js, manortest.js): once due, a line on the card — after the day's work, as a lesson's paper is */
   function testLine(id, done){
     const words = app.words[id];
@@ -250,7 +253,7 @@ export function initManor(app){
     /* Occlumency is taught in this room: once her note about it has come, the way in is here too */
     const sps = store.get().spells || {};
     const oc = (sps.sent || {}).occlumency ? `<button type="button" class="clink" data-to="#/spell/occlumency">${(sps.learnt || {}).occlumency ? '마음 닫기 · 문을 다시 닫아 본다' : '마음 닫기 · 그녀에게 배운다'}</button>` : '';
-    put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : '') + testLine(BID, done));
+    put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : '') + copyLine('bella') + testLine(BID, done));
   }
 
   /* the glass cabinet: the seven objects, each with how far its cleaning has come */
@@ -302,6 +305,7 @@ export function initManor(app){
     if (e.target.closest('[data-shut]')){ shut(); return; }
     if (e.target.closest('[data-bbeat]')){ if (bbeat < bella.firstWords().length - 1) bbeat++; else bella.sit(); draw(); return; }
     if (e.target.closest('[data-btalk]')){ talk.start(() => draw()); return; }
+    const cw = e.target.closest('[data-copy]'); if (cw){ copy.open(cw.dataset.copy, app, () => { if (!sec.hidden) draw(); }); return; }
     const to = e.target.closest('[data-to]'); if (to) app.go(to.dataset.to);
   });
   $('#mnSpots').addEventListener('click', e => {

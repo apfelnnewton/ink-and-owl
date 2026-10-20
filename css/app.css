@@ -2626,3 +2626,7 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .ow-with .fc-card.mini img{filter:none}
 .lt-thing .fc-card .fc-name{font:italic 600 7.2cqw/1.1 var(--f-display);color:#33240f}
 .lt-thing .fc-card .fc-name.long{font-size:5cqw}
+/* the manor's example work (copywork.js): the speaker's word above the sentence */
+.cw-top{flex:none}   /* the sheet is a flex column: without this the word above was squeezed to nothing once the sheet overflowed */
+.cw-say{margin:4px 0 10px}
+.clink small{margin-left:6px;font-size:.85em;opacity:.75}

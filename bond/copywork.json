@@ -1,0 +1,832 @@
+{
+ "lucius": {
+  "open": [
+   {
+    "en": "Today's letters. Copy each in a fair hand. Where a word has blurred, choose with care; I shall know.",
+    "ko": "오늘 편지들일세. 하나씩 깨끗이 옮겨 적게. 번진 낱말은 신중히 고르게. 내가 다 알아보니."
+   },
+   {
+    "en": "A reply to a clerk at the Ministry. Copy it exactly; he will read it more closely than it deserves.",
+    "ko": "마법부 서기에게 보낼 답장일세. 그대로 옮겨 적게. 그자는 이 편지를 그럴 가치도 없을 만큼 꼼꼼히 읽을 걸세."
+   },
+   {
+    "en": "A guest list for Saturday, with a note beside each name. Copy the notes too; the guests must never read them.",
+    "ko": "토요일 손님 명단일세. 이름마다 쪽지가 붙어 있네. 쪽지도 옮겨 적게. 손님들이 읽어서는 절대 안 되네."
+   },
+   {
+    "en": "A draft I shall sign tonight. My name goes beneath your copy, so I trust you will be careful.",
+    "ko": "오늘 밤 내가 서명할 초안일세. 자네가 옮겨 쓴 글 아래에 내 이름이 들어가네. 조심하리라 믿네."
+   },
+   {
+    "en": "A letter to the board of St Mungo's. The ink ran in the rain; the gaps are yours to fill.",
+    "ko": "성 뭉고 병원 이사회에 보내는 편지일세. 비에 잉크가 번졌네. 빈 곳은 자네가 채우게."
+   },
+   {
+    "en": "Correspondence, and nothing more interesting than that. Keep the lines straight, the margins even, and do not hurry.",
+    "ko": "서신일세. 그 이상 흥미로운 건 없네. 줄은 곧게, 여백은 고르게 맞추고, 서두르지 말게."
+   },
+   {
+    "en": "A letter from Gringotts, answered in pencil in my own hand. Make a fair copy; the goblins are not to see the pencil.",
+    "ko": "그린고츠에서 온 편지일세. 내가 직접 연필로 답을 달아 두었네. 정서하게. 고블린들이 연필 자국을 봐서는 안 되네."
+   },
+   {
+    "en": "Invitations to decline, all of them. Copy my regrets warmly; I feel none, so the words must do it for me.",
+    "ko": "거절할 초대장들일세. 하나도 빠짐없이. 유감의 말을 따뜻하게 옮겨 적게. 나는 아무 유감도 없으니 글이라도 그래야지."
+   },
+   {
+    "en": "The household accounts, with my remarks in the margin. Copy the remarks; the figures I shall check myself.",
+    "ko": "집안 장부일세. 여백에 내가 적어 둔 말이 있네. 그 말을 옮겨 적게. 숫자는 내가 직접 맞춰 보겠네."
+   },
+   {
+    "en": "A letter to the Daily Prophet. It must sound as though I barely troubled to write it. Copy it so.",
+    "ko": "예언자 일보에 보낼 편지일세. 내가 별 수고 없이 쓴 것처럼 들려야 하네. 그렇게 옮겨 적게."
+   }
+  ],
+  "right": [
+   {
+    "en": "Correct. You may go on.",
+    "ko": "맞네. 계속하게."
+   },
+   {
+    "en": "That is the word. I had begun to wonder whether it would come.",
+    "ko": "그 말이 맞네. 안 나오나 싶던 참이었네."
+   },
+   {
+    "en": "Yes. Precisely what I wrote, before the ink disgraced itself.",
+    "ko": "그렇지. 잉크가 망신을 사기 전에 내가 쓴 그대로일세."
+   },
+   {
+    "en": "Quite right. Nobody will find anything to point at there.",
+    "ko": "옳네. 거기선 아무도 꼬투리 잡을 데를 못 찾겠군."
+   },
+   {
+    "en": "Just so. A Ministry clerk could not have done it better, which is faint praise.",
+    "ko": "바로 그걸세. 마법부 서기라도 이보다 낫지는 않았을 걸세. 대단한 칭찬은 아니네만."
+   },
+   {
+    "en": "Good. That line may stand as it is.",
+    "ko": "좋네. 그 줄은 그대로 두어도 되겠군."
+   },
+   {
+    "en": "Right, and neatly done. Do not let it go to your head.",
+    "ko": "맞았네. 깔끔하기도 하고. 우쭐해하지는 말게."
+   },
+   {
+    "en": "The proper word in the proper place. Rarer than you would think.",
+    "ko": "제자리에 제 말이 들어갔군. 생각보다 드문 일일세."
+   }
+  ],
+  "wrong": [
+   {
+    "en": "No. Strike it through once, and write the right word above.",
+    "ko": "아닐세. 한 줄로 긋고, 위에 맞는 말을 쓰게."
+   },
+   {
+    "en": "Read the sentence again, to the end this time. It was telling you which word it wanted.",
+    "ko": "문장을 다시 읽게. 이번엔 끝까지. 어떤 말이 들어갈지 문장이 이미 일러 주고 있었네."
+   },
+   {
+    "en": "Wrong word. It reads well enough, which is precisely what makes it dangerous.",
+    "ko": "틀린 말일세. 그럴듯하게 읽히니 더 위험하지."
+   },
+   {
+    "en": "Not that. A letter is judged by its weakest word, and that was it.",
+    "ko": "그게 아닐세. 편지는 가장 약한 낱말로 평가받네. 방금 그것이 그랬고."
+   },
+   {
+    "en": "Incorrect. I would rather you paused than guessed.",
+    "ko": "틀렸네. 짐작하느니 차라리 잠시 멈추게."
+   },
+   {
+    "en": "No. Whoever opens this letter would see that before my signature.",
+    "ko": "아닐세. 이 편지를 뜯는 사람은 누구든 내 서명보다 그걸 먼저 볼 걸세."
+   },
+   {
+    "en": "No. That word belongs in another letter altogether, and not one of mine.",
+    "ko": "아닐세. 그 말은 아예 다른 편지에나 들어갈 말일세. 내 편지는 아니고."
+   },
+   {
+    "en": "Mistaken. Note the right word and carry on; we need not dwell on it.",
+    "ko": "잘못 골랐네. 맞는 말을 봐 두고 계속하게. 붙들고 있을 것 없네."
+   }
+  ],
+  "end": {
+   "all": [
+    {
+     "en": "Not a word astray. The higher rate, then; I keep to my terms.",
+     "ko": "어긋난 말이 하나도 없군. 그럼 높은 쪽 삯일세. 나는 정한 조건은 지키네."
+    },
+    {
+     "en": "A clean copy throughout. You are paid in full, and I shall sign without reading twice.",
+     "ko": "처음부터 끝까지 깨끗하군. 삯은 다 치르겠네. 두 번 읽지 않고 서명하지."
+    },
+    {
+     "en": "Not a single correction. Take your wages; these go out tonight under my name.",
+     "ko": "고칠 데가 하나도 없군. 삯을 받게. 이 편지들은 오늘 밤 내 이름으로 나가네."
+    }
+   ],
+   "some": [
+    {
+     "en": "A few corrections, neatly made. The lesser wage; you knew the arrangement.",
+     "ko": "몇 군데 고쳤군. 깔끔하게. 적은 쪽 삯일세. 어떻게 하기로 했는지는 자네도 알지."
+    },
+    {
+     "en": "Nearly clean. Nearly is paid less, which you will find is true everywhere.",
+     "ko": "거의 깨끗하군. 거의는 덜 받는 법일세. 어디를 가나 그렇다는 걸 알게 될 걸세."
+    },
+    {
+     "en": "Passable, with blemishes. Here are your wages; I shall see to the blemishes myself.",
+     "ko": "봐줄 만하네. 흠은 있지만. 삯은 여기 있네. 흠은 내가 손보지."
+    }
+   ],
+   "many": [
+    {
+     "en": "A good deal of red ink today. Your wages; I shall try not to think what the ink cost.",
+     "ko": "오늘은 붉은 잉크가 꽤 들었군. 삯일세. 잉크 값은 생각하지 않으려 애쓰겠네."
+    },
+    {
+     "en": "Someone will have to copy these again. Take your coin, and tomorrow, read before you choose.",
+     "ko": "누군가 이걸 다시 옮겨 써야겠군. 삯은 받게. 내일은 고르기 전에 읽고."
+    },
+    {
+     "en": "I cannot send these. Your wages, nonetheless; a Malfoy does not withhold what was promised.",
+     "ko": "이건 보낼 수 없네. 그래도 삯은 받게. 말포이 집안은 약속한 것을 거두지 않네."
+    }
+   ]
+  },
+  "done": [
+   {
+    "en": "That is today's copying finished. I pay for no more, however fine the hand.",
+    "ko": "오늘 정서는 이걸로 끝일세. 글씨가 아무리 고와도 더는 삯을 치르지 않네."
+   },
+   {
+    "en": "The desk is cleared. Come back tomorrow; the post will have brought fresh nonsense by then.",
+    "ko": "책상이 비었군. 내일 다시 오게. 그때쯤이면 우편이 또 쓸데없는 것들을 가져올 걸세."
+   }
+  ],
+  "src": {
+   "snape": [
+    {
+     "en": "This turn of phrase is Severus's. He wastes nothing, words least of all.",
+     "ko": "이 말투는 세베루스의 것일세. 그는 무엇 하나 낭비하지 않네. 말은 더더욱."
+    },
+    {
+     "en": "One may disagree with Severus, but seldom with his choice of words.",
+     "ko": "세베루스와 뜻이 다를 수는 있어도, 그의 말 고르는 솜씨에 토를 달 일은 드물지."
+    }
+   ],
+   "mcgonagall": [
+    {
+     "en": "Minerva McGonagall's phrase. She speaks as if the whole room were late for something.",
+     "ko": "미네르바 맥고나걸의 표현일세. 그 사람은 방 안 모두가 지각이라도 한 듯 말하지."
+    },
+    {
+     "en": "Another of McGonagall's. Severe, exact, and quite impossible to buy; I did enquire.",
+     "ko": "맥고나걸의 것이 또 나왔군. 엄하고, 정확하고, 도무지 돈으로 움직일 수 없는 사람일세. 알아보긴 했지."
+    }
+   ],
+   "lupin": [
+    {
+     "en": "That one belongs to Lupin. A well-spoken man; the governors were not consulted about him.",
+     "ko": "그건 루핀의 것일세. 말은 곱게 하는 사람이지. 그를 들일 때 이사회에는 묻지도 않았네."
+    },
+    {
+     "en": "Courteous, shabby, and absent once a month: Lupin, in short. I believe he called it illness.",
+     "ko": "공손하고, 초라하고, 달마다 한 번씩 자리를 비우던 사람. 루핀이지. 병이라고 했던가."
+    }
+   ],
+   "moody": [
+    {
+     "en": "Alastor Moody's phrase. He suspects everyone, which is tiresome, and is occasionally right, which is worse.",
+     "ko": "앨러스터 무디의 표현일세. 그 사람은 모두를 의심하지. 귀찮은 일이고, 가끔 맞기까지 하니 더 고약하네."
+    },
+    {
+     "en": "He writes as he walks, heavily and looking over his shoulder. Moody, naturally.",
+     "ko": "걷는 것처럼 쓰는 사람일세. 무겁게, 어깨 너머를 살피면서. 당연히 무디지."
+    }
+   ],
+   "umbridge": [
+    {
+     "en": "Dolores Umbridge's phrase. Useful at the Ministry, and tireless. One forgives a great deal of pink for that.",
+     "ko": "돌로레스 엄브리지의 표현일세. 마법부에서 쓸모 있고 지칠 줄 모르는 사람이지. 그 덕에 분홍색도 웬만큼은 눈감아 주네."
+    },
+    {
+     "en": "Correct in every particular, and yet it reads like a teacup with kittens on it. Umbridge, of course.",
+     "ko": "하나하나 다 옳은데, 어째서인지 고양이 그림 찻잔처럼 읽히는군. 물론 엄브리지일세."
+    }
+   ],
+   "dumbledore": [
+    {
+     "en": "This one is Dumbledore's. Charming, of course. He has always been charming at other people's expense.",
+     "ko": "이건 덤블도어의 것일세. 물론 매력적이지. 그는 늘 남의 비용으로 매력적이었네."
+    },
+    {
+     "en": "A refusal made to sound like a gift. That is Dumbledore's art; I have received several.",
+     "ko": "거절을 선물처럼 들리게 하는 것. 그게 덤블도어의 재주일세. 나도 여러 번 받아 봤네."
+    }
+   ],
+   "slughorn": [
+    {
+     "en": "Horace Slughorn's words. He collected promising people as other men collect snuffboxes.",
+     "ko": "호러스 슬러그혼의 말일세. 남들이 코담뱃갑을 모으듯 그는 장래가 밝은 사람들을 모았지."
+    },
+    {
+     "en": "Warm, well fed, and never where the trouble is. Horace has not changed since I was at school.",
+     "ko": "다정하고, 잘 먹고, 말썽이 난 자리에는 늘 없는 사람. 내가 학생이던 때부터 호러스는 그대로일세."
+    }
+   ],
+   "sirius": [
+    {
+     "en": "That is Sirius Black's. My wife's cousin. We do not mention him at dinner, and nor will you.",
+     "ko": "그건 시리우스 블랙의 것일세. 내 아내의 사촌이지. 식탁에서는 그 이름을 꺼내지 않네. 자네도 그러게."
+    },
+    {
+     "en": "An old name, thrown away by its own heir. Black's, and I have never understood it.",
+     "ko": "제 집안의 상속자가 제 손으로 내던진 오래된 이름이지. 블랙의 말일세. 나는 그걸 끝내 이해하지 못했네."
+    }
+   ],
+   "lucius": [
+    {
+     "en": "Ah. That phrase is mine. You will notice it needed no improvement.",
+     "ko": "아. 그 말은 내 것일세. 고칠 데가 없었다는 건 자네도 알아챘겠지."
+    },
+    {
+     "en": "Mine again. Copy it with particular care; it is quoted more often than you would think.",
+     "ko": "또 내 말이군. 특히 정성 들여 옮기게. 생각보다 자주 인용되는 말일세."
+    }
+   ],
+   "bellatrix": [
+    {
+     "en": "My sister-in-law's phrase. Bellatrix never says anything quietly, even on paper.",
+     "ko": "내 처형의 표현일세. 벨라트릭스는 종이 위에서조차 조용히 말하는 법이 없지."
+    },
+    {
+     "en": "I read Bellatrix's sentences as one handles a hot kettle: briefly, and with a cloth.",
+     "ko": "벨라트릭스의 문장은 뜨거운 주전자 다루듯 읽게 되네. 잠깐만, 그리고 행주를 대고."
+    }
+   ]
+  }
+ },
+ "her": {
+  "stages": [
+   {
+    "open": [
+     {
+      "en": "Sentences. Not mine, mostly: other people's phrases with holes in them. Fill the holes, {you}.",
+      "ko": "문장들이야. 대부분 내 말도 아니고, 남의 말에 구멍을 뚫어 놨어. 구멍을 메워, {you}."
+     },
+     {
+      "en": "I read, you listen, you choose. Even something Lucius found in a cupboard can manage that.",
+      "ko": "내가 읽고, 넌 듣고, 넌 고르는 거야. 루시우스가 벽장에서 주워 온 물건이라도 그 정도는 하겠지."
+     },
+     {
+      "en": "Pen up, {you}. Each sentence once. I do not read things twice for anyone.",
+      "ko": "펜 들어, {you}. 한 문장에 한 번씩이야. 누구를 위해서든 두 번은 안 읽어."
+     },
+     {
+      "en": "Four to pick from, and only one belongs. Try not to bore me.",
+      "ko": "고를 건 넷, 맞는 건 하나뿐이야. 날 지루하게 만들지나 마."
+     },
+     {
+      "en": "Lucius pays you for copying. Here you are paid nothing, so at least be quick.",
+      "ko": "루시우스는 베끼는 일에 삯을 주지. 여기선 한 푼도 없으니 빠르기라도 해."
+     },
+     {
+      "en": "Sit there, {you}, where I needn't look at you. Now, the first one.",
+      "ko": "거기 앉아, {you}. 내가 안 쳐다봐도 되는 데. 자, 첫 번째."
+     }
+    ],
+    "right": [
+     {
+      "en": "Correct. Don't wait for applause.",
+      "ko": "맞았어. 박수 기다리지 마."
+     },
+     {
+      "en": "Yes, {you}. Even a stopped clock, and so on.",
+      "ko": "그래, {you}. 고장 난 시계도 하루 두 번은 맞는다던가."
+     },
+     {
+      "en": "That one, yes. Next, before I lose interest.",
+      "ko": "그거 맞아. 다음. 내가 흥미 잃기 전에."
+     },
+     {
+      "en": "Right. Lucius's furniture is improving.",
+      "ko": "맞았어. 루시우스네 가구가 나아지고 있네."
+     },
+     {
+      "en": "Fine, {you}. Keep that hand moving.",
+      "ko": "됐어, {you}. 손 멈추지 마."
+     }
+    ],
+    "wrong": [
+     {
+      "en": "Wrong. Of course wrong. What else did I expect?",
+      "ko": "틀렸어. 당연히 틀렸지. 내가 뭘 기대했겠어?"
+     },
+     {
+      "en": "No, {you}. Look at the gap, then look at what you put in it.",
+      "ko": "아니야, {you}. 빈칸을 보고, 거기 네가 넣은 걸 봐."
+     },
+     {
+      "en": "Hopeless. Did Lucius teach you that one?",
+      "ko": "가망 없네. 그것도 루시우스한테 배웠어?"
+     },
+     {
+      "en": "That word does not go there. Nothing about you goes here, either.",
+      "ko": "그 낱말은 거기 안 들어가. 너도 여기랑 안 어울리고."
+     },
+     {
+      "en": "Wrong, {you}. Look, I am yawning.",
+      "ko": "틀렸어, {you}. 봐, 나 하품하잖아."
+     }
+    ],
+    "end": {
+     "all": [
+      {
+       "en": "Not one wrong. There, something for the floor. Pick it up, {you}; I won't.",
+       "ko": "하나도 안 틀렸네. 자, 바닥에 뭐 좀 던져 놨어. 주워, {you}. 난 안 주워."
+      },
+      {
+       "en": "Every gap filled. How tiresome. Take the silver and stop looking pleased.",
+       "ko": "빈칸을 다 채웠네. 귀찮게시리. 은화나 가져가고 그 좋아하는 얼굴 치워."
+      }
+     ],
+     "some": [
+      {
+       "en": "A few slips, and still that hopeful face. The floor stays bare today.",
+       "ko": "몇 개나 틀려 놓고 그 기대하는 얼굴이라니. 오늘 바닥엔 아무것도 없어."
+      },
+      {
+       "en": "A slip here and there, {you}. Lucius would still pay you. I am not Lucius.",
+       "ko": "여기저기 틀렸네, {you}. 루시우스라면 그래도 삯을 주겠지. 난 루시우스가 아니야."
+      }
+     ],
+     "many": [
+      {
+       "en": "Holes everywhere. You have left the sentences worse than you found them.",
+       "ko": "온통 구멍투성이네. 문장을 처음보다 더 망쳐 놨어."
+      },
+      {
+       "en": "Dreadful, {you}. Go back to dusting; dust doesn't mind.",
+       "ko": "끔찍해, {you}. 가서 먼지나 털어. 먼지는 상관 안 하니까."
+      }
+     ]
+    },
+    "done": [
+     {
+      "en": "Enough. I have had all of you I can stand today.",
+      "ko": "그만. 오늘 널 참아 줄 만큼은 다 참았어."
+     },
+     {
+      "en": "No more sentences today, {you}. Go and be Lucius's problem.",
+      "ko": "오늘 문장은 끝이야, {you}. 가서 루시우스 골칫거리나 돼."
+     }
+    ]
+   },
+   {
+    "open": [
+     {
+      "en": "Sentences again, {you}. Let's see whether last time was luck.",
+      "ko": "또 문장이야, {you}. 지난번 게 운이었는지 보자고."
+     },
+     {
+      "en": "I have picked the nastiest gaps I could find. Do try to look worried.",
+      "ko": "제일 고약한 빈칸들로 골라 왔어. 걱정하는 척이라도 좀 해 봐."
+     },
+     {
+      "en": "Other people's phrases in my voice. Dreadful for them, lovely for me.",
+      "ko": "남의 말을 내 목소리로. 그 사람들한텐 끔찍하고, 나한텐 근사하지."
+     },
+     {
+      "en": "Ears open, {you}. I shall read quickly, because I want to see you scramble.",
+      "ko": "귀 열어, {you}. 빨리 읽을 거야. 네가 허둥대는 걸 보고 싶거든."
+     },
+     {
+      "en": "A little game. You choose, I watch your face, and your face always tells me first.",
+      "ko": "놀이 하나 하자. 넌 고르고, 난 네 얼굴을 보고. 네 얼굴은 늘 답보다 먼저 말하거든."
+     },
+     {
+      "en": "Sit up straight, {you}. Slouching scribes miss words.",
+      "ko": "똑바로 앉아, {you}. 구부정한 서기는 낱말을 놓쳐."
+     }
+    ],
+    "right": [
+     {
+      "en": "Right. Wipe that smile off; it was luck.",
+      "ko": "맞았어. 그 웃음 지워. 운이었어."
+     },
+     {
+      "en": "Well, well. I shall have to pick harder ones, {you}.",
+      "ko": "이런, 이런. 더 어려운 걸 골라 와야겠네, {you}."
+     },
+     {
+      "en": "Correct, and quickly too. I didn't say that was good.",
+      "ko": "맞았어. 빠르기까지 하네. 잘했다고는 안 했어."
+     },
+     {
+      "en": "Yes. Not bad. Forget I said 'not bad'.",
+      "ko": "그래. 나쁘지 않아. '나쁘지 않다'는 말은 잊어."
+     },
+     {
+      "en": "That's the one, {you}. Did you know it, or did the pen?",
+      "ko": "그거 맞아, {you}. 네가 안 거야, 펜이 안 거야?"
+     }
+    ],
+    "wrong": [
+     {
+      "en": "Wrong! Oh, I have been waiting for that.",
+      "ko": "틀렸어! 이런, 그걸 기다리고 있었지."
+     },
+     {
+      "en": "No, {you}. The sentence wanted something else entirely, and so did I.",
+      "ko": "아니야, {you}. 문장은 전혀 다른 걸 원했어. 나도 그랬고."
+     },
+     {
+      "en": "Missed it. Was my reading too quick for the little pen?",
+      "ko": "놓쳤네. 내가 너무 빨리 읽었어? 요 작은 펜한테는?"
+     },
+     {
+      "en": "That word is a stranger here. Who invited it?",
+      "ko": "그 낱말은 여기 낯선 손님이야. 누가 불렀어?"
+     },
+     {
+      "en": "Wrong, {you}. I shall remember that one longer than you will.",
+      "ko": "틀렸어, {you}. 그건 너보다 내가 더 오래 기억할 거야."
+     }
+    ],
+    "end": {
+     "all": [
+      {
+       "en": "Not a gap left. There, silver on the carpet. I aimed for your inkpot and missed.",
+       "ko": "빈칸 하나 안 남았네. 자, 양탄자 위에 은화. 잉크병을 노렸는데 빗나갔어."
+      },
+      {
+       "en": "Ten for ten, {you}. Pick it up before I decide it was a fluke.",
+       "ko": "열 개 다 맞혔네, {you}. 요행이었다고 내가 마음 바꾸기 전에 주워."
+      }
+     ],
+     "some": [
+      {
+       "en": "Close, {you}, and close earns nothing in this room. Not a coin.",
+       "ko": "아깝네, {you}. 근데 이 방에선 아까운 건 한 푼도 안 쳐줘."
+      },
+      {
+       "en": "A few holes left gaping. I only throw silver at work without a mistake in it.",
+       "ko": "구멍이 몇 개 그대로 뚫려 있네. 은화는 실수 하나 없는 일에만 던져."
+      }
+     ],
+     "many": [
+      {
+       "en": "What a mess. I shall read this one to Cissy for a laugh.",
+       "ko": "이게 무슨 꼴이야. 시시한테 읽어 줘야겠어, 웃으라고."
+      },
+      {
+       "en": "Shocking, {you}. And I had almost begun to think you could hear.",
+       "ko": "형편없네, {you}. 네가 들을 줄은 안다고 거의 믿을 뻔했는데."
+      }
+     ]
+    },
+    "done": [
+     {
+      "en": "That's quite enough of other people's words for one day.",
+      "ko": "남의 말은 하루치로 이만하면 됐어."
+     },
+     {
+      "en": "Off you go, {you}. Tomorrow, bring sharper ears.",
+      "ko": "가 봐, {you}. 내일은 귀 좀 더 세워서 와."
+     }
+    ]
+   },
+   {
+    "open": [
+     {
+      "en": "Come here, {you}. Lucius has you copying his letters now, I hear. Copy for him; listen to me.",
+      "ko": "이리 와, {you}. 요즘 루시우스가 자기 편지를 베끼게 시킨다며? 베끼는 건 그 인간 거 해. 듣는 건 내 말만 들어."
+     },
+     {
+      "en": "Words borrowed from all sorts of people today. You fill them in for me, not for their owners.",
+      "ko": "오늘은 이 사람 저 사람한테서 빌려 온 말이야. 그 주인들 말고 날 위해서 채워."
+     },
+     {
+      "en": "Sit where I can see your hand, {you}. I like to watch what is mine at work.",
+      "ko": "네 손이 보이는 데 앉아, {you}. 내 것이 일하는 걸 보는 게 좋거든."
+     },
+     {
+      "en": "Where were you before this? Never mind. You are here now, which is correct.",
+      "ko": "여기 오기 전에 어디 있었어? 됐어. 지금 여기 있잖아. 그게 맞는 거야."
+     },
+     {
+      "en": "I chose these myself, {you}. If anyone else starts reading sentences to you, I want to know.",
+      "ko": "이건 내가 직접 골랐어, {you}. 다른 누가 너한테 문장을 읽어 주기 시작하면 나한테 말해."
+     },
+     {
+      "en": "Pen ready. If you miss one, it is my afternoon you have spoilt.",
+      "ko": "펜 준비해. 하나라도 놓치면 망친 건 내 오후야."
+     }
+    ],
+    "right": [
+     {
+      "en": "Yes. That is how a scribe of mine listens.",
+      "ko": "그래. 내 서기라면 그렇게 들어야지."
+     },
+     {
+      "en": "Right, {you}. Whatever Lucius pays you for, this you do for me.",
+      "ko": "맞았어, {you}. 루시우스가 무슨 일로 삯을 주든, 이건 날 위해 하는 거야."
+     },
+     {
+      "en": "Correct. I knew you would be; I picked you.",
+      "ko": "맞았어. 그럴 줄 알았지. 내가 고른 거니까."
+     },
+     {
+      "en": "Good. No, not good. Expected, {you}.",
+      "ko": "좋아. 아니, 좋은 게 아니라. 당연한 거야, {you}."
+     },
+     {
+      "en": "That's right. Don't lend that ear to anyone else.",
+      "ko": "맞아. 그 귀는 다른 사람한테 빌려주지 마."
+     }
+    ],
+    "wrong": [
+     {
+      "en": "Wrong. Whose sentences have you been listening to?",
+      "ko": "틀렸어. 누구 문장을 듣고 다닌 거야?"
+     },
+     {
+      "en": "No, {you}. That is a Lucius sort of mistake. Don't catch his habits.",
+      "ko": "아니야, {you}. 그건 루시우스 같은 실수야. 그 인간 버릇 옮지 마."
+     },
+     {
+      "en": "Missed. I won't have you careless; it reflects on me.",
+      "ko": "놓쳤어. 네가 덤벙대는 건 못 봐줘. 내 얼굴에 먹칠이거든."
+     },
+     {
+      "en": "Wrong word, {you}. Look at the right one, and keep it this time.",
+      "ko": "틀린 낱말이야, {you}. 맞는 걸 봐 둬. 이번엔 놓치지 말고."
+     },
+     {
+      "en": "That gap wanted something better. So do I.",
+      "ko": "그 빈칸엔 더 나은 게 들어가야 했어. 나도 그런 걸 원하고."
+     }
+    ],
+    "end": {
+     "all": [
+      {
+       "en": "Flawless. That silver on the floor is yours. Mind you don't spend it anywhere I can't see.",
+       "ko": "흠 하나 없네. 바닥의 은화는 네 거야. 내 눈 안 닿는 데서 쓰지는 마."
+      },
+      {
+       "en": "All of them, {you}. Take the silver; it comes from me, so it is worth more than his.",
+       "ko": "전부 맞혔어, {you}. 은화 가져가. 내가 준 거니까 그 인간 것보다 값어치가 있어."
+      }
+     ],
+     "some": [
+      {
+       "en": "A few wrong. Not a coin, {you}. Things of mine do not make mistakes.",
+       "ko": "몇 개 틀렸네. 한 푼도 없어, {you}. 내 것은 실수 안 해."
+      },
+      {
+       "en": "Some slips. Leave that sort of work to other people's scribes.",
+       "ko": "몇 개 틀렸네. 그런 솜씨는 남의 서기들한테나 맡겨."
+      }
+     ],
+     "many": [
+      {
+       "en": "Appalling. Were you up late writing for somebody else?",
+       "ko": "이게 뭐야. 어젯밤 늦게까지 다른 누구 글이라도 써 줬어?"
+      },
+      {
+       "en": "All those gaps, {you}. I don't care to see my things this shabby.",
+       "ko": "빈칸 꼴이 이게 뭐야, {you}. 내 물건이 이렇게 초라한 건 보기 싫어."
+      }
+     ]
+    },
+    "done": [
+     {
+      "en": "That is all for today. You may go, but not far.",
+      "ko": "오늘은 여기까지야. 가도 돼. 멀리는 말고."
+     },
+     {
+      "en": "Enough, {you}. Back to the study if you must, and remember which room you belong in.",
+      "ko": "그만, {you}. 꼭 가야겠으면 서재로 가. 네가 어느 방 사람인지는 잊지 말고."
+     }
+    ]
+   },
+   {
+    "open": [
+     {
+      "en": "Sit, {you}. Nobody else in this house says that name, and nobody else gets these sentences.",
+      "ko": "앉아, {you}. 이 집에서 그 이름을 부르는 건 나뿐이고, 이 문장들을 받는 것도 너뿐이야."
+     },
+     {
+      "en": "Today's sentences. Cissy offered to read them to you. I said no before she had finished.",
+      "ko": "오늘 문장들이야. 시시가 너한테 대신 읽어 주겠다더라. 말 끝나기도 전에 안 된다고 했어."
+     },
+     {
+      "en": "There you are, {you}. Late, or did it only feel that way?",
+      "ko": "왔네, {you}. 늦은 거야, 아니면 그렇게 느껴졌을 뿐이야?"
+     },
+     {
+      "en": "Lucius asked what we do in here. I told him it was none of his business.",
+      "ko": "루시우스가 우리 여기서 뭐 하느냐고 묻더라. 그 인간 알 바 아니라고 했지."
+     },
+     {
+      "en": "Pen, ink, ears, {you}. I want all three sharp; I have no use for blunt things.",
+      "ko": "펜, 잉크, 귀, {you}. 셋 다 날카롭게. 무딘 물건은 쓸 데가 없어."
+     },
+     {
+      "en": "Ten today. I can tell which one you'll pick before you do; I know how you think now.",
+      "ko": "오늘은 열 개야. 네가 뭘 고를지 너보다 내가 먼저 알아. 이젠 네 머릿속이 훤하거든."
+     }
+    ],
+    "right": [
+     {
+      "en": "Right, {you}. As it should be.",
+      "ko": "맞았어, {you}. 그래야지."
+     },
+     {
+      "en": "Correct. Of course. Nobody else's scribe could do that.",
+      "ko": "맞았어. 당연하지. 남의 서기는 이렇게 못 해."
+     },
+     {
+      "en": "Yes. Don't look at me like that; it was only right.",
+      "ko": "그래. 그렇게 쳐다보지 마. 맞았을 뿐이야."
+     },
+     {
+      "en": "Good, {you}. I could say so twice, but I won't.",
+      "ko": "좋아, {you}. 두 번 말해 줄 수도 있지만 안 할 거야."
+     },
+     {
+      "en": "Exactly that word. You know my ear by now.",
+      "ko": "바로 그 낱말이야. 이제 내 귀를 알잖아."
+     }
+    ],
+    "wrong": [
+     {
+      "en": "Wrong, {you}. You know better, and I know you know.",
+      "ko": "틀렸어, {you}. 넌 그보다 잘 알아. 네가 아는 걸 나도 알고."
+     },
+     {
+      "en": "No. Where has your mind wandered off to, and whose company is it keeping?",
+      "ko": "아니야. 네 정신 어디 갔어? 누구랑 어울리고 있는데?"
+     },
+     {
+      "en": "That word is wrong, and I won't have it in your hand.",
+      "ko": "그 낱말은 틀렸어. 네 손에서 그런 게 나오게 둘 순 없어."
+     },
+     {
+      "en": "Missed, {you}. I noticed. I always notice.",
+      "ko": "놓쳤네, {you}. 봤어. 난 늘 봐."
+     },
+     {
+      "en": "Wrong. Anyone else's mistakes I can ignore. Yours I take personally.",
+      "ko": "틀렸어. 남의 실수는 못 본 척할 수 있어. 네 실수는 내 일로 받아들이지."
+     }
+    ],
+    "end": {
+     "all": [
+      {
+       "en": "Every one, {you}. Here. Don't count it; we are not Lucius.",
+       "ko": "하나도 안 틀렸네, {you}. 자. 세지 마. 우린 루시우스가 아니잖아."
+      },
+      {
+       "en": "Clean, start to finish. Gather up what fell, and keep it where he can't find it.",
+       "ko": "처음부터 끝까지 깨끗하네. 떨어진 거 주워. 그 인간이 못 찾을 데 두고."
+      }
+     ],
+     "some": [
+      {
+       "en": "Slips, {you}, and so no silver. I know what you can do, and that was not it.",
+       "ko": "틀렸네, {you}. 그러니 은화는 없어. 네가 뭘 할 수 있는지 난 알아. 방금 건 그게 아니었고."
+      },
+      {
+       "en": "Nothing on the floor today. Tomorrow, give me no excuse to keep it that way.",
+       "ko": "오늘 바닥엔 아무것도 없어. 내일은 이대로 둘 핑계를 주지 마."
+      }
+     ],
+     "many": [
+      {
+       "en": "What was that? Wherever your head was, bring it back to me.",
+       "ko": "그게 뭐였어? 네 머리가 어디 가 있었든 나한테 도로 가져와."
+      },
+      {
+       "en": "Badly done, {you}. Nobody else will scold you for it. That is for me to do.",
+       "ko": "엉망이야, {you}. 다른 누구도 이걸로 널 혼내진 않을 거야. 그건 내 몫이니까."
+      }
+     ]
+    },
+    "done": [
+     {
+      "en": "That will do, {you}. Go. You will be back tomorrow; I have decided.",
+      "ko": "됐어, {you}. 가. 내일 또 올 거야. 내가 정했어."
+     },
+     {
+      "en": "No more today. Go, and don't let anyone else keep you late.",
+      "ko": "오늘은 끝. 가. 다른 누가 널 늦게까지 붙잡게 두지 마."
+     }
+    ]
+   }
+  ],
+  "src": {
+   "snape": [
+    {
+     "en": "Severus's phrase. Neat, isn't it? Everything of his is neat. I find that suspicious.",
+     "ko": "세베루스의 말이야. 깔끔하지? 그 남자 건 뭐든 깔끔해. 난 그게 수상해."
+    },
+    {
+     "en": "This one belongs to Snape. Fill it carefully; he chooses words the way other men choose alibis.",
+     "ko": "이건 스네이프 거야. 조심해서 채워. 그 남자는 남들이 알리바이 고르듯 낱말을 골라."
+    }
+   ],
+   "mcgonagall": [
+    {
+     "en": "McGonagall's. She marked my essays once, in that thin red hand. Get it right, to spite her.",
+     "ko": "맥고나걸 거야. 예전에 그 가는 빨간 글씨로 내 숙제를 채점했지. 약 오르게 제대로 맞혀."
+    },
+    {
+     "en": "A McGonagall sentence. Every full stop in it stands to attention.",
+     "ko": "맥고나걸 문장이야. 마침표 하나하나가 차렷 자세로 서 있네."
+    }
+   ],
+   "lupin": [
+    {
+     "en": "Lupin's phrase. Polite, patched and shabby, like his robes.",
+     "ko": "루핀의 말이야. 그 사람 로브처럼 점잖고, 기웠고, 낡았지."
+    },
+    {
+     "en": "Soft little words from Lupin, who apologises for taking up room. I read them in my nastiest voice.",
+     "ko": "루핀의 순한 말들이야. 자리 차지하는 것까지 미안해하는 남자지. 난 제일 고약한 목소리로 읽어 줄게."
+    }
+   ],
+   "moody": [
+    {
+     "en": "Moody's. He filled half the cells I knew, and still jumps at his own shadow.",
+     "ko": "무디 거야. 내가 아는 감방 절반을 그 사람이 채웠는데, 아직도 제 그림자에 놀라 펄쩍 뛰지."
+    },
+    {
+     "en": "A phrase of Mad-Eye's. Say it aloud and he would check it for traps.",
+     "ko": "매드아이의 말이야. 소리 내어 말하면 그 사람은 함정이 있나 뒤져 볼걸."
+    }
+   ],
+   "umbridge": [
+    {
+     "en": "Umbridge. A Ministry woman in pink. Two things I cannot abide, in one person.",
+     "ko": "엄브리지야. 분홍 옷 입은 마법부 여자. 내가 못 견디는 두 가지가 한 사람한테 다 있네."
+    },
+    {
+     "en": "Hear how sweet her phrase is? Sugar over a ledger. I prefer my malice plain.",
+     "ko": "이 말 얼마나 달콤한지 들려? 장부 위에 설탕을 뿌려 놨어. 난 심술은 맨 그대로가 좋아."
+    }
+   ],
+   "dumbledore": [
+    {
+     "en": "Dumbledore's words. The old man smiles like a grandfather and moves people about like chessmen.",
+     "ko": "덤블도어의 말이야. 그 노인은 할아버지처럼 웃으면서 사람들을 체스 말처럼 옮겨 놓지."
+    },
+    {
+     "en": "One of Dumbledore's. Wipe that look off your face; he is not here to twinkle at you.",
+     "ko": "덤블도어 거야. 그 표정 지워. 그 노인이 여기서 너한테 눈을 반짝여 줄 것도 아니잖아."
+    }
+   ],
+   "slughorn": [
+    {
+     "en": "Slughorn's. He taught me Potions, and laughed at all the right people's jokes. Mine, mostly.",
+     "ko": "슬러그혼 거야. 나한테 마법약을 가르쳤지. 웃어 줄 만한 사람 농담에만 웃던 사람이야. 주로 내 농담에."
+    },
+    {
+     "en": "A Slughorn phrase. It smells of crystallised pineapple and other people's success.",
+     "ko": "슬러그혼의 말이야. 설탕에 절인 파인애플 냄새랑 남의 출세 냄새가 나."
+    }
+   ],
+   "sirius": [
+    {
+     "en": "My dear cousin's phrase. Sirius always did talk as if a door were about to slam.",
+     "ko": "우리 잘나신 사촌의 말이야. 시리우스는 늘 문을 쾅 닫고 나가기 직전인 것처럼 말했지."
+    },
+    {
+     "en": "Sirius said this, the family's runaway. Fill it in; he never finished anything either.",
+     "ko": "이건 집안의 가출쟁이 시리우스가 한 말이야. 채워 넣어. 그 애도 뭐 하나 끝낸 적이 없거든."
+    }
+   ],
+   "lucius": [
+    {
+     "en": "Lucius's phrase. You can hear him straightening his cuffs as he says it.",
+     "ko": "루시우스의 말이야. 그 말 하면서 소매 끝 매만지는 소리까지 들리지."
+    },
+    {
+     "en": "One of my brother-in-law's. Be quick with it; he takes far too long to say anything.",
+     "ko": "내 제부 거야. 빨리 해. 그 인간은 무슨 말이든 너무 오래 끌거든."
+    }
+   ],
+   "bellatrix": [
+    {
+     "en": "Mine! Listen to it. Now that is how a sentence ought to sound.",
+     "ko": "내 거야! 들어 봐. 문장이란 자고로 이렇게 들려야지."
+    },
+    {
+     "en": "This one is my own, {you}. Fill it in properly, or I shall be personally offended.",
+     "ko": "이건 내 말이야, {you}. 제대로 채워. 안 그러면 내가 직접 기분 상할 거야."
+    }
+   ]
+  }
+ }
+}
