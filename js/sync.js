@@ -74,11 +74,16 @@ export function status(){
   };
 }
 
+/* "the server is the reference" (2026-10-20, user: the caretaker's devices are always online): a change is sent a few seconds after
+   it is saved, and a new screen asks for the other devices' news almost at once — so the laptop and the phone work on what is in
+   effect one copy, and the joining rules only matter when both are used at the very same moment. Saves made by a match itself
+   (and by a lesson, which waits for its end) do not start another. */
 export function init(a){
   app = a;
   setTimeout(run, 2500);
   document.addEventListener('visibilitychange', () => { run(); if (!document.hidden) swap(); });
-  let t = 0;
-  window.addEventListener('hashchange', () => { setTimeout(swap, 400); clearTimeout(t); t = setTimeout(run, 6000); });
-  setInterval(() => { if (!document.hidden) run(); }, 240000);
+  let t = 0, p = 0;
+  window.addEventListener('hashchange', () => { setTimeout(swap, 400); clearTimeout(t); t = setTimeout(run, 800); });
+  store.whenSaved(() => { if (!on() || core.busy()) return; clearTimeout(p); p = setTimeout(run, 3000); });
+  setInterval(() => { if (!document.hidden) run(); }, 90000);
 }

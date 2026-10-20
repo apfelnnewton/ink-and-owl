@@ -77,9 +77,13 @@ export function mendStreak(){
   return false;
 }
 
+/* told after every save (sync.js sends the caretaker's progress a few seconds after it changes) */
+let onSave = null;
+export const whenSaved = fn => { onSave = fn; };
 export function save(){
   try { localStorage.setItem(KEY, JSON.stringify(state)); storageOk = true; }
   catch (e){ storageOk = false; }
+  if (onSave) try { onSave(); } catch (e){}
   return storageOk;
 }
 export const get = () => state;
@@ -109,7 +113,17 @@ const dayNow = () => { const d = new Date(); return `${d.getFullYear()}-${String
 export function resetDeck(id){ delete state.decks[id]; (state.cleared || (state.cleared = {}))[id] = dayNow(); save(); }
 /* the progress as another of the caretaker's devices should receive it: not this device's settings, its place in a friends' group,
    or its own book-keeping with the server */
-export function syncable(){ const {settings, friends, census, sync, ...rest} = state; return rest; }
+/* What travels between the caretaker's devices. Since 2026-10-20 (user: everything, on the caretaker's devices) also the settings a
+   person would want the same everywhere (not the voice or 'quiet', which belong to the device) and the friends' group: its code,
+   seal, members, letters and news (post.js stands in for the holder on the other devices — never the practice post office, and
+   never this device's 'deputy' mark). Not: census, sync (this device's own). */
+export const SHARED_SETTINGS = ['surname', 'firstName', 'title', 'named', 'birthday', 'level', 'newPerDay', 'reviewCap', 'koFront', 'autoRead', 'prior', 'howler'];
+const shared = st => Object.fromEntries(SHARED_SETTINGS.filter(k => st && k in st).map(k => [k, st[k]]));
+export function syncable(){
+  const {settings, friends, census, sync, ...rest} = state, out = {...rest, settings: shared(settings)};
+  if (friends && friends.code && !friends.practice){ const {deputy, ...fr} = friends; out.friends = fr; }
+  return out;
+}
 let joinedAny = false;
 export const mergedByJoining = () => joinedAny;   // the last merge had to join two copies of something stamped: the result is news to the other device too
 /* everything gone: progress, letters, teas, gifts, doors, friends' letters, the name (settings.js asks first) */
@@ -165,6 +179,7 @@ export function mergeData(text){
     base.sent = {...other.sent, ...base.sent};
     const have = new Set((base.mail || []).map(m => m.id));
     base.mail = [...(base.mail || []), ...(other.mail || []).filter(m => !have.has(m.id))].sort((a, b) => a.t < b.t ? -1 : 1);
+    { const readThere = new Set((other.mail || []).filter(m => m.read).map(m => m.id)); for (const m of base.mail) if (readThere.has(m.id)) m.read = true; }   // read on either device (2026-10-20)
     base.teas = {...other.teas, ...base.teas}; base.keep = {...other.keep, ...base.keep};
     if (base.teaLog || other.teaLog) base.teaLog = {...other.teaLog, ...base.teaLog};
     if (base.teaGiftAt || other.teaGiftAt) base.teaGiftAt = Math.max(+base.teaGiftAt || 0, +other.teaGiftAt || 0);   // Snape's tea gifts: the cup of the last one (bond.js)
@@ -182,10 +197,30 @@ export function mergeData(text){
   /* the wand made more recently wins; Ollivander's note counts as arrived if either device had it */
   if (obj.wand){ const a = state.wand || {}, b = obj.wand; state.wand = (b.d || '') > (a.d || '') ? {...b, note: a.note || b.note} : {...a, note: a.note || b.note}; }
   if (obj.doors){ const d = state.doors || (state.doors = {open: [], first: obj.doors.first || ''}); d.open = [...new Set([...d.open, ...obj.doors.open])]; }
-  if (obj.friends){
-    const fr = state.friends || (state.friends = {...obj.friends, mail: []}), have = new Set(fr.mail.map(m => m.id));
-    fr.mail.push(...obj.friends.mail.filter(m => !have.has(m.id)));
+  /* the friends' group (2026-10-20): a device in no group takes the other's whole (it will stand in for the holder, post.js);
+     the same group joins letters (read or brought on either = so) and news (told on either = told); a different group is kept apart */
+  if (obj.friends && obj.friends.code && !obj.friends.practice){
+    const a = state.friends, b = obj.friends;
+    if (!a || !a.code || a.practice){ const {deputy, ...rest} = b; state.friends = {...rest, mail: [...b.mail], news: [...(b.news || [])]}; }
+    else if (a.code === b.code){
+      const byId = new Map(a.mail.map(m => [m.id, m]));
+      for (const m of b.mail){ const x = byId.get(m.id); if (!x){ a.mail.push(m); byId.set(m.id, m); } else { x.read = x.read || m.read; x.seen = x.seen || m.seen; if (!x.fc && m.fc) x.fc = m.fc; } }
+      a.mail.sort((p, q) => (p.at || 0) - (q.at || 0));
+      const nb = new Map((a.news || []).map(n => [n.id, n])); a.news = a.news || [];
+      for (const n of b.news || []){ const x = nb.get(n.id); if (!x) a.news.push(n); else x.told = x.told || n.told; }
+      a.said = {...(b.said || {}), ...(a.said || {})};
+      if (!a.seal && b.seal && a.uid === b.uid) a.seal = b.seal;
+      if (!(a.members || []).length && (b.members || []).length) a.members = b.members;
+    }
   }
+  /* today's everyday letters and today's owl invitation (bond.js bondDay): one day's share, whichever device it came to */
+  if (obj.bondDay && obj.bondDay.date){
+    const a = state.bondDay, b = obj.bondDay;
+    if (!a || (a.date || '') < b.date) state.bondDay = {...b};
+    else if (a.date === b.date){ a.posts = Math.max(+a.posts || 0, +b.posts || 0); if (!a.owl && b.owl) a.owl = b.owl; }
+  }
+  /* the shared settings (stamped): the more recently changed copy */
+  { const w = whole('settings'); if (w === 1 && obj.settings) Object.assign(state.settings, shared(obj.settings)); }
   /* what came after this function was first written, and so was left behind on the other device (2026-10-12): the spells
      learnt, the map, the issues of the Prophet, the Room of Requirement, the Howlers already sent */
   if (obj.spells){

@@ -10,7 +10,7 @@
      3. if it has changes of its own (or nothing is there yet), writes the folded progress back, under a new mark.
    A device that only received writes nothing, so two devices never bat the same copy back and forth.
    state.sync = {rev: the mark last seen, hash: the progress as it stood then, k: marks of the stamped things, at, size, err} */
-const KEYS = ['stars', 'purse', 'shop', 'need', 'exs'];   // exs: the notebook's example practice (2026-10-19)
+const KEYS = ['stars', 'purse', 'shop', 'need', 'exs', 'settings'];   // settings: the shared ones (store.SHARED_SETTINGS, 2026-10-20)   // exs: the notebook's example practice (2026-10-19)
 export const canon = v => Array.isArray(v) ? '[' + v.map(canon).join(',') + ']'
   : v && typeof v === 'object' ? '{' + Object.keys(v).filter(k => v[k] !== undefined).sort().map(k => JSON.stringify(k) + ':' + canon(v[k])).join(',') + '}'
   : JSON.stringify(v === undefined ? null : v);
@@ -50,7 +50,7 @@ export function mendRegister(store, days, on){
 /* store: {get, syncable, mergeData, mergedByJoining, save} · server: async () => {F, db, uid} · device: () => a short name of this device */
 export function makeSync({store, server, device = () => '', part = 800000, plain = 250000}){
   const st = () => { const s = store.get(); return s.sync || (s.sync = {}); };
-  const marks = () => { const s = store.get(), o = {}; for (const k of KEYS) o[k] = hash(canon(s[k] === undefined ? null : s[k])); return o; };
+  const marks = () => { const s = store.syncable(), o = {}; for (const k of KEYS) o[k] = hash(canon(s[k] === undefined ? null : s[k])); return o; };   // on what travels (a device's own voice does not count)
   const now = () => hash(canon(store.syncable()));
   let busy = false, head = null;
   /* → {ok, pulled, pushed, changed}: changed = what is on this device is no longer what the screens were drawn from */

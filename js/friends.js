@@ -228,7 +228,7 @@ export function wireFriends(app){
     const u = e.target.closest('[data-x]'); if (u){ gloss(+u.dataset.x); return; }
     const w = e.target.closest('[data-write]'); if (w){ compose(w.dataset.write, app); return; }
     const l = e.target.closest('[data-leave]');
-    if (l) await busy(l, async () => { await post.leave(); closeSheet(); after(); toast('그룹에서 나왔습니다. 주고받은 편지도 지웠습니다.'); });
+    if (l) await busy(l, async () => { const err = await post.leave(); if (err){ toast(err, 3600); return; } closeSheet(); after(); toast('그룹에서 나왔습니다. 주고받은 편지도 지웠습니다.'); });
   });
   $('#fGroup').addEventListener('click', async e => {
     const b = e.target.closest('[data-fg]'); if (!b) return;

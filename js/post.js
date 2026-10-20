@@ -15,7 +15,12 @@
    Server: Firebase project "ink-and-owl" (js/firebase-config.js, rules in firestore.rules), signed in anonymously.
    The SDK is loaded from Google's CDN only when the friends' group is used, so studying never needs the network.
    Add ?practice to the address to use the PRACTICE post office instead: three made-up friends who answer within a
-   minute, no server (for trying the screens). */
+   minute, no server (for trying the screens).
+   STANDING IN (2026-10-20 user: "답장도 다른 기기에서 가능하게 해"): the caretaker's devices carry the group between them in the
+   synced progress (store.syncable), so the laptop and the iPad know the phone's group, seal and letters. state.friends.uid is the
+   seal holder's uid on every one of them; a caretaker's device signed in as someone else registers as a deputy of the holder
+   (groups/{code}/deputies/{its uid} = {for: holder}, firestore.rules) and then sends, receives and clears letters and writes news
+   in the holder's name. The seal stays the phone's. A deputy does not leave the group (that is the phone's to do). */
 import * as door from './door.js';
 import * as store from './store.js';
 import * as srs from './srs.js';
@@ -166,24 +171,24 @@ const firebase = {
   },
   async send(m, code){
     const {F} = await connect();
-    try { await F.addDoc(col(code, 'mail'), {from: fb.uid, to: m.to, text: m.text, at: F.serverTimestamp(), ...(m.x ? {x: m.x} : {})}); return ''; }
+    try { await F.addDoc(col(code, 'mail'), {from: f().uid, to: m.to, text: m.text, at: F.serverTimestamp(), ...(m.x ? {x: m.x} : {})}); return ''; }
     catch (e){ return OFFLINE; }
   },
   async announce(code, type, deck){
     const {F} = await connect();
-    await F.addDoc(col(code, 'news'), {from: fb.uid, type, deck, at: F.serverTimestamp()});
+    await F.addDoc(col(code, 'news'), {from: f().uid, type, deck, at: F.serverTimestamp()});
   },
   /* while the app is open: letters addressed to me land on the phone (and leave the server); the members list stays current */
   listen(code){
     const {F} = fb;
     stopListening();
-    const mine = F.query(col(code, 'mail'), F.where('to', '==', fb.uid));
+    const me = f().uid, mine = F.query(col(code, 'mail'), F.where('to', '==', me));
     unsub.push(F.onSnapshot(mine, snap => {
       const fr = f(); let got = 0;
       snap.docs.forEach(d => {
         const x = d.data();
         if (!fr.mail.some(m => m.id === d.id)){
-          fr.mail.push(takeIn({id: d.id, from: x.from, to: fb.uid, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false, ...(extras(x.x) ? {x: extras(x.x)} : {})}));
+          fr.mail.push(takeIn({id: d.id, from: x.from, to: me, t: srs.today(), at: Date.now(), text: String(x.text || ''), read: false, seen: false, ...(extras(x.x) ? {x: extras(x.x)} : {})}));
           got++;
         }
         F.deleteDoc(d.ref).catch(() => {});
@@ -192,18 +197,18 @@ const firebase = {
     }, () => {}));
     unsub.push(F.onSnapshot(col(code, 'seals'), snap => {
       const fr = f();
-      fr.members = snap.docs.filter(d => d.data().uid !== fb.uid).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || '', day: d.data().day || null}));
+      fr.members = snap.docs.filter(d => d.data().uid !== me).map(d => ({uid: d.data().uid, name: d.data().name, seal: d.id, wand: d.data().wand || '', day: d.data().day || null}));
       /* someone has left (their seal is gone): the letters to and from them, and their news, go from this phone too.
          Only on a fresh answer from the server, never on a stale copy. */
       if (!snap.metadata.fromCache){
-        const here = new Set([fb.uid, ...fr.members.map(m => m.uid)]), other = m => m.from === fb.uid ? m.to : m.from;
+        const here = new Set([me, ...fr.members.map(m => m.uid)]), other = m => m.from === me ? m.to : m.from;
         const before = fr.mail.length;
         fr.mail = fr.mail.filter(m => here.has(other(m)));
         if (fr.news) fr.news = fr.news.filter(n => here.has(n.from));
         if (fr.mail.length !== before) notify();
       }
       /* my own seal carries my wand's wood; put it right if it is missing or out of date */
-      const own = snap.docs.find(d => d.data().uid === fb.uid), mine = (wand.get() || {}).wood || '';
+      const own = snap.docs.find(d => d.data().uid === me), mine = (wand.get() || {}).wood || '';
       if (own && mine && (own.data().wand || '') !== mine) F.updateDoc(own.ref, {wand: mine}).catch(() => {});
       store.save(); notify();
     }, () => {}));
@@ -212,7 +217,7 @@ const firebase = {
     unsub.push(F.onSnapshot(F.query(col(code, 'news'), F.where('at', '>', since)), snap => {
       let got = 0;
       snap.docs.forEach(d => {
-        const x = d.data(); if (x.from === fb.uid) return;
+        const x = d.data(); if (x.from === me) return;
         const who = f().members.find(m => m.uid === x.from);
         if (queueNews({id: d.id, from: x.from, name: who ? who.name : '', type: x.type, deck: x.deck || '', at: x.at ? x.at.toMillis() : Date.now()})) got++;
       });
@@ -221,7 +226,7 @@ const firebase = {
     /* my own letters nobody collected, and my own news, after 30 days */
     const old = F.Timestamp.fromMillis(Date.now() - 30 * 864e5);
     for (const name of ['mail', 'news'])
-      F.getDocs(F.query(col(code, name), F.where('from', '==', fb.uid), F.where('at', '<', old)))
+      F.getDocs(F.query(col(code, name), F.where('from', '==', me), F.where('at', '<', old)))
         .then(q => q.docs.forEach(d => F.deleteDoc(d.ref).catch(() => {}))).catch(() => {});
   }
 };
@@ -234,6 +239,7 @@ const backend = () => f().practice || (PRACTICE_MODE && !f().code) ? practice : 
 export const inGroup = () => !!(f().code && f().seal);
 export const joined = () => !!f().code;               // code entered, seal not yet chosen
 export const isPractice = () => f().practice;
+export const isDeputy = () => !!f().deputy;   // this device stands in for the seal holder (start)
 export const code = () => f().code;
 export const myUid = () => f().uid;
 export const mySeal = () => f().seal;
@@ -304,9 +310,11 @@ export async function pickSeal(id){
    letters to and from me when my seal disappears */
 export async function leave(){
   const fr = f();
+  if (fr.deputy) return '그룹에서 나가기는 도장을 가진 기기(폰)에서 합니다. 이 기기는 그 기기를 대신해 편지를 주고받을 뿐입니다.';
   stopListening();
   try { await backend().leave(fr.code, fr.seal); } catch (e){ /* the server copy is cleared next time; the phone forgets now */ }
   Object.assign(fr, {code: '', seal: '', members: [], practice: false, mail: [], news: []}); store.save();
+  return '';
 }
 
 export async function send(to, text, x){
@@ -370,14 +378,27 @@ export function openOldFrogs(){
   if (n) store.save();
   return n;
 }
+/* register this device as standing in for the holder (once); true when it may */
+async function standIn(fr){
+  const {F} = fb, ref = g(fr.code, 'deputies', fb.uid);
+  try { const d = await F.getDoc(ref); if (d.exists() && d.data().for === fr.uid) return true; } catch (e){}
+  try { await F.setDoc(ref, {for: fr.uid, t: F.serverTimestamp()}); return true; } catch (e){ return false; }
+}
 export function start(){
   const fr = f();
   if (!inGroup() || fr.practice) return;
-  connect().then(() => {
-    if (fb.uid !== fr.uid){ fr.seal = ''; store.save(); notify(); return; }   // this phone lost its pass: choose a seal again
+  connect().then(async () => {
+    if (fb.uid !== fr.uid){
+      /* one of the caretaker's devices holding the caretaker's group from the synced progress: stand in for the holder.
+         If that cannot be done (the rules not yet published, the holder not a caretaker's device), it simply does not
+         listen — the group is left as it is, for the holder's sake, since this copy travels to the holder's phone too. */
+      if ((store.get().census || {}).master){ if (!(await standIn(fr))){ delete fr.deputy; return; } fr.deputy = true; }
+      else { fr.seal = ''; store.save(); notify(); return; }   // this phone lost its pass: choose a seal again
+    } else delete fr.deputy;
     firebase.listen(fr.code);
-    /* the name on my seal follows the name in settings */
+    /* the name on my seal follows the name in settings (a deputy changes the name only — the seal stays the holder's) */
     const mine = fr.seal && myName();
+    if (fr.deputy){ fb.F.updateDoc(g(fr.code, 'seals', fr.seal), {name: mine}).catch(() => {}); return; }
     fb.F.updateDoc(g(fr.code, 'seals', fr.seal), {uid: fb.uid, name: mine}).catch(() => {});
     fb.F.updateDoc(g(fr.code, 'members', fb.uid), {name: mine, seal: fr.seal}).catch(() => {});
   }).catch(() => {});
