@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-20a';
+const VERSION = 'he-2026-10-20b';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -129,6 +129,26 @@ const CORE = [
   'assets/frogs/hengist-away.webp',
   'assets/frogs/grunnion.webp',
   'assets/frogs/grunnion-away.webp',
+  'assets/frogs/flamel.webp',
+  'assets/frogs/flamel-away.webp',
+  'assets/frogs/bott.webp',
+  'assets/frogs/bott-away.webp',
+  'assets/frogs/mungo.webp',
+  'assets/frogs/mungo-away.webp',
+  'assets/frogs/gwenog.webp',
+  'assets/frogs/gwenog-away.webp',
+  'assets/frogs/wendelin.webp',
+  'assets/frogs/wendelin-away.webp',
+  'assets/frogs/cassandra.webp',
+  'assets/frogs/cassandra-away.webp',
+  'assets/frogs/gryffindor.webp',
+  'assets/frogs/gryffindor-away.webp',
+  'assets/frogs/hufflepuff.webp',
+  'assets/frogs/hufflepuff-away.webp',
+  'assets/frogs/ravenclaw.webp',
+  'assets/frogs/ravenclaw-away.webp',
+  'assets/frogs/slytherin.webp',
+  'assets/frogs/slytherin-away.webp',
   'assets/map/hogsmeade.webp',
   'assets/shop/borgin-shelf.webp',
   'assets/shop/sheet-whizbang.webp',

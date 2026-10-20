@@ -473,7 +473,7 @@ export function initTown(app){
     /* now and then the person on it steps out of the picture a moment after it turns over (frogs.js AWAY) */
     if (frogs.leavesNow(id)) setTimeout(() => {
       const c = document.querySelector('#sheetBody .fc-pop .fc-card'), p = document.querySelector('#sheetBody .fc-gone'); if (!c || !p) return;
-      const l = frogs.awayLine(id); c.classList.add('out');
+      const l = frogs.awayLine(id, true); c.classList.add('out');
       p.innerHTML = `<span lang="en">${esc(l.en)}</span><br>${esc(l.ko)}`; p.hidden = false;
     }, 4200);
   }

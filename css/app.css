@@ -2588,7 +2588,7 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .fc-card img{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 8px rgba(0,0,0,.7))}
 .fc-name{position:absolute;left:19%;right:19%;top:91.5%;transform:translateY(-46%);text-align:center;white-space:nowrap;overflow:hidden;
   font:italic 600 7.2cqw/1.1 var(--f-display);color:#33240f;text-shadow:0 1px 0 rgba(255,236,190,.55)}
-.fc-name.long{font-size:5cqw}
+.fc-name.long{font-size:6cqw}   /* names over 17 letters (Wendelin the Weird, Cassandra Vablatsky, Hengist of Woodcroft) */
 .cab-grid.fc{grid-template-columns:repeat(5, 1fr)}
 .cab-grid.fc .cab-cell{aspect-ratio:auto;padding:4px;overflow:visible}
 .cab-grid.fc .cab-cell:not(.has){aspect-ratio:.645;margin:4px;align-self:center}
@@ -2603,8 +2603,8 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 @keyframes fcHop{0%{opacity:1;transform:translate(-50%, 30%)}40%{opacity:1;transform:translate(-50%, -70%) rotate(-8deg)}75%{opacity:1;transform:translate(-50%, 10%)}100%{opacity:0;transform:translate(-50%, 30%)}}
 @keyframes fcTurn{from{opacity:0;transform:perspective(900px) rotateY(90deg) scale(.86)}to{opacity:1;transform:none}}
 .fc-new{margin:0 0 8px}
-.fc-role{margin:0 0 2px;text-align:center;font-size:13px;line-height:1.6;color:var(--ink-soft)}
-.fc-role span{font:italic 15px var(--f-display);color:var(--ink)}
+.fc-role{margin:0 0 2px;text-align:center;font-size:13px;line-height:1.6;color:var(--ink-soft);word-break:keep-all}
+.fc-role span{display:block;font:italic 15px var(--f-display);color:var(--ink)}   /* its own line, the Korean under it */
 @media (prefers-reduced-motion: reduce){ .fc-frog{display:none} .fc-card.turn{animation:none} }
 .sp-tag.fc-back,.sp-tag.fc-back + .sp-tag.ko{text-align:left}
 /* a card whose person has stepped out (frogs.js AWAY): the empty painting lies under the portrait, which fades away */
@@ -2625,7 +2625,7 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .ow-with .fc-card.mini .fc-name{display:none}
 .ow-with .fc-card.mini img{filter:none}
 .lt-thing .fc-card .fc-name{font:italic 600 7.2cqw/1.1 var(--f-display);color:#33240f}
-.lt-thing .fc-card .fc-name.long{font-size:5cqw}
+.lt-thing .fc-card .fc-name.long{font-size:6cqw}
 /* the manor's example work (copywork.js): the speaker's word above the sentence */
 .cw-top{flex:none}   /* the sheet is a flex column: without this the word above was squeezed to nothing once the sheet overflowed */
 .cw-say{margin:4px 0 10px}

@@ -26,6 +26,15 @@ function setAside(){ try { if (!localStorage.getItem(KEEP)) localStorage.setItem
    was entered under the 12th, and seven days in a row became one. The day is put back as a day; the count follows from the register. */
 const LOST = ['2026-10-11'];
 function putBack(){ const c = core.state(); if (c.mend) return false; const did = mendRegister(store, LOST, new Date().toISOString().slice(0, 10)); c.mend = 1; store.save(); return did; }
+/* 30 Sickles into the maker's purse (2026-10-20, at the maker's word: to buy Chocolate Frogs and send cards to the other
+   players). Given once across all the maker's devices, after a match has brought in what the others hold: the mark is kept
+   in the shop record, which travels between them, so a device that has already had the news does not give it again. */
+const GIFT = {id: '2026-10-20-frogs', knuts: 30 * 29};
+function giveOnce(){
+  const s = store.get(), m = s.shop || (s.shop = {}), g = m.gift || (m.gift = {});
+  if (g[GIFT.id]) return false;
+  s.purse = (s.purse || 0) + GIFT.knuts; g[GIFT.id] = new Date().toISOString().slice(0, 10); store.save(); return true;
+}
 const LESSON = ['room', 'spell', 'ollivander', 'potion'];   // a lesson is not disturbed: the day's session must not change under it
 
 export async function run(){
@@ -36,6 +45,7 @@ export async function run(){
   if (putBack()) stale = true;   // the screens still show the old count
   const r = await core.run();
   if (r.changed) stale = true;
+  if (r.ok && giveOnce()){ stale = true; again = true; }   // the next match stamps it and sends it to the other devices
   swap();
   listeners.forEach(fn => { try { fn(r); } catch (e){} });
   if (again){ again = false; setTimeout(run, 1500); }

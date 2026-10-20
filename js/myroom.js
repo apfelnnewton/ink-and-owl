@@ -165,7 +165,7 @@ export function initMyRoom(app){
     const d = frogs.firstDay(id), away = frogs.awayToday(id);
     openSheet(`<div class="sh-kind"><span>개구리 초콜릿 카드${d ? ' · ' + fmt(d) : ''}</span><span>${frogs.count(id)}장</span></div>` +
       `<div class="fc-pop">${frogs.face(id, away ? 'out still' : '')}</div>` +
-      (away ? `<p class="purse-note fc-gone"><span lang="en">${esc(frogs.awayLine(id).en)}</span><br>${esc(frogs.awayLine(id).ko)}</p>` : '') + frogs.back(id));
+      (away ? (l => `<p class="purse-note fc-gone"><span lang="en">${esc(l.en)}</span><br>${esc(l.ko)}</p>`)(frogs.awayLine(id)) : '') + frogs.back(id));
   }
 
   function openGift(key){
