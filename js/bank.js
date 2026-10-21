@@ -134,21 +134,16 @@ export function initBank(app){
     if (vault() >= 5 * GALLEON) return pick(h.rich, 'rich');
     return fillLine(pick(h.back, 'back'));
   }
-  const stats = () => `<div><b>${esc(manor.money(manor.purse()))}</b>주머니</div>` + (hasVault() ? `<div><b>${vault() ? esc(manor.money(vault())) : '비었음'}</b>금고</div>` : '') + (debt() ? `<div><b>${esc(manor.money(debt()))}</b>빚</div>` : '');
   function drawHall(){
     photo('gringotts');
     $('#bkTtl').textContent = 'Gringotts';
     $('#bkWho').textContent = 'The Head Goblin';
-    $('#bkStats').innerHTML = stats();
+    $('#bkStats').innerHTML = '';
     const g = goblin(), er = errand.hallBits();   // Bellatrix's errand, when one is under way (errand.js): its line and its button first
     $('#bkLine').innerHTML = er && er.line ? er.line : g ? say(g) : '<span class="k">대리석 홀 끝, 높은 책상의 수석 고블린이 장부에서 눈을 든다.</span>';
     const own = s => er ? s.replace('class="cgo "', 'class="cgo me-second"') : s;
     $('#bkGo').innerHTML = (er ? er.btn : '') + own(!hasVault() ? go('금고를 연다 <em>계약서에 서명</em>', 'data-bk="open"')
-      : go('금고 <em>보러 내려간다</em>', 'data-bk="vault"') + go('맡긴다 <em>주머니 → 금고</em>', 'data-bk="deposit"', 'me-second') + (vault() ? go('꺼낸다 <em>금고 → 주머니</em>', 'data-bk="withdraw"', 'me-second') : '')) +
-      (hasVault() ? go(`빌린다 <em>${debt() ? `${borrowMax()}갈레온까지` : '10갈레온까지'}</em>`, 'data-bk="borrow"', 'me-second') : '') +
-      (debt() ? go('갚는다', 'data-bk="repay"', 'me-second') : '') +
-      (statement().length ? go(`거래 명세 <em>${statement().length}줄</em>`, 'data-bk="statement"', 'me-second') : '') +
-      (debt() ? '<p class="bk-note">빚이 남아 있는 동안 버는 돈의 절반은 은행으로 간다.</p>' : '');
+      : go('창구로 간다 <em>맡기기 · 꺼내기 · 빌리기</em>', 'data-bk="counter"') + go('금고로 내려간다', 'data-bk="vault"', 'me-second'));
   }
   function drawVault(){
     photo('gringotts-vault');
@@ -197,6 +192,18 @@ export function initBank(app){
     sec.dataset.view = view;
     if (view === 'vault') drawVault(); else if (view === 'cart' || view === 'lestrange') drawErrand(); else drawHall();
     placeHeap(); placeItem();
+  }
+
+  /* ---------- the counter: what the learner wants, said in a formal sentence; where things stand at the top */
+  function counterSheet(){
+    const C = TEXT.counter; run = {kind: 'counter'};
+    const opt = (k, show) => show ? `<button type="button" data-bkc="${k}"><span lang="en">${esc(C[k].en)}</span><small>${esc(C[k].ko)}</small></button>` : '';
+    openSheet(`<div class="sh-kind"><span>Gringotts</span><span>창구</span></div>` +
+      `<p class="bk-said">${say(pick(C.ask, 'counter'))}</p>` +
+      `<p class="purse-note">주머니 ${esc(manor.money(manor.purse()))} · 금고 ${vault() ? esc(manor.money(vault())) : '비었음'} · 빚 ${debt() ? esc(manor.money(debt())) : '없음'}</p>` +
+      `<div class="er-choices bk-counter">${opt('deposit', true)}${opt('withdraw', vault() > 0)}${opt('borrow', true)}${opt('repay', debt() > 0)}</div>` +
+      (debt() ? '<p class="purse-note">빚이 남아 있는 동안 버는 돈의 절반은 은행으로 간다.</p>' : '') +
+      (statement().length ? `<button type="button" class="clink" data-bkc="statement">거래 명세 · ${statement().length}줄</button>` : ''));
   }
 
   /* ---------- the statement: date | what | amount, newest first; where things stand at the foot */
@@ -288,11 +295,15 @@ export function initBank(app){
     else if (a === 'vault') app.go('#/bank/vault');
     else if (a === 'hall') app.go('#/bank');
     else if (a === 'borrow') borrowSheet();
+    else if (a === 'counter') counterSheet();
     else if (a === 'statement') statementSheet();
     else amountSheet(a);
   });
   $('#sheetBody').addEventListener('click', e => {
     if (sec.hidden || !run) return;
+    const c = e.target.closest('[data-bkc]');
+    if (c && run.kind === 'counter'){ const k = c.dataset.bkc; run = null; closeSheet();
+      if (k === 'borrow') borrowSheet(); else if (k === 'statement') statementSheet(); else amountSheet(k); return; }
     const add = e.target.closest('[data-bkadd]');
     if (add){ const v = add.dataset.bkadd; run.k = v === 'all' ? run.max : v === '0' ? 0 : Math.min(run.max, run.k + +v); showAmount(); return; }
     if (e.target.closest('[data-bkdo]')){ doAmount(); return; }

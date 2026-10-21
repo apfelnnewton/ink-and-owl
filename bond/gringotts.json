@@ -753,5 +753,37 @@
     }
    ]
   }
- ]
+ ],
+ "counter": {
+  "ask": [
+   {
+    "en": "How may the Bank be of service?",
+    "ko": "은행이 무엇을 해 드릴 수 있겠습니까?"
+   },
+   {
+    "en": "Your business, if you please.",
+    "ko": "용건을 말씀하십시오."
+   },
+   {
+    "en": "Gold in, gold out, gold lent or gold repaid? Kindly state which.",
+    "ko": "맡기십니까, 꺼내십니까, 빌리십니까, 갚으십니까? 어느 쪽인지 말씀하십시오."
+   }
+  ],
+  "deposit": {
+   "en": "I should like to make a deposit.",
+   "ko": "돈을 맡기고 싶습니다."
+  },
+  "withdraw": {
+   "en": "I wish to make a withdrawal from my vault.",
+   "ko": "제 금고에서 돈을 꺼내고 싶습니다."
+  },
+  "borrow": {
+   "en": "I should like to arrange a loan.",
+   "ko": "돈을 빌리고 싶습니다."
+  },
+  "repay": {
+   "en": "I have come to make a repayment on my loan.",
+   "ko": "빌린 돈을 갚으러 왔습니다."
+  }
+ }
 }

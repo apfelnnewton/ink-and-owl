@@ -108,9 +108,8 @@ export function placeBits(view){
     const sh = shown && shown.i === c.i ? vaultLines(c, x)[shown.n] : null;
     if (!sh) return {who, line: say(pick(S.vault, 'vault')), btn: go('고블린의 목록을 본다', 'data-er="list"')};
     /* what the goblin brought out to the velvet — or nothing, for a thing the vault does not hold */
-    const thumb = `<img class="er-thumb" src="${itemSrc(x)}" alt="그녀의 사진">`;
-    if (sh.none) return {who: '', line: thumb + say(pick(S.none, 'none' + shown.n)), btn: go('다시 찾아본다', 'data-er="list"'), empty: true};
-    return {who: '', line: thumb + say(pick(shown.again ? S.again : S.shown, 'shown' + shown.n)),
+    if (sh.none) return {who: '', line: say(pick(S.none, 'none' + shown.n)), btn: go('다시 찾아본다', 'data-er="list"'), empty: true};
+    return {who: '', line: say(pick(shown.again ? S.again : S.shown, 'shown' + shown.n)),
       btn: go('가져간다', 'data-er="takeit"') + go('다시 찾아본다', 'data-er="list"', 'me-second'), item: itemSrc(sh)};
   }
   return {who, line: say(pick(S.found, 'found')), btn: go('홀로 올라간다', 'data-er="up"'), item: itemSrc(c.took || x)};
@@ -246,7 +245,7 @@ function handSheet(){
     openSheet(head('응접실 · 건넨다', c) +
       `<figure class="lt-gift"><img src="${itemSrc(t)}" alt=""></figure>` +
       `<div class="tea-say"><p class="en" lang="en" id="shTitle">${marked(S.scold[(c.miss - 1 + c.i) % S.scold.length].en)}</p><p class="ko">${esc(fill(S.scold[(c.miss - 1 + c.i) % S.scold.length].ko))}</p></div>` + keysOf(S.scold[(c.miss - 1 + c.i) % S.scold.length]) +
-      photo(x, true) + '<p class="purse-note">사진 속 물건이 아니다. 동전은 없다 — 그린고츠로 돌아가 다시 금고로 내려간다.</p>' +
+      '<p class="purse-note">사진 속 물건이 아니다. 동전은 없다 — 그린고츠로 돌아가 다시 금고로 내려간다.</p>' +
       '<button type="button" class="sh-drill" data-ergo="#/bank">그린고츠로 간다</button>');
     if (ctx) ctx.redraw();
     return;
@@ -261,7 +260,7 @@ function handSheet(){
     `<p class="mn-paid"><img src="assets/money/${p.gal ? 'galleon' : 'sickle'}.webp" alt=""><b>${p.gal ? '1갈레온' : `${p.k / SICKLE}시클`}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
     (p.look ? `<p class="purse-note">사진과 다른 물건을 ${p.look}번 꺼내 보게 해서 ${p.look}시클 덜 받았다.</p>` : '') +
     (manor.debtNote() ? `<p class="purse-note">${esc(manor.debtNote())}</p>` : '') +
-    `<p class="purse-note">${st().done >= TOTAL ? '그녀의 심부름은 이것으로 다 했다.' : '다음 심부름은 그녀의 받아쓰기를 사흘 더 한 뒤에 온다.'}</p>`);
+    (st().done >= TOTAL ? '<p class="purse-note">그녀의 심부름은 이것으로 다 했다.</p>' : ''));
   if (ctx) ctx.redraw();
 }
 
