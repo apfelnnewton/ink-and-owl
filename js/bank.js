@@ -15,6 +15,7 @@ import * as srs from './srs.js';
 import * as bond from './bond.js';
 import * as manor from './manor.js';
 import * as shops from './shops.js';
+import * as errand from './errand.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
 export const ID = 'gringotts';
@@ -107,6 +108,7 @@ const HEAPS = {   // the vault's gold, laid on the floor of the picture (user's 
   small: {p: [.184, .707], w: [.085, .79]}, middle: {p: [.351, .707], w: [.165, .79]}, full: {p: [.761, .856], w: [.36, .92]}};
 const heapOf = k => !k ? null : k < 2 * GALLEON ? 'small' : k < 8 * GALLEON ? 'middle' : 'full';
 const PHOTO = {p: [1080, 1910], w: [1920, 1086]};
+const ITEM = {p: [.5, .622, .34], w: [.5, .55, .13]};   // the thing taken from the Lestrange vault, on the velvet: x, foot, width as fractions of the picture
 
 export function initBank(app){
   const sec = $('#bank'), ph = $('#bkPhoto');
@@ -138,8 +140,10 @@ export function initBank(app){
     $('#bkTtl').textContent = 'Gringotts';
     $('#bkWho').textContent = 'The Head Goblin';
     $('#bkStats').innerHTML = stats();
-    const g = goblin(); $('#bkLine').innerHTML = g ? say(g) : '<span class="k">대리석 홀 끝, 높은 책상의 수석 고블린이 장부에서 눈을 든다.</span>';
-    $('#bkGo').innerHTML = (!hasVault() ? go('금고를 연다 <em>계약서에 서명</em>', 'data-bk="open"')
+    const g = goblin(), er = errand.hallBits();   // Bellatrix's errand, when one is under way (errand.js): its line and its button first
+    $('#bkLine').innerHTML = er && er.line ? er.line : g ? say(g) : '<span class="k">대리석 홀 끝, 높은 책상의 수석 고블린이 장부에서 눈을 든다.</span>';
+    const own = s => er ? s.replace('class="cgo "', 'class="cgo me-second"') : s;
+    $('#bkGo').innerHTML = (er ? er.btn : '') + own(!hasVault() ? go('금고를 연다 <em>계약서에 서명</em>', 'data-bk="open"')
       : go('금고 <em>보러 내려간다</em>', 'data-bk="vault"') + go('맡긴다 <em>주머니 → 금고</em>', 'data-bk="deposit"', 'me-second') + (vault() ? go('꺼낸다 <em>금고 → 주머니</em>', 'data-bk="withdraw"', 'me-second') : '')) +
       (hasVault() ? go(`빌린다 <em>${debt() ? `${borrowMax()}갈레온까지` : '10갈레온까지'}</em>`, 'data-bk="borrow"', 'me-second') : '') +
       (debt() ? go('갚는다', 'data-bk="repay"', 'me-second') : '') +
@@ -154,10 +158,30 @@ export function initBank(app){
     $('#bkLine').innerHTML = `<span class="k">${vault() ? '수레가 멈추고 둥근 쇠문이 열린다. 맡긴 돈이 그대로 있다.' : '수레가 멈추고 둥근 쇠문이 열린다. 금고는 비어 있다.'}</span>`;
     $('#bkGo').innerHTML = go('홀로 올라간다', 'data-bk="hall"');
   }
+  /* the cart ride and the Lestrange vault, on Bellatrix's errand (errand.js says what the card says) */
+  function drawErrand(){
+    const b = errand.placeBits(view); if (!b){ view = 'hall'; drawHall(); return; }
+    photo(view === 'cart' ? 'gringotts-cart' : 'gringotts-lestrange');
+    $('#bkTtl').textContent = 'Gringotts';
+    $('#bkWho').textContent = b.who;
+    $('#bkStats').innerHTML = '';
+    $('#bkLine').innerHTML = b.line;
+    $('#bkGo').innerHTML = b.btn;
+  }
+  function placeItem(){
+    const el = $('#bkItem'), b = view === 'lestrange' ? errand.placeBits(view) : null;
+    el.hidden = !(b && b.item); if (el.hidden) return;
+    const r = ph.getBoundingClientRect(); if (!r.width) return;
+    const wide = matchMedia('(min-aspect-ratio: 1/1)').matches, [iw, ih] = PHOTO[wide ? 'w' : 'p'];
+    const k = Math.max(r.width / iw, r.height / ih), dw = iw * k, dh = ih * k, ox = (r.width - dw) * .5, oy = (r.height - dh) * (wide ? .5 : .35);
+    const [fx, fy, fw] = wide ? ITEM.w : ITEM.p;
+    if (el.getAttribute('src') !== b.item) el.src = b.item;
+    el.style.width = (fw * dw) + 'px'; el.style.left = (ox + fx * dw) + 'px'; el.style.top = (oy + fy * dh) + 'px';
+  }
   function draw(){
     sec.dataset.view = view;
-    if (view === 'vault') drawVault(); else drawHall();
-    placeHeap();
+    if (view === 'vault') drawVault(); else if (view === 'cart' || view === 'lestrange') drawErrand(); else drawHall();
+    placeHeap(); placeItem();
   }
 
   /* ---------- the statement: date | what | amount, newest first; where things stand at the foot */
@@ -242,6 +266,7 @@ export function initBank(app){
 
   /* ---------- events */
   $('#bkGo').addEventListener('click', e => {
+    const er = e.target.closest('[data-er]'); if (er){ errand.act(er.dataset.er, app, draw); return; }
     const b = e.target.closest('[data-bk]'); if (!b || !TEXT) return;
     const a = b.dataset.bk;
     if (a === 'open') contract('open', openVault);
@@ -265,16 +290,18 @@ export function initBank(app){
     if (e.target.closest('[data-bksign]')) sign();
   });
   $('#sheetBody').addEventListener('keydown', e => { if (!sec.hidden && run && run.kind === 'contract' && e.key === 'Enter' && e.target.id === 'bkIn'){ const v = e.target.value.trim(); if (v) answer(v); } });
-  const back = () => app.go(view === 'vault' ? '#/bank' : '#/town/diagon');
+  const back = () => app.go(view === 'hall' ? '#/town/diagon' : '#/bank');
   $('#bkBack').addEventListener('click', back);
   document.addEventListener('keydown', e => { if (!sec.hidden && e.key === 'Escape'){ if (isSheetOpen()) closeSheet(); else back(); } });
   async function show({id}){
     if (!isOpen()){ app.go('#/me', true); return; }
-    view = id === 'vault' && hasVault() ? 'vault' : 'hall'; run = null;
+    await errand.load();
+    const c = errand.cur();
+    view = id === 'vault' && hasVault() ? 'vault' : id === 'cart' && c && c.at === 'cart' ? 'cart' : id === 'lestrange' && c && (c.at === 'cart' || c.at === 'ledger') ? 'lestrange' : 'hall'; run = null;
     draw();
     await load(); if (sec.hidden) return;
     draw();
     if (view === 'hall' && !st().seen){ st().seen = srs.today(); store.save(); }
   }
-  return {show, resize: placeHeap, refresh: () => { if (!sec.hidden) draw(); }};
+  return {show, resize: () => { placeHeap(); placeItem(); }, refresh: () => { if (!sec.hidden) draw(); }};
 }

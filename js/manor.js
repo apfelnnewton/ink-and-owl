@@ -17,6 +17,7 @@ import * as doors from './doors.js';
 import * as wand from './wand.js';
 import {floo} from './fire.js';
 import * as bella from './bella.js';
+import * as errand from './errand.js';
 import * as copy from './copywork.js';
 import {makeTalk} from './talk.js';
 import * as exams from './exams.js';
@@ -271,6 +272,9 @@ export function initManor(app){
     /* Occlumency is taught in this room: once her note about it has come, the way in is here too */
     const sps = store.get().spells || {};
     const oc = (sps.sent || {}).occlumency ? `<button type="button" class="clink" data-to="#/spell/occlumency">${(sps.learnt || {}).occlumency ? '마음 닫기 · 문을 다시 닫아 본다' : '마음 닫기 · 그녀에게 배운다'}</button>` : '';
+    /* her vault errand (errand.js): the photograph she holds out, or the thing brought back */
+    const er = errand.drawingBits();
+    if (er){ line = er.line + line; main = er.first ? er.btn + main.replace('class="cgo "', 'class="cgo me-second"') : main + er.btn; }
     put(stats, line, main + link + oc + (g.seen ? `<button type="button" class="clink" data-to="#/notes/${BID}/here">표현 노트</button>` : '') + copyLine('bella') + testLine(BID, done));
   }
 
@@ -323,6 +327,7 @@ export function initManor(app){
     if (e.target.closest('[data-shut]')){ shut(); return; }
     if (e.target.closest('[data-bbeat]')){ if (bbeat < bella.firstWords().length - 1) bbeat++; else bella.sit(); draw(); return; }
     if (e.target.closest('[data-btalk]')){ talk.start(() => draw()); return; }
+    const er = e.target.closest('[data-er]'); if (er){ errand.act(er.dataset.er, app, () => { if (!sec.hidden) draw(); }); return; }
     const cw = e.target.closest('[data-copy]'); if (cw){ copy.open(cw.dataset.copy, app, () => { if (!sec.hidden) draw(); }); return; }
     const to = e.target.closest('[data-to]'); if (to) app.go(to.dataset.to);
   });
@@ -362,7 +367,7 @@ export function initManor(app){
     mode(v); bbeat = 0;
     draw();
     if (view === 'hall') return;
-    await Promise.all([bond.load(ID), app.loadDeck(ID).catch(() => null), bella.isOpen() ? bond.load(BID) : null, v === 'drawing' ? app.loadDeck(BID).catch(() => null) : null]);
+    await Promise.all([bond.load(ID), app.loadDeck(ID).catch(() => null), bella.isOpen() ? bond.load(BID) : null, v === 'drawing' ? app.loadDeck(BID).catch(() => null) : null, v === 'drawing' ? errand.load() : null]);
     if (!sec.hidden) draw();
     if (view === 'cabinet') $('#mnCab').scrollTop = 0;
   }

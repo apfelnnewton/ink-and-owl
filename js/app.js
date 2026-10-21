@@ -26,6 +26,7 @@ import {initManor} from './manor.js';
 import {initCopywork} from './copywork.js';
 import {initTown} from './shops.js';
 import {initBank} from './bank.js';
+import {initErrand} from './errand.js';
 import * as census from './census.js';
 import * as sync from './sync.js';
 import * as shops from './shops.js';
@@ -128,6 +129,7 @@ const app = {
 
 };
 
+initErrand();
 const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), bank: initBank(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), potion: initPotion(app), exam: initExam(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
 initCopywork(app);   // the manor's example work (copywork.js): its sheet's buttons
 bond.init(app);

@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-21d';
+const VERSION = 'he-2026-10-21e';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -113,6 +113,46 @@ const CORE = [
   'assets/bank/heap-small.webp',
   'assets/bank/heap-middle.webp',
   'assets/bank/heap-full.webp',
+  /* Bellatrix's vault errands (2026-10-21) */
+  'js/errand.js',
+  'bond/errands.json',
+  'assets/bank/key.webp',
+  'assets/rooms/gringotts-cart-portrait.webp',
+  'assets/rooms/gringotts-cart-wide.webp',
+  'assets/rooms/gringotts-lestrange-portrait.webp',
+  'assets/rooms/gringotts-lestrange-wide.webp',
+  'assets/bank/items/01-goblet-ruby.webp',
+  'assets/bank/items/02-goblet-plain.webp',
+  'assets/bank/items/03-goblet-serpent.webp',
+  'assets/bank/items/04-cup-emerald.webp',
+  'assets/bank/items/05-necklace-opal.webp',
+  'assets/bank/items/06-locket-moon.webp',
+  'assets/bank/items/07-pearls-black.webp',
+  'assets/bank/items/08-dagger-silver.webp',
+  'assets/bank/items/09-dagger-curved.webp',
+  'assets/bank/items/10-dagger-sheath.webp',
+  'assets/bank/items/11-box-lacquer.webp',
+  'assets/bank/items/12-box-peacock.webp',
+  'assets/bank/items/13-box-hand.webp',
+  'assets/bank/items/14-candelabrum-three.webp',
+  'assets/bank/items/15-candlestick-snake.webp',
+  'assets/bank/items/16-candlestick-iron.webp',
+  'assets/bank/items/17-mirror-roses.webp',
+  'assets/bank/items/18-mirror-jet.webp',
+  'assets/bank/items/19-ring-signet.webp',
+  'assets/bank/items/20-ring-blood.webp',
+  'assets/bank/items/21-ring-iron.webp',
+  'assets/bank/items/22-comb-tortoiseshell.webp',
+  'assets/bank/items/23-hairpins-dagger.webp',
+  'assets/bank/items/24-tiara-jet.webp',
+  'assets/bank/items/25-brooch-spider.webp',
+  'assets/bank/items/26-brooch-moon.webp',
+  'assets/bank/items/27-decanter-purple.webp',
+  'assets/bank/items/28-perfume-black.webp',
+  'assets/bank/items/29-book-green.webp',
+  'assets/bank/items/30-scroll-black.webp',
+  'assets/bank/items/31-hourglass-black.webp',
+  'assets/bank/items/32-fan-lace.webp',
   'bond/noticed.json',
   'js/noticed.js',
   /* Chocolate Frog cards (2026-10-19) */
