@@ -20,6 +20,7 @@ import * as noticed from './noticed.js';
 import * as frogs from './frogs.js';
 import {cardWords, gloss, boxed} from './ollivander.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen, fitPaper, showTab} from './ui.js';
+import * as pager from './pager.js';
 const ID = n => 'K' + String(n).padStart(2, '0');
 /* how each keepsake is earned (bond.js: stage letters, requests, half / all learnt, every tenth tea, every fifteenth letter) */
 const WHEN = (n, d) => d && d.place === 'drawing' ? (n === 1 ? '받아쓰기 첫날' : n <= 4 ? `호칭 ${n}번째` : n <= 8 ? `응접실 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : d && d.place === 'fire' ? (n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `불 속 대화 ${(n - 4) * 5}번째` : n === 9 ? '대사 절반 배움' : '대사 전부 숙달') : n <= 4 ? `${bond.STAGES[n]} 단계` : n <= 8 ? `부탁 ${[1, 3, 6, 10][n - 5]}번째` : n === 9 ? '대사 절반 배움' :
@@ -208,7 +209,7 @@ export function initMyRoom(app){
     const inv = bond.teaReady(deck.id), invCard = inv ? `<button type="button" class="jnl-inv" data-teago="${deck.id}"><i class="clip" aria-hidden="true"></i><i class="seal s-${deck.id}"></i>` +
       `<span><small>${inDraw ? '그녀가 펜을 내려놓으라고 한다' : byFire ? '불 속에서 부른다' : '아직 마시지 않은 차'}${bond.inviteSrc(deck.id) === 'owl' ? ' · 오늘 밤까지' : ''}</small><b lang="en">${esc(inv.title.en)}</b><em>${esc(inv.title.ko)}</em></span><i class="go" aria-hidden="true">→</i></button>` : '';
     $('#jnlBody').innerHTML = `<header class="jnl-head"><i class="seal s-${deck.id}"></i><div><h2 lang="en">${inDraw ? 'In the drawing room with' : byFire ? 'By the fire with' : 'Tea with'} ${esc(deck.who)}</h2><p>${inDraw ? `${esc(deck.ko)}와 응접실에서 나눈 이야기 · ${list.length} / ${all}번` : byFire ? `${esc(deck.ko)}와 불가에서 나눈 이야기 · ${list.length} / ${all}번` : `${esc(deck.ko)}와 나눈 차 · ${list.length} / ${all}잔`}</p></div></header>` + invCard +
-      (list.length ? `<ol class="jnl-toc">${list.map(t => { const lg = (b.teaLog || {})[t.id];
+      (list.length ? pager.byCount('jnl:' + deck.id, list, 20, true, '잔').nav + `<ol class="jnl-toc">${pager.byCount('jnl:' + deck.id, list, 20, true).items.map(t => { const lg = (b.teaLog || {})[t.id];
         return `<li><button type="button" data-tea="${t.id}"><span class="no">${+t.id.slice(1)}</span>` +
           `<span class="tt"><b lang="en">${esc(t.title.en)}</b><small>${esc(t.title.ko)}</small></span><span class="dt">${lg ? fmt(lg.d) : ''}</span></button></li>`; }).join('')}</ol>`
         : `<p class="jnl-empty">아직 빈 일지입니다. ${esc(deck.ko)}와 ${inDraw ? '응접실에서 이야기를 나누면' : byFire ? '불가에서 이야기를 나누면' : '차를 마시면'} 그날의 대화가 여기 한 쪽씩 적힙니다.</p>`) +
@@ -288,6 +289,7 @@ export function initMyRoom(app){
   });
   $('#jnlWho').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b && b.dataset.who !== deck.id){ page = null; app.go('#/me/journal/' + b.dataset.who, true); } });
   $('#jnlBody').addEventListener('click', e => {
+    if (pager.turn(e.target)){ drawJournal(); $('#jnl').scrollTop = 0; return; }
     const g = e.target.closest('[data-teago]'); if (g){ app.go(({fire: '#/fire', drawing: '#/manor/drawing'})[byId(g.dataset.teago).place] || `#/letters/${g.dataset.teago}/tea`); return; }
     const t = e.target.closest('[data-tea]'); if (t){ page = t.dataset.tea; drawPage(); return; }
     if (e.target.closest('[data-toc]')){ page = null; drawJournal(); $('#jnl').scrollTop = 0; }

@@ -15,6 +15,7 @@ import * as shops from './shops.js';
 import * as owners from './owners.js';
 import * as bank from './bank.js';
 import * as noticed from './noticed.js';
+import * as pager from './pager.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
 /* [[words]] in a Howler or note are its key expressions: in bold, explained under the letter */
@@ -43,14 +44,14 @@ export function initLetters(app){
     tabs();
     $('#ltRel').innerHTML = friendBar();
     /* received letters only, newest first, under the day they came — not grouped by friend */
-    const mail = post.letters().filter(m => m.to === post.myUid());
-    list.innerHTML = mail.length ? mail.map((m, i) => {
+    const pg = pager.byMonth('fr', post.letters().filter(m => m.to === post.myUid()), m => m.t, '통'), mail = pg.items;   // a month at a time (2026-10-21 user)
+    list.innerHTML = (pg.nav ? `<li class="pg-li">${pg.nav}</li>` : '') + (mail.length ? mail.map((m, i) => {
       const who = post.memberOf(m.from), unread = !m.read, day = i === 0 || mail[i - 1].t !== m.t;
       return (day ? `<li class="lt-day">${fmt(m.t)}</li>` : '') +
         `<li class="${unread ? 'new' : ''}"><button type="button" data-fmail="${esc(m.id)}"${unread ? ' aria-label="새 편지"' : ''}>${unread ? sealTag(who.seal) : wandTag(who.wand)}` +
         `<span class="lt-meta" lang="en">${esc(who.name)}${m.x && shops.byWire(m.x.gift) ? `<i class="lt-with"> · ${esc(shops.byWire(m.x.gift).ko)}</i>` : ''}</span>` +
         `<span class="lt-first" lang="en">${esc(String(m.text || '').replace(/\s+/g, ' ').slice(0, 70))}${String(m.text || '').length > 70 ? '…' : ''}</span></button></li>`;
-    }).join('') : (post.inGroup() ? `<li class="lt-none"><p>아직 친구에게서 온 편지가 없습니다.</p></li>` : '');
+    }).join('') : (post.inGroup() ? `<li class="lt-none"><p>아직 친구에게서 온 편지가 없습니다.</p></li>` : ''));
   }
 
   function draw(){
@@ -59,15 +60,15 @@ export function initLetters(app){
     tabs();
     /* nothing above a professor's letters any more: the relationship stage is in the register, a request on the door */
     $('#ltRel').innerHTML = '';
-    const mail = b.mail.slice().reverse();
-    list.innerHTML = mail.length ? mail.map(m => {
+    const pg = pager.byMonth('lt:' + deck.id, b.mail.slice().reverse(), m => m.t, '통'), mail = pg.items;   // a month at a time (2026-10-21 user)
+    list.innerHTML = (pg.nav ? `<li class="pg-li">${pg.nav}</li>` : '') + (mail.length ? mail.map(m => {
       const it = bond.itemOf(deck.id, m.id); if (!it) return '';
       const first = bond.fill(it.en).replace(/\[\[|\]\]/g, '').replace(/\s+/g, ' ').slice(0, 70);
       /* an unopened Howler shows its red (or pink) envelope colour instead of the professor's wax */
       const mark = m.read ? '' : it.howler ? `<i class="seal hw-${it.pink ? 'pink' : 'red'}"></i>` : `<i class="seal s-${deck.id}"></i>`;
       return `<li class="${m.read ? '' : 'new'}${it.howler ? ' hw' : ''}"><button type="button" data-mail="${esc(m.id)}">${mark}` +
         `<span class="lt-meta">${it.from ? `<span lang="en">${esc(it.from.en)}</span> · ` : ''}${esc(it.kind)} · ${fmt(m.t)}</span><span class="lt-first" lang="en">${esc(first)}…</span></button></li>`;
-    }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${deck.place === 'manor' ? '저택에서 일한 날이 쌓이면 은쟁반에 카드가 놓입니다.' : esc(deck.ko) + '와(과) 공부하면 ' + (deck.place === 'corridor' ? '부엉이가' : '쪽지가') + ' 옵니다.'}</p></li>`;
+    }).join('') : `<li class="lt-none"><p>아직 받은 편지가 없습니다. ${deck.place === 'manor' ? '저택에서 일한 날이 쌓이면 은쟁반에 카드가 놓입니다.' : esc(deck.ko) + '와(과) 공부하면 ' + (deck.place === 'corridor' ? '부엉이가' : '쪽지가') + ' 옵니다.'}</p></li>`);
   }
 
   function openMail(key){
@@ -159,6 +160,7 @@ export function initLetters(app){
 
   /* ---------- events */
   list.addEventListener('click', e => {
+    if (pager.turn(e.target)){ draw(); $('#ltScroll').scrollTop = 0; return; }
     const f = e.target.closest('[data-fmail]'); if (f){ readLetter(f.dataset.fmail, app); draw(); return; }
     const b = e.target.closest('[data-mail]'); if (b) openMail(b.dataset.mail);
   });

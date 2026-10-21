@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-21h';
+const VERSION = 'he-2026-10-21i';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -115,6 +115,7 @@ const CORE = [
   'assets/bank/heap-full.webp',
   /* Bellatrix's vault errands (2026-10-21) */
   'js/errand.js',
+  'js/pager.js',
   'bond/errands.json',
   'assets/bank/key.webp',
   'assets/rooms/gringotts-ride-portrait.webp',

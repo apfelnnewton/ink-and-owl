@@ -9,6 +9,7 @@ import * as store from './store.js';
 import {askable, choices as pickChoices, exprLine, toggleNote} from './exchoice.js';
 import * as grammar from './grammar.js';
 import * as exams from './exams.js';
+import * as pager from './pager.js';
 import * as srs from './srs.js';
 import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
 
@@ -158,10 +159,11 @@ export function initNotes(app){
     const row = (gid, list) => { const n = list.reduce((s, e) => s + e.asks.length, 0), seen = list.reduce((s, e) => s + e.asks.filter(it => done[it.tag]).length, 0);
       return `<li><button type="button" class="ex-g" data-exg="${gid}"><b>${esc(groupName(gid))}</b><span>표현 ${list.length}개 · 예문 ${n}개${seen ? ` · 푼 예문 ${seen}` : ''}</span></button></li>`; };
     if (!keys.length && !days.old){ toast('아직 배운 표현이 없습니다.'); return; }
+    const pg = pager.byMonth('exb:' + deck.id, keys, d => d, '일');   // a month of days at a time (2026-10-21 user)
     openSheet(`<div class="sh-kind"><span>${esc(deck.ko)}</span></div><h2 class="sh-expr" id="shTitle">예문 연습장</h2>` +
       `<p class="sh-note">배운 날마다 그날의 표현과 예문이 모여 있다. 연습은 복습 일정에 영향을 주지 않는다.</p><ul class="ex-book">` +
       (miss.length ? `<li><button type="button" class="ex-g miss" data-exg="miss"><b>다시 볼 예문</b><span>틀린 예문 ${miss.length}개</span></button></li>` : '') +
-      keys.map(d => row(d, days[d])).join('') + (days.old ? row('old', days.old) : '') + '</ul>');
+      '</ul>' + pg.nav + '<ul class="ex-book">' + pg.items.map(d => row(d, days[d])).join('') + (days.old && pg.oldest ? row('old', days.old) : '') + '</ul>');
   }
   function openGroup(gid){
     if (gid === 'miss'){
@@ -196,6 +198,8 @@ export function initNotes(app){
     if (e.target.closest('[data-again]')){ startDrill(pool(lastKeys)); return; }
     const r = e.target.closest('[data-exrun]'); if (r){ startDrill(groupPool(r.dataset.exrun), r.dataset.exrun); return; }
     const g = e.target.closest('[data-exg]'); if (g){ openGroup(g.dataset.exg); return; }
+    if (e.target.closest('[data-pg^="exb:"]') && pager.turn(e.target)){ book(); return; }
+    if (e.target.closest('[data-pg^="wb:"]') && pager.turn(e.target)){ wordBook(); return; }
     if (e.target.closest('[data-exbook]')){ exCtx = ''; book(); return; }
     const k = e.target.closest('.ex-e[data-key]'); if (k) openEntry(k.dataset.key);
   });
@@ -212,14 +216,21 @@ export function initNotes(app){
   /* the word book (2026-10-16, docs/plan-owl.md 5): every hard word of the lines learnt, A to Z; a red dot on a word missed
      the last time an O.W.L. paper asked it. A tap opens the word as on the card */
   let wordList = [];
+  let missedWords = new Set();
   $('#notesWords').addEventListener('click', async () => {
-    const words = await app.loadWords(deck.id), w = exams.standing(deck.id, words), missed = new Set(w.missed.map(e => e.key));
+    const words = await app.loadWords(deck.id), w = exams.standing(deck.id, words);
+    missedWords = new Set(w.missed.map(e => e.key));
     wordList = [...w.all].sort((a, b) => a.w.localeCompare(b.w));
     if (!wordList.length){ toast('아직 배운 낱말이 없다'); return; }
+    wordBook();
+  });
+  /* twenty at a time (2026-10-21 user); the index on each button stays the word's place in the whole list */
+  function wordBook(){
+    const missed = missedWords, pg = pager.byCount('wb:' + deck.id, wordList, 20, false, '개');
     openSheet(`<div class="sh-kind"><span>${esc(deck.ko)}</span></div><h2 class="sh-expr" id="shTitle">낱말장 · ${wordList.length}개</h2>` +
       (missed.size ? `<p class="sh-note">붉은 점: 지난 O.W.L.에서 틀린 낱말 ${missed.size}개</p>` : '') +
-      `<ul class="wb-list">${wordList.map((e, i) => `<li><button type="button" data-wb="${i}"${missed.has(e.key) ? ' class="miss"' : ''}><b lang="en">${esc(e.w)}</b><span>${esc(e.ko)}</span></button></li>`).join('')}</ul>`);
-  });
+      pg.nav + `<ul class="wb-list">${pg.items.map((e, n) => { const i = pg.from + n; return `<li><button type="button" data-wb="${i}"${missed.has(e.key) ? ' class="miss"' : ''}><b lang="en">${esc(e.w)}</b><span>${esc(e.ko)}</span></button></li>`; }).join('')}</ul>`);
+  }
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-wb]'); if (!b || sec.hidden) return;
     const w = wordList[+b.dataset.wb]; if (!w) return;
