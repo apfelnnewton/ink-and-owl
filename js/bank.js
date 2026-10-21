@@ -190,7 +190,7 @@ export function initBank(app){
   function contract(which, then){
     const i = which === 'open' ? 0 : 1 + (st().loans || 0) % 6, c = TEXT && TEXT.contracts[i];
     if (!c){ toast('계약서를 불러오지 못했습니다.'); return; }
-    run = {kind: 'contract', c, k: 0, then, opts: c.clauses.map(cl => shuffled([cl.answer, ...cl.options])), tried: new Set()};
+    run = {kind: 'contract', c, k: 0, then, opts: c.clauses.map(cl => shuffled([cl.answer, ...cl.options])), tried: c.clauses.map(() => new Set())};   // words tried wrongly, clause by clause (2026-10-21 user: one clause's wrong word blocked the next clause's answer)
     clause();
   }
   const filled = (cl, ok) => esc(cl.en).replace('___', ok ? `<b class="bk-filled">${esc(cl.answer)}</b>` : '<span class="bk-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
@@ -199,7 +199,7 @@ export function initBank(app){
     const before = c.clauses.slice(0, k).map(x => `<li class="bk-done">${filled(x, true)}</li>`).join('');
     const ask = done ? '' : high()
       ? `<div class="bk-write"><input type="text" id="bkIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${esc(cl.answer[0])}…" lang="en"><button type="button" class="sh-drill" data-bkcheck="1">확인</button></div>`
-      : `<div class="dr-opts">${run.opts[k].map((o, n) => `<button type="button" data-bkpick="${esc(o)}"${run.tried.has(o) ? ' disabled class="wrong"' : ''}><i>${n + 1}</i>${esc(o)}</button>`).join('')}</div>`;
+      : `<div class="dr-opts">${run.opts[k].map((o, n) => `<button type="button" data-bkpick="${esc(o)}"${run.tried[k].has(o) ? ' disabled class="wrong"' : ''}><i>${n + 1}</i>${esc(o)}</button>`).join('')}</div>`;
     const after = done ? `<p class="dr-ko">${esc(cl.ko)}</p><p class="bk-why">${esc(cl.note)}</p>` +
       (k + 1 < c.clauses.length ? '<button type="button" class="sh-drill" data-bknext="1">다음 조항 →</button>' : '<button type="button" class="sh-drill" data-bksign="1">서명한다</button>') : '';
     openSheet(`<div class="sh-kind"><span lang="en">${esc(c.title.en)}</span><span>조항 ${k + 1} / ${c.clauses.length}</span></div>` +
@@ -210,7 +210,7 @@ export function initBank(app){
   function answer(word){
     const cl = run.c.clauses[run.k];
     if (norm(word) === norm(cl.answer)){ clause(null, true); return; }
-    run.tried.add(word); clause(any(TEXT.say.wrongClause));
+    run.tried[run.k].add(word); clause(any(TEXT.say.wrongClause));
   }
   function sign(){
     const then = run.then; run = null; closeSheet();
