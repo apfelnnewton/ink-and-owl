@@ -44,7 +44,14 @@ export function money(k){
    to the Knut in the bank's favour. A negative sum (money spent) is never touched */
 export function earn(k){
   const s = store.get(), b = s.bank;
-  if (k > 0 && b && b.debt > 0){ const cut = Math.min(b.debt, Math.ceil(k / 2)); b.debt -= cut; b.cut = (b.cut || 0) + cut; b.n = (b.n || 0) + 1; k -= cut; }
+  if (k > 0 && b && b.debt > 0){
+    const cut = Math.min(b.debt, Math.ceil(k / 2)), t = srs.today(), log = b.log || (b.log = []);
+    b.debt -= cut; b.cut = (b.cut || 0) + cut; b.n = (b.n || 0) + 1; k -= cut;
+    /* the bank's statement (bank.js): one line a day for what went to the bank from earnings, and a line when that settles it */
+    if (log[0] && log[0].t === 'cut' && log[0].d === t) log[0].k += cut; else log.unshift({d: t, t: 'cut', k: cut});
+    if (!b.debt) log.unshift({d: t, t: 'settled'});
+    log.length = Math.min(log.length, 60);
+  }
   s.purse = purse() + k;
 }
 export const debt = () => (store.get().bank || {}).debt || 0;

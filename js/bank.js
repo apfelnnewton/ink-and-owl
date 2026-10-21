@@ -26,6 +26,13 @@ export const vault = () => st().vault || 0;
 export const debt = () => st().debt || 0;
 export const hasVault = () => !!st().signed;
 const tick = () => { const b = st(); b.n = (b.n || 0) + 1; };
+/* the statement of account (2026-10-21 user): a line a transaction, newest first, the last 60; what went to the bank from
+   earnings is one line a day (manor.earn writes it). Amounts as the purse sees them: + into it, − out of it */
+const note = (t, k, extra = {}) => { const b = st(), log = b.log || (b.log = []); log.unshift({d: srs.today(), t, ...(k ? {k} : {}), ...extra}); log.length = Math.min(log.length, 60); };
+const LINES = {open: ['Vault opened under agreement', '약정에 따라 금고 개설', 0], dep: ['Deposited', '입금 (주머니 → 금고)', -1], depdebt: ['Paid in towards the loan', '입금 → 빚 상환', -1],
+  wd: ['Withdrawn', '출금 (금고 → 주머니)', 1], loan: ['Advanced on loan, Agreement {i}', '대출 (제{i}차 약정)', 1], rep: ['Repaid', '상환', -1],
+  cut: ['Remitted from earnings', '벌이에서 상환', -1], settled: ['Account settled', '빚 청산', 0]};
+export const statement = () => st().log || [];
 
 /* ---------- the words (bond/gringotts.json ← docs/newfaces-work/out-bank/bank.json, reviewed) */
 let TEXT = null;
@@ -53,13 +60,16 @@ export function deposit(k){
   if (k <= 0 || k > manor.purse()) return {err: 'short'};
   const toDebt = Math.min(b.debt || 0, k);
   manor.earn(-k);   // out of the purse (a negative sum: nothing is taken for the debt)
-  b.debt = (b.debt || 0) - toDebt; b.vault = (b.vault || 0) + (k - toDebt); tick(); store.save();
+  b.debt = (b.debt || 0) - toDebt; b.vault = (b.vault || 0) + (k - toDebt); tick();
+  if (toDebt){ note('depdebt', toDebt); if (!b.debt) note('settled'); }
+  if (k - toDebt) note('dep', k - toDebt);
+  store.save();
   return {toDebt, toVault: k - toDebt};
 }
 export function withdraw(k){
   const b = st(); k = Math.floor(k);
   if (k <= 0 || k > (b.vault || 0)) return {err: 'short'};
-  b.vault -= k; store.get().purse = manor.purse() + k; tick(); store.save();   // straight into the purse: it is the guest's own money, not earned
+  b.vault -= k; store.get().purse = manor.purse() + k; tick(); note('wd', k); store.save();   // straight into the purse: it is the guest's own money, not earned
   return {};
 }
 export const canBorrow = () => hasVault() && !vault() && debt() + GALLEON <= LIMIT;
@@ -69,16 +79,17 @@ export function borrow(g){
   if (!hasVault()) return {err: 'noVault'};
   if (vault()) return {err: 'vault'};
   if (g < 1 || debt() + g * GALLEON > LIMIT) return {err: 'limit'};
+  note('loan', g * GALLEON, {i: (b.loans || 0) % 6 + 1});   // the agreement it was signed under (contract())
   b.debt = debt() + g * GALLEON; b.loans = (b.loans || 0) + 1; store.get().purse = manor.purse() + g * GALLEON; tick(); store.save();
   return {};
 }
 export function repay(k){
   const b = st(); k = Math.floor(Math.min(k, debt()));
   if (k <= 0 || k > manor.purse()) return {err: 'short'};
-  manor.earn(-k); b.debt = debt() - k; tick(); store.save();
+  manor.earn(-k); b.debt = debt() - k; tick(); note('rep', k); if (!b.debt) note('settled'); store.save();
   return {cleared: !b.debt};
 }
-function openVault(){ const b = st(); if (!b.signed){ b.signed = srs.today(); tick(); store.save(); } }
+function openVault(){ const b = st(); if (!b.signed){ b.signed = srs.today(); tick(); note('open'); store.save(); } }
 
 /* ---------- the bank's letter, once, when the shops (and so Diagon Alley) are open */
 export function textOf(key){
@@ -132,6 +143,7 @@ export function initBank(app){
       : go('금고 <em>보러 내려간다</em>', 'data-bk="vault"') + go('맡긴다 <em>주머니 → 금고</em>', 'data-bk="deposit"', 'me-second') + (vault() ? go('꺼낸다 <em>금고 → 주머니</em>', 'data-bk="withdraw"', 'me-second') : '')) +
       (hasVault() ? go(`빌린다 <em>${debt() ? `${borrowMax()}갈레온까지` : '10갈레온까지'}</em>`, 'data-bk="borrow"', 'me-second') : '') +
       (debt() ? go('갚는다', 'data-bk="repay"', 'me-second') : '') +
+      (statement().length ? go(`거래 명세 <em>${statement().length}줄</em>`, 'data-bk="statement"', 'me-second') : '') +
       (debt() ? '<p class="bk-note">빚이 남아 있는 동안 버는 돈의 절반은 은행으로 간다.</p>' : '');
   }
   function drawVault(){
@@ -146,6 +158,16 @@ export function initBank(app){
     sec.dataset.view = view;
     if (view === 'vault') drawVault(); else drawHall();
     placeHeap();
+  }
+
+  /* ---------- the statement: date | what | amount, newest first; where things stand at the foot */
+  const day = d => { const [, m, n] = d.split('-').map(Number); return `${m}월 ${n}일`; };
+  function statementSheet(){
+    const rows = statement().map(e => { const [en, ko, sign] = LINES[e.t] || [e.t, '', 0], f = s => s.replace('{i}', e.i || '');
+      return `<tr><td class="bk-d">${day(e.d)}</td><td><span lang="en">${esc(f(en))}</span><small>${esc(f(ko))}</small></td><td class="bk-k${sign < 0 ? ' out' : sign > 0 ? ' in' : ''}">${e.k ? (sign < 0 ? '−' : '+') + esc(manor.money(e.k)) : ''}</td></tr>`; }).join('');
+    openSheet(`<div class="sh-kind"><span>Gringotts</span><span>최근 ${statement().length}줄</span></div><h2 class="sh-expr" id="shTitle" lang="en">Statement of Account</h2><p class="bk-ctitle">거래 명세 · 금액은 주머니 기준(+ 들어옴, − 나감)</p>` +
+      `<table class="bk-ledger"><thead><tr><th>날짜</th><th>내용</th><th>금액</th></tr></thead><tbody>${rows}</tbody></table>` +
+      `<p class="purse-note">금고 ${vault() ? esc(manor.money(vault())) : '0'} · 빚 ${debt() ? esc(manor.money(debt())) : '없음'} · 주머니 ${esc(manor.money(manor.purse()))}</p>`);
   }
 
   /* ---------- amounts: a few coins at a time, or all of it */
@@ -226,6 +248,7 @@ export function initBank(app){
     else if (a === 'vault') app.go('#/bank/vault');
     else if (a === 'hall') app.go('#/bank');
     else if (a === 'borrow') borrowSheet();
+    else if (a === 'statement') statementSheet();
     else amountSheet(a);
   });
   $('#sheetBody').addEventListener('click', e => {
