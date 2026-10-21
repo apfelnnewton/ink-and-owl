@@ -396,7 +396,8 @@ const PLACES = {
   /* a street is its picture and its name at the foot of it: the doors are the names of light on the picture (no card of rows underneath — user, 2026-10-12) */
   diagon: {photo: 'diagon', ttl: 'Diagon Alley', line: '비에 젖은 돌길. 등불이 닿지 않는 골목이 하나 있다.',
     spots: [{id: 'apothecary', ko: '약재상', p: [.19, .40, 'l'], w: [.14, .40, 'l']}, {id: 'weasleys', ko: '장난감 가게', p: [.557, .50, 't'], w: [.40, .50, 't']},
-      {id: 'borgin', ko: '녹턴 앨리', p: [.83, .455, 't'], w: [.835, .47, 't']}, {id: 'ollivander', ko: '올리밴더', p: [.915, .525, 'r'], w: [.94, .50, 'r']}]},   // the shops' English names do not fit under four doors on a phone (tried 2026-10-12: they run into each other)
+      {id: 'borgin', ko: '녹턴 앨리', p: [.83, .455, 't'], w: [.835, .47, 't']}, {id: 'ollivander', ko: '올리밴더', p: [.915, .525, 'r'], w: [.94, .50, 'r']},
+      {id: 'gringotts', ko: '그린고츠', p: [.74, .30, 't'], w: [.615, .34, 't']}]},   // the bank at the far end of the street, in the mist (bank.js, 2026-10-21)   // the shops' English names do not fit under four doors on a phone (tried 2026-10-12: they run into each other)
   hogsmeade: {photo: 'hogsmeade', ttl: 'Hogsmeade', line: '눈 덮인 큰길. 과자 가게 창만 분홍빛으로 환하다.',
     spots: [{id: 'honeydukes', ko: '허니듀크스', p: [.25, .53, 'l'], w: [.195, .64, 'l']}, {id: 'broomsticks', ko: '쓰리 브룸스틱스', p: [.87, .50, 'r'], w: [.85, .62, 'r']}]},
   honeydukes: {shop: true, street: 'hogsmeade', photo: 'honeydukes', ttl: 'Honeydukes', head: 'Honeydukes', sub: '호그스미드의 과자 가게 · 과자 열 가지', tip: '과자는 선물로 보낼 수 있다. 누가 무엇을 좋아하는지는 보내 봐야 안다.'},
@@ -482,7 +483,7 @@ export function initTown(app){
         (giftable(g) && !short ? `<button type="button" class="sh-drill" data-buygift="${g.id}">선물하기 · 친구에게 편지와 함께</button>` +
           (g.id === 'chocolate-frog' ? '<p class="purse-note">선물로 사면 뜯지 않은 채로 간다. 카드는 받는 친구가 연다.</p>' : '') : '')));
   }
-  const enter = id => { if (id === 'ollivander') app.go('#/ollivander/again'); else app.go('#/town/' + id); };
+  const enter = id => { if (id === 'ollivander') app.go('#/ollivander/again'); else if (id === 'gringotts') app.go('#/bank'); else app.go('#/town/' + id); };
   $('#twSpots').addEventListener('click', e => { const b = e.target.closest('[data-spot]'); if (b) enter(b.dataset.spot); });
   $('#twGrid').addEventListener('click', e => { const s = e.target.closest('[data-spot]'); if (s){ enter(s.dataset.spot); return; } const b = e.target.closest('[data-good]'); if (b) goodSheet(b.dataset.good); });
   $('#twShelfIn').addEventListener('click', e => { const b = e.target.closest('[data-good]'); if (b) goodSheet(b.dataset.good); });

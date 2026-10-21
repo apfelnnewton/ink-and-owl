@@ -122,7 +122,7 @@ function finish(){
   const more = left(run.who);
   openSheet(`<div class="sh-kind"><span>${HEAD[run.who][1]} · ${HEAD[run.who][0]}</span><span>오늘 ${ROUNDS - more} / ${ROUNDS}번</span></div>` +
     `<h2 class="sh-expr" id="shTitle">${run.right} / ${n}</h2>` + say(one(w.end[tier])) +
-    `<p class="mn-paid"><img src="assets/money/sickle.webp" alt=""><b>${coin}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
+    `<p class="mn-paid"><img src="assets/money/sickle.webp" alt=""><b>${coin}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` + (manor.debt() ? `<p class="purse-note">${esc(manor.debtNote())}</p>` : '') +
     (run.wrong.length ? `<h3 class="ex-wh">틀린 문제 ${run.wrong.length}개 · 표현 노트의 "다시 볼 예문"에 모아 둠</h3><ul class="sh-ex">${run.wrong.map(it => `<li><span class="en" lang="en">${filled(it)}</span><span class="kr">${esc(it.ko)}</span></li>`).join('')}</ul>` : '') +
     (more ? `<button type="button" class="sh-drill" data-cwagain="${run.who}">한 번 더 · 오늘 ${more}번 남음</button>` : `<p class="purse-note">오늘 ${HEAD[run.who][0]}은 끝났다. 내일 다시 할 수 있다.</p>`));
   run.done = true;

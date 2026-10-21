@@ -1,0 +1,757 @@
+{
+ "letter": {
+  "en": "Dear {name},\n\nGringotts Wizarding Bank writes to inform you that its doors are now open to you. [[It has come to our attention]] that you have lately begun to earn wages of your own, and the Bank takes a polite interest in all such persons.\n\nA vault may be opened in your name upon the signing of a short agreement at the high desk. Gold placed in it may be withdrawn whenever you please. The Bank keeps what is entrusted to it, and has done so for some centuries without exception.\n\nLoans are likewise available, on the Bank's terms and on no others. Those terms are set out plainly in each agreement, and they are not altered for anyone.\n\nThe head goblin receives customers at the end of the marble hall. No appointment is necessary. [[You need only]] bring your purse, and read before you sign.\n\nWe remain [[at your disposal]].\n\nYours sincerely,\n\nThe Office of the Head Goblin\nGringotts Wizarding Bank",
+  "ko": "{name} 귀하\n\n그린고츠 마법 은행은 이제 귀하께 문을 열었음을 알려 드립니다. 귀하께서 근래 스스로 삯을 벌기 시작하셨다는 사실이 저희에게 알려졌습니다. 은행은 그러한 분들 모두에게 정중한 관심을 기울입니다.\n\n높은 책상에서 짧은 약정서에 서명하시면 귀하의 이름으로 금고를 열 수 있습니다. 금고에 넣은 금은 원하실 때 언제든 꺼내 가실 수 있습니다. 은행은 맡겨진 것을 지킵니다. 몇 세기 동안 단 한 번의 예외도 없이 그래 왔습니다.\n\n대출 또한 가능합니다. 은행의 조건으로, 그리고 오직 그 조건으로만 합니다. 조건은 약정서마다 분명히 적혀 있으며, 누구를 위해서도 바뀌지 않습니다.\n\n수석 고블린은 대리석 홀 끝에서 손님을 맞습니다. 미리 약속하실 필요는 없습니다. 주머니를 가져오시고, 서명하기 전에 읽으시기만 하면 됩니다.\n\n언제든 귀하의 용무를 받들겠습니다.\n\n그린고츠 마법 은행\n수석 고블린실 드림",
+  "keys": {
+   "It has come to our attention": "저희가 알게 되었습니다 (공문서에서 어떤 사실을 알게 되었다고 밝힐 때)",
+   "You need only": "~하기만 하면 됩니다 (해야 할 일이 그것뿐이라고 정중히 말할 때)",
+   "at your disposal": "언제든 뜻대로 쓰실 수 있도록, 도와드릴 준비가 되어 있는 (편지 끝의 격식 표현)"
+  }
+ },
+ "hall": {
+  "first": [
+   {
+    "en": "Welcome to Gringotts. [[I take it]] you have come about a vault. Most people do, once they have something worth keeping.",
+    "ko": "그린고츠에 오신 것을 환영합니다. 금고 일로 오신 줄 압니다. 지킬 만한 것이 생기면 다들 그러십니다.",
+    "keys": {
+     "I take it": "~인 것으로 압니다, ~이겠지요 (짐작을 정중하게 확인할 때)"
+    }
+   },
+   {
+    "en": "A new face. The Bank deals in gold, not conversation. [[Kindly]] keep your questions brief and your purse in plain sight.",
+    "ko": "처음 뵙는 얼굴입니다. 은행은 금을 다루지, 담소를 다루지 않습니다. 질문은 짧게, 주머니는 잘 보이는 곳에 두십시오.",
+    "keys": {
+     "Kindly": "부디 ~해 주십시오 (정중하지만 단호한 부탁)"
+    }
+   }
+  ],
+  "back": [
+   {
+    "en": "Back again. The ledgers [[have been brought up to date]]. They always are.",
+    "ko": "또 오셨습니다. 장부는 최신으로 정리되어 있습니다. 언제나 그렇습니다.",
+    "keys": {
+     "have been brought up to date": "bring up to date = (장부·기록을) 최신 상태로 맞추다"
+    }
+   },
+   {
+    "en": "Your business? The Bank does not [[keep anyone waiting]], and prefers not to be kept waiting either.",
+    "ko": "용건이 무엇입니까? 은행은 누구도 기다리게 하지 않으며, 기다리게 되는 것도 좋아하지 않습니다.",
+    "keys": {
+     "keep anyone waiting": "keep someone waiting = 남을 기다리게 하다"
+    }
+   },
+   {
+    "en": "Good day. Your vault is exactly as you left it. Nothing in this building moves [[without leave]].",
+    "ko": "안녕하십니까. 손님의 금고는 두고 가신 그대로입니다. 이 건물에서는 허락 없이 움직이는 것이 없습니다.",
+    "keys": {
+     "without leave": "허락 없이 (leave = 허가, 격식)"
+    }
+   },
+   {
+    "en": "{name}. The Bank remembers its customers. Whether that is to your advantage [[remains to be seen]].",
+    "ko": "{name} 손님. 은행은 손님을 기억합니다. 그것이 손님께 이로운 일인지는 두고 볼 일입니다.",
+    "keys": {
+     "remains to be seen": "두고 볼 일이다, 아직 알 수 없다"
+    }
+   }
+  ],
+  "debt": [
+   {
+    "en": "The ledger shows {debt} owing. The Bank [[makes no comment]]. It merely records.",
+    "ko": "장부에 적힌 빚은 {debt}입니다. 은행은 아무 말도 덧붙이지 않습니다. 적을 뿐입니다.",
+    "keys": {
+     "makes no comment": "make no comment = 아무 말도 덧붙이지 않다, 논평하지 않다"
+    }
+   },
+   {
+    "en": "You owe the Bank {debt}. It will be repaid [[in due course]]. Gold, unlike people, is patient.",
+    "ko": "은행에 진 빚이 {debt}입니다. 때가 되면 갚아질 것입니다. 금은 사람과 달리 참을성이 있습니다.",
+    "keys": {
+     "in due course": "때가 되면, 적절한 때에"
+    }
+   },
+   {
+    "en": "Half of what you earn continues to find its way here. {debt} remains. The arithmetic [[takes care of itself]].",
+    "ko": "버시는 돈의 절반은 계속 이리로 옵니다. 남은 빚은 {debt}입니다. 셈은 저절로 됩니다.",
+    "keys": {
+     "takes care of itself": "take care of itself = 저절로 해결되다"
+    }
+   }
+  ],
+  "rich": [
+   {
+    "en": "Your vault is [[in good order]], and heavier than most. The Bank approves of weight.",
+    "ko": "손님의 금고는 잘 정돈되어 있고, 대부분의 금고보다 묵직합니다. 은행은 무게를 좋게 봅니다.",
+    "keys": {
+     "in good order": "잘 정돈된, 좋은 상태인"
+    }
+   },
+   {
+    "en": "A respectable sum lies in your vault. Goblins notice such things. We are [[not in the habit of]] saying so.",
+    "ko": "손님의 금고에는 상당한 금액이 놓여 있습니다. 고블린은 그런 것을 알아봅니다. 그렇다고 입 밖에 내는 버릇은 없습니다만.",
+    "keys": {
+     "not in the habit of": "~하는 버릇이 없다, 좀처럼 ~하지 않다"
+    }
+   }
+  ],
+  "noVault": [
+   {
+    "en": "You have no vault, and the Bank keeps nothing for anyone [[in the absence of]] a signed agreement. The agreement is before you.",
+    "ko": "손님께는 금고가 없습니다. 은행은 서명한 약정서 없이는 누구의 것도 맡지 않습니다. 약정서는 손님 앞에 있습니다.",
+    "keys": {
+     "in the absence of": "~이 없는 경우에는, ~ 없이 (격식)"
+    }
+   },
+   {
+    "en": "A purse is no place for gold. Sign the agreement for a vault, and the Bank will take it [[into safe keeping]].",
+    "ko": "주머니는 금을 둘 곳이 못 됩니다. 금고 약정서에 서명하시면 은행이 맡아 안전하게 보관하겠습니다.",
+    "keys": {
+     "into safe keeping": "take into safe keeping = 맡아서 안전하게 보관하다"
+    }
+   }
+  ]
+ },
+ "say": {
+  "deposit": [
+   {
+    "en": "{amount} received. It will be kept [[under lock and key]].",
+    "ko": "{amount} 수령. 자물쇠를 채워 단단히 보관하겠습니다.",
+    "keys": {
+     "under lock and key": "자물쇠를 채워 단단히 (보관하여)"
+    }
+   },
+   {
+    "en": "Deposited: {amount}. Counted twice, [[as is customary]].",
+    "ko": "입금: {amount}. 관례대로 두 번 세었습니다.",
+    "keys": {
+     "as is customary": "관례대로, 늘 하는 대로"
+    }
+   },
+   {
+    "en": "{amount}, placed in your vault. The Bank [[acknowledges receipt]].",
+    "ko": "{amount}, 손님의 금고에 넣었습니다. 은행은 이를 수령했음을 확인합니다.",
+    "keys": {
+     "acknowledges receipt": "acknowledge receipt = 수령을 확인하다 (상업 서신 표현)"
+    }
+   }
+  ],
+  "withdraw": [
+   {
+    "en": "{amount} withdrawn. Do count it. The Bank already has.",
+    "ko": "{amount} 출금. 세어 보십시오. 은행은 이미 세었습니다."
+   },
+   {
+    "en": "Paid out: {amount}. The ledger has been [[amended accordingly]].",
+    "ko": "지급: {amount}. 장부는 그에 맞게 고쳐 두었습니다.",
+    "keys": {
+     "amended accordingly": "그에 맞게 고쳐진 (accordingly = 그에 따라)"
+    }
+   },
+   {
+    "en": "{amount}, from your vault to your purse. Spend it [[as you see fit]]. The Bank does not ask.",
+    "ko": "{amount}, 금고에서 주머니로 옮겼습니다. 좋으실 대로 쓰십시오. 은행은 묻지 않습니다.",
+    "keys": {
+     "as you see fit": "좋으실 대로, 적당하다고 여기시는 대로"
+    }
+   }
+  ],
+  "depositToDebt": [
+   {
+    "en": "{amount} received and set against your debt, [[as agreed]]. The vault must wait its turn.",
+    "ko": "{amount} 수령, 약정한 대로 빚에서 덜었습니다. 금고는 차례를 기다려야 합니다.",
+    "keys": {
+     "as agreed": "약정한 대로, 합의한 대로"
+    }
+   },
+   {
+    "en": "{amount} has gone to your debt first, [[in accordance with]] the agreement you signed.",
+    "ko": "서명하신 약정에 따라 맡기신 돈은 먼저 빚에 들어갔습니다. 금액은 {amount}입니다.",
+    "keys": {
+     "in accordance with": "~에 따라 (규정·약정에 맞게)"
+    }
+   }
+  ],
+  "borrowed": [
+   {
+    "en": "{amount} lent and entered [[against your name]]. Half of what you earn will come to the Bank until it is repaid.",
+    "ko": "{amount} 대출, 손님 이름 앞으로 기입했습니다. 갚으실 때까지 버시는 돈의 절반이 은행으로 옵니다.",
+    "keys": {
+     "against your name": "손님 이름 앞으로 (장부에 빚을 적을 때)"
+    }
+   },
+   {
+    "en": "The Bank's gold: {amount}. Kindly [[bear in mind]] whose it is.",
+    "ko": "은행의 금, {amount}입니다. 그것이 누구의 것인지 명심해 주십시오.",
+    "keys": {
+     "bear in mind": "명심하다, 염두에 두다"
+    }
+   },
+   {
+    "en": "{amount}, paid into your purse. No interest, no date. The Bank [[has its reasons]]. You need not know them.",
+    "ko": "{amount}, 주머니에 넣어 드렸습니다. 이자도 기한도 없습니다. 은행에는 나름의 이유가 있습니다. 손님께서 아실 필요는 없습니다.",
+    "keys": {
+     "has its reasons": "나름의 이유가 있다, 다 생각이 있다"
+    }
+   }
+  ],
+  "repaid": [
+   {
+    "en": "{amount} repaid. The ledger is [[the better for it]].",
+    "ko": "{amount} 상환. 장부가 그만큼 나아졌습니다.",
+    "keys": {
+     "the better for it": "그 덕에 더 나아진"
+    }
+   },
+   {
+    "en": "Received against your debt: {amount}. [[Duly noted]].",
+    "ko": "빚 상환으로 받은 금액: {amount}. 잘 기록해 두었습니다.",
+    "keys": {
+     "Duly noted": "잘 알겠습니다, 기록해 두었습니다 (사무적인 대답)"
+    }
+   },
+   {
+    "en": "{amount} returned to the Bank. The Bank does not forget such things. It forgets very little.",
+    "ko": "{amount}, 은행으로 돌아왔습니다. 은행은 이런 일을 잊지 않습니다. 은행이 잊는 것은 거의 없습니다."
+   }
+  ],
+  "cleared": [
+   {
+    "en": "Your debt stands at nothing. The account is [[settled in full]], and your earnings are your own again.",
+    "ko": "손님의 빚은 이제 없습니다. 셈은 전액 청산되었고, 버시는 돈은 다시 온전히 손님의 것입니다.",
+    "keys": {
+     "settled in full": "전액 청산된, 다 갚은"
+    }
+   },
+   {
+    "en": "Paid in full. The entry is closed. [[Should you]] borrow again, the terms [[remain unchanged]].",
+    "ko": "전액 상환되었습니다. 장부의 그 항목은 마감되었습니다. 다시 빌리신다면 조건은 그대로입니다.",
+    "keys": {
+     "Should you": "Should you ~ = 혹시 ~하신다면 (if의 격식 있는 도치)",
+     "remain unchanged": "변함없다, 그대로다"
+    }
+   }
+  ],
+  "cannotBorrowVault": [
+   {
+    "en": "[[You will appreciate that]] the Bank does not lend to customers with gold in their vault. Take it out first.",
+    "ko": "금고에 금이 있는 손님께는 은행이 돈을 빌려 드리지 않는다는 점을 이해하시리라 믿습니다. 먼저 꺼내 가십시오.",
+    "keys": {
+     "You will appreciate that": "~임을 이해하시리라 믿습니다 (정중하게 사정을 밝힐 때)"
+    }
+   },
+   {
+    "en": "A customer with gold in the vault, asking for a loan. Remarkable. Empty the vault, and then we may [[discuss terms]].",
+    "ko": "금고에 금을 두고 대출을 청하시는 손님이라. 놀랍습니다. 금고를 비우십시오. 그다음에 조건을 논의할 수 있습니다.",
+    "keys": {
+     "discuss terms": "조건을 논의하다 (거래·계약)"
+    }
+   }
+  ],
+  "limit": [
+   {
+    "en": "You owe ten Galleons. That is the limit, and the limit is [[not open to negotiation]].",
+    "ko": "손님의 빚은 10갈레온입니다. 그것이 한도이며, 한도는 협상의 여지가 없습니다.",
+    "keys": {
+     "not open to negotiation": "협상의 여지가 없다"
+    }
+   },
+   {
+    "en": "Ten Galleons owed. The Bank will lend [[no further]] until some of it comes back.",
+    "ko": "빚이 10갈레온입니다. 일부가 돌아오기 전까지 은행은 더 빌려 드리지 않습니다.",
+    "keys": {
+     "no further": "더는 ~않다 (격식)"
+    }
+   }
+  ],
+  "purseShort": [
+   {
+    "en": "Your purse does not hold that much. The Bank counts what is there, not what is hoped for.",
+    "ko": "주머니에 그만큼이 없습니다. 은행은 있는 것을 세지, 바라는 것을 세지 않습니다."
+   },
+   {
+    "en": "[[Insufficient funds]]. Two words the Bank has [[had occasion to]] say before.",
+    "ko": "잔액이 부족합니다. 은행이 전에도 몇 번 해 본 말입니다.",
+    "keys": {
+     "Insufficient funds": "잔액 부족 (은행에서 쓰는 말)",
+     "had occasion to": "have occasion to = ~할 일이 있다 (격식)"
+    }
+   }
+  ],
+  "wrongClause": [
+   {
+    "en": "No. Read the clause again. It means exactly what it says, and it does not say that.",
+    "ko": "아닙니다. 조항을 다시 읽으십시오. 조항은 적힌 그대로를 뜻하며, 그렇게 적혀 있지 않습니다."
+   },
+   {
+    "en": "Incorrect. Goblins do not sign what they have not read, and [[nor should you]].",
+    "ko": "틀렸습니다. 고블린은 읽지 않은 것에 서명하지 않습니다. 손님도 그래서는 안 됩니다.",
+    "keys": {
+     "nor should you": "~도 그래서는 안 된다 (부정문에 이어 덧붙일 때)"
+    }
+   },
+   {
+    "en": "That word does not belong there. Try again. The parchment can wait. It has waited longer than you have lived.",
+    "ko": "그 낱말은 거기 들어갈 것이 아닙니다. 다시 하십시오. 양피지는 기다릴 수 있습니다. 손님이 살아오신 것보다 오래 기다려 왔습니다."
+   }
+  ],
+  "signed": [
+   {
+    "en": "Signed and witnessed. The agreement is [[binding]] from this moment.",
+    "ko": "서명과 입회를 마쳤습니다. 이 약정은 지금부터 효력이 있습니다.",
+    "keys": {
+     "binding": "구속력이 있는 (계약이 효력을 가질 때)"
+    }
+   },
+   {
+    "en": "Your signature is noted. The Bank [[will hold you to it]], as it holds itself.",
+    "ko": "서명을 확인했습니다. 은행은 스스로를 지키듯 손님도 그 약속을 지키게 할 것입니다.",
+    "keys": {
+     "will hold you to it": "hold someone to it = (약속을) 지키게 하다"
+    }
+   }
+  ]
+ },
+ "contracts": [
+  {
+   "title": {
+    "en": "Agreement for the Keeping of a Vault",
+    "ko": "금고 보관 약정"
+   },
+   "clauses": [
+    {
+     "en": "This agreement is made between Gringotts Wizarding Bank, ___ called 'the Bank', and the undersigned, who wishes to open a vault in its keeping.",
+     "answer": "hereinafter",
+     "options": [
+      "heretofore",
+      "forthwith",
+      "nevertheless"
+     ],
+     "ko": "본 약정은 그린고츠 마법 은행(이하 '은행'이라 한다)과 은행에 금고를 열고자 하는 서명인 사이에 체결한다.",
+     "note": "hereinafter는 '이하'라는 뜻으로, 계약서에서 긴 이름 대신 앞으로 부를 짧은 이름을 정할 때 쓴다(heretofore는 '지금까지'라 새로 이름을 정하는 자리에 맞지 않는다)."
+    },
+    {
+     "en": "Upon signing, the Bank shall ___ assign the undersigned a vault, and the vault shall be theirs to use from that very day.",
+     "answer": "forthwith",
+     "options": [
+      "hitherto",
+      "formerly",
+      "seldom"
+     ],
+     "ko": "서명과 동시에 은행은 서명인에게 즉시 금고를 배정하여야 하며, 서명인은 바로 그날부터 금고를 사용할 수 있다.",
+     "note": "forthwith는 '즉시, 지체 없이'라는 뜻으로, 그날부터 쓸 수 있다는 뒷말과 맞는다(hitherto · formerly는 과거를, seldom은 '드물게'를 뜻한다)."
+    },
+    {
+     "en": "The undersigned shall be ___ to withdraw any part of the vault's contents at any hour, and the Bank shall not ask the reason.",
+     "answer": "entitled",
+     "options": [
+      "obliged",
+      "reluctant",
+      "liable"
+     ],
+     "ko": "서명인은 언제든지 금고에 든 것의 어느 부분이라도 꺼낼 권리가 있으며, 은행은 그 이유를 묻지 아니한다.",
+     "note": "be entitled to는 '~할 권리가 있다'는 뜻으로, 꺼내는 것이 의무(obliged)가 아니라 원할 때 쓰는 권리임을 밝힌다."
+    },
+    {
+     "en": "The Bank pays no interest on gold held in the vault; safe keeping is given ___ interest, and goblins hold it to be worth rather more.",
+     "answer": "in lieu of",
+     "options": [
+      "in addition to",
+      "by virtue of",
+      "in proportion to"
+     ],
+     "ko": "은행은 금고에 보관된 금에 이자를 지급하지 아니한다. 안전한 보관이 이자를 대신하여 제공되며, 고블린은 그것이 이자보다 훨씬 값지다고 여긴다.",
+     "note": "in lieu of는 '~ 대신에'라는 뜻으로, 이자가 없다는 앞말과 맞는 것은 이것뿐이다(in addition to를 넣으면 이자도 준다는 말이 되고, by virtue of · in proportion to는 있지도 않은 이자를 근거나 기준으로 삼는 말이 된다)."
+    },
+    {
+     "en": "Whilst any loan remains ___, gold brought to the desk for the vault shall first go towards that loan, and only what is left shall be placed in the vault.",
+     "answer": "outstanding",
+     "options": [
+      "repaid",
+      "void",
+      "unsigned"
+     ],
+     "ko": "대출금이 남아 있는 동안 금고에 넣으려고 창구에 가져온 금은 먼저 그 대출금을 갚는 데 쓰여야 하며, 남은 것만 금고에 넣는다.",
+     "note": "outstanding은 '아직 갚지 않은, 미결제의'라는 뜻으로, 갚을 대출이 남아 있어야 금이 먼저 그리로 간다는 말이 성립한다."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "First Agreement for a Loan",
+    "ko": "제1차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "___, hereinafter called 'the Borrower', receives from the Bank the sum written below, counted out in whole Galleons of the Bank's own gold.",
+     "answer": "The undersigned",
+     "options": [
+      "The aforementioned",
+      "The guarantor",
+      "The plaintiff"
+     ],
+     "ko": "서명인(이하 '차용인'이라 한다)은 아래 적힌 금액을 은행 소유의 금으로, 온전한 갈레온 단위로 세어 은행으로부터 받는다.",
+     "note": "the undersigned는 '아래 서명한 사람'이라는 뜻으로 계약 당사자를 가리키며, 첫 조항이라 앞에서 언급된 사람(the aforementioned)은 아직 없다(guarantor는 보증인이라 돈을 받지 않고, plaintiff는 소송의 원고다)."
+    },
+    {
+     "en": "The loan carries no interest: nothing shall ___ upon it by the day, the month or the year, and the Borrower shall repay only what was lent.",
+     "answer": "accrue",
+     "options": [
+      "insist",
+      "depend",
+      "dwell"
+     ],
+     "ko": "본 대출에는 이자가 없다. 날마다, 달마다, 해마다 그 위에 불어나는 것이 없으며, 차용인은 빌린 만큼만 갚는다.",
+     "note": "accrue는 '(이자 등이) 쌓이다, 불어나다'라는 뜻으로, 이자가 없다는 앞말을 풀어 주고 빌린 만큼만 갚는다는 뒷말과 이어지는 것은 이것뿐이다(insist upon은 '~을 고집하다', depend upon은 '~에 달려 있다', dwell upon은 '곱씹다')."
+    },
+    {
+     "en": "No date is set for repayment, and the Borrower shall not be held ___ of this agreement for owing the sum a long while.",
+     "answer": "in breach",
+     "options": [
+      "in favour",
+      "in charge",
+      "in want"
+     ],
+     "ko": "상환 기일은 정하지 아니하며, 차용인은 그 금액을 오래 빚지고 있다는 이유로 본 약정을 위반한 것으로 간주되지 아니한다.",
+     "note": "be in breach of는 '(계약·규정을) 위반하다'라는 뜻으로, 기한이 없으니 오래 빚져도 위반이 아니라는 말이다."
+    },
+    {
+     "en": "Whilst any part of the loan is owed, one half of every coin the Borrower earns shall be ___ by the Bank before it reaches the purse.",
+     "answer": "withheld",
+     "options": [
+      "refunded",
+      "doubled",
+      "forgiven"
+     ],
+     "ko": "대출금의 일부라도 남아 있는 동안, 차용인이 버는 모든 돈의 절반은 주머니에 들어가기 전에 은행이 떼어 간다.",
+     "note": "withhold는 '(지급할 돈의 일부를) 떼어 두다, 원천 징수하다'라는 뜻으로, 주머니에 닿기 전에 은행이 절반을 가져간다는 말이다."
+    },
+    {
+     "en": "Every Knut taken ___ the clause above shall be entered in the Bank's ledgers against the debt, on the day it is taken.",
+     "answer": "pursuant to",
+     "options": [
+      "in lieu of",
+      "notwithstanding",
+      "prior to"
+     ],
+     "ko": "위 조항에 따라 떼어 간 모든 크넛은 떼어 간 그날 은행 장부에 빚을 갚은 것으로 기입하여야 한다.",
+     "note": "pursuant to는 '~에 따라'라는 뜻으로, 위 조항이 정한 대로 떼어 간 돈임을 가리킨다(notwithstanding은 '~에도 불구하고', prior to는 '~보다 먼저')."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "Second Agreement for a Loan",
+    "ko": "제2차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "___ any larger sum the Borrower may wish for, no more than ten Galleons shall be owed to the Bank at any one time.",
+     "answer": "Notwithstanding",
+     "options": [
+      "Pursuant to",
+      "In addition to",
+      "By virtue of"
+     ],
+     "ko": "차용인이 더 큰 금액을 바라더라도, 한 번에 은행에 빚질 수 있는 금액은 10갈레온을 넘지 못한다.",
+     "note": "notwithstanding은 '~에도 불구하고'라는 뜻으로, 무엇을 바라든 한도가 지켜진다는 말이다(pursuant to는 '~에 따라', in addition to는 '~에 더하여', by virtue of는 '~ 덕분에'라 뜻이 맞지 않는다)."
+    },
+    {
+     "en": "What has been repaid may be borrowed again, ___ the whole sum owed at any one time does not exceed ten Galleons.",
+     "answer": "provided that",
+     "options": [
+      "unless",
+      "lest",
+      "so that"
+     ],
+     "ko": "갚은 금액은 다시 빌릴 수 있다. 다만 한 번에 빚진 금액 전체가 10갈레온을 넘지 않아야 한다.",
+     "note": "provided that은 '~이라는 조건으로, 다만 ~한다면'이라는 뜻으로, 다시 빌릴 수 있는 조건을 단다(unless를 넣으면 한도 안일 때 못 빌린다는 말이, so that을 넣으면 다시 빌리는 것이 한도를 지키려는 목적이라는 엉뚱한 말이 된다)."
+    },
+    {
+     "en": "The Bank lends in whole Galleons only, and no request for Sickles or Knuts shall be ___ at the desk, however small the need.",
+     "answer": "entertained",
+     "options": [
+      "refused",
+      "repaid",
+      "forfeited"
+     ],
+     "ko": "은행은 온전한 갈레온 단위로만 빌려주며, 필요한 금액이 아무리 작더라도 시클이나 크넛을 빌려 달라는 청은 창구에서 받아들이지 아니한다.",
+     "note": "entertain a request는 '요청을 받아들여 고려하다'라는 뜻으로, 갈레온으로만 빌려준다는 앞말과 맞는다(refused를 넣으면 거절하지 않는다는 반대 말이 된다)."
+    },
+    {
+     "en": "The Bank lends ___ and asks for no surety, no pledge and no date; it asks only that the debt be honoured.",
+     "answer": "in good faith",
+     "options": [
+      "in arrears",
+      "in error",
+      "in jest"
+     ],
+     "ko": "은행은 신의에 따라 빌려주며 보증인도, 담보도, 기한도 요구하지 아니한다. 다만 빚을 성실히 갚을 것만을 요구한다.",
+     "note": "in good faith는 '선의로, 신의를 가지고'라는 뜻으로, 보증도 담보도 없이 믿고 빌려준다는 말과 이어진다."
+    },
+    {
+     "en": "Should a loan be signed whilst the Borrower's vault holds any gold, this agreement shall be ___, for the Bank does not lend to those with gold of their own.",
+     "answer": "null and void",
+     "options": [
+      "binding",
+      "bona fide",
+      "in arrears"
+     ],
+     "ko": "차용인의 금고에 금이 조금이라도 있는 동안 대출에 서명하였다면 본 약정은 무효로 한다. 은행은 자기 금을 가진 이에게 빌려주지 않기 때문이다.",
+     "note": "null and void는 '법적으로 무효인'이라는 뜻으로, 은행이 그런 대출을 하지 않는다는 뒷말과 맞는다(binding은 '구속력 있는'으로 반대다)."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "Third Agreement for a Loan",
+    "ko": "제3차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "___ the Borrower has asked the Bank for a sum of gold, and the Bank has agreed to lend it, the parties set down the following terms.",
+     "answer": "Whereas",
+     "options": [
+      "Unless",
+      "Lest",
+      "Until"
+     ],
+     "ko": "차용인이 은행에 일정 금액의 금을 청하였고 은행이 이를 빌려주기로 동의하였으므로, 양 당사자는 다음 조건을 정한다.",
+     "note": "whereas는 계약서 첫머리에서 '~이므로, ~인 사실에 비추어'라는 뜻으로, 계약을 맺게 된 사정을 밝힌다."
+    },
+    {
+     "en": "The ___ sum shall be paid into the Borrower's purse at the desk, in whole Galleons, on the day this agreement is signed.",
+     "answer": "aforementioned",
+     "options": [
+      "undersigned",
+      "forfeited",
+      "repaid"
+     ],
+     "ko": "앞서 말한 금액은 본 약정에 서명하는 날 창구에서 온전한 갈레온 단위로 차용인의 주머니에 지급한다.",
+     "note": "aforementioned는 '앞서 언급한'이라는 뜻으로, 앞 조항에서 말한 그 금액을 가리킨다(금액은 서명할 수 없고, 이제 막 빌리는 돈이니 repaid도 아니다)."
+    },
+    {
+     "en": "One half of all the Borrower earns shall pass to the Bank until the debt is cleared, any odd Knut being ___ in the Bank's favour.",
+     "answer": "rounded",
+     "options": [
+      "forgiven",
+      "refunded",
+      "overlooked"
+     ],
+     "ko": "빚을 다 갚을 때까지 차용인이 버는 모든 돈의 절반은 은행으로 가며, 남는 크넛은 은행에 유리하게 올려 셈한다.",
+     "note": "round in someone's favour는 '~에게 유리하게 끝수를 맞추다'라는 뜻으로, 은행에 유리하다는 말과 맞는 것은 이것뿐이다(forgiven · overlooked는 끝수를 봐준다는 말이라 차용인에게 유리하고, refunded는 돌려준다는 말이다)."
+    },
+    {
+     "en": "The Borrower alone is ___ for this debt; no friend, employer or other person may be asked to pay it in the Borrower's place.",
+     "answer": "liable",
+     "options": [
+      "eligible",
+      "grateful",
+      "renowned"
+     ],
+     "ko": "본 빚에 대한 책임은 차용인에게만 있으며, 친구나 고용주나 그 밖의 누구에게도 차용인 대신 갚으라고 요구할 수 없다.",
+     "note": "be liable for는 '(빚·손해에) 법적 책임이 있다'는 뜻으로, 다른 누구도 대신 갚지 않는다는 뒷말과 맞는다."
+    },
+    {
+     "en": "The Borrower may repay the whole debt, or any part ___, at the desk on any day, in Galleons, Sickles or Knuts.",
+     "answer": "thereof",
+     "options": [
+      "hereby",
+      "hitherto",
+      "therefore"
+     ],
+     "ko": "차용인은 어느 날이든 창구에서 갈레온, 시클 또는 크넛으로 빚 전부 또는 그 일부를 갚을 수 있다.",
+     "note": "thereof는 '그것의'라는 뜻으로, any part thereof는 '그 빚의 어느 부분'을 가리킨다."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "Fourth Agreement for a Loan",
+    "ko": "제4차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "The Bank ___ lends to the undersigned the sum written below, on the terms set out in this agreement and on no others.",
+     "answer": "hereby",
+     "options": [
+      "hitherto",
+      "formerly",
+      "elsewhere"
+     ],
+     "ko": "은행은 본 약정으로써 서명인에게 아래 적힌 금액을 본 약정에 정한 조건으로만 빌려준다.",
+     "note": "hereby는 '이 문서로써, 이로써'라는 뜻으로, 이 약정에 서명하는 바로 그 행위로 빌려준다는 말이다(hitherto · formerly는 과거를 가리킨다)."
+    },
+    {
+     "en": "Sums ___ borrowed and since repaid may be borrowed again, so long as no more than ten Galleons is owed at any one time.",
+     "answer": "heretofore",
+     "options": [
+      "henceforth",
+      "hereafter",
+      "never"
+     ],
+     "ko": "이전에 빌렸다가 그 뒤 갚은 금액은 한 번에 빚진 금액이 10갈레온을 넘지 않는 한 다시 빌릴 수 있다.",
+     "note": "heretofore는 '지금까지, 이전에'라는 뜻으로, '그 뒤 갚은(since repaid)'과 맞는 것은 과거를 가리키는 이 낱말뿐이다."
+    },
+    {
+     "en": "The Borrower shall ___ nothing by owing: no vault, no privilege and no good standing with the Bank is lost while a debt is open.",
+     "answer": "forfeit",
+     "options": [
+      "repay",
+      "borrow",
+      "sign"
+     ],
+     "ko": "차용인은 빚을 졌다는 이유로 아무것도 잃지 아니한다. 빚이 남아 있는 동안에도 금고도, 권리도, 은행에서의 신용도 잃지 않는다.",
+     "note": "forfeit은 '(벌로) 잃다, 몰수당하다'라는 뜻으로, 뒤에 이어지는 '잃지 않는다(is lost)'와 같은 말이다."
+    },
+    {
+     "en": "___ the Borrower brings gold to the desk while the debt is open, that gold shall first be set against the debt.",
+     "answer": "In the event that",
+     "options": [
+      "Unless",
+      "Until",
+      "Before"
+     ],
+     "ko": "빚이 남아 있는 동안 차용인이 금을 창구에 가져오는 경우, 그 금은 먼저 빚을 갚는 데 충당한다.",
+     "note": "in the event that은 '~하는 경우에는'이라는 뜻으로, 금을 가져온 경우 그 금(that gold)이 어떻게 쓰이는지를 정한다(until · before로는 아직 가져오지 않은 금이 된다)."
+    },
+    {
+     "en": "When the debt has been repaid ___, the Bank shall mark it as settled in its ledgers and say no more about it.",
+     "answer": "in full",
+     "options": [
+      "in part",
+      "in vain",
+      "in theory"
+     ],
+     "ko": "빚을 전액 갚으면 은행은 장부에 그 빚을 청산된 것으로 표시하고 그 일에 대해 더는 말하지 아니한다.",
+     "note": "in full은 '전액, 빠짐없이'라는 뜻으로, 장부에 청산되었다고 적으려면 일부(in part)가 아니라 전부 갚아야 한다."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "Fifth Agreement for a Loan",
+    "ko": "제5차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "This loan is made to the Borrower as a ___ customer of the Bank, known by name and by vault, and to no one else.",
+     "answer": "bona fide",
+     "options": [
+      "would-be",
+      "anonymous",
+      "fictitious"
+     ],
+     "ko": "본 대출은 이름과 금고로 알려진 은행의 정식 고객인 차용인에게 하는 것이며, 다른 누구에게도 하지 아니한다.",
+     "note": "bona fide는 '진짜의, 정식의'라는 뜻으로, 이름과 금고로 알려진 고객이라는 말과 맞는다(anonymous는 '이름 없는', would-be는 '되려고 하는')."
+    },
+    {
+     "en": "This loan is ___ the same terms as every loan before it: no interest, no date of repayment, and no more than ten Galleons owed at once.",
+     "answer": "subject to",
+     "options": [
+      "exempt from",
+      "in breach of",
+      "in lieu of"
+     ],
+     "ko": "본 대출은 앞선 모든 대출과 같은 조건을 따른다. 이자가 없고, 상환 기일이 없으며, 한 번에 10갈레온을 넘게 빚질 수 없다.",
+     "note": "be subject to는 '~의 적용을 받다, ~을 따르다'라는 뜻으로, 바로 뒤에 그 조건들을 늘어놓는 것과 맞는다(exempt from은 '~에서 면제되는')."
+    },
+    {
+     "en": "The Bank ___ all interest on this loan, as on every loan it makes under these agreements, and shall never ask more than the sum lent.",
+     "answer": "waives",
+     "options": [
+      "doubles",
+      "charges",
+      "collects"
+     ],
+     "ko": "은행은 이 약정들에 따라 하는 모든 대출과 마찬가지로 본 대출의 이자를 모두 면제하며, 빌려준 금액보다 더 요구하지 아니한다.",
+     "note": "waive는 '(권리·요금을) 포기하다, 면제하다'라는 뜻으로, 빌려준 것보다 더 요구하지 않는다는 뒷말과 맞는다."
+    },
+    {
+     "en": "The Borrower may ___ any part of the debt at the desk, in any coin, and the ledger shall show the new sum that same day.",
+     "answer": "discharge",
+     "options": [
+      "forgive",
+      "inherit",
+      "double"
+     ],
+     "ko": "차용인은 어떤 동전으로든 창구에서 빚의 일부를 갚을 수 있으며, 장부에는 그날 바로 새 금액이 나타나야 한다.",
+     "note": "discharge a debt는 '빚을 갚아 끝내다'라는 격식 있는 말로, 빚을 갚는 쪽은 차용인이다(빚을 forgive하는 것은 빌려준 쪽이고, inherit은 '물려받다', double은 '두 배로 하다'이다)."
+    },
+    {
+     "en": "The Bank's ledgers are kept ___: the record of this loan, and of every Knut repaid, shall never be struck out or lost.",
+     "answer": "in perpetuity",
+     "options": [
+      "in pencil",
+      "for a season",
+      "in arrears"
+     ],
+     "ko": "은행의 장부는 영구히 보관된다. 본 대출과 갚은 모든 크넛의 기록은 결코 지워지거나 사라지지 아니한다.",
+     "note": "in perpetuity는 '영구히, 영원히'라는 뜻으로, 기록이 결코 지워지지 않는다는 뒷말과 맞는다(in pencil은 지울 수 있고, for a season은 한철뿐이다)."
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "Sixth Agreement for a Loan",
+    "ko": "제6차 대출 약정"
+   },
+   "clauses": [
+    {
+     "en": "___ declares that their vault stands empty, and that no gold of theirs lies in the Bank's keeping on the day this loan is made.",
+     "answer": "The undersigned",
+     "options": [
+      "The aforesaid",
+      "The plaintiff",
+      "The witness"
+     ],
+     "ko": "서명인은 본 대출을 받는 날 자신의 금고가 비어 있으며, 은행에 맡긴 자신의 금이 전혀 없음을 선언한다.",
+     "note": "the undersigned는 '아래 서명한 사람'으로 이 약정에 서명하는 차용인을 가리키며, 첫 조항이라 '앞서 말한 사람(the aforesaid)'은 아직 없다(witness는 입회인이라 금고가 비었는지와 상관이 없다)."
+    },
+    {
+     "en": "Gold the Borrower brings to the desk while owing shall be set against the debt ___, without waiting for any word from the Borrower.",
+     "answer": "forthwith",
+     "options": [
+      "hitherto",
+      "belatedly",
+      "formerly"
+     ],
+     "ko": "빚이 있는 동안 차용인이 창구에 가져온 금은 차용인의 말을 기다리지 않고 즉시 빚을 갚는 데 충당한다.",
+     "note": "forthwith는 '즉시'라는 뜻으로, 차용인의 말을 기다리지 않는다는 뒷말과 맞는다(belatedly는 '뒤늦게', hitherto · formerly는 과거를 가리킨다)."
+    },
+    {
+     "en": "Both parties sign ___: the Bank trusting the Borrower to repay, and the Borrower trusting the Bank to keep honest ledgers.",
+     "answer": "in good faith",
+     "options": [
+      "in bad faith",
+      "in jest",
+      "under protest"
+     ],
+     "ko": "양 당사자는 신의에 따라 서명한다. 은행은 차용인이 갚으리라 믿고, 차용인은 은행이 장부를 정직하게 적으리라 믿는다.",
+     "note": "in good faith는 '선의로, 서로 믿고'라는 뜻으로, 양쪽이 서로를 믿는다는 뒷말과 맞는다(under protest는 '이의를 제기하면서')."
+    },
+    {
+     "en": "___ the Borrower's long acquaintance with the Bank, no more than ten Galleons shall be owed at any one time.",
+     "answer": "Notwithstanding",
+     "options": [
+      "In addition to",
+      "Pursuant to",
+      "In lieu of"
+     ],
+     "ko": "차용인이 은행과 오래 거래해 왔더라도, 한 번에 빚질 수 있는 금액은 10갈레온을 넘지 못한다.",
+     "note": "notwithstanding은 '~에도 불구하고'라는 뜻으로, 오래 알고 지낸 사이여도 한도는 그대로라는 말이다(in addition to는 '~에 더해', pursuant to는 '~에 따라', in lieu of는 '~ 대신'이라 앞뒤가 이어지지 않는다)."
+    },
+    {
+     "en": "Having no date of repayment, the debt can never fall ___, and the Borrower shall never be charged for its age.",
+     "answer": "into arrears",
+     "options": [
+      "into place",
+      "into favour",
+      "into line"
+     ],
+     "ko": "상환 기일이 없으므로 이 빚은 결코 연체되지 않으며, 차용인은 빚이 오래되었다는 이유로 돈을 더 물지 아니한다.",
+     "note": "fall into arrears는 '(지불이) 밀리다, 연체되다'라는 뜻으로, 기일이 없으니 밀릴 수도 없다는 말이다."
+    }
+   ]
+  }
+ ]
+}

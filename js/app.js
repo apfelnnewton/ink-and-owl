@@ -3,7 +3,7 @@
    #/me/cabinet/<deck> the gift drawers · #/me/journal/<deck> the tea journal · #/me/wand the wand box ·
    #/ollivander[/again] the wand shop · #/spell/<id>[/review] a spell lesson or its page · #/potion/<n> a potions lesson · #/exam/<deck>[/results/<t>] a word test (O.W.L.) · #/me/spells the spellbook · #/map the Marauder's Map · #/prophet[/<n>] the Daily Prophet · #/need[/end|/shelf] the Room of Requirement ·
    #/fire the fireplace in your room (Sirius, Floo powder) · #/manor[/study|/cabinet|/drawing] Malfoy Manor ·
-   #/town/<diagon|hogsmeade|honeydukes|apothecary|broomsticks> the two streets and their shops (shops.js) ·
+   #/town/<diagon|hogsmeade|honeydukes|apothecary|broomsticks> the two streets and their shops (shops.js) · #/bank[/vault] Gringotts (bank.js) ·
    #/letters/<deck|friends> owl post (on the desk in your room; friends' letters in the first tab) · #/settings */
 import * as store from './store.js';
 import {DECKS, byId} from './decks.js';
@@ -25,6 +25,7 @@ import {initFire} from './fire.js';
 import {initManor} from './manor.js';
 import {initCopywork} from './copywork.js';
 import {initTown} from './shops.js';
+import {initBank} from './bank.js';
 import * as census from './census.js';
 import * as sync from './sync.js';
 import * as shops from './shops.js';
@@ -123,11 +124,11 @@ const app = {
     const inv = bond.owlDue(); if (inv) setTimeout(() => deliver(app, inv), 700);
   },
   /* friends' letters moved (arrived, read, sent): the counts in your room, the post and the corridor */
-  refreshMail(){ ['me', 'letters', 'home', 'fire', 'manor', 'town'].forEach(n => { if (current === n && screens[n].refresh) screens[n].refresh(); }); }
+  refreshMail(){ ['me', 'letters', 'home', 'fire', 'manor', 'town', 'bank'].forEach(n => { if (current === n && screens[n].refresh) screens[n].refresh(); }); }
 
 };
 
-const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), potion: initPotion(app), exam: initExam(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
+const screens = {home: initHome(app), room: initRoom(app), report: initReport(app), settings: initSettings(app), notes: initNotes(app), records: initRecords(app), script: initScript(app), letters: initLetters(app), fire: initFire(app), manor: initManor(app), town: initTown(app), bank: initBank(app), ledger: census.initLedger(app), me: initMyRoom(app), ollivander: initOllivander(app), spell: initSpell(app), potion: initPotion(app), exam: initExam(app), map: initMap(app), prophet: initProphet(app), need: initNeed(app)};
 initCopywork(app);   // the manor's example work (copywork.js): its sheet's buttons
 bond.init(app);
 grammar.init(app);
@@ -154,7 +155,7 @@ let rt = 0;
 window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (current && screens[current].resize) screens[current].resize(); }, 160); });
 
 fetch('data/index.json').then(r => r.json()).then(j => { app.index = j; if (current === 'home') screens.home.refresh(); }).catch(() => {});
-Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (['me', 'fire', 'manor', 'letters', 'town'].includes(current) && screens[current].refresh) screens[current].refresh(); });
+Promise.all(DECKS.filter(d => d.file).map(d => app.loadDeck(d.id).catch(() => null))).then(() => bond.daily()).then(() => need.daily(app)).then(() => { if (current === 'home'){ screens.home.resize(); screens.home.refresh(); } else if (['me', 'fire', 'manor', 'letters', 'town', 'bank'].includes(current) && screens[current].refresh) screens[current].refresh(); });
 
 app.fontsReady.then(() => { if (current === 'home') screens.home.refresh(); });
 route();

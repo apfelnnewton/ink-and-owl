@@ -127,7 +127,7 @@ export function today(){
 /* the block for the end of the day's dictation (report.js) */
 export function reportBlock(){
   const {tip, gal} = today(), say = l => `<div class="rx-say"><p class="q" lang="en">${esc(bond.fill(l.en))}</p><p class="k">${esc(bond.fill(l.ko))}</p></div>`;
-  const purse = `<span>주머니 · ${esc(manor.money(manor.purse()))}</span>`;
+  const purse = `<span>주머니 · ${esc(manor.money(manor.purse()))}${manor.debt() ? ` · 그린고츠 빚 ${esc(manor.money(manor.debt()))}` : ''}</span>`;
   return (gal ? `<h2>새 호칭 · ${esc(you(true))}</h2>${say(gal)}<p class="mn-paid"><img src="assets/money/galleon.webp" alt=""><b>1갈레온</b>${tip ? '' : purse}</p>` : '') +
     (tip ? `<h2>바닥을 구르는 동전</h2>${say(tip)}<p class="mn-paid"><img src="assets/money/sickle.webp" alt=""><b>${tip.s}시클</b>${purse}</p>` : '');
 }

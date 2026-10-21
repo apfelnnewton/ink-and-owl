@@ -40,14 +40,25 @@ export function money(k){
   const c = coins(k), out = [c.g && `${c.g}갈레온`, c.s && `${c.s}시클`, c.k && `${c.k}크넛`].filter(Boolean);
   return out.length ? out.join(' ') : '빈 주머니';
 }
-export const earn = k => { store.get().purse = purse() + k; };
+/* while anything is owed to Gringotts, half of every coin earned goes to the bank (bank.js; 2026-10-21 user 2가) — rounded up
+   to the Knut in the bank's favour. A negative sum (money spent) is never touched */
+export function earn(k){
+  const s = store.get(), b = s.bank;
+  if (k > 0 && b && b.debt > 0){ const cut = Math.min(b.debt, Math.ceil(k / 2)); b.debt -= cut; b.cut = (b.cut || 0) + cut; b.n = (b.n || 0) + 1; k -= cut; }
+  s.purse = purse() + k;
+}
+export const debt = () => (store.get().bank || {}).debt || 0;
+/* a line under any sum of wages: where half of it went */
+export const debtNote = () => debt() ? `그린고츠 빚 ${money(debt())} · 버는 돈의 절반은 빚으로 간다` : '';
 const coinRow = k => { const c = coins(k);
   return `<ul class="purse-coins">${[['galleon', 'Galleons', '갈레온', c.g], ['sickle', 'Sickles', '시클', c.s], ['knut', 'Knuts', '크넛', c.k]].map(([f, en, ko, n]) =>
     `<li class="${n ? '' : 'none'}"><img src="assets/money/${f}.webp" alt=""><b>${n}</b><span lang="en">${en}</span><small>${ko}</small></li>`).join('')}</ul>`; };
 /* the purse in the guest room: what is in it (the shops that take it are not open yet) */
 export const purseSheet = () => `<div class="sh-kind"><span>동전 주머니</span></div><figure class="purse-fig"><img src="assets/money/purse.webp" alt=""></figure>` +
   `<h2 class="sh-expr" id="shTitle" lang="en">The Coin Purse</h2>${coinRow(purse())}` +
-  `<p class="purse-note">1갈레온 = 17시클 · 1시클 = 29크넛</p><p class="purse-note">말포이 저택에서 일하고 받은 삯이 여기 모인다.</p>`;
+  `<p class="purse-note">1갈레온 = 17시클 · 1시클 = 29크넛</p><p class="purse-note">말포이 저택에서 일하고 받은 삯이 여기 모인다.</p>` +
+  ((store.get().bank || {}).vault ? `<p class="purse-note">그린고츠 금고에 맡긴 돈 · ${money(store.get().bank.vault)}</p>` : '') +
+  (debt() ? `<p class="purse-note">${debtNote()}</p>` : '');
 
 /* ---------- the seven objects */
 const usable = cards => cards.filter(c => c.card !== false).slice().sort((a, b) => a.order - b.order);
@@ -87,7 +98,7 @@ export function wages(){
 export function reportBlock(){
   const w = wages(); if (!w) return '';
   return `<h2>오늘의 삯</h2><div class="rx-say"><p class="q" lang="en">${esc(w.en)}</p><p class="k">${esc(w.ko)}</p></div>` +
-    `<p class="mn-paid"><img src="assets/money/sickle.webp" alt=""><b>${w.s}시클</b><span>주머니 · ${esc(money(purse()))}</span></p>` +
+    `<p class="mn-paid"><img src="assets/money/sickle.webp" alt=""><b>${w.s}시클</b><span>주머니 · ${esc(money(purse()))}</span></p>` + (debt() ? `<p class="purse-note">${esc(debtNote())}</p>` : '') +
     (w.card ? `<button type="button" class="rp-teago" data-go="#/letters/${ID}/${w.card}">은쟁반에 카드 한 장이 놓여 있다 →</button>` : '');
 }
 

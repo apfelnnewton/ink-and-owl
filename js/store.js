@@ -38,6 +38,7 @@ function normalise(s){
   if (s.shop && typeof s.shop === 'object') out.shop = s.shop;   // the paper bag and the presents sent (shops.js)
   if (s.census && typeof s.census === 'object') out.census = s.census;
   if (s.sync && typeof s.sync === 'object') out.sync = s.sync;         // where this device stands with the caretaker's other devices (sync.js)
+  if (s.bank && typeof s.bank === 'object') out.bank = s.bank;          // Gringotts: the vault, the debt, the contracts signed (bank.js)
   if (s.stamp && typeof s.stamp === 'object') out.stamp = s.stamp;     // when the stars, the purse, the bag, the hidden room last changed here
   if (s.cleared && typeof s.cleared === 'object') out.cleared = s.cleared;   // decks wiped on purpose, and the day: {<deckId>: date}   // what this device last told the caretaker's ledger (census.js)
   if (s.wrote && typeof s.wrote === 'object') out.wrote = s.wrote;   // expressions used in letters to friends (friends.js): {<cardId#n>: times}
@@ -190,6 +191,11 @@ export function mergeData(text){
   if (obj.fire) state.fire = {...obj.fire, ...(state.fire || {})};
   if (obj.manor){ const a = state.manor || {}, b = obj.manor; state.manor = (b.days || 0) > (a.days || 0) ? {...a, ...b, seen: {...a.seen, ...b.seen}} : {...b, ...a, seen: {...b.seen, ...a.seen}}; }
   { const w = whole('purse'); if (w === 1){ if (obj.purse) state.purse = obj.purse; else delete state.purse; } else if (w === 0){ if (obj.purse) state.purse = Math.max(state.purse || 0, obj.purse); joined('purse'); } }
+  /* Gringotts (bank.js, 2026-10-21): stamped with the purse — the more recently changed copy whole, so that money deposited or
+     repaid is not counted twice; without stamps, the copy with more operations on it */
+  { const w = whole('bank');
+    if (w === 1){ if (obj.bank) state.bank = obj.bank; else delete state.bank; }
+    else if (w === 0){ if (obj.bank && (!state.bank || (obj.bank.n || 0) > (state.bank.n || 0))) state.bank = obj.bank; joined('bank'); } }
   /* the shops: whichever device has sent more presents keeps its bag and its tallies (adding two bags would double what was bought once) */
   { const w = whole('shop');
     if (w === 1){ if (obj.shop) state.shop = obj.shop; }

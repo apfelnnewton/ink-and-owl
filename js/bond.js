@@ -26,6 +26,7 @@ import * as shops from './shops.js';
 import * as potions from './potions.js';
 import * as exams from './exams.js';
 import * as owners from './owners.js';
+import * as bank from './bank.js';
 import * as noticed from './noticed.js';
 import * as sync from './sync.js';
 import {esc, toast} from './ui.js';
@@ -57,7 +58,7 @@ export function bondOf(id){
   return s.bond[id];
 }
 export const stage = id => { const p = bondOf(id).pts; let k = 0; AT.forEach((a, i) => { if (p >= a) k = i; }); return k; };
-export const unread = id => (id ? [id] : [...DECKS.map(d => d.id), owners.ID]).reduce((n, d) => n + bondOf(d).mail.filter(m => !m.read).length, 0);   // owners.ID: the former owners' letters (Borgin's tab)
+export const unread = id => (id ? [id] : [...DECKS.map(d => d.id), owners.ID, bank.ID]).reduce((n, d) => n + bondOf(d).mail.filter(m => !m.read).length, 0);   // owners.ID: the former owners' letters (Borgin's tab)
 
 /* the learner's names, from settings: {name} formal, {first} first name */
 export function fill(text){
@@ -292,6 +293,7 @@ export async function daily(){
   await step('map', () => map.daily());
   await step('fire', () => fire.daily());
   await step('shops', () => shops.daily());
+  await step('bank', () => bank.daily());   // Gringotts' letter, once the shops are open (bank.js)
   /* a thing of Borgin's carried home: after a night, its professor writes; a reply answered; things come back (noticed.js) */
   await step('noticed', () => noticed.daily({earn: manor.earn, take: k => manor.earn(-k), purse: manor.purse,
     gone: key => { const o = owners.state(); o.gone[key] = srs.today(); o.q = o.q.filter(x => x.id !== key); }}));   // yesterday's presents are answered; the shops open after a first day's wages
@@ -344,6 +346,7 @@ export const postItem = (id, key) => post(id, key);
 /* ---------- the words for a piece of post */
 export function itemOf(id, key){
   if (id === owners.ID) return owners.textOf(key);
+  if (id === bank.ID) return bank.textOf(key);   // Gringotts writes under its own name (bank.js)
   /* a professor who noticed one of Borgin's things in the guest's bag (noticed.js): the letter shows the thing */
   if (/^NC~/.test(key)){ const it = noticed.textOf(key); if (it){ const g = shops.DARK.find(x => x.key === it.thing.key); if (g) it.thing = {id: g.id, en: g.en, ko: g.ko, key: g.key}; } return it; }
   if (/^H-/.test(key)) return howler.textOf(id, key);
@@ -468,9 +471,10 @@ export function init(a){
   loadNews();
   howler.load();
   onPost((id, key) => {
-    const who = byId(id) || (id === owners.ID ? owners.DESK : null);
+    const who = byId(id) || (id === owners.ID ? owners.DESK : id === bank.ID ? bank.DESK : null);
     if (!who) return;
     if (/^C-/.test(key) || key === 'W00') return;   // the cold-tea note waits quietly; the welcome comes by owl
+    if (id === bank.ID){ toast('<span class="q" lang="en">An owl arrives, bearing the seal of Gringotts.</span><span class="k">그린고츠 은행에서 안내장이 왔습니다.</span>', 3200, true); return; }
     if (id === owners.ID){ const t = owners.textOf(key); toast(`<span class="q" lang="en">An owl arrives.</span><span class="k">${esc(t && t.from ? t.from.ko : '낯선 사람')}에게서 ${/~end$/.test(key) ? '마지막 쪽지가' : '편지가'} 왔습니다.</span>`, 3200, true); return; }   // a stranger writing about a thing from Borgin's (owners.js)
     if (id === 'lucius' && /^C\d\d$/.test(key)) return;   // a card on the salver, beside the wages (manor.js)
     if (who.place === 'drawing'){   // no owl: a scrap in a slanting hand (the first one waits in the glass cabinet)

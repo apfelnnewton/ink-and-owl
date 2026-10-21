@@ -13,6 +13,7 @@ import {hint} from './hints.js';
 import * as howler from './howler.js';
 import * as shops from './shops.js';
 import * as owners from './owners.js';
+import * as bank from './bank.js';
 import * as noticed from './noticed.js';
 
 const fmt = t => { const [, m, d] = t.split('-').map(Number); return `${m}월 ${d}일`; };
@@ -22,8 +23,8 @@ const para = s => esc(bond.fill(s)).replace(/\[\[([^\]]+)\]\]/g, '<b class="kx">
 export const order = (key, n) => { let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--){ h = Math.imul(h ^ i, 16777619); const j = (h >>> 0) % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 /* whose post there is: the seven professors, then whoever else has written (Sirius by the fire, Lucius at the manor) */
-const writers = () => [...PROFS, ...DECKS.filter(d => d.place !== 'corridor' && doors.available(d.id)), ...(bond.bondOf(owners.ID).mail.length ? [owners.DESK] : [])];   // the former owners of Borgin's things write under the shop's name (owners.js)
-const deckOf = id => id === owners.ID ? owners.DESK : byId(id);
+const writers = () => [...PROFS, ...DECKS.filter(d => d.place !== 'corridor' && doors.available(d.id)), ...(bond.bondOf(owners.ID).mail.length ? [owners.DESK] : []), ...(bond.bondOf(bank.ID).mail.length ? [bank.DESK] : [])];   // the former owners of Borgin's things write under the shop's name (owners.js)
+const deckOf = id => id === owners.ID ? owners.DESK : id === bank.ID ? bank.DESK : byId(id);
 const giftImg = (id, k) => new URL(`assets/keepsakes/${id}-${k}.webp`, location.href).href;
 
 export function initLetters(app){
@@ -197,9 +198,10 @@ export function initLetters(app){
     deck = want;
     /* a letter about Sirius lies in Lupin's or Dumbledore's post, and its words are kept with his */
     if (deck.id === owners.ID) await Promise.all([owners.load(), shops.loadText()]);
+    else if (deck.id === bank.ID) await bank.load();
     else await Promise.all([bond.load(deck.id), bond.load('sirius'), noticed.load(), shops.loadText()]);
     $('#ltPhoto').style.backgroundImage = `url("${new URL(`assets/rooms/${deck.id}-portrait.webp`, location.href).href}")`;
-    if (deck.id === owners.ID ? !owners.data() : !bond.loaded(deck.id)) toast('편지를 불러오지 못했습니다.');
+    if (deck.id === owners.ID ? !owners.data() : deck.id === bank.ID ? !bank.data() : !bond.loaded(deck.id)) toast('편지를 불러오지 못했습니다.');
     draw();
     $('#ltScroll').scrollTop = 0;
     /* arrived by accepting an invitation in the corridor: go straight in to tea */

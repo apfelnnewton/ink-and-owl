@@ -2637,3 +2637,29 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .cw-top{flex:none}   /* the sheet is a flex column: without this the word above was squeezed to nothing once the sheet overflowed */
 .cw-say{margin:4px 0 10px}
 .clink small{margin-left:6px;font-size:.85em;opacity:.75}
+
+/* ---------- Gringotts (bank.js, 2026-10-21): the marble hall and the guest's vault, the goblin contracts */
+#bank .bg .photo{display:block}
+#bank .bg .shade{background:linear-gradient(rgba(3,4,6,.5),rgba(3,4,6,0) 18%,rgba(3,4,6,0) 46%,rgba(3,4,6,.72) 68%,rgba(3,4,6,.95))}
+#bank .bk-heap{position:absolute;z-index:3;transform:translate(-50%,-100%);height:auto;pointer-events:none;filter:brightness(.92)}
+#bank .cstats{flex-wrap:wrap;gap:6px 22px}
+#bank .cstats b{font-size:15px}
+.bk-note{margin:10px 0 0;font-size:12px;line-height:1.6;color:#B5AA92}
+@media (min-aspect-ratio:62/100){ #bank .place-card{left:calc(30px + var(--sl));right:auto;width:min(380px, 46vw);transform:none} }
+.seal.s-gringotts{background-image:url(../assets/ui/seal-lucius.webp);filter:sepia(.8) saturate(1.6) brightness(1.1)}
+.bk-amt{margin:18px 0 0;text-align:center;font:italic 30px/1.2 'Cormorant Garamond','Gowun Batang',serif;color:var(--ink)}
+.bk-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 4px}
+.bk-steps button{min-height:44px;border:1px solid rgba(60,45,25,.35);background:rgba(255,250,235,.35);border-radius:6px;font:14px var(--f-ko);color:var(--ink)}
+.bk-ctitle{margin:4px 0 10px;text-align:center;font-size:13px;color:var(--ink-soft)}
+.bk-clauses{margin:0;padding:0 0 0 22px;display:flex;flex-direction:column;gap:10px}
+.bk-clauses li{font:italic 17px/1.5 'IM Fell English','Gowun Batang',serif;color:var(--ink)}
+.bk-clauses li.bk-done{color:var(--ink-soft);font-size:15px}
+.bk-filled{font-style:normal;font-weight:700;color:#2E5A2A}
+.bk-blank{display:inline-block;min-width:5.5em;border-bottom:1.5px solid rgba(60,45,25,.6)}
+.bk-said{margin:12px 0 4px}
+.bk-said .q{display:block;font:italic 15px/1.45 'IM Fell English','Gowun Batang',serif;color:#7A1A12}
+.bk-said .k{display:block;font-size:12.5px;color:var(--ink-soft)}
+.bk-why{margin:6px 0 0;font-size:13px;line-height:1.6;color:var(--ink-soft)}
+.bk-write{display:flex;gap:8px;margin-top:14px}
+.bk-write input{flex:1;min-height:44px;padding:0 12px;border:1px solid rgba(60,45,25,.4);border-radius:6px;background:rgba(255,250,235,.5);font:18px 'IM Fell English',serif}
+.bk-write .sh-drill{margin:0;flex:none}
