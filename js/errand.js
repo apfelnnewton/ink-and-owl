@@ -9,9 +9,10 @@
    5. the hall: the goblin's ledger entry — read and sign (1–12), a blank (13–24), the one wrong word (25–36);
    6. the drawing room: the thing is handed over, her word on it, and coins across the floor.
    The words: bond/errands.json (← docs/newfaces-work/out-errand/errands.json, brief ERRAND.md, reviewed). The pictures:
-   assets/bank/items/<item>.webp, assets/rooms/gringotts-cart|lestrange-*.webp, assets/bank/key.webp.
+   assets/bank/items/<item>.webp, assets/rooms/gringotts-ride|lestrange-*.webp (ride = from inside the cart; the video assets/bank/cart-ride.mp4), assets/bank/key.webp.
    state.bank.er = {n: errands given, names: of them, on a new name, last: her dictation days at the last day's errand, d: date of the
-                    last, cur: {i, gal, at: 'ask'|'cart'|'ledger'|'back', d}, done, paid: {d, k, gal, v}} — inside state.bank, so it
+                    last, cur: {i, gal, at: 'ask'|'cart'|'ledger'|'back', d, look: wrong things brought out, took: the wrong thing
+                    taken {item, en, ko}, miss: times sent back}, done, paid: {d, k, gal, v, look}} — inside state.bank, so it
    travels with the bank (store.mergeData whole('bank'), sync-core KEYS). */
 import * as store from './store.js';
 import * as srs from './srs.js';
@@ -55,9 +56,10 @@ function give(){
 function step(at){ const c = cur(); if (!c) return; c.at = at; tick(); store.save(); }
 function finish(){
   const e = st(), c = e.cur, x = errandOf(c); if (!c || !x) return null;
-  const k = c.gal ? GALLEON : SICKLE * (3 + hash(x.id + '|coin') % 8);
+  /* a Sickle less for each wrong thing the goblin was made to bring out (2026-10-21 user 1가), never less than one */
+  const k = Math.max(SICKLE, (c.gal ? GALLEON : SICKLE * (3 + hash(x.id + '|coin') % 8)) - (c.look || 0) * SICKLE);
   manor.earn(k);
-  e.paid = {d: srs.today(), k, gal: c.gal, v: hash(x.id + '|line')}; e.done = (e.done || 0) + 1; e.cur = null;
+  e.paid = {d: srs.today(), k, gal: c.gal, v: hash(x.id + '|line'), look: c.look || 0}; e.done = (e.done || 0) + 1; e.cur = null;
   tick(); store.save();
   return e.paid;
 }
@@ -101,9 +103,32 @@ export function placeBits(view){
   const c = cur(), x = errandOf(c); if (!c || !x) return null;
   const S = TEXT.shared;
   if (view === 'cart'){ const t = S.cart[c.i % S.cart.length]; return {who: 'The Cart Ride', line: say(t), btn: go('레스트레인지 금고 앞에 선다', 'data-er="vault"')}; }
-  if (c.at === 'cart') return {who: 'The Lestrange Vault', line: say(pick(S.vault, 'vault')), btn: go('고블린의 목록을 본다', 'data-er="list"')};
-  return {who: 'The Lestrange Vault', line: say(pick(S.found, 'found')), btn: go('홀로 올라간다', 'data-er="up"'), item: itemSrc(x)};
+  const who = 'The Lestrange Vault';
+  if (c.at === 'cart'){
+    const sh = shown && shown.i === c.i ? vaultLines(c, x)[shown.n] : null;
+    if (!sh) return {who, line: say(pick(S.vault, 'vault')), btn: go('고블린의 목록을 본다', 'data-er="list"')};
+    /* what the goblin brought out to the velvet — or nothing, for a thing the vault does not hold */
+    const thumb = `<img class="er-thumb" src="${itemSrc(x)}" alt="그녀의 사진">`;
+    if (sh.none) return {who: '', line: thumb + say(pick(S.none, 'none' + shown.n)), btn: go('다시 찾아본다', 'data-er="list"'), empty: true};
+    return {who: '', line: thumb + say(pick(shown.again ? S.again : S.shown, 'shown' + shown.n)),
+      btn: go('가져간다', 'data-er="takeit"') + go('다시 찾아본다', 'data-er="list"', 'me-second'), item: itemSrc(sh)};
+  }
+  return {who, line: say(pick(S.found, 'found')), btn: go('홀로 올라간다', 'data-er="up"'), item: itemSrc(c.took || x)};
 }
+/* the inventory, four lines (2026-10-21 user): the thing in her photograph, two other things that really are in the vault (another
+   errand's line — what they look like is known, there is a picture of each), and one the vault does not hold (a near miss). The
+   others are of any kind in errands 1–12, of the same kind as hers from 13 on. Fixed for each errand. */
+const KIND = n => /goblet|cup/.test(n) ? 'cup' : /necklace|locket|pearls/.test(n) ? 'neck' : /dagger/.test(n) ? 'blade' : /box/.test(n) ? 'box' : /candle/.test(n) ? 'candle'
+  : /mirror/.test(n) ? 'mirror' : /ring/.test(n) ? 'ring' : /comb|tiara/.test(n) ? 'hair' : /brooch/.test(n) ? 'brooch' : /decanter|perfume/.test(n) ? 'bottle' : /book|scroll/.test(n) ? 'paper' : n;
+function vaultLines(c, x){
+  const h = s => hash(x.id + '|' + s), others = [...new Map(TEXT.errands.map(e => [e.item, e])).values()].filter(e => e.item !== x.item);
+  const sorted = a => a.slice().sort((p, q) => h(p.item) - h(q.item));
+  const same = sorted(others.filter(e => KIND(e.item) === KIND(x.item))), rest = sorted(others.filter(e => KIND(e.item) !== KIND(x.item)));
+  const real = (level(c.i) === 1 ? rest.concat(same) : same.concat(rest)).slice(0, 2).map(e => ({en: e.vault.right.en, ko: e.vault.right.ko, item: e.item}));
+  const none = x.vault.wrong[h('none') % x.vault.wrong.length];
+  return [{...x.vault.right, ok: true, item: x.item}, ...real, {...none, none: true}];
+}
+let shown = null, seen = null;   // what is on the velvet now {i, n, again}; the list's order and the lines already looked at {i, order, tried}
 
 /* ---------- the sheets */
 let run = null, ctx = null;   // ctx = {app, redraw}
@@ -150,29 +175,43 @@ const focusIn = () => { const i = $('#erIn'); if (i) i.focus(); };
 /* step 4: the inventory of the Lestrange vault — the photograph stays in sight */
 function listSheet(){
   const c = cur(), x = errandOf(c); if (!x) return;
-  const lines = [{...x.vault.right, ok: true}, ...x.vault.wrong];
-  run = {kind: 'list', c, x, lines, order: shuffled(lines.map((l, n) => n)), tried: new Set()};
-  listDraw();
-}
-function listDraw(said1 = null, done = false){
-  const {c, x, lines, order} = run, S = TEXT.shared;
+  const lines = vaultLines(c, x);
+  if (!seen || seen.i !== c.i) seen = {i: c.i, order: shuffled(lines.map((l, n) => n)), tried: new Set()};
+  run = {kind: 'list', c, x, lines};
+  const n = c.look || 0;
   openSheet(head('레스트레인지 금고 · 고블린의 목록', c) + photo(x, true) +
-    `<h2 class="sh-expr" id="shTitle" lang="en">Inventory</h2><p class="bk-ctitle">사진 속 물건과 맞는 줄</p>` +
-    `<ol class="er-list">${order.map(n => { const l = lines[n], off = run.tried.has(n), right = done && l.ok;
-      return `<li><button type="button" data-erline="${n}"${off || done ? ' disabled' : ''} class="${off ? 'wrong' : right ? 'right' : ''}"><span lang="en">${esc(fill(l.en))}</span>${off || right ? `<small>${esc(l.ko)}</small>` : ''}</button></li>`; }).join('')}</ol>` +
-    (said1 ? said(said1) : '') +
-    (done ? said(any(S.found)) + '<button type="button" class="sh-drill" data-erstep="ledger">꺼내 온다</button>' : ''));
+    `<h2 class="sh-expr" id="shTitle" lang="en">Inventory</h2><p class="bk-ctitle">사진 속 물건과 맞는 줄을 누르면 고블린이 꺼내 온다</p>` +
+    `<ol class="er-list">${seen.order.map(k => { const l = lines[k], off = seen.tried.has(k);
+      return `<li><button type="button" data-erline="${k}" class="${off ? 'wrong' : ''}"><span lang="en">${esc(fill(l.en))}</span>${off ? `<small>${l.none ? '금고에 없는 물건' : '꺼내 봤다 · 사진과 다르다'}</small>` : ''}</button></li>`; }).join('')}</ol>` +
+    `<p class="purse-note">${n ? `사진과 다른 물건을 ${n}번 꺼내 보게 했다 · 그녀가 던질 시클이 ${n}닢 준다` : '사진과 다른 물건을 꺼내 보게 할 때마다 그녀가 던질 시클이 1닢씩 준다'}</p>`);
+}
+/* a line pressed: the goblin brings it to the velvet (or says there is no such thing); the card under the picture offers to take it */
+function look(k){
+  const c = cur(), l = run.lines[k]; run = null; closeSheet();
+  const again = !!(c.look || seen.tried.size);
+  if (!l.ok && !l.none && !seen.tried.has(k)){ c.look = (c.look || 0) + 1; tick(); store.save(); }
+  if (!l.ok) seen.tried.add(k);
+  shown = {i: c.i, n: k, again};
+  if (ctx) ctx.redraw();
+}
+function takeIt(){
+  const c = cur(), x = errandOf(c); if (!c || !shown || shown.i !== c.i) return;
+  const l = vaultLines(c, x)[shown.n]; if (!l || l.none) return;
+  c.took = l.ok ? null : {item: l.item, en: l.en, ko: l.ko};   // the wrong thing: she will see it in the drawing room (user 2가)
+  shown = null; step('ledger');
+  if (ctx) ctx.redraw();
 }
 
 /* step 5: the ledger entry */
 function ledgerSheet(){
   const c = cur(), x = errandOf(c); if (!x) return;
-  const L = x.ledger, lv = level(c.i);
-  run = {kind: 'ledger', c, x, lv, tried: new Set(), opts: lv === 2 ? shuffled([L.answer, ...L.options]) : null};
+  /* the wrong thing taken: the goblin writes down what was taken, plainly — read and sign (she finds out in the drawing room) */
+  const L = c.took ? tookEntry(c.took) : x.ledger, lv = c.took ? 1 : level(c.i);
+  run = {kind: 'ledger', c, x, L, lv, tried: new Set(), opts: lv === 2 ? shuffled([L.answer, ...L.options]) : null};
   ledgerDraw();
 }
 function ledgerDraw(said1 = null, done = false){
-  const {c, x, lv} = run, L = x.ledger, S = TEXT.shared;
+  const {c, x, lv, L} = run, S = TEXT.shared;
   let entry, ask = '';
   if (lv === 1) entry = esc(fill(L.en));
   else if (lv === 2){ entry = esc(fill(L.en)).replace('___', done ? `<b class="bk-filled">${esc(L.answer)}</b>` : '<span class="bk-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>'); if (!done) ask = blankAsk(L.answer); }
@@ -194,9 +233,24 @@ function ledgerDraw(said1 = null, done = false){
   focusIn();
 }
 
+const tookEntry = l => { const E = TEXT.shared.entry, low = s => s.charAt(0).toLowerCase() + s.slice(1);
+  return {en: E.en.replace('{item}', low(l.en)), ko: E.ko.replace('{item}', l.ko)}; };
+
 /* step 6: handed over */
 function handSheet(){
   const c = cur(), x = errandOf(c); if (!x) return;
+  if (c.took){   // the wrong thing (user 2가): she scolds, no coins, and back down to the vault — no need to state the business again
+    const t = c.took, S = TEXT.shared;
+    c.took = null; c.miss = (c.miss || 0) + 1; step('cart');
+    run = {kind: 'hand'};
+    openSheet(head('응접실 · 건넨다', c) +
+      `<figure class="lt-gift"><img src="${itemSrc(t)}" alt=""></figure>` +
+      `<div class="tea-say"><p class="en" lang="en" id="shTitle">${marked(S.scold[(c.miss - 1 + c.i) % S.scold.length].en)}</p><p class="ko">${esc(fill(S.scold[(c.miss - 1 + c.i) % S.scold.length].ko))}</p></div>` + keysOf(S.scold[(c.miss - 1 + c.i) % S.scold.length]) +
+      photo(x, true) + '<p class="purse-note">사진 속 물건이 아니다. 동전은 없다 — 그린고츠로 돌아가 다시 금고로 내려간다.</p>' +
+      '<button type="button" class="sh-drill" data-ergo="#/bank">그린고츠로 간다</button>');
+    if (ctx) ctx.redraw();
+    return;
+  }
   const p = finish(); if (!p) return;
   run = {kind: 'hand'};
   const S = TEXT.shared, toss = p.gal ? S.galleon[p.v % S.galleon.length] : S.sickles[p.v % S.sickles.length];
@@ -205,6 +259,7 @@ function handSheet(){
     `<div class="tea-say"><p class="en" lang="en" id="shTitle">${marked(x.give.en)}</p><p class="ko">${esc(fill(x.give.ko))}</p></div>` + keysOf(x.give) +
     said(toss) +
     `<p class="mn-paid"><img src="assets/money/${p.gal ? 'galleon' : 'sickle'}.webp" alt=""><b>${p.gal ? '1갈레온' : `${p.k / SICKLE}시클`}</b><span>주머니 · ${esc(manor.money(manor.purse()))}</span></p>` +
+    (p.look ? `<p class="purse-note">사진과 다른 물건을 ${p.look}번 꺼내 보게 해서 ${p.look}시클 덜 받았다.</p>` : '') +
     (manor.debtNote() ? `<p class="purse-note">${esc(manor.debtNote())}</p>` : '') +
     `<p class="purse-note">${st().done >= TOTAL ? '그녀의 심부름은 이것으로 다 했다.' : '다음 심부름은 그녀의 받아쓰기를 사흘 더 한 뒤에 온다.'}</p>`);
   if (ctx) ctx.redraw();
@@ -220,12 +275,13 @@ export function act(what, app, redraw){
   else if (what === 'cart') app.go('#/bank/cart');
   else if (what === 'vault') app.go('#/bank/lestrange');
   else if (what === 'list') listSheet();
+  else if (what === 'takeit') takeIt();
   else if (what === 'up') app.go('#/bank');
   else if (what === 'ledger') ledgerSheet();
   else if (what === 'manor') app.go('#/manor/drawing');
 }
 function answer(word){
-  const exp = run.kind === 'ask' ? run.x.request.answer : run.x.ledger.answer;
+  const exp = run.kind === 'ask' ? run.x.request.answer : run.L.answer;
   const S = TEXT.shared, redo = run.kind === 'ask' ? askDraw : ledgerDraw;
   if (norm(word) === norm(exp)){ redo(null, true); return; }
   run.tried.add(word); redo(any(run.kind === 'ask' ? S.wrongAsk : S.wrongLedger));
@@ -242,11 +298,10 @@ export function initErrand(){
     const p = e.target.closest('[data-erpick]'); if (p && !p.disabled){ answer(p.dataset.erpick); return; }
     if (e.target.closest('[data-ercheck]')){ const v = ($('#erIn') || {}).value || ''; if (v.trim()) answer(v.trim()); return; }
     const ln = e.target.closest('[data-erline]');
-    if (ln && !ln.disabled && run.kind === 'list'){ const n = +ln.dataset.erline;
-      if (run.lines[n].ok) listDraw(null, true); else { run.tried.add(n); listDraw(any(S.wrongItem)); } return; }
+    if (ln && run.kind === 'list'){ look(+ln.dataset.erline); return; }
     const w = e.target.closest('[data-erword]');
     if (w && !w.disabled && run.kind === 'ledger'){
-      if (w.dataset.bare.toLowerCase() === String(run.x.ledger.wrong).toLowerCase()) ledgerDraw(null, true);
+      if (w.dataset.bare.toLowerCase() === String(run.L.wrong).toLowerCase()) ledgerDraw(null, true);
       else { run.tried.add(+w.dataset.erword); ledgerDraw(any(S.wrongLedger)); }
       return; }
     if (e.target.closest('[data-ersign]')){ ledgerDraw(null, true); return; }

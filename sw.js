@@ -1,7 +1,7 @@
 /* Offline: the app shell, all seven decks with their practice files, room paintings, letters and keepsakes are cached on install; everything else (Google Fonts)
    is cached the first time it is fetched. Served from cache first, refreshed in the background.
    Bump VERSION when any file changes so phones pick up the new copy. */
-const VERSION = 'he-2026-10-21e';
+const VERSION = 'he-2026-10-21f';
 const PROFS = ['snape', 'mcgonagall', 'lupin', 'moody', 'umbridge', 'dumbledore', 'slughorn'];
 const CORE = [
   './',
@@ -117,8 +117,8 @@ const CORE = [
   'js/errand.js',
   'bond/errands.json',
   'assets/bank/key.webp',
-  'assets/rooms/gringotts-cart-portrait.webp',
-  'assets/rooms/gringotts-cart-wide.webp',
+  'assets/rooms/gringotts-ride-portrait.webp',
+  'assets/rooms/gringotts-ride-wide.webp',
   'assets/rooms/gringotts-lestrange-portrait.webp',
   'assets/rooms/gringotts-lestrange-wide.webp',
   'assets/bank/items/01-goblet-ruby.webp',

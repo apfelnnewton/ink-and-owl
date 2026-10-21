@@ -16,7 +16,7 @@ import * as bond from './bond.js';
 import * as manor from './manor.js';
 import * as shops from './shops.js';
 import * as errand from './errand.js';
-import {$, esc, toast, openSheet, closeSheet, isSheetOpen} from './ui.js';
+import {$, esc, toast, openSheet, closeSheet, isSheetOpen, reduced} from './ui.js';
 
 export const ID = 'gringotts';
 export const DESK = {id: ID, ko: '그린고츠', place: 'bank'};   // the post tab (letters.js)
@@ -108,7 +108,7 @@ const HEAPS = {   // the vault's gold, laid on the floor of the picture (user's 
   small: {p: [.184, .707], w: [.085, .79]}, middle: {p: [.351, .707], w: [.165, .79]}, full: {p: [.761, .856], w: [.36, .92]}};
 const heapOf = k => !k ? null : k < 2 * GALLEON ? 'small' : k < 8 * GALLEON ? 'middle' : 'full';
 const PHOTO = {p: [1080, 1910], w: [1920, 1086]};
-const ITEM = {p: [.5, .622, .34], w: [.5, .55, .13]};   // the thing taken from the Lestrange vault, on the velvet: x, foot, width as fractions of the picture
+const ITEM = {p: [.5, .6, .3], w: [.5, .55, .13]};   // the thing taken from the Lestrange vault, on the velvet: x, foot, width as fractions of the picture
 
 export function initBank(app){
   const sec = $('#bank'), ph = $('#bkPhoto');
@@ -159,9 +159,23 @@ export function initBank(app){
     $('#bkGo').innerHTML = go('홀로 올라간다', 'data-bk="hall"');
   }
   /* the cart ride and the Lestrange vault, on Bellatrix's errand (errand.js says what the card says) */
+  /* the ride down (2026-10-21 user): from inside the cart, once each time the cart view opens — the card waits until the cart stops.
+     Without the video (offline: the worker does not keep mp4s; reduced motion) the still from the same place shows at once. */
+  function ride(){
+    const v = $('#bkRide'), card = $('#bkCard');
+    const done = () => { card.classList.remove('bk-wait'); clearTimeout(ride.t); };
+    if (reduced()){ v.hidden = true; done(); return; }
+    v.hidden = false; card.classList.add('bk-wait');
+    v.onended = done; v.onerror = () => { v.hidden = true; done(); };
+    ride.t = setTimeout(done, 9000);
+    if (!v.getAttribute('src')){ v.poster = 'assets/rooms/gringotts-ride-portrait.webp'; v.src = 'assets/bank/cart-ride.mp4'; }
+    try { v.currentTime = 0; } catch (e) {}
+    const p = v.play(); if (p && p.catch) p.catch(() => { v.hidden = true; done(); });
+  }
+  function stopRide(){ const v = $('#bkRide'); if (!v.hidden){ v.pause(); v.hidden = true; } $('#bkCard').classList.remove('bk-wait'); clearTimeout(ride.t); }
   function drawErrand(){
     const b = errand.placeBits(view); if (!b){ view = 'hall'; drawHall(); return; }
-    photo(view === 'cart' ? 'gringotts-cart' : 'gringotts-lestrange');
+    photo(view === 'cart' ? 'gringotts-ride' : 'gringotts-lestrange');
     $('#bkTtl').textContent = 'Gringotts';
     $('#bkWho').textContent = b.who;
     $('#bkStats').innerHTML = '';
@@ -179,6 +193,7 @@ export function initBank(app){
     el.style.width = (fw * dw) + 'px'; el.style.left = (ox + fx * dw) + 'px'; el.style.top = (oy + fy * dh) + 'px';
   }
   function draw(){
+    if (view !== 'cart') stopRide();
     sec.dataset.view = view;
     if (view === 'vault') drawVault(); else if (view === 'cart' || view === 'lestrange') drawErrand(); else drawHall();
     placeHeap(); placeItem();
@@ -299,6 +314,7 @@ export function initBank(app){
     const c = errand.cur();
     view = id === 'vault' && hasVault() ? 'vault' : id === 'cart' && c && c.at === 'cart' ? 'cart' : id === 'lestrange' && c && (c.at === 'cart' || c.at === 'ledger') ? 'lestrange' : 'hall'; run = null;
     draw();
+    if (view === 'cart') ride();
     await load(); if (sec.hidden) return;
     draw();
     if (view === 'hall' && !st().seen){ st().seen = srs.today(); store.save(); }
