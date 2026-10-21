@@ -74,7 +74,6 @@ const said = t => t ? `<p class="bk-said">${say(t)}</p>` : '';
 const pick = (list, salt) => list && list.length ? list[hash(srs.today() + salt) % list.length] : null;
 const any = list => list && list.length ? list[Math.floor(Math.random() * list.length)] : null;
 const shuffled = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
-const high = () => store.get().settings.level === 'high';
 const norm = s => String(s).toLowerCase().replace(/[^a-z]/g, '');
 const head = (left, c) => `<div class="sh-kind"><span>${left}</span><span>심부름 ${c.i + 1} / ${TOTAL}</span></div>`;
 const photo = (e, small) => `<figure class="er-photo${small ? ' small' : ''}"><img src="${itemSrc(e)}" alt="그녀가 준 사진"><figcaption>${small ? '그녀의 사진' : ''}</figcaption></figure>`;
@@ -166,9 +165,9 @@ function askDraw(said1 = null, done = false){
     (done ? keysOf(r, ...(r.choices || [])) + said(any(S.askOk)) + '<button type="button" class="sh-drill" data-erstep="cart">수레에 오른다</button>' : ''));
   focusIn();
 }
-const blankAsk = answer => high()
-  ? `<div class="bk-write"><input type="text" id="erIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${esc(answer[0])}…" lang="en"><button type="button" class="sh-drill" data-ercheck="1">확인</button></div>`
-  : `<div class="dr-opts">${run.opts.map((o, n) => `<button type="button" data-erpick="${esc(o)}"${run.tried.has(o) ? ' disabled class="wrong"' : ''}><i>${n + 1}</i>${esc(o)}</button>`).join('')}</div>`;
+/* chosen, never written, on every level: each errand is new text (2026-10-21 user — the first-letter writing could not be guessed) */
+const blankAsk = () =>
+    `<div class="dr-opts">${run.opts.map((o, n) => `<button type="button" data-erpick="${esc(o)}"${run.tried.has(o) ? ' disabled class="wrong"' : ''}><i>${n + 1}</i>${esc(o)}</button>`).join('')}</div>`;
 const focusIn = () => { const i = $('#erIn'); if (i) i.focus(); };
 
 /* step 4: the inventory of the Lestrange vault — the photograph stays in sight */
@@ -295,7 +294,6 @@ export function initErrand(){
     if (ch && !ch.disabled && run.kind === 'ask'){ const n = +ch.dataset.erch, it = run.x.request.choices[n];
       if (it.ok) askDraw(null, true); else { run.tried.add(n); askDraw(any(S.wrongAsk)); } return; }
     const p = e.target.closest('[data-erpick]'); if (p && !p.disabled){ answer(p.dataset.erpick); return; }
-    if (e.target.closest('[data-ercheck]')){ const v = ($('#erIn') || {}).value || ''; if (v.trim()) answer(v.trim()); return; }
     const ln = e.target.closest('[data-erline]');
     if (ln && run.kind === 'list'){ look(+ln.dataset.erline); return; }
     const w = e.target.closest('[data-erword]');

@@ -258,15 +258,16 @@ export function initBank(app){
   function contract(which, then){
     const i = which === 'open' ? 0 : 1 + (st().loans || 0) % 6, c = TEXT && TEXT.contracts[i];
     if (!c){ toast('계약서를 불러오지 못했습니다.'); return; }
-    run = {kind: 'contract', c, k: 0, then, opts: c.clauses.map(cl => shuffled([cl.answer, ...cl.options])), tried: c.clauses.map(() => new Set())};   // words tried wrongly, clause by clause (2026-10-21 user: one clause's wrong word blocked the next clause's answer)
+    const again = which !== 'open' && (st().loans || 0) >= 6;   // this agreement has been signed once before
+    run = {kind: 'contract', c, k: 0, then, write: high() && again, opts: c.clauses.map(cl => shuffled([cl.answer, ...cl.options])), tried: c.clauses.map(() => new Set())};   // words tried wrongly, clause by clause (2026-10-21 user: one clause's wrong word blocked the next clause's answer)
     clause();
   }
   const filled = (cl, ok) => esc(cl.en).replace('___', ok ? `<b class="bk-filled">${esc(cl.answer)}</b>` : '<span class="bk-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
   function clause(said = null, done = false){
     const {c, k} = run, cl = c.clauses[k];
     const before = c.clauses.slice(0, k).map(x => `<li class="bk-done">${filled(x, true)}</li>`).join('');
-    const ask = done ? '' : high()
-      ? `<div class="bk-write"><input type="text" id="bkIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${esc(cl.answer[0])}…" lang="en"><button type="button" class="sh-drill" data-bkcheck="1">확인</button></div>`
+    const ask = done ? '' : run.write
+      ? `<p class="dr-ko">${esc(cl.ko)}</p><div class="bk-write"><input type="text" id="bkIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${esc(cl.answer[0])}…" lang="en"><button type="button" class="sh-drill" data-bkcheck="1">확인</button></div>`
       : `<div class="dr-opts">${run.opts[k].map((o, n) => `<button type="button" data-bkpick="${esc(o)}"${run.tried[k].has(o) ? ' disabled class="wrong"' : ''}><i>${n + 1}</i>${esc(o)}</button>`).join('')}</div>`;
     const after = done ? `<p class="dr-ko">${esc(cl.ko)}</p><p class="bk-why">${esc(cl.note)}</p>` +
       (k + 1 < c.clauses.length ? '<button type="button" class="sh-drill" data-bknext="1">다음 조항 →</button>' : '<button type="button" class="sh-drill" data-bksign="1">서명한다</button>') : '';
