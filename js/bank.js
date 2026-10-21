@@ -107,7 +107,7 @@ export function initBank(app){
     el.hidden = !kind; if (!kind) return;
     const r = ph.getBoundingClientRect(); if (!r.width) return;
     const wide = matchMedia('(min-aspect-ratio: 1/1)').matches, [iw, ih] = PHOTO[wide ? 'w' : 'p'];
-    const k = Math.max(r.width / iw, r.height / ih), dw = iw * k, dh = ih * k, ox = (r.width - dw) * .5, oy = (r.height - dh) * (wide ? .5 : .35);
+    const k = Math.max(r.width / iw, r.height / ih), dw = iw * k, dh = ih * k, ox = (r.width - dw) * .5, oy = (r.height - dh) * (wide ? .85 : .35);   // wide: the picture sits low so the floor stays in view (css #bank[data-view=vault])
     const [fw, fy] = HEAPS[kind][wide ? 'w' : 'p'];
     el.src = `assets/bank/heap-${kind}.webp`;
     el.style.width = (fw * dw) + 'px'; el.style.left = (ox + dw / 2) + 'px'; el.style.top = (oy + fy * dh) + 'px';

@@ -2663,3 +2663,10 @@ table.ro-table,table.ro-full{width:100%;border-collapse:collapse;margin-top:8px}
 .bk-write{display:flex;gap:8px;margin-top:14px}
 .bk-write input{flex:1;min-height:44px;padding:0 12px;border:1px solid rgba(60,45,25,.4);border-radius:6px;background:rgba(255,250,235,.5);font:18px 'IM Fell English',serif}
 .bk-write .sh-drill{margin:0;flex:none}
+
+/* the vault on a wide screen: the floor, where the gold lies, stays in view (2026-10-21 user: "바닥이 안보여") — the picture sits low and
+   the dark is only behind the card on the left, not across the floor */
+@media (min-aspect-ratio:1/1){
+  #bank[data-view="vault"] .bg .photo{background-position:center 85%}
+  #bank[data-view="vault"] .bg .shade{background:linear-gradient(90deg,rgba(3,4,6,.84),rgba(3,4,6,.4) 34%,rgba(3,4,6,0) 56%),linear-gradient(rgba(3,4,6,.45),rgba(3,4,6,0) 16%)}
+}
